@@ -196,10 +196,10 @@ static void
 gedit_word_completion_plugin_class_init (GeditWordCompletionPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	GeditPluginClass *plugin_class = GEDIT_PLUGIN_CLASS (klass);
+	GPEPluginClass *plugin_class = GPE_PLUGIN_CLASS (klass);
 
 	object_class->dispose = gedit_word_completion_plugin_dispose;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
+	plugin_class->activate = (GPEFunc) impl_activate;
+	plugin_class->deactivate = (GPEFunc) impl_deactivate;
 }

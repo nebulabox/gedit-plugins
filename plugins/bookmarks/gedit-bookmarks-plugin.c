@@ -229,7 +229,7 @@ get_bookmark_pixbuf (GeditPlugin *plugin)
 	gchar *iconpath;
 	GdkPixbuf *pixbuf;
 
-	datadir = gedit_plugin_get_data_dir (plugin);
+	datadir = gpe_plugin_get_data_dir (GPE_PLUGIN (plugin));
 	iconpath = g_build_filename (datadir, "bookmark.png", NULL);
 	pixbuf = gdk_pixbuf_new_from_file (iconpath, NULL);
 
@@ -583,12 +583,12 @@ static void
 gedit_bookmarks_plugin_class_init (GeditBookmarksPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	GeditPluginClass *plugin_class = GEDIT_PLUGIN_CLASS (klass);
+	GPEPluginClass *plugin_class = GPE_PLUGIN_CLASS (klass);
 
 	object_class->finalize = gedit_bookmarks_plugin_finalize;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
+	plugin_class->activate = (GPEFunc) impl_activate;
+	plugin_class->deactivate = (GPEFunc) impl_deactivate;
 }
 
 static void

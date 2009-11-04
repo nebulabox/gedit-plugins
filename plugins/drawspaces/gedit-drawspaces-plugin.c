@@ -599,7 +599,7 @@ get_configuration_dialog (GeditDrawspacesPlugin *plugin)
 
 	dialog = g_slice_new (DrawspacesConfigureDialog);
 
-	datadir = gedit_plugin_get_data_dir (GEDIT_PLUGIN (plugin));
+	datadir = gpe_plugin_get_data_dir (GPE_PLUGIN (plugin));
 	filename = g_build_filename (datadir, UI_FILE, NULL);
 
 	ret = gedit_utils_get_ui_objects (filename,
@@ -799,13 +799,13 @@ static void
 gedit_drawspaces_plugin_class_init (GeditDrawspacesPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	GeditPluginClass *plugin_class = GEDIT_PLUGIN_CLASS (klass);
+	GPEPluginClass *plugin_class = GPE_PLUGIN_CLASS (klass);
 
 	g_type_class_add_private (object_class, sizeof (GeditDrawspacesPluginPrivate));
 
 	object_class->dispose = gedit_drawspaces_plugin_dispose;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
-	plugin_class->create_configure_dialog = impl_create_configure_dialog;	
+	plugin_class->activate = (GPEFunc) impl_activate;
+	plugin_class->deactivate = (GPEFunc) impl_deactivate;
+	plugin_class->create_configure_dialog = (GPEFunc) impl_create_configure_dialog;	
 }
