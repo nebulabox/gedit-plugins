@@ -56,7 +56,7 @@ class WindowHelper:
 	def update_ui(self):
 		pass
 
-	def _do_command(self, group, obj, keyval, mod):
+	def on_commander_mode(self, action):
 		view = self._window.get_active_view()
 
 		if not view:
