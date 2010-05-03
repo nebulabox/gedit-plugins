@@ -58,14 +58,15 @@ class WindowHelper(Signals):
         
         self.connect_signal(window, 'tab-added', self.on_tab_added)
         self.connect_signal(window, 'tab-removed', self.on_tab_removed)
-        
+        self.connect_signal(window, 'active-tab-changed', self.on_active_tab_changed)
+
         self.install_ui()
 
     def install_ui(self):
         manager = self._window.get_ui_manager()
         
         self._action_group = gtk.ActionGroup("GeditMultiEditPluginActions")
-        self._action_group.add_actions(
+        self._action_group.add_toggle_actions(
             [('MultiEditModeAction', None, _('Multi Edit Mode'), '<Ctrl><Shift>C', _('Start multi edit mode'), self.on_multi_edit_mode)])
         
         manager.insert_action_group(self._action_group, -1)
@@ -95,26 +96,40 @@ class WindowHelper(Signals):
     def add_document_helper(self, view):
         if view.get_data(constants.DOCUMENT_HELPER_KEY) != None:
             return
-            
-        DocumentHelper(view)
+
+        helper = DocumentHelper(view)
+        helper.set_toggle_callback(self.on_multi_edit_toggled, helper)
 
     def remove_document_helper(self, view):
         helper = view.get_data(constants.DOCUMENT_HELPER_KEY)
         
         if helper != None:
             helper.stop()
-    
+
+    def get_action(self):
+        return self._action_group.get_action('MultiEditModeAction')
+
+    def on_multi_edit_toggled(self, helper):
+        if helper.get_view() == self._window.get_active_view():
+            self.get_action().set_active(helper.enabled())
+
     def on_tab_added(self, window, tab):
         self.add_document_helper(tab.get_view())
     
     def on_tab_removed(self, window, tab):
         self.remove_document_helper(tab.get_view())
-    
+
+    def on_active_tab_changed(self, window, tab):
+        view = tab.get_view()
+        helper = view.get_data(constants.DOCUMENT_HELPER_KEY)
+
+        self.get_action().set_active(helper != None and helper.enabled())
+
     def on_multi_edit_mode(self, action):
         view = self._window.get_active_view()
         helper = view.get_data(constants.DOCUMENT_HELPER_KEY)
         
         if helper != None:
-            helper.toggle_multi_edit()
+            helper.toggle_multi_edit(self.get_action().get_active())
 
 # ex:ts=4:et:
