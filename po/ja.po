@@ -1,18 +1,18 @@
 # gedit-plugins ja.po.
-# Copyright (C) 1999,2000,2002,2003,2006-2009 Free Software Foundation, Inc.
+# Copyright (C) 1999,2000,2002,2003,2006-2010 Free Software Foundation, Inc.
 # Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>, 1999
 # Yuusuke Tahara <tahara@gnome.gr.jp>
 # Yukihiro Nakai <nakai@gnome.gr.jp>
 # Akira TAGOH <tagoh@gnome.gr.jp>, 2002.
 # KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
-# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2006-2009.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2006-2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gedit-plugins trunk\n"
+"Project-Id-Version: gedit-plugins gnome-2-30\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-24 21:14+0900\n"
-"PO-Revision-Date: 2009-03-24 21:09+0900\n"
+"POT-Creation-Date: 2010-05-13 07:23+0900\n"
+"PO-Revision-Date: 2010-05-13 07:23+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -27,27 +27,27 @@ msgstr "ブックマーク"
 msgid "Easy document navigation with bookmarks"
 msgstr "ブックマークを使って簡単にドキュメントを閲覧できるようにします。"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:129
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:137
 msgid "Toggle Bookmark"
 msgstr "ブックマークの切り替え "
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:130
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:138
 msgid "Toggle bookmark status of the current line"
 msgstr "カーソルがある行のブックマーク・ステータスを ON/OFF します"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:132
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:140
 msgid "Goto Next Bookmark"
 msgstr "次のブックマーク"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:133
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:141
 msgid "Goto the next bookmark"
 msgstr "次のブックマークへジャンプします"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:135
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:143
 msgid "Goto Previous Bookmark"
 msgstr "前のブックマーク"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:136
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:144
 msgid "Goto the previous bookmark"
 msgstr "前のブックマークへジャンプします"
 
@@ -118,7 +118,16 @@ msgid "_Insert"
 msgstr "挿入する(_I)"
 
 #. ex:ts=4:et:
+#: ../plugins/commander/commander.gedit-plugin.desktop.in.in.h:1
+msgid "Command line interface for advanced editing"
+msgstr "高度な編集機能に対応したコマンドライン・インタフェースです。"
+
+#: ../plugins/commander/commander.gedit-plugin.desktop.in.in.h:2
+msgid "Commander"
+msgstr "コマンドツール"
+
 #: ../plugins/drawspaces/drawspaces.gedit-plugin.desktop.in.in.h:1
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:4
 msgid "Draw Spaces"
 msgstr "空白文字の表示"
 
@@ -127,30 +136,70 @@ msgid "Draw Spaces and Tabs"
 msgstr "空白やタブ文字を描画します。"
 
 #: ../plugins/drawspaces/drawspaces.ui.h:1
+msgid "Draw leading spaces"
+msgstr "先頭にある空白を表示する"
+
+#: ../plugins/drawspaces/drawspaces.ui.h:2
 msgid "Draw new lines"
 msgstr "改行を表示する"
 
-#: ../plugins/drawspaces/drawspaces.ui.h:2
+#: ../plugins/drawspaces/drawspaces.ui.h:3
 msgid "Draw non-breaking spaces"
 msgstr "ハードスペース (NBSP) を表示する"
 
-#: ../plugins/drawspaces/drawspaces.ui.h:3
+#: ../plugins/drawspaces/drawspaces.ui.h:4
 msgid "Draw spaces"
 msgstr "空白文字を表示する"
 
-#: ../plugins/drawspaces/drawspaces.ui.h:4
+#: ../plugins/drawspaces/drawspaces.ui.h:5
+msgid "Draw spaces in text"
+msgstr "文字列の中にある空白を表示する"
+
+#: ../plugins/drawspaces/drawspaces.ui.h:6
 msgid "Draw tabs"
 msgstr "タブ文字を表示する"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:149
-msgid "Show _White Space"
-msgstr "空白文字を表示する(_W)"
+#: ../plugins/drawspaces/drawspaces.ui.h:7
+msgid "Draw trailing spaces"
+msgstr "行末の空白文字などを表示する"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:150
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:1
+msgid "Draw Leading Spaces"
+msgstr "先頭にある空白を表示する"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:2
+msgid "Draw New lines"
+msgstr "改行を表示する"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:3
+msgid "Draw Non-Breaking Spaces"
+msgstr "ハードスペース (NBSP) を表示する"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:5
+msgid "Draw Spaces in Text"
+msgstr "文字列の中にある空白を表示する"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:6
+msgid "Draw Tabs"
+msgstr "タブ文字を表示する"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:7
+msgid "Draw Trailing Spaces"
+msgstr "行末の空白文字などを表示する"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:8
+msgid "Show White Spaces"
+msgstr "空白文字などを表示する"
+
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:167
+msgid "Show _White Space"
+msgstr "空白文字などを表示する(_W)"
+
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:168
 msgid "Show spaces and tabs"
 msgstr "空白やタブ文字を表示します"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:526
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:612
 msgid "Error dialog"
 msgstr "エラー・ダイアログ"
 
@@ -177,6 +226,56 @@ msgstr "行の分割(_S)"
 #: ../plugins/joinlines/joinlines.py:60
 msgid "Split the selected lines"
 msgstr "選択した行を分割します"
+
+#. ex:ts=4:et:
+#: ../plugins/multiedit/multiedit.gedit-plugin.desktop.in.in.h:1
+msgid "Edit document in multiple places at once"
+msgstr "一度に複数の場所にあるドキュメントを編集します。"
+
+#: ../plugins/multiedit/multiedit.gedit-plugin.desktop.in.in.h:2
+msgid "Multi Edit"
+msgstr "マルチ・エディット"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:300
+msgid "Added edit point..."
+msgstr "編集ポイントを追加しました..."
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:438
+msgid "Column Mode..."
+msgstr "カラム・モード..."
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:556
+msgid "Removed edit point..."
+msgstr "編集ポイントを削除しました..."
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:706
+msgid "Cancelled column mode..."
+msgstr "カラム・モードをキャンセルしました..."
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:825
+msgid "Enter column edit mode using selection"
+msgstr "選択範囲を使ってカラム編集モードに入ります"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:826
+msgid "Toggle edit point"
+msgstr "編集ポイントの切り替え"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:827
+msgid "Add edit point at beginning of line/selection"
+msgstr "行または選択範囲の先頭に編集ポイントを追加します"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:828
+msgid "Add edit point at end of line/selection"
+msgstr "行または選択範囲の最後に編集ポイントを追加します"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:864
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
+msgid "Multi Edit Mode"
+msgstr "マルチ・エディット・モード"
+
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
+msgid "Start multi edit mode"
+msgstr "マルチ・エディットのモードにします"
 
 #: ../plugins/showtabbar/gedit-show-tabbar-plugin.c:208
 msgid "Tab_bar"
@@ -268,10 +367,22 @@ msgstr "ボトム・ペインに端末を埋め込みます。"
 msgid "Embedded Terminal"
 msgstr "埋め込み式の端末"
 
-#: ../plugins/terminal/terminal.py:249
+#: ../plugins/terminal/terminal.py:286
 msgid "Terminal"
 msgstr "端末"
 
-#: ../plugins/terminal/terminal.py:272
+#: ../plugins/terminal/terminal.py:309
 msgid "C_hange Directory"
 msgstr "フォルダの変更(_H)"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:144
+msgid "Document Words"
+msgstr "文字列の候補"
+
+#: ../plugins/wordcompletion/wordcompletion.gedit-plugin.desktop.in.in.h:1
+msgid "Word Completion"
+msgstr "文字列の補完"
+
+#: ../plugins/wordcompletion/wordcompletion.gedit-plugin.desktop.in.in.h:2
+msgid "Word completion using the completion framework"
+msgstr "補完フレームワークを用いて単語や文字列を補完します。"
