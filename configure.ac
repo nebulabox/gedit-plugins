@@ -89,9 +89,9 @@ ALL_PLUGINS="bookmarks showtabbar charmap drawspaces wordcompletion"
 USEFUL_PLUGINS="bookmarks showtabbar charmap drawspaces wordcompletion"
 DEFAULT_PLUGINS="bookmarks showtabbar charmap drawspaces wordcompletion"
 
-PYTHON_ALL_PLUGINS="bracketcompletion codecomment colorpicker commander joinlines multiedit sessionsaver smartspaces terminal"
-PYTHON_USEFUL_PLUGINS="bracketcompletion codecomment colorpicker commander joinlines multiedit sessionsaver smartspaces terminal"
-PYTHON_DEFAULT_PLUGINS="bracketcompletion codecomment colorpicker commander joinlines multiedit sessionsaver smartspaces terminal"
+PYTHON_ALL_PLUGINS="bracketcompletion codecomment colorpicker commander joinlines multiedit sessionsaver smartspaces terminal synctex"
+PYTHON_USEFUL_PLUGINS="bracketcompletion codecomment colorpicker commander joinlines multiedit sessionsaver smartspaces terminal synctex"
+PYTHON_DEFAULT_PLUGINS="bracketcompletion codecomment colorpicker commander joinlines multiedit sessionsaver smartspaces terminal synctex"
 
 DIST_PLUGINS="$ALL_PLUGINS $PYTHON_ALL_PLUGINS"
 
@@ -446,6 +446,9 @@ plugins/terminal/Makefile
 plugins/terminal/terminal.gedit-plugin.desktop.in
 plugins/wordcompletion/Makefile
 plugins/wordcompletion/wordcompletion.gedit-plugin.desktop.in
+plugins/synctex/Makefile
+plugins/synctex/synctex/Makefile
+plugins/synctex/synctex.gedit-plugin.desktop.in
 po/Makefile.in])
 
 AC_OUTPUT
