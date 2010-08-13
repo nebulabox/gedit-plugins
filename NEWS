@@ -1,4 +1,19 @@
 ====================
+gedit-plugins 2.31.5
+====================
+
+Note: this is a special release, which doesn't follow from
+2.31.4 but from 2.30.0 instead. 2.31.4 was targetting GNOME 3.0,
+which will not  be released until March 2011. This release includes a
+new Synctex plugin, which is needed to use the new SyncTeX support
+that Evince 2.32 will get. 
+
+New features and fixes
+====================== 
+- Added new synctex plugin. (José Aliste)
+
+
+====================
 gedit-plugins 2.31.4
 ====================
 
