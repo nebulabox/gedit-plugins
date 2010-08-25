@@ -12,12 +12,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&component=Plugins\n"
-"POT-Creation-Date: 2010-01-25 22:45+0000\n"
-"PO-Revision-Date: 2010-02-02 13:58+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-25 21:58+0200\n"
+"PO-Revision-Date: 2010-08-22 12:41+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -242,44 +242,44 @@ msgstr "Úprava dokumentu na více místech současně"
 msgid "Multi Edit"
 msgstr "Vícenásobná úprava"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:279
+#: ../plugins/multiedit/multiedit/documenthelper.py:300
 msgid "Added edit point..."
 msgstr "Přidat editační bod…"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:417
+#: ../plugins/multiedit/multiedit/documenthelper.py:438
 msgid "Column Mode..."
 msgstr "Sloupcový režim…"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:535
+#: ../plugins/multiedit/multiedit/documenthelper.py:556
 msgid "Removed edit point..."
 msgstr "Odebrat editační bod…"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:685
+#: ../plugins/multiedit/multiedit/documenthelper.py:706
 msgid "Cancelled column mode..."
 msgstr "Sloupcový režim zrušen…"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:804
+#: ../plugins/multiedit/multiedit/documenthelper.py:825
 msgid "Enter column edit mode using selection"
 msgstr "Vstoupit do režimu úpravy sloupců pomocí výběru"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:805
+#: ../plugins/multiedit/multiedit/documenthelper.py:826
 msgid "Toggle edit point"
 msgstr "Přepnout editační bod"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:806
+#: ../plugins/multiedit/multiedit/documenthelper.py:827
 msgid "Add edit point at beginning of line/selection"
 msgstr "Přidat editační bod na začátek řádku/výběru"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:807
+#: ../plugins/multiedit/multiedit/documenthelper.py:828
 msgid "Add edit point at end of line/selection"
 msgstr "Přidat editační bod na konec řádku/výběru"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:843
-#: ../plugins/multiedit/multiedit/windowhelper.py:69
+#: ../plugins/multiedit/multiedit/documenthelper.py:864
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
 msgid "Multi Edit Mode"
 msgstr "Režim vícenásobné úpravy"
 
-#: ../plugins/multiedit/multiedit/windowhelper.py:69
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
 msgid "Start multi edit mode"
 msgstr "Začít režim vícenásobné úpravy"
 
@@ -373,11 +373,11 @@ msgstr "Vložit terminál do spodního panelu."
 msgid "Embedded Terminal"
 msgstr "Vestavěný terminál"
 
-#: ../plugins/terminal/terminal.py:262
+#: ../plugins/terminal/terminal.py:286
 msgid "Terminal"
 msgstr "Terminál"
 
-#: ../plugins/terminal/terminal.py:285
+#: ../plugins/terminal/terminal.py:309
 msgid "C_hange Directory"
 msgstr "Změnit _adresář"
 
@@ -393,3 +393,15 @@ msgstr "Dokončování slov"
 msgid "Word completion using the completion framework"
 msgstr "Dokončování slov využívající vývojářský systém pro doplňování"
 
+#: ../plugins/synctex/synctex.gedit-plugin.desktop.in.in.h:1
+msgid "SyncTeX"
+msgstr "SyncTeX"
+
+#: ../plugins/synctex/synctex.gedit-plugin.desktop.in.in.h:2
+msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgstr "Synchronizovat mezi formáty LaTeX a PDF s aplikacemi gedit a evince."
+
+#: ../plugins/synctex/synctex/synctex.py:280
+#: ../plugins/synctex/synctex/synctex.py:281
+msgid "Forward Search"
+msgstr "Hledat vpřed"
