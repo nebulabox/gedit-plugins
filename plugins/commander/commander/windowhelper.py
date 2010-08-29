@@ -56,9 +56,9 @@ class WindowHelper:
 	def update_ui(self):
 		pass
 
-	def on_commander_mode(self, action):
+	def _do_command(self, group, obj, keyval, mod):
 		view = self._window.get_active_view()
-		
+
 		if not view:
 			return False
 
@@ -74,7 +74,7 @@ class WindowHelper:
 			self._view = None
 
 		return True
-	
+
 	def on_entry_destroy(self, widget):
 		self._entry = None
 		self._action_group.get_action('CommanderModeAction').set_active(False)
