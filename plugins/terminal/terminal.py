@@ -297,7 +297,7 @@ class TerminalWindowHelper(object):
         if doc is None:
             return None
         location = doc.get_location()
-        if location is not None and gedit.utils.location_has_file_scheme(location):
+        if location is not None and gedit.utils.uri_has_file_scheme(location.get_uri()):
             directory = location.get_parent()
             return directory.get_path()
         return None
