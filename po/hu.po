@@ -11,9 +11,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&component=Plugins\n"
-"POT-Creation-Date: 2010-01-17 00:07+0000\n"
-"PO-Revision-Date: 2010-01-21 23:00+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-14 11:58+0200\n"
+"PO-Revision-Date: 2010-09-14 11:36+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at fsf dot hu>\n"
 "MIME-Version: 1.0\n"
@@ -128,7 +128,6 @@ msgid "Command line interface for advanced editing"
 msgstr "Parancssoros felület speciális szerkesztéshez"
 
 #: ../plugins/commander/commander.gedit-plugin.desktop.in.in.h:2
-#| msgid "Co_mment Code"
 msgid "Commander"
 msgstr "Parancsnok"
 
@@ -242,44 +241,68 @@ msgstr "Dokumentum szerkesztése egyszerre több helyen"
 msgid "Multi Edit"
 msgstr "Párhuzamos szerkesztés"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:279
+#: ../plugins/multiedit/multiedit/documenthelper.py:315
 msgid "Added edit point..."
 msgstr "Szerkesztési pont hozzáadása…"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:417
+#: ../plugins/multiedit/multiedit/documenthelper.py:651
 msgid "Column Mode..."
 msgstr "Oszlopos mód…"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:535
+#: ../plugins/multiedit/multiedit/documenthelper.py:773
 msgid "Removed edit point..."
 msgstr "Szerkesztési pont eltávolítva…"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:685
+#: ../plugins/multiedit/multiedit/documenthelper.py:936
 msgid "Cancelled column mode..."
 msgstr "Oszlopos mód megszakítva…"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:804
+#: ../plugins/multiedit/multiedit/documenthelper.py:1274
 msgid "Enter column edit mode using selection"
 msgstr "Belépés az oszlopos szerkesztési módba a kijelölés használatával"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:805
+#: ../plugins/multiedit/multiedit/documenthelper.py:1275
+msgid "Enter <b>smart</b> column edit mode using selection"
+msgstr ""
+"Belépés az <b>intelligens</b> oszlopszerkesztési módba a kijelölés "
+"használatával"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1276
+msgid "<b>Smart</b> column align mode using selection"
+msgstr "<b>Intelligens</b> oszlopigazítási mód a kijelölés használatával"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1277
+msgid "<b>Smart</b> column align mode with additional space using selection"
+msgstr ""
+"<b>Intelligens</b> oszlopigazítási mód további szóközzel a kijelölés "
+"használatával"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1279
 msgid "Toggle edit point"
 msgstr "Szerkesztési pont bekapcsolása"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:806
+#: ../plugins/multiedit/multiedit/documenthelper.py:1280
 msgid "Add edit point at beginning of line/selection"
 msgstr "Szerkesztési pont hozzáadása a sor vagy kijelölés elején"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:807
+#: ../plugins/multiedit/multiedit/documenthelper.py:1281
 msgid "Add edit point at end of line/selection"
 msgstr "Szerkesztési pont hozzáadása a sor vagy kijelölés végén"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:843
-#: ../plugins/multiedit/multiedit/windowhelper.py:69
+#: ../plugins/multiedit/multiedit/documenthelper.py:1282
+msgid "Align edit points"
+msgstr "Szerkesztési pontok igazítása"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1283
+msgid "Align edit points with additional space"
+msgstr "Szerkesztési pontok igazítása további szóközzel"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1319
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
 msgid "Multi Edit Mode"
 msgstr "Párhuzamos szerkesztési mód"
 
-#: ../plugins/multiedit/multiedit/windowhelper.py:69
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
 msgid "Start multi edit mode"
 msgstr "Párhuzamos szerkesztés megkezdése"
 
@@ -373,11 +396,11 @@ msgstr "Terminál beágyazása az alsó ablaktáblába."
 msgid "Embedded Terminal"
 msgstr "Beágyazott terminál"
 
-#: ../plugins/terminal/terminal.py:262
+#: ../plugins/terminal/terminal.py:286
 msgid "Terminal"
 msgstr "Terminál"
 
-#: ../plugins/terminal/terminal.py:285
+#: ../plugins/terminal/terminal.py:308
 msgid "C_hange Directory"
 msgstr "Könyvtár_váltás"
 
@@ -393,3 +416,15 @@ msgstr "Szókiegészítés"
 msgid "Word completion using the completion framework"
 msgstr "A szókiegészítés használata a kiegészítő keretrendszer használatával"
 
+#: ../plugins/synctex/synctex.gedit-plugin.desktop.in.in.h:1
+msgid "SyncTeX"
+msgstr "SyncTeX"
+
+#: ../plugins/synctex/synctex.gedit-plugin.desktop.in.in.h:2
+msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgstr "Szinkronizálás LaTeX és PDF között a gedit és evince használatával."
+
+#: ../plugins/synctex/synctex/synctex.py:280
+#: ../plugins/synctex/synctex/synctex.py:281
+msgid "Forward Search"
+msgstr "Keresés előre"
