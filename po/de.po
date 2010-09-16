@@ -1,4 +1,4 @@
-# German gedit-pugins translation
+# German gedit-plugins translation
 # Copyright (C) 1999-2003 Free Software Foundation, Inc.
 # Manuel Borchers <webmaster@matronix.de>, 2002.
 # Christian Neumair <chris@gnome-de.org>, 2002-2003.
@@ -7,20 +7,21 @@
 # Hendrik Richter <hendrikr@gnome.org>, 2005.
 # Andre Klapper <ak-47@gmx.net>, 2008.
 # Mario Blättermann <mariobl@gnome.org>, 2008, 2009.
+# Christian Kirbach <Christian.Kirbach@googlemail.com>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gedit 2.2.x\n"
+"Project-Id-Version: gedit-plugins 2.32\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&component=Plugins\n"
-"POT-Creation-Date: 2010-02-05 01:09+0000\n"
-"PO-Revision-Date: 2010-02-14 11:31+0100\n"
-"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
-"Language-Team: German <gnome-de@gnome.org>\n"
+"POT-Creation-Date: 2010-09-10 21:55+0000\n"
+"PO-Revision-Date: 2010-09-04 01:25+0200\n"
+"Last-Translator: Christian Kirbach <Christian.Kirbach@googlemail.com>\n"
+"Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
 
@@ -244,44 +245,68 @@ msgstr "Dokument an mehreren Stellen gleichzeitig bearbeiten"
 msgid "Multi Edit"
 msgstr "Mehrfachbearbeitung"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:279
+#: ../plugins/multiedit/multiedit/documenthelper.py:315
 msgid "Added edit point..."
 msgstr "Hinzugefügter Bearbeitungspunkt …"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:417
+#: ../plugins/multiedit/multiedit/documenthelper.py:651
 msgid "Column Mode..."
 msgstr "Spaltenmodus …"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:535
+#: ../plugins/multiedit/multiedit/documenthelper.py:773
 msgid "Removed edit point..."
 msgstr "Gelöschter Bearbeitungspunkt …"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:685
+#: ../plugins/multiedit/multiedit/documenthelper.py:936
 msgid "Cancelled column mode..."
 msgstr "Abgebrochener Spaltenmodus …"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:804
+#: ../plugins/multiedit/multiedit/documenthelper.py:1274
 msgid "Enter column edit mode using selection"
 msgstr "Mit dieser Auswahl in den Spalten-Bearbeitungsmodus wechseln"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:805
+#: ../plugins/multiedit/multiedit/documenthelper.py:1275
+msgid "Enter <b>smart</b> column edit mode using selection"
+msgstr ""
+"Mit dieser Auswahl in den <b>intelligenten</b> Spalten-Bearbeitungsmodus "
+"wechseln"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1276
+msgid "<b>Smart</b> column align mode using selection"
+msgstr "<b>Intelligenter</b> Spalten-Bearbeitungsmodus mit dieser Auswahl"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1277
+msgid "<b>Smart</b> column align mode with additional space using selection"
+msgstr ""
+"<b>Intelligenter</b> Spalten-Bearbeitungsmodus mit zusätzlichem mit dieser "
+"Auswahl"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1279
 msgid "Toggle edit point"
 msgstr "Bearbeitungspunkt umschalten"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:806
+#: ../plugins/multiedit/multiedit/documenthelper.py:1280
 msgid "Add edit point at beginning of line/selection"
 msgstr "Bearbeitungspunkt am Beginn der Zeile/Auswahl hinzufügen"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:807
+#: ../plugins/multiedit/multiedit/documenthelper.py:1281
 msgid "Add edit point at end of line/selection"
 msgstr "Bearbeitungspunkt am Ende der Zeile/Auswahl hinzufügen"
 
-#: ../plugins/multiedit/multiedit/documenthelper.py:843
-#: ../plugins/multiedit/multiedit/windowhelper.py:69
+#: ../plugins/multiedit/multiedit/documenthelper.py:1282
+msgid "Align edit points"
+msgstr "Bearbeitungspunkte ausrichten"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1283
+msgid "Align edit points with additional space"
+msgstr "Bearbeitungspunkte mit zusätzlichem Abstand ausrichten"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1319
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
 msgid "Multi Edit Mode"
 msgstr "Mehrfachbearbeitungsmodus"
 
-#: ../plugins/multiedit/multiedit/windowhelper.py:69
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
 msgid "Start multi edit mode"
 msgstr "In den Mehrfachbearbeitungsmodus wechseln"
 
@@ -377,11 +402,11 @@ msgstr "Terminal in die untere Leiste einbetten"
 msgid "Embedded Terminal"
 msgstr "Eingebettetes Terminal"
 
-#: ../plugins/terminal/terminal.py:262
+#: ../plugins/terminal/terminal.py:286
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:285
+#: ../plugins/terminal/terminal.py:308
 msgid "C_hange Directory"
 msgstr "_Ordner wechseln"
 
@@ -396,6 +421,19 @@ msgstr "Wortvervollständigung"
 #: ../plugins/wordcompletion/wordcompletion.gedit-plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Wortvervollständigung mit Hilfe des Vervollständigungs-Frameworks"
+
+#: ../plugins/synctex/synctex.gedit-plugin.desktop.in.in.h:1
+msgid "SyncTeX"
+msgstr "SyncTeX"
+
+#: ../plugins/synctex/synctex.gedit-plugin.desktop.in.in.h:2
+msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgstr "Abgleich zwischen LaTeX and PDF mit gedit und Evince."
+
+#: ../plugins/synctex/synctex/synctex.py:280
+#: ../plugins/synctex/synctex/synctex.py:281
+msgid "Forward Search"
+msgstr "Vorwärtssuche"
 
 #~ msgid "Drawing color:"
 #~ msgstr "Zeichenfarbe:"
