@@ -13,15 +13,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins 2.32\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 18:31+0200\n"
-"PO-Revision-Date: 2010-09-11 17:12+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gedit&component=Plugins\n"
+"POT-Creation-Date: 2010-09-18 11:37+0000\n"
+"PO-Revision-Date: 2010-09-18 21:39+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -427,3 +428,13 @@ msgstr "Synchronizovat mezi formáty LaTeX a PDF s aplikacemi gedit a evince."
 #: ../plugins/synctex/synctex/synctex.py:281
 msgid "Forward Search"
 msgstr "Hledat vpřed"
+
+#. ex:ts=4:et:
+#: ../plugins/textsize/textsize.gedit-plugin.desktop.in.in.h:1
+msgid "Easily increase and decrease the text size"
+msgstr "Snadné zvětšení a zmenšení velikosti textu"
+
+#: ../plugins/textsize/textsize.gedit-plugin.desktop.in.in.h:2
+msgid "Text Size"
+msgstr "Velikost textu"
+
