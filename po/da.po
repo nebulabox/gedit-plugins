@@ -1,81 +1,116 @@
-# Danish translations of gedit.
-# Copyright (C) 1999, 2000, 01, 02, 03, 04 Free Software Foundation, Inc.
+# Danish translations of gedit-plugins.
+# Copyright (C) 2010 Free Software Foundation, Inc.
 # Birger Langkjer <birger.langkjer@image.dk>, 1999.
 # Kenneth Christiansen <kenneth@gnome.org>, 1999, 2000.
 # Keld Simonsen <keld@dkuug.dk>, 2000, 01.
 # Ole Laursen <olau@hardworking.dk>, 2002, 03, 04.
 # Niels Rasmussen <nielsrasmus@gmail.com>, 2008
+# Joe Hansen (joedalton2@yahoo.dk), 2010.
 #
 # Konventioner:
 #
-#   gedit -> tekstredigering
-#   plugin -> udvidelsesmodul
+#  draw -> vis (tingene vises på skærmen, derfor ikke tegn).
+#  gedit -> tekstredigering
+#  plugin -> udvidelsesmodul
+#  white space -> blanktegn
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gedit 0.7.1\n"
+"Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-13 21:27+0100\n"
-"PO-Revision-Date: 2008-01-13 20:27+0100\n"
-"Last-Translator: Niels Rasmussen <nielsrasmus@gmail.com>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"POT-Creation-Date: 2011-01-02 11:31+0100\n"
+"PO-Revision-Date: 2010-12-27 10:23+0100\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../plugins/bracketcompletion/bracketcompletion.gedit-plugin.desktop.in.h:1
+#: ../plugins/bookmarks/bookmarks.gedit-plugin.desktop.in.in.h:1
+msgid "Bookmarks"
+msgstr "Bogmærker"
+
+#: ../plugins/bookmarks/bookmarks.gedit-plugin.desktop.in.in.h:2
+msgid "Easy document navigation with bookmarks"
+msgstr "Nem dokumentnavigering med bogmærker"
+
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:137
+msgid "Toggle Bookmark"
+msgstr "Skift bogmærke"
+
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:138
+msgid "Toggle bookmark status of the current line"
+msgstr "Skift bogmærkestatus på den aktuelle linje"
+
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:140
+msgid "Goto Next Bookmark"
+msgstr "Gå til næste bogmærke"
+
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:141
+msgid "Goto the next bookmark"
+msgstr "Gå til det næste bogmærke"
+
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:143
+msgid "Goto Previous Bookmark"
+msgstr "Gå til forrige bogmærke"
+
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:144
+msgid "Goto the previous bookmark"
+msgstr "Gå til det forrige bogmærke"
+
+#: ../plugins/bracketcompletion/bracketcompletion.gedit-plugin.desktop.in.in.h:1
 msgid "Automatically adds closing brackets."
 msgstr "Tilføjer automatisk afsluttende klammer."
 
-#: ../plugins/bracketcompletion/bracketcompletion.gedit-plugin.desktop.in.h:2
+#: ../plugins/bracketcompletion/bracketcompletion.gedit-plugin.desktop.in.in.h:2
 msgid "Bracket Completion"
 msgstr "Klammefuldførelse"
 
-#: ../plugins/charmap/charmap.gedit-plugin.desktop.in.h:1
-#: ../plugins/charmap/gedit-charmap-plugin.c:254
+#: ../plugins/charmap/charmap.gedit-plugin.desktop.in.in.h:1
+#: ../plugins/charmap/gedit-charmap-plugin.c:258
 msgid "Character Map"
 msgstr "Tegnoversigt"
 
-#: ../plugins/charmap/charmap.gedit-plugin.desktop.in.h:2
+#: ../plugins/charmap/charmap.gedit-plugin.desktop.in.in.h:2
 msgid "Insert special characters just by clicking on them."
 msgstr "Indsæt speicaltegn ved at klikke på dem."
 
-#: ../plugins/codecomment/codecomment.gedit-plugin.desktop.in.h:1
+#: ../plugins/codecomment/codecomment.gedit-plugin.desktop.in.in.h:1
 msgid "Code comment"
 msgstr "Kodekommentar"
 
-#: ../plugins/codecomment/codecomment.gedit-plugin.desktop.in.h:2
+#: ../plugins/codecomment/codecomment.gedit-plugin.desktop.in.in.h:2
 msgid "Comment out or uncomment a selected block of code."
-msgstr "Kommentér eller udkommentér den valgte kodeblok."
+msgstr "Kommenter eller udkommenter den valgte kodeblok."
 
-#: ../plugins/codecomment/codecomment.py:210
+#: ../plugins/codecomment/codecomment.py:230
 msgid "Co_mment Code"
-msgstr "Ko_mmentér Kode"
+msgstr "Ko_mmenter kode"
 
-#: ../plugins/codecomment/codecomment.py:212
+#: ../plugins/codecomment/codecomment.py:232
 msgid "Comment the selected code"
-msgstr "Kommentér den valgte kode"
+msgstr "Kommenter den valgte kode"
 
-#: ../plugins/codecomment/codecomment.py:216
+#: ../plugins/codecomment/codecomment.py:236
 msgid "U_ncomment Code"
-msgstr "U_dkommentér Kode"
+msgstr "U_dkommenter kode"
 
-#: ../plugins/codecomment/codecomment.py:218
+#: ../plugins/codecomment/codecomment.py:238
 msgid "Uncomment the selected code"
-msgstr "Udkommentér den valgte kode"
+msgstr "Udkommenter den valgte kode"
 
 #. ex:ts=4:et:
-#: ../plugins/colorpicker/colorpicker.gedit-plugin.desktop.in.h:1
+#: ../plugins/colorpicker/colorpicker.gedit-plugin.desktop.in.in.h:1
 msgid "Color Picker"
 msgstr "Farvevælger"
 
-#: ../plugins/colorpicker/colorpicker.gedit-plugin.desktop.in.h:2
+#: ../plugins/colorpicker/colorpicker.gedit-plugin.desktop.in.in.h:2
 msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr "Vælg en farve fra dialogvinduet og indsæt dens hexadecimale værdi."
 
 #: ../plugins/colorpicker/colorpicker.py:73
 msgid "Pick _Color..."
-msgstr "Vælg _Farve..."
+msgstr "Vælg _farve..."
 
 #: ../plugins/colorpicker/colorpicker.py:74
 msgid "Pick a color from a dialog"
@@ -89,36 +124,100 @@ msgstr "Vælg farve"
 msgid "_Insert"
 msgstr "_Indsæt"
 
-#: ../plugins/drawspaces/drawspaces.gedit-plugin.desktop.in.h:1
-msgid "Draw Spaces"
-msgstr "Tegn mellemrum"
-
-#: ../plugins/drawspaces/drawspaces.gedit-plugin.desktop.in.h:2
-msgid "Draw Spaces and Tabs"
-msgstr "Tegn mellemrum og indrykninger"
-
-#: ../plugins/drawspaces/drawspaces.glade.h:1
-msgid "Draw non-breaking spaces"
-msgstr "Tegn ikke-ombrydelige mellemrum"
-
-#: ../plugins/drawspaces/drawspaces.glade.h:2
-msgid "Draw spaces"
-msgstr "Tegn mellemrum"
-
-#: ../plugins/drawspaces/drawspaces.glade.h:3
-msgid "Draw tabs"
-msgstr "Tegn indryk"
-
-#: ../plugins/drawspaces/drawspaces.glade.h:4
-msgid "Drawing color:"
-msgstr "Tegnfarve:"
-
 #. ex:ts=4:et:
-#: ../plugins/joinlines/joinlines.gedit-plugin.desktop.in.h:1
+#: ../plugins/commander/commander.gedit-plugin.desktop.in.in.h:1
+msgid "Command line interface for advanced editing"
+msgstr "Grænseflade for kommandolinje til avanceret redigering"
+
+#: ../plugins/commander/commander.gedit-plugin.desktop.in.in.h:2
+msgid "Commander"
+msgstr "Commander"
+
+#: ../plugins/drawspaces/drawspaces.gedit-plugin.desktop.in.in.h:1
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:4
+msgid "Draw Spaces"
+msgstr "Vis mellemrum"
+
+#: ../plugins/drawspaces/drawspaces.gedit-plugin.desktop.in.in.h:2
+msgid "Draw Spaces and Tabs"
+msgstr "Vis mellemrum og indrykninger"
+
+# indledende
+#: ../plugins/drawspaces/drawspaces.ui.h:1
+msgid "Draw leading spaces"
+msgstr "Vis foranstillet mellemrum"
+
+#: ../plugins/drawspaces/drawspaces.ui.h:2
+msgid "Draw new lines"
+msgstr "Vis nye linjer"
+
+#: ../plugins/drawspaces/drawspaces.ui.h:3
+msgid "Draw non-breaking spaces"
+msgstr "Vis ikke-ombrydelige mellemrum"
+
+#: ../plugins/drawspaces/drawspaces.ui.h:4
+msgid "Draw spaces"
+msgstr "Vis mellemrum"
+
+#: ../plugins/drawspaces/drawspaces.ui.h:5
+msgid "Draw spaces in text"
+msgstr "Vis mellemrum i tekst"
+
+#: ../plugins/drawspaces/drawspaces.ui.h:6
+msgid "Draw tabs"
+msgstr "Vis indryk"
+
+# afsluttende
+#: ../plugins/drawspaces/drawspaces.ui.h:7
+msgid "Draw trailing spaces"
+msgstr "Vis efterfølgende mellemrum"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:1
+msgid "Draw Leading Spaces"
+msgstr "Vis foranstillet mellemrum"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:2
+msgid "Draw New lines"
+msgstr "Vis tegn for linjeskift"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:3
+msgid "Draw Non-Breaking Spaces"
+msgstr "Vis ikke-ombrydelige mellemrum"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:5
+msgid "Draw Spaces in Text"
+msgstr "Vis mellemrum i tekst"
+
+# evt. "Vis indrykning"
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:6
+msgid "Draw Tabs"
+msgstr "Vis indryk"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:7
+msgid "Draw Trailing Spaces"
+msgstr "Vis efterfølgende mellemrum"
+
+#: ../plugins/drawspaces/gedit-drawspaces.schemas.in.h:8
+msgid "Show White Spaces"
+msgstr "Vis blanktegn"
+
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:167
+msgid "Show _White Space"
+msgstr "Vis _blanktegn"
+
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:168
+msgid "Show spaces and tabs"
+msgstr "Vis mellemrum og indrykninger"
+
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:612
+msgid "Error dialog"
+msgstr "Fejldialog"
+
+#: ../plugins/joinlines/joinlines.gedit-plugin.desktop.in.in.h:1
 msgid "Join several lines or split long ones"
 msgstr "Sammenføj flere linjer eller del de lange"
 
-#: ../plugins/joinlines/joinlines.gedit-plugin.desktop.in.h:2
+#: ../plugins/joinlines/joinlines.gedit-plugin.desktop.in.in.h:2
 msgid "Join/Split Lines"
 msgstr "Sammenføj/Del linjer"
 
@@ -138,6 +237,79 @@ msgstr "_Del Linjer"
 msgid "Split the selected lines"
 msgstr "Del den valgte linje"
 
+#. ex:ts=4:et:
+#: ../plugins/multiedit/multiedit.gedit-plugin.desktop.in.in.h:1
+msgid "Edit document in multiple places at once"
+msgstr "Rediger dokument flere steder på en gang"
+
+#: ../plugins/multiedit/multiedit.gedit-plugin.desktop.in.in.h:2
+msgid "Multi Edit"
+msgstr "Multiredigering"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:315
+msgid "Added edit point..."
+msgstr "Tilføjede redigeringspunkt..."
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:651
+msgid "Column Mode..."
+msgstr "Kolonnetilstand..."
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:773
+msgid "Removed edit point..."
+msgstr "Fjernede redigeringspunkt..."
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:936
+msgid "Cancelled column mode..."
+msgstr "Kolonnetilstand blev afbrudt..."
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1274
+msgid "Enter column edit mode using selection"
+msgstr "Skift til kolonneredigeringstilstand ved brug af markering"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1275
+msgid "Enter <b>smart</b> column edit mode using selection"
+msgstr ""
+"Skift til kolonneredigeringstilstanden <b>smart</b> med brug af markering"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1276
+msgid "<b>Smart</b> column align mode using selection"
+msgstr "Kolonnejusteringstilstanden <b>Smart</b> med brug af markering"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1277
+msgid "<b>Smart</b> column align mode with additional space using selection"
+msgstr ""
+"Kolonnejusteringstilstanden <b>Smart</b> med yderligere mellemrum og brug af "
+"markering"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1279
+msgid "Toggle edit point"
+msgstr "Skift redigeringspunkt"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1280
+msgid "Add edit point at beginning of line/selection"
+msgstr "Tilføj redigeringspunkt i begyndelsen af linjen eller markeringen"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1281
+msgid "Add edit point at end of line/selection"
+msgstr "Tilføj redigeringspunkt ved slutningen på linjen eller markeringen"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1282
+msgid "Align edit points"
+msgstr "Juster redigeringspunkter"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1283
+msgid "Align edit points with additional space"
+msgstr "Juster redigeringspunkter med yderligere mellemrum"
+
+#: ../plugins/multiedit/multiedit/documenthelper.py:1319
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
+msgid "Multi Edit Mode"
+msgstr "Multiredigeringstilstand"
+
+#: ../plugins/multiedit/multiedit/windowhelper.py:70
+msgid "Start multi edit mode"
+msgstr "Skift til multiredigeringstilstand"
+
 #: ../plugins/showtabbar/gedit-show-tabbar-plugin.c:208
 msgid "Tab_bar"
 msgstr "Faneblads_linje"
@@ -154,241 +326,118 @@ msgstr "Fanebladslinjen er synlig"
 msgid "Whether the tabbar should be visible in editing windows."
 msgstr "Vælg om fanebladslinjen skal være synlig i redigeringsvinduer."
 
-#: ../plugins/showtabbar/showtabbar.gedit-plugin.desktop.in.h:1
+#: ../plugins/showtabbar/showtabbar.gedit-plugin.desktop.in.in.h:1
 msgid "Add a menu entry to show/hide the tabbar."
 msgstr "Tilføj et menupunkt til at vise/skjule fanebladslinjen."
 
-#: ../plugins/showtabbar/showtabbar.gedit-plugin.desktop.in.h:2
+#: ../plugins/showtabbar/showtabbar.gedit-plugin.desktop.in.in.h:2
 msgid "Show/Hide Tabbar"
-msgstr "Vis/Skjul Fanebladslinjen"
+msgstr "Vis/skjul fanebladslinjen"
 
-#: ../plugins/sessionsaver/dialogs.py:165
+#: ../plugins/sessionsaver/__init__.py:64
+msgid "Sa_ved sessions"
+msgstr "_Gemte sessioner"
+
+#: ../plugins/sessionsaver/__init__.py:65
+msgid "_Save current session"
+msgstr "_Gem aktuel session"
+
+#: ../plugins/sessionsaver/__init__.py:65
+msgid "Save the current document list as a new session"
+msgstr "Gem den aktuelle dokumentliste som en ny session"
+
+#: ../plugins/sessionsaver/__init__.py:66
+msgid "_Manage saved sessions..."
+msgstr "_Håndter gemte sessioner..."
+
+#: ../plugins/sessionsaver/__init__.py:66
+msgid "Open the saved session manager"
+msgstr "Åbn håndtering af gemte sessioner"
+
+#: ../plugins/sessionsaver/__init__.py:106
+#, python-format
+msgid "Recover '%s' session"
+msgstr "Genopret sessionen »%s«"
+
+#: ../plugins/sessionsaver/dialogs.py:167
 msgid "Session Name"
-msgstr "Session Navn"
+msgstr "Sessionsnavn"
 
 #. ex:ts=4:et:
-#: ../plugins/sessionsaver/sessionsaver.gedit-plugin.desktop.in.h:1
+#: ../plugins/sessionsaver/sessionsaver.gedit-plugin.desktop.in.in.h:1
 msgid "Save and restore your working sessions"
 msgstr "Gem og gendan dine aktuelle sessioner"
 
-#: ../plugins/sessionsaver/sessionsaver.gedit-plugin.desktop.in.h:2
+#: ../plugins/sessionsaver/sessionsaver.gedit-plugin.desktop.in.in.h:2
 msgid "Session Saver"
-msgstr "Gem Sessioner"
+msgstr "Gem sessioner"
 
-#: ../plugins/sessionsaver/sessionsaver.glade.h:1
+#: ../plugins/sessionsaver/sessionsaver.ui.h:1
+msgid "Save session"
+msgstr "Gem session"
+
+#: ../plugins/sessionsaver/sessionsaver.ui.h:2
+msgid "Saved Sessions"
+msgstr "Gemte sessioner"
+
+#: ../plugins/sessionsaver/sessionsaver.ui.h:3
 msgid "Session name:"
-msgstr "Session navn:"
+msgstr "Sessionsnavn:"
 
-#: ../plugins/smartspaces/smartspaces.gedit-plugin.desktop.in.h:1
+#: ../plugins/smartspaces/smartspaces.gedit-plugin.desktop.in.in.h:1
 msgid "Forget you're not using tabulations."
 msgstr "Glem ikke at du bruger tabulatorer."
 
-#: ../plugins/smartspaces/smartspaces.gedit-plugin.desktop.in.h:2
+#: ../plugins/smartspaces/smartspaces.gedit-plugin.desktop.in.in.h:2
 msgid "Smart Spaces"
 msgstr "Smarte mellemrum"
 
-#: ../plugins/terminal/terminal.gedit-plugin.desktop.in.h:1
+#: ../plugins/terminal/terminal.gedit-plugin.desktop.in.in.h:1
 msgid "Embed a terminal in the bottom pane."
 msgstr "Indlejr en terminal i nederste felt."
 
-#: ../plugins/terminal/terminal.gedit-plugin.desktop.in.h:2
+#: ../plugins/terminal/terminal.gedit-plugin.desktop.in.in.h:2
 msgid "Embedded Terminal"
 msgstr "Indlejret terminalvindue"
 
-#: ../plugins/terminal/terminal.py:210
+#: ../plugins/terminal/terminal.py:286
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:231
+#: ../plugins/terminal/terminal.py:308
 msgid "C_hange Directory"
 msgstr "S_kift filkatalog"
 
-#~ msgid "_ASCII Table"
-#~ msgstr "_ASCII-tabel"
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:144
+msgid "Document Words"
+msgstr "Ord i dokumentet"
 
-#~ msgid "Pop-up a dialog containing an ASCII Table"
-#~ msgstr "Viser et vindue med ASCII-tabellen."
+#: ../plugins/wordcompletion/wordcompletion.gedit-plugin.desktop.in.in.h:1
+msgid "Word Completion"
+msgstr "Ordfuldførelse"
 
-#~ msgid "Char"
-#~ msgstr "Tegn"
+#: ../plugins/wordcompletion/wordcompletion.gedit-plugin.desktop.in.in.h:2
+msgid "Word completion using the completion framework"
+msgstr "Ordfuldførelse med brug af fuldførelsesramme"
 
-#~ msgid "Dec#"
-#~ msgstr "Dec. nr."
+#: ../plugins/synctex/synctex.gedit-plugin.desktop.in.in.h:1
+msgid "SyncTeX"
+msgstr "SyncTeX"
 
-#~ msgid "Hex#"
-#~ msgstr "Hex. nr."
+#: ../plugins/synctex/synctex.gedit-plugin.desktop.in.in.h:2
+msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgstr "Synkroniser mellem LaTeX og PDF med gedit og evince."
 
-#~ msgid "Name"
-#~ msgstr "Navn"
+#: ../plugins/synctex/synctex/synctex.py:280
+#: ../plugins/synctex/synctex/synctex.py:281
+msgid "Forward Search"
+msgstr "Søg fremad"
 
-#~ msgid "ASCII Table"
-#~ msgstr "ASCII-tabel"
+#. ex:ts=4:et:
+#: ../plugins/textsize/textsize.gedit-plugin.desktop.in.in.h:1
+msgid "Easily increase and decrease the text size"
+msgstr "Øg og formindsk nemt tekststørrelsen"
 
-#~ msgid "ASCII table"
-#~ msgstr "ASCII-tabel"
-
-#~ msgid "This plugin displays a pop-up dialog which contains an ASCII Table."
-#~ msgstr "Dette udvidelsesmodul viser et vindue med ASCII-tabellen."
-
-#~ msgid "Open CVS Chan_geLogs"
-#~ msgstr "Åbn CVS-Chan_geLog"
-
-#~ msgid "Searches for ChangeLogs in the current document and opens them"
-#~ msgstr "Søger efter ChangeLog-filer i det aktuelle dokument og åbner dem"
-
-#~ msgid "A plugin that opens ChangeLogs found in CVS commit messages."
-#~ msgstr ""
-#~ "Et udvidelsesmodul der åbner ChangeLog-filer fundet i CVS-"
-#~ "commitmeddelelser."
-
-#~ msgid "CVS ChangeLog"
-#~ msgstr "CVS-ChangeLog"
-
-#~ msgid "Co_mpare Files..."
-#~ msgstr "Sa_mmenlign filer..."
-
-#~ msgid "Makes a diff file from two documents or files"
-#~ msgstr ""
-#~ "Laver en fil som indeholder forskellene mellem to dokumenter eller filer"
-
-#~ msgid "Compare Files"
-#~ msgstr "Sammenlign filer"
-
-#~ msgid "C_ompare"
-#~ msgstr "S_ammenlign"
-
-#~ msgid "Executed command"
-#~ msgstr "Udført kommando"
-
-#~ msgid "The two documents you selected are the same."
-#~ msgstr "De to dokumenter du valgte, er ens."
-
-#~ msgid ""
-#~ "The \"first\" file you selected does not exist.\n"
-#~ "\n"
-#~ "Please provide a valid file."
-#~ msgstr ""
-#~ "Den første fil du valgte, eksisterer ikke.\n"
-#~ "\n"
-#~ "Angiv venligst en gyldig fil."
-
-#~ msgid ""
-#~ "The \"second\" file you selected does not exist.\n"
-#~ "\n"
-#~ "Please provide a valid file."
-#~ msgstr ""
-#~ "Den anden fil du valgte, eksisterer ikke.\n"
-#~ "\n"
-#~ "Angiv venligst en gyldig fil."
-
-#~ msgid "The two files you selected are the same."
-#~ msgstr "De to filer du valgte, er ens."
-
-#~ msgid "The \"first\" document contains no text."
-#~ msgstr "Det første dokument indeholder ingen tekst."
-
-#~ msgid "The \"second\" document contains no text."
-#~ msgstr "Det andet dokument indeholder ingen tekst."
-
-#~ msgid ""
-#~ "Impossible to compare the selected documents.\n"
-#~ "\n"
-#~ "gedit could not create a temporary file."
-#~ msgstr ""
-#~ "Det mislykkedes at sammenligne de valgte dokumenter.\n"
-#~ "\n"
-#~ "Kunne ikke oprette en midlertidig fil."
-
-#~ msgid ""
-#~ "Impossible to compare the selected documents.\n"
-#~ "\n"
-#~ "Error executing the diff command."
-#~ msgstr ""
-#~ "Det mislykkedes at sammenligne de valgte dokumenter.\n"
-#~ "\n"
-#~ "Fejl ved kørsel af diff-kommandoen."
-
-#~ msgid "No differences were found between the selected documents."
-#~ msgstr "Ingen forskelle fundet mellem de valgte dokumenter."
-
-#~ msgid ""
-#~ "Impossible to compare the selected documents.\n"
-#~ "\n"
-#~ "The result contains invalid UTF-8 data."
-#~ msgstr ""
-#~ "Det mislykkedes at sammenligne de valgte dokumenter.\n"
-#~ "\n"
-#~ "Resultatet indeholder ugyldige UTF-8-data."
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "Choose the files to compare."
-#~ msgstr "Vælg de filer som skal sammenlignes."
-
-#~ msgid "Compare files..."
-#~ msgstr "Sammenlign filer..."
-
-#~ msgid "F_rom document"
-#~ msgstr "F_ra dokument"
-
-#~ msgid "First"
-#~ msgstr "Første"
-
-#~ msgid "First file from disk"
-#~ msgstr "Første fil fra disk"
-
-#~ msgid "First file from open document"
-#~ msgstr "Første fil fra åbent dokument"
-
-#~ msgid "From _document"
-#~ msgstr "Fra _dokument"
-
-#~ msgid "From a _file on disk"
-#~ msgstr "Fra en _fil på disken"
-
-#~ msgid "From a file o_n disk"
-#~ msgstr "Fra en fil _på disken"
-
-#~ msgid "Ignore _blanks (-b option)"
-#~ msgstr "Ignorér _blanke (tilvalget -b)"
-
-#~ msgid "Note that this option is only supported by GNU diff"
-#~ msgstr "Bemærk at dette tilvalg kun understøttes af GNU diff"
-
-#~ msgid "Second"
-#~ msgstr "Anden"
-
-#~ msgid "Second file from disk"
-#~ msgstr "Anden fil fra disk"
-
-#~ msgid "Second file from open document"
-#~ msgstr "Anden fil fra åbent dokument"
-
-#~ msgid "Select the \"first\" file..."
-#~ msgstr "Vælg den \"første\" fil..."
-
-#~ msgid "Select the \"second\" file..."
-#~ msgstr "Vælg den \"anden\" fil..."
-
-#~ msgid "Select the first file to compare"
-#~ msgstr "Vælg den første fil der skal sammenlignes"
-
-#~ msgid "Select the first open document to compare"
-#~ msgstr "Vælg det første dokument der skal sammenlignes"
-
-#~ msgid "Select the second file to compare"
-#~ msgstr "Vælg den anden fil der skal sammenlignes"
-
-#~ msgid "Select the second open document to compare"
-#~ msgstr "Vælg det andet dokument der skal sammenlignes"
-
-#~ msgid "Use the _unified output format (-u option)"
-#~ msgstr "Brug det _forenede udskriftsformat (tilvalget -u)"
-
-#~ msgid ""
-#~ "The Compare Files plugin uses the \"diff\" program to compare two "
-#~ "documents or files on disk."
-#~ msgstr ""
-#~ "Benytter programmet \"diff\" til at sammenligne to dokumenter eller filer "
-#~ "på disken."
+#: ../plugins/textsize/textsize.gedit-plugin.desktop.in.in.h:2
+msgid "Text Size"
+msgstr "Tekststørrelse"
