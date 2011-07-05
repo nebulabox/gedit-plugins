@@ -79,10 +79,9 @@ def parse_modeline(line):
     return None
 
 class SynctexViewHelper:
-    def __init__(self, view, window, tab, plugin):
+    def __init__(self, view, window, plugin):
         self._view = view
         self._window = window
-        self._tab = tab
         self._plugin = plugin
         self._doc = view.get_buffer()
         self.window_proxy = None
@@ -175,7 +174,7 @@ class SynctexViewHelper:
     def goto_line (self, line, time):
         self._doc.goto_line(line) 
         self._view.scroll_to_cursor()
-        self._window.set_active_tab(self._tab)
+        self._window.set_active_tab(Gedit.Tab.get_from_document(self._doc))
         self._highlight()
         self._window.present_with_time (time)
 
@@ -230,7 +229,7 @@ class SynctexWindowHelper:
         self._insert_menu()
 
         for view in window.get_views():
-            self.add_helper(view, window, view.get_parent().get_parent())
+            self.add_helper(view, window)
 
         self.handlers = [
             window.connect("tab-added", lambda w, t: self.add_helper(t.get_view(),w, t)),
@@ -246,8 +245,8 @@ class SynctexWindowHelper:
         self._action_group.set_sensitive(active)
 
 
-    def add_helper(self, view, window, tab):
-        helper = SynctexViewHelper(view, window, tab, self._plugin)
+    def add_helper(self, view, window):
+        helper = SynctexViewHelper(view, window, self._plugin)
         location = view.get_buffer().get_location()
 
         if location is not None:
