@@ -232,7 +232,7 @@ class SynctexWindowHelper:
             self.add_helper(view, window)
 
         self.handlers = [
-            window.connect("tab-added", lambda w, t: self.add_helper(t.get_view(),w, t)),
+            window.connect("tab-added", lambda w, t: self.add_helper(t.get_view(), w)),
             window.connect("tab-removed", lambda w, t: self.remove_helper(t.get_view())),
             window.connect("active-tab-changed", self.on_active_tab_changed)
         ]
