@@ -24,6 +24,7 @@ from evince_dbus import EvinceWindowProxy
 import dbus.mainloop.glib
 import logging
 import gettext
+import os
 from gpdefs import *
 
 try:
@@ -132,8 +133,6 @@ class SynctexViewHelper:
         del self._highlight_tag
 
     def update_location(self):
-        import os
-
         gfile = self._doc.get_location()
         if gfile is None:
             return
@@ -344,7 +343,7 @@ class SynctexPlugin(GObject.Object, Gedit.WindowActivatable):
     def unref_evince_proxy(self, gfile):
         uri = gfile.get_uri()
         if uri in SynctexPlugin._proxy_dict:
-            SynctexPlugin._proxy_dict[uri][0]-=1
+            SynctexPlugin._proxy_dict[uri][0] -= 1
             if SynctexPlugin._proxy_dict[uri][0] == 0:
                 del SynctexPlugin._proxy_dict[uri]
 
