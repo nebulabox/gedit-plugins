@@ -92,9 +92,9 @@ ALL_PLUGINS="bookmarks drawspaces wordcompletion taglist"
 USEFUL_PLUGINS="bookmarks drawspaces wordcompletion taglist"
 DEFAULT_PLUGINS="bookmarks drawspaces wordcompletion taglist"
 
-PYTHON_ALL_PLUGINS="bracketcompletion charmap codecomment colorpicker commander dashboard joinlines multiedit textsize sessionsaver smartspaces terminal synctex"
-PYTHON_USEFUL_PLUGINS="bracketcompletion charmap codecomment colorpicker commander dashboard joinlines multiedit textsize sessionsaver smartspaces terminal synctex"
-PYTHON_DEFAULT_PLUGINS="bracketcompletion charmap codecomment colorpicker commander dashboard joinlines multiedit textsize sessionsaver smartspaces terminal synctex"
+PYTHON_ALL_PLUGINS="bracketcompletion charmap codecomment colorpicker commander dashboard emacsyindent joinlines multiedit textsize sessionsaver smartspaces terminal synctex"
+PYTHON_USEFUL_PLUGINS="bracketcompletion charmap codecomment colorpicker commander dashboard emacsyindent joinlines multiedit textsize sessionsaver smartspaces terminal synctex"
+PYTHON_DEFAULT_PLUGINS="bracketcompletion charmap codecomment colorpicker commander dashboard emacsyindent joinlines multiedit textsize sessionsaver smartspaces terminal synctex"
 
 DIST_PLUGINS="$ALL_PLUGINS $PYTHON_ALL_PLUGINS"
 
@@ -115,10 +115,11 @@ AC_ARG_WITH([plugins],
 [  --with-plugins=plugin1,plugin2,...
 			  build the specified plugins. Available:
 			  bracketcompletion, charmap, codecomment,
-			  colorpicker, drawspaces, joinlines, multiedit,
-			  textsize, sessionsaver, smartspaces, taglist,
-			  terminal, wordcompletion, as well as the aliases
-			  default, all, and really-all],
+			  colorpicker, drawspaces, emacsyindent,
+                          joinlines, multiedit, textsize, sessionsaver,
+                          smartspaces, taglist, terminal, wordcompletion,
+                          as well as the aliases default, all, and
+                          really-all],
 			  [plugins=$with_plugins],
 			  [plugins="default"])
 
@@ -337,6 +338,8 @@ plugins/dashboard/Makefile
 plugins/drawspaces/drawspaces.plugin.desktop.in
 plugins/drawspaces/Makefile
 plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in
+plugins/emacsyindent/emacsyindent.plugin.desktop.in
+plugins/emacsyindent/Makefile
 plugins/joinlines/joinlines.plugin.desktop.in
 plugins/joinlines/Makefile
 plugins/multiedit/Makefile

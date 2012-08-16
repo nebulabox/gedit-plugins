@@ -1,0 +1,18 @@
+from module import func
+
+def func():
+    lala(lele(lili("qwe",
+                   "asd"),
+              "poi"),
+         "zxc")
+    
+    lala("qwe")
+    
+def func2(a, b):
+    lala("qwe", # This is a comment.
+         "asd")
+    
+def func2(a, b):
+    lala("qwe#", lele("zxc", # This is a comment.
+    "asd")
+    "poi")

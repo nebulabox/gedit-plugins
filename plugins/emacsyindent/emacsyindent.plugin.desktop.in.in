@@ -1,0 +1,11 @@
+[Plugin]
+Loader=python
+Module=emacsyindent
+IAge=3
+Name=Emacsy Indentation
+Description=Make indentation more like Emacs'
+Authors=Gustavo Noronha Silva <gns@gnome.org>
+Copyright=Copyright © 2012 Gustavo Noronha Silva
+Website=http://www.gedit.org
+Version=@VERSION@
+

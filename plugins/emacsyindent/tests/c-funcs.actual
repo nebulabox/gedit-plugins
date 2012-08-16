@@ -1,0 +1,25 @@
+void func() {
+    lala(lele(lili("qwe",
+                   "asd"),
+              "poi"),
+         "zxc");
+    
+    lala("qwe");
+}
+
+namespace Test
+{
+    function lala()
+    {
+        lele();
+    }
+}
+
+namespace Test {
+a()
+
+    if (1 == 2) {
+        lele();
+    }
+}
+}
