@@ -4,6 +4,21 @@ gedit-plugins 3.8.1
 
 New features and fixes
 ======================
+- Follow gnome-terminal settings on terminal plugin
+- Misc bugfixes
+
+New and updated translations
+============================
+- fr (Pierre Henry)
+- it (Milo Casagrande)
+- sl (Matej Urbančič)
+
+====================
+gedit-plugins 3.8.1
+====================
+
+New features and fixes
+======================
 - Port Dashboard to use libzeitgeist2 (Seif Lotfy)
 - New Color Schemer plugin (Jono Finger)
 - Misc bugfixes
