@@ -67,7 +67,7 @@ PKG_CHECK_MODULES(GEDIT, [
 	glib-2.0 >= 2.32.0
 	gio-2.0 >= 2.32.0
 	gtk+-3.0 >= 3.4.0
-	gtksourceview-3.0 >= 3.0.0
+	gtksourceview-3.0 >= 3.9.2
 	libpeas-1.0 >= 1.7.0
 	libpeas-gtk-1.0 >= 1.7.0
 	gedit >= 3.7.1
@@ -386,6 +386,7 @@ plugins/textsize/Makefile
 plugins/textsize/textsize.plugin.desktop.in
 plugins/textsize/textsize/Makefile
 plugins/wordcompletion/Makefile
+plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in
 plugins/wordcompletion/wordcompletion.plugin.desktop.in
 po/Makefile.in])
 

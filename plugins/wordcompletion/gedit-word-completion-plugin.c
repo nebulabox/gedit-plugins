@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2009 Ignacio Casal Quinteiro <icq@gnome.org>
  *               2009 Jesse van den Kieboom <jesse@gnome.org>
+ *               2013 Sébastien Wilmet <swilmet@gnome.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,13 +30,19 @@
 #include <gedit/gedit-window-activatable.h>
 #include <gedit/gedit-view.h>
 #include <gedit/gedit-view-activatable.h>
-#include <gtksourceview/gtksourcecompletionprovider.h>
+#include <libpeas-gtk/peas-gtk-configurable.h>
+#include <gtksourceview/gtksource.h>
 #include <gtksourceview/completion-providers/words/gtksourcecompletionwords.h>
 
 #define WINDOW_PROVIDER "GeditWordCompletionPluginProvider"
 
+#define WORD_COMPLETION_SETTINGS_BASE "org.gnome.gedit.plugins.wordcompletion"
+#define SETTINGS_KEY_INTERACTIVE_COMPLETION "interactive-completion"
+#define SETTINGS_KEY_MINIMUM_WORD_SIZE "minimum-word-size"
+
 static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
 static void gedit_view_activatable_iface_init (GeditViewActivatableInterface *iface);
+static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditWordCompletionPlugin,
                                 gedit_word_completion_plugin,
@@ -44,7 +51,9 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditWordCompletionPlugin,
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
                                                                gedit_window_activatable_iface_init)
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_VIEW_ACTIVATABLE,
-                                                               gedit_view_activatable_iface_init))
+                                                               gedit_view_activatable_iface_init)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
+                                                               peas_gtk_configurable_iface_init))
 
 struct _GeditWordCompletionPluginPrivate
 {
@@ -141,6 +150,61 @@ gedit_word_completion_plugin_get_property (GObject    *object,
 }
 
 static void
+update_activation (GtkSourceCompletionWords *provider,
+		   GSettings                *settings)
+{
+	GtkSourceCompletionActivation activation;
+
+	g_object_get (provider, "activation", &activation, NULL);
+
+	if (g_settings_get_boolean (settings, SETTINGS_KEY_INTERACTIVE_COMPLETION))
+	{
+		activation |= GTK_SOURCE_COMPLETION_ACTIVATION_INTERACTIVE;
+	}
+	else
+	{
+		activation &= ~GTK_SOURCE_COMPLETION_ACTIVATION_INTERACTIVE;
+	}
+
+	g_object_set (provider, "activation", activation, NULL);
+}
+
+static void
+on_interactive_completion_changed_cb (GSettings                *settings,
+				      gchar                    *key,
+				      GtkSourceCompletionWords *provider)
+{
+	update_activation (provider, settings);
+}
+
+static GtkSourceCompletionWords *
+create_provider (void)
+{
+	GtkSourceCompletionWords *provider;
+	GSettings *settings;
+
+	provider = gtk_source_completion_words_new (_("Document Words"), NULL);
+
+	settings = g_settings_new (WORD_COMPLETION_SETTINGS_BASE);
+
+	g_settings_bind (settings, SETTINGS_KEY_MINIMUM_WORD_SIZE,
+			 provider, "minimum-word-size",
+			 G_SETTINGS_BIND_GET);
+
+	update_activation (provider, settings);
+
+	g_signal_connect_object (settings,
+				 "changed::" SETTINGS_KEY_INTERACTIVE_COMPLETION,
+				 G_CALLBACK (on_interactive_completion_changed_cb),
+				 provider,
+				 0);
+
+	g_object_unref (settings);
+
+	return provider;
+}
+
+static void
 gedit_word_completion_window_activate (GeditWindowActivatable *activatable)
 {
 	GeditWordCompletionPluginPrivate *priv;
@@ -150,8 +214,7 @@ gedit_word_completion_window_activate (GeditWindowActivatable *activatable)
 
 	priv = GEDIT_WORD_COMPLETION_PLUGIN (activatable)->priv;
 
-	provider = gtk_source_completion_words_new (_("Document Words"),
-	                                            NULL);
+	provider = create_provider ();
 
 	g_object_set_data_full (G_OBJECT (priv->window),
 	                        WINDOW_PROVIDER,
@@ -196,9 +259,7 @@ gedit_word_completion_view_activate (GeditViewActivatable *activatable)
 	if (provider == NULL)
 	{
 		/* Standalone provider */
-		provider = GTK_SOURCE_COMPLETION_PROVIDER (
-			gtk_source_completion_words_new (_("Document Words"),
-			                                 NULL));
+		provider = GTK_SOURCE_COMPLETION_PROVIDER (create_provider ());
 	}
 
 	priv->provider = g_object_ref (provider);
@@ -229,6 +290,52 @@ gedit_word_completion_view_deactivate (GeditViewActivatable *activatable)
 
 	gtk_source_completion_words_unregister (GTK_SOURCE_COMPLETION_WORDS (priv->provider),
 	                                        buf);
+}
+
+static GtkWidget *
+gedit_word_completion_create_configure_widget (PeasGtkConfigurable *configurable)
+{
+	GtkBuilder *builder;
+	GtkWidget *content;
+	GtkWidget *interactive_completion;
+	GtkWidget *min_word_size;
+	GSettings *settings;
+	GError *error = NULL;
+
+	builder = gtk_builder_new ();
+	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
+	gtk_builder_add_from_resource (builder,
+				       "/org/gnome/gedit/plugins/wordcompletion/ui/gedit-word-completion-configure.ui",
+				       &error);
+
+	if (error != NULL)
+	{
+		g_warning ("Word Completion configuration widget: %s", error->message);
+		g_error_free (error);
+		error = NULL;
+	}
+
+	content = GTK_WIDGET (gtk_builder_get_object (builder, "content"));
+	g_object_ref (content);
+
+	interactive_completion = GTK_WIDGET (gtk_builder_get_object (builder, "check_button_interactive_completion"));
+	min_word_size = GTK_WIDGET (gtk_builder_get_object (builder, "spin_button_min_word_size"));
+
+	g_object_unref (builder);
+
+	settings = g_settings_new (WORD_COMPLETION_SETTINGS_BASE);
+
+	g_settings_bind (settings, SETTINGS_KEY_INTERACTIVE_COMPLETION,
+			 interactive_completion, "active",
+			 G_SETTINGS_BIND_DEFAULT | G_SETTINGS_BIND_GET_NO_CHANGES);
+
+	g_settings_bind (settings, SETTINGS_KEY_MINIMUM_WORD_SIZE,
+			 min_word_size, "value",
+			 G_SETTINGS_BIND_DEFAULT | G_SETTINGS_BIND_GET_NO_CHANGES);
+
+	g_object_unref (settings);
+
+	return content;
 }
 
 static void
@@ -265,6 +372,12 @@ gedit_view_activatable_iface_init (GeditViewActivatableInterface *iface)
 	iface->deactivate = gedit_word_completion_view_deactivate;
 }
 
+static void
+peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface)
+{
+	iface->create_configure_widget = gedit_word_completion_create_configure_widget;
+}
+
 G_MODULE_EXPORT void
 peas_register_types (PeasObjectModule *module)
 {
@@ -276,5 +389,9 @@ peas_register_types (PeasObjectModule *module)
 
 	peas_object_module_register_extension_type (module,
 	                                            GEDIT_TYPE_VIEW_ACTIVATABLE,
+	                                            GEDIT_TYPE_WORD_COMPLETION_PLUGIN);
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_GTK_TYPE_CONFIGURABLE,
 	                                            GEDIT_TYPE_WORD_COMPLETION_PLUGIN);
 }

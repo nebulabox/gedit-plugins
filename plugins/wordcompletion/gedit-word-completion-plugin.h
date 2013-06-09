@@ -42,7 +42,6 @@ struct _GeditWordCompletionPlugin
 {
 	PeasExtensionBase parent_instance;
 
-	
 	GeditWordCompletionPluginPrivate *priv;
 };
 

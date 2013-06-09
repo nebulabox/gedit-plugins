@@ -30,5 +30,7 @@ plugins/terminal/terminal.plugin.desktop.in.in
 plugins/terminal/terminal.py
 plugins/textsize/textsize/__init__.py
 plugins/textsize/textsize.plugin.desktop.in.in
+[type: gettext/glade]plugins/wordcompletion/gedit-word-completion-configure.ui
 plugins/wordcompletion/gedit-word-completion-plugin.c
+plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in
 plugins/wordcompletion/wordcompletion.plugin.desktop.in.in

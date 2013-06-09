@@ -15,4 +15,5 @@ plugins/synctex/synctex.plugin.desktop.in
 plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in
 plugins/terminal/terminal.plugin.desktop.in
 plugins/textsize/textsize.plugin.desktop.in
+plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in
 plugins/wordcompletion/wordcompletion.plugin.desktop.in

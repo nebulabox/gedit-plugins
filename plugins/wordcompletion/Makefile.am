@@ -9,12 +9,19 @@ INCLUDES = \
 
 plugin_LTLIBRARIES = libwordcompletion.la
 
+BUILT_SOURCES = \
+	gedit-word-completion-resources.c
+
 libwordcompletion_la_SOURCES = \
 	gedit-word-completion-plugin.h				\
-	gedit-word-completion-plugin.c				
+	gedit-word-completion-plugin.c				\
+	$(BUILT_SOURCES)
 
 libwordcompletion_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
 libwordcompletion_la_LIBADD = $(GEDIT_LIBS)
+
+gedit-word-completion-resources.c: gedit-word-completion.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/gedit-word-completion.gresource.xml)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $(srcdir)/gedit-word-completion.gresource.xml
 
 # Plugin Info
 
@@ -24,7 +31,16 @@ plugin_in_files = wordcompletion.plugin.desktop.in
 
 plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
 
-EXTRA_DIST = $(plugin_in_files)
+gsettings_SCHEMAS = org.gnome.gedit.plugins.wordcompletion.gschema.xml
+
+@INTLTOOL_XML_NOMERGE_RULE@
+@GSETTINGS_RULES@
+
+EXTRA_DIST = \
+	$(plugin_in_files) \
+	org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in \
+	gedit-word-completion.gresource.xml \
+	gedit-word-completion-configure.ui
 
 CLEANFILES = $(plugin_DATA)
 DISTCLEANFILES = $(plugin_DATA)
