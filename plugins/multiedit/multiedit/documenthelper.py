@@ -1073,7 +1073,7 @@ class DocumentHelper(Signals):
         else:
             cnt = count
 
-        for i in xrange(cnt):
+        for i in range(cnt):
             if count > 0:
                 self._view.forward_display_line(piter)
             else:
