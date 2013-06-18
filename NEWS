@@ -1,5 +1,14 @@
 ====================
-gedit-plugins 3.8.1
+gedit-plugins 3.8.3
+====================
+
+New features and fixes
+======================
+- New git plugin (Ignacio Casal Quinteiro, Garrett Regier)
+- Misc bugfixes
+
+====================
+gedit-plugins 3.8.2
 ====================
 
 New features and fixes
