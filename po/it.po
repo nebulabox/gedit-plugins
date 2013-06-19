@@ -1,5 +1,5 @@
 # Italian translation of gedit-plugins
-# Copyright (C) 1998-2010, 2011 Free Software Foundation, Inc.
+# Copyright (C) 1998-2010, 2011, 2013 Free Software Foundation, Inc.
 # Copyright (C) 2012 The gedit-plugins Copyright Holders
 # This file is distributed under the same license as the gedit-plugins package.
 # Paolo Maggi <maggi@athena.polito.it> 2002
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-19 19:26+0200\n"
-"PO-Revision-Date: 2013-04-19 19:26+0200\n"
+"POT-Creation-Date: 2013-06-19 11:05+0200\n"
+"PO-Revision-Date: 2013-06-19 11:05+0200\n"
 "Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -21,6 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 msgid "Bookmarks"
@@ -74,7 +75,7 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Inserisce dei caratteri speciali semplicemente facendoci clic."
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-msgid "Code comment"
+msgid "Code Comment"
 msgstr "Commenta codice"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:2
@@ -132,62 +133,58 @@ msgid "Source code color scheme editor"
 msgstr "Editor schemi colori per codice sorgente"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:2
-msgid "X"
-msgstr "X"
-
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Bold"
 msgstr "Grassetto"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
+#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Corsivo"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
+#: ../plugins/colorschemer/schemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Sottolineato"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
+#: ../plugins/colorschemer/schemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Testo barrato"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
+#: ../plugins/colorschemer/schemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "Scelta colore di sfondo"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
+#: ../plugins/colorschemer/schemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Scelta colore primo piano"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+#: ../plugins/colorschemer/schemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "_Sfondo"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "_Primo piano"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "_Azzera"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Nome"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer/schemer.ui.h:12
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
+#: ../plugins/colorschemer/schemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Descrizione"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+#: ../plugins/colorschemer/schemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Autore"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:16
+#: ../plugins/colorschemer/schemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Campione"
 
@@ -233,7 +230,7 @@ msgid "Draw Spaces"
 msgstr "Traccia gli spazi"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-msgid "Draw Spaces and Tabs"
+msgid "Draw spaces and tabs"
 msgstr "Traccia gli spazi e le tabulazioni"
 
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
@@ -603,11 +600,11 @@ msgstr "Terminale integrato"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Incorpora un terminale nel riquadro inferiore"
 
-#: ../plugins/terminal/terminal.py:262
+#: ../plugins/terminal/terminal.py:301
 msgid "Terminal"
 msgstr "Terminale"
 
-#: ../plugins/terminal/terminal.py:283
+#: ../plugins/terminal/terminal.py:322
 msgid "C_hange Directory"
 msgstr "Cambia _directory"
 
@@ -632,10 +629,33 @@ msgstr "Dimensione testo"
 msgid "Easily increase and decrease the text size"
 msgstr "Aumenta o riduce facilmente la dimensione del testo"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+msgid "Interactive completion"
+msgstr "Completamento interattivo"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "Dimensione minima parola:"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "Parole del documento"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+msgid "Interactive Completion"
+msgstr "Completamento interattivo"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "Indica se abilitare o meno il completamento interattivo."
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "Dimensione minima parola"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "La dimensione minima di una parola da completare."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
