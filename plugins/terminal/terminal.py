@@ -225,7 +225,18 @@ class GeditTerminalPanel(Gtk.Box):
                 self._accels[name][2]()
                 return True
 
-        return False
+        keyval_name = Gdk.keyval_name(Gdk.keyval_to_upper(event.keyval))
+
+        # Special case some Vte.Terminal shortcuts
+        # so the global shortcuts do not override them
+        if modifiers == Gdk.ModifierType.CONTROL_MASK and keyval_name in 'ACDEHKLRTUWZ':
+            return False
+
+        if modifiers == Gdk.ModifierType.MOD1_MASK and keyval_name in 'BF':
+            return False
+
+        return Gtk.accel_groups_activate(self.get_toplevel(),
+                                         event.keyval, modifiers)
 
     def on_vte_button_press(self, term, event):
         if event.button == 3:
