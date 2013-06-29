@@ -66,11 +66,6 @@ class GeditTerminal(Vte.Terminal):
 
         self.fork_command_full(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
 
-    def do_child_exited(self):
-        Vte.Terminal.do_child_exited(self)
-
-        self._vte.fork_command_full(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
-
     def do_drag_data_received(self, drag_context, x, y, data, info, time):
         if info == self.TARGET_URI_LIST:
             self.feed_child(' '.join(["'" + Gio.file_new_for_uri(item).get_path() + "'" for item in Gedit.utils_drop_get_uris(data)]), -1)
@@ -179,18 +174,6 @@ class GeditTerminalPanel(Gtk.Box):
     def __init__(self):
         Gtk.Box.__init__(self)
 
-        self._vte = GeditTerminal()
-        self._vte.show()
-        self.pack_start(self._vte, True, True, 0)
-
-        self._vte.connect("key-press-event", self.on_vte_key_press)
-        self._vte.connect("button-press-event", self.on_vte_button_press)
-        self._vte.connect("popup-menu", self.on_vte_popup_menu)
-
-        scrollbar = Gtk.Scrollbar.new(Gtk.Orientation.VERTICAL, self._vte.get_vadjustment())
-        scrollbar.show()
-        self.pack_start(scrollbar, False, False, 0)
-
         self._accel_base = '<gedit>/plugins/terminal'
         self._accels = {
             'copy-clipboard': [Gdk.KEY_C, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK, self.copy_clipboard],
@@ -203,6 +186,29 @@ class GeditTerminalPanel(Gtk.Box):
 
             if not accel[0]:
                  Gtk.AccelMap.add_entry(path, self._accels[name][0], self._accels[name][1])
+
+        self.add_terminal()
+
+    def add_terminal(self):
+        self._vte = GeditTerminal()
+        self._vte.show()
+        self.pack_start(self._vte, True, True, 0)
+
+        self._vte.connect("child-exited", self.on_vte_child_exited)
+        self._vte.connect("key-press-event", self.on_vte_key_press)
+        self._vte.connect("button-press-event", self.on_vte_button_press)
+        self._vte.connect("popup-menu", self.on_vte_popup_menu)
+
+        scrollbar = Gtk.Scrollbar.new(Gtk.Orientation.VERTICAL, self._vte.get_vadjustment())
+        scrollbar.show()
+        self.pack_start(scrollbar, False, False, 0)
+
+    def on_vte_child_exited(self, term):
+        for child in self.get_children():
+            child.destroy()
+
+        self.add_terminal()
+        self._vte.grab_focus()
 
     def do_grab_focus(self):
         self._vte.grab_focus()
