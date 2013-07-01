@@ -66,7 +66,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 PKG_CHECK_MODULES(GEDIT, [
 	glib-2.0 >= 2.32.0
 	gio-2.0 >= 2.32.0
-	gtk+-3.0 >= 3.4.0
+	gtk+-3.0 >= 3.9.0
 	gtksourceview-3.0 >= 3.9.2
 	libpeas-1.0 >= 1.7.0
 	libpeas-gtk-1.0 >= 1.7.0
@@ -303,6 +303,8 @@ AC_SUBST([BUILD_PLUGINS],[$PLUGINS])
 # ================================================================
 AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
+
+AC_DEFINE(GDK_VERSION_MIN_REQUIRED, GDK_VERSION_3_8, [minimum gdk version])
 
 YELP_HELP_INIT
 
