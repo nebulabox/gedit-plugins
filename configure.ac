@@ -70,7 +70,7 @@ PKG_CHECK_MODULES(GEDIT, [
 	gtksourceview-3.0 >= 3.9.2
 	libpeas-1.0 >= 1.7.0
 	libpeas-gtk-1.0 >= 1.7.0
-	gedit >= 3.7.1
+	gedit >= 3.9.3
 ])
 
 dnl ================================================================
