@@ -19,6 +19,7 @@
 
 from gi.repository import GLib, GObject, Gtk, Gedit, Ggit
 from .diffrenderer import DiffType, DiffRenderer
+from .windowactivatable import GitWindowActivatable
 
 import difflib
 
@@ -31,19 +32,22 @@ class LineContext:
         self.line_type = DiffType.NONE
 
 
-class GitPlugin(GObject.Object, Gedit.ViewActivatable):
+class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
     view = GObject.property(type=Gedit.View)
 
-    def __init__(self):
-        GObject.Object.__init__(self)
+    status = GObject.property(type=Ggit.StatusFlags,
+                              default=Ggit.StatusFlags.CURRENT)
 
-        Ggit.init()
+    def __init__(self):
+        super().__init__()
 
         self.diff_timeout = 0
         self.file_contents_list = None
         self.file_context = None
 
     def do_activate(self):
+        GitWindowActivatable.register_view_activatable(self)
+
         self.diff_renderer = DiffRenderer()
         self.gutter = self.view.get_gutter(Gtk.TextWindowType.LEFT)
 
@@ -162,6 +166,8 @@ class GitPlugin(GObject.Object, Gedit.ViewActivatable):
 
         # Must be a new file
         if not self.file_contents_list:
+            self.status = Ggit.StatusFlags.WORKING_TREE_NEW
+
             n_lines = self.buffer.get_line_count()
             if len(self.diff_renderer.file_context) == n_lines:
                 return False
@@ -192,7 +198,10 @@ class GitPlugin(GObject.Object, Gedit.ViewActivatable):
 
         except StopIteration:
             # Nothing has changed
-            pass
+            self.status = Ggit.StatusFlags.CURRENT
+
+        else:
+            self.status = Ggit.StatusFlags.WORKING_TREE_MODIFIED
 
         file_context = {}
         for line_data in diff:
