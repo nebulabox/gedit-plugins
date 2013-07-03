@@ -204,12 +204,14 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         if status is not None:
             if status & Ggit.StatusFlags.INDEX_NEW or \
-                    status & Ggit.StatusFlags.WORKING_TREE_NEW:
-                markup = '<span foreground="green">%s</span> [New]' % (markup)
-
-            elif status & Ggit.StatusFlags.INDEX_MODIFIED or \
+                    status & Ggit.StatusFlags.WORKING_TREE_NEW or \
+                    status & Ggit.StatusFlags.INDEX_MODIFIED or \
                     status & Ggit.StatusFlags.WORKING_TREE_MODIFIED:
-                markup = '<span foreground="blue">%s</span> [Modified]' % (markup)
+                markup = '<span weight="bold">%s</span>' % (markup)
+
+            elif status & Ggit.StatusFlags.INDEX_DELETED or \
+                    status & Ggit.StatusFlags.WORKING_TREE_DELETED:
+                markup = '<span strikethrough="true">%s</span>' % (markup)
 
         self.bus.send('/plugins/filebrowser', 'set_markup',
                       id=self.files[location.get_uri()], markup=markup)
