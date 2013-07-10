@@ -220,7 +220,7 @@ msgstr "Vyhledávejte psaním…"
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
 msgid "Dashboard"
-msgstr "Palubní deska"
+msgstr "Ovládací tabule"
 
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:2
 msgid "A Dashboard for new tabs"
