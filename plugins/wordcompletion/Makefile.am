@@ -42,7 +42,7 @@ EXTRA_DIST = \
 	gedit-word-completion.gresource.xml \
 	gedit-word-completion-configure.ui
 
-CLEANFILES = $(plugin_DATA)
-DISTCLEANFILES = $(plugin_DATA)
+CLEANFILES = $(plugin_DATA) $(gsettings_SCHEMAS)
+DISTCLEANFILES = $(plugin_DATA) $(gsettings_SCHEMAS)
 
 -include $(top_srcdir)/git.mk
