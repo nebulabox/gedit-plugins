@@ -1,4 +1,24 @@
 ====================
+gedit-plugins 3.9.2
+====================
+
+New features and fixes
+======================
+- word completion: add configure options (Sébastien Wilmet)
+- Show the file's git status in the file browser (Garrett Regier)
+- Misc bugfixes
+
+New and updated translations
+============================
+- cs (Marek Černocký)
+- de (Christian Kirbach)
+- el (Dimitris Spingos)
+- es (Daniel Mustieles)
+- it (Milo Casagrande)
+- sl (Matej Urbančič)
+- zh_CN (Lu Gan)
+
+================================================
 gedit-plugins 3.9.1
 ====================
 

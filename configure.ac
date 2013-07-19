@@ -4,7 +4,7 @@ AC_PREREQ([2.63])
  
 m4_define(gedit_plugins_major_version,  3)
 m4_define(gedit_plugins_minor_version,  9)
-m4_define(gedit_plugins_micro_version,  1)
+m4_define(gedit_plugins_micro_version,  2)
 m4_define(gedit_plugins_version, gedit_plugins_major_version.gedit_plugins_minor_version.gedit_plugins_micro_version)
 
 AC_INIT([gedit-plugins],
@@ -272,7 +272,7 @@ fi
 plugin_defined git
 if test "$?" = 1
 then
-	LIBGIT2_GLIB_REQUIRED=0.0.2
+	LIBGIT2_GLIB_REQUIRED=0.0.6
 	PKG_CHECK_MODULES([GIT2_GLIB],
 		[libgit2-glib-1.0 >= $LIBGIT2_GLIB_REQUIRED],
 		[have_git2=yes],[have_git2=no])
