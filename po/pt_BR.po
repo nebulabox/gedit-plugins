@@ -15,7 +15,7 @@
 # Fabrício Godoy <skarllot@gmail.com>, 2008.
 # Og Maciel <ogmaciel@gnome.org>, 2007, 2009.
 # César Veiga <tombs@linuxmail.org>, 2009.
-# André Gondim <andregondim@ubuntu.com>, 2009.
+# André Gondim <In Memoriam>, 2009.
 # Jader Henrique da Silva <vovozito@gmail.com>, 2009.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008, 2009.
 # Carlos José Pereira <carlao2005@gmail.com>, 2009
@@ -28,8 +28,8 @@ msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-04-30 16:53+0000\n"
-"PO-Revision-Date: 2013-05-01 01:33-0300\n"
+"POT-Creation-Date: 2013-07-21 20:16+0000\n"
+"PO-Revision-Date: 2013-07-25 09:57-0300\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_BR-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -37,7 +37,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 msgid "Bookmarks"
@@ -145,62 +145,58 @@ msgid "Source code color scheme editor"
 msgstr "Editor de esquemas de cores de código fonte"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:2
-msgid "X"
-msgstr "X"
-
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Bold"
 msgstr "Negrito"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
+#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Itálico"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
+#: ../plugins/colorschemer/schemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Sublinhado"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
+#: ../plugins/colorschemer/schemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Tachado"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
+#: ../plugins/colorschemer/schemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "Escolha uma cor de plano de fundo"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
+#: ../plugins/colorschemer/schemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Escolha uma cor de primeiro plano"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+#: ../plugins/colorschemer/schemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "_Plano de fundo"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "P_rimeiro plano"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "_Limpar "
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Nome"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer/schemer.ui.h:12
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
+#: ../plugins/colorschemer/schemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Descrição"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+#: ../plugins/colorschemer/schemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Autor"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:16
+#: ../plugins/colorschemer/schemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Exemplo"
 
@@ -463,7 +459,7 @@ msgstr ""
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:7
 msgid "Whether to scroll to the bottom when a key is pressed"
-msgstr "Se rolar ou não para o fundo ao premir uma tecla"
+msgstr "Se rolar ou não para o fundo ao pressionar uma tecla"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:8
 msgid "If true, pressing a key jumps the scrollbar to the bottom."
@@ -610,11 +606,11 @@ msgstr "Terminal embutido"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Embute um terminal no painel inferior."
 
-#: ../plugins/terminal/terminal.py:262
+#: ../plugins/terminal/terminal.py:318
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:283
+#: ../plugins/terminal/terminal.py:339
 msgid "C_hange Directory"
 msgstr "Al_ternar diretório"
 
@@ -639,10 +635,33 @@ msgstr "Tamanho do texto"
 msgid "Easily increase and decrease the text size"
 msgstr "Aumente e diminua o facilmente o tamanho do texto"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+msgid "Interactive completion"
+msgstr "Preenchimento interativo"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "Tamanho mínimo da palavra:"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "Palavras do documento"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+msgid "Interactive Completion"
+msgstr "Preenchimento interativo"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "Se habilita ou não o preenchimento interativo."
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "Tamanho mínimo da palavra"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "Tamanho mínimo da palavra para completar."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
@@ -651,312 +670,3 @@ msgstr "Completar palavras"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Completa palavras usando o framework de completar"
-
-#~ msgid "Most Used"
-#~ msgstr "Mais usados"
-
-#~ msgid "Recently Used"
-#~ msgstr "Usados recentemente"
-
-#~ msgid "Scheme Editor"
-#~ msgstr "Editor de esquemas"
-
-#~ msgid "Id"
-#~ msgstr "Id"
-
-#~ msgid "_Increase font size"
-#~ msgstr "_Aumentar tamanho da fonte"
-
-#~ msgid "_Decrease font size"
-#~ msgstr "_Diminuir tamanho da fonte"
-
-#~ msgid "_Reset font size"
-#~ msgstr "_Restaurar tamanho da fonte"
-
-#~ msgid "Session Name"
-#~ msgstr "Nome da sessão"
-
-#~ msgid "Recover '%s' session"
-#~ msgstr "Recuperar sessão '%s'"
-
-#~ msgid "Sa_ved sessions"
-#~ msgstr "Sessões sal_vas"
-
-#~ msgid "_Save current session"
-#~ msgstr "_Salvar sessão atual"
-
-#~ msgid "Save the current document list as a new session"
-#~ msgstr "Salva a lista atual de documentos como uma nova sessão"
-
-#~ msgid "_Manage saved sessions..."
-#~ msgstr "_Gerenciar sessões salvas..."
-
-#~ msgid "Open the saved session manager"
-#~ msgstr "Abre o gerenciador de sessões salvas"
-
-#~ msgid "Save and restore your working sessions"
-#~ msgstr "Salva e restaura suas sessões de trabalho"
-
-#~ msgid "Session Saver"
-#~ msgstr "Salvador de sessão"
-
-#~ msgid "Save session"
-#~ msgstr "Salvar sessão"
-
-#~ msgid "Saved Sessions"
-#~ msgstr "Sessões salvas"
-
-#~ msgid "Session name:"
-#~ msgstr "Nome da sessão:"
-
-#~ msgid "Tags"
-#~ msgstr "Marcas"
-
-#~ msgid "Select the group of tags you want to use"
-#~ msgstr "Selecione o grupo de marcas que você quer usar"
-
-#~ msgid "_Preview"
-#~ msgstr "_Visualização"
-
-#~ msgid "Available Tag Lists"
-#~ msgstr "Listas de marcas disponíveis"
-
-#~ msgid "Abbreviated form"
-#~ msgstr "Formas abreviadas"
-
-#~ msgid "Abbreviation"
-#~ msgstr "Abreviação"
-
-#~ msgid "Above"
-#~ msgstr "Acima"
-
-#~ msgid "Accessibility key character"
-#~ msgstr "Caractere de tecla de acessibilidade"
-
-#~ msgid "Acronym"
-#~ msgstr "Acrônimo"
-
-#~ msgid "Align"
-#~ msgstr "Alinhamento"
-
-#~ msgid "Alignment character"
-#~ msgstr "Caractere de alinhamento"
-
-#~ msgid "Alternative"
-#~ msgstr "Alternativo"
-
-#~ msgid "Anchor"
-#~ msgstr "Âncora"
-
-#~ msgid "Anchor URI"
-#~ msgstr "URI âncora"
-
-#~ msgid "Applet class file code"
-#~ msgstr "Código de arquivo de classe do miniaplicativo"
-
-#~ msgid "Applet class file code (deprecated)"
-#~ msgstr "Código de arquivo de classe do miniaplicativo (obsoleto)"
-
-#~ msgid "Array"
-#~ msgstr "Matriz"
-
-#~ msgid "Associated information"
-#~ msgstr "Informações associadas"
-
-#~ msgid "Axis related headers"
-#~ msgstr "Cabeçalhos relacionados a eixos"
-
-#~ msgid "Background color (deprecated)"
-#~ msgstr "Cor de plano de fundo (obsoleto)"
-
-#~ msgid "Background texture tile"
-#~ msgstr "Textura de plano de fundo lado a lado"
-
-#~ msgid "Background texture tile (deprecated)"
-#~ msgstr "Textura de plano de fundo lado a lado (obsoleto)"
-
-#~ msgid "Base URI"
-#~ msgstr "URI base"
-
-#~ msgid "Base font"
-#~ msgstr "Tamanho de fonte base"
-
-#~ msgid "Base font (deprecated)"
-#~ msgstr "Fonte de base (obsoleto)"
-
-#~ msgid "Border"
-#~ msgstr "Borda"
-
-#~ msgid "Border (deprecated)"
-#~ msgstr "Borda (obsoleto)"
-
-#~ msgid "Border color"
-#~ msgstr "Cor da borda"
-
-#~ msgid "Cell rowspan"
-#~ msgstr "Junção de células em linha"
-
-#~ msgid "Center"
-#~ msgstr "Centro"
-
-#~ msgid "Center (deprecated)"
-#~ msgstr "Centrar (obsoleto)"
-
-#~ msgid "Character encoding of linked resource"
-#~ msgstr "Codificação de caracteres do recurso apontado pelo link"
-
-#~ msgid "Checked (state)"
-#~ msgstr "Selecionado (estado)"
-
-#~ msgid "Checked state"
-#~ msgstr "Estado selecionado"
-
-#~ msgid "Citation"
-#~ msgstr "Citação"
-
-#~ msgid "Cite reason for change"
-#~ msgstr "Cite o motivo para a alteração"
-
-#~ msgid "Class implementation ID"
-#~ msgstr "ID da implementação de classe"
-
-#~ msgid "Class list"
-#~ msgstr "Lista de classes"
-
-#~ msgid "Clear text flow control"
-#~ msgstr "Limpar o controle de fluxo de texto"
-
-#~ msgid "Code content type"
-#~ msgstr "Tipo de código de conteúdo"
-
-#~ msgid "Color of selected links"
-#~ msgstr "Cor dos links selecionados"
-
-#~ msgid "Color of selected links (deprecated)"
-#~ msgstr "Cor dos links selecionados (obsoleto)"
-
-#~ msgid "Column span"
-#~ msgstr "Junção de colunas"
-
-#~ msgid "Columns"
-#~ msgstr "Colunas"
-
-#~ msgid "Comment"
-#~ msgstr "Comentário"
-
-#~ msgid "Computer code fragment"
-#~ msgstr "Fragmento de código de computação"
-
-#~ msgid "Content scheme"
-#~ msgstr "Esquema do conteúdo"
-
-#~ msgid "Content type"
-#~ msgstr "Tipo de conteúdo"
-
-#~ msgid "Content type (deprecated)"
-#~ msgstr "Tipo de conteúdo (obsoleto)"
-
-#~ msgid "Coordinates"
-#~ msgstr "Coordenadas"
-
-#~ msgid "DIV Style container"
-#~ msgstr "Recipiente de estilo DIV"
-
-#~ msgid "DIV container"
-#~ msgstr "Recipiente DIV"
-
-#~ msgid "Date and time of change"
-#~ msgstr "Data e hora de alteração"
-
-#~ msgid "Declare flag"
-#~ msgstr "Parâmetro de declaração"
-
-#~ msgid "Defer attribute"
-#~ msgstr "Atributo deferido"
-
-#~ msgid "Definition description"
-#~ msgstr "Descrição da definição"
-
-#~ msgid "Definition list"
-#~ msgstr "Lista de definição"
-
-#~ msgid "Definition term"
-#~ msgstr "Termo de definição"
-
-#~ msgid "Deleted text"
-#~ msgstr "Texto excluído"
-
-#~ msgid "Directionality"
-#~ msgstr "Direcionalidade"
-
-#~ msgid "Directionality (deprecated)"
-#~ msgstr "Direcionalidade (obsoleto)"
-
-#~ msgid "Directory list"
-#~ msgstr "Lista de diretórios"
-
-#~ msgid "Disabled"
-#~ msgstr "Desabilitado"
-
-#~ msgid "Document base"
-#~ msgstr "Base do documento"
-
-#~ msgid "Document body"
-#~ msgstr "Corpo do documento"
-
-#~ msgid "Document head"
-#~ msgstr "Cabeçalho do documento"
-
-#~ msgid "Document title"
-#~ msgstr "Título do documento"
-
-#~ msgid "Document type"
-#~ msgstr "Tipo de documento"
-
-#~ msgid "Element ID"
-#~ msgstr "ID de elemento"
-
-#~ msgid "Embedded object"
-#~ msgstr "Objetos embutidos"
-
-#~ msgid "Emphasis"
-#~ msgstr "Ênfase"
-
-#~ msgid "Encode type"
-#~ msgstr "Tipo de codificação"
-
-#~ msgid "Figure"
-#~ msgstr "Figura"
-
-#~ msgid "Font face"
-#~ msgstr "Tipo de fonte"
-
-#~ msgid "Font face (deprecated)"
-#~ msgstr "Fonte (obsoleto)"
-
-#~ msgid "For label"
-#~ msgstr "Para rótulo"
-
-#~ msgid "Forced line break"
-#~ msgstr "Quebra de linha forçada"
-
-#~ msgid "Form"
-#~ msgstr "Formulário"
-
-#~ msgid "Form action handler"
-#~ msgstr "Manipulador de ação de formulário"
-
-#~ msgid "Form control group"
-#~ msgstr "Grupo de controle de formulário"
-
-#~ msgid "Form field label text"
-#~ msgstr "Texto da marca de campo de formulário"
-
-#~ msgid "Form input"
-#~ msgstr "Entrada de dados do formulário"
-
-#~ msgid "Form input type"
-#~ msgstr "Tipo de entrada de dados do formulário"
-
-#~ msgid "Form method"
-#~ msgstr "Método do formulário"
