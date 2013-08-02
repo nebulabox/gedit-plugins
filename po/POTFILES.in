@@ -17,6 +17,7 @@ plugins/drawspaces/drawspaces.plugin.desktop.in.in
 plugins/drawspaces/gedit-drawspaces-plugin.c
 [type: gettext/glade]plugins/drawspaces/gedit-drawspaces-plugin.ui
 plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in
+plugins/git/git.plugin.desktop.in.in
 plugins/joinlines/joinlines.plugin.desktop.in.in
 plugins/joinlines/joinlines.py
 plugins/multiedit/multiedit/documenthelper.py
