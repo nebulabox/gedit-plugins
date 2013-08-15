@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-04-27 15:30+0000\n"
-"PO-Revision-Date: 2013-04-27 23:33+0300\n"
+"POT-Creation-Date: 2013-08-02 13:25+0000\n"
+"PO-Revision-Date: 2013-08-15 21:19+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: \n"
@@ -78,7 +78,6 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Įterpti specialiuosius simbolius tiesiog spaudžiant ant jų."
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-#| msgid "Code comment"
 msgid "Code Comment"
 msgstr "Kodo komentaras"
 
@@ -134,62 +133,58 @@ msgid "Source code color scheme editor"
 msgstr "Pradinio kodo spalvų schemos redaktorius"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:2
-msgid "X"
-msgstr "X"
-
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Bold"
 msgstr "Storas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
+#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Kursyvas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
+#: ../plugins/colorschemer/schemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Pabrauktas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
+#: ../plugins/colorschemer/schemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Perbrauktas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
+#: ../plugins/colorschemer/schemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "Pasirinkite fono spalvą"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
+#: ../plugins/colorschemer/schemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Pasirinkite priekinio plano spalvą"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+#: ../plugins/colorschemer/schemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "_Fonas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "_Priekinis planas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "_Išvalyti"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Vardas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer/schemer.ui.h:12
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
+#: ../plugins/colorschemer/schemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Aprašymas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+#: ../plugins/colorschemer/schemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Autorius"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:16
+#: ../plugins/colorschemer/schemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Pavyzdys"
 
@@ -232,7 +227,8 @@ msgid "Draw Spaces"
 msgstr "Piešti tarpus"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-msgid "Draw Spaces and Tabs"
+#| msgid "Draw Spaces and Tabs"
+msgid "Draw spaces and tabs"
 msgstr "Piešti tarpus ir tabuliacijas"
 
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
@@ -283,6 +279,14 @@ msgstr "Jei teigiama, piešimas bus įjungtas."
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Piešiamų tarpų tipas."
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Git"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Git differences"
+msgstr "Git skirtumai"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -586,11 +590,11 @@ msgstr "Įntegruotas terminalas"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Apatiniame polangyje integruotas terminalas."
 
-#: ../plugins/terminal/terminal.py:262
+#: ../plugins/terminal/terminal.py:318
 msgid "Terminal"
 msgstr "Terminalas"
 
-#: ../plugins/terminal/terminal.py:283
+#: ../plugins/terminal/terminal.py:339
 msgid "C_hange Directory"
 msgstr "Keis_ti katalogą"
 
@@ -615,10 +619,35 @@ msgstr "Teksto dydis"
 msgid "Easily increase and decrease the text size"
 msgstr "Lengvai didinkite ir mažinkite teksto dydį"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+#| msgid "Bracket Completion"
+msgid "Interactive completion"
+msgstr "Interaktyvus užbaigimas"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "Mažiausias žodžio ilgis:"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "Dokumento žodžiai"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+#| msgid "Bracket Completion"
+msgid "Interactive Completion"
+msgstr "Interaktyvus užbaigimas"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "Ar įjungti interaktyvų užbaigimą."
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "Mažiausias žodžio ilgis"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "Mažiausias žodžio ilgis užbaigimui."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
