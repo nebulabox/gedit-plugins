@@ -113,7 +113,7 @@ msgstr "Barevná pipeta"
 
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:2
 msgid "Pick a color from a dialog and insert its hexadecimal representation."
-msgstr "Vybrat barvu z dialogu a vložit její šestnáctkové vyjádření."
+msgstr "Vyběr barvy v dialogovém okně a vložení jejího šestnáctkového vyjádření."
 
 #: ../plugins/colorpicker/colorpicker.py:161
 msgid "Pick _Color..."
@@ -233,7 +233,7 @@ msgstr "Vykreslovat mezery"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
 msgid "Draw spaces and tabs"
-msgstr "Vykreslovat mezery a tabulátory"
+msgstr "Vykresluje mezery a tabulátory"
 
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
 msgid "Show _White Space"
@@ -298,7 +298,7 @@ msgstr "Spojit/rozdělit řádky"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:2
 msgid "Join several lines or split long ones"
-msgstr "Spojit několik řádků nebo rozdělit dlouhé řádky"
+msgstr "Spojí několik řádků nebo rozdělí dlouhé řádky"
 
 #: ../plugins/joinlines/joinlines.py:74
 msgid "_Join Lines"
@@ -393,7 +393,7 @@ msgstr "Inteligentní mezery"
 
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:2
 msgid "Forget you're not using tabulations."
-msgstr "Zapomeňte, že nepoužíváte tabulace."
+msgstr "Zapomeňte, že nepoužíváte tabulátory."
 
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
 msgid "SyncTeX"
@@ -401,7 +401,7 @@ msgstr "SyncTeX"
 
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:2
 msgid "Synchronize between LaTeX and PDF with gedit and evince."
-msgstr "Synchronizovat mezi formáty LaTeX a PDF s aplikacemi gedit a evince."
+msgstr "Synchronizuje mezi formáty LaTeX a PDF v aplikacích gedit a evince."
 
 #: ../plugins/synctex/synctex/synctex.py:310
 #: ../plugins/synctex/synctex/synctex.py:311
