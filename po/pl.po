@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-08 19:47+0200\n"
-"PO-Revision-Date: 2013-04-08 19:48+0200\n"
+"POT-Creation-Date: 2013-08-24 03:14+0200\n"
+"PO-Revision-Date: 2013-08-24 03:15+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -80,7 +80,7 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Wstawia znaki specjalne po kliknięciu na nie."
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-msgid "Code comment"
+msgid "Code Comment"
 msgstr "Komentarze w kodzie"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:2
@@ -127,6 +127,7 @@ msgstr "Wybór koloru"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
+#: ../plugins/colorschemer/schemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Edytor schematów kolorów"
 
@@ -134,67 +135,59 @@ msgstr "Edytor schematów kolorów"
 msgid "Source code color scheme editor"
 msgstr "Edytor kolorów kodu źródłowego"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:1
-msgid "Scheme Editor"
-msgstr "Edytor schematów"
-
 #: ../plugins/colorschemer/schemer/schemer.ui.h:2
-msgid "X"
-msgstr "X"
-
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Bold"
 msgstr "Pogrubienie"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
+#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Pochylenie"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
+#: ../plugins/colorschemer/schemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Podkreślenie"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
+#: ../plugins/colorschemer/schemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Przekreślenie"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
+#: ../plugins/colorschemer/schemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "Wybór koloru tła"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
+#: ../plugins/colorschemer/schemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Wybór koloru tekstu"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+#: ../plugins/colorschemer/schemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "_Tło"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "T_ekst"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "Wy_czyść "
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer/schemer.ui.h:12
 msgid "ID"
 msgstr "Identyfikator"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
+#: ../plugins/colorschemer/schemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Opis"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+#: ../plugins/colorschemer/schemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Autor"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:16
+#: ../plugins/colorschemer/schemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Przykład"
 
@@ -214,21 +207,13 @@ msgstr "Tryb poleceń"
 msgid "Start commander mode"
 msgstr "Rozpoczyna tryb poleceń"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:110
+#: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
 msgstr "Pusty dokument"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:218
+#: ../plugins/dashboard/dashboard/dashboard.py:158
 msgid "Type here to search..."
 msgstr "Wyszukiwanie..."
-
-#: ../plugins/dashboard/dashboard/dashboard.py:345
-msgid "Most Used"
-msgstr "Najczęściej używane"
-
-#: ../plugins/dashboard/dashboard/dashboard.py:346
-msgid "Recently Used"
-msgstr "Ostatnio używane"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -245,7 +230,7 @@ msgid "Draw Spaces"
 msgstr "Wyświetlanie spacji"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-msgid "Draw Spaces and Tabs"
+msgid "Draw spaces and tabs"
 msgstr "Wyświetla spacje i tabulacje"
 
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
@@ -296,6 +281,14 @@ msgstr "Jeśli wynosi \"true\", to rysowanie zostanie wyłączone."
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Typy spacji do rysowania."
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Git"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Git differences"
+msgstr "Różnice git"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -612,11 +605,11 @@ msgstr "Osadzony terminal"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Osadza terminal w dolnym panelu."
 
-#: ../plugins/terminal/terminal.py:260
+#: ../plugins/terminal/terminal.py:318
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:281
+#: ../plugins/terminal/terminal.py:339
 msgid "C_hange Directory"
 msgstr "Zmień _katalog"
 
@@ -641,15 +634,38 @@ msgstr "Rozmiar tekstu"
 msgid "Easily increase and decrease the text size"
 msgstr "Łatwe powiększanie i pomniejszanie rozmiaru tekstu"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+msgid "Interactive completion"
+msgstr "Uzupełnianie interaktywne"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "Minimalna długość wyrazu:"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "Wyrazy dokumentu"
 
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+msgid "Interactive Completion"
+msgstr "Uzupełnianie interaktywne"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "Określa, czy włączyć uzupełnianie interaktywne."
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "Minimalna długość wyrazu"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "Minimalna długość uzupełnianych wyrazów."
+
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
-msgstr "Uzupełnianie słów"
+msgstr "Uzupełnianie wyrazów"
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
-msgstr "Uzupełnia słowa używając struktury uzupełniania"
+msgstr "Uzupełnia wyrazy używając struktury uzupełniania"
