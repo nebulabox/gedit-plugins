@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-04-10 02:30+0000\n"
-"PO-Revision-Date: 2013-04-10 23:19+0200\n"
+"POT-Creation-Date: 2013-08-02 13:25+0000\n"
+"PO-Revision-Date: 2013-08-25 10:46+0200\n"
 "Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: \n"
@@ -77,7 +77,8 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Speciális karakterek beszúrása egy kattintással"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-msgid "Code comment"
+#| msgid "Code comment"
+msgid "Code Comment"
 msgstr "Kód megjegyzésbe"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:2
@@ -133,70 +134,58 @@ msgid "Source code color scheme editor"
 msgstr "Forráskód színséma szerkesztő"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:2
-msgid "X"
-msgstr "X"
-
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Bold"
 msgstr "Félkövér"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
-#| msgid "Italic text"
+#: ../plugins/colorschemer/schemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Dőlt"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
-#| msgid "Underlined text style"
+#: ../plugins/colorschemer/schemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Aláhúzott"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
-#| msgid "Strike-through text"
+#: ../plugins/colorschemer/schemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Áthúzott"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
-#| msgid "Background color"
+#: ../plugins/colorschemer/schemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "A háttérszín kiválasztása"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
-#| msgid "Background color"
+#: ../plugins/colorschemer/schemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Az előtérszín kiválasztása"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
-#| msgid "Background color"
+#: ../plugins/colorschemer/schemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "_Háttér"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "_Előtér"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "_Törlés "
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Név"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer/schemer.ui.h:12
 msgid "ID"
 msgstr "Azonosító"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
-#| msgid "List description"
+#: ../plugins/colorschemer/schemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Leírás"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
-#| msgid "Author info"
+#: ../plugins/colorschemer/schemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Szerző"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:16
+#: ../plugins/colorschemer/schemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Minta"
 
@@ -216,21 +205,13 @@ msgstr "Parancssor mód"
 msgid "Start commander mode"
 msgstr "Parancssor mód indítása"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:110
+#: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
 msgstr "Üres dokumentum"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:218
+#: ../plugins/dashboard/dashboard/dashboard.py:158
 msgid "Type here to search..."
 msgstr "Gépeljen a kereséshez…"
-
-#: ../plugins/dashboard/dashboard/dashboard.py:345
-msgid "Most Used"
-msgstr "Legtöbbet használt"
-
-#: ../plugins/dashboard/dashboard/dashboard.py:346
-msgid "Recently Used"
-msgstr "Legutóbb használt"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -247,7 +228,8 @@ msgid "Draw Spaces"
 msgstr "Szóközök rajzolása"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-msgid "Draw Spaces and Tabs"
+#| msgid "Draw Spaces and Tabs"
+msgid "Draw spaces and tabs"
 msgstr "Szóközök és tabok rajzolása"
 
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
@@ -298,6 +280,14 @@ msgstr "Ha igazra van állítva, akkor a rajzolás engedélyezve lesz."
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "A megrajzolandó szóközök típusa."
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Git"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Git differences"
+msgstr "Git eltérések"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -604,26 +594,23 @@ msgstr "Beágyazott terminál"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Terminál beágyazása az alsó ablaktáblába."
 
-#: ../plugins/terminal/terminal.py:260
+#: ../plugins/terminal/terminal.py:318
 msgid "Terminal"
 msgstr "Terminál"
 
-#: ../plugins/terminal/terminal.py:281
+#: ../plugins/terminal/terminal.py:339
 msgid "C_hange Directory"
 msgstr "Könyvtár_váltás"
 
 #: ../plugins/textsize/textsize/__init__.py:142
-#| msgid "Large text style"
 msgid "_Larger Text"
 msgstr "_Nagyobb szöveg"
 
 #: ../plugins/textsize/textsize/__init__.py:145
-#| msgid "Small text style"
 msgid "S_maller Text"
 msgstr "_Kisebb szöveg"
 
 #: ../plugins/textsize/textsize/__init__.py:148
-#| msgid "No resize"
 msgid "_Normal size"
 msgstr "_Normál méret"
 
@@ -636,10 +623,35 @@ msgstr "Szöveg mérete"
 msgid "Easily increase and decrease the text size"
 msgstr "Szövegméret növelése és csökkentése egyszerűen"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+#| msgid "Bracket Completion"
+msgid "Interactive completion"
+msgstr "Interaktív kiegészítés"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "Minimális szóhossz:"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "Dokumentum szavai"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+#| msgid "Bracket Completion"
+msgid "Interactive Completion"
+msgstr "Interaktív kiegészítés"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "Engedélyezve legyen-e az interaktív kiegészítés."
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "Minimális szóhossz"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "A kiegészítendő minimális szóhossz."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
@@ -648,6 +660,15 @@ msgstr "Szókiegészítés"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "A szókiegészítés használata a kiegészítő keretrendszer használatával"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "Most Used"
+#~ msgstr "Legtöbbet használt"
+
+#~ msgid "Recently Used"
+#~ msgstr "Legutóbb használt"
 
 #~ msgid "Session Name"
 #~ msgstr "Munkamenet neve"
