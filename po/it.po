@@ -6,14 +6,14 @@
 # Giuseppe <quiquoqua@pn.itnet.it>, 1998.
 # Alessio Frusciante <algol@firenze.linux.it>, 2002.
 # Roberto Rosselli Del Turco <rosselli@ling.unipi.it>, 2003-2005.
-# Milo Casagrande <milo@ubuntu.com>, 2006-2010, 2011, 2012, 2013.
+# Milo Casagrande <milo@ubuntu.com>, 2006-2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-19 11:05+0200\n"
-"PO-Revision-Date: 2013-06-19 11:05+0200\n"
+"POT-Creation-Date: 2013-08-26 15:01+0200\n"
+"PO-Revision-Date: 2013-08-26 15:01+0200\n"
 "Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -282,6 +282,14 @@ msgstr "Se VERO la visualizzazione degli spazi verrà abilitata."
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Il tipo di spazio da disegnare."
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Git"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Git differences"
+msgstr "Differenze da git"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -600,11 +608,11 @@ msgstr "Terminale integrato"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Incorpora un terminale nel riquadro inferiore"
 
-#: ../plugins/terminal/terminal.py:301
+#: ../plugins/terminal/terminal.py:318
 msgid "Terminal"
 msgstr "Terminale"
 
-#: ../plugins/terminal/terminal.py:322
+#: ../plugins/terminal/terminal.py:339
 msgid "C_hange Directory"
 msgstr "Cambia _directory"
 
