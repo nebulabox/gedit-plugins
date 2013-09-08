@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&"
 "keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-05-13 10:35+0000\n"
-"PO-Revision-Date: 2013-05-15 11:37+0200\n"
+"POT-Creation-Date: 2013-08-02 13:25+0000\n"
+"PO-Revision-Date: 2013-09-08 08:14+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -74,7 +74,6 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Убаците посебне знакове једноставним кликом на њих."
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-#| msgid "Code comment"
 msgid "Code Comment"
 msgstr "Кодна примедба"
 
@@ -135,32 +134,26 @@ msgid "Bold"
 msgstr "Подебљано"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:3
-#| msgid "Italic text"
 msgid "Italic"
 msgstr "Искошено"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:4
-#| msgid "Underlined text style"
 msgid "Underline"
 msgstr "Подвучено"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:5
-#| msgid "Strike-through text"
 msgid "Strikethrough"
 msgstr "Прецртано"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:6
-#| msgid "Background color"
 msgid "Pick the background color"
 msgstr "Изаберите боју позадине"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:7
-#| msgid "Background color"
 msgid "Pick the foreground color"
 msgstr "Изаберите боју прочеља"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:8
-#| msgid "Background color"
 msgid "_Background"
 msgstr "_Позадина"
 
@@ -181,12 +174,10 @@ msgid "ID"
 msgstr "ИБ"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:13
-#| msgid "List description"
 msgid "Description"
 msgstr "Опис"
 
 #: ../plugins/colorschemer/schemer/schemer.ui.h:14
-#| msgid "Author info"
 msgid "Author"
 msgstr "Стваралац"
 
@@ -233,7 +224,6 @@ msgid "Draw Spaces"
 msgstr "Исцртавач размака"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-#| msgid "Draw Spaces and Tabs"
 msgid "Draw spaces and tabs"
 msgstr "Исцртава размаке и табулаторе"
 
@@ -285,6 +275,14 @@ msgstr "Уколико је изабрано исцртавање ће бити 
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Врсте размака које ће бити исцртане."
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Гит"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Git differences"
+msgstr "Разлике гита"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -589,27 +587,24 @@ msgstr "Угњеждени терминал"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Угради терминал у доњи панел."
 
-#: ../plugins/terminal/terminal.py:262
+#: ../plugins/terminal/terminal.py:318
 msgid "Terminal"
 msgstr "Терминал"
 
 # хм, хм?
-#: ../plugins/terminal/terminal.py:283
+#: ../plugins/terminal/terminal.py:339
 msgid "C_hange Directory"
 msgstr "_Промени директоријум"
 
 #: ../plugins/textsize/textsize/__init__.py:142
-#| msgid "Large text style"
 msgid "_Larger Text"
 msgstr "_Велики текст"
 
 #: ../plugins/textsize/textsize/__init__.py:145
-#| msgid "Small text style"
 msgid "S_maller Text"
 msgstr "_Мањи текст"
 
 #: ../plugins/textsize/textsize/__init__.py:148
-#| msgid "No resize"
 msgid "_Normal size"
 msgstr "_Уобичајена величина"
 
@@ -622,10 +617,35 @@ msgstr "Величина текста"
 msgid "Easily increase and decrease the text size"
 msgstr "Лако повећајте и смањите величину текста"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+#| msgid "Bracket Completion"
+msgid "Interactive completion"
+msgstr "Међудејствено довршавање"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "Најмања величина речи:"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "Речи документа"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+#| msgid "Bracket Completion"
+msgid "Interactive Completion"
+msgstr "Међудејствено довршавање"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "Да ли омогућити међудејствено довршавање"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "Најмања величина речи"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "Најмања величина речи за довршавање."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
@@ -634,1173 +654,3 @@ msgstr "Довршавање речи"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Довршавајте речи користећи радни оквир довршавања"
-
-#~ msgid "_Insert"
-#~ msgstr "Уметн_и"
-
-#~ msgid "Most Used"
-#~ msgstr "Највише коришћени"
-
-#~ msgid "Recently Used"
-#~ msgstr "Скори коришћени"
-
-#~ msgid "Session Name"
-#~ msgstr "Назив сесије"
-
-#~ msgid "Recover '%s' session"
-#~ msgstr "Опорави „%s“ сесију"
-
-#~ msgid "Sa_ved sessions"
-#~ msgstr "Сачу_ване сесије"
-
-#~ msgid "_Save current session"
-#~ msgstr "_Сачувај тренутну сесију"
-
-#~ msgid "Save the current document list as a new session"
-#~ msgstr "Сачувајте списак тренутног документа као нову сесију"
-
-#~ msgid "_Manage saved sessions..."
-#~ msgstr "_Управљај сачуваним сесијама..."
-
-#~ msgid "Open the saved session manager"
-#~ msgstr "Отворите управника сачуване сесије"
-
-#~ msgid "Session Saver"
-#~ msgstr "Чувар сесије"
-
-#~ msgid "Save and restore your working sessions"
-#~ msgstr "Сачувајте и вратите радне сесије"
-
-#~ msgid "Save session"
-#~ msgstr "Сачувајте сесију"
-
-#~ msgid "Session name:"
-#~ msgstr "Назив сесије:"
-
-#~ msgid "Saved Sessions"
-#~ msgstr "Сачуване сесије"
-
-#~ msgid "Tags"
-#~ msgstr "Елементи"
-
-#~ msgid "Select the group of tags you want to use"
-#~ msgstr "Изаберите групу елемената које желите да користите"
-
-#~ msgid "_Preview"
-#~ msgstr "_Преглед пред штампу"
-
-#~ msgid "Available Tag Lists"
-#~ msgstr "Доступни спискови елемената"
-
-#~ msgid "XHTML 1.0 — Tags"
-#~ msgstr "иКсХТМЛ 1.0 — Ознаке"
-
-#~ msgid "Abbreviated form"
-#~ msgstr "Скраћени облик"
-
-#~ msgid "Abbreviation"
-#~ msgstr "Скраћеница"
-
-#~ msgid "Accessibility key character"
-#~ msgstr "Знак за приступни тастер"
-
-#~ msgid "Acronym"
-#~ msgstr "Акроним"
-
-#~ msgid "Align"
-#~ msgstr "Поравнање"
-
-#~ msgid "Alignment character"
-#~ msgstr "Знак за поравнање"
-
-#~ msgid "Alternative"
-#~ msgstr "Алтернативно"
-
-#~ msgid "Anchor URI"
-#~ msgstr "Адреса везе"
-
-#~ msgid "Anchor"
-#~ msgstr "Веза"
-
-# bug: what???
-#~ msgid "Applet class file code (deprecated)"
-#~ msgstr "Код за аплете (превазиђено)"
-
-#~ msgid "Associated information"
-#~ msgstr "Приложени подаци"
-
-#~ msgid "Axis related headers"
-#~ msgstr "Заглавља у вези осе"
-
-#~ msgid "Background color (deprecated)"
-#~ msgstr "Боја позадине (превазиђено)"
-
-#~ msgid "Background texture tile (deprecated)"
-#~ msgstr "Текстура позадине (превазиђено)"
-
-#~ msgid "Base font (deprecated)"
-#~ msgstr "Основни фонт (превазиђено)"
-
-#~ msgid "Base URI"
-#~ msgstr "Основна адреса"
-
-#~ msgid "Border (deprecated)"
-#~ msgstr "Ивица (превазиђено)"
-
-#~ msgid "Cell rowspan"
-#~ msgstr "Поље у више редова"
-
-#~ msgid "Center (deprecated)"
-#~ msgstr "Центрирај (превазиђено)"
-
-#~ msgid "Character encoding of linked resource"
-#~ msgstr "Кодирање знакова везаног ресурса"
-
-#~ msgid "Checked state"
-#~ msgstr "Је ли изабрано"
-
-#~ msgid "Citation"
-#~ msgstr "Цитат"
-
-#~ msgid "Cite reason for change"
-#~ msgstr "Наведите разлог измене"
-
-#~ msgid "Class implementation ID"
-#~ msgstr "ИБ имплементације класе"
-
-#~ msgid "Class list"
-#~ msgstr "Списак класа"
-
-#~ msgid "Clear text flow control"
-#~ msgstr "Очисти контролу протока текста"
-
-#~ msgid "Code content type"
-#~ msgstr "Врста садржаја кода"
-
-#~ msgid "Color of selected links (deprecated)"
-#~ msgstr "Боја изабраних веза (превазиђено)"
-
-#~ msgid "Column span"
-#~ msgstr "Распон стубаца"
-
-#~ msgid "Columns"
-#~ msgstr "Ступци"
-
-#~ msgid "Comment"
-#~ msgstr "Примедба"
-
-#~ msgid "Computer code fragment"
-#~ msgstr "Исечак рачунарског кода"
-
-#~ msgid "Content type (deprecated)"
-#~ msgstr "Врста садржаја (превазиђено)"
-
-#~ msgid "Coordinates"
-#~ msgstr "Координате"
-
-#~ msgid "Date and time of change"
-#~ msgstr "Датум и време измене"
-
-#~ msgid "Declare flag"
-#~ msgstr "Declare атрибут"
-
-#~ msgid "Defer attribute"
-#~ msgstr "Defer атрибут"
-
-#~ msgid "Definition description"
-#~ msgstr "Опис дефиниције"
-
-#~ msgid "Definition list"
-#~ msgstr "Списак дефиниција"
-
-#~ msgid "Definition term"
-#~ msgstr "Израз дефиниције"
-
-#~ msgid "Deleted text"
-#~ msgstr "Обрисани текст"
-
-#~ msgid "Directionality"
-#~ msgstr "Усмеривост"
-
-#~ msgid "Directionality (deprecated)"
-#~ msgstr "Усмеривост (превазиђено)"
-
-#~ msgid "Disabled"
-#~ msgstr "Искључено"
-
-#~ msgid "DIV container"
-#~ msgstr "Садржалац ДИВ"
-
-#~ msgid "DIV Style container"
-#~ msgstr "Садржалац ДИВ стила"
-
-#~ msgid "Document base"
-#~ msgstr "Основа документа"
-
-#~ msgid "Document body"
-#~ msgstr "Тело документа"
-
-#~ msgid "Document head"
-#~ msgstr "Заглавље документа"
-
-#~ msgid "Element ID"
-#~ msgstr "ИБ елемента"
-
-#~ msgid "Document title"
-#~ msgstr "Наслов документа"
-
-#~ msgid "Document type"
-#~ msgstr "Врста документа"
-
-#~ msgid "Emphasis"
-#~ msgstr "Наглашавање"
-
-#~ msgid "Encode type"
-#~ msgstr "Врста кодирања"
-
-#~ msgid "Font face (deprecated)"
-#~ msgstr "Фонт (превазиђено)"
-
-#~ msgid "For label"
-#~ msgstr "За ознаку"
-
-#~ msgid "Forced line break"
-#~ msgstr "Ручни прелом реда"
-
-#~ msgid "Form action handler"
-#~ msgstr "Акција за образац"
-
-#~ msgid "Form control group"
-#~ msgstr "Група елемената за образац"
-
-#~ msgid "Form field label text"
-#~ msgstr "Текст ознаке поља у обрасцу"
-
-#~ msgid "Form input type"
-#~ msgstr "Врста уноса у образац"
-
-#~ msgid "Form input"
-#~ msgstr "Унос у образац"
-
-#~ msgid "Form method"
-#~ msgstr "Начин слања обрасца"
-
-#~ msgid "Form"
-#~ msgstr "Образац"
-
-#~ msgid "Forward link"
-#~ msgstr "Прослеђивање везе"
-
-#~ msgid "Frame render parts"
-#~ msgstr "Делови исцртавања оквира"
-
-#~ msgid "Frame source"
-#~ msgstr "Извор оквира"
-
-#~ msgid "Frame target"
-#~ msgstr "Одредиште оквира"
-
-#~ msgid "Frame"
-#~ msgstr "Оквир"
-
-#~ msgid "Frame border"
-#~ msgstr "Ивица оквира"
-
-#~ msgid "Frameset columns"
-#~ msgstr "Ступци скупа оквира"
-
-#~ msgid "Frameset rows"
-#~ msgstr "Редови скупа оквира"
-
-#~ msgid "Frameset"
-#~ msgstr "Скуп оквира"
-
-#~ msgid "Frame spacing"
-#~ msgstr "Размак оквира"
-
-#~ msgid "Generic embedded object"
-#~ msgstr "Општи угњеждени објекат"
-
-#~ msgid "Generic metainformation"
-#~ msgstr "Општи метаподаци"
-
-#~ msgid "Generic span"
-#~ msgstr "Опште обухватање"
-
-#~ msgid "Header cell IDs"
-#~ msgstr "ИБ поља заглавља"
-
-#~ msgid "Heading 1"
-#~ msgstr "Заглавље 1"
-
-#~ msgid "Heading 2"
-#~ msgstr "Заглавље 2"
-
-#~ msgid "Heading 3"
-#~ msgstr "Заглавље 3"
-
-#~ msgid "Heading 4"
-#~ msgstr "Заглавље 4"
-
-#~ msgid "Heading 5"
-#~ msgstr "Заглавље 5"
-
-#~ msgid "Heading 6"
-#~ msgstr "Заглавље 6"
-
-#~ msgid "Height"
-#~ msgstr "Висина"
-
-#~ msgid "Horizontal rule"
-#~ msgstr "Водоравна линија"
-
-#~ msgid "Horizontal space (deprecated)"
-#~ msgstr "Водоравни размак (превазиђено)"
-
-#~ msgid "HREF URI"
-#~ msgstr "ХРЕФ адреса"
-
-#~ msgid "HTML root element"
-#~ msgstr "Корени ХТМЛ елемент"
-
-#~ msgid "HTTP header name"
-#~ msgstr "Назив ХТТП заглавља"
-
-#~ msgid "I18N BiDi override"
-#~ msgstr "И18А двосмерно превазилажење"
-
-#~ msgid "Image map area"
-#~ msgstr "Област мапиране слике"
-
-#~ msgid "Image map name"
-#~ msgstr "Назив мапиране слике"
-
-#~ msgid "Image map"
-#~ msgstr "Мапирана слика"
-
-#~ msgid "Image"
-#~ msgstr "Слика"
-
-#~ msgid "Inline frame"
-#~ msgstr "Оквир у тексту"
-
-#~ msgid "Inserted text"
-#~ msgstr "Уметнути текст"
-
-#~ msgid "Instance definition"
-#~ msgstr "Једна дефиниција"
-
-#~ msgid "Java applet (deprecated)"
-#~ msgstr "Јава програмче (превазиђено)"
-
-#~ msgid "Label"
-#~ msgstr "Ознака"
-
-#~ msgid "Language code"
-#~ msgstr "Код језика"
-
-#~ msgid "Link color (deprecated)"
-#~ msgstr "Боја за везе (превазиђено)"
-
-#~ msgid "List item"
-#~ msgstr "Ставка списка"
-
-#~ msgid "List of MIME types for file upload"
-#~ msgstr "Списак МИМЕ врсти за набацивање датотеке"
-
-#~ msgid "List of supported character sets"
-#~ msgstr "Списак подржаних скупова знакова"
-
-#~ msgid "Local change to font"
-#~ msgstr "Локална измена словног лика"
-
-#~ msgid "Long description link"
-#~ msgstr "Дуг опис везе"
-
-#~ msgid "Long quotation"
-#~ msgstr "Дуг навод"
-
-#~ msgid "Margin pixel height"
-#~ msgstr "Висина маргине у пикселима"
-
-#~ msgid "Margin pixel width"
-#~ msgstr "Ширина маргине у пикселима"
-
-#~ msgid "Maximum length of text field"
-#~ msgstr "Највећа дужина текстуалног поља"
-
-#~ msgid "Output media"
-#~ msgstr "Медиј за излаз"
-
-#~ msgid "Media-independent link"
-#~ msgstr "Веза независна од медија"
-
-#~ msgid "Menu list (deprecated)"
-#~ msgstr "Списак као мени (превазиђено)"
-
-#~ msgid "Multi-line text field"
-#~ msgstr "Вишередно текстуално поље"
-
-#~ msgid "Multiple"
-#~ msgstr "Вишеструки избор"
-
-#~ msgid "Named property value"
-#~ msgstr "Именована вредност особине"
-
-#~ msgid "No frames"
-#~ msgstr "Без оквира"
-
-#~ msgid "No script"
-#~ msgstr "Без скрипте"
-
-#~ msgid "No shade (deprecated)"
-#~ msgstr "Без сенчења (превазиђено)"
-
-#~ msgid "No URI"
-#~ msgstr "Без адресе"
-
-#~ msgid "No word wrap (deprecated)"
-#~ msgstr "Без прелома реда (превазиђено)"
-
-#~ msgid "Object applet file (deprecated)"
-#~ msgstr "Датотека објекта програмчета (превазиђено)"
-
-#~ msgid "Object data reference"
-#~ msgstr "Референца објекта података"
-
-#~ msgid "Offset for alignment character"
-#~ msgstr "Померај за знак поравнања"
-
-#~ msgid "OnBlur event"
-#~ msgstr "Догађај на замућење"
-
-#~ msgid "OnChange event"
-#~ msgstr "Догађај на промену"
-
-#~ msgid "OnClick event"
-#~ msgstr "Догађај на клик"
-
-#~ msgid "OnDblClick event"
-#~ msgstr "Догађај на двоклик"
-
-#~ msgid "OnFocus event"
-#~ msgstr "Догађај на зумирање"
-
-#~ msgid "OnKeyDown event"
-#~ msgstr "Догађај на тастер доле"
-
-#~ msgid "OnKeyPress event"
-#~ msgstr "Догађај на притисак тастера"
-
-#~ msgid "OnKeyUp event"
-#~ msgstr "Догађај на тастер горе"
-
-#~ msgid "OnLoad event"
-#~ msgstr "Догађај на учитавање"
-
-#~ msgid "OnMouseDown event"
-#~ msgstr "Догађај на мишем доле"
-
-#~ msgid "OnMouseMove event"
-#~ msgstr "Догађај на покрет миша"
-
-#~ msgid "OnMouseOut event"
-#~ msgstr "Догађај на излаз миша"
-
-#~ msgid "OnMouseOver event"
-#~ msgstr "Догађај на мишем преко"
-
-#~ msgid "OnMouseUp event"
-#~ msgstr "Догађај на мишем горе"
-
-#~ msgid "OnReset event"
-#~ msgstr "Догађај на повраћај"
-
-#~ msgid "OnSelect event"
-#~ msgstr "Догађај на избор"
-
-#~ msgid "OnSubmit event"
-#~ msgstr "Догађај на слање"
-
-#~ msgid "OnUnload event"
-#~ msgstr "Догађај на одучитавање"
-
-#~ msgid "Option group"
-#~ msgstr "Група опција"
-
-#~ msgid "Option selector"
-#~ msgstr "Бирач опције"
-
-#~ msgid "Ordered list"
-#~ msgstr "Уређени списак"
-
-#~ msgid "Paragraph class"
-#~ msgstr "Класа пасуса"
-
-#~ msgid "Paragraph style"
-#~ msgstr "Стил пасуса"
-
-#~ msgid "Paragraph"
-#~ msgstr "Пасус"
-
-#~ msgid "Preformatted text"
-#~ msgstr "Преобликовани текст"
-
-#~ msgid "Profile metainfo dictionary"
-#~ msgstr "Речник профила са метаподацима"
-
-#~ msgid "Push button"
-#~ msgstr "Дугме"
-
-#~ msgid "ReadOnly text and password"
-#~ msgstr "Текст само за читање и лозинка"
-
-#~ msgid "Reduced spacing (deprecated)"
-#~ msgstr "Смањени размак (превазиђено)"
-
-#~ msgid "Reverse link"
-#~ msgstr "Обрнута веза"
-
-#~ msgid "Rows"
-#~ msgstr "Редови"
-
-#~ msgid "Rulings between rows and columns"
-#~ msgstr "Линије између редова и стубаца"
-
-#~ msgid "Sample program output, scripts"
-#~ msgstr "Пример исписа програма, скрипти"
-
-#~ msgid "Scope covered by header cells"
-#~ msgstr "Опсег који покривају поља заглавља"
-
-#~ msgid "Script language name"
-#~ msgstr "Име скрипт језика"
-
-# bug: s/statments/statements/
-#~ msgid "Script statements"
-#~ msgstr "Наредбе скрипте"
-
-#~ msgid "Scrollbar"
-#~ msgstr "Клизач"
-
-#~ msgid "Selectable option"
-#~ msgstr "Избирива опција"
-
-#~ msgid "Selected"
-#~ msgstr "Изабрана"
-
-#~ msgid "Server-side image map"
-#~ msgstr "Мапа слике на серверу"
-
-#~ msgid "Shape"
-#~ msgstr "Облик"
-
-#~ msgid "Short inline quotation"
-#~ msgstr "Кратак уметнути навод"
-
-#~ msgid "Size (deprecated)"
-#~ msgstr "Величина (превазиђено)"
-
-#~ msgid "Source"
-#~ msgstr "Извор"
-
-#~ msgid "Space-separated archive list"
-#~ msgstr "Размаком раздвојен списак архива"
-
-#~ msgid "Spacing between cells"
-#~ msgstr "Размак међу пољима"
-
-#~ msgid "Spacing within cells"
-#~ msgstr "Размак у пољима"
-
-# оставити „спан“???
-#~ msgid "Span"
-#~ msgstr "Обухватање"
-
-#~ msgid "Standby load message"
-#~ msgstr "Порука за чекање при учитавању"
-
-#~ msgid "Starting sequence number (deprecated)"
-#~ msgstr "Број за почетак низа (превазиђено)"
-
-#~ msgid "Strike-through text style (deprecated)"
-#~ msgstr "Стил прецртаног текста (превазиђено)"
-
-#~ msgid "Strike-through text (deprecated)"
-#~ msgstr "Прецртани текст (превазиђено)"
-
-#~ msgid "Strong emphasis"
-#~ msgstr "Снажно наглашавање"
-
-#~ msgid "Style info"
-#~ msgstr "Подаци о стилу"
-
-#~ msgid "Subscript"
-#~ msgstr "Индекс"
-
-#~ msgid "Superscript"
-#~ msgstr "Степен"
-
-#~ msgid "Table body"
-#~ msgstr "Тело табеле"
-
-#~ msgid "Table caption"
-#~ msgstr "Наслов табеле"
-
-#~ msgid "Table column group properties"
-#~ msgstr "Особине групе стубаца табеле"
-
-#~ msgid "Table column properties"
-#~ msgstr "Особине ступца табеле"
-
-#~ msgid "Table data cell"
-#~ msgstr "Поље табеле са подацима"
-
-#~ msgid "Table footer"
-#~ msgstr "Подножје табеле"
-
-#~ msgid "Table header cell"
-#~ msgstr "Поље заглавља табеле"
-
-#~ msgid "Table header"
-#~ msgstr "Заглавље табеле"
-
-#~ msgid "Table row"
-#~ msgstr "Ред табеле"
-
-#~ msgid "Table summary"
-#~ msgstr "Сажетак табеле"
-
-#~ msgid "Table"
-#~ msgstr "Табела"
-
-#~ msgid "Target — Blank"
-#~ msgstr "Одредиште — празно"
-
-#~ msgid "Target — Parent"
-#~ msgstr "Одредиште — садржалац"
-
-#~ msgid "Target — Self"
-#~ msgstr "Одредиште — исти"
-
-#~ msgid "Target — Top"
-#~ msgstr "Одредиште — главни"
-
-#~ msgid "Teletype or monospace text style"
-#~ msgstr "Стил текста утврђене ширине"
-
-#~ msgid "Text color (deprecated)"
-#~ msgstr "Боја текста (превазиђено)"
-
-#~ msgid "Text entered by user"
-#~ msgstr "Текст који уноси корисник"
-
-#~ msgid "Title"
-#~ msgstr "Наслов"
-
-#~ msgid "Unordered list"
-#~ msgstr "Неуређени списак"
-
-#~ msgid "Use image map"
-#~ msgstr "Користи мапу слике"
-
-#~ msgid "Value interpretation"
-#~ msgstr "Тумачење вредности"
-
-#~ msgid "Value"
-#~ msgstr "Вредност"
-
-#~ msgid "Variable or program argument"
-#~ msgstr "Променљива или аргумент програма"
-
-#~ msgid "Vertical cell alignment"
-#~ msgstr "Усправно поравнање поља"
-
-#~ msgid "Vertical space (deprecated)"
-#~ msgstr "Усправни размак (превазиђено)"
-
-#~ msgid "Visited link color (deprecated)"
-#~ msgstr "Боја за посећене везе (превазиђено)"
-
-#~ msgid "Width"
-#~ msgstr "Ширина"
-
-#~ msgid "HTML — Tags"
-#~ msgstr "ХТМЛ — Ознаке"
-
-#~ msgid "Above"
-#~ msgstr "Изнад"
-
-# bug: what???
-#~ msgid "Applet class file code"
-#~ msgstr "Код за аплете"
-
-#~ msgid "Array"
-#~ msgstr "Низ"
-
-#~ msgid "Background texture tile"
-#~ msgstr "Текстура позадине"
-
-#~ msgid "Base font"
-#~ msgstr "Основни фонт"
-
-#~ msgid "Border color"
-#~ msgstr "Боја ивице"
-
-#~ msgid "Border"
-#~ msgstr "Ивица"
-
-#~ msgid "Center"
-#~ msgstr "Центрирај"
-
-#~ msgid "Checked (state)"
-#~ msgstr "Изабрано (стање)"
-
-#~ msgid "Color of selected links"
-#~ msgstr "Боја изабраних веза"
-
-#~ msgid "Content scheme"
-#~ msgstr "Схема садржаја"
-
-#~ msgid "Content type"
-#~ msgstr "Врста садржаја"
-
-#~ msgid "Direction"
-#~ msgstr "Смер"
-
-# хм, хм?
-#~ msgid "Directory list"
-#~ msgstr "Списак фасцикли"
-
-#~ msgid "HTML version"
-#~ msgstr "Издање ХТМЛ-а"
-
-#~ msgid "Embedded object"
-#~ msgstr "Угњеждени објекат"
-
-#~ msgid "Figure"
-#~ msgstr "Слика"
-
-#~ msgid "Font face"
-#~ msgstr "Фонт"
-
-#~ msgid "Frameborder"
-#~ msgstr "Ивица оквира"
-
-#~ msgid "Framespacing"
-#~ msgstr "Размак оквира"
-
-#~ msgid "Heading"
-#~ msgstr "Заглавље"
-
-#~ msgid "Horizontal space"
-#~ msgstr "Водоравни размак"
-
-#~ msgid "Image source"
-#~ msgstr "Извор слике"
-
-#~ msgid "Inline layer"
-#~ msgstr "Слој у тексту"
-
-#~ msgid "Java applet"
-#~ msgstr "Јава програмче"
-
-#~ msgid "Layer"
-#~ msgstr "Слој"
-
-#~ msgid "Link color"
-#~ msgstr "Боја везе"
-
-#~ msgid "Listing"
-#~ msgstr "Испис"
-
-#~ msgid "Mail link"
-#~ msgstr "Веза за пошту"
-
-#~ msgid "Marquee"
-#~ msgstr "Рекламна порука"
-
-#~ msgid "Menu list"
-#~ msgstr "Списак као мени"
-
-#~ msgid "Multicolumn"
-#~ msgstr "Вишестубаца"
-
-#~ msgid "Next ID"
-#~ msgstr "Следећи ИБ"
-
-#~ msgid "No embedded objects"
-#~ msgstr "Нема угњеждених објеката"
-
-#~ msgid "No layers"
-#~ msgstr "Без слојева"
-
-#~ msgid "No line break"
-#~ msgstr "Без прелома реда"
-
-#~ msgid "No shade"
-#~ msgstr "Без сенчења"
-
-#~ msgid "No word wrap"
-#~ msgstr "Без прелома реда"
-
-#~ msgid "Note"
-#~ msgstr "Белешка"
-
-#~ msgid "Object applet file"
-#~ msgstr "Датотека објекта програмчета"
-
-#~ msgid "Preformatted listing"
-#~ msgstr "Преобликовани испис"
-
-#~ msgid "Prompt message"
-#~ msgstr "Упитна порука"
-
-#~ msgid "Quote"
-#~ msgstr "Навод"
-
-#~ msgid "Range"
-#~ msgstr "Опсег"
-
-#~ msgid "Reduced spacing"
-#~ msgstr "Смањени размак"
-
-#~ msgid "Root"
-#~ msgstr "Корен"
-
-#~ msgid "Single line prompt"
-#~ msgstr "Упит у једном реду"
-
-#~ msgid "Size"
-#~ msgstr "Величина"
-
-#~ msgid "Soft line break"
-#~ msgstr "Меки прелом реда"
-
-#~ msgid "Sound"
-#~ msgstr "Звук"
-
-#~ msgid "Spacer"
-#~ msgstr "Размакница"
-
-#~ msgid "Square root"
-#~ msgstr "Квадратни корен"
-
-#~ msgid "Starting sequence number"
-#~ msgstr "Број за почетак низа"
-
-#~ msgid "Strike-through text style"
-#~ msgstr "Стил прецртаног текста"
-
-#~ msgid "Tab order position"
-#~ msgstr "Редослед при прелазу табулатором"
-
-#~ msgid "Text color"
-#~ msgstr "Боја текста"
-
-#~ msgid "Text"
-#~ msgstr "Текст"
-
-#~ msgid "Top margin in pixels"
-#~ msgstr "Горња маргина у пикселима"
-
-#~ msgid "URL"
-#~ msgstr "Адреса"
-
-#~ msgid "Vertical space"
-#~ msgstr "Усправни размак"
-
-#~ msgid "Visited link color"
-#~ msgstr "Боја посећених веза"
-
-#~ msgid "HTML — Special Characters"
-#~ msgstr "ХТМЛ — нарочити знаци"
-
-#~ msgid "Non-breaking space"
-#~ msgstr "Размак без прелома реда"
-
-#~ msgid "Latex — Tags"
-#~ msgstr "ЛаТеКс — Ознаке"
-
-#~ msgid "Bibliography (cite)"
-#~ msgstr "Библиографија (цитат)"
-
-#~ msgid "Bibliography (item)"
-#~ msgstr "Библиографија (ставка)"
-
-#~ msgid "Bibliography (shortcite)"
-#~ msgstr "Библиографија (кратак цитат)"
-
-#~ msgid "Bibliography (thebibliography)"
-#~ msgstr "Библиографија (библиографија)"
-
-#~ msgid "Brackets ()"
-#~ msgstr "Заграде ()"
-
-#~ msgid "Brackets []"
-#~ msgstr "Заграде []"
-
-#~ msgid "Brackets {}"
-#~ msgstr "Заграде {}"
-
-#~ msgid "Brackets <>"
-#~ msgstr "Заграде <>"
-
-#~ msgid "File input"
-#~ msgstr "Укључење датотеке"
-
-#~ msgid "Function cosine"
-#~ msgstr "Функција косинус"
-
-#~ msgid "Function e^"
-#~ msgstr "Функција e^"
-
-#~ msgid "Function exp"
-#~ msgstr "Функција exp"
-
-#~ msgid "Function log"
-#~ msgstr "Функција log"
-
-#~ msgid "Function log10"
-#~ msgstr "Функција log10"
-
-#~ msgid "Function sine"
-#~ msgstr "Функција синус"
-
-#~ msgid "Greek alpha"
-#~ msgstr "Грчко алфа"
-
-#~ msgid "Greek beta"
-#~ msgstr "Грчко бета"
-
-#~ msgid "Greek epsilon"
-#~ msgstr "Грчко ипсилон"
-
-#~ msgid "Greek gamma"
-#~ msgstr "Грчко гама"
-
-#~ msgid "Greek lambda"
-#~ msgstr "Грчко ламбда"
-
-#~ msgid "Greek rho"
-#~ msgstr "Грчко ро"
-
-#~ msgid "Greek tau"
-#~ msgstr "Грчко тау"
-
-#~ msgid "Header 0 (chapter)"
-#~ msgstr "Заглавље 0 (chapter)"
-
-#~ msgid "Header 0 (chapter*)"
-#~ msgstr "Заглавље 0 (chapter*)"
-
-#~ msgid "Header 1 (section)"
-#~ msgstr "Заглавље 1 (section)"
-
-#~ msgid "Header 1 (section*)"
-#~ msgstr "Заглавље 1 (section*)"
-
-#~ msgid "Header 2 (subsection)"
-#~ msgstr "Заглавље 2 (subsection)"
-
-#~ msgid "Header 2 (subsection*)"
-#~ msgstr "Заглавље 2 (subsection*)"
-
-#~ msgid "Header 3 (subsubsection)"
-#~ msgstr "Заглавље 3 (subsubsection)"
-
-#~ msgid "Header 3 (subsubsection*)"
-#~ msgstr "Заглавље 3 (subsubsection*)"
-
-#~ msgid "Header 4 (paragraph)"
-#~ msgstr "Заглавље 4 (paragraph)"
-
-#~ msgid "Header appendix"
-#~ msgstr "Заглавље додатка"
-
-#~ msgid "List enumerate"
-#~ msgstr "Побројани списак"
-
-#~ msgid "List itemize"
-#~ msgstr "Списак по тачкама"
-
-#~ msgid "Item with label"
-#~ msgstr "Ставка са ознаком"
-
-#~ msgid "Item"
-#~ msgstr "Ставка"
-
-#~ msgid "Maths (display)"
-#~ msgstr "Математички израз (издвојен)"
-
-#~ msgid "Maths (inline)"
-#~ msgstr "Математички израз (у тексту)"
-
-#~ msgid "Operator fraction"
-#~ msgstr "Оператор разломка"
-
-#~ msgid "Operator integral (display)"
-#~ msgstr "Оператор интеграла (издвојен)"
-
-#~ msgid "Operator integral (inline)"
-#~ msgstr "Оператор интеграла (у тексту)"
-
-#~ msgid "Operator sum (display)"
-#~ msgstr "Оператор збира (издвојен)"
-
-#~ msgid "Operator sum (inline)"
-#~ msgstr "Оператор збира (у тексту)"
-
-#~ msgid "Reference label"
-#~ msgstr "Ознака референце"
-
-#~ msgid "Reference ref"
-#~ msgstr "Референца реф"
-
-#~ msgid "Symbol <<"
-#~ msgstr "Симбол <"
-
-#~ msgid "Symbol <="
-#~ msgstr "Симбол <="
-
-#~ msgid "Symbol >="
-#~ msgstr "Симбол >="
-
-#~ msgid "Symbol >>"
-#~ msgstr "Симбол >>"
-
-#~ msgid "Symbol and"
-#~ msgstr "Симбол and"
-
-#~ msgid "Symbol const"
-#~ msgstr "Симбол const"
-
-#~ msgid "Symbol d2-by-dt2-partial"
-#~ msgstr "Симбол d2-са-dt2-парцијално"
-
-#~ msgid "Symbol dagger"
-#~ msgstr "Симбол бодеж"
-
-#~ msgid "Symbol d-by-dt"
-#~ msgstr "Симбол d-са-dt"
-
-#~ msgid "Symbol d-by-dt-partial"
-#~ msgstr "Симбол d-са-dt-парцијално"
-
-#~ msgid "Symbol equiv"
-#~ msgstr "Симбол еквиваленција"
-
-#~ msgid "Symbol en-dash --"
-#~ msgstr "Симбол црта --"
-
-#~ msgid "Symbol em-dash ---"
-#~ msgstr "Симбол дуга црта ---"
-
-#~ msgid "Symbol infinity"
-#~ msgstr "Симбол бесконачно"
-
-#~ msgid "Symbol mathspace ,"
-#~ msgstr "Симбол матразмак ,"
-
-#~ msgid "Symbol mathspace ."
-#~ msgstr "Симбол матразмак ."
-
-#~ msgid "Symbol mathspace _"
-#~ msgstr "Симбол матразмак _"
-
-#~ msgid "Symbol mathspace __"
-#~ msgstr "Симбол матразмак __"
-
-#~ msgid "Symbol simeq"
-#~ msgstr "Симбол слично"
-
-#~ msgid "Symbol star"
-#~ msgstr "Симбол звезда"
-
-#~ msgid "Typeface bold"
-#~ msgstr "Масни фонт"
-
-#~ msgid "Typeface type"
-#~ msgstr "Врста фонта"
-
-#~ msgid "Typeface italic"
-#~ msgstr "Курзивни фонт"
-
-#~ msgid "Typeface slanted"
-#~ msgstr "Искошени фонт"
-
-#~ msgid "Unbreakable text"
-#~ msgstr "Непреломиви текст"
-
-#~ msgid "Footnote"
-#~ msgstr "Фуснота"
-
-#~ msgid "Tag list"
-#~ msgstr "Списак елемената"
-
-#~ msgid ""
-#~ "Provides a method to easily insert commonly used tags/strings into a "
-#~ "document without having to type them."
-#~ msgstr ""
-#~ "Обезбеђује начин лаког уметања често коришћених елемената/ниски у "
-#~ "документ без потребе да их куцате."
-
-#~ msgid "XSLT — Elements"
-#~ msgstr "ХСЛТ — Елементи"
-
-#~ msgid "XSLT — Functions"
-#~ msgstr "ХСЛТ — Функције"
-
-#~ msgid "XSLT — Axes"
-#~ msgstr "ХСЛТ — Осе"
-
-#~ msgid "ancestor"
-#~ msgstr "предак"
-
-#~ msgid "ancestor-or-self"
-#~ msgstr "предак-или-исти"
-
-#~ msgid "attribute"
-#~ msgstr "атрибут"
-
-#~ msgid "child"
-#~ msgstr "садржани"
-
-#~ msgid "descendant"
-#~ msgstr "наследник"
-
-#~ msgid "descendant-or-self"
-#~ msgstr "наследник-или-исти"
-
-#~ msgid "following"
-#~ msgstr "наредни"
-
-#~ msgid "following-sibling"
-#~ msgstr "наредни-слични"
-
-#~ msgid "namespace"
-#~ msgstr "простор имена"
-
-#~ msgid "parent"
-#~ msgstr "надређени"
-
-#~ msgid "preceding"
-#~ msgstr "претходни"
-
-#~ msgid "preceding-sibling"
-#~ msgstr "претходни-слични"
-
-#~ msgid "self"
-#~ msgstr "исти"
-
-#~ msgid "XUL — Tags"
-#~ msgstr "КсУЛ — Ознаке"
-
-#~ msgid "_Increase font size"
-#~ msgstr "_Повећај величину писма"
-
-#~ msgid "_Decrease font size"
-#~ msgstr "_Смањи величину писма"
-
-#~ msgid "_Reset font size"
-#~ msgstr "_Врати величину писма"
