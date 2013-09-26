@@ -45,8 +45,6 @@ class GeditTerminal(Vte.Terminal):
     def __init__(self):
         Vte.Terminal.__init__(self)
 
-        self.set_background_image(None)
-        self.set_background_transparent(False)
         self.set_size(self.get_column_count(), 5)
         self.set_size_request(200, 50)
 
