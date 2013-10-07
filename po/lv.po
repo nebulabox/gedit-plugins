@@ -3,14 +3,15 @@
 #
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007, 2009.
 # Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2009, 2010.
-# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013.
 # Anita Reitere <nitalynx@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-14 01:44+0300\n"
-"PO-Revision-Date: 2012-10-14 01:45+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gedit&keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2013-09-27 11:20+0000\n"
+"PO-Revision-Date: 2013-09-22 00:02+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 msgid "Bookmarks"
@@ -29,27 +30,27 @@ msgstr "Grāmatzīmes"
 msgid "Easy document navigation with bookmarks"
 msgstr "Vienkārša pārvietošanās pa dokumentiem, izmantojot grāmatzīmes"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:200
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:201
 msgid "Toggle Bookmark"
 msgstr "Ielikt / izņemt grāmatzīmi"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:201
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:202
 msgid "Toggle bookmark status of the current line"
 msgstr "Pārslēgt grāmatzīmes statusu šai rindiņai"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:203
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:204
 msgid "Goto Next Bookmark"
 msgstr "Pāriet uz nākamo grāmatzīmi"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:204
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:205
 msgid "Goto the next bookmark"
 msgstr "Pāriet uz nākamo grāmatzīmi"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:206
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:207
 msgid "Goto Previous Bookmark"
 msgstr "Pāriet uz iepriekšējo grāmatzīmi"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:207
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:208
 msgid "Goto the previous bookmark"
 msgstr "Pāriet uz iepriekšējo grāmatzīmi"
 
@@ -61,8 +62,9 @@ msgstr "Iekavu noslēgšana"
 msgid "Automatically adds closing brackets."
 msgstr "Automātiski pievieno aizverošās iekavas."
 
-#: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
+#. ex:et:ts=4:
 #: ../plugins/charmap/charmap/__init__.py:51
+#: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Rakstzīmju tabula"
 
@@ -70,9 +72,8 @@ msgstr "Rakstzīmju tabula"
 msgid "Insert special characters just by clicking on them."
 msgstr "Ar klikšķu palīdzību ļauj ievietot speciālās rakstzīmes."
 
-#. ex:et:ts=4:
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-msgid "Code comment"
+msgid "Code Comment"
 msgstr "Koda komentārs"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:2
@@ -118,6 +119,71 @@ msgid "Pick Color"
 msgstr "Izvēlieties krāsu"
 
 #. ex:ts=4:et:
+#: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
+#: ../plugins/colorschemer/schemer/schemer.ui.h:1
+msgid "Color Scheme Editor"
+msgstr "Krāsu paletes redaktors"
+
+#: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:2
+msgid "Source code color scheme editor"
+msgstr "Pirmkoda krāsu paletes redaktors"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:2
+msgid "Bold"
+msgstr "Treknraksts"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:3
+msgid "Italic"
+msgstr "Kursīvs"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:4
+msgid "Underline"
+msgstr "Pasvītrots"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:5
+msgid "Strikethrough"
+msgstr "Pārsvītrots"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:6
+msgid "Pick the background color"
+msgstr "Izvēlieties fona krāsu"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:7
+msgid "Pick the foreground color"
+msgstr "Izvēlieties priekšplāna krāsu"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:8
+msgid "_Background"
+msgstr "_Fons"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+msgid "_Foreground"
+msgstr "_Priekšplāns"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+msgid "_Clear "
+msgstr "_Attīrīt "
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+msgid "Name"
+msgstr "Nosaukums"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+msgid "Description"
+msgstr "Apraksts"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:14
+msgid "Author"
+msgstr "Autors"
+
+#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+msgid "Sample"
+msgstr "Paraugs"
+
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 msgid "Commander"
 msgstr "Commander"
@@ -134,21 +200,13 @@ msgstr "Commander režīms"
 msgid "Start commander mode"
 msgstr "Startēt commander režīmu"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:110
+#: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
 msgstr "Tukšs dokuments"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:218
+#: ../plugins/dashboard/dashboard/dashboard.py:158
 msgid "Type here to search..."
 msgstr "Rakstiet šeit, lai meklētu..."
-
-#: ../plugins/dashboard/dashboard/dashboard.py:345
-msgid "Most Used"
-msgstr "Biežāk lietotie"
-
-#: ../plugins/dashboard/dashboard/dashboard.py:346
-msgid "Recently Used"
-msgstr "Nesen lietotie"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -165,7 +223,7 @@ msgid "Draw Spaces"
 msgstr "Zīmēt atstarpes"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-msgid "Draw Spaces and Tabs"
+msgid "Draw spaces and tabs"
 msgstr "Zīmēt atstarpes un tabulatorus"
 
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
@@ -216,6 +274,14 @@ msgstr "Ja patiess, zīmēšana tiks aktivēta."
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Kāda veida atstarpes zīmēt."
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Git"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Git differences"
+msgstr "Git atšķirības"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -313,56 +379,6 @@ msgstr "Multirediģēšana"
 msgid "Edit document in multiple places at once"
 msgstr "Rediģēt dokumentu vairākās vietās vienlaicīgi"
 
-#: ../plugins/sessionsaver/dialogs.py:132
-msgid "Session Name"
-msgstr "Sesijas nosaukums"
-
-#: ../plugins/sessionsaver/__init__.py:85
-#, python-format
-msgid "Recover '%s' session"
-msgstr "Atgūt sesiju “%s”"
-
-#: ../plugins/sessionsaver/__init__.py:103
-msgid "Sa_ved sessions"
-msgstr "Sa_glabātās sesijas"
-
-#: ../plugins/sessionsaver/__init__.py:105
-msgid "_Save current session"
-msgstr "_Saglabāt šo sesiju"
-
-#: ../plugins/sessionsaver/__init__.py:106
-msgid "Save the current document list as a new session"
-msgstr "Saglabāt šo dokumentu sarakstu kā jaunu sesiju"
-
-#: ../plugins/sessionsaver/__init__.py:108
-msgid "_Manage saved sessions..."
-msgstr "_Pārvaldīt saglabātās sesijas..."
-
-#: ../plugins/sessionsaver/__init__.py:109
-msgid "Open the saved session manager"
-msgstr "Atvērt saglabāto sesiju pārvaldnieku"
-
-#. ex:ts=4:et:
-#: ../plugins/sessionsaver/sessionsaver.plugin.desktop.in.in.h:1
-msgid "Session Saver"
-msgstr "Sesiju saglabātājs"
-
-#: ../plugins/sessionsaver/sessionsaver.plugin.desktop.in.in.h:2
-msgid "Save and restore your working sessions"
-msgstr "Saglabā un atjauno jūsu darba sesijas"
-
-#: ../plugins/sessionsaver/sessionsaver.ui.h:1
-msgid "Save session"
-msgstr "Saglabāt sesiju"
-
-#: ../plugins/sessionsaver/sessionsaver.ui.h:2
-msgid "Session name:"
-msgstr "Sesijas nosaukums:"
-
-#: ../plugins/sessionsaver/sessionsaver.ui.h:3
-msgid "Saved Sessions"
-msgstr "Saglabātās sesijas"
-
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 msgid "Smart Spaces"
 msgstr "Gudrās atstarpes"
@@ -384,1569 +400,7 @@ msgstr "Sinhronizēt starp LaTeX un PDF ar gedit un evince."
 msgid "Forward Search"
 msgstr "Meklēt uz priekšu"
 
-#: ../plugins/taglist/gedit-taglist-plugin.c:163
-#: ../plugins/taglist/gedit-taglist-plugin-panel.c:700
-#: ../plugins/taglist/gedit-taglist-plugin-panel.c:716
-msgid "Tags"
-msgstr "Birkas"
-
-#: ../plugins/taglist/gedit-taglist-plugin-panel.c:608
-msgid "Select the group of tags you want to use"
-msgstr "Izvēlieties birku grupu, ko vēlaties lietot"
-
-#: ../plugins/taglist/gedit-taglist-plugin-panel.c:627
-msgid "_Preview"
-msgstr "_Priekšskatījums"
-
-#: ../plugins/taglist/gedit-taglist-plugin-panel.c:697
-msgid "Available Tag Lists"
-msgstr "Pieejamo birku saraksts"
-
-#. ex:ts=8:noet:
-#: ../plugins/taglist/HTML.tags.xml.in.h:1
-msgid "XHTML 1.0 — Tags"
-msgstr "XHTML 1.0 — birkas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:2
-msgid "Abbreviated form"
-msgstr "Saīsinātā forma"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:3
-msgid "Abbreviation"
-msgstr "Saīsinājums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:4
-msgid "Accessibility key character"
-msgstr "Pieejamības taustiņš"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:5
-msgid "Acronym"
-msgstr "Akronīms"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:6
-msgid "Align"
-msgstr "Līdzināt"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:7
-msgid "Alignment character"
-msgstr "Līdzinājuma rakstzīme"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:8
-msgid "Alternative"
-msgstr "Alternatīvā"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:9
-msgid "Anchor URI"
-msgstr "Enkura URI"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:10
-msgid "Anchor"
-msgstr "Enkurs"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:12
-msgid "Applet class file code (deprecated)"
-msgstr "Sīklietotnes klases datnes kods (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:13
-msgid "Associated information"
-msgstr "Piesaistītā informācija"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:14
-msgid "Author info"
-msgstr "Informācija par autoru"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:15
-msgid "Axis related headers"
-msgstr "Ar asi saistītās galvenes"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:17
-msgid "Background color (deprecated)"
-msgstr "Fona krāsa (novecojis)"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:19
-msgid "Background texture tile (deprecated)"
-msgstr "Fona tekstūras flīze (novecojis)"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:21
-msgid "Base font (deprecated)"
-msgstr "Pamatfonts (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:22
-msgid "Base URI"
-msgstr "Bāzes URI"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:23
-msgid "Bold"
-msgstr "Treknraksts"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:25
-msgid "Border (deprecated)"
-msgstr "Mala (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:26
-msgid "Cell rowspan"
-msgstr "Apvienotas rindas šūnas"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:28
-msgid "Center (deprecated)"
-msgstr "Centrs (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:29
-msgid "Character encoding of linked resource"
-msgstr "Saistītā resursa rakstzīmju kodējums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:30
-msgid "Checked state"
-msgstr "Atzīmēts stāvoklis"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:31
-msgid "Citation"
-msgstr "Citāts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:32
-msgid "Cite reason for change"
-msgstr "Citēt izmaiņu iemeslu"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:33
-msgid "Class implementation ID"
-msgstr "Klases implementācijas ID"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:34
-msgid "Class list"
-msgstr "Klašu saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:35
-msgid "Clear text flow control"
-msgstr "Attīrīt teksta plūsmas kontroli"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:36
-msgid "Code content type"
-msgstr "Koda satura tips"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:38
-msgid "Color of selected links (deprecated)"
-msgstr "Izvēlēto saišu krāsa (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:39
-msgid "Column span"
-msgstr "Kolonnu apvienojums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:40
-msgid "Columns"
-msgstr "Kolonnas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:41
-msgid "Comment"
-msgstr "Piezīme"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:42
-msgid "Computer code fragment"
-msgstr "Datora koda fragments"
-
-#. The "type" attribute is deprecated for the "ol" tag only,
-#. since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:45
-msgid "Content type (deprecated)"
-msgstr "Satura tips (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:46
-msgid "Coordinates"
-msgstr "Koordinātas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:47
-msgid "Date and time of change"
-msgstr "Izmaiņu datums un laiks"
-
-#. NOTE: used in "object" tag
-#: ../plugins/taglist/HTML.tags.xml.in.h:49
-msgid "Declare flag"
-msgstr "Deklarēt karodziņu"
-
-#. Translators: DEFER is an optional attribute of the <script> tag.
-#. It indicates that the script is not going to generate any document
-#. content. The browser can continue parsing and drawing the page.
-#: ../plugins/taglist/HTML.tags.xml.in.h:53
-msgid "Defer attribute"
-msgstr "Defer atribūts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:54
-msgid "Definition description"
-msgstr "Definīcijas apraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:55
-msgid "Definition list"
-msgstr "Definīciju saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:56
-msgid "Definition term"
-msgstr "Definīcijas terms"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:57
-msgid "Deleted text"
-msgstr "Dzēstais teksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:58
-msgid "Directionality"
-msgstr "Virziens"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:60
-msgid "Directionality (deprecated)"
-msgstr "Virziens (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:61
-msgid "Disabled"
-msgstr "Deaktivēts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:62
-msgid "DIV container"
-msgstr "DIV konteineris"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:63
-msgid "DIV Style container"
-msgstr "DIV stila konteineris"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:64
-msgid "Document base"
-msgstr "Dokumenta bāze"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:65
-msgid "Document body"
-msgstr "Dokumenta pamatteksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:66
-msgid "Document head"
-msgstr "Dokumenta galva"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:67
-msgid "Element ID"
-msgstr "Elementa ID"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:68
-msgid "Document title"
-msgstr "Dokumenta virsraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:69
-msgid "Document type"
-msgstr "Dokumenta tips"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:70
-#: ../plugins/taglist/Latex.tags.xml.in.h:72
-msgid "Emphasis"
-msgstr "Izcēlums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:71
-msgid "Encode type"
-msgstr "Kodējuma tips"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:73
-msgid "Font face (deprecated)"
-msgstr "Fonta tips (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:74
-msgid "For label"
-msgstr "Etiķetei"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:75
-msgid "Forced line break"
-msgstr "Piespiedu rindas pārtraukums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:76
-msgid "Form action handler"
-msgstr "Formas darbības apstrādātās"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:77
-msgid "Form control group"
-msgstr "Formas kontroles grupa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:78
-msgid "Form field label text"
-msgstr "Formas lauka etiķetes teksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:79
-msgid "Form input type"
-msgstr "Formas ievada tips"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:80
-msgid "Form input"
-msgstr "Formas ievads"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:81
-msgid "Form method"
-msgstr "Formas metode"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:82
-msgid "Form"
-msgstr "Forma"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:83
-msgid "Forward link"
-msgstr "Saite uz priekšu"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:84
-msgid "Frame render parts"
-msgstr "Ietvara renderēšanas daļas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:85
-msgid "Frame source"
-msgstr "Ietvara avots"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:86
-msgid "Frame target"
-msgstr "Ietvara mērķis"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:87
-msgid "Frame"
-msgstr "Ietvars"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:88
-msgid "Frame border"
-msgstr "Ietvara robeža"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:89
-msgid "Frameset columns"
-msgstr "Ietvaru kopas kolonnas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:90
-msgid "Frameset rows"
-msgstr "Ietvaru kopas rindas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:91
-msgid "Frameset"
-msgstr "Ietvaru kopa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:92
-msgid "Frame spacing"
-msgstr "Ietvaru atstatumi"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:93
-msgid "Generic embedded object"
-msgstr "Vispārējais iekļautais objekts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:94
-msgid "Generic metainformation"
-msgstr "Vispārīga meta informācija"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:95
-msgid "Generic span"
-msgstr "Vispārējais intervāls"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:96
-msgid "Header cell IDs"
-msgstr "Galvenes šūnas ID"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:97
-msgid "Heading 1"
-msgstr "Virsraksts 1"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:98
-msgid "Heading 2"
-msgstr "Virsraksts 2"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:99
-msgid "Heading 3"
-msgstr "Virsraksts 3"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:100
-msgid "Heading 4"
-msgstr "Virsraksts 4"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:101
-msgid "Heading 5"
-msgstr "Virsraksts 5"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:102
-msgid "Heading 6"
-msgstr "Virsraksts 6"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:103
-msgid "Height"
-msgstr "Augstums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:104
-msgid "Horizontal rule"
-msgstr "Horizontālā līnija"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:106
-msgid "Horizontal space (deprecated)"
-msgstr "Horizontālā telpa (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:107
-msgid "HREF URI"
-msgstr "HREF URI"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:108
-msgid "HTML root element"
-msgstr "HTML saknes elements"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:109
-msgid "HTTP header name"
-msgstr "HTTP galvenes nosaukums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:110
-msgid "I18N BiDi override"
-msgstr "I18N BiDi aizstājums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:111
-msgid "Image map area"
-msgstr "Attēla kartes apgabals"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:112
-msgid "Image map name"
-msgstr "Attēla kartes nosaukums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:113
-msgid "Image map"
-msgstr "Attēla karte"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:114
-msgid "Image"
-msgstr "Attēls"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:115
-msgid "Inline frame"
-msgstr "Iekļautais ietvars"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:116
-msgid "Inserted text"
-msgstr "Ievietotais teksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:117
-msgid "Instance definition"
-msgstr "Instances definīcija"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:118
-msgid "Italic text"
-msgstr "Teksts kursīvā"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:120
-msgid "Java applet (deprecated)"
-msgstr "Java sīklietotne (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:121
-msgid "Label"
-msgstr "Etiķete"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:122
-msgid "Language code"
-msgstr "Valodas kods"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:123
-msgid "Large text style"
-msgstr "Liela teksta stils"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:125
-msgid "Link color (deprecated)"
-msgstr "Saites krāsa (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:126
-msgid "List item"
-msgstr "Saraksta elements"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:127
-msgid "List of MIME types for file upload"
-msgstr "Datņu augšupielādes MIME tipu saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:128
-msgid "List of supported character sets"
-msgstr "Atbalstīto rakstzīmju kopu saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:129
-msgid "Local change to font"
-msgstr "Vietējā fonta maiņa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:130
-msgid "Long description link"
-msgstr "Gara apraksta saite"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:131
-msgid "Long quotation"
-msgstr "Garš citāts"
-
-#. Supported in XHTML 1.0 Frameset DTD only.
-#: ../plugins/taglist/HTML.tags.xml.in.h:133
-msgid "Margin pixel height"
-msgstr "Apmales augstums pikseļos"
-
-#. Supported in XHTML 1.0 Frameset DTD only.
-#: ../plugins/taglist/HTML.tags.xml.in.h:135
-msgid "Margin pixel width"
-msgstr "Apmales platums pikseļos"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:136
-msgid "Maximum length of text field"
-msgstr "Teksta lauka maksimālais garums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:137
-msgid "Output media"
-msgstr "Izvades datu nesējs"
-
-#. Here I take some liberties: There's no mandatory attributes,
-#. but those are most common, and will likely be used.
-#: ../plugins/taglist/HTML.tags.xml.in.h:140
-msgid "Media-independent link"
-msgstr "No datiem neatkarīga saite"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:142
-msgid "Menu list (deprecated)"
-msgstr "Izvēļņu saraksts (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:143
-msgid "Multi-line text field"
-msgstr "Vairāku rindu teksta lauks"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:144
-msgid "Multiple"
-msgstr "Daudzkārtējs"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:145
-msgid "Name"
-msgstr "Nosaukums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:146
-msgid "Named property value"
-msgstr "Vārdā nosaukta vērtība"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:147
-msgid "No frames"
-msgstr "Nav ietvaru"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:148
-msgid "No resize"
-msgstr "Nevar mainīt izmēru"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:149
-msgid "No script"
-msgstr "Nav skriptu"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:151
-msgid "No shade (deprecated)"
-msgstr "Nav ēnojums (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:152
-msgid "No URI"
-msgstr "Nav URI"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:154
-msgid "No word wrap (deprecated)"
-msgstr "Nav vārdu aplaušanas (novecojis)"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:156
-msgid "Object applet file (deprecated)"
-msgstr "Objekta sīklietotnes datne (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:157
-msgid "Object data reference"
-msgstr "Atsauce uz objekta datiem"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:158
-msgid "Offset for alignment character"
-msgstr "Līdzinājuma rakstzīmes nobīde"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:159
-msgid "OnBlur event"
-msgstr "OnBlur notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:160
-msgid "OnChange event"
-msgstr "OnChange notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:161
-msgid "OnClick event"
-msgstr "OnClick notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:162
-msgid "OnDblClick event"
-msgstr "OnDblClick notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:163
-msgid "OnFocus event"
-msgstr "OnFocus notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:164
-msgid "OnKeyDown event"
-msgstr "OnKeyDown notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:165
-msgid "OnKeyPress event"
-msgstr "OnKeyPress notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:166
-msgid "OnKeyUp event"
-msgstr "OnKeyUp notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:167
-msgid "OnLoad event"
-msgstr "OnLoad notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:168
-msgid "OnMouseDown event"
-msgstr "OnMouseDown notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:169
-msgid "OnMouseMove event"
-msgstr "OnMouseMove notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:170
-msgid "OnMouseOut event"
-msgstr "OnMouseOut notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:171
-msgid "OnMouseOver event"
-msgstr "OnMouseOver notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:172
-msgid "OnMouseUp event"
-msgstr "OnMouseUp notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:173
-msgid "OnReset event"
-msgstr "OnReset notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:174
-msgid "OnSelect event"
-msgstr "OnSelect notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:175
-msgid "OnSubmit event"
-msgstr "OnSubmit notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:176
-msgid "OnUnload event"
-msgstr "OnUnload notikums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:177
-msgid "Option group"
-msgstr "Opciju grupa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:178
-msgid "Option selector"
-msgstr "Opcijas izvēle"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:179
-msgid "Ordered list"
-msgstr "Sakārtots saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:180
-msgid "Paragraph class"
-msgstr "Rindkopas klase"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:181
-msgid "Paragraph style"
-msgstr "Rindkopas stils"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:182
-msgid "Paragraph"
-msgstr "Rindkopa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:183
-msgid "Preformatted text"
-msgstr "Iepriekš formatēts teksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:184
-msgid "Profile metainfo dictionary"
-msgstr "Profila metadatu vārdnīca"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:185
-msgid "Push button"
-msgstr "Nospiest pogu"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:186
-msgid "ReadOnly text and password"
-msgstr "Tikai-lasāms teksts un parole"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:188
-msgid "Reduced spacing (deprecated)"
-msgstr "Samazinātas atstarpes (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:189
-msgid "Reverse link"
-msgstr "Apgrieztā saite"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:190
-msgid "Rows"
-msgstr "Rindas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:191
-msgid "Rulings between rows and columns"
-msgstr "Rindu un kolonu likumsakarības"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:192
-msgid "Sample program output, scripts"
-msgstr "Paraugprogrammas izvads, skripts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:193
-msgid "Scope covered by header cells"
-msgstr "Galvenes šūnu aptvertais apgabals"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:195
-msgid "Script language name"
-msgstr "Skriptošanas valodas nosaukums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:196
-msgid "Script statements"
-msgstr "Skripta deklarācijas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:197
-msgid "Scrollbar"
-msgstr "Ritjosla"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:198
-msgid "Selectable option"
-msgstr "Izvēlama opcija"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:199
-msgid "Selected"
-msgstr "Izvēlēts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:200
-msgid "Server-side image map"
-msgstr "Servera puses attēla karte"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:201
-msgid "Shape"
-msgstr "Forma"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:202
-msgid "Short inline quotation"
-msgstr "Īss iekļauts citāts"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:204
-msgid "Size (deprecated)"
-msgstr "Izmērs (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:205
-msgid "Small text style"
-msgstr "Mazā teksta stils"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:206
-msgid "Source"
-msgstr "Avots"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:207
-msgid "Space-separated archive list"
-msgstr "Ar atstarpēm atdalīts arhīvu saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:208
-msgid "Spacing between cells"
-msgstr "Atstarpes starp šūnām"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:209
-msgid "Spacing within cells"
-msgstr "Atstarpes šūnās"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:210
-msgid "Span"
-msgstr "Intervāls"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:211
-msgid "Standby load message"
-msgstr "Gaidstāves ielādes ziņa"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:213
-msgid "Starting sequence number (deprecated)"
-msgstr "Sākuma virknes numurs (novecojis)"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:215
-msgid "Strike-through text style (deprecated)"
-msgstr "Pārsvītrota teksta stils (novecojis)"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:217
-msgid "Strike-through text (deprecated)"
-msgstr "Pārsvītrots teksts (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:218
-msgid "Strong emphasis"
-msgstr "Spēcīgs uzsvars"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:219
-msgid "Style info"
-msgstr "Stila informācija"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:220
-msgid "Subscript"
-msgstr "Apakšraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:221
-msgid "Superscript"
-msgstr "Augšraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:222
-msgid "Table body"
-msgstr "Tabulas pamatteksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:223
-msgid "Table caption"
-msgstr "Tabulas virsraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:224
-msgid "Table column group properties"
-msgstr "Tabulas kolonu grupas īpašības"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:225
-msgid "Table column properties"
-msgstr "Tabulas kolonas īpašības"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:226
-msgid "Table data cell"
-msgstr "Tabulas datu šūna"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:227
-msgid "Table footer"
-msgstr "Tabulas kājene"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:228
-msgid "Table header cell"
-msgstr "Tabulas galvenes šūna"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:229
-msgid "Table header"
-msgstr "Tabulas galvene"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:230
-msgid "Table row"
-msgstr "Tabulas rinda"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:231
-msgid "Table summary"
-msgstr "Tabulas kopsavilkums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:232
-msgid "Table"
-msgstr "Tabula"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:233
-msgid "Target — Blank"
-msgstr "Mērķis — tukšs"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:234
-msgid "Target — Parent"
-msgstr "Mērķis — vecāks"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:235
-msgid "Target — Self"
-msgstr "Mērķis — pats"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:236
-msgid "Target — Top"
-msgstr "Mērķis — augšējais"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:237
-msgid "Teletype or monospace text style"
-msgstr "Rakstāmmašīnas vai vienplatuma tipa teksta stils"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:239
-msgid "Text color (deprecated)"
-msgstr "Teksta krāsa (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:240
-msgid "Text entered by user"
-msgstr "Lietotāja ievadītais teksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:241
-msgid "Title"
-msgstr "Virsraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:242
-msgid "Underlined text style"
-msgstr "Pasvītrota teksta stils"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:243
-msgid "Unordered list"
-msgstr "Nesakārtots saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:244
-msgid "Use image map"
-msgstr "Lietot attēla karti"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:245
-msgid "Value interpretation"
-msgstr "Vērtības interpretācija"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:246
-msgid "Value"
-msgstr "Vērtība"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:247
-msgid "Variable or program argument"
-msgstr "Mainīgais vai programmas parametrs"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:248
-msgid "Vertical cell alignment"
-msgstr "Vertikāla šūnu līdzināšana"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:250
-msgid "Vertical space (deprecated)"
-msgstr "Vertikālā atstarpe (novecojis)"
-
-#. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
-#: ../plugins/taglist/HTML.tags.xml.in.h:252
-msgid "Visited link color (deprecated)"
-msgstr "Apmeklēto saišu krāsa (novecojis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:253
-msgid "Width"
-msgstr "Platums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:254
-msgid "HTML — Tags"
-msgstr "HTML — birkas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:255
-msgid "Above"
-msgstr "Virs"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:256
-msgid "Applet class file code"
-msgstr "Sīklietotnes klases datnes kods"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:257
-msgid "Array"
-msgstr "Masīvs"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:258
-msgid "Background color"
-msgstr "Fona krāsa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:259
-msgid "Background texture tile"
-msgstr "Fona tekstūras flīze"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:260
-msgid "Base font"
-msgstr "Pamatfonts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:261
-msgid "Border color"
-msgstr "Malas krāsa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:262
-msgid "Border"
-msgstr "Mala"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:263
-msgid "Center"
-msgstr "Centrēt"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:264
-msgid "Checked (state)"
-msgstr "Atzīmēts (stāvoklis)"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:265
-msgid "Color of selected links"
-msgstr "Izvēlēto saišu krāsa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:266
-msgid "Content scheme"
-msgstr "Satura stils"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:267
-msgid "Content type"
-msgstr "Satura tips"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:268
-msgid "Direction"
-msgstr "Virziens"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:269
-msgid "Directory list"
-msgstr "Direktoriju saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:270
-msgid "HTML version"
-msgstr "HTML versija"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:271
-msgid "Embedded object"
-msgstr "Iegultais objekts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:272
-msgid "Figure"
-msgstr "Attēls"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:273
-msgid "Font face"
-msgstr "Fonts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:274
-msgid "Frameborder"
-msgstr "Ietvara robeža"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:275
-msgid "Framespacing"
-msgstr "Ietvaru atstatumi"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:276
-msgid "Heading"
-msgstr "Virsraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:277
-msgid "Horizontal space"
-msgstr "Horizontāla atstarpe"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:278
-msgid "Image source"
-msgstr "Attēla avots"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:279
-msgid "Inline layer"
-msgstr "Iekļautais slānis"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:280
-msgid "Java applet"
-msgstr "Java sīklietotne"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:281
-msgid "Layer"
-msgstr "Slānis"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:282
-msgid "Link color"
-msgstr "Saites krāsa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:283
-msgid "Listing"
-msgstr "Uzskaitījums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:284
-msgid "Mail link"
-msgstr "Pasta saite"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:285
-msgid "Marquee"
-msgstr "Slīdjosla"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:286
-msgid "Menu list"
-msgstr "Izvēļņu saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:287
-msgid "Multicolumn"
-msgstr "Vairākkolonnu"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:288
-msgid "Next ID"
-msgstr "Nākamais ID"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:289
-msgid "No embedded objects"
-msgstr "Nav iegultu objektu"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:290
-msgid "No layers"
-msgstr "Nav slāņu"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:291
-msgid "No line break"
-msgstr "Nav rindu pārtraukumu"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:292
-msgid "No shade"
-msgstr "Nav ēnojums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:293
-msgid "No word wrap"
-msgstr "Nav vārdu aplaušanas"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:294
-msgid "Note"
-msgstr "Piezīme"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:295
-msgid "Object applet file"
-msgstr "Objekta sīklietotnes datne"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:296
-msgid "Preformatted listing"
-msgstr "Iepriekš formatēts saraksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:297
-msgid "Prompt message"
-msgstr "Uzvednes ziņojums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:298
-msgid "Quote"
-msgstr "Citāts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:299
-msgid "Range"
-msgstr "Apgabals"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:300
-msgid "Reduced spacing"
-msgstr "Samazinātas atstarpes"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:301
-msgid "Root"
-msgstr "Sakne"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:302
-msgid "Single line prompt"
-msgstr "Vienas rindas uzvedne"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:303
-msgid "Size"
-msgstr "Izmērs"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:304
-msgid "Soft line break"
-msgstr "Neuzstājīgs rindas pārtraukums"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:305
-msgid "Sound"
-msgstr "Skaņa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:306
-msgid "Spacer"
-msgstr "Atdalītājs"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:307
-msgid "Square root"
-msgstr "Kvadrātsakne"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:308
-msgid "Starting sequence number"
-msgstr "Sākuma virknes numurs"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:309
-msgid "Strike-through text style"
-msgstr "Pārsvītrota teksta stils"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:310
-msgid "Strike-through text"
-msgstr "Pārsvītrots teksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:311
-msgid "Tab order position"
-msgstr "Ciļņu secības pozīcija"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:312
-msgid "Text color"
-msgstr "Teksta krāsa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:313
-msgid "Text"
-msgstr "Teksts"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:314
-msgid "Top margin in pixels"
-msgstr "Augšējā apmale pikseļos"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:315
-msgid "URL"
-msgstr "URL"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:316
-msgid "Vertical space"
-msgstr "Vertikālā atstarpe"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:317
-msgid "Visited link color"
-msgstr "Apmeklēto saišu krāsa"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:318
-msgid "HTML — Special Characters"
-msgstr "HTML — speciālās rakstzīmes"
-
-#: ../plugins/taglist/HTML.tags.xml.in.h:319
-msgid "Non-breaking space"
-msgstr "Nedalāmā atstarpe"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:1
-msgid "Latex — Tags"
-msgstr "Latex — birkas"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:2
-msgid "Bibliography (cite)"
-msgstr "Bibliogrāfija (citāts)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:3
-msgid "Bibliography (item)"
-msgstr "Bibliogrāfija (vienums)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:4
-msgid "Bibliography (shortcite)"
-msgstr "Bibliogrāfija (īss citāts)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:5
-msgid "Bibliography (thebibliography)"
-msgstr "Bibliogrāfija (bibliogrāfija)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:6
-msgid "Brackets ()"
-msgstr "Iekavas ()"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:7
-msgid "Brackets []"
-msgstr "Iekavas []"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:8
-msgid "Brackets {}"
-msgstr "Iekavas {}"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:9
-msgid "Brackets <>"
-msgstr "Iekavas <>"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:10
-msgid "File input"
-msgstr "Ievietojamā datne"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:11
-msgid "Function cosine"
-msgstr "Kosinusa funkcija"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:12
-msgid "Function e^"
-msgstr "Funkcija e^"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:13
-msgid "Function exp"
-msgstr "Eksponente"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:14
-msgid "Function log"
-msgstr "Logaritms"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:15
-msgid "Function log10"
-msgstr "Decimālais logaritms"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:16
-msgid "Function sine"
-msgstr "Sinusa funkcija"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:17
-msgid "Greek alpha"
-msgstr "Grieķu alfa"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:18
-msgid "Greek beta"
-msgstr "Grieķu beta"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:19
-msgid "Greek epsilon"
-msgstr "Grieķu epsilons"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:20
-msgid "Greek gamma"
-msgstr "Grieķu gamma"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:21
-msgid "Greek lambda"
-msgstr "Grieķu lambda"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:22
-msgid "Greek rho"
-msgstr "Grieķu ro"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:23
-msgid "Greek tau"
-msgstr "Grieķu tau"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:24
-msgid "Header 0 (chapter)"
-msgstr "Virsraksts 0 (nodaļa)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:25
-msgid "Header 0 (chapter*)"
-msgstr "Virsraksts 0 (nodaļa*)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:26
-msgid "Header 1 (section)"
-msgstr "Virsraksts 1 (sadaļa)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:27
-msgid "Header 1 (section*)"
-msgstr "Virsraksts 1 (sadaļa*)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:28
-msgid "Header 2 (subsection)"
-msgstr "Virsraksts 2 (apakšsadaļa)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:29
-msgid "Header 2 (subsection*)"
-msgstr "Virsraksts 2 (apakšsadaļa*)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:30
-msgid "Header 3 (subsubsection)"
-msgstr "Virsraksts 3 (apakšapakšsadaļa)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:31
-msgid "Header 3 (subsubsection*)"
-msgstr "Virsraksts 3 (apakšapakšsadaļa*)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:32
-msgid "Header 4 (paragraph)"
-msgstr "Virsraksts 4 (paragrāfs)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:33
-msgid "Header appendix"
-msgstr "Virsraksta pielikums"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:34
-msgid "List description"
-msgstr "Saraksta apraksts"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:35
-msgid "List enumerate"
-msgstr "Saraksta numerācija"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:36
-msgid "List itemize"
-msgstr "Saraksta elements"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:37
-msgid "Item with label"
-msgstr "Elements ar etiķeti"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:38
-msgid "Item"
-msgstr "Elements"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:39
-msgid "Maths (display)"
-msgstr "Formulas (savā rindkopā)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:40
-msgid "Maths (inline)"
-msgstr "Formulas (tekstā)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:41
-msgid "Operator fraction"
-msgstr "Dalīšanas operators"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:42
-msgid "Operator integral (display)"
-msgstr "Integrāļa operators (savā rindkopā)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:43
-msgid "Operator integral (inline)"
-msgstr "Integrāļa operators (tekstā)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:44
-msgid "Operator sum (display)"
-msgstr "Summas operators (savā rindkopā)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:45
-msgid "Operator sum (inline)"
-msgstr "Summas operators (tekstā)"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:46
-msgid "Reference label"
-msgstr "Atsauces etiķete"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:47
-msgid "Reference ref"
-msgstr "Atsauces avots"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:48
-msgid "Symbol <<"
-msgstr "Simbols <<"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:49
-msgid "Symbol <="
-msgstr "Simbols <="
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:50
-msgid "Symbol >="
-msgstr "Simbols >="
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:51
-msgid "Symbol >>"
-msgstr "Simbols >>"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:52
-msgid "Symbol and"
-msgstr "Simbols un"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:53
-msgid "Symbol const"
-msgstr "Simbols const"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:54
-msgid "Symbol d2-by-dt2-partial"
-msgstr "Simbols d2-by-dt2-partial"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:55
-msgid "Symbol dagger"
-msgstr "Krustiņa simbols"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:56
-msgid "Symbol d-by-dt"
-msgstr "Simbols d-pret-dt"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:57
-msgid "Symbol d-by-dt-partial"
-msgstr "Simbols d-by-dt-partial"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:58
-msgid "Symbol equiv"
-msgstr "Ekvivalence"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:59
-msgid "Symbol en-dash --"
-msgstr "Domuzīme --"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:60
-msgid "Symbol em-dash ---"
-msgstr "Domuzīme ---"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:61
-msgid "Symbol infinity"
-msgstr "Bezgalība"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:62
-msgid "Symbol mathspace ,"
-msgstr "Simbols ,"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:63
-msgid "Symbol mathspace ."
-msgstr "Simbols ."
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:64
-msgid "Symbol mathspace _"
-msgstr "Simbols _"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:65
-msgid "Symbol mathspace __"
-msgstr "Simbols __"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:66
-msgid "Symbol simeq"
-msgstr "Aproksimācijas simbols"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:67
-msgid "Symbol star"
-msgstr "Zvaigznīte"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:68
-msgid "Typeface bold"
-msgstr "Burtveidols treknraksts"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:69
-msgid "Typeface type"
-msgstr "Burtveidola tips"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:70
-msgid "Typeface italic"
-msgstr "Burtveidols slīpraksts"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:71
-msgid "Typeface slanted"
-msgstr "Burtveidols vienpusīgs"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:73
-msgid "Unbreakable text"
-msgstr "Nedalāms teksts"
-
-#: ../plugins/taglist/Latex.tags.xml.in.h:74
-msgid "Footnote"
-msgstr "Vēre"
-
-#: ../plugins/taglist/taglist.plugin.desktop.in.in.h:1
-msgid "Tag list"
-msgstr "Birku saraksts"
-
-#: ../plugins/taglist/taglist.plugin.desktop.in.in.h:2
-msgid ""
-"Provides a method to easily insert commonly used tags/strings into a "
-"document without having to type them."
-msgstr ""
-"Piedāvā veidu, kā ērti ievietot dokumentā biežāk lietotos birkas / virknes "
-"bez vajadzības tās rakstīt."
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:1
-msgid "XSLT — Elements"
-msgstr "XSLT — elementi"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:2
-msgid "XSLT — Functions"
-msgstr "XSLT — funkcijas"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:3
-msgid "XSLT — Axes"
-msgstr "XSLT — asis"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:4
-msgid "ancestor"
-msgstr "priekštecis"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:5
-msgid "ancestor-or-self"
-msgstr "priekštecis vai pats"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:6
-msgid "attribute"
-msgstr "atribūts"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:7
-msgid "child"
-msgstr "bērns"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:8
-msgid "descendant"
-msgstr "pēctecis"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:9
-msgid "descendant-or-self"
-msgstr "pēctecis vai pats"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:10
-msgid "following"
-msgstr "sekojošs"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:11
-msgid "following-sibling"
-msgstr "sekojošs-kaimiņš"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:12
-msgid "namespace"
-msgstr "vārdtelpa"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:13
-msgid "parent"
-msgstr "vecāks"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:14
-msgid "preceding"
-msgstr "iepriekšējais"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:15
-msgid "preceding-sibling"
-msgstr "iepriekšējais kaimiņš"
-
-#: ../plugins/taglist/XSLT.tags.xml.in.h:16
-msgid "self"
-msgstr "pats"
-
-#: ../plugins/taglist/XUL.tags.xml.in.h:1
-msgid "XUL — Tags"
-msgstr "XUL — birkas"
-
+#. ex:ts=4:et:
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:1
 msgid "Whether to silence terminal bell"
 msgstr "Vai apklusināt termināļa zvanu"
@@ -2134,25 +588,25 @@ msgstr "Iegultais terminālis"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Iegult termināli apakšējā rūtī."
 
-#: ../plugins/terminal/terminal.py:260
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminālis"
 
-#: ../plugins/terminal/terminal.py:282
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "_Mainīt direktoriju"
 
 #: ../plugins/textsize/textsize/__init__.py:142
-msgid "_Increase font size"
-msgstr "Pal_ielināt fonta izmēru"
+msgid "_Larger Text"
+msgstr "_Lielāks teksts"
 
 #: ../plugins/textsize/textsize/__init__.py:145
-msgid "_Decrease font size"
-msgstr "_Samazināt fonta izmēru"
+msgid "S_maller Text"
+msgstr "_Mazāks teksts"
 
 #: ../plugins/textsize/textsize/__init__.py:148
-msgid "_Reset font size"
-msgstr "Nesenais fonta izmē_rs"
+msgid "_Normal size"
+msgstr "_Normāls izmērs"
 
 #. ex:ts=4:et:
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:1
@@ -2163,10 +617,33 @@ msgstr "Teksta izmērs"
 msgid "Easily increase and decrease the text size"
 msgstr "Viegli palielināt vai samazināt teksta izmēru"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+msgid "Interactive completion"
+msgstr "Interaktīva pabeigšana"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "Minimālais vārda izmērs:"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "Dokumenta vārdi"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+msgid "Interactive Completion"
+msgstr "Interaktīva pabeigšana"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "Vai aktivēt interaktīvo pabeigšanu."
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "Minimālais vārda izmērs"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "Minimālais vārda izmērs, lai pabeigtu."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
@@ -2175,6 +652,1168 @@ msgstr "Vārdu pabeigšana"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Vārdu pabeigšana, lietojot pabeigšanas rāmja struktūru"
+
+#~ msgid "Most Used"
+#~ msgstr "Biežāk lietotie"
+
+#~ msgid "Recently Used"
+#~ msgstr "Nesen lietotie"
+
+#~ msgid "Session Name"
+#~ msgstr "Sesijas nosaukums"
+
+#~ msgid "Recover '%s' session"
+#~ msgstr "Atgūt sesiju “%s”"
+
+#~ msgid "Sa_ved sessions"
+#~ msgstr "Sa_glabātās sesijas"
+
+#~ msgid "_Save current session"
+#~ msgstr "_Saglabāt šo sesiju"
+
+#~ msgid "Save the current document list as a new session"
+#~ msgstr "Saglabāt šo dokumentu sarakstu kā jaunu sesiju"
+
+#~ msgid "_Manage saved sessions..."
+#~ msgstr "_Pārvaldīt saglabātās sesijas..."
+
+#~ msgid "Open the saved session manager"
+#~ msgstr "Atvērt saglabāto sesiju pārvaldnieku"
+
+#~ msgid "Session Saver"
+#~ msgstr "Sesiju saglabātājs"
+
+#~ msgid "Save and restore your working sessions"
+#~ msgstr "Saglabā un atjauno jūsu darba sesijas"
+
+#~ msgid "Save session"
+#~ msgstr "Saglabāt sesiju"
+
+#~ msgid "Session name:"
+#~ msgstr "Sesijas nosaukums:"
+
+#~ msgid "Saved Sessions"
+#~ msgstr "Saglabātās sesijas"
+
+#~ msgid "Tags"
+#~ msgstr "Birkas"
+
+#~ msgid "Select the group of tags you want to use"
+#~ msgstr "Izvēlieties birku grupu, ko vēlaties lietot"
+
+#~ msgid "_Preview"
+#~ msgstr "_Priekšskatījums"
+
+#~ msgid "Available Tag Lists"
+#~ msgstr "Pieejamo birku saraksts"
+
+#~ msgid "XHTML 1.0 — Tags"
+#~ msgstr "XHTML 1.0 — birkas"
+
+#~ msgid "Abbreviated form"
+#~ msgstr "Saīsinātā forma"
+
+#~ msgid "Abbreviation"
+#~ msgstr "Saīsinājums"
+
+#~ msgid "Accessibility key character"
+#~ msgstr "Pieejamības taustiņš"
+
+#~ msgid "Acronym"
+#~ msgstr "Akronīms"
+
+#~ msgid "Align"
+#~ msgstr "Līdzināt"
+
+#~ msgid "Alignment character"
+#~ msgstr "Līdzinājuma rakstzīme"
+
+#~ msgid "Alternative"
+#~ msgstr "Alternatīvā"
+
+#~ msgid "Anchor URI"
+#~ msgstr "Enkura URI"
+
+#~ msgid "Anchor"
+#~ msgstr "Enkurs"
+
+#~ msgid "Applet class file code (deprecated)"
+#~ msgstr "Sīklietotnes klases datnes kods (novecojis)"
+
+#~ msgid "Associated information"
+#~ msgstr "Piesaistītā informācija"
+
+#~ msgid "Axis related headers"
+#~ msgstr "Ar asi saistītās galvenes"
+
+#~ msgid "Background color (deprecated)"
+#~ msgstr "Fona krāsa (novecojis)"
+
+#~ msgid "Background texture tile (deprecated)"
+#~ msgstr "Fona tekstūras flīze (novecojis)"
+
+#~ msgid "Base font (deprecated)"
+#~ msgstr "Pamatfonts (novecojis)"
+
+#~ msgid "Base URI"
+#~ msgstr "Bāzes URI"
+
+#~ msgid "Border (deprecated)"
+#~ msgstr "Mala (novecojis)"
+
+#~ msgid "Cell rowspan"
+#~ msgstr "Apvienotas rindas šūnas"
+
+#~ msgid "Center (deprecated)"
+#~ msgstr "Centrs (novecojis)"
+
+#~ msgid "Character encoding of linked resource"
+#~ msgstr "Saistītā resursa rakstzīmju kodējums"
+
+#~ msgid "Checked state"
+#~ msgstr "Atzīmēts stāvoklis"
+
+#~ msgid "Citation"
+#~ msgstr "Citāts"
+
+#~ msgid "Cite reason for change"
+#~ msgstr "Citēt izmaiņu iemeslu"
+
+#~ msgid "Class implementation ID"
+#~ msgstr "Klases implementācijas ID"
+
+#~ msgid "Class list"
+#~ msgstr "Klašu saraksts"
+
+#~ msgid "Clear text flow control"
+#~ msgstr "Attīrīt teksta plūsmas kontroli"
+
+#~ msgid "Code content type"
+#~ msgstr "Koda satura tips"
+
+#~ msgid "Color of selected links (deprecated)"
+#~ msgstr "Izvēlēto saišu krāsa (novecojis)"
+
+#~ msgid "Column span"
+#~ msgstr "Kolonnu apvienojums"
+
+#~ msgid "Columns"
+#~ msgstr "Kolonnas"
+
+#~ msgid "Comment"
+#~ msgstr "Piezīme"
+
+#~ msgid "Computer code fragment"
+#~ msgstr "Datora koda fragments"
+
+#~ msgid "Content type (deprecated)"
+#~ msgstr "Satura tips (novecojis)"
+
+#~ msgid "Coordinates"
+#~ msgstr "Koordinātas"
+
+#~ msgid "Date and time of change"
+#~ msgstr "Izmaiņu datums un laiks"
+
+#~ msgid "Declare flag"
+#~ msgstr "Deklarēt karodziņu"
+
+#~ msgid "Defer attribute"
+#~ msgstr "Defer atribūts"
+
+#~ msgid "Definition description"
+#~ msgstr "Definīcijas apraksts"
+
+#~ msgid "Definition list"
+#~ msgstr "Definīciju saraksts"
+
+#~ msgid "Definition term"
+#~ msgstr "Definīcijas terms"
+
+#~ msgid "Deleted text"
+#~ msgstr "Dzēstais teksts"
+
+#~ msgid "Directionality"
+#~ msgstr "Virziens"
+
+#~ msgid "Directionality (deprecated)"
+#~ msgstr "Virziens (novecojis)"
+
+#~ msgid "Disabled"
+#~ msgstr "Deaktivēts"
+
+#~ msgid "DIV container"
+#~ msgstr "DIV konteineris"
+
+#~ msgid "DIV Style container"
+#~ msgstr "DIV stila konteineris"
+
+#~ msgid "Document base"
+#~ msgstr "Dokumenta bāze"
+
+#~ msgid "Document body"
+#~ msgstr "Dokumenta pamatteksts"
+
+#~ msgid "Document head"
+#~ msgstr "Dokumenta galva"
+
+#~ msgid "Element ID"
+#~ msgstr "Elementa ID"
+
+#~ msgid "Document title"
+#~ msgstr "Dokumenta virsraksts"
+
+#~ msgid "Document type"
+#~ msgstr "Dokumenta tips"
+
+#~ msgid "Emphasis"
+#~ msgstr "Izcēlums"
+
+#~ msgid "Encode type"
+#~ msgstr "Kodējuma tips"
+
+#~ msgid "Font face (deprecated)"
+#~ msgstr "Fonta tips (novecojis)"
+
+#~ msgid "For label"
+#~ msgstr "Etiķetei"
+
+#~ msgid "Forced line break"
+#~ msgstr "Piespiedu rindas pārtraukums"
+
+#~ msgid "Form action handler"
+#~ msgstr "Formas darbības apstrādātās"
+
+#~ msgid "Form control group"
+#~ msgstr "Formas kontroles grupa"
+
+#~ msgid "Form field label text"
+#~ msgstr "Formas lauka etiķetes teksts"
+
+#~ msgid "Form input type"
+#~ msgstr "Formas ievada tips"
+
+#~ msgid "Form input"
+#~ msgstr "Formas ievads"
+
+#~ msgid "Form method"
+#~ msgstr "Formas metode"
+
+#~ msgid "Form"
+#~ msgstr "Forma"
+
+#~ msgid "Forward link"
+#~ msgstr "Saite uz priekšu"
+
+#~ msgid "Frame render parts"
+#~ msgstr "Ietvara renderēšanas daļas"
+
+#~ msgid "Frame source"
+#~ msgstr "Ietvara avots"
+
+#~ msgid "Frame target"
+#~ msgstr "Ietvara mērķis"
+
+#~ msgid "Frame"
+#~ msgstr "Ietvars"
+
+#~ msgid "Frame border"
+#~ msgstr "Ietvara robeža"
+
+#~ msgid "Frameset columns"
+#~ msgstr "Ietvaru kopas kolonnas"
+
+#~ msgid "Frameset rows"
+#~ msgstr "Ietvaru kopas rindas"
+
+#~ msgid "Frameset"
+#~ msgstr "Ietvaru kopa"
+
+#~ msgid "Frame spacing"
+#~ msgstr "Ietvaru atstatumi"
+
+#~ msgid "Generic embedded object"
+#~ msgstr "Vispārējais iekļautais objekts"
+
+#~ msgid "Generic metainformation"
+#~ msgstr "Vispārīga meta informācija"
+
+#~ msgid "Generic span"
+#~ msgstr "Vispārējais intervāls"
+
+#~ msgid "Header cell IDs"
+#~ msgstr "Galvenes šūnas ID"
+
+#~ msgid "Heading 1"
+#~ msgstr "Virsraksts 1"
+
+#~ msgid "Heading 2"
+#~ msgstr "Virsraksts 2"
+
+#~ msgid "Heading 3"
+#~ msgstr "Virsraksts 3"
+
+#~ msgid "Heading 4"
+#~ msgstr "Virsraksts 4"
+
+#~ msgid "Heading 5"
+#~ msgstr "Virsraksts 5"
+
+#~ msgid "Heading 6"
+#~ msgstr "Virsraksts 6"
+
+#~ msgid "Height"
+#~ msgstr "Augstums"
+
+#~ msgid "Horizontal rule"
+#~ msgstr "Horizontālā līnija"
+
+#~ msgid "Horizontal space (deprecated)"
+#~ msgstr "Horizontālā telpa (novecojis)"
+
+#~ msgid "HREF URI"
+#~ msgstr "HREF URI"
+
+#~ msgid "HTML root element"
+#~ msgstr "HTML saknes elements"
+
+#~ msgid "HTTP header name"
+#~ msgstr "HTTP galvenes nosaukums"
+
+#~ msgid "I18N BiDi override"
+#~ msgstr "I18N BiDi aizstājums"
+
+#~ msgid "Image map area"
+#~ msgstr "Attēla kartes apgabals"
+
+#~ msgid "Image map name"
+#~ msgstr "Attēla kartes nosaukums"
+
+#~ msgid "Image map"
+#~ msgstr "Attēla karte"
+
+#~ msgid "Image"
+#~ msgstr "Attēls"
+
+#~ msgid "Inline frame"
+#~ msgstr "Iekļautais ietvars"
+
+#~ msgid "Inserted text"
+#~ msgstr "Ievietotais teksts"
+
+#~ msgid "Instance definition"
+#~ msgstr "Instances definīcija"
+
+#~ msgid "Java applet (deprecated)"
+#~ msgstr "Java sīklietotne (novecojis)"
+
+#~ msgid "Label"
+#~ msgstr "Etiķete"
+
+#~ msgid "Language code"
+#~ msgstr "Valodas kods"
+
+#~ msgid "Link color (deprecated)"
+#~ msgstr "Saites krāsa (novecojis)"
+
+#~ msgid "List item"
+#~ msgstr "Saraksta elements"
+
+#~ msgid "List of MIME types for file upload"
+#~ msgstr "Datņu augšupielādes MIME tipu saraksts"
+
+#~ msgid "List of supported character sets"
+#~ msgstr "Atbalstīto rakstzīmju kopu saraksts"
+
+#~ msgid "Local change to font"
+#~ msgstr "Vietējā fonta maiņa"
+
+#~ msgid "Long description link"
+#~ msgstr "Gara apraksta saite"
+
+#~ msgid "Long quotation"
+#~ msgstr "Garš citāts"
+
+#~ msgid "Margin pixel height"
+#~ msgstr "Apmales augstums pikseļos"
+
+#~ msgid "Margin pixel width"
+#~ msgstr "Apmales platums pikseļos"
+
+#~ msgid "Maximum length of text field"
+#~ msgstr "Teksta lauka maksimālais garums"
+
+#~ msgid "Output media"
+#~ msgstr "Izvades datu nesējs"
+
+#~ msgid "Media-independent link"
+#~ msgstr "No datiem neatkarīga saite"
+
+#~ msgid "Menu list (deprecated)"
+#~ msgstr "Izvēļņu saraksts (novecojis)"
+
+#~ msgid "Multi-line text field"
+#~ msgstr "Vairāku rindu teksta lauks"
+
+#~ msgid "Multiple"
+#~ msgstr "Daudzkārtējs"
+
+#~ msgid "Named property value"
+#~ msgstr "Vārdā nosaukta vērtība"
+
+#~ msgid "No frames"
+#~ msgstr "Nav ietvaru"
+
+#~ msgid "No script"
+#~ msgstr "Nav skriptu"
+
+#~ msgid "No shade (deprecated)"
+#~ msgstr "Nav ēnojums (novecojis)"
+
+#~ msgid "No URI"
+#~ msgstr "Nav URI"
+
+#~ msgid "No word wrap (deprecated)"
+#~ msgstr "Nav vārdu aplaušanas (novecojis)"
+
+#~ msgid "Object applet file (deprecated)"
+#~ msgstr "Objekta sīklietotnes datne (novecojis)"
+
+#~ msgid "Object data reference"
+#~ msgstr "Atsauce uz objekta datiem"
+
+#~ msgid "Offset for alignment character"
+#~ msgstr "Līdzinājuma rakstzīmes nobīde"
+
+#~ msgid "OnBlur event"
+#~ msgstr "OnBlur notikums"
+
+#~ msgid "OnChange event"
+#~ msgstr "OnChange notikums"
+
+#~ msgid "OnClick event"
+#~ msgstr "OnClick notikums"
+
+#~ msgid "OnDblClick event"
+#~ msgstr "OnDblClick notikums"
+
+#~ msgid "OnFocus event"
+#~ msgstr "OnFocus notikums"
+
+#~ msgid "OnKeyDown event"
+#~ msgstr "OnKeyDown notikums"
+
+#~ msgid "OnKeyPress event"
+#~ msgstr "OnKeyPress notikums"
+
+#~ msgid "OnKeyUp event"
+#~ msgstr "OnKeyUp notikums"
+
+#~ msgid "OnLoad event"
+#~ msgstr "OnLoad notikums"
+
+#~ msgid "OnMouseDown event"
+#~ msgstr "OnMouseDown notikums"
+
+#~ msgid "OnMouseMove event"
+#~ msgstr "OnMouseMove notikums"
+
+#~ msgid "OnMouseOut event"
+#~ msgstr "OnMouseOut notikums"
+
+#~ msgid "OnMouseOver event"
+#~ msgstr "OnMouseOver notikums"
+
+#~ msgid "OnMouseUp event"
+#~ msgstr "OnMouseUp notikums"
+
+#~ msgid "OnReset event"
+#~ msgstr "OnReset notikums"
+
+#~ msgid "OnSelect event"
+#~ msgstr "OnSelect notikums"
+
+#~ msgid "OnSubmit event"
+#~ msgstr "OnSubmit notikums"
+
+#~ msgid "OnUnload event"
+#~ msgstr "OnUnload notikums"
+
+#~ msgid "Option group"
+#~ msgstr "Opciju grupa"
+
+#~ msgid "Option selector"
+#~ msgstr "Opcijas izvēle"
+
+#~ msgid "Ordered list"
+#~ msgstr "Sakārtots saraksts"
+
+#~ msgid "Paragraph class"
+#~ msgstr "Rindkopas klase"
+
+#~ msgid "Paragraph style"
+#~ msgstr "Rindkopas stils"
+
+#~ msgid "Paragraph"
+#~ msgstr "Rindkopa"
+
+#~ msgid "Preformatted text"
+#~ msgstr "Iepriekš formatēts teksts"
+
+#~ msgid "Profile metainfo dictionary"
+#~ msgstr "Profila metadatu vārdnīca"
+
+#~ msgid "Push button"
+#~ msgstr "Nospiest pogu"
+
+#~ msgid "ReadOnly text and password"
+#~ msgstr "Tikai-lasāms teksts un parole"
+
+#~ msgid "Reduced spacing (deprecated)"
+#~ msgstr "Samazinātas atstarpes (novecojis)"
+
+#~ msgid "Reverse link"
+#~ msgstr "Apgrieztā saite"
+
+#~ msgid "Rows"
+#~ msgstr "Rindas"
+
+#~ msgid "Rulings between rows and columns"
+#~ msgstr "Rindu un kolonu likumsakarības"
+
+#~ msgid "Sample program output, scripts"
+#~ msgstr "Paraugprogrammas izvads, skripts"
+
+#~ msgid "Scope covered by header cells"
+#~ msgstr "Galvenes šūnu aptvertais apgabals"
+
+#~ msgid "Script language name"
+#~ msgstr "Skriptošanas valodas nosaukums"
+
+#~ msgid "Script statements"
+#~ msgstr "Skripta deklarācijas"
+
+#~ msgid "Scrollbar"
+#~ msgstr "Ritjosla"
+
+#~ msgid "Selectable option"
+#~ msgstr "Izvēlama opcija"
+
+#~ msgid "Selected"
+#~ msgstr "Izvēlēts"
+
+#~ msgid "Server-side image map"
+#~ msgstr "Servera puses attēla karte"
+
+#~ msgid "Shape"
+#~ msgstr "Forma"
+
+#~ msgid "Short inline quotation"
+#~ msgstr "Īss iekļauts citāts"
+
+#~ msgid "Size (deprecated)"
+#~ msgstr "Izmērs (novecojis)"
+
+#~ msgid "Source"
+#~ msgstr "Avots"
+
+#~ msgid "Space-separated archive list"
+#~ msgstr "Ar atstarpēm atdalīts arhīvu saraksts"
+
+#~ msgid "Spacing between cells"
+#~ msgstr "Atstarpes starp šūnām"
+
+#~ msgid "Spacing within cells"
+#~ msgstr "Atstarpes šūnās"
+
+#~ msgid "Span"
+#~ msgstr "Intervāls"
+
+#~ msgid "Standby load message"
+#~ msgstr "Gaidstāves ielādes ziņa"
+
+#~ msgid "Starting sequence number (deprecated)"
+#~ msgstr "Sākuma virknes numurs (novecojis)"
+
+#~ msgid "Strike-through text style (deprecated)"
+#~ msgstr "Pārsvītrota teksta stils (novecojis)"
+
+#~ msgid "Strike-through text (deprecated)"
+#~ msgstr "Pārsvītrots teksts (novecojis)"
+
+#~ msgid "Strong emphasis"
+#~ msgstr "Spēcīgs uzsvars"
+
+#~ msgid "Style info"
+#~ msgstr "Stila informācija"
+
+#~ msgid "Subscript"
+#~ msgstr "Apakšraksts"
+
+#~ msgid "Superscript"
+#~ msgstr "Augšraksts"
+
+#~ msgid "Table body"
+#~ msgstr "Tabulas pamatteksts"
+
+#~ msgid "Table caption"
+#~ msgstr "Tabulas virsraksts"
+
+#~ msgid "Table column group properties"
+#~ msgstr "Tabulas kolonu grupas īpašības"
+
+#~ msgid "Table column properties"
+#~ msgstr "Tabulas kolonas īpašības"
+
+#~ msgid "Table data cell"
+#~ msgstr "Tabulas datu šūna"
+
+#~ msgid "Table footer"
+#~ msgstr "Tabulas kājene"
+
+#~ msgid "Table header cell"
+#~ msgstr "Tabulas galvenes šūna"
+
+#~ msgid "Table header"
+#~ msgstr "Tabulas galvene"
+
+#~ msgid "Table row"
+#~ msgstr "Tabulas rinda"
+
+#~ msgid "Table summary"
+#~ msgstr "Tabulas kopsavilkums"
+
+#~ msgid "Table"
+#~ msgstr "Tabula"
+
+#~ msgid "Target — Blank"
+#~ msgstr "Mērķis — tukšs"
+
+#~ msgid "Target — Parent"
+#~ msgstr "Mērķis — vecāks"
+
+#~ msgid "Target — Self"
+#~ msgstr "Mērķis — pats"
+
+#~ msgid "Target — Top"
+#~ msgstr "Mērķis — augšējais"
+
+#~ msgid "Teletype or monospace text style"
+#~ msgstr "Rakstāmmašīnas vai vienplatuma tipa teksta stils"
+
+#~ msgid "Text color (deprecated)"
+#~ msgstr "Teksta krāsa (novecojis)"
+
+#~ msgid "Text entered by user"
+#~ msgstr "Lietotāja ievadītais teksts"
+
+#~ msgid "Title"
+#~ msgstr "Virsraksts"
+
+#~ msgid "Unordered list"
+#~ msgstr "Nesakārtots saraksts"
+
+#~ msgid "Use image map"
+#~ msgstr "Lietot attēla karti"
+
+#~ msgid "Value interpretation"
+#~ msgstr "Vērtības interpretācija"
+
+#~ msgid "Value"
+#~ msgstr "Vērtība"
+
+#~ msgid "Variable or program argument"
+#~ msgstr "Mainīgais vai programmas parametrs"
+
+#~ msgid "Vertical cell alignment"
+#~ msgstr "Vertikāla šūnu līdzināšana"
+
+#~ msgid "Vertical space (deprecated)"
+#~ msgstr "Vertikālā atstarpe (novecojis)"
+
+#~ msgid "Visited link color (deprecated)"
+#~ msgstr "Apmeklēto saišu krāsa (novecojis)"
+
+#~ msgid "Width"
+#~ msgstr "Platums"
+
+#~ msgid "HTML — Tags"
+#~ msgstr "HTML — birkas"
+
+#~ msgid "Above"
+#~ msgstr "Virs"
+
+#~ msgid "Applet class file code"
+#~ msgstr "Sīklietotnes klases datnes kods"
+
+#~ msgid "Array"
+#~ msgstr "Masīvs"
+
+#~ msgid "Background texture tile"
+#~ msgstr "Fona tekstūras flīze"
+
+#~ msgid "Base font"
+#~ msgstr "Pamatfonts"
+
+#~ msgid "Border color"
+#~ msgstr "Malas krāsa"
+
+#~ msgid "Border"
+#~ msgstr "Mala"
+
+#~ msgid "Center"
+#~ msgstr "Centrēt"
+
+#~ msgid "Checked (state)"
+#~ msgstr "Atzīmēts (stāvoklis)"
+
+#~ msgid "Color of selected links"
+#~ msgstr "Izvēlēto saišu krāsa"
+
+#~ msgid "Content scheme"
+#~ msgstr "Satura stils"
+
+#~ msgid "Content type"
+#~ msgstr "Satura tips"
+
+#~ msgid "Direction"
+#~ msgstr "Virziens"
+
+#~ msgid "Directory list"
+#~ msgstr "Direktoriju saraksts"
+
+#~ msgid "HTML version"
+#~ msgstr "HTML versija"
+
+#~ msgid "Embedded object"
+#~ msgstr "Iegultais objekts"
+
+#~ msgid "Figure"
+#~ msgstr "Attēls"
+
+#~ msgid "Font face"
+#~ msgstr "Fonts"
+
+#~ msgid "Frameborder"
+#~ msgstr "Ietvara robeža"
+
+#~ msgid "Framespacing"
+#~ msgstr "Ietvaru atstatumi"
+
+#~ msgid "Heading"
+#~ msgstr "Virsraksts"
+
+#~ msgid "Horizontal space"
+#~ msgstr "Horizontāla atstarpe"
+
+#~ msgid "Image source"
+#~ msgstr "Attēla avots"
+
+#~ msgid "Inline layer"
+#~ msgstr "Iekļautais slānis"
+
+#~ msgid "Java applet"
+#~ msgstr "Java sīklietotne"
+
+#~ msgid "Layer"
+#~ msgstr "Slānis"
+
+#~ msgid "Link color"
+#~ msgstr "Saites krāsa"
+
+#~ msgid "Listing"
+#~ msgstr "Uzskaitījums"
+
+#~ msgid "Mail link"
+#~ msgstr "Pasta saite"
+
+#~ msgid "Marquee"
+#~ msgstr "Slīdjosla"
+
+#~ msgid "Menu list"
+#~ msgstr "Izvēļņu saraksts"
+
+#~ msgid "Multicolumn"
+#~ msgstr "Vairākkolonnu"
+
+#~ msgid "Next ID"
+#~ msgstr "Nākamais ID"
+
+#~ msgid "No embedded objects"
+#~ msgstr "Nav iegultu objektu"
+
+#~ msgid "No layers"
+#~ msgstr "Nav slāņu"
+
+#~ msgid "No line break"
+#~ msgstr "Nav rindu pārtraukumu"
+
+#~ msgid "No shade"
+#~ msgstr "Nav ēnojums"
+
+#~ msgid "No word wrap"
+#~ msgstr "Nav vārdu aplaušanas"
+
+#~ msgid "Note"
+#~ msgstr "Piezīme"
+
+#~ msgid "Object applet file"
+#~ msgstr "Objekta sīklietotnes datne"
+
+#~ msgid "Preformatted listing"
+#~ msgstr "Iepriekš formatēts saraksts"
+
+#~ msgid "Prompt message"
+#~ msgstr "Uzvednes ziņojums"
+
+#~ msgid "Quote"
+#~ msgstr "Citāts"
+
+#~ msgid "Range"
+#~ msgstr "Apgabals"
+
+#~ msgid "Reduced spacing"
+#~ msgstr "Samazinātas atstarpes"
+
+#~ msgid "Root"
+#~ msgstr "Sakne"
+
+#~ msgid "Single line prompt"
+#~ msgstr "Vienas rindas uzvedne"
+
+#~ msgid "Size"
+#~ msgstr "Izmērs"
+
+#~ msgid "Soft line break"
+#~ msgstr "Neuzstājīgs rindas pārtraukums"
+
+#~ msgid "Sound"
+#~ msgstr "Skaņa"
+
+#~ msgid "Spacer"
+#~ msgstr "Atdalītājs"
+
+#~ msgid "Square root"
+#~ msgstr "Kvadrātsakne"
+
+#~ msgid "Starting sequence number"
+#~ msgstr "Sākuma virknes numurs"
+
+#~ msgid "Strike-through text style"
+#~ msgstr "Pārsvītrota teksta stils"
+
+#~ msgid "Tab order position"
+#~ msgstr "Ciļņu secības pozīcija"
+
+#~ msgid "Text color"
+#~ msgstr "Teksta krāsa"
+
+#~ msgid "Text"
+#~ msgstr "Teksts"
+
+#~ msgid "Top margin in pixels"
+#~ msgstr "Augšējā apmale pikseļos"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Vertical space"
+#~ msgstr "Vertikālā atstarpe"
+
+#~ msgid "Visited link color"
+#~ msgstr "Apmeklēto saišu krāsa"
+
+#~ msgid "HTML — Special Characters"
+#~ msgstr "HTML — speciālās rakstzīmes"
+
+#~ msgid "Non-breaking space"
+#~ msgstr "Nedalāmā atstarpe"
+
+#~ msgid "Latex — Tags"
+#~ msgstr "Latex — birkas"
+
+#~ msgid "Bibliography (cite)"
+#~ msgstr "Bibliogrāfija (citāts)"
+
+#~ msgid "Bibliography (item)"
+#~ msgstr "Bibliogrāfija (vienums)"
+
+#~ msgid "Bibliography (shortcite)"
+#~ msgstr "Bibliogrāfija (īss citāts)"
+
+#~ msgid "Bibliography (thebibliography)"
+#~ msgstr "Bibliogrāfija (bibliogrāfija)"
+
+#~ msgid "Brackets ()"
+#~ msgstr "Iekavas ()"
+
+#~ msgid "Brackets []"
+#~ msgstr "Iekavas []"
+
+#~ msgid "Brackets {}"
+#~ msgstr "Iekavas {}"
+
+#~ msgid "Brackets <>"
+#~ msgstr "Iekavas <>"
+
+#~ msgid "File input"
+#~ msgstr "Ievietojamā datne"
+
+#~ msgid "Function cosine"
+#~ msgstr "Kosinusa funkcija"
+
+#~ msgid "Function e^"
+#~ msgstr "Funkcija e^"
+
+#~ msgid "Function exp"
+#~ msgstr "Eksponente"
+
+#~ msgid "Function log"
+#~ msgstr "Logaritms"
+
+#~ msgid "Function log10"
+#~ msgstr "Decimālais logaritms"
+
+#~ msgid "Function sine"
+#~ msgstr "Sinusa funkcija"
+
+#~ msgid "Greek alpha"
+#~ msgstr "Grieķu alfa"
+
+#~ msgid "Greek beta"
+#~ msgstr "Grieķu beta"
+
+#~ msgid "Greek epsilon"
+#~ msgstr "Grieķu epsilons"
+
+#~ msgid "Greek gamma"
+#~ msgstr "Grieķu gamma"
+
+#~ msgid "Greek lambda"
+#~ msgstr "Grieķu lambda"
+
+#~ msgid "Greek rho"
+#~ msgstr "Grieķu ro"
+
+#~ msgid "Greek tau"
+#~ msgstr "Grieķu tau"
+
+#~ msgid "Header 0 (chapter)"
+#~ msgstr "Virsraksts 0 (nodaļa)"
+
+#~ msgid "Header 0 (chapter*)"
+#~ msgstr "Virsraksts 0 (nodaļa*)"
+
+#~ msgid "Header 1 (section)"
+#~ msgstr "Virsraksts 1 (sadaļa)"
+
+#~ msgid "Header 1 (section*)"
+#~ msgstr "Virsraksts 1 (sadaļa*)"
+
+#~ msgid "Header 2 (subsection)"
+#~ msgstr "Virsraksts 2 (apakšsadaļa)"
+
+#~ msgid "Header 2 (subsection*)"
+#~ msgstr "Virsraksts 2 (apakšsadaļa*)"
+
+#~ msgid "Header 3 (subsubsection)"
+#~ msgstr "Virsraksts 3 (apakšapakšsadaļa)"
+
+#~ msgid "Header 3 (subsubsection*)"
+#~ msgstr "Virsraksts 3 (apakšapakšsadaļa*)"
+
+#~ msgid "Header 4 (paragraph)"
+#~ msgstr "Virsraksts 4 (paragrāfs)"
+
+#~ msgid "Header appendix"
+#~ msgstr "Virsraksta pielikums"
+
+#~ msgid "List enumerate"
+#~ msgstr "Saraksta numerācija"
+
+#~ msgid "List itemize"
+#~ msgstr "Saraksta elements"
+
+#~ msgid "Item with label"
+#~ msgstr "Elements ar etiķeti"
+
+#~ msgid "Item"
+#~ msgstr "Elements"
+
+#~ msgid "Maths (display)"
+#~ msgstr "Formulas (savā rindkopā)"
+
+#~ msgid "Maths (inline)"
+#~ msgstr "Formulas (tekstā)"
+
+#~ msgid "Operator fraction"
+#~ msgstr "Dalīšanas operators"
+
+#~ msgid "Operator integral (display)"
+#~ msgstr "Integrāļa operators (savā rindkopā)"
+
+#~ msgid "Operator integral (inline)"
+#~ msgstr "Integrāļa operators (tekstā)"
+
+#~ msgid "Operator sum (display)"
+#~ msgstr "Summas operators (savā rindkopā)"
+
+#~ msgid "Operator sum (inline)"
+#~ msgstr "Summas operators (tekstā)"
+
+#~ msgid "Reference label"
+#~ msgstr "Atsauces etiķete"
+
+#~ msgid "Reference ref"
+#~ msgstr "Atsauces avots"
+
+#~ msgid "Symbol <<"
+#~ msgstr "Simbols <<"
+
+#~ msgid "Symbol <="
+#~ msgstr "Simbols <="
+
+#~ msgid "Symbol >="
+#~ msgstr "Simbols >="
+
+#~ msgid "Symbol >>"
+#~ msgstr "Simbols >>"
+
+#~ msgid "Symbol and"
+#~ msgstr "Simbols un"
+
+#~ msgid "Symbol const"
+#~ msgstr "Simbols const"
+
+#~ msgid "Symbol d2-by-dt2-partial"
+#~ msgstr "Simbols d2-by-dt2-partial"
+
+#~ msgid "Symbol dagger"
+#~ msgstr "Krustiņa simbols"
+
+#~ msgid "Symbol d-by-dt"
+#~ msgstr "Simbols d-pret-dt"
+
+#~ msgid "Symbol d-by-dt-partial"
+#~ msgstr "Simbols d-by-dt-partial"
+
+#~ msgid "Symbol equiv"
+#~ msgstr "Ekvivalence"
+
+#~ msgid "Symbol en-dash --"
+#~ msgstr "Domuzīme --"
+
+#~ msgid "Symbol em-dash ---"
+#~ msgstr "Domuzīme ---"
+
+#~ msgid "Symbol infinity"
+#~ msgstr "Bezgalība"
+
+#~ msgid "Symbol mathspace ,"
+#~ msgstr "Simbols ,"
+
+#~ msgid "Symbol mathspace ."
+#~ msgstr "Simbols ."
+
+#~ msgid "Symbol mathspace _"
+#~ msgstr "Simbols _"
+
+#~ msgid "Symbol mathspace __"
+#~ msgstr "Simbols __"
+
+#~ msgid "Symbol simeq"
+#~ msgstr "Aproksimācijas simbols"
+
+#~ msgid "Symbol star"
+#~ msgstr "Zvaigznīte"
+
+#~ msgid "Typeface bold"
+#~ msgstr "Burtveidols treknraksts"
+
+#~ msgid "Typeface type"
+#~ msgstr "Burtveidola tips"
+
+#~ msgid "Typeface italic"
+#~ msgstr "Burtveidols slīpraksts"
+
+#~ msgid "Typeface slanted"
+#~ msgstr "Burtveidols vienpusīgs"
+
+#~ msgid "Unbreakable text"
+#~ msgstr "Nedalāms teksts"
+
+#~ msgid "Footnote"
+#~ msgstr "Vēre"
+
+#~ msgid "Tag list"
+#~ msgstr "Birku saraksts"
+
+#~ msgid ""
+#~ "Provides a method to easily insert commonly used tags/strings into a "
+#~ "document without having to type them."
+#~ msgstr ""
+#~ "Piedāvā veidu, kā ērti ievietot dokumentā biežāk lietotos birkas / "
+#~ "virknes bez vajadzības tās rakstīt."
+
+#~ msgid "XSLT — Elements"
+#~ msgstr "XSLT — elementi"
+
+#~ msgid "XSLT — Functions"
+#~ msgstr "XSLT — funkcijas"
+
+#~ msgid "XSLT — Axes"
+#~ msgstr "XSLT — asis"
+
+#~ msgid "ancestor"
+#~ msgstr "priekštecis"
+
+#~ msgid "ancestor-or-self"
+#~ msgstr "priekštecis vai pats"
+
+#~ msgid "attribute"
+#~ msgstr "atribūts"
+
+#~ msgid "child"
+#~ msgstr "bērns"
+
+#~ msgid "descendant"
+#~ msgstr "pēctecis"
+
+#~ msgid "descendant-or-self"
+#~ msgstr "pēctecis vai pats"
+
+#~ msgid "following"
+#~ msgstr "sekojošs"
+
+#~ msgid "following-sibling"
+#~ msgstr "sekojošs-kaimiņš"
+
+#~ msgid "namespace"
+#~ msgstr "vārdtelpa"
+
+#~ msgid "parent"
+#~ msgstr "vecāks"
+
+#~ msgid "preceding"
+#~ msgstr "iepriekšējais"
+
+#~ msgid "preceding-sibling"
+#~ msgstr "iepriekšējais kaimiņš"
+
+#~ msgid "self"
+#~ msgstr "pats"
+
+#~ msgid "XUL — Tags"
+#~ msgstr "XUL — birkas"
+
+#~ msgid "_Increase font size"
+#~ msgstr "Pal_ielināt fonta izmēru"
+
+#~ msgid "_Decrease font size"
+#~ msgstr "_Samazināt fonta izmēru"
+
+#~ msgid "_Reset font size"
+#~ msgstr "Nesenais fonta izmē_rs"
 
 #~ msgid "_Insert"
 #~ msgstr "_Ievietot"
