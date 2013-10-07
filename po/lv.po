@@ -2,25 +2,25 @@
 # Copyright (C) 2006, 2007, 2009 Free Software Foundation, Inc.
 #
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007, 2009.
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2009, 2010.
 # Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013.
 # Anita Reitere <nitalynx@gmail.com>, 2012.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2009, 2010, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-09-27 11:20+0000\n"
-"PO-Revision-Date: 2013-09-22 00:02+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-08 01:29+0300\n"
+"PO-Revision-Date: 2013-10-08 01:29+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
-"Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
+"Language-Team: Latviešu <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 msgid "Bookmarks"
@@ -73,7 +73,7 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Ar klikšķu palīdzību ļauj ievietot speciālās rakstzīmes."
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-msgid "Code Comment"
+msgid "Code comment"
 msgstr "Koda komentārs"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:2
@@ -223,7 +223,7 @@ msgid "Draw Spaces"
 msgstr "Zīmēt atstarpes"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-msgid "Draw spaces and tabs"
+msgid "Draw Spaces and Tabs"
 msgstr "Zīmēt atstarpes un tabulatorus"
 
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
@@ -274,14 +274,6 @@ msgstr "Ja patiess, zīmēšana tiks aktivēta."
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Kāda veida atstarpes zīmēt."
-
-#: ../plugins/git/git.plugin.desktop.in.in.h:1
-msgid "Git"
-msgstr "Git"
-
-#: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Git atšķirības"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -588,11 +580,11 @@ msgstr "Iegultais terminālis"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Iegult termināli apakšējā rūtī."
 
-#: ../plugins/terminal/terminal.py:316
+#: ../plugins/terminal/terminal.py:291
 msgid "Terminal"
 msgstr "Terminālis"
 
-#: ../plugins/terminal/terminal.py:337
+#: ../plugins/terminal/terminal.py:312
 msgid "C_hange Directory"
 msgstr "_Mainīt direktoriju"
 
@@ -617,33 +609,10 @@ msgstr "Teksta izmērs"
 msgid "Easily increase and decrease the text size"
 msgstr "Viegli palielināt vai samazināt teksta izmēru"
 
-#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
-msgid "Interactive completion"
-msgstr "Interaktīva pabeigšana"
-
-#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
-msgid "Minimum word size:"
-msgstr "Minimālais vārda izmērs:"
-
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
 msgid "Document Words"
 msgstr "Dokumenta vārdi"
-
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
-msgid "Interactive Completion"
-msgstr "Interaktīva pabeigšana"
-
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
-msgid "Whether to enable interactive completion."
-msgstr "Vai aktivēt interaktīvo pabeigšanu."
-
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
-msgid "Minimum Word Size"
-msgstr "Minimālais vārda izmērs"
-
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
-msgid "The minimum word size to complete."
-msgstr "Minimālais vārda izmērs, lai pabeigtu."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
@@ -652,6 +621,30 @@ msgstr "Vārdu pabeigšana"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Vārdu pabeigšana, lietojot pabeigšanas rāmja struktūru"
+
+#~ msgid "Git"
+#~ msgstr "Git"
+
+#~ msgid "Git differences"
+#~ msgstr "Git atšķirības"
+
+#~ msgid "Interactive completion"
+#~ msgstr "Interaktīva pabeigšana"
+
+#~ msgid "Minimum word size:"
+#~ msgstr "Minimālais vārda izmērs:"
+
+#~ msgid "Interactive Completion"
+#~ msgstr "Interaktīva pabeigšana"
+
+#~ msgid "Whether to enable interactive completion."
+#~ msgstr "Vai aktivēt interaktīvo pabeigšanu."
+
+#~ msgid "Minimum Word Size"
+#~ msgstr "Minimālais vārda izmērs"
+
+#~ msgid "The minimum word size to complete."
+#~ msgstr "Minimālais vārda izmērs, lai pabeigtu."
 
 #~ msgid "Most Used"
 #~ msgstr "Biežāk lietotie"
