@@ -310,7 +310,7 @@ class TerminalPlugin(GObject.Object, Gedit.WindowActivatable):
         self._panel.connect("populate-popup", self.on_panel_populate_popup)
         self._panel.show()
 
-        image = Gtk.Image.new_from_icon_name("utilities-terminal", Gtk.IconSize.MENU)
+        image = Gtk.Image.new_from_icon_name("utilities-terminal-symbolic", Gtk.IconSize.MENU)
 
         bottom = self.window.get_bottom_panel()
         bottom.add_item(self._panel, "GeditTerminalPanel", _("Terminal"), image)
