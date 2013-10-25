@@ -12,6 +12,7 @@ HELP_FILES = \
 	commander.page \
 	dashboard.page \
 	draw-spaces.page \
+	git.page \
 	join-split-lines.page \
 	legal-plugins.xml \
 	multi-edit.page \
