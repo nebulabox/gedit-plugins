@@ -22,15 +22,16 @@
 # Henrique P. Machado <hpmachado@gnome.org>, 2010.
 # Krix Apolinário <krixapolinario@gmail.com>, 2010, 2011.
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
+# Enrico Nicoletto <liverig@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-08-02 21:58+0000\n"
-"PO-Revision-Date: 2013-08-05 03:14-0300\n"
-"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"POT-Creation-Date: 2013-10-28 11:31+0000\n"
+"PO-Revision-Date: 2013-10-28 19:04-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_BR-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -296,8 +297,8 @@ msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Diferenças no Git"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Destaca linhas que foram alteradas desde o último commit"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -614,11 +615,11 @@ msgstr "Terminal embutido"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Embute um terminal no painel inferior."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "Al_ternar diretório"
 
@@ -678,3 +679,6 @@ msgstr "Completar palavras"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Completa palavras usando o framework de completar"
+
+#~ msgid "Git differences"
+#~ msgstr "Diferenças no Git"
