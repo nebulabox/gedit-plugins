@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the gedit-plugins package.
 #
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2000.
-# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2012.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007-2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-08-15 18:20+0000\n"
-"PO-Revision-Date: 2013-08-17 15:31+0100\n"
+"POT-Creation-Date: 2013-10-30 07:13+0000\n"
+"PO-Revision-Date: 2013-11-02 11:45+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: Slovenian\n"
@@ -280,8 +280,8 @@ msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Razlike Git"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Poudari vrstice, ki so bile spremenjene od zadnje uveljavitve"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -586,11 +586,11 @@ msgstr "Vgrajen terminal"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Vgradi terminal v spodnji pladenj"
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "Spremeni _mapo"
 
@@ -650,6 +650,9 @@ msgstr "Dopolnjevanje besed"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Dopolnjevanje besed z uporabo ogrodja dopolnjevanja"
+
+#~ msgid "Git differences"
+#~ msgstr "Razlike Git"
 
 #~ msgid "X"
 #~ msgstr "X"
