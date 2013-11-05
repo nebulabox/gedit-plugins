@@ -17,7 +17,6 @@ HELP_FILES = \
 	legal-plugins.xml \
 	multi-edit.page \
 	session-saver.page \
-	tag-list.page \
 	terminal.page \
 	text-size.page \
 	word-completion.page
