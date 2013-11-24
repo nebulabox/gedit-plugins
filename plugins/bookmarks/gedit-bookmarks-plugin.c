@@ -769,6 +769,16 @@ gedit_bookmarks_plugin_activate (GeditWindowActivatable *activatable)
 }
 
 static void
+gedit_bookmarks_plugin_update_state (GeditWindowActivatable *activatable)
+{
+	GeditBookmarksPluginPrivate *priv;
+
+	priv = GEDIT_BOOKMARKS_PLUGIN (activatable)->priv;
+	gtk_action_group_set_sensitive (priv->action_group,
+					gedit_window_get_active_view (priv->window) != NULL);
+}
+
+static void
 save_bookmark_metadata (GeditView *view)
 {
 	GtkTextIter iter;
@@ -1082,6 +1092,11 @@ toggle_bookmark (GtkSourceBuffer *buffer,
 	GtkTextIter start;
 	GtkSourceMark *bookmark = NULL;
 
+	if (buffer == NULL)
+	{
+		return;
+	}
+
 	bookmark = get_bookmark_and_iter (buffer, iter, &start);
 
 	if (bookmark != NULL)
@@ -1101,6 +1116,7 @@ on_toggle_bookmark_activate (GtkAction            *action,
 	GtkSourceBuffer *buffer;
 
 	buffer = GTK_SOURCE_BUFFER (gedit_window_get_active_document (plugin->priv->window));
+
 	toggle_bookmark (buffer, NULL);
 }
 
@@ -1191,6 +1207,7 @@ gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface)
 {
 	iface->activate = gedit_bookmarks_plugin_activate;
 	iface->deactivate = gedit_bookmarks_plugin_deactivate;
+	iface->update_state = gedit_bookmarks_plugin_update_state;
 }
 
 G_MODULE_EXPORT void
