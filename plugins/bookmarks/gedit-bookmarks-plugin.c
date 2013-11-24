@@ -270,20 +270,28 @@ uninstall_menu (GeditBookmarksPlugin *plugin)
 }
 
 static void
-disable_bookmarks (GeditView *view)
+remove_all_bookmarks (GtkSourceBuffer *buffer)
 {
 	GtkTextIter start;
 	GtkTextIter end;
+
+	gedit_debug (DEBUG_PLUGINS);
+
+	gtk_text_buffer_get_bounds (GTK_TEXT_BUFFER (buffer), &start, &end);
+	gtk_source_buffer_remove_source_marks (buffer,
+					       &start,
+					       &end,
+					       BOOKMARK_CATEGORY);
+}
+
+static void
+disable_bookmarks (GeditView *view)
+{
 	GtkTextBuffer *buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
 	gpointer data;
 
 	gtk_source_view_set_show_line_marks (GTK_SOURCE_VIEW (view), FALSE);
-
-	gtk_text_buffer_get_bounds (buffer, &start, &end);
-	gtk_source_buffer_remove_source_marks (GTK_SOURCE_BUFFER (buffer),
-					       &start,
-					       &end,
-					       BOOKMARK_CATEGORY);
+	remove_all_bookmarks (GTK_SOURCE_BUFFER (buffer));
 
 	g_signal_handlers_disconnect_by_func (buffer, on_style_scheme_notify, view);
 	g_signal_handlers_disconnect_by_func (buffer, on_delete_range, NULL);
@@ -429,6 +437,8 @@ load_bookmarks (GeditView *view,
 	GtkTextIter iter;
 	gint tot_lines;
 	gint i;
+
+	gedit_debug (DEBUG_PLUGINS);
 
 	buf = GTK_SOURCE_BUFFER (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)));
 
@@ -1155,6 +1165,9 @@ on_document_loaded (GeditDocument *doc,
 {
 	if (error == NULL)
 	{
+		/* Reverting can leave one bookmark at the start, remove it. */
+		remove_all_bookmarks (GTK_SOURCE_BUFFER (doc));
+
 		load_bookmark_metadata (view);
 	}
 }
