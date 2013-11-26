@@ -896,22 +896,28 @@ on_delete_range (GtkTextBuffer *buffer,
 	GSList *marks;
 	GSList *item;
 
+	/* After deleting, all bookmarks from the deleted range are collapsed at start. */
 	iter = *start;
-
-	/* move to start of line */
-	gtk_text_iter_set_line_offset (&iter, 0);
-
-	/* remove any bookmarks that are collapsed on each other due to this */
-	marks = gtk_source_buffer_get_source_marks_at_iter (GTK_SOURCE_BUFFER (buffer),
-							    &iter,
+	marks = gtk_source_buffer_get_source_marks_at_line (GTK_SOURCE_BUFFER (buffer),
+							    gtk_text_iter_get_line (&iter),
 							    BOOKMARK_CATEGORY);
 
 	if (marks == NULL)
 		return;
 
-	/* remove all but the first mark */
+	/* Remove all but the first bookmark. */
 	for (item = marks->next; item; item = item->next)
 		gtk_text_buffer_delete_mark (buffer, GTK_TEXT_MARK (item->data));
+
+	/* Make sure it is at the beginning of the line again. */
+	if (gtk_text_iter_get_line_offset (&iter) != 0)
+	{
+		gtk_text_iter_set_line_offset (&iter, 0);
+
+		gtk_text_buffer_move_mark (buffer,
+					   GTK_TEXT_MARK (marks->data),
+					   &iter);
+	}
 
 	g_slist_free (marks);
 }
