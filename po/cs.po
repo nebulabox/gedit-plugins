@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-08-02 13:25+0000\n"
-"PO-Revision-Date: 2013-08-02 23:57+0200\n"
+"POT-Creation-Date: 2013-10-28 11:31+0000\n"
+"PO-Revision-Date: 2013-12-03 21:47+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -113,7 +113,8 @@ msgstr "Barevná pipeta"
 
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:2
 msgid "Pick a color from a dialog and insert its hexadecimal representation."
-msgstr "Vyběr barvy v dialogovém okně a vložení jejího šestnáctkového vyjádření."
+msgstr ""
+"Vyběr barvy v dialogovém okně a vložení jejího šestnáctkového vyjádření."
 
 #: ../plugins/colorpicker/colorpicker.py:161
 msgid "Pick _Color..."
@@ -289,8 +290,8 @@ msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Rozdíly v Git"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Zvýrazňovat řádky, které byly změněny od posledního zařazení"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -598,11 +599,11 @@ msgstr "Vestavěný terminál"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Vložení terminálu do dolního panelu."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminál"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "Z_měnit složku"
 
