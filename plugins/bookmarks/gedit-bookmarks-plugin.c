@@ -395,10 +395,10 @@ enable_bookmarks (GeditView            *view,
 				  G_CALLBACK (on_style_scheme_notify),
 				  view);
 
-		g_signal_connect_after (buffer,
-				        "delete-range",
-				        G_CALLBACK (on_delete_range),
-				        NULL);
+		g_signal_connect (buffer,
+				  "delete-range",
+				  G_CALLBACK (on_delete_range),
+				  NULL);
 
 		data = g_slice_new0 (InsertData);
 
@@ -902,34 +902,43 @@ on_delete_range (GtkTextBuffer *buffer,
 		 GtkTextIter   *end,
 		 gpointer       user_data)
 {
-	GtkTextIter iter;
-	GSList *marks;
-	GSList *item;
+	GtkTextIter start_iter;
+	GtkTextIter end_iter;
+	gboolean keep_bookmark;
 
-	/* After deleting, all bookmarks from the deleted range are collapsed at start. */
-	iter = *start;
-	marks = gtk_source_buffer_get_source_marks_at_line (GTK_SOURCE_BUFFER (buffer),
-							    gtk_text_iter_get_line (&iter),
-							    BOOKMARK_CATEGORY);
-
-	if (marks == NULL)
-		return;
-
-	/* Remove all but the first bookmark. */
-	for (item = marks->next; item; item = item->next)
-		gtk_text_buffer_delete_mark (buffer, GTK_TEXT_MARK (item->data));
-
-	/* Make sure it is at the beginning of the line again. */
-	if (gtk_text_iter_get_line_offset (&iter) != 0)
+	/* Nothing to do for us here. The bookmark, if any, will stay at the
+	   beginning of the line due to its left gravity. */
+	if (gtk_text_iter_get_line (start) == gtk_text_iter_get_line (end))
 	{
-		gtk_text_iter_set_line_offset (&iter, 0);
-
-		gtk_text_buffer_move_mark (buffer,
-					   GTK_TEXT_MARK (marks->data),
-					   &iter);
+		return;
 	}
 
-	g_slist_free (marks);
+	start_iter = *start;
+	gtk_text_iter_set_line_offset (&start_iter, 0);
+
+	end_iter = *end;
+	gtk_text_iter_set_line_offset (&end_iter, 0);
+
+	keep_bookmark = ((gtk_source_buffer_get_source_marks_at_iter (GTK_SOURCE_BUFFER (buffer),
+								     &start_iter,
+								     BOOKMARK_CATEGORY) != NULL) ||
+			 (gtk_source_buffer_get_source_marks_at_iter (GTK_SOURCE_BUFFER (buffer),
+								      &end_iter,
+								      BOOKMARK_CATEGORY) != NULL));
+
+	/* Remove all bookmarks in the range. */
+	gtk_source_buffer_remove_source_marks (GTK_SOURCE_BUFFER (buffer),
+					       &start_iter,
+					       &end_iter,
+					       BOOKMARK_CATEGORY);
+
+	if (keep_bookmark)
+	{
+		gtk_source_buffer_create_source_mark (GTK_SOURCE_BUFFER (buffer),
+						      NULL,
+						      BOOKMARK_CATEGORY,
+						      &start_iter);
+	}
 }
 
 static void
