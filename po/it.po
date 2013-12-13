@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-26 15:01+0200\n"
-"PO-Revision-Date: 2013-08-26 15:01+0200\n"
+"POT-Creation-Date: 2013-12-13 10:12+0100\n"
+"PO-Revision-Date: 2013-12-13 10:12+0100\n"
 "Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -288,8 +288,8 @@ msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Differenze da git"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Evidenzia le righe modificate dall'ultimo commit"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -608,11 +608,11 @@ msgstr "Terminale integrato"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Incorpora un terminale nel riquadro inferiore"
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminale"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "Cambia _directory"
 
