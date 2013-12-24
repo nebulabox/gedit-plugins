@@ -130,7 +130,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             view_activatable.update()
 
         for uri in self.files:
-            self.update_location(Gio.File.new_for_uri(uri))
+            GLib.idle_add(self.update_location, Gio.File.new_for_uri(uri))
 
     def root_changed(self, bus, msg, data=None):
         self.clear_monitors()
