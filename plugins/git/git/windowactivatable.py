@@ -125,12 +125,16 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         self.update_location(location)
 
+    def update_location_idle(self, location):
+        self.update_location(location)
+        return False
+
     def focus_in_event(self, window, event):
         for view_activatable in self.view_activatables:
             view_activatable.update()
 
         for uri in self.files:
-            GLib.idle_add(self.update_location, Gio.File.new_for_uri(uri))
+            GLib.idle_add(self.update_location_idle, Gio.File.new_for_uri(uri))
 
     def root_changed(self, bus, msg, data=None):
         self.clear_monitors()
