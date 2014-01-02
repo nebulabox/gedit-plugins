@@ -15,20 +15,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-05-24 10:51+0000\n"
-"PO-Revision-Date: 2013-04-25 10:35+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-02 17:48+0100\n"
+"PO-Revision-Date: 2014-01-02 17:48+0100\n"
 "Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
-"Language: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 msgid "Bookmarks"
@@ -81,7 +78,7 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Sonderzeichen durch Anklicken einfügen."
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-msgid "Code comment"
+msgid "Code Comment"
 msgstr "Quelltextkommentar"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:2
@@ -233,7 +230,7 @@ msgid "Draw Spaces"
 msgstr "Leerzeichen darstellen"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-msgid "Draw Spaces and Tabs"
+msgid "Draw spaces and tabs"
 msgstr "Leerzeichen und Einzüge anzeigen"
 
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
@@ -284,6 +281,14 @@ msgstr "Falls auf »wahr« gesetzt, wird die Anzeige aktiviert."
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Der Typ der anzuzeigenden Leerzeichen."
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr ""
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Zeilen hervorheben, die seit dem letzten Einspielen verändert wurden"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -597,11 +602,11 @@ msgstr "Eingebettetes Terminal"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Terminal in die untere Leiste einbetten."
 
-#: ../plugins/terminal/terminal.py:280
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:301
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "_Ordner wechseln"
 
@@ -626,10 +631,33 @@ msgstr "Textgröße"
 msgid "Easily increase and decrease the text size"
 msgstr "Die Textgröße einfach ändern"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+msgid "Interactive completion"
+msgstr "Interaktive Vervollständigung"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "Minimale Wortlänge:"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "Wörter im Dokument"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+msgid "Interactive Completion"
+msgstr "Interaktive Vervollständigung"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "Legt fest, ob Interaktive Vervollständigung eingeschaltet ist."
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "Minimale Wortlänge"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "Die minimale Länge des Wortes zur Vervollständigung"
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
