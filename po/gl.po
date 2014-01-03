@@ -12,13 +12,13 @@
 # Antón Méixome <meixome@certima.net>, 2010.
 # Fran Diéguez <frandieguez@gnome.org>, 2010, 2011.
 # Xosé M. Lamas <correo.xmgz@gmail.com>, 2012
-# Fran Dieguez <frandieguez@gnome.org>, 2009, 2010, 2012, 2013.
+# Fran Dieguez <frandieguez@gnome.org>, 2009, 2010, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-master-po-gl-116402.merged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-23 02:35+0200\n"
-"PO-Revision-Date: 2013-09-23 02:38+0200\n"
+"POT-Creation-Date: 2014-01-03 02:15+0100\n"
+"PO-Revision-Date: 2014-01-03 02:16+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -286,8 +286,8 @@ msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Diferenzas Git"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Realzar liñas que foron cambiadas desde a última remisión"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -319,7 +319,7 @@ msgstr "Punto de edición engadido..."
 
 #: ../plugins/multiedit/multiedit/documenthelper.py:643
 msgid "Column Mode..."
-msgstr "Modo e columna..."
+msgstr "Modo de columna..."
 
 #: ../plugins/multiedit/multiedit/documenthelper.py:757
 msgid "Removed edit point..."
@@ -603,11 +603,11 @@ msgstr "Terminal empotrado"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Empotre un terminal no panel inferior."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "_Cambiar de cartafol"
 
@@ -667,6 +667,9 @@ msgstr "Completado de palabras"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "O completado de palabras usando o marco de traballo de completado"
+
+#~ msgid "Git differences"
+#~ msgstr "Diferenzas Git"
 
 #~ msgid "Most Used"
 #~ msgstr "Os máis utilizados"
