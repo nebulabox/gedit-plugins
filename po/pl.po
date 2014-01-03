@@ -10,14 +10,14 @@
 # Wadim Dziedzic <wdziedzic@aviary.pl>, 2007.
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008-2009.
 # Piotr Zaryk <pzaryk@aviary.pl>, 2008.
-# Piotr Drąg <piotrdrag@gmail.com>, 2009-2013.
-# Aviary.pl <gnomepl@aviary.pl>, 2006-2013.
+# Piotr Drąg <piotrdrag@gmail.com>, 2009-2014.
+# Aviary.pl <gnomepl@aviary.pl>, 2006-2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-24 03:14+0200\n"
-"PO-Revision-Date: 2013-08-24 03:15+0200\n"
+"POT-Creation-Date: 2014-01-03 16:37+0100\n"
+"PO-Revision-Date: 2014-01-03 16:38+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -287,8 +287,8 @@ msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Różnice git"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Wyróżnia wiersze, które zostały zmienione od ostatniego zatwierdzenia"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -605,11 +605,11 @@ msgstr "Osadzony terminal"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Osadza terminal w dolnym panelu."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "Zmień _katalog"
 
