@@ -27,7 +27,7 @@ class CharmapPanel(Gtk.Box):
 
         paned = Gtk.Paned.new(Gtk.Orientation.VERTICAL)
 
-        scrolled_window = Gtk.ScrolledWindow(None, None)
+        scrolled_window = Gtk.ScrolledWindow.new(None, None)
         scrolled_window.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
         self.view = Gucharmap.ChaptersView()
@@ -42,7 +42,7 @@ class CharmapPanel(Gtk.Box):
         scrolled_window.add(self.view)
         paned.pack1(scrolled_window, False, True)
 
-        scrolled_window = Gtk.ScrolledWindow(None, None)
+        scrolled_window = Gtk.ScrolledWindow.new(None, None)
         scrolled_window.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
         self.chartable = Gucharmap.Chartable()
