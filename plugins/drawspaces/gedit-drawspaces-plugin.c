@@ -32,7 +32,7 @@
 #include <libpeas-gtk/peas-gtk-configurable.h>
 
 #define DRAWSPACES_SETTINGS_BASE   "org.gnome.gedit.plugins.drawspaces"
-#define SETTINGS_KEY_ENABLE        "enable"
+#define SETTINGS_KEY_SHOW_WHITE_SPACE "show-white-space"
 #define SETTINGS_KEY_DRAW_SPACES   "draw-spaces"
 
 #define UI_FILE "gedit-drawspaces-plugin.ui"
@@ -62,8 +62,7 @@ struct _GeditDrawspacesPluginPrivate
 
 	GtkSourceDrawSpacesFlags flags;
 
-	GtkActionGroup *action_group;
-	guint           ui_id;
+	GeditMenuExtension *menu;
 
 	guint enable : 1;
 };
@@ -98,43 +97,7 @@ enum
 	PROP_WINDOW
 };
 
-static const gchar submenu [] = {
-"<ui>"
-"  <menubar name='MenuBar'>"
-"    <menu name='ViewMenu' action='View'>"
-"      <separator />"
-"      <menuitem name='DrawSpacesMenu' action='DrawSpaces'/>"
-"    </menu>"
-"  </menubar>"
-"</ui>"
-};
-
 static void draw_spaces (GeditDrawspacesPlugin *plugin);
-
-static void
-on_active_toggled (GtkToggleAction       *action,
-		   GeditDrawspacesPlugin *plugin)
-{
-	GeditDrawspacesPluginPrivate *priv;
-	gboolean value;
-
-	priv = plugin->priv;
-
-	value = gtk_toggle_action_get_active (action);
-	priv->enable = value;
-
-	g_settings_set_boolean (priv->settings,
-				SETTINGS_KEY_ENABLE, value);
-
-	draw_spaces (plugin);
-}
-
-static const GtkToggleActionEntry action_entries[] =
-{
-	{ "DrawSpaces", NULL, N_("Show _White Space"), NULL,
-	 N_("Show spaces and tabs"),
-	 G_CALLBACK (on_active_toggled)},
-};
 
 static void
 on_settings_changed (GSettings             *settings,
@@ -143,6 +106,16 @@ on_settings_changed (GSettings             *settings,
 {
 	plugin->priv->flags = g_settings_get_flags (plugin->priv->settings,
 						    SETTINGS_KEY_DRAW_SPACES);
+
+	draw_spaces (plugin);
+}
+
+static void
+on_show_white_space_changed (GSettings             *settings,
+		             const gchar           *key,
+		             GeditDrawspacesPlugin *plugin)
+{
+	plugin->priv->enable = g_settings_get_boolean (settings, key);
 
 	draw_spaces (plugin);
 }
@@ -157,6 +130,10 @@ gedit_drawspaces_plugin_init (GeditDrawspacesPlugin *plugin)
 	plugin->priv->settings = g_settings_new (DRAWSPACES_SETTINGS_BASE);
 
 	g_signal_connect (plugin->priv->settings,
+	                  "changed::show-white-space",
+	                  G_CALLBACK (on_show_white_space_changed),
+	                  plugin);
+	g_signal_connect (plugin->priv->settings,
 			  "changed::draw-spaces",
 			  G_CALLBACK (on_settings_changed),
 			  plugin);
@@ -166,20 +143,13 @@ static void
 gedit_drawspaces_plugin_dispose (GObject *object)
 {
 	GeditDrawspacesPlugin *plugin = GEDIT_DRAWSPACES_PLUGIN (object);
+	GeditDrawspacesPluginPrivate *priv = plugin->priv;
 
 	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesPlugin disposing");
 
-	if (plugin->priv->settings != NULL)
-	{
-		g_object_unref (plugin->priv->settings);
-		plugin->priv->settings = NULL;
-	}
-
-	if (plugin->priv->window != NULL)
-	{
-		g_object_unref (plugin->priv->window);
-		plugin->priv->window = NULL;
-	}
+	g_clear_object (&priv->settings);
+	g_clear_object (&priv->menu);
+	g_clear_object (&priv->window);
 
 	G_OBJECT_CLASS (gedit_drawspaces_plugin_parent_class)->dispose (object);
 }
@@ -264,7 +234,7 @@ get_config_options (GeditDrawspacesPlugin *plugin)
 	GeditDrawspacesPluginPrivate *priv = plugin->priv;
 
 	priv->enable = g_settings_get_boolean (priv->settings,
-					       SETTINGS_KEY_ENABLE);
+					       SETTINGS_KEY_SHOW_WHITE_SPACE);
 
 	priv->flags = g_settings_get_flags (priv->settings,
 					    SETTINGS_KEY_DRAW_SPACES);
@@ -274,9 +244,8 @@ static void
 gedit_drawspaces_plugin_activate (GeditWindowActivatable *activatable)
 {
 	GeditDrawspacesPluginPrivate *priv;
-	GtkUIManager *manager;
-	GtkAction *action;
-	GError *error = NULL;
+	GMenuItem *item;
+	GAction *action;
 
 	gedit_debug (DEBUG_PLUGINS);
 
@@ -284,35 +253,17 @@ gedit_drawspaces_plugin_activate (GeditWindowActivatable *activatable)
 
 	get_config_options (GEDIT_DRAWSPACES_PLUGIN (activatable));
 
-	manager = gedit_window_get_ui_manager (priv->window);
+	action = g_settings_create_action (priv->settings,
+	                                   SETTINGS_KEY_SHOW_WHITE_SPACE);
+	g_action_map_add_action (G_ACTION_MAP (priv->window),
+	                         action);
+	g_object_unref (action);
 
-	priv->action_group = gtk_action_group_new ("GeditDrawspacesPluginActions");
-	gtk_action_group_set_translation_domain (priv->action_group,
-						 GETTEXT_PACKAGE);
-	gtk_action_group_add_toggle_actions (priv->action_group,
-					     action_entries,
-					     G_N_ELEMENTS (action_entries),
-					     activatable);
-
-	/* Lets set the default value */
-	action = gtk_action_group_get_action (priv->action_group,
-					      "DrawSpaces");
-	g_signal_handlers_block_by_func (action, on_active_toggled, activatable);
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
-				      priv->enable);
-	g_signal_handlers_unblock_by_func (action, on_active_toggled, activatable);
-
-	gtk_ui_manager_insert_action_group (manager, priv->action_group, -1);
-
-	priv->ui_id = gtk_ui_manager_add_ui_from_string (manager,
-							 submenu,
-							 -1,
-							 &error);
-	if (error)
-	{
-		g_warning ("%s", error->message);
-		g_error_free (error);
-	}
+	priv->menu = gedit_window_activatable_extend_gear_menu (activatable,
+	                                                        "ext5");
+	item = g_menu_item_new (_("Show _White Space"), "win.show-white-space");
+	gedit_menu_extension_append_menu_item (priv->menu, item);
+	g_object_unref (item);
 
 	if (priv->enable)
 	{
@@ -333,16 +284,11 @@ gedit_drawspaces_plugin_deactivate (GeditWindowActivatable *activatable)
 
 	priv = GEDIT_DRAWSPACES_PLUGIN (activatable)->priv;
 
-	manager = gedit_window_get_ui_manager (priv->window);
-
 	priv->enable = FALSE;
 	draw_spaces (GEDIT_DRAWSPACES_PLUGIN (activatable));
 
 	g_signal_handlers_disconnect_by_func (priv->window, tab_added_cb,
 					      activatable);
-
-	gtk_ui_manager_remove_ui (manager, priv->ui_id);
-	gtk_ui_manager_remove_action_group (manager, priv->action_group);
 }
 
 static void
