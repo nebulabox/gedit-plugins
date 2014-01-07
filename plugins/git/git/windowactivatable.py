@@ -157,7 +157,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.files[msg.location.get_uri()] = msg.id
         self.file_names[msg.location.get_uri()] = msg.name
 
-        self.update_location(msg.location)
+        GLib.idle_add(self.update_location_idle, msg.location)
 
         if msg.is_directory:
             self.monitor_directory(msg.location)
