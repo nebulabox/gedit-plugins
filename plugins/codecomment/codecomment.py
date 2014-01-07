@@ -21,7 +21,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from gi.repository import GObject, Gtk, GtkSource, Gedit
+from gi.repository import GObject, Gio, Gtk, GtkSource, Gedit
 import copy
 import gettext
 from gpdefs import *
@@ -38,21 +38,22 @@ block_comment_languages = [
     'c',
 ]
 
-ui_str = """
-<ui>
-  <menubar name="MenuBar">
-    <menu name="EditMenu" action="Edit">
-      <placeholder name="EditOps_4">
-            <menuitem name="Comment" action="CodeComment"/>
-            <menuitem name="Uncomment" action="CodeUncomment"/>
-      </placeholder>
-    </menu>
-  </menubar>
-</ui>
-"""
+class CodeCommentAppActivatable(GObject.Object, Gedit.AppActivatable):
 
-class CodeCommentPlugin(GObject.Object, Gedit.WindowActivatable):
-    __gtype_name__ = "CodeCommentPlugin"
+    app = GObject.property(type=Gedit.App)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+    def do_activate(self):
+        self.app.add_accelerator("<Primary>M", "win.comment", None)
+        self.app.add_accelerator("<Primary><Shift>M", "win.uncomment", None)
+
+    def do_deactivate(self):
+        self.app.remove_accelerator("win.comment", None)
+        self.app.remove_accelerator("win.uncomment", None)
+
+class CodeCommentWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     window = GObject.property(type=Gedit.Window)
 
@@ -72,33 +73,28 @@ class CodeCommentPlugin(GObject.Object, Gedit.WindowActivatable):
             lang = doc.get_language()
             if lang is not None:
                 sensitive = self.get_comment_tags(lang) != (None, None)
-        self._action_group.set_sensitive(sensitive)
+        self.window.lookup_action('comment').set_enabled(sensitive)
+        self.window.lookup_action('uncomment').set_enabled(sensitive)
 
     def _remove_menu(self):
-        manager = self.window.get_ui_manager()
-        manager.remove_ui(self._ui_id)
-        manager.remove_action_group(self._action_group)
-        manager.ensure_update()
+        self.window.remove_action("comment")
+        self.window.remove_action("uncomment")
 
     def _insert_menu(self):
-        manager = self.window.get_ui_manager()
-        self._action_group = Gtk.ActionGroup(name="GeditCodeCommentPluginActions")
-        self._action_group.add_actions([("CodeComment",
-                                         None,
-                                         _("Co_mment Code"),
-                                         "<control>M",
-                                         _("Comment the selected code"),
-                                         lambda a, w: self.do_comment (w.get_active_document())),
-                                        ('CodeUncomment',
-                                         None,
-                                         _('U_ncomment Code'),
-                                         "<control><shift>M",
-                                         _("Uncomment the selected code"),
-                                         lambda a, w: self.do_comment (w.get_active_document(), True))],
-                                        self.window)
+        action = Gio.SimpleAction(name="comment")
+        action.connect('activate', lambda a, p: self.do_comment (self.window.get_active_document()))
+        self.window.add_action(action)
 
-        manager.insert_action_group(self._action_group)
-        self._ui_id = manager.add_ui_from_string(ui_str)
+        action = Gio.SimpleAction(name="uncomment")
+        action.connect('activate', lambda a, p: self.do_comment (self.window.get_active_document(), True))
+        self.window.add_action(action)
+
+        self.menu = self.extend_gear_menu("ext9")
+        item = Gio.MenuItem.new(_('U_ncomment Code'), "win.uncomment")
+        self.menu.prepend_menu_item(item)
+
+        item = Gio.MenuItem.new(_("Co_mment Code"), "win.comment")
+        self.menu.prepend_menu_item(item)
 
     def get_block_comment_tags(self, lang):
         start_tag = lang.get_metadata('block-comment-start')
