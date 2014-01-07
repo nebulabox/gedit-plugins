@@ -29,7 +29,6 @@ class CharmapPanel(Gtk.Box):
 
         scrolled_window = Gtk.ScrolledWindow(None, None)
         scrolled_window.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
-        scrolled_window.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
 
         self.view = Gucharmap.ChaptersView()
         self.view.set_headers_visible (False)
@@ -45,7 +44,6 @@ class CharmapPanel(Gtk.Box):
 
         scrolled_window = Gtk.ScrolledWindow(None, None)
         scrolled_window.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
-        scrolled_window.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
 
         self.chartable = Gucharmap.Chartable()
 
