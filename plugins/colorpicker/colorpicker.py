@@ -20,7 +20,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from gi.repository import GObject, Gtk, Gdk, Gedit
+from gi.repository import GObject, Gio, Gtk, Gdk, Gedit
 import re
 import gettext
 from gpdefs import *
@@ -148,34 +148,29 @@ class ColorPickerWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     def _update(self):
         tab = self.window.get_active_tab()
-        self._action_group.set_sensitive(tab != None)
+        self.window.lookup_action("colorpicker").set_enabled(tab != None)
 
         if not tab and self._dialog and \
                 self._dialog.get_transient_for() == self.window:
             self._dialog.response(Gtk.ResponseType.CLOSE)
 
     def _insert_menu(self):
-        manager = self.window.get_ui_manager()
-        self._action_group = Gtk.ActionGroup(name="GeditColorPickerPluginActions")
-        self._action_group.add_actions(
-                [("ColorPicker", None, _("Pick _Color..."), None,
-                 _("Pick a color from a dialog"),
-                 lambda a: self.on_color_picker_activate())])
+        action = Gio.SimpleAction(name="colorpicker")
+        action.connect('activate', lambda a, p: self.on_color_picker_activate())
+        self.window.add_action(action)
 
-        manager.insert_action_group(self._action_group)
-        self._ui_id = manager.add_ui_from_string(ui_str)
+        self.menu = self.extend_gear_menu("ext9")
+        item = Gio.MenuItem.new(_("Pick _Color..."), "win.colorpicker")
+        self.menu.prepend_menu_item(item)
 
     def _remove_menu(self):
-        manager = self.window.get_ui_manager()
-        manager.remove_ui(self._ui_id)
-        manager.remove_action_group(self._action_group)
-        manager.ensure_update()
+        self.window.remove_action("colorpicker")
 
     # Signal handlers
 
     def on_color_picker_activate(self):
         if not self._dialog:
-            self._dialog = Gtk.ColorChooserDialog(_('Pick Color'), self.window)
+            self._dialog = Gtk.ColorChooserDialog.new(_('Pick Color'), self.window)
 
             self._dialog.connect_after('response', self.on_dialog_response)
 
