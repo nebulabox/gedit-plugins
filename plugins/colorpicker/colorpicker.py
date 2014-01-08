@@ -267,8 +267,7 @@ class ColorPickerViewActivatable(GObject.Object, Gedit.ViewActivatable):
             self._color_button = None
 
     def on_color_set(self, color_button):
-        rgba = Gdk.RGBA()
-        color_button.get_rgba(rgba)
+        rgba = color_button.get_rgba()
 
         self._color_helper.insert_color(self.view,
                                         "%02x%02x%02x" % (self._color_helper.scale_color_component(rgba.red), \
