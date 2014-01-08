@@ -11,21 +11,24 @@
 # Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2010.
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2009-2011.
 # Wolfgang Stöggl <c72578@yahoo.de>, 2012.
+# Simon Linden <xhi2018@gmail.com>, 2013, 2014.
+# Benjamin Steinwender <b@stbe.at>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-02 17:48+0100\n"
-"PO-Revision-Date: 2014-01-02 17:48+0100\n"
-"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gedit&keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2014-01-08 19:19+0000\n"
+"PO-Revision-Date: 2014-01-08 22:48+0100\n"
+"Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.3\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 msgid "Bookmarks"
@@ -86,21 +89,13 @@ msgid "Comment out or uncomment a selected block of code."
 msgstr ""
 "Einen markierten Quelltextabsatz auskommentieren oder wieder unkommentieren"
 
-#: ../plugins/codecomment/codecomment.py:88
-msgid "Co_mment Code"
-msgstr "Quelltext ko_mmentieren"
-
-#: ../plugins/codecomment/codecomment.py:90
-msgid "Comment the selected code"
-msgstr "Den markierten Quelltext auskommentieren"
-
-#: ../plugins/codecomment/codecomment.py:94
+#: ../plugins/codecomment/codecomment.py:93
 msgid "U_ncomment Code"
 msgstr "Quelltext u_nkommentieren"
 
 #: ../plugins/codecomment/codecomment.py:96
-msgid "Uncomment the selected code"
-msgstr "Den markierten Quelltext unkommentieren"
+msgid "Co_mment Code"
+msgstr "Quelltext ko_mmentieren"
 
 #. ex:ts=4:et:
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
@@ -113,15 +108,11 @@ msgstr ""
 "Wählen Sie eine Farbe aus einem Dialog und fügen Sie deren Hexadezimal-"
 "Darstellung ein."
 
-#: ../plugins/colorpicker/colorpicker.py:161
+#: ../plugins/colorpicker/colorpicker.py:163
 msgid "Pick _Color..."
 msgstr "_Farbe auswählen …"
 
-#: ../plugins/colorpicker/colorpicker.py:162
-msgid "Pick a color from a dialog"
-msgstr "Eine Farbe aus einem Dialog auswählen"
-
-#: ../plugins/colorpicker/colorpicker.py:178
+#: ../plugins/colorpicker/colorpicker.py:173
 msgid "Pick Color"
 msgstr "Farbe auswählen"
 
@@ -233,13 +224,10 @@ msgstr "Leerzeichen darstellen"
 msgid "Draw spaces and tabs"
 msgstr "Leerzeichen und Einzüge anzeigen"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:264
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Leerzei_chen anzeigen"
-
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:135
-msgid "Show spaces and tabs"
-msgstr "Leerzeichen und Einzüge anzeigen"
 
 #. ex:set ts=8 noet:
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
@@ -270,10 +258,6 @@ msgstr "Leerzeichen im Text anzeigen"
 msgid "Draw trailing spaces"
 msgstr "Angehängte Leerzeichen anzeigen"
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
-msgid "Enabled"
-msgstr "Aktiviert"
-
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Falls auf »wahr« gesetzt, wird die Anzeige aktiviert."
@@ -284,11 +268,11 @@ msgstr "Der Typ der anzuzeigenden Leerzeichen."
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
 msgid "Highlight lines that have been changed since the last commit"
-msgstr "Zeilen hervorheben, die seit dem letzten Einspielen verändert wurden"
+msgstr "Geänderte Zeilen seit letztem Commit hervorheben"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -629,7 +613,7 @@ msgstr "Textgröße"
 
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
 msgid "Easily increase and decrease the text size"
-msgstr "Die Textgröße einfach ändern"
+msgstr "Die Textgröße einfach vergrößern und verkleinern"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
@@ -649,7 +633,7 @@ msgstr "Interaktive Vervollständigung"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
 msgid "Whether to enable interactive completion."
-msgstr "Legt fest, ob Interaktive Vervollständigung eingeschaltet ist."
+msgstr "Legt fest, ob die interaktive Vervollständigung aktiviert werden soll."
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
 msgid "Minimum Word Size"
@@ -657,7 +641,7 @@ msgstr "Minimale Wortlänge"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
 msgid "The minimum word size to complete."
-msgstr "Die minimale Länge des Wortes zur Vervollständigung"
+msgstr "Vervollständigung ab dieser Wortlänge vorschlagen."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
@@ -666,6 +650,21 @@ msgstr "Wortvervollständigung"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Wortvervollständigung mit Hilfe des Vervollständigungs-Frameworks"
+
+#~ msgid "Comment the selected code"
+#~ msgstr "Den markierten Quelltext auskommentieren"
+
+#~ msgid "Uncomment the selected code"
+#~ msgstr "Den markierten Quelltext unkommentieren"
+
+#~ msgid "Pick a color from a dialog"
+#~ msgstr "Eine Farbe aus einem Dialog auswählen"
+
+#~ msgid "Show spaces and tabs"
+#~ msgstr "Leerzeichen und Einzüge anzeigen"
+
+#~ msgid "Enabled"
+#~ msgstr "Aktiviert"
 
 #~ msgid "X"
 #~ msgstr "X"
