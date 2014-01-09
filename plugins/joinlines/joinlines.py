@@ -19,7 +19,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from gi.repository import GObject, Gtk, Gedit
+from gi.repository import GObject, Gio, Gtk, Gedit
 import gettext
 from gpdefs import *
 
@@ -29,21 +29,22 @@ try:
 except:
     _ = lambda s: s
 
-ui_str = """
-<ui>
-  <menubar name="MenuBar">
-    <menu name="EditMenu" action="Edit">
-      <placeholder name="EditOps_5">
-        <menuitem name="JoinLines" action="JoinLines"/>
-        <menuitem name="SplitLines" action="SplitLines"/>
-      </placeholder>
-    </menu>
-  </menubar>
-</ui>
-"""
+class JoinLinesAppActivatable(GObject.Object, Gedit.AppActivatable):
+    app = GObject.property(type=Gedit.App)
 
-class JoinLinesPlugin(GObject.Object, Gedit.WindowActivatable):
-    __gtype_name__ = "JoinLinesPlugin"
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+    def do_activate(self):
+        self.app.add_accelerator("<Primary>J", "win.joinlines", None)
+        self.app.add_accelerator("<Primary><Shift>J", "win.splitlines", None)
+
+    def do_deactivate(self):
+        self.app.remove_accelerator("win.joinlines", None)
+        self.app.remove_accelerator("win.splitlines", None)
+
+
+class JoinLinesWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     window = GObject.property(type=Gedit.Window)
 
@@ -58,29 +59,31 @@ class JoinLinesPlugin(GObject.Object, Gedit.WindowActivatable):
 
     def do_update_state(self):
         view = self.window.get_active_view()
-        self._action_group.set_sensitive(view is not None and \
-                                         view.get_editable())
+        self.window.lookup_action("joinlines").set_enabled(view is not None and \
+                                                           view.get_editable())
+        self.window.lookup_action("splitlines").set_enabled(view is not None and \
+                                                            view.get_editable())
 
     def _remove_menu(self):
-        manager = self.window.get_ui_manager()
-        manager.remove_ui(self._ui_id)
-        manager.remove_action_group(self._action_group)
-        manager.ensure_update()
+        self.window.remove_action("joinlines")
+        self.window.remove_action("splitlines")
 
     def _insert_menu(self):
-        manager = self.window.get_ui_manager()
-        self._action_group = Gtk.ActionGroup(name="GeditJoinLinesPluginActions")
-        self._action_group.add_actions(
-            [("JoinLines", None, _("_Join Lines"), "<Ctrl>J",
-              _("Join the selected lines"),
-              lambda a, w: join_lines(w)),
-             ("SplitLines", None, _('_Split Lines'), "<Shift><Ctrl>J",
-              _("Split the selected lines"),
-              lambda a, w: split_lines(w))],
-            self.window)
+        action = Gio.SimpleAction(name="joinlines")
+        action.connect('activate', lambda a, p: join_lines(self.window))
+        self.window.add_action(action)
 
-        manager.insert_action_group(self._action_group)
-        self._ui_id = manager.add_ui_from_string(ui_str)
+        action = Gio.SimpleAction(name="splitlines")
+        action.connect('activate', lambda a, p: split_lines(self.window))
+        self.window.add_action(action)
+
+        self.menu = self.extend_gear_menu("ext9")
+
+        item = Gio.MenuItem.new(_('_Split Lines'), "win.splitlines")
+        self.menu.prepend_menu_item(item)
+
+        item = Gio.MenuItem.new(_("_Join Lines"), "win.joinlines")
+        self.menu.prepend_menu_item(item)
 
 def join_lines(window):
     doc = window.get_active_document()
