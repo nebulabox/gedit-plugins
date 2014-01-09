@@ -19,7 +19,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from gi.repository import GObject, Gtk, Gedit
+from gi.repository import GLib, GObject, Gio, Gtk, Gedit
 from entry import Entry
 from info import Info
 from gpdefs import *
@@ -30,20 +30,7 @@ try:
 except:
     _ = lambda s: s
 
-ui_str = """
-<ui>
-  <menubar name="MenuBar">
-    <menu name="EditMenu" action="Edit">
-      <placeholder name="EditOps_5">
-        <menuitem name="CommanderEditMode" action="CommanderModeAction"/>
-      </placeholder>
-    </menu>
-  </menubar>
-</ui>
-"""
-
-class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
-    __gtype_name__ = "CommanderWindowActivatable"
+class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     window = GObject.property(type=Gedit.Window)
 
@@ -63,30 +50,30 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
         pass
 
     def install_ui(self):
-        manager = self.window.get_ui_manager()
+        action = Gio.SimpleAction.new_stateful("commander", None, GLib.Variant.new_boolean(False))
+        action.connect('activate', self.activate_toggle)
+        action.connect('change-state', self.commander_mode)
+        self.window.add_action(action)
 
-        self._action_group = Gtk.ActionGroup("GeditCommanderPluginActions")
-        self._action_group.add_toggle_actions([('CommanderModeAction', None,
-                                               _('Commander Mode'), '<Ctrl>period',
-                                               _('Start commander mode'), self.on_commander_mode)])
-
-        manager.insert_action_group(self._action_group, -1)
-        self._merge_id = manager.add_ui_from_string(ui_str)
+        self.menu = self.extend_gear_menu("ext9")
+        item = Gio.MenuItem.new(_('Commander Mode'), "win.commander")
+        self.menu.append_menu_item(item)
 
     def uninstall_ui(self):
-        manager = self.window.get_ui_manager()
-        manager.remove_ui(self._merge_id)
-        manager.remove_action_group(self._action_group)
+        self.window.remove_action("commander")
 
-        manager.ensure_update()
+    def activate_toggle(self, action, parameter):
+        state = action.get_state()
+        action.change_state(GLib.Variant.new_boolean(not state.get_boolean()))
 
-    def on_commander_mode(self, action, user_data=None):
+    def commander_mode(self, action, state):
         view = self.window.get_active_view()
 
         if not view:
             return False
 
-        if action.get_active():
+        active = state.get_boolean()
+        if active:
             if not self._entry or view != self._view:
                 self._entry = Entry(view)
                 self._entry.connect('destroy', self.on_entry_destroy)
@@ -97,10 +84,12 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self._entry.destroy()
             self._view = None
 
+        action.set_state(GLib.Variant.new_boolean(active))
+
         return True
 
     def on_entry_destroy(self, widget, user_data=None):
         self._entry = None
-        self._action_group.get_action('CommanderModeAction').set_active(False)
+        self.window.lookup_action("commander").change_state(GLib.Variant.new_boolean(False))
 
 # vi:ex:ts=4:et
