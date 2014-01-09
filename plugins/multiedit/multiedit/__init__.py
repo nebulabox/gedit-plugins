@@ -19,7 +19,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from gi.repository import GObject, Gtk, Gedit
+from gi.repository import GLib, GObject, Gio, Gtk, Gedit
 from .signals import Signals
 from .documenthelper import DocumentHelper
 import gettext
@@ -31,20 +31,21 @@ try:
 except:
     _ = lambda s: s
 
-ui_str = """
-<ui>
-  <menubar name="MenuBar">
-    <menu name="EditMenu" action="Edit">
-      <placeholder name="EditOps_5">
-        <menuitem name="MultiEditMode" action="MultiEditModeAction"/>
-      </placeholder>
-    </menu>
-  </menubar>
-</ui>
-"""
 
-class MultiEditPlugin(GObject.Object, Gedit.WindowActivatable, Signals):
-    __gtype_name__ = "MultiEditPlugin"
+class MultiEditAppActivatable(GObject.Object, Gedit.AppActivatable):
+
+    app = GObject.property(type=Gedit.App)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+    def do_activate(self):
+        self.app.add_accelerator("<Primary><Shift>C", "win.multiedit", None)
+
+    def do_deactivate(self):
+        self.app.remove_accelerator("win.multiedit", None)
+
+class MultiEditWindowActivatable(GObject.Object, Gedit.WindowActivatable, Signals):
 
     window = GObject.property(type=Gedit.Window)
 
@@ -71,24 +72,17 @@ class MultiEditPlugin(GObject.Object, Gedit.WindowActivatable, Signals):
         self._remove_menu()
 
     def _insert_menu(self):
-        manager = self.window.get_ui_manager()
+        action = Gio.SimpleAction.new_stateful("multiedit", None, GLib.Variant.new_boolean(False))
+        action.connect('activate', self.activate_toggle)
+        action.connect('change-state', self.multi_edit_mode)
+        self.window.add_action(action)
 
-        self._action_group = Gtk.ActionGroup("GeditMultiEditPluginActions")
-        self._action_group.add_toggle_actions([('MultiEditModeAction',
-                                                None,
-                                                _('Multi Edit Mode'),
-                                                '<Ctrl><Shift>C',
-                                                _('Start multi edit mode'),
-                                                self.on_multi_edit_mode)])
-
-        manager.insert_action_group(self._action_group)
-        self._ui_id = manager.add_ui_from_string(ui_str)
+        self.menu = self.extend_gear_menu("ext9")
+        item = Gio.MenuItem.new(_('Multi Edit Mode'), "win.multiedit")
+        self.menu.append_menu_item(item)
 
     def _remove_menu(self):
-        manager = self.window.get_ui_manager()
-        manager.remove_ui(self._ui_id)
-        manager.remove_action_group(self._action_group)
-        manager.ensure_update()
+        self.window.remove_action("multiedit")
 
     def do_update_state(self):
         pass
@@ -112,11 +106,11 @@ class MultiEditPlugin(GObject.Object, Gedit.WindowActivatable, Signals):
             helper.stop()
 
     def get_action(self):
-        return self._action_group.get_action('MultiEditModeAction')
+        return self.window.lookup_action("multiedit")
 
     def on_multi_edit_toggled(self, helper):
         if helper.get_view() == self.window.get_active_view():
-            self.get_action().set_active(helper.enabled())
+            self.get_action().set_state(GLib.Variant.new_boolean(helper.enabled()))
 
     def on_tab_added(self, window, tab):
         self.add_document_helper(tab.get_view())
@@ -128,13 +122,21 @@ class MultiEditPlugin(GObject.Object, Gedit.WindowActivatable, Signals):
         view = tab.get_view()
         helper = self.get_helper(view)
 
-        self.get_action().set_active(helper != None and helper.enabled())
+        self.get_action().set_state(GLib.Variant.new_boolean(helper != None and helper.enabled()))
 
-    def on_multi_edit_mode(self, action):
+    def activate_toggle(self, action, parameter):
+        state = action.get_state()
+        action.change_state(GLib.Variant.new_boolean(not state.get_boolean()))
+
+    def multi_edit_mode(self, action, state):
         view = self.window.get_active_view()
         helper = self.get_helper(view)
 
+        active = state.get_boolean()
+
         if helper != None:
-            helper.toggle_multi_edit(self.get_action().get_active())
+            helper.toggle_multi_edit(active)
+
+        action.set_state(GLib.Variant.new_boolean(active))
 
 # ex:ts=4:et:
