@@ -252,14 +252,13 @@ class ColorPickerViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
                     start, end = bounds
                     location = self.view.get_iter_location(start)
-                    win_x, win_y = self.view.buffer_to_window_coords(Gtk.TextWindowType.TEXT, location.x, location.y)
                     min_width, nat_width = self._color_button.get_preferred_width()
                     min_height, nat_height = self._color_button.get_preferred_height()
-                    x = win_x
-                    if win_y - nat_height > 0:
-                        y = win_y - nat_height
+                    x = location.x
+                    if location.y - nat_height > 0:
+                        y = location.y - nat_height
                     else:
-                        y = win_y + location.height
+                        y = location.y + location.height
 
                     self.view.add_child_in_window(self._color_button, Gtk.TextWindowType.TEXT, x, y)
         elif not rgba_str and self._color_button is not None:
