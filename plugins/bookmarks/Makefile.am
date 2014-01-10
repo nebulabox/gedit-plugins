@@ -12,6 +12,8 @@ plugin_LTLIBRARIES = libbookmarks.la
 libbookmarks_la_SOURCES = \
 	gedit-bookmarks-plugin.h				\
 	gedit-bookmarks-plugin.c				\
+	gedit-bookmarks-app-activatable.h			\
+	gedit-bookmarks-app-activatable.c			\
 	messages/gedit-bookmarks-message-add.c			\
 	messages/gedit-bookmarks-message-add.h			\
 	messages/gedit-bookmarks-message-goto-next.c		\

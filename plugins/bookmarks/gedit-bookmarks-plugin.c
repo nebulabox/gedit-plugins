@@ -23,6 +23,7 @@
 #endif
 
 #include "gedit-bookmarks-plugin.h"
+#include "gedit-bookmarks-app-activatable.h"
 #include "messages/messages.h"
 
 #include <stdlib.h>
@@ -81,11 +82,14 @@ static void on_begin_user_action		(GtkTextBuffer *buffer,
 static void on_end_user_action			(GtkTextBuffer *buffer,
 						 InsertData    *data);
 
-static void on_toggle_bookmark_activate 	(GtkAction            *action,
+static void on_toggle_bookmark_activate 	(GAction              *action,
+                                                 GVariant             *parameter,
 						 GeditBookmarksPlugin *plugin);
-static void on_next_bookmark_activate 		(GtkAction            *action,
+static void on_next_bookmark_activate 		(GAction              *action,
+                                                 GVariant             *parameter,
 						 GeditBookmarksPlugin *plugin);
-static void on_previous_bookmark_activate 	(GtkAction            *action,
+static void on_previous_bookmark_activate 	(GAction              *action,
+                                                 GVariant             *parameter,
 						 GeditBookmarksPlugin *plugin);
 static void on_tab_added 			(GeditWindow          *window,
 						 GeditTab             *tab,
@@ -111,8 +115,10 @@ struct _GeditBookmarksPluginPrivate
 {
 	GeditWindow *window;
 
-	GtkActionGroup *action_group;
-	guint ui_id;
+	GSimpleAction *action_toggle;
+	GSimpleAction *action_next;
+	GSimpleAction *action_prev;
+	GeditMenuExtension *menu;
 };
 
 enum
@@ -133,20 +139,15 @@ static void
 gedit_bookmarks_plugin_dispose (GObject *object)
 {
 	GeditBookmarksPlugin *plugin = GEDIT_BOOKMARKS_PLUGIN (object);
+	GeditBookmarksPluginPrivate *priv = plugin->priv;
 
 	gedit_debug_message (DEBUG_PLUGINS, "GeditBookmarksPlugin disposing");
 
-	if (plugin->priv->action_group != NULL)
-	{
-		g_object_unref (plugin->priv->action_group);
-		plugin->priv->action_group = NULL;
-	}
-
-	if (plugin->priv->window != NULL)
-	{
-		g_object_unref (plugin->priv->window);
-		plugin->priv->window = NULL;
-	}
+	g_clear_object (&priv->action_toggle);
+	g_clear_object (&priv->action_next);
+	g_clear_object (&priv->action_prev);
+	g_clear_object (&priv->menu);
+	g_clear_object (&priv->window);
 
 	G_OBJECT_CLASS (gedit_bookmarks_plugin_parent_class)->dispose (object);
 }
@@ -197,76 +198,57 @@ free_insert_data (InsertData *data)
 	g_slice_free (InsertData, data);
 }
 
-static GtkActionEntry const action_entries[] = {
-	{"ToggleBookmark", NULL, N_("Toggle Bookmark"), "<Control><Alt>B",
-	 N_("Toggle bookmark status of the current line"),
-	 G_CALLBACK (on_toggle_bookmark_activate)},
-	{"NextBookmark", NULL, N_("Goto Next Bookmark"), "<Control>B",
-	 N_("Goto the next bookmark"),
-	 G_CALLBACK (on_next_bookmark_activate)},
-	{"PreviousBookmark", NULL, N_("Goto Previous Bookmark"), "<Control><Shift>B",
-	 N_("Goto the previous bookmark"),
-	 G_CALLBACK (on_previous_bookmark_activate)}
-};
-
-static gchar const uidefinition[] = ""
-"<ui>"
-"  <menubar name='MenuBar'>"
-"    <menu name='EditMenu' action='Edit'>"
-"      <placeholder name='EditOps_6'>"
-"        <menuitem action='ToggleBookmark'/>"
-"        <menuitem action='PreviousBookmark'/>"
-"        <menuitem action='NextBookmark'/>"
-"      </placeholder>"
-"    </menu>"
-"  </menubar>"
-"</ui>";
-
 static void
 install_menu (GeditBookmarksPlugin *plugin)
 {
 	GeditBookmarksPluginPrivate *priv;
-	GtkUIManager *manager;
-	GError *error = NULL;
+	GMenuItem *item;
 
 	priv = plugin->priv;
 
-	manager = gedit_window_get_ui_manager (priv->window);
-	priv->action_group = gtk_action_group_new ("GeditBookmarksPluginActions");
+	priv->action_toggle = g_simple_action_new ("bookmark-toggle", NULL);
+	g_signal_connect (priv->action_toggle, "activate",
+	                  G_CALLBACK (on_toggle_bookmark_activate), plugin);
+	g_action_map_add_action (G_ACTION_MAP (priv->window),
+	                         G_ACTION (priv->action_toggle));
 
-	gtk_action_group_set_translation_domain (priv->action_group,
-						 GETTEXT_PACKAGE);
+	priv->action_next = g_simple_action_new ("bookmark-next", NULL);
+	g_signal_connect (priv->action_next, "activate",
+	                  G_CALLBACK (on_next_bookmark_activate), plugin);
+	g_action_map_add_action (G_ACTION_MAP (priv->window),
+	                         G_ACTION (priv->action_next));
 
-	gtk_action_group_add_actions (priv->action_group,
-				      action_entries,
-				      G_N_ELEMENTS (action_entries),
-				      plugin);
+	priv->action_prev = g_simple_action_new ("bookmark-prev", NULL);
+	g_signal_connect (priv->action_prev, "activate",
+	                  G_CALLBACK (on_previous_bookmark_activate), plugin);
+	g_action_map_add_action (G_ACTION_MAP (priv->window),
+	                         G_ACTION (priv->action_prev));
 
-	gtk_ui_manager_insert_action_group (manager, priv->action_group, -1);
-	priv->ui_id = gtk_ui_manager_add_ui_from_string (manager, uidefinition, -1, &error);
+	priv->menu = gedit_window_activatable_extend_gear_menu (GEDIT_WINDOW_ACTIVATABLE (plugin),
+	                                                        "ext3");
+	item = g_menu_item_new (_("Toggle Bookmark"), "win.bookmark-toggle");
+	gedit_menu_extension_append_menu_item (priv->menu, item);
+	g_object_unref (item);
 
-	if (!priv->ui_id)
-	{
-		g_warning ("Could not load UI: %s", error->message);
-		g_error_free (error);
-	}
+	item = g_menu_item_new (_("Goto Next Bookmark"), "win.bookmark-next");
+	gedit_menu_extension_append_menu_item (priv->menu, item);
+	g_object_unref (item);
+
+	item = g_menu_item_new (_("Goto Previous Bookmark"), "win.bookmark-prev");
+	gedit_menu_extension_append_menu_item (priv->menu, item);
+	g_object_unref (item);
 }
 
 static void
 uninstall_menu (GeditBookmarksPlugin *plugin)
 {
 	GeditBookmarksPluginPrivate *priv;
-	GtkUIManager *manager;
 
 	priv = plugin->priv;
 
-	manager = gedit_window_get_ui_manager (priv->window);
-
-	gtk_ui_manager_remove_ui (manager, priv->ui_id);
-	gtk_ui_manager_remove_action_group (manager, priv->action_group);
-
-	g_object_unref (priv->action_group);
-	priv->action_group = NULL;
+	g_action_map_remove_action (G_ACTION_MAP (priv->window), "bookmark-toggle");
+	g_action_map_remove_action (G_ACTION_MAP (priv->window), "bookmark-next");
+	g_action_map_remove_action (G_ACTION_MAP (priv->window), "bookmark-prev");
 }
 
 static void
@@ -782,10 +764,15 @@ static void
 gedit_bookmarks_plugin_update_state (GeditWindowActivatable *activatable)
 {
 	GeditBookmarksPluginPrivate *priv;
+	gboolean enabled;
 
 	priv = GEDIT_BOOKMARKS_PLUGIN (activatable)->priv;
-	gtk_action_group_set_sensitive (priv->action_group,
-					gedit_window_get_active_view (priv->window) != NULL);
+
+	enabled = gedit_window_get_active_view (priv->window) != NULL;
+
+	g_simple_action_set_enabled (priv->action_toggle, enabled);
+	g_simple_action_set_enabled (priv->action_next, enabled);
+	g_simple_action_set_enabled (priv->action_prev, enabled);
 }
 
 static void
@@ -1135,8 +1122,9 @@ toggle_bookmark (GtkSourceBuffer *buffer,
 }
 
 static void
-on_toggle_bookmark_activate (GtkAction            *action,
-			     GeditBookmarksPlugin *plugin)
+on_toggle_bookmark_activate (GAction              *action,
+                             GVariant             *parameter,
+                             GeditBookmarksPlugin *plugin)
 {
 	GtkSourceBuffer *buffer;
 
@@ -1146,8 +1134,9 @@ on_toggle_bookmark_activate (GtkAction            *action,
 }
 
 static void
-on_next_bookmark_activate (GtkAction            *action,
-			   GeditBookmarksPlugin *plugin)
+on_next_bookmark_activate (GAction              *action,
+                           GVariant             *parameter,
+                           GeditBookmarksPlugin *plugin)
 {
 	goto_bookmark (plugin->priv->window,
 	               NULL,
@@ -1157,8 +1146,9 @@ on_next_bookmark_activate (GtkAction            *action,
 }
 
 static void
-on_previous_bookmark_activate (GtkAction            *action,
-			       GeditBookmarksPlugin *plugin)
+on_previous_bookmark_activate (GAction              *action,
+                               GVariant             *parameter,
+                               GeditBookmarksPlugin *plugin)
 {
 	goto_bookmark (plugin->priv->window,
 	               NULL,
@@ -1242,6 +1232,7 @@ G_MODULE_EXPORT void
 peas_register_types (PeasObjectModule *module)
 {
 	gedit_bookmarks_plugin_register_type (G_TYPE_MODULE (module));
+	gedit_bookmarks_app_activatable_register (G_TYPE_MODULE (module));
 
 	peas_object_module_register_extension_type (module,
 						    GEDIT_TYPE_WINDOW_ACTIVATABLE,
