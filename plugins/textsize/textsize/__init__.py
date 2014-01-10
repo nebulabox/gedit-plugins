@@ -22,7 +22,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from gi.repository import GObject, Gtk, Gdk, Gedit
+from gi.repository import GObject, Gio, Gtk, Gdk, Gedit
 from .documenthelper import DocumentHelper
 import gettext
 from gpdefs import *
@@ -33,25 +33,25 @@ try:
 except:
     _ = lambda s: s
 
-# UI manager snippet to add menu items to the View menu
-ui_str = """
-<ui>
-  <menubar name="MenuBar">
-    <menu name="ViewMenu" action="View">
-      <placeholder name="ViewOps_2">
-        <separator/>
-        <menuitem name="LargerText" action="LargerTextAction"/>
-        <menuitem name="SmallerText" action="SmallerTextAction"/>
-        <menuitem name="NormalSize" action="NormalSizeAction"/>
-        <separator/>
-      </placeholder>
-    </menu>
-  </menubar>
-</ui>
-"""
 
-class TextSizePlugin(GObject.Object, Gedit.WindowActivatable):
-    __gtype_name__ = "TextSizePlugin"
+class TextSizeAppActivatable(GObject.Object, Gedit.AppActivatable):
+
+    app = GObject.property(type=Gedit.App)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+    def do_activate(self):
+        self.app.set_accels_for_action("win.text-larger", ["<Primary>plus", "<Primary>KP_Add"])
+        self.app.set_accels_for_action("win.text-smaller", ["<Primary>minus", "<Primary>KP_Subtract"])
+        self.app.set_accels_for_action("win.text-normal", ["<Primary>0", "<Primary>KP_0"])
+
+    def do_deactivate(self):
+        self.app.set_accels_for_action("win.text-larger", [])
+        self.app.set_accels_for_action("win.text-smaller", [])
+        self.app.set_accels_for_action("win.text-normal", [])
+
+class TextSizeWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     window = GObject.property(type=Gedit.Window)
 
@@ -71,54 +71,6 @@ class TextSizePlugin(GObject.Object, Gedit.WindowActivatable):
         self.window.connect('tab-added', self.on_tab_added)
         self.window.connect('tab-removed', self.on_tab_removed)
 
-        self._accel_group = Gtk.AccelGroup()
-        self.window.add_accel_group(self._accel_group)
-
-        self._proxy_callback_map = {
-            'LargerTextAction': self.on_larger_text_accel,
-            'SmallerTextAction': self.on_smaller_text_accel,
-            'NormalSizeAction': self.on_normal_size_accel
-        }
-
-        self._proxy_mapping = {}
-        self._init_proxy_accels()
-        self._accel_map_handler_id = Gtk.AccelMap.get().connect('changed', self.on_accel_map_changed)
-
-    def _install_proxy(self, action):
-        if not isinstance(action, Gtk.Action):
-            action = self._action_group.get_action(str(action))
-
-        if not action:
-            return
-
-        entry = Gtk.AccelMap.lookup_entry(action.get_accel_path())
-
-        if not entry:
-            return
-
-        mapping = {
-            Gdk.KEY_plus: Gdk.KEY_KP_Add,
-            Gdk.KEY_KP_Add: Gdk.KEY_plus,
-            Gdk.KEY_minus: Gdk.KEY_KP_Subtract,
-            Gdk.KEY_KP_Subtract: Gdk.KEY_minus,
-            Gdk.KEY_0: Gdk.KEY_KP_0,
-            Gdk.KEY_KP_0: Gdk.KEY_0
-        }
-
-        if entry[0] in mapping:
-            key = mapping[entry[0]]
-            mod = entry[1]
-
-            callback = self._proxy_callback_map[action.get_name()]
-
-            self._accel_group.connect_group(key, mod, Gtk.ACCEL_LOCKED, callback)
-            self._proxy_mapping[action] = (key, mod)
-
-    def _init_proxy_accels(self):
-        self._install_proxy('LargerTextAction')
-        self._install_proxy('SmallerTextAction')
-        self._install_proxy('NormalSizeAction')
-
     def do_deactivate(self):
         # Remove any installed menu items
         self._remove_menu()
@@ -126,50 +78,39 @@ class TextSizePlugin(GObject.Object, Gedit.WindowActivatable):
         for view in self.window.get_views():
             self.remove_document_helper(view)
 
-        self.window.remove_accel_group(self._accel_group)
-
-        Gtk.AccelMap.get().disconnect(self._accel_map_handler_id)
-
-        self._accel_group = None
-        self._action_group = None
-
     def _insert_menu(self):
-        # Get the GtkUIManager
-        manager = self.window.get_ui_manager()
+        action = Gio.SimpleAction(name="text-larger")
+        action.connect('activate', self.on_larger_text_activate)
+        self.window.add_action(action)
 
-        # Create a new action group
-        self._action_group = Gtk.ActionGroup("GeditTextSizePluginActions")
-        self._action_group.add_actions([("LargerTextAction", None, _("_Larger Text"),
-                                         "<Ctrl>plus", None,
-                                         self.on_larger_text_activate),
-                                         ("SmallerTextAction", None, _("S_maller Text"),
-                                         "<Ctrl>minus", None,
-                                         self.on_smaller_text_activate),
-                                         ("NormalSizeAction", None, _("_Normal size"),
-                                         "<Ctrl>0", None,
-                                         self.on_normal_size_activate)])
+        action = Gio.SimpleAction(name="text-smaller")
+        action.connect('activate', self.on_smaller_text_activate)
+        self.window.add_action(action)
 
-        # Insert the action group
-        manager.insert_action_group(self._action_group)
+        action = Gio.SimpleAction(name="text-normal")
+        action.connect('activate', self.on_normal_size_activate)
+        self.window.add_action(action)
 
-        # Merge the UI
-        self._ui_id = manager.add_ui_from_string(ui_str)
+        self.menu = self.extend_gear_menu("ext9")
+
+        item = Gio.MenuItem.new(_("_Normal size"), "win.text-normal")
+        self.menu.prepend_menu_item(item)
+
+        item = Gio.MenuItem.new(_("S_maller Text"), "win.text-smaller")
+        self.menu.prepend_menu_item(item)
+
+        item = Gio.MenuItem.new(_("_Larger Text"), "win.text-larger")
+        self.menu.prepend_menu_item(item)
 
     def _remove_menu(self):
-        # Get the GtkUIManager
-        manager = self.window.get_ui_manager()
-
-        # Remove the ui
-        manager.remove_ui(self._ui_id)
-
-        # Remove the action group
-        manager.remove_action_group(self._action_group)
-
-        # Make sure the manager updates
-        manager.ensure_update()
+        self.window.remove_action("text-larger")
+        self.window.remove_action("text-smaller")
+        self.window.remove_action("text-normal")
 
     def do_update_state(self):
-        self._action_group.set_sensitive(self.window.get_active_document() != None)
+        self.window.lookup_action("text-larger").set_enabled(self.window.get_active_document() != None)
+        self.window.lookup_action("text-smaller").set_enabled(self.window.get_active_document() != None)
+        self.window.lookup_action("text-normal").set_enabled(self.window.get_active_document() != None)
 
     def get_helper(self, view):
         if not hasattr(view, "textsize_document_helper"):
@@ -195,22 +136,13 @@ class TextSizePlugin(GObject.Object, Gedit.WindowActivatable):
             cb(self.get_helper(view))
 
     # Menu activate handlers
-    def on_larger_text_activate(self, action, user_data=None):
+    def on_larger_text_activate(self, action, parameter, user_data=None):
         self.call_helper(lambda helper: helper.larger_text())
 
-    def on_smaller_text_activate(self, action, user_data=None):
+    def on_smaller_text_activate(self, action, parameter, user_data=None):
         self.call_helper(lambda helper: helper.smaller_text())
 
-    def on_normal_size_activate(self, action, user_data=None):
-        self.call_helper(lambda helper: helper.normal_size())
-
-    def on_larger_text_accel(self, group, accel, key, mod):
-        self.call_helper(lambda helper: helper.larger_text())
-
-    def on_smaller_text_accel(self, group, accel, key, mod):
-        self.call_helper(lambda helper: helper.smaller_text())
-
-    def on_normal_size_accel(self, group, accel, key, mod):
+    def on_normal_size_activate(self, action, parameter, user_data=None):
         self.call_helper(lambda helper: helper.normal_size())
 
     def on_tab_added(self, window, tab):
@@ -218,20 +150,5 @@ class TextSizePlugin(GObject.Object, Gedit.WindowActivatable):
 
     def on_tab_removed(self, window, tab):
         self.remove_document_helper(tab.get_view())
-
-    def _remap_proxy(self, action):
-        # Remove previous proxy
-
-        if action in self._proxy_mapping:
-            item = self._proxy_mapping[action]
-            self._accel_group.disconnect_key(item[0], item[1])
-
-        self._install_proxy(action)
-
-    def on_accel_map_changed(self, accelmap, path, key, mod):
-        for action in self._action_group.list_actions():
-            if action.get_accel_path() == path:
-                self._remap_proxy(action)
-                return
 
 # ex:ts=4:et:
