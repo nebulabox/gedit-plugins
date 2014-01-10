@@ -19,20 +19,10 @@
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from gi.repository import GObject, Gedit, Gtk
+from gi.repository import GObject, Gio, Gedit, Gtk
 import os
 
 from .schemer import GUI
-
-UI_XML = """<ui>
-<menubar name="MenuBar">
-  <menu name="ToolsMenu" action="Tools">
-    <placeholder name="ToolsOps_4">
-      <menuitem name="menuItemLaunchGui" action="LaunchGuiAction"/>
-    </placeholder>
-  </menu>
-</menubar>
-</ui>"""
 
 class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
@@ -42,23 +32,16 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
     GObject.Object.__init__(self)
 
   def do_activate(self):
-    manager = self.window.get_ui_manager()
-    self._actions = Gtk.ActionGroup("SchemerActions")
-    self._actions.add_actions([
-      ('LaunchGuiAction', Gtk.STOCK_INFO, "Color Scheme Editor", 
-        None, "Launch color scheme editor for the current loaded scheme", 
-        self.open_dialog),
-    ])
-    manager.insert_action_group(self._actions)
-    self._ui_merge_id = manager.add_ui_from_string(UI_XML)
-    manager.ensure_update()
+    action = Gio.SimpleAction(name="schemer")
+    action.connect('activate', self.open_dialog)
+    self.window.add_action(action)
 
-  def open_dialog(self, action, data=None):
+    self.menu = self.extend_gear_menu("ext9")
+    item = Gio.MenuItem.new(_("Color Scheme Editor"), "win.schemer")
+    self.menu.append_menu_item(item)
+
+  def open_dialog(self, action, parameter, data=None):
     schemer.GUI(Gedit.App, os.path.join(self.plugin_info.get_data_dir(), 'ui'))
 
   def do_deactivate(self):
-    manager = self.window.get_ui_manager()
-    manager.remove_ui(self._ui_merge_id)
-    manager.remove_action_group(self._actions)
-    manager.ensure_update()
-    
+    self.window.remove_action("schemer")
