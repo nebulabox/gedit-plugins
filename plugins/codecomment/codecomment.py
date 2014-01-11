@@ -68,11 +68,10 @@ class CodeCommentWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     def do_update_state(self):
         sensitive = False
-        doc = self.window.get_active_document()
-        if doc:
-            lang = doc.get_language()
-            if lang is not None:
-                sensitive = self.get_comment_tags(lang) != (None, None)
+        view = self.window.get_active_view()
+        if view and hasattr(view, "code_comment_view_activatable"):
+            sensitive = view.code_comment_view_activatable.doc_has_comment_tags()
+
         self.window.lookup_action('comment').set_enabled(sensitive)
         self.window.lookup_action('uncomment').set_enabled(sensitive)
 
@@ -82,19 +81,60 @@ class CodeCommentWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     def _insert_menu(self):
         action = Gio.SimpleAction(name="comment")
-        action.connect('activate', lambda a, p: self.do_comment (self.window.get_active_document()))
+        action.connect('activate', lambda a, p: self.do_comment())
         self.window.add_action(action)
 
         action = Gio.SimpleAction(name="uncomment")
-        action.connect('activate', lambda a, p: self.do_comment (self.window.get_active_document(), True))
+        action.connect('activate', lambda a, p: self.do_comment(True))
         self.window.add_action(action)
 
-        self.menu = self.extend_gear_menu("ext9")
-        item = Gio.MenuItem.new(_('U_ncomment Code'), "win.uncomment")
-        self.menu.prepend_menu_item(item)
+    def do_comment(self, unindent=False):
+        view = self.window.get_active_view()
+        if view and view.code_comment_view_activatable:
+            view.code_comment_view_activatable.do_comment(view.get_buffer(), unindent)
 
-        item = Gio.MenuItem.new(_("Co_mment Code"), "win.comment")
-        self.menu.prepend_menu_item(item)
+class CodeCommentViewActivatable(GObject.Object, Gedit.ViewActivatable):
+
+    view = GObject.property(type=Gedit.View)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+    def do_activate(self):
+        self.view.code_comment_view_activatable = self
+        self.view.connect('populate-popup', self.populate_popup)
+
+    def do_deactivate(self):
+        self.view.code_comment_view_activatable = None
+
+    def populate_popup(self, view, popup):
+        if not isinstance(popup, Gtk.MenuShell):
+            return
+
+        item = Gtk.SeparatorMenuItem()
+        item.show()
+        popup.append(item)
+
+        item = Gtk.MenuItem.new_with_mnemonic(_("Co_mment Code"))
+        item.set_sensitive(self.doc_has_comment_tags())
+        item.show()
+        item.connect('activate', lambda i: self.do_comment(view.get_buffer()))
+        popup.append(item)
+
+        item = Gtk.MenuItem.new_with_mnemonic(_('U_ncomment Code'))
+        item.set_sensitive(self.doc_has_comment_tags())
+        item.show()
+        item.connect('activate', lambda i: self.do_comment(view.get_buffer(), True))
+        popup.append(item)
+
+    def doc_has_comment_tags(self):
+        has_comment_tags = False
+        doc = self.view.get_buffer()
+        if doc:
+            lang = doc.get_language()
+            if lang is not None:
+                has_comment_tags = self.get_comment_tags(lang) != (None, None)
+        return has_comment_tags
 
     def get_block_comment_tags(self, lang):
         start_tag = lang.get_metadata('block-comment-start')
