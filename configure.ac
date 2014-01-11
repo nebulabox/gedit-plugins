@@ -15,10 +15,9 @@ AC_INIT([gedit-plugins],
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([plugins])
 AC_CONFIG_MACRO_DIR([m4])
-AC_CONFIG_AUX_DIR([build-aux])
 AC_PREFIX_PROGRAM([gedit])
 
-AM_INIT_AUTOMAKE([1.11 tar-ustar dist-xz no-dist-gzip])
+AM_INIT_AUTOMAKE([1.11 tar-ustar dist-xz no-dist-gzip subdir-objects -Wno-portability])
 AM_MAINTAINER_MODE([enable])
 
 AM_SILENT_RULES([yes])
@@ -82,221 +81,91 @@ GLIB_GSETTINGS
 # Plugins
 # ================================================================
 
-#FIXME
-GEDIT_HAS_PYTHON=1
-#/FIXME
+AC_ARG_ENABLE([verify-all],
+              AC_HELP_STRING([--enable-verify-all], [verify that all plugins are enabled]),
+              [enable_verify_all=$enableval],
+              [enable_verify_all="no"])
 
-AC_MSG_CHECKING([which plugins to build])
+# C plugins that don't need special dependencies
+C_PLUGINS="bookmarks drawspaces wordcompletion"
 
-ALL_PLUGINS="bookmarks drawspaces wordcompletion"
-USEFUL_PLUGINS="bookmarks drawspaces wordcompletion"
-DEFAULT_PLUGINS="bookmarks drawspaces wordcompletion"
+# Python plugins that don't need special dependencies, besides python
+PY_PLUGINS="bracketcompletion charmap codecomment colorpicker colorschemer commander dashboard joinlines multiedit smartspaces textsize"
 
-PYTHON_ALL_PLUGINS="bracketcompletion charmap codecomment colorpicker colorschemer commander dashboard git joinlines multiedit textsize smartspaces terminal synctex"
-PYTHON_USEFUL_PLUGINS="bracketcompletion charmap codecomment colorpicker colorschemer commander dashboard git joinlines multiedit textsize smartspaces terminal synctex"
-PYTHON_DEFAULT_PLUGINS="bracketcompletion charmap codecomment colorpicker colorschemer commander dashboard git joinlines multiedit textsize smartspaces terminal synctex"
-
-DIST_PLUGINS="$ALL_PLUGINS $PYTHON_ALL_PLUGINS"
-
-if test $GEDIT_HAS_PYTHON
-then
-	ALL_PLUGINS="$ALL_PLUGINS $PYTHON_ALL_PLUGINS"
-	USEFUL_PLUGINS="$USEFUL_PLUGINS $PYTHON_USEFUL_PLUGINS"
-	DEFAULT_PLUGINS="$DEFAULT_PLUGINS $PYTHON_DEFAULT_PLUGINS"
-else
-	AC_MSG_WARN([gedit compiled without python support, plugins $PYTHON_ALL_PLUGINS will not be available])
-fi
-
-# due to an autoconf bug, commas in the first arg to
-# AS_HELP_STRING() cause problems.
-#
-# AS_HELP_STRING(--with-plugins=ext1,ext2,...,build the specified plugins)
-AC_ARG_WITH([plugins],
-[  --with-plugins=plugin1,plugin2,...
-			  build the specified plugins. Available:
-			  bracketcompletion, charmap, codecomment,
-			  colorpicker, drawspaces, git, joinlines, multiedit,
-			  textsize, smartspaces,
-			  terminal, wordcompletion, as well as the aliases
-			  default, all, and really-all],
-			  [plugins=$with_plugins],
-			  [plugins="default"])
-
-if test "x$with_plugins" = xyes
-then
-	plugins="default"
-fi
-
-need_python=no
-explicit_plugins=
-PLUGINS=
-IFS="${IFS=	}"; geditpl_save_ifs="$IFS"; IFS=","
-for pl in $plugins
-do
-	if echo "$ALL_PLUGINS" | egrep "(^| )$pl(\$| )" > /dev/null
-	then
-		PLUGINS="$PLUGINS $pl"
-		explicit_plugins="$explicit_plugins $pl"
-	elif test "x$pl" = "xdefault"
-	then
-		PLUGINS="$PLUGINS $DEFAULT_PLUGINS"
-	elif test "x$pl" = "xall"
-	then
-		PLUGINS="$PLUGINS $USEFUL_PLUGINS"
-	elif test "x$pl" = "xreally-all"
-	then
-		PLUGINS="$PLUGINS $ALL_PLUGINS"
-	else
-		AC_MSG_ERROR([the specified plugin $pl does not exist])
-	fi
-	
-	if echo "$PYTHON_ALL_PLUGINS" | egrep "(^| )$pl(\$| )" > /dev/null
-	then
-		need_python=yes
-	fi
-done
-IFS="$geditpl_save_ifs"
-
-AC_MSG_RESULT([$PLUGINS])
-
+PLUGINS="$C_PLUGINS"
+disabled_plugins=""
 
 # ================================================================
 # Python
 # ================================================================
-
 AC_MSG_CHECKING([whether Python support is requested])
 AC_ARG_ENABLE([python],
-	      AS_HELP_STRING([--enable-python], [Enable python support]),
-	      [enable_python=$enableval],
-	      [enable_python="yes"])
+              AS_HELP_STRING([--enable-python], [Enable python support]),
+              [enable_python=$enableval],
+              [enable_python="yes"])
 
-AM_CONDITIONAL([ENABLE_PYTHON],[test "x$enable_python" = "xyes"])
-
-disabled_plugins=
-# ================================================================
-# Plugin specific checks
-# ================================================================
-check_plugin_defined() {
-	for p in $2
-	do
-		if test "$p" = "$1"
-		then
-			return 1
-		fi
-	done
-	return 0
-}
-
-plugin_defined() {
-	check_plugin_defined "$1" "$PLUGINS"
-	return $?
-}
-
-plugin_defined_explicit() {
-	check_plugin_defined "$1" "$explicit_plugins"
-	return $?
-}
-
-undef_plugin() {
-	if test -z "$disabled_plugins"
-	then
-		disabled_plugins="$1 ($2)"
-	else
-		disabled_plugins="$disabled_plugins, $1 ($2)"
-	fi
-	
-	PLUGINS=$(echo "$PLUGINS" | sed -e "s/[[^a-zA-Z0-9_]]$1[[ \t\r\n\f]]\{1,\}/ /" -e "s/[[^a-zA-Z0-9_]]$1$//" -e "s/^$1[[ \t\r\n\f]]\{1,\}//")
-}
+AM_CONDITIONAL([ENABLE_PYTHON], [test "x$enable_python" = "xyes"])
 
 # ================================================================
 # disable all python plugins if there is no python support
 # ================================================================
-if test "x$enable_python" = "xno"
+if test "x$enable_python" = "xyes"
 then
-	for pl in $PYTHON_ALL_PLUGINS
-	do
-		undef_plugin "$pl" "no python support"
-	done
-fi
+	PLUGINS="$PLUGINS $PY_PLUGINS"
 
-# ================================================================
-# Synctex (dbus-python)
-# ================================================================
-plugin_defined synctex
-if test "$?" = 1
-then
+	# ================================================================
+	# Synctex (dbus-python)
+	# ================================================================
 	DBUSPYTHON_REQUIRED=0.82
 	PKG_CHECK_MODULES([DBUSPYTHON],
 		[dbus-python >= $DBUSPYTHON_REQUIRED],
-		[have_synctex=yes],[have_synctex=no])
+		[have_synctex=yes],
+		[have_synctex=no])
 
 	AC_SUBST([DBUS_PYTHON_CFLAGS])
 	AC_SUBST([DBUS_PYTHON_LIBS])
 
-	if test "x$have_synctex" = "xno"; then
-		plugin_defined_explicit synctex
-		if test "$?" = 1
-		then
-			AC_MSG_ERROR([dbus-python could not be found, needed for synctex plugin])
-		else
-			AC_MSG_WARN([dbus-python could not be found, synctex plugin will be disabled])
-			undef_plugin synctex "dbus-python not found"
-		fi
+	if test "x$have_synctex" = "xyes"; then
+		PLUGINS="$PLUGINS synctex"
+	else
+		disabled_plugins="$disabled_plugins synctex (dbus-python not found)"
 	fi
-fi
 
-# ================================================================
-# Terminal (vte)
-# ================================================================
-plugin_defined terminal
-
-if test "$?" = 1
-then
-    AC_CHECK_LIB([vte2_90], [vte_terminal_new], [have_vte=yes], [have_vte=no])
-
-	if test "x$have_vte" = "xno"; then
-		plugin_defined_explicit terminal
-		if test "$?" = 1
-		then
-			AC_MSG_ERROR([vte could not be found, needed for terminal plugin])
-		else
-			AC_MSG_WARN([vte could not be found, terminal plugin will be disabled])
-			undef_plugin terminal "vte not found"
-		fi
+	# ================================================================
+	# Terminal (vte)
+	# ================================================================
+	if `$PYTHON -c "import gi; gi.require_version('Vte', '2.90')" 2>/dev/null`;
+	then
+		have_vte=yes
+		PLUGINS="$PLUGINS terminal"
+	else
+		have_vte=no
+		disabled_plugins="$disabled_plugins terminal (vte not found)"
 	fi
-fi
 
-# ================================================================
-# Git (libgit2-glib)
-# ================================================================
-plugin_defined git
-if test "$?" = 1
-then
+	# ================================================================
+	# Git (libgit2-glib)
+	# ================================================================
 	LIBGIT2_GLIB_REQUIRED=0.0.6
 	PKG_CHECK_MODULES([GIT2_GLIB],
 		[libgit2-glib-1.0 >= $LIBGIT2_GLIB_REQUIRED],
-		[have_git2=yes],[have_git2=no])
+		[have_git2=yes],
+		[have_git2=no])
 
-	if test "x$have_git2" = "xno"; then
-		plugin_defined_explicit git
-		if test "$?" = 1
-		then
-			AC_MSG_ERROR([libgit2-glib could not be found, needed for git plugin])
-		else
-			AC_MSG_WARN([libgit2-glib could not be found, git plugin will be disabled])
-			undef_plugin git "libgit2-glib not found"
-		fi
+	if test "x$have_git2" = "xyes"; then
+		PLUGINS="$PLUGINS git"
+	else
+		disabled_plugins="$disabled_plugins git"
 	fi
+else
+	disabled_plugins="$disabled_plugins $PY_PLUGINS synctex vte git (python not found)"
 fi
 
-if test -z "$disabled_plugins"
-then
-	disabled_plugins="none"
-fi
+AM_CONDITIONAL([ENABLE_SYNCTEX], test "x$have_synctex" = "xyes")
+AM_CONDITIONAL([ENABLE_TERMINAL], test "x$have_vte" = "xyes")
+AM_CONDITIONAL([ENABLE_GIT], test "x$have_git2" = "xyes")
 
-PLUGINS=$(echo $PLUGINS | tr ' ' '\n' | sort | uniq | tr '\n' ' ')
-AC_SUBST([DIST_PLUGINS])
-AC_SUBST([BUILD_PLUGINS],[$PLUGINS])
+AC_SUBST(PLUGINS)
 
 # ================================================================
 # Misc
@@ -337,57 +206,32 @@ AC_SUBST(GEDIT_PLUGINS_LIBS_DIR)
 GEDIT_PLUGINS_DATA_DIR="$datadir/gedit/plugins"
 AC_SUBST(GEDIT_PLUGINS_DATA_DIR)
 
+if test "x$enable_verify_all" != "xno" && test ! -z "$disabled_plugins"; then
+AC_MSG_ERROR([some plugins are not being built: $disabled_plugins])
+fi
+
 AC_CONFIG_FILES([
 Makefile
 help/Makefile
 plugins/gpdefs.py
-plugins/Makefile
 plugins/bookmarks/bookmarks.plugin.desktop.in
-plugins/bookmarks/Makefile
 plugins/bracketcompletion/bracketcompletion.plugin.desktop.in
-plugins/bracketcompletion/Makefile
 plugins/charmap/charmap.plugin.desktop.in
-plugins/charmap/Makefile
-plugins/charmap/charmap/Makefile
 plugins/codecomment/codecomment.plugin.desktop.in
-plugins/codecomment/Makefile
 plugins/colorpicker/colorpicker.plugin.desktop.in
-plugins/colorpicker/Makefile
-plugins/colorschemer/schemer/Makefile
 plugins/colorschemer/colorschemer.plugin.desktop.in
-plugins/colorschemer/Makefile
-plugins/commander/commander/commands/Makefile
 plugins/commander/commander.plugin.desktop.in
-plugins/commander/commander/Makefile
-plugins/commander/Makefile
-plugins/commander/modules/find/Makefile
-plugins/commander/modules/Makefile
-plugins/dashboard/dashboard/Makefile
 plugins/dashboard/dashboard.plugin.desktop.in
-plugins/dashboard/Makefile
 plugins/drawspaces/drawspaces.plugin.desktop.in
-plugins/drawspaces/Makefile
 plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in
 plugins/git/git.plugin.desktop.in
-plugins/git/git/Makefile
-plugins/git/Makefile
 plugins/joinlines/joinlines.plugin.desktop.in
-plugins/joinlines/Makefile
-plugins/multiedit/Makefile
 plugins/multiedit/multiedit.plugin.desktop.in
-plugins/multiedit/multiedit/Makefile
-plugins/smartspaces/Makefile
 plugins/smartspaces/smartspaces.plugin.desktop.in
-plugins/synctex/Makefile
 plugins/synctex/synctex.plugin.desktop.in
-plugins/synctex/synctex/Makefile
-plugins/terminal/Makefile
 plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in
 plugins/terminal/terminal.plugin.desktop.in
-plugins/textsize/Makefile
 plugins/textsize/textsize.plugin.desktop.in
-plugins/textsize/textsize/Makefile
-plugins/wordcompletion/Makefile
 plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in
 plugins/wordcompletion/wordcompletion.plugin.desktop.in
 po/Makefile.in])
@@ -402,8 +246,9 @@ Configuration:
 	Compiler:               ${CC}
 	Prefix:			${prefix}
 	Python Plugins Support: $enable_python
-	Plugins:                $PLUGINS
-	
+	Plugins:
+	  $PLUGINS
+
 	Disabled plugins:       $disabled_plugins
 
 Note: you have to install these plugins into the same prefix as your gedit

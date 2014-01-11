@@ -1,20 +1,11 @@
-# Multi Edit
+if ENABLE_PYTHON
+plugins_multieditdir = $(plugindir)/multiedit
+plugins_multiedit_PYTHON =				\
+	plugins/multiedit/multiedit/__init__.py 	\
+	plugins/multiedit/multiedit/documenthelper.py 	\
+	plugins/multiedit/multiedit/signals.py
 
-SUBDIRS = multiedit
-
-plugindir = $(GEDIT_PLUGINS_LIBS_DIR)
-
-plugin_in_files = multiedit.plugin.desktop.in
-
-%.plugin: %.plugin.desktop.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po)
-	$(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
-
-plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
-
-EXTRA_DIST = $(plugin_in_files)
-
-CLEANFILES = $(plugin_DATA)
-
-DISTCLEANFILES = $(plugin_DATA)
-
--include $(top_srcdir)/git.mk
+plugin_in_files += plugins/multiedit/multiedit.plugin.desktop.in
+else
+dist_plugin_in_files += plugins/multiedit/multiedit.plugin.desktop.in
+endif

@@ -1,4 +1,4 @@
-SUBDIRS = help plugins po
+SUBDIRS = help po
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
@@ -9,6 +9,9 @@ EXTRA_DIST =			\
 	intltool-extract.in 	\
 	intltool-merge.in 	\
 	intltool-update.in
+
+CLEANFILES =
+BUILT_SOURCES =
 
 DISTCLEANFILES = 		\
 	intltool-extract 	\
@@ -36,7 +39,9 @@ MAINTAINERCLEANFILES = 		\
 	m4/lt~obsolete.m4	\
 	`find "$(srcdir)" -type f -name Makefile.in -print`
 
-DISTCHECK_CONFIGURE_FLAGS = --with-plugins=really-all
+DISTCHECK_CONFIGURE_FLAGS = --enable-verify-all
+
+include plugins/Makefile.am
 
 CHANGELOG_START = GEDIT_PLUGINS_2_26_1
 
