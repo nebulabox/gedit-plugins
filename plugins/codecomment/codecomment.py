@@ -60,10 +60,17 @@ class CodeCommentWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         GObject.Object.__init__(self)
 
     def do_activate(self):
-        self._insert_menu()
+        action = Gio.SimpleAction(name="comment")
+        action.connect('activate', lambda a, p: self.do_comment())
+        self.window.add_action(action)
+
+        action = Gio.SimpleAction(name="uncomment")
+        action.connect('activate', lambda a, p: self.do_comment(True))
+        self.window.add_action(action)
 
     def do_deactivate(self):
-        self._remove_menu()
+        self.window.remove_action("comment")
+        self.window.remove_action("uncomment")
 
     def do_update_state(self):
         sensitive = False
@@ -73,19 +80,6 @@ class CodeCommentWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         self.window.lookup_action('comment').set_enabled(sensitive)
         self.window.lookup_action('uncomment').set_enabled(sensitive)
-
-    def _remove_menu(self):
-        self.window.remove_action("comment")
-        self.window.remove_action("uncomment")
-
-    def _insert_menu(self):
-        action = Gio.SimpleAction(name="comment")
-        action.connect('activate', lambda a, p: self.do_comment())
-        self.window.add_action(action)
-
-        action = Gio.SimpleAction(name="uncomment")
-        action.connect('activate', lambda a, p: self.do_comment(True))
-        self.window.add_action(action)
 
     def do_comment(self, unindent=False):
         view = self.window.get_active_view()
