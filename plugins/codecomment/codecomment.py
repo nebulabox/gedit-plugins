@@ -22,7 +22,6 @@
 #  Boston, MA 02110-1301, USA.
 
 from gi.repository import GObject, Gio, Gtk, GtkSource, Gedit
-import copy
 import gettext
 from gpdefs import *
 
