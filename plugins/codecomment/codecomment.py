@@ -105,7 +105,7 @@ class CodeCommentViewActivatable(GObject.Object, Gedit.ViewActivatable):
         self.view.connect('populate-popup', self.populate_popup)
 
     def do_deactivate(self):
-        self.view.code_comment_view_activatable = None
+        delattr(self.view, "code_comment_view_activatable")
 
     def populate_popup(self, view, popup):
         if not isinstance(popup, Gtk.MenuShell):
