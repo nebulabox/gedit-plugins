@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  documenthelper.py - Document helper
+#  viewactivatable.py - Gedit View Activatable Implementation
 #
 #  Copyright (C) 2010 - Jesse van den Kieboom
 #
@@ -20,34 +20,37 @@
 #  Boston, MA 02110-1301, USA.
 
 from .signals import Signals
-from gi.repository import Gtk, Gdk, Pango
+from gi.repository import GObject, Gtk, Gdk, Pango, Gedit
 
-class DocumentHelper(Signals):
-    def __init__(self, view):
+class TextSizeViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
+
+    view = GObject.property(type=Gedit.View)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
         Signals.__init__(self)
 
-        self._view = view
+    def do_activate(self):
+        self.connect_signal(self.view, 'scroll-event', self.on_scroll_event)
+        self.connect_signal(self.view, 'button-press-event', self.on_button_press_event)
 
-        self.connect_signal(self._view, 'scroll-event', self.on_scroll_event)
-        self.connect_signal(self._view, 'button-press-event', self.on_button_press_event)
-
-        self._view.textsize_document_helper = self
+        self.view.textsize_view_activatable = self
 
         self._default_font = None
         self._last_font = None
         self._font_tags = {}
 
-    def stop(self):
+    def do_deactivate(self):
         if self._default_font:
-            self._view.override_font(self._default_font)
+            self.view.override_font(self._default_font)
 
         self.remove_font_tags()
-        self.disconnect_signals(self._view)
+        self.disconnect_signals(self.view)
 
-        self._view.textsize_document_helper = None
+        delattr(self.view, "textsize_view_activatable")
 
     def remove_font_tags(self):
-        buf = self._view.get_buffer()
+        buf = self.view.get_buffer()
         table = buf.get_tag_table()
 
         # Remove all the font tags
@@ -58,7 +61,7 @@ class DocumentHelper(Signals):
         self._font_tags = {}
 
     def update_default_font(self):
-        context = self._view.get_style_context()
+        context = self.view.get_style_context()
         description = context.get_font(context.get_state()).copy()
 
         if not self._last_font or description.hash() != self._last_font.hash():
@@ -84,17 +87,17 @@ class DocumentHelper(Signals):
     def set_font_size(self, amount):
         self.update_default_font()
 
-        context = self._view.get_style_context()
+        context = self.view.get_style_context()
         description = context.get_font(context.get_state()).copy()
 
-        buf = self._view.get_buffer()
+        buf = self.view.get_buffer()
         bounds = buf.get_selection_bounds()
         size = description.get_size() / Pango.SCALE
 
         if not bounds:
             description.set_size(max(1, (size + amount)) * Pango.SCALE)
 
-            self._view.override_font(description)
+            self.view.override_font(description)
             self._last_font = description
         else:
             start = bounds[0]
@@ -143,13 +146,13 @@ class DocumentHelper(Signals):
     def normal_size(self):
         self.update_default_font()
 
-        buf = self._view.get_buffer()
+        buf = self.view.get_buffer()
         bounds = buf.get_selection_bounds()
 
         if not bounds:
             self.remove_font_tags()
 
-            self._view.override_font(self._default_font)
+            self.view.override_font(self._default_font)
             self._last_font = self._default_font
         else:
             tags = self.get_font_tags(bounds[0], bounds[1])

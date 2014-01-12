@@ -23,7 +23,7 @@
 #  Boston, MA 02110-1301, USA.
 
 from gi.repository import GObject, Gio, Gtk, Gdk, Gedit
-from .documenthelper import DocumentHelper
+from .viewactivatable import TextSizeViewActivatable
 import gettext
 from gpdefs import *
 
@@ -59,24 +59,10 @@ class TextSizeWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         GObject.Object.__init__(self)
 
     def do_activate(self):
-        self._views  = {}
-
-        # Insert menu items
         self._insert_menu()
 
-        # Insert document helpers
-        for view in self.window.get_views():
-            self.add_document_helper(view)
-
-        self.window.connect('tab-added', self.on_tab_added)
-        self.window.connect('tab-removed', self.on_tab_removed)
-
     def do_deactivate(self):
-        # Remove any installed menu items
         self._remove_menu()
-
-        for view in self.window.get_views():
-            self.remove_document_helper(view)
 
     def _insert_menu(self):
         action = Gio.SimpleAction(name="text-larger")
@@ -112,43 +98,25 @@ class TextSizeWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.window.lookup_action("text-smaller").set_enabled(self.window.get_active_document() != None)
         self.window.lookup_action("text-normal").set_enabled(self.window.get_active_document() != None)
 
-    def get_helper(self, view):
-        if not hasattr(view, "textsize_document_helper"):
+    def get_view_activatable(self, view):
+        if not hasattr(view, "textsize_view_activatable"):
             return None
-        return view.textsize_document_helper
+        return view.textsize_view_activatable
 
-    def add_document_helper(self, view):
-        if self.get_helper(view) != None:
-            return
-
-        DocumentHelper(view)
-
-    def remove_document_helper(self, view):
-        helper = self.get_helper(view)
-
-        if helper != None:
-            helper.stop()
-
-    def call_helper(self, cb):
+    def call_view_activatable(self, cb):
         view = self.window.get_active_view()
 
         if view:
-            cb(self.get_helper(view))
+            cb(self.get_view_activatable(view))
 
     # Menu activate handlers
     def on_larger_text_activate(self, action, parameter, user_data=None):
-        self.call_helper(lambda helper: helper.larger_text())
+        self.call_view_activatable(lambda va: va.larger_text())
 
     def on_smaller_text_activate(self, action, parameter, user_data=None):
-        self.call_helper(lambda helper: helper.smaller_text())
+        self.call_view_activatable(lambda va: va.smaller_text())
 
     def on_normal_size_activate(self, action, parameter, user_data=None):
-        self.call_helper(lambda helper: helper.normal_size())
-
-    def on_tab_added(self, window, tab):
-        self.add_document_helper(tab.get_view())
-
-    def on_tab_removed(self, window, tab):
-        self.remove_document_helper(tab.get_view())
+        self.call_view_activatable(lambda va: va.normal_size())
 
 # ex:ts=4:et:
