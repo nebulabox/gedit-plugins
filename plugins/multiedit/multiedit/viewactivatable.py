@@ -1297,7 +1297,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
         window = view.get_window(Gtk.TextWindowType.TOP)
 
-        if window is None or not Gtk.cairo_should_draw_window (cr, window):
+        if window is None or not Gtk.cairo_should_draw_window(cr, window):
             return False
 
         if not self._in_mode:
