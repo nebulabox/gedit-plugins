@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  documenthelper.py - Multi Edit
+#  viewactivatable.py - Multi Edit
 #
 #  Copyright (C) 2009 - Jesse van den Kieboom
 #
@@ -19,12 +19,12 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-import re
-import time
+import re, time, gettext
 import xml.sax.saxutils
+
 from gi.repository import GLib, GObject, Pango, PangoCairo, Gdk, Gtk, Gedit
+
 from .signals import Signals
-import gettext
 from gpdefs import *
 
 try:
@@ -33,13 +33,14 @@ try:
 except:
     _ = lambda s: s
 
-class DocumentHelper(Signals):
-    def __init__(self, view):
+class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
+
+    view = GObject.property(type=Gedit.View)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
         Signals.__init__(self)
 
-        view.multiedit_document_helper = self
-
-        self._view = view
         self._buffer = None
         self._in_mode = False
         self._column_mode = None
@@ -52,42 +53,55 @@ class DocumentHelper(Signals):
         self._status_timeout = 0
         self._delete_mode_id = 0
 
-        self.connect_signal(self._view, 'notify::buffer', self.on_notify_buffer)
-        self.connect_signal(self._view, 'key-press-event', self.on_key_press_event)
-        self.connect_signal(self._view, 'draw', self.on_view_draw)
-        self.connect_signal(self._view, 'style-set', self.on_view_style_set)
-        self.connect_signal(self._view, 'undo', self.on_view_undo)
-        self.connect_signal(self._view, 'copy-clipboard', self.on_copy_clipboard)
-        self.connect_signal(self._view, 'cut-clipboard', self.on_cut_clipboard)
-        self.connect_signal(self._view, 'paste-clipboard', self.on_paste_clipboard)
-        self.connect_signal(self._view, 'query-tooltip', self.on_query_tooltip)
+    def do_activate(self):
+        self.view.multiedit_view_activatable = self
 
-        self.connect_signal(self._view, 'move-cursor', self.on_move_cursor)
-        self.connect_signal_after(self._view, 'move-cursor', self.on_move_cursor_after)
+        handlers = {
+            'notify::buffer': self.on_notify_buffer,
+            'key-press-event': self.on_key_press_event,
+            'draw': self.on_view_draw,
+            'style-set': self.on_view_style_set,
+            'undo': self.on_view_undo,
+            'copy-clipboard': self.on_copy_clipboard,
+            'cut-clipboard': self.on_cut_clipboard,
+            'paste-clipboard': self.on_paste_clipboard,
+            'query-tooltip': self.on_query_tooltip,
+            'move-cursor': self.on_move_cursor,
+            'smart-home-end': self.on_smart_home_end
+        }
 
-        try:
-            self.connect_signal(self._view, 'smart-home-end', self.on_smart_home_end)
-        except:
-            pass
+        self.connect_signals(self.view, handlers)
+        self.connect_signal_after(self.view, 'move-cursor', self.on_move_cursor_after)
 
-        self._view.props.has_tooltip = True
+        self.view.props.has_tooltip = True
 
-        self.reset_buffer(self._view.get_buffer())
-
+        self.reset_buffer(self.view.get_buffer())
         self.initialize_event_handlers()
-        self.toggle_callback = None
 
-    def get_view(self):
-        return self._view
+    def do_deactivate(self):
+        self._cancel_column_mode()
+        self.reset_buffer(None)
 
-    def set_toggle_callback(self, callback, data):
-        self.toggle_callback = lambda: callback(data)
+        self.view.multiedit_document_helper = None
+
+        self.disconnect_signals(self.view)
+        self.view = None
+
+        if self._status_timeout != 0:
+            GObject.source_remove(self._status_timeout)
+            self._status_timeout = 0
+
+        if self._delete_mode_id != 0:
+            GObject.source_remove(self._delete_mode_id)
+            self._delete_mode_id = 0
+
+        delattr(self.view, 'multiedit_view_activatable')
 
     def enabled(self):
         return self._in_mode
 
     def _update_selection_tag(self):
-        context = self._view.get_style_context()
+        context = self.view.get_style_context()
         state = context.get_state()
 
         fg_rgba = context.get_color(state)
@@ -131,23 +145,6 @@ class DocumentHelper(Signals):
 
         self._buffer = newbuf
 
-    def stop(self):
-        self._cancel_column_mode()
-        self.reset_buffer(None)
-
-        self._view.multiedit_document_helper = None
-
-        self.disconnect_signals(self._view)
-        self._view = None
-
-        if self._status_timeout != 0:
-            GObject.source_remove(self._status_timeout)
-            self._status_timeout = 0
-
-        if self._delete_mode_id != 0:
-            GObject.source_remove(self._delete_mode_id)
-            self._delete_mode_id = 0
-
     def initialize_event_handlers(self):
         self._event_handlers = [
             [('Escape',), 0, self.do_escape_mode, True],
@@ -163,24 +160,34 @@ class DocumentHelper(Signals):
         for handler in self._event_handlers:
             handler[0] = list(map(lambda x: Gdk.keyval_from_name(x), handler[0]))
 
+    def get_window_activatable(self):
+        try:
+            return self.view.get_toplevel().multiedit_window_activatable
+        except AttributeError:
+            return None
+
+    def window_notify_toggled(self):
+        window = self.get_window_activatable()
+
+        if not window is None:
+            window.on_multi_edit_toggled(self)
+
     def disable_multi_edit(self):
         if self._column_mode:
             self._cancel_column_mode()
 
         self._in_mode = False
 
-        self._view.set_border_window_size(Gtk.TextWindowType.TOP, 0)
+        self.view.set_border_window_size(Gtk.TextWindowType.TOP, 0)
         self.remove_edit_points()
 
-        if self.toggle_callback:
-            self.toggle_callback()
+        self.window_notify_toggled()
 
     def enable_multi_edit(self):
-        self._view.set_border_window_size(Gtk.TextWindowType.TOP, 20)
+        self.view.set_border_window_size(Gtk.TextWindowType.TOP, 20)
         self._in_mode = True
 
-        if self.toggle_callback:
-            self.toggle_callback()
+        self.window_notify_toggled()
 
     def toggle_multi_edit(self, enabled):
         if self.enabled() == enabled:
@@ -199,7 +206,7 @@ class DocumentHelper(Signals):
 
         self._edit_points = []
         self._multi_edited = False
-        self._view.queue_draw()
+        self.view.queue_draw()
 
     def do_escape_mode(self, event):
         if self._column_mode:
@@ -214,11 +221,11 @@ class DocumentHelper(Signals):
         return True
 
     def iter_to_offset(self, piter):
-        return self._view.get_visual_column(piter)
+        return self.view.get_visual_column(piter)
 
     def get_visible_iter(self, line, offset):
         piter = self._buffer.get_iter_at_line(line)
-        tw = self._view.get_tab_width()
+        tw = self.view.get_tab_width()
         visiblepos = 0
 
         while visiblepos < offset:
@@ -328,7 +335,7 @@ class DocumentHelper(Signals):
         if not self._in_mode:
             return
 
-        window = self._view.get_window(Gtk.TextWindowType.TOP)
+        window = self.view.get_window(Gtk.TextWindowType.TOP)
         geom = window.get_geometry()
         #FIXME: there should be some override in pygobject to create the rectangle with values
         rect = Gdk.Rectangle()
@@ -385,7 +392,7 @@ class DocumentHelper(Signals):
 
             start += 1
 
-        self._view.queue_draw()
+        self.view.queue_draw()
 
     def line_column_edit(self, piter, soff, eoff):
         start, soff = self.get_visible_iter(piter.get_line(), soff)
@@ -608,7 +615,7 @@ class DocumentHelper(Signals):
         start = bounds[0]
         end = bounds[1]
 
-        tw = self._view.get_tab_width()
+        tw = self.view.get_tab_width()
         soff = self.iter_to_offset(start)
         eoff = self.iter_to_offset(end)
 
@@ -656,10 +663,10 @@ class DocumentHelper(Signals):
         end = self._column_mode[1]
         buf = self._buffer
 
-        layout = self._view.create_pango_layout('W')
+        layout = self.view.create_pango_layout('W')
         width = layout.get_pixel_extents()[1].width
 
-        context = self._view.get_style_context()
+        context = self.view.get_style_context()
         col = context.get_background_color(Gtk.StateFlags.SELECTED)
         Gdk.cairo_set_source_rgba(cr, col)
 
@@ -670,9 +677,9 @@ class DocumentHelper(Signals):
             # Get the line range, convert to window coords, and see if it needs
             # rendering
             piter = buf.get_iter_at_line(start)
-            y, height = self._view.get_line_yrange(piter)
+            y, height = self.view.get_line_yrange(piter)
 
-            x_, y = self._view.buffer_to_window_coords(Gtk.TextWindowType.TEXT, 0, y)
+            x_, y = self.view.buffer_to_window_coords(Gtk.TextWindowType.TEXT, 0, y)
             start += 1
 
             # Check where to possible draw fake selection
@@ -682,7 +689,7 @@ class DocumentHelper(Signals):
             if soff == 0 and eoff == 0 and not start_iter.equal(end_iter):
                 continue
 
-            rx = cstart * width + self._view.get_left_margin()
+            rx = cstart * width + self.view.get_left_margin()
             rw = (cend - cstart) * width
 
             if rw == 0:
@@ -835,7 +842,7 @@ class DocumentHelper(Signals):
         buf = self._buffer
         start = buf.get_iter_at_mark(mark)
 
-        self._view.set_editable(True)
+        self.view.set_editable(True)
 
         # Reinsert what was deleted, and apply column mode
         self.block_signal(buf, 'insert-text')
@@ -866,7 +873,7 @@ class DocumentHelper(Signals):
     def on_delete_range(self, buf, start, end):
         if self._column_mode:
             # Ooooh, what a hack to be able to work with the undo manager
-            self._view.set_editable(False)
+            self.view.set_editable(False)
             mark = buf.create_mark(None, start, True)
             self._delete_mode_id = GObject.timeout_add(0, self.handle_column_mode_delete, mark)
         elif self._edit_points:
@@ -918,7 +925,7 @@ class DocumentHelper(Signals):
         buf.remove_tag(self._selection_tag, bounds[0], bounds[1])
 
         self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Cancelled column mode...'),)))
-        self._view.queue_draw()
+        self.view.queue_draw()
 
     def _column_text(self):
         if not self._column_mode:
@@ -951,7 +958,7 @@ class DocumentHelper(Signals):
                 # Draw from start_iter to end
                 if eoff < 0:
                     end_iter.backward_char()
-                    eoff = self._view.get_tab_width() + eoff
+                    eoff = self.view.get_tab_width() + eoff
 
                 lines.append(start_iter.get_text(end_iter) + (' ' * abs(eoff)))
             else:
@@ -967,7 +974,7 @@ class DocumentHelper(Signals):
 
         text = self._column_text()
 
-        clipboard = Gtk.Clipboard.get_for_display(self._view.get_display(), Gdk.SELECTION_CLIPBOARD)
+        clipboard = Gtk.Clipboard.get_for_display(self.view.get_display(), Gdk.SELECTION_CLIPBOARD)
         clipboard.set_text(text, -1)
 
         view.stop_emission('copy-clipboard')
@@ -978,7 +985,7 @@ class DocumentHelper(Signals):
 
         text = self._column_text()
 
-        clipboard = Gtk.Clipboard.get_for_display(self._view.get_display(), Gdk.SELECTION_CLIPBOARD)
+        clipboard = Gtk.Clipboard.get_for_display(self.view.get_display(), Gdk.SELECTION_CLIPBOARD)
         clipboard.set_text(text, -1)
 
         view.stop_emission('cut-clipboard')
@@ -1000,13 +1007,13 @@ class DocumentHelper(Signals):
 
         if len(lines) != (len(self._edit_points) + 1) or piter.compare(ins) != 0:
             # Actually, the buffer better handle it...
-            self.block_signal(self._view, 'paste-clipboard')
+            self.block_signal(self.view, 'paste-clipboard')
             buf.paste_clipboard(clipboard, piter, True)
-            self.unblock_signal(self._view, 'paste-clipboard')
+            self.unblock_signal(self.view, 'paste-clipboard')
         else:
             # Insert text at each of the edit points then
             self.block_signal(buf, 'insert-text')
-            self.block_signal(self._view, 'mark-set')
+            self.block_signal(self.view, 'mark-set')
 
             buf.begin_user_action()
 
@@ -1025,7 +1032,7 @@ class DocumentHelper(Signals):
             buf.end_user_action()
 
             self.unblock_signal(buf, 'insert-text')
-            self.unblock_signal(self._view, 'mark-set')
+            self.unblock_signal(self.view, 'mark-set')
 
         buf.delete_mark(self._paste_mark)
 
@@ -1033,7 +1040,7 @@ class DocumentHelper(Signals):
         if not self._edit_points:
             return
 
-        clipboard = Gtk.Clipboard.get_for_display(self._view.get_display(), Gdk.SELECTION_CLIPBOARD)
+        clipboard = Gtk.Clipboard.get_for_display(self.view.get_display(), Gdk.SELECTION_CLIPBOARD)
         self._paste_mark = self._buffer.create_mark(None, self._buffer.get_iter_at_mark(self._buffer.get_insert()), True)
 
         clipboard.request_text(self.on_clipboard_text, None)
@@ -1053,7 +1060,7 @@ class DocumentHelper(Signals):
         return piter
 
     def _move_edit_point_visual_positions(self, piter, count):
-        self._view.move_visually(piter, count)
+        self.view.move_visually(piter, count)
 
         return piter
 
@@ -1075,9 +1082,9 @@ class DocumentHelper(Signals):
 
         for i in range(cnt):
             if count > 0:
-                self._view.forward_display_line(piter)
+                self.view.forward_display_line(piter)
             else:
-                self._view.backward_display_line(piter)
+                self.view.backward_display_line(piter)
 
         piter, off = self.get_visible_iter(piter.get_line(), offset)
 
@@ -1087,8 +1094,8 @@ class DocumentHelper(Signals):
         last = piter.copy()
 
         if display_line:
-            self._view.forward_display_line_end(last)
-            self._view.backward_display_line_start(piter)
+            self.view.forward_display_line_end(last)
+            self.view.backward_display_line_start(piter)
         else:
             piter.set_line_offset(0)
 
@@ -1105,8 +1112,8 @@ class DocumentHelper(Signals):
         first = piter.copy()
 
         if display_line:
-            self._view.backward_display_line_start(first)
-            self._view.forward_display_line_end(piter)
+            self.view.backward_display_line_start(first)
+            self.view.forward_display_line_end(piter)
         else:
             if not piter.ends_line():
                 piter.forward_to_line_end()
@@ -1132,9 +1139,9 @@ class DocumentHelper(Signals):
 
     def _move_edit_point_display_line_ends(self, piter, count):
         if count > 0:
-            self._view.forward_display_line_end(piter)
+            self.view.forward_display_line_end(piter)
         else:
-            self._view.backward_display_line_start(piter)
+            self.view.backward_display_line_start(piter)
 
         return piter
 
@@ -1270,7 +1277,7 @@ class DocumentHelper(Signals):
         return True
 
     def get_border_color(self):
-        context = self._view.get_style_context()
+        context = self.view.get_style_context()
         color = context.get_background_color(Gtk.StateFlags.NORMAL).copy()
 
         color.red = 1 - color.red
@@ -1312,7 +1319,7 @@ class DocumentHelper(Signals):
         cr.rel_line_to(w, 0)
         cr.stroke()
 
-        context = self._view.get_style_context()
+        context = self.view.get_style_context()
         Gdk.cairo_set_source_rgba(cr, context.get_color(Gtk.StateFlags.NORMAL))
         cr.move_to(w - extents[1].width - 3, (h - extents[1].height) / 2)
         PangoCairo.show_layout(cr, layout)

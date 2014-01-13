@@ -34,6 +34,10 @@ class Signals:
     def connect_signal(self, obj, name, handler):
         return self._connect(obj, name, handler, obj.connect)
 
+    def connect_signals(self, obj, handlers):
+        for name in handlers:
+            self.connect_signal(obj, name, handlers[name])
+
     def connect_signal_after(self, obj, name, handler):
         return self._connect(obj, name, handler, obj.connect_after)
 
