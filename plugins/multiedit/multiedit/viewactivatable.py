@@ -764,7 +764,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
                 self._edit_points.remove(mark)
 
                 self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Removed edit point...'),)))
-                return
+                return True
 
         self._add_edit_point(piter)
         return True
