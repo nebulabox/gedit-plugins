@@ -82,10 +82,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         self._cancel_column_mode()
         self.reset_buffer(None)
 
-        self.view.multiedit_document_helper = None
-
         self.disconnect_signals(self.view)
-        self.view = None
 
         if self._status_timeout != 0:
             GObject.source_remove(self._status_timeout)
@@ -96,6 +93,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
             self._delete_mode_id = 0
 
         delattr(self.view, 'multiedit_view_activatable')
+        self.view = None
 
     def enabled(self):
         return self._in_mode
