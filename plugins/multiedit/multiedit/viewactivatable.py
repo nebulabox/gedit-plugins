@@ -100,17 +100,17 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
     def _update_selection_tag(self):
         context = self.view.get_style_context()
-        state = context.get_state()
+        context.save()
+        context.add_class('view')
+        state = context.get_state() | Gtk.StateFlags.SELECTED
 
         fg_rgba = context.get_color(state)
         bg_rgba = context.get_background_color(state)
 
-        # TODO: Use GdkRGBA directly when possible
-        fg = Gdk.Color(fg_rgba.red * 65535, fg_rgba.green * 65535, fg_rgba.blue * 65535)
-        bg = Gdk.Color(bg_rgba.red * 65535, bg_rgba.green * 65535, bg_rgba.blue * 65535)
+        context.restore()
 
-        self._selection_tag.props.foreground_gdk = fg
-        self._selection_tag.props.background_gdk = bg
+        self._selection_tag.props.foreground_rgba = fg_rgba
+        self._selection_tag.props.background_rgba = bg_rgba
 
     def reset_buffer(self, newbuf):
         if self._buffer:
@@ -665,7 +665,11 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         width = layout.get_pixel_extents()[1].width
 
         context = self.view.get_style_context()
+        context.save()
+        context.add_class('view')
         col = context.get_background_color(Gtk.StateFlags.SELECTED)
+        context.restore()
+
         Gdk.cairo_set_source_rgba(cr, col)
 
         cstart = self._column_mode[2]
