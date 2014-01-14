@@ -21,8 +21,9 @@ plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in
 plugins/git/git.plugin.desktop.in.in
 plugins/joinlines/joinlines.plugin.desktop.in.in
 plugins/joinlines/joinlines.py
-plugins/multiedit/multiedit/documenthelper.py
 plugins/multiedit/multiedit/__init__.py
+plugins/multiedit/multiedit/viewactivatable.py
+plugins/multiedit/multiedit/windowactivatable.py
 plugins/multiedit/multiedit.plugin.desktop.in.in
 plugins/smartspaces/smartspaces.plugin.desktop.in.in
 plugins/synctex/synctex.plugin.desktop.in.in
