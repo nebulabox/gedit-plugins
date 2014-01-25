@@ -13,14 +13,16 @@
 # du baodao <centerpoint@139.com>, 2010.
 # Wylmer Wang <wantinghard@gmail.com>, 2010, 2013.
 # Aron Xu <aronxu@gnome.org>, 2010.
+# YunQiang Su <wzssyqa@gmail.com>, 2014.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-07-01 18:35+0000\n"
-"PO-Revision-Date: 2013-07-07 21:35+0800\n"
-"Last-Translator: 甘露(Lu Gan) <rhythm.gan@gmail.com>\n"
+"POT-Creation-Date: 2014-01-02 16:48+0000\n"
+"PO-Revision-Date: 2014-01-25 10:54+0800\n"
+"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +82,7 @@ msgid "Insert special characters just by clicking on them."
 msgstr "只需单击即可插入特殊字符。"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-msgid "Code comment"
+msgid "Code Comment"
 msgstr "代码注释"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:2
@@ -229,7 +231,7 @@ msgid "Draw Spaces"
 msgstr "绘制空白字符"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-msgid "Draw Spaces and Tabs"
+msgid "Draw spaces and tabs"
 msgstr "绘制空格和制表符"
 
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
@@ -280,6 +282,14 @@ msgstr "如果为 TRUE 将启用绘制。"
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "要绘制的空白类型。"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Git"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Git differences"
+msgstr "Git 差异"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -571,11 +581,11 @@ msgstr "嵌入终端"
 msgid "Embed a terminal in the bottom pane."
 msgstr "在底部面板中嵌入一个终端。"
 
-#: ../plugins/terminal/terminal.py:291
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "终端"
 
-#: ../plugins/terminal/terminal.py:312
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "切换目录(_H)"
 
@@ -600,10 +610,33 @@ msgstr "文本大小"
 msgid "Easily increase and decrease the text size"
 msgstr "方便地增大或减小文本"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+msgid "Interactive completion"
+msgstr "交互式补全"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "最小单词长度："
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "文档中的词"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+msgid "Interactive Completion"
+msgstr "交互式补全"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "是否启用交互式补全。"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "最小单词长度"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "要补全的最小单词长度。"
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
@@ -612,6 +645,9 @@ msgstr "单词补全"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "使用补全框架的单词补全"
+
+#~ msgid "Highlight lines that have been changed since the last commit"
+#~ msgstr "高亮最后一次提交后修改的行"
 
 #~ msgid "_Insert"
 #~ msgstr "插入(_I)"
