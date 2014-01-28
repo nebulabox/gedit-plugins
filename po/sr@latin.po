@@ -5,14 +5,14 @@
 # Danilo Šegan <danilo@prevod.org>, 2005.
 # Reviewed on 2005-09-03 by: Igor Nestorović <igor@prevod.org>
 # Translated on 2010-03-07 by: Branko Kokanović <branko.kokanovic@gmail.com>
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011, 2012, 2013.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&"
 "keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-08-02 13:25+0000\n"
-"PO-Revision-Date: 2013-09-08 08:14+0200\n"
+"POT-Creation-Date: 2014-01-10 20:19+0000\n"
+"PO-Revision-Date: 2014-01-27 21:54+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -31,29 +31,17 @@ msgstr "Obeleživači"
 msgid "Easy document navigation with bookmarks"
 msgstr "Lako pretraživanje dokumenta sa obeleživačima"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:201
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:229
 msgid "Toggle Bookmark"
 msgstr "Uključi obeleživač"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:202
-msgid "Toggle bookmark status of the current line"
-msgstr "Menja stanje obeleživača u trenutnom redu"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:204
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:233
 msgid "Goto Next Bookmark"
 msgstr "Idi na sledeći obeleživač"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:205
-msgid "Goto the next bookmark"
-msgstr "Idite na sledeći obeleživač"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:207
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:237
 msgid "Goto Previous Bookmark"
 msgstr "Idi na prethodni obeleživač"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:208
-msgid "Goto the previous bookmark"
-msgstr "Idite na prethodni obeleživač"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
 msgid "Bracket Completion"
@@ -81,21 +69,13 @@ msgstr "Kodna primedba"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Dodajte ili poništite primedbu kodnog bloka."
 
-#: ../plugins/codecomment/codecomment.py:88
-msgid "Co_mment Code"
-msgstr "Dodaj kodnu pri_medbu"
-
-#: ../plugins/codecomment/codecomment.py:90
-msgid "Comment the selected code"
-msgstr "Dodajte primedbu izabranom kodu"
-
-#: ../plugins/codecomment/codecomment.py:94
+#: ../plugins/codecomment/codecomment.py:93
 msgid "U_ncomment Code"
 msgstr "Po_ništi kodnu primedbu"
 
 #: ../plugins/codecomment/codecomment.py:96
-msgid "Uncomment the selected code"
-msgstr "Poništite primedbu izabranom kodu"
+msgid "Co_mment Code"
+msgstr "Dodaj kodnu pri_medbu"
 
 #. ex:ts=4:et:
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
@@ -107,15 +87,11 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Izaberite boju iz prozorčeta i ubacite njeno heksadecimalno predstavljanje."
 
-#: ../plugins/colorpicker/colorpicker.py:161
+#: ../plugins/colorpicker/colorpicker.py:163
 msgid "Pick _Color..."
 msgstr "Izaberi _boju..."
 
-#: ../plugins/colorpicker/colorpicker.py:162
-msgid "Pick a color from a dialog"
-msgstr "Izaberite boju iz prozorčeta"
-
-#: ../plugins/colorpicker/colorpicker.py:178
+#: ../plugins/colorpicker/colorpicker.py:173
 msgid "Pick Color"
 msgstr "Izaberite boju"
 
@@ -193,13 +169,9 @@ msgstr "Komandir"
 msgid "Command line interface for advanced editing"
 msgstr "Sučelje linije naredbi za naprednije uređivanje"
 
-#: ../plugins/commander/commander/windowactivatable.py:70
+#: ../plugins/commander/commander/windowactivatable.py:59
 msgid "Commander Mode"
 msgstr "Režim komandira"
-
-#: ../plugins/commander/commander/windowactivatable.py:71
-msgid "Start commander mode"
-msgstr "Pokrenite režim komandira"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
@@ -227,13 +199,10 @@ msgstr "Iscrtavač razmaka"
 msgid "Draw spaces and tabs"
 msgstr "Iscrtava razmake i tabulatore"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:264
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Prikaži pra_zan razmak"
-
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:135
-msgid "Show spaces and tabs"
-msgstr "Prikaži razmake i tabulatore"
 
 #. ex:set ts=8 noet:
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
@@ -264,10 +233,6 @@ msgstr "Iscrtaj razmake u tekstu"
 msgid "Draw trailing spaces"
 msgstr "Iscrtaj završne razmake"
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
-msgid "Enabled"
-msgstr "Uključeno"
-
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Ukoliko je izabrano iscrtavanje će biti uključeno."
@@ -281,8 +246,8 @@ msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Razlike gita"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Istaknite redove koji su izmenjeni nakon poslednje predaje"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -292,21 +257,13 @@ msgstr "Spoji/Podeli redove"
 msgid "Join several lines or split long ones"
 msgstr "Spojite nekoliko redova ili podelite one preduge"
 
-#: ../plugins/joinlines/joinlines.py:74
-msgid "_Join Lines"
-msgstr "Spo_j redove"
-
-#: ../plugins/joinlines/joinlines.py:75
-msgid "Join the selected lines"
-msgstr "Objedinite izabrane redove"
-
-#: ../plugins/joinlines/joinlines.py:77
+#: ../plugins/joinlines/joinlines.py:82
 msgid "_Split Lines"
 msgstr "_Podeli redove"
 
-#: ../plugins/joinlines/joinlines.py:78
-msgid "Split the selected lines"
-msgstr "Podelite izabrane redove"
+#: ../plugins/joinlines/joinlines.py:85
+msgid "_Join Lines"
+msgstr "Spo_j redove"
 
 #: ../plugins/multiedit/multiedit/documenthelper.py:301
 msgid "Added edit point..."
@@ -362,13 +319,9 @@ msgid "Align edit points with additional space"
 msgstr "Poravnajte tačke uređivanja dodatnim prostorom"
 
 #: ../plugins/multiedit/multiedit/documenthelper.py:1333
-#: ../plugins/multiedit/multiedit/__init__.py:79
+#: ../plugins/multiedit/multiedit/__init__.py:81
 msgid "Multi Edit Mode"
 msgstr "Režim višemesnog uređivanja"
-
-#: ../plugins/multiedit/multiedit/__init__.py:81
-msgid "Start multi edit mode"
-msgstr "Pokrenite režim višemesnog uređivanja"
 
 #. ex:ts=4:et:
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:1
@@ -587,26 +540,26 @@ msgstr "Ugnježdeni terminal"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Ugradi terminal u donji panel."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminal"
 
 # hm, hm?
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "_Promeni direktorijum"
 
-#: ../plugins/textsize/textsize/__init__.py:142
-msgid "_Larger Text"
-msgstr "_Veliki tekst"
+#: ../plugins/textsize/textsize/__init__.py:96
+msgid "_Normal size"
+msgstr "_Uobičajena veličina"
 
-#: ../plugins/textsize/textsize/__init__.py:145
+#: ../plugins/textsize/textsize/__init__.py:99
 msgid "S_maller Text"
 msgstr "_Manji tekst"
 
-#: ../plugins/textsize/textsize/__init__.py:148
-msgid "_Normal size"
-msgstr "_Uobičajena veličina"
+#: ../plugins/textsize/textsize/__init__.py:102
+msgid "_Larger Text"
+msgstr "_Veliki tekst"
 
 #. ex:ts=4:et:
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:1
@@ -618,7 +571,6 @@ msgid "Easily increase and decrease the text size"
 msgstr "Lako povećajte i smanjite veličinu teksta"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive completion"
 msgstr "Međudejstveno dovršavanje"
 
@@ -631,7 +583,6 @@ msgid "Document Words"
 msgstr "Reči dokumenta"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive Completion"
 msgstr "Međudejstveno dovršavanje"
 

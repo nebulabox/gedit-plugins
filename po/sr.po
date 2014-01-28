@@ -5,14 +5,14 @@
 # Данило Шеган <danilo@prevod.org>, 2005.
 # Reviewed on 2005-09-03 by: Игор Несторовић <igor@prevod.org>
 # Translated on 2010-03-07 by: Бранко Кокановић <branko.kokanovic@gmail.com>
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011, 2012, 2013.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&"
 "keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-08-02 13:25+0000\n"
-"PO-Revision-Date: 2013-09-08 08:14+0200\n"
+"POT-Creation-Date: 2014-01-10 20:19+0000\n"
+"PO-Revision-Date: 2014-01-27 21:54+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -31,29 +31,17 @@ msgstr "Обележивачи"
 msgid "Easy document navigation with bookmarks"
 msgstr "Лако претраживање документа са обележивачима"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:201
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:229
 msgid "Toggle Bookmark"
 msgstr "Укључи обележивач"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:202
-msgid "Toggle bookmark status of the current line"
-msgstr "Мења стање обележивача у тренутном реду"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:204
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:233
 msgid "Goto Next Bookmark"
 msgstr "Иди на следећи обележивач"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:205
-msgid "Goto the next bookmark"
-msgstr "Идите на следећи обележивач"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:207
+#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:237
 msgid "Goto Previous Bookmark"
 msgstr "Иди на претходни обележивач"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:208
-msgid "Goto the previous bookmark"
-msgstr "Идите на претходни обележивач"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
 msgid "Bracket Completion"
@@ -81,21 +69,13 @@ msgstr "Кодна примедба"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Додајте или поништите примедбу кодног блока."
 
-#: ../plugins/codecomment/codecomment.py:88
-msgid "Co_mment Code"
-msgstr "Додај кодну при_медбу"
-
-#: ../plugins/codecomment/codecomment.py:90
-msgid "Comment the selected code"
-msgstr "Додајте примедбу изабраном коду"
-
-#: ../plugins/codecomment/codecomment.py:94
+#: ../plugins/codecomment/codecomment.py:93
 msgid "U_ncomment Code"
 msgstr "По_ништи кодну примедбу"
 
 #: ../plugins/codecomment/codecomment.py:96
-msgid "Uncomment the selected code"
-msgstr "Поништите примедбу изабраном коду"
+msgid "Co_mment Code"
+msgstr "Додај кодну при_медбу"
 
 #. ex:ts=4:et:
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
@@ -107,15 +87,11 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Изаберите боју из прозорчета и убаците њено хексадецимално представљање."
 
-#: ../plugins/colorpicker/colorpicker.py:161
+#: ../plugins/colorpicker/colorpicker.py:163
 msgid "Pick _Color..."
 msgstr "Изабери _боју..."
 
-#: ../plugins/colorpicker/colorpicker.py:162
-msgid "Pick a color from a dialog"
-msgstr "Изаберите боју из прозорчета"
-
-#: ../plugins/colorpicker/colorpicker.py:178
+#: ../plugins/colorpicker/colorpicker.py:173
 msgid "Pick Color"
 msgstr "Изаберите боју"
 
@@ -193,13 +169,9 @@ msgstr "Командир"
 msgid "Command line interface for advanced editing"
 msgstr "Сучеље линије наредби за напредније уређивање"
 
-#: ../plugins/commander/commander/windowactivatable.py:70
+#: ../plugins/commander/commander/windowactivatable.py:59
 msgid "Commander Mode"
 msgstr "Режим командира"
-
-#: ../plugins/commander/commander/windowactivatable.py:71
-msgid "Start commander mode"
-msgstr "Покрените режим командира"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
@@ -227,13 +199,10 @@ msgstr "Исцртавач размака"
 msgid "Draw spaces and tabs"
 msgstr "Исцртава размаке и табулаторе"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:264
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Прикажи пра_зан размак"
-
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:135
-msgid "Show spaces and tabs"
-msgstr "Прикажи размаке и табулаторе"
 
 #. ex:set ts=8 noet:
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
@@ -264,10 +233,6 @@ msgstr "Исцртај размаке у тексту"
 msgid "Draw trailing spaces"
 msgstr "Исцртај завршне размаке"
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
-msgid "Enabled"
-msgstr "Укључено"
-
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Уколико је изабрано исцртавање ће бити укључено."
@@ -281,8 +246,8 @@ msgid "Git"
 msgstr "Гит"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Разлике гита"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Истакните редове који су измењени након последње предаје"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -292,21 +257,13 @@ msgstr "Споји/Подели редове"
 msgid "Join several lines or split long ones"
 msgstr "Спојите неколико редова или поделите оне предуге"
 
-#: ../plugins/joinlines/joinlines.py:74
-msgid "_Join Lines"
-msgstr "Спо_ј редове"
-
-#: ../plugins/joinlines/joinlines.py:75
-msgid "Join the selected lines"
-msgstr "Обједините изабране редове"
-
-#: ../plugins/joinlines/joinlines.py:77
+#: ../plugins/joinlines/joinlines.py:82
 msgid "_Split Lines"
 msgstr "_Подели редове"
 
-#: ../plugins/joinlines/joinlines.py:78
-msgid "Split the selected lines"
-msgstr "Поделите изабране редове"
+#: ../plugins/joinlines/joinlines.py:85
+msgid "_Join Lines"
+msgstr "Спо_ј редове"
 
 #: ../plugins/multiedit/multiedit/documenthelper.py:301
 msgid "Added edit point..."
@@ -362,13 +319,9 @@ msgid "Align edit points with additional space"
 msgstr "Поравнајте тачке уређивања додатним простором"
 
 #: ../plugins/multiedit/multiedit/documenthelper.py:1333
-#: ../plugins/multiedit/multiedit/__init__.py:79
+#: ../plugins/multiedit/multiedit/__init__.py:81
 msgid "Multi Edit Mode"
 msgstr "Режим вишемесног уређивања"
-
-#: ../plugins/multiedit/multiedit/__init__.py:81
-msgid "Start multi edit mode"
-msgstr "Покрените режим вишемесног уређивања"
 
 #. ex:ts=4:et:
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:1
@@ -587,26 +540,26 @@ msgstr "Угњеждени терминал"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Угради терминал у доњи панел."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Терминал"
 
 # хм, хм?
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "_Промени директоријум"
 
-#: ../plugins/textsize/textsize/__init__.py:142
-msgid "_Larger Text"
-msgstr "_Велики текст"
+#: ../plugins/textsize/textsize/__init__.py:96
+msgid "_Normal size"
+msgstr "_Уобичајена величина"
 
-#: ../plugins/textsize/textsize/__init__.py:145
+#: ../plugins/textsize/textsize/__init__.py:99
 msgid "S_maller Text"
 msgstr "_Мањи текст"
 
-#: ../plugins/textsize/textsize/__init__.py:148
-msgid "_Normal size"
-msgstr "_Уобичајена величина"
+#: ../plugins/textsize/textsize/__init__.py:102
+msgid "_Larger Text"
+msgstr "_Велики текст"
 
 #. ex:ts=4:et:
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:1
@@ -618,7 +571,6 @@ msgid "Easily increase and decrease the text size"
 msgstr "Лако повећајте и смањите величину текста"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive completion"
 msgstr "Међудејствено довршавање"
 
@@ -631,7 +583,6 @@ msgid "Document Words"
 msgstr "Речи документа"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive Completion"
 msgstr "Међудејствено довршавање"
 
