@@ -36,7 +36,7 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
     action.connect('activate', self.open_dialog)
     self.window.add_action(action)
 
-    self.menu = self.extend_gear_menu("ext9")
+    self.menu = self.extend_menu("ext9")
     item = Gio.MenuItem.new(_("Color Scheme Editor"), "win.schemer")
     self.menu.append_menu_item(item)
 

@@ -55,7 +55,7 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         action.connect('change-state', self.commander_mode)
         self.window.add_action(action)
 
-        self.menu = self.extend_gear_menu("ext9")
+        self.menu = self.extend_menu("ext9")
         item = Gio.MenuItem.new(_('Commander Mode'), "win.commander")
         self.menu.append_menu_item(item)
 

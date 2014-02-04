@@ -224,7 +224,7 @@ install_menu (GeditBookmarksPlugin *plugin)
 	g_action_map_add_action (G_ACTION_MAP (priv->window),
 	                         G_ACTION (priv->action_prev));
 
-	priv->menu = gedit_window_activatable_extend_gear_menu (GEDIT_WINDOW_ACTIVATABLE (plugin),
+	priv->menu = gedit_window_activatable_extend_menu (GEDIT_WINDOW_ACTIVATABLE (plugin),
 	                                                        "ext3");
 	item = g_menu_item_new (_("Toggle Bookmark"), "win.bookmark-toggle");
 	gedit_menu_extension_append_menu_item (priv->menu, item);
