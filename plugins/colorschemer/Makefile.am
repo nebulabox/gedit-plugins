@@ -1,5 +1,5 @@
 if ENABLE_PYTHON
-plugins_schemerdir = $(plugindir)/schemer
+plugins_schemerdir = $(plugindir)/colorschemer
 plugins_schemer_PYTHON =				\
 	plugins/colorschemer/schemer/__init__.py	\
 	plugins/colorschemer/schemer/languages.py	\
