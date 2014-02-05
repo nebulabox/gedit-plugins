@@ -44,18 +44,16 @@ class CharmapPlugin(GObject.Object, Gedit.WindowActivatable):
         self.system_settings = Gio.Settings.new("org.gnome.desktop.interface")
         self.system_settings.connect("changed::monospace-font-name", self.font_changed)
 
-        panel = self.window.get_side_panel()
-        image = Gtk.Image.new_from_icon_name("accessories-character-map-symbolic", Gtk.IconSize.MENU)
-
         self.create_charmap_panel()
-        panel.add_item(self.panel, "GeditCharmapPanel", _("Character Map"), image)
+        panel = self.window.get_side_panel()
+        panel.add_titled(self.panel, "GeditCharmapPanel", _("Character Map"))
 
         statusbar = self.window.get_statusbar()
         self.context_id = statusbar.get_context_id("Character Description")
 
     def do_deactivate(self):
         panel = self.window.get_side_panel()
-        panel.remove_item(self.panel)
+        panel.remove(self.panel)
 
     def do_update_state(self):
         self.panel.set_sensitive(len(self.window.get_documents()) >= 1)

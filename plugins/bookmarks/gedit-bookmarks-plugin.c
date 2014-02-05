@@ -118,7 +118,6 @@ struct _GeditBookmarksPluginPrivate
 	GSimpleAction *action_toggle;
 	GSimpleAction *action_next;
 	GSimpleAction *action_prev;
-	GeditMenuExtension *menu;
 };
 
 enum
@@ -146,7 +145,6 @@ gedit_bookmarks_plugin_dispose (GObject *object)
 	g_clear_object (&priv->action_toggle);
 	g_clear_object (&priv->action_next);
 	g_clear_object (&priv->action_prev);
-	g_clear_object (&priv->menu);
 	g_clear_object (&priv->window);
 
 	G_OBJECT_CLASS (gedit_bookmarks_plugin_parent_class)->dispose (object);
@@ -199,10 +197,9 @@ free_insert_data (InsertData *data)
 }
 
 static void
-install_menu (GeditBookmarksPlugin *plugin)
+install_actions (GeditBookmarksPlugin *plugin)
 {
 	GeditBookmarksPluginPrivate *priv;
-	GMenuItem *item;
 
 	priv = plugin->priv;
 
@@ -223,24 +220,10 @@ install_menu (GeditBookmarksPlugin *plugin)
 	                  G_CALLBACK (on_previous_bookmark_activate), plugin);
 	g_action_map_add_action (G_ACTION_MAP (priv->window),
 	                         G_ACTION (priv->action_prev));
-
-	priv->menu = gedit_window_activatable_extend_menu (GEDIT_WINDOW_ACTIVATABLE (plugin),
-	                                                        "ext3");
-	item = g_menu_item_new (_("Toggle Bookmark"), "win.bookmark-toggle");
-	gedit_menu_extension_append_menu_item (priv->menu, item);
-	g_object_unref (item);
-
-	item = g_menu_item_new (_("Goto Next Bookmark"), "win.bookmark-next");
-	gedit_menu_extension_append_menu_item (priv->menu, item);
-	g_object_unref (item);
-
-	item = g_menu_item_new (_("Goto Previous Bookmark"), "win.bookmark-prev");
-	gedit_menu_extension_append_menu_item (priv->menu, item);
-	g_object_unref (item);
 }
 
 static void
-uninstall_menu (GeditBookmarksPlugin *plugin)
+uninstall_actions (GeditBookmarksPlugin *plugin)
 {
 	GeditBookmarksPluginPrivate *priv;
 
@@ -756,7 +739,7 @@ gedit_bookmarks_plugin_activate (GeditWindowActivatable *activatable)
 	g_signal_connect (priv->window, "tab-removed",
 			  G_CALLBACK (on_tab_removed), activatable);
 
-	install_menu (GEDIT_BOOKMARKS_PLUGIN (activatable));
+	install_actions (GEDIT_BOOKMARKS_PLUGIN (activatable));
 	install_messages (priv->window);
 }
 
@@ -834,7 +817,7 @@ gedit_bookmarks_plugin_deactivate (GeditWindowActivatable *activatable)
 
 	priv = GEDIT_BOOKMARKS_PLUGIN (activatable)->priv;
 
-	uninstall_menu (GEDIT_BOOKMARKS_PLUGIN (activatable));
+	uninstall_actions (GEDIT_BOOKMARKS_PLUGIN (activatable));
 	uninstall_messages (priv->window);
 
 	views = gedit_window_get_views (priv->window);

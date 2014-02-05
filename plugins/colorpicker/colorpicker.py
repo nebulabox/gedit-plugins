@@ -31,18 +31,6 @@ try:
 except:
     _ = lambda s: s
 
-ui_str = """
-<ui>
-  <menubar name="MenuBar">
-    <menu name="ToolsMenu" action="Tools">
-      <placeholder name="ToolsOps_2">
-        <menuitem name="ColorPicker" action="ColorPicker"/>
-      </placeholder>
-    </menu>
-  </menubar>
-</ui>
-"""
-
 class ColorHelper:
 
     def scale_color_component(self, component):
@@ -127,6 +115,23 @@ class ColorHelper:
         else:
             return None
 
+
+class ColorPickerAppActivatable(GObject.Object, Gedit.AppActivatable):
+
+    app = GObject.property(type=Gedit.App)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
+ 
+    def do_activate(self):
+        self.menu_ext = self.extend_menu("ext9")
+        item = Gio.MenuItem.new(_("Pick _Color..."), "win.colorpicker")
+        self.menu_ext.prepend_menu_item(item)
+
+    def do_deactivate(self):
+        self.menu_ext = None
+
+
 class ColorPickerWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     window = GObject.property(type=Gedit.Window)
@@ -137,11 +142,13 @@ class ColorPickerWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self._color_helper = ColorHelper()
 
     def do_activate(self):
-        self._insert_menu()
+        action = Gio.SimpleAction(name="colorpicker")
+        action.connect('activate', lambda a, p: self.on_color_picker_activate())
+        self.window.add_action(action)
         self._update()
 
     def do_deactivate(self):
-        self._remove_menu()
+        self.window.remove_action("colorpicker")
 
     def do_update_state(self):
         self._update()
@@ -154,24 +161,11 @@ class ColorPickerWindowActivatable(GObject.Object, Gedit.WindowActivatable):
                 self._dialog.get_transient_for() == self.window:
             self._dialog.response(Gtk.ResponseType.CLOSE)
 
-    def _insert_menu(self):
-        action = Gio.SimpleAction(name="colorpicker")
-        action.connect('activate', lambda a, p: self.on_color_picker_activate())
-        self.window.add_action(action)
-
-        self.menu = self.extend_menu("ext9")
-        item = Gio.MenuItem.new(_("Pick _Color..."), "win.colorpicker")
-        self.menu.prepend_menu_item(item)
-
-    def _remove_menu(self):
-        self.window.remove_action("colorpicker")
-
     # Signal handlers
 
     def on_color_picker_activate(self):
         if not self._dialog:
             self._dialog = Gtk.ColorChooserDialog.new(_('Pick Color'), self.window)
-
             self._dialog.connect_after('response', self.on_dialog_response)
 
         rgba_str = self._color_helper.get_current_color(self.window.get_active_document(), False)

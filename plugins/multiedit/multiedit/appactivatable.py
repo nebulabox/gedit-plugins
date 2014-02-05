@@ -19,8 +19,25 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from .appactivatable import MultiEditAppActivatable
-from .viewactivatable import MultiEditViewActivatable
-from .windowactivatable import MultiEditWindowActivatable
+from gi.repository import GObject, Gedit
+
+
+class MultiEditAppActivatable(GObject.Object, Gedit.AppActivatable):
+
+    app = GObject.property(type=Gedit.App)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+    def do_activate(self):
+        self.app.add_accelerator("<Primary><Shift>C", "win.multiedit", None)
+
+        self.menu_ext = self.extend_menu("ext9")
+        item = Gio.MenuItem.new(_('Multi Edit Mode'), "win.multiedit")
+        self.menu_ext.append_menu_item(item)
+
+    def do_deactivate(self):
+        self.app.remove_accelerator("win.multiedit", None)
+        self.menu_ext = None
 
 # ex:ts=4:et:

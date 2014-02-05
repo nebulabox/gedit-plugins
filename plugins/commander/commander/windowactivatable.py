@@ -41,26 +41,16 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self._entry = None
         self._view = None
 
-        self.install_ui()
-
-    def do_deactivate(self):
-        self.uninstall_ui()
-
-    def do_update_state(self):
-        pass
-
-    def install_ui(self):
         action = Gio.SimpleAction.new_stateful("commander", None, GLib.Variant.new_boolean(False))
         action.connect('activate', self.activate_toggle)
         action.connect('change-state', self.commander_mode)
         self.window.add_action(action)
 
-        self.menu = self.extend_menu("ext9")
-        item = Gio.MenuItem.new(_('Commander Mode'), "win.commander")
-        self.menu.append_menu_item(item)
-
-    def uninstall_ui(self):
+    def do_deactivate(self):
         self.window.remove_action("commander")
+
+    def do_update_state(self):
+        pass
 
     def activate_toggle(self, action, parameter):
         state = action.get_state()

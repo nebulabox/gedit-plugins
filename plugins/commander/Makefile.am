@@ -8,6 +8,7 @@ plugins_commander_PYTHON =					\
 	plugins/commander/commander/modules.py			\
 	plugins/commander/commander/transparentwindow.py	\
 	plugins/commander/commander/utils.py			\
+	plugins/commander/commander/appactivatable.py		\
 	plugins/commander/commander/windowactivatable.py
 
 plugins_commander_commandsdir = $(plugindir)/commander/commands

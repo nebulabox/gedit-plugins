@@ -46,10 +46,20 @@ class TextSizeAppActivatable(GObject.Object, Gedit.AppActivatable):
         self.app.set_accels_for_action("win.text-smaller", ["<Primary>minus", "<Primary>KP_Subtract"])
         self.app.set_accels_for_action("win.text-normal", ["<Primary>0", "<Primary>KP_0"])
 
+        self.menu_ext = self.extend_menu("ext9")
+        item = Gio.MenuItem.new(_("_Normal size"), "win.text-normal")
+        self.menu_ext.prepend_menu_item(item)
+        item = Gio.MenuItem.new(_("S_maller Text"), "win.text-smaller")
+        self.menu_ext.prepend_menu_item(item)
+        item = Gio.MenuItem.new(_("_Larger Text"), "win.text-larger")
+        self.menu_ext.prepend_menu_item(item)
+
     def do_deactivate(self):
         self.app.set_accels_for_action("win.text-larger", [])
         self.app.set_accels_for_action("win.text-smaller", [])
         self.app.set_accels_for_action("win.text-normal", [])
+        self.menu_ext = None
+
 
 class TextSizeWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
@@ -59,12 +69,6 @@ class TextSizeWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         GObject.Object.__init__(self)
 
     def do_activate(self):
-        self._insert_menu()
-
-    def do_deactivate(self):
-        self._remove_menu()
-
-    def _insert_menu(self):
         action = Gio.SimpleAction(name="text-larger")
         action.connect('activate', self.on_larger_text_activate)
         self.window.add_action(action)
@@ -77,18 +81,7 @@ class TextSizeWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         action.connect('activate', self.on_normal_size_activate)
         self.window.add_action(action)
 
-        self.menu = self.extend_menu("ext9")
-
-        item = Gio.MenuItem.new(_("_Normal size"), "win.text-normal")
-        self.menu.prepend_menu_item(item)
-
-        item = Gio.MenuItem.new(_("S_maller Text"), "win.text-smaller")
-        self.menu.prepend_menu_item(item)
-
-        item = Gio.MenuItem.new(_("_Larger Text"), "win.text-larger")
-        self.menu.prepend_menu_item(item)
-
-    def _remove_menu(self):
+    def do_deactivate(self):
         self.window.remove_action("text-larger")
         self.window.remove_action("text-smaller")
         self.window.remove_action("text-normal")

@@ -26,6 +26,8 @@
 #include <gedit/gedit-debug.h>
 #include <gedit/gedit-view.h>
 #include <gedit/gedit-tab.h>
+#include <gedit/gedit-app.h>
+#include <gedit/gedit-app-activatable.h>
 #include <gedit/gedit-window.h>
 #include <gedit/gedit-window-activatable.h>
 #include <gedit/gedit-utils.h>
@@ -42,6 +44,7 @@
 				GEDIT_TYPE_DRAWSPACES_PLUGIN,		\
 				GeditDrawspacesPluginPrivate))
 
+static void gedit_app_activatable_iface_init (GeditAppActivatableInterface *iface);
 static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
 static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
 
@@ -49,6 +52,8 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesPlugin,
 				gedit_drawspaces_plugin,
 				PEAS_TYPE_EXTENSION_BASE,
 				0,
+				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_APP_ACTIVATABLE,
+							       gedit_app_activatable_iface_init)
 				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
 							       gedit_window_activatable_iface_init)
 				G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
@@ -56,13 +61,12 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesPlugin,
 
 struct _GeditDrawspacesPluginPrivate
 {
+	GeditApp *app;
+	GeditMenuExtension *menu_ext;
+
 	GSettings *settings;
-
 	GeditWindow *window;
-
 	GtkSourceDrawSpacesFlags flags;
-
-	GeditMenuExtension *menu;
 
 	guint enable : 1;
 };
@@ -94,6 +98,7 @@ enum
 enum
 {
 	PROP_0,
+	PROP_APP,
 	PROP_WINDOW
 };
 
@@ -147,8 +152,9 @@ gedit_drawspaces_plugin_dispose (GObject *object)
 
 	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesPlugin disposing");
 
+	g_clear_object (&plugin->priv->app);
+	g_clear_object (&plugin->priv->menu_ext);
 	g_clear_object (&priv->settings);
-	g_clear_object (&priv->menu);
 	g_clear_object (&priv->window);
 
 	G_OBJECT_CLASS (gedit_drawspaces_plugin_parent_class)->dispose (object);
@@ -164,10 +170,12 @@ gedit_drawspaces_plugin_set_property (GObject      *object,
 
 	switch (prop_id)
 	{
+		case PROP_APP:
+			plugin->priv->app = GEDIT_APP (g_value_dup_object (value));
+			break;
 		case PROP_WINDOW:
 			plugin->priv->window = GEDIT_WINDOW (g_value_dup_object (value));
 			break;
-
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 			break;
@@ -184,10 +192,12 @@ gedit_drawspaces_plugin_get_property (GObject    *object,
 
 	switch (prop_id)
 	{
+		case PROP_APP:
+			g_value_set_object (value, plugin->priv->app);
+			break;
 		case PROP_WINDOW:
 			g_value_set_object (value, plugin->priv->window);
 			break;
-
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 			break;
@@ -241,7 +251,38 @@ get_config_options (GeditDrawspacesPlugin *plugin)
 }
 
 static void
-gedit_drawspaces_plugin_activate (GeditWindowActivatable *activatable)
+gedit_drawspaces_plugin_app_activate (GeditAppActivatable *activatable)
+{
+	GeditDrawspacesPluginPrivate *priv;
+	GMenuItem *item;
+	GAction *action;
+
+	gedit_debug (DEBUG_PLUGINS);
+
+	priv = GEDIT_DRAWSPACES_PLUGIN (activatable)->priv;
+
+	priv->menu_ext = gedit_app_activatable_extend_menu (activatable,
+	                                                    "ext5");
+	item = g_menu_item_new (_("Show _White Space"), "win.show-white-space");
+	gedit_menu_extension_append_menu_item (priv->menu_ext, item);
+	g_object_unref (item);
+}
+
+static void
+gedit_drawspaces_plugin_app_deactivate (GeditAppActivatable *activatable)
+{
+	GeditDrawspacesPluginPrivate *priv;
+	GtkUIManager *manager;
+
+	gedit_debug (DEBUG_PLUGINS);
+
+	priv = GEDIT_DRAWSPACES_PLUGIN (activatable)->priv;
+
+	g_clear_object (&priv->menu_ext);
+}
+
+static void
+gedit_drawspaces_plugin_window_activate (GeditWindowActivatable *activatable)
 {
 	GeditDrawspacesPluginPrivate *priv;
 	GMenuItem *item;
@@ -259,12 +300,6 @@ gedit_drawspaces_plugin_activate (GeditWindowActivatable *activatable)
 	                         action);
 	g_object_unref (action);
 
-	priv->menu = gedit_window_activatable_extend_menu (activatable,
-	                                                        "ext5");
-	item = g_menu_item_new (_("Show _White Space"), "win.show-white-space");
-	gedit_menu_extension_append_menu_item (priv->menu, item);
-	g_object_unref (item);
-
 	if (priv->enable)
 	{
 		draw_spaces (GEDIT_DRAWSPACES_PLUGIN (activatable));
@@ -275,7 +310,7 @@ gedit_drawspaces_plugin_activate (GeditWindowActivatable *activatable)
 }
 
 static void
-gedit_drawspaces_plugin_deactivate (GeditWindowActivatable *activatable)
+gedit_drawspaces_plugin_window_deactivate (GeditWindowActivatable *activatable)
 {
 	GeditDrawspacesPluginPrivate *priv;
 	GtkUIManager *manager;
@@ -305,129 +340,61 @@ widget_destroyed (GtkWidget *obj, gpointer widget_pointer)
 }
 
 static void
-on_draw_tabs_toggled (GtkToggleButton           *button,
-		      DrawspacesConfigureWidget *widget)
+set_flag (DrawspacesConfigureWidget *widget, GtkSourceDrawSpacesFlags flag, gboolean active)
 {
-	if (gtk_toggle_button_get_active (button))
-	{
-		widget->flags |= GTK_SOURCE_DRAW_SPACES_TAB;
-	}
-	else
-	{
-		widget->flags &= ~GTK_SOURCE_DRAW_SPACES_TAB;
-	}
-
+	widget->flags = active ? widget->flags | flag : widget->flags & ~flag;
 	g_settings_set_flags (widget->settings,
 			      SETTINGS_KEY_DRAW_SPACES,
 			      widget->flags);
+}
+
+static void
+on_draw_tabs_toggled (GtkToggleButton           *button,
+		      DrawspacesConfigureWidget *widget)
+{
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_TAB, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_draw_spaces_toggled (GtkToggleButton           *button,
 			DrawspacesConfigureWidget *widget)
 {
-	if (gtk_toggle_button_get_active (button))
-	{
-		widget->flags |= GTK_SOURCE_DRAW_SPACES_SPACE;
-	}
-	else
-	{
-		widget->flags &= ~GTK_SOURCE_DRAW_SPACES_SPACE;
-	}
-
-	g_settings_set_flags (widget->settings,
-			      SETTINGS_KEY_DRAW_SPACES,
-			      widget->flags);
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_SPACE, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_draw_newline_toggled (GtkToggleButton           *button,
 			 DrawspacesConfigureWidget *widget)
 {
-	if (gtk_toggle_button_get_active (button))
-	{
-		widget->flags |= GTK_SOURCE_DRAW_SPACES_NEWLINE;
-	}
-	else
-	{
-		widget->flags &= ~GTK_SOURCE_DRAW_SPACES_NEWLINE;
-	}
-
-	g_settings_set_flags (widget->settings,
-			      SETTINGS_KEY_DRAW_SPACES,
-			      widget->flags);
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_NEWLINE, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_draw_nbsp_toggled (GtkToggleButton           *button,
 		      DrawspacesConfigureWidget *widget)
 {
-	if (gtk_toggle_button_get_active (button))
-	{
-		widget->flags |= GTK_SOURCE_DRAW_SPACES_NBSP;
-	}
-	else
-	{
-		widget->flags &= ~GTK_SOURCE_DRAW_SPACES_NBSP;
-	}
-
-	g_settings_set_flags (widget->settings,
-			      SETTINGS_KEY_DRAW_SPACES,
-			      widget->flags);
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_NBSP, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_draw_leading_toggled (GtkToggleButton           *button,
 			 DrawspacesConfigureWidget *widget)
 {
-	if (gtk_toggle_button_get_active (button))
-	{
-		widget->flags |= GTK_SOURCE_DRAW_SPACES_LEADING;
-	}
-	else
-	{
-		widget->flags &= ~GTK_SOURCE_DRAW_SPACES_LEADING;
-	}
-
-	g_settings_set_flags (widget->settings,
-			      SETTINGS_KEY_DRAW_SPACES,
-			      widget->flags);
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_LEADING, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_draw_text_toggled (GtkToggleButton           *button,
 		      DrawspacesConfigureWidget *widget)
 {
-	if (gtk_toggle_button_get_active (button))
-	{
-		widget->flags |= GTK_SOURCE_DRAW_SPACES_TEXT;
-	}
-	else
-	{
-		widget->flags &= ~GTK_SOURCE_DRAW_SPACES_TEXT;
-	}
-
-	g_settings_set_flags (widget->settings,
-			      SETTINGS_KEY_DRAW_SPACES,
-			      widget->flags);
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_TEXT, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_draw_trailing_toggled (GtkToggleButton           *button,
 			  DrawspacesConfigureWidget *widget)
 {
-	if (gtk_toggle_button_get_active (button))
-	{
-		widget->flags |= GTK_SOURCE_DRAW_SPACES_TRAILING;
-	}
-	else
-	{
-		widget->flags &= ~GTK_SOURCE_DRAW_SPACES_TRAILING;
-	}
-
-	g_settings_set_flags (widget->settings,
-			      SETTINGS_KEY_DRAW_SPACES,
-			      widget->flags);
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_TRAILING, gtk_toggle_button_get_active (button));
 }
 
 static DrawspacesConfigureWidget *
@@ -533,6 +500,7 @@ gedit_drawspaces_plugin_class_init (GeditDrawspacesPluginClass *klass)
 	object_class->set_property = gedit_drawspaces_plugin_set_property;
 	object_class->get_property = gedit_drawspaces_plugin_get_property;
 
+	g_object_class_override_property (object_class, PROP_APP, "app");
 	g_object_class_override_property (object_class, PROP_WINDOW, "window");
 
 	g_type_class_add_private (object_class, sizeof (GeditDrawspacesPluginPrivate));
@@ -550,10 +518,17 @@ peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface)
 }
 
 static void
+gedit_app_activatable_iface_init (GeditAppActivatableInterface *iface)
+{
+	iface->activate = gedit_drawspaces_plugin_app_activate;
+	iface->deactivate = gedit_drawspaces_plugin_app_deactivate;
+}
+
+static void
 gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface)
 {
-	iface->activate = gedit_drawspaces_plugin_activate;
-	iface->deactivate = gedit_drawspaces_plugin_deactivate;
+	iface->activate = gedit_drawspaces_plugin_window_activate;
+	iface->deactivate = gedit_drawspaces_plugin_window_deactivate;
 }
 
 G_MODULE_EXPORT void
@@ -561,6 +536,9 @@ peas_register_types (PeasObjectModule *module)
 {
 	gedit_drawspaces_plugin_register_type (G_TYPE_MODULE (module));
 
+	peas_object_module_register_extension_type (module,
+						    GEDIT_TYPE_APP_ACTIVATABLE,
+						    GEDIT_TYPE_DRAWSPACES_PLUGIN);
 	peas_object_module_register_extension_type (module,
 						    GEDIT_TYPE_WINDOW_ACTIVATABLE,
 						    GEDIT_TYPE_DRAWSPACES_PLUGIN);

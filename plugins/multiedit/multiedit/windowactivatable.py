@@ -37,26 +37,16 @@ class MultiEditWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     window = GObject.property(type=Gedit.Window)
 
     def do_activate(self):
-        self._insert_menu()
-
-        self.window.multiedit_window_activatable = self
-
-    def do_deactivate(self):
-        self._remove_menu()
-        delattr(self.window, 'multiedit_window_activatable')
-
-    def _insert_menu(self):
         action = Gio.SimpleAction.new_stateful("multiedit", None, GLib.Variant.new_boolean(False))
         action.connect('activate', self.activate_toggle)
         action.connect('change-state', self.multi_edit_mode)
         self.window.add_action(action)
 
-        self.menu = self.extend_menu("ext9")
-        item = Gio.MenuItem.new(_('Multi Edit Mode'), "win.multiedit")
-        self.menu.append_menu_item(item)
+        self.window.multiedit_window_activatable = self
 
-    def _remove_menu(self):
+    def do_deactivate(self):
         self.window.remove_action("multiedit")
+        delattr(self.window, 'multiedit_window_activatable')
 
     def do_update_state(self):
         view = self.get_view_activatable(self.window.get_active_view())

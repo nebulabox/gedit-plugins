@@ -2,6 +2,7 @@ if ENABLE_PYTHON
 plugins_multieditdir = $(plugindir)/multiedit
 plugins_multiedit_PYTHON =					\
 	plugins/multiedit/multiedit/__init__.py 		\
+	plugins/multiedit/multiedit/appactivatable.py 	\
 	plugins/multiedit/multiedit/windowactivatable.py 	\
 	plugins/multiedit/multiedit/viewactivatable.py 		\
 	plugins/multiedit/multiedit/signals.py

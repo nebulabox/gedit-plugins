@@ -21,12 +21,12 @@
 
 from gi.repository import GObject, Gio, Gedit, Gtk
 import os
-
 from .schemer import GUI
 
-class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
-  window = GObject.property(type=Gedit.Window)
+class AppActivatable(GObject.Object, Gedit.AppActivatable):
+
+  app = GObject.property(type=Gedit.App)
 
   def __init__(self):
     GObject.Object.__init__(self)
@@ -34,14 +34,16 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
   def do_activate(self):
     action = Gio.SimpleAction(name="schemer")
     action.connect('activate', self.open_dialog)
-    self.window.add_action(action)
+    self.app.add_action(action)
 
-    self.menu = self.extend_menu("ext9")
-    item = Gio.MenuItem.new(_("Color Scheme Editor"), "win.schemer")
-    self.menu.append_menu_item(item)
+    self.menu_ext = self.extend_menu("appmenuext2")
+    item = Gio.MenuItem.new(_("Color Scheme Editor"), "app.schemer")
+    self.menu_ext.append_menu_item(item)
+
+  def do_deactivate(self):
+    self.app.remove_action("schemer")
+    self.menu_ext = None
 
   def open_dialog(self, action, parameter, data=None):
     schemer.GUI(Gedit.App, os.path.join(self.plugin_info.get_data_dir(), 'ui'))
 
-  def do_deactivate(self):
-    self.window.remove_action("schemer")

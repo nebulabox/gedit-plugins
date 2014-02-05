@@ -27,37 +27,7 @@ path = os.path.dirname(__file__)
 if not path in sys.path:
     sys.path.insert(0, path)
 
+from appactivatable import CommanderAppActivatable
 from windowactivatable import CommanderWindowActivatable
-import commander.commands as commands
-from gi.repository import GObject, GLib, Gedit
-
-class CommanderPlugin(GObject.Object, Gedit.AppActivatable):
-    __gtype_name__ = "CommanderPlugin"
-
-    app = GObject.property(type=Gedit.App)
-
-    def __init__(self):
-        GObject.Object.__init__(self)
-
-    def do_activate(self):
-        self._path = os.path.dirname(__file__)
-
-        if not self._path in sys.path:
-            sys.path.insert(0, self._path)
-
-        commands.Commands().set_dirs([
-            os.path.join(GLib.get_user_config_dir(), 'gedit/commander/modules'),
-            os.path.join(self.plugin_info.get_data_dir(), 'modules')
-        ])
-
-        self.app.add_accelerator("<Primary>period", "win.commander", None)
-
-    def deactivate(self):
-        commands.Commands().stop()
-
-        if self._path in sys.path:
-            sys.path.remove(self._path)
-
-        self.app.remove_accelerator("win.commander", None)
 
 # vi:ex:ts=4:et
