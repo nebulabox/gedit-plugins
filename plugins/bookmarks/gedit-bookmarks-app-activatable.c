@@ -137,8 +137,7 @@ gedit_bookmarks_app_activatable_activate (GeditAppActivatable *activatable)
 	gtk_application_add_accelerator (GTK_APPLICATION (priv->app), "<Primary>B", "win.bookmark-next", NULL);
 	gtk_application_add_accelerator (GTK_APPLICATION (priv->app), "<Primary><Shift>B", "win.bookmark-prev", NULL);
 
-	priv->menu_ext = gedit_app_activatable_extend_menu (activatable,
-	                                                    "ext3");
+	priv->menu_ext = gedit_app_activatable_extend_menu (activatable, "search-section");
 	item = g_menu_item_new (_("Toggle Bookmark"), "win.bookmark-toggle");
 	gedit_menu_extension_append_menu_item (priv->menu_ext, item);
 	g_object_unref (item);

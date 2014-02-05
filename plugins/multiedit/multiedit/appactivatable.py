@@ -32,7 +32,7 @@ class MultiEditAppActivatable(GObject.Object, Gedit.AppActivatable):
     def do_activate(self):
         self.app.add_accelerator("<Primary><Shift>C", "win.multiedit", None)
 
-        self.menu_ext = self.extend_menu("ext9")
+        self.menu_ext = self.extend_menu("tools-section")
         item = Gio.MenuItem.new(_('Multi Edit Mode'), "win.multiedit")
         self.menu_ext.append_menu_item(item)
 

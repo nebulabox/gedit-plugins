@@ -46,7 +46,7 @@ class TextSizeAppActivatable(GObject.Object, Gedit.AppActivatable):
         self.app.set_accels_for_action("win.text-smaller", ["<Primary>minus", "<Primary>KP_Subtract"])
         self.app.set_accels_for_action("win.text-normal", ["<Primary>0", "<Primary>KP_0"])
 
-        self.menu_ext = self.extend_menu("ext9")
+        self.menu_ext = self.extend_menu("view-section-2")
         item = Gio.MenuItem.new(_("_Normal size"), "win.text-normal")
         self.menu_ext.prepend_menu_item(item)
         item = Gio.MenuItem.new(_("S_maller Text"), "win.text-smaller")

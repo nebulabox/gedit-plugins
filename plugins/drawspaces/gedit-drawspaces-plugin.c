@@ -261,8 +261,7 @@ gedit_drawspaces_plugin_app_activate (GeditAppActivatable *activatable)
 
 	priv = GEDIT_DRAWSPACES_PLUGIN (activatable)->priv;
 
-	priv->menu_ext = gedit_app_activatable_extend_menu (activatable,
-	                                                    "ext5");
+	priv->menu_ext = gedit_app_activatable_extend_menu (activatable, "view-section-2");
 	item = g_menu_item_new (_("Show _White Space"), "win.show-white-space");
 	gedit_menu_extension_append_menu_item (priv->menu_ext, item);
 	g_object_unref (item);

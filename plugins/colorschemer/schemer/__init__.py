@@ -36,7 +36,7 @@ class AppActivatable(GObject.Object, Gedit.AppActivatable):
     action.connect('activate', self.open_dialog)
     self.app.add_action(action)
 
-    self.menu_ext = self.extend_menu("appmenuext2")
+    self.menu_ext = self.extend_menu("preferences-section")
     item = Gio.MenuItem.new(_("Color Scheme Editor"), "app.schemer")
     self.menu_ext.append_menu_item(item)
 
