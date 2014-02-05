@@ -315,7 +315,7 @@ class TerminalPlugin(GObject.Object, Gedit.WindowActivatable):
 
     def do_deactivate(self):
         bottom = self.window.get_bottom_panel()
-        bottom.remove_item(self._panel)
+        bottom.remove(self._panel)
 
     def do_update_state(self):
         pass
