@@ -1,4 +1,5 @@
 plugins/bookmarks/bookmarks.plugin.desktop.in.in
+plugins/bookmarks/gedit-bookmarks-app-activatable.c
 plugins/bookmarks/gedit-bookmarks-plugin.c
 plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in
 plugins/charmap/charmap/__init__.py
@@ -7,9 +8,10 @@ plugins/codecomment/codecomment.plugin.desktop.in.in
 plugins/codecomment/codecomment.py
 plugins/colorpicker/colorpicker.plugin.desktop.in.in
 plugins/colorpicker/colorpicker.py
-plugins/colorschemer/schemer/__init__.py
 plugins/colorschemer/colorschemer.plugin.desktop.in.in
+plugins/colorschemer/schemer/__init__.py
 [type: gettext/glade]plugins/colorschemer/schemer.ui
+plugins/commander/commander/appactivatable.py
 plugins/commander/commander.plugin.desktop.in.in
 plugins/commander/commander/windowactivatable.py
 plugins/dashboard/dashboard/dashboard.py
@@ -21,10 +23,11 @@ plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in
 plugins/git/git.plugin.desktop.in.in
 plugins/joinlines/joinlines.plugin.desktop.in.in
 plugins/joinlines/joinlines.py
+plugins/multiedit/multiedit/appactivatable.py
 plugins/multiedit/multiedit/__init__.py
+plugins/multiedit/multiedit.plugin.desktop.in.in
 plugins/multiedit/multiedit/viewactivatable.py
 plugins/multiedit/multiedit/windowactivatable.py
-plugins/multiedit/multiedit.plugin.desktop.in.in
 plugins/smartspaces/smartspaces.plugin.desktop.in.in
 plugins/synctex/synctex.plugin.desktop.in.in
 plugins/synctex/synctex/synctex.py
