@@ -1,4 +1,19 @@
 ====================
+gedit-plugins 3.11.2
+====================
+
+New features and fixes
+======================
+- Port plugins to new menu API
+- Misc bugfixes
+
+New and updated translations
+============================
+- sr@latin (Miroslav Nikolić)
+- sr (Мирослав Николић)
+- zh_CN (YunQiang Su)
+
+====================
 gedit-plugins 3.11.1
 ====================
 
