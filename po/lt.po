@@ -8,18 +8,18 @@
 # Žygimantas Beručka <zygis@gnome.org>, 2003-2006.
 # Vytautas Povilaitis <punktyras@nkm.lt>, 2007.
 # Gintautas Miliauskas <gintas@akl.lt>, 2007, 2008, 2010.
-# Aurimas Černius <aurisc4@gmail.com>, 2010, 2013.
+# Aurimas Černius <aurisc4@gmail.com>, 2010, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-08-02 13:25+0000\n"
-"PO-Revision-Date: 2013-08-15 21:19+0300\n"
+"POT-Creation-Date: 2014-02-15 06:21+0000\n"
+"PO-Revision-Date: 2014-02-15 19:49+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
-"Language: \n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,28 +35,16 @@ msgstr "Žymelės"
 msgid "Easy document navigation with bookmarks"
 msgstr "Paprasta dokumentų paieška su gairėmis"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:201
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:141
 msgid "Toggle Bookmark"
 msgstr "Perjungti žymelę"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:202
-msgid "Toggle bookmark status of the current line"
-msgstr "Perjungti žymelės būseną esamoje eilutėje"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:204
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:145
 msgid "Goto Next Bookmark"
 msgstr "Pereiti prie kitos žymelės"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:205
-msgid "Goto the next bookmark"
-msgstr "Pereiti prie kitos žymelės"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:207
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:149
 msgid "Goto Previous Bookmark"
-msgstr "Pereiti prie ankstesnės žymelės"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:208
-msgid "Goto the previous bookmark"
 msgstr "Pereiti prie ankstesnės žymelės"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
@@ -68,7 +56,7 @@ msgid "Automatically adds closing brackets."
 msgstr "Automatiškai prideda užveriančius skliaustus."
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:51
+#: ../plugins/charmap/charmap/__init__.py:49
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Simbolių žemėlapis"
@@ -85,21 +73,13 @@ msgstr "Kodo komentaras"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Komentuoti ar atkomentuoti pažymėtą kodo bloką."
 
-#: ../plugins/codecomment/codecomment.py:88
+#: ../plugins/codecomment/codecomment.py:111
 msgid "Co_mment Code"
 msgstr "_Komentuoti kodą"
 
-#: ../plugins/codecomment/codecomment.py:90
-msgid "Comment the selected code"
-msgstr "Komentuoti pažymėtą kodą"
-
-#: ../plugins/codecomment/codecomment.py:94
+#: ../plugins/codecomment/codecomment.py:117
 msgid "U_ncomment Code"
 msgstr "Atkome_ntuoti kodą"
-
-#: ../plugins/codecomment/codecomment.py:96
-msgid "Uncomment the selected code"
-msgstr "Atkomentuoti pažymėtą kodą"
 
 #. ex:ts=4:et:
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
@@ -110,21 +90,18 @@ msgstr "Spalvų pasirinkėjas"
 msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr "Pasirinkti spalvą iš dialogo ir įterpti jos šešioliktainę išraišką."
 
-#: ../plugins/colorpicker/colorpicker.py:161
+#: ../plugins/colorpicker/colorpicker.py:128
 msgid "Pick _Color..."
 msgstr "Pasirinkti _spalvą..."
 
-#: ../plugins/colorpicker/colorpicker.py:162
-msgid "Pick a color from a dialog"
-msgstr "Pasirinkti spalvą iš dialogo"
-
-#: ../plugins/colorpicker/colorpicker.py:178
+#: ../plugins/colorpicker/colorpicker.py:168
 msgid "Pick Color"
 msgstr "Pasirinkti spalvą"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
-#: ../plugins/colorschemer/schemer/schemer.ui.h:1
+#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Spalvų schemos redaktorius"
 
@@ -132,62 +109,67 @@ msgstr "Spalvų schemos redaktorius"
 msgid "Source code color scheme editor"
 msgstr "Pradinio kodo spalvų schemos redaktorius"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:2
+#: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
 msgstr "Storas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
+#: ../plugins/colorschemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Kursyvas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
+#: ../plugins/colorschemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Pabrauktas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
+#: ../plugins/colorschemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Perbrauktas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
+#: ../plugins/colorschemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "Pasirinkite fono spalvą"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
+#: ../plugins/colorschemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Pasirinkite priekinio plano spalvą"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
+#: ../plugins/colorschemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "_Fonas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+#: ../plugins/colorschemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "_Priekinis planas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "_Išvalyti"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Vardas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer.ui.h:12
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Aprašymas"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
+#: ../plugins/colorschemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Autorius"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+#: ../plugins/colorschemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Pavyzdys"
 
+#: ../plugins/commander/commander/appactivatable.py:47
+msgid "Commander Mode"
+msgstr "Commander veiksena"
+
+#. vi:ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 msgid "Commander"
 msgstr "Commander"
@@ -195,14 +177,6 @@ msgstr "Commander"
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:2
 msgid "Command line interface for advanced editing"
 msgstr "Komandų eilutės sąsaja sudėtingesniam redagavimui"
-
-#: ../plugins/commander/commander/windowactivatable.py:70
-msgid "Commander Mode"
-msgstr "Commander veiksena"
-
-#: ../plugins/commander/commander/windowactivatable.py:71
-msgid "Start commander mode"
-msgstr "Paleisti commander veikseną"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
@@ -227,17 +201,13 @@ msgid "Draw Spaces"
 msgstr "Piešti tarpus"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-#| msgid "Draw Spaces and Tabs"
 msgid "Draw spaces and tabs"
 msgstr "Piešti tarpus ir tabuliacijas"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:265
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Rodyti tuščią _erdvę"
-
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:135
-msgid "Show spaces and tabs"
-msgstr "Rodyti tarpus ir tabuliacijas"
 
 #. ex:set ts=8 noet:
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
@@ -268,10 +238,6 @@ msgstr "Piešti tarpus tekste"
 msgid "Draw trailing spaces"
 msgstr "Piešti tarpus pabaigoje"
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
-msgid "Enabled"
-msgstr "Įjungtas"
-
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Jei teigiama, piešimas bus įjungtas."
@@ -285,8 +251,8 @@ msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Git skirtumai"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Paryškinti eilutes, kurios buvo pakeisto nuo paskutinio patvirtinimo"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -296,85 +262,18 @@ msgstr "Sujungti/padalinti eilutes"
 msgid "Join several lines or split long ones"
 msgstr "Sujungti kelias eilutes arba padalinti ilgas"
 
-#: ../plugins/joinlines/joinlines.py:74
+#: ../plugins/joinlines/joinlines.py:106
 msgid "_Join Lines"
 msgstr "Su_jungti eilutes"
 
-#: ../plugins/joinlines/joinlines.py:75
-msgid "Join the selected lines"
-msgstr "Sujungti pažymėtas eilutes"
-
-#: ../plugins/joinlines/joinlines.py:77
+#: ../plugins/joinlines/joinlines.py:112
 msgid "_Split Lines"
 msgstr "Pa_dalinti eilutes"
 
-#: ../plugins/joinlines/joinlines.py:78
-msgid "Split the selected lines"
-msgstr "Padalinti pažymėtas eilutes"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:301
-msgid "Added edit point..."
-msgstr "Pridėtas redagavimo taškas..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:643
-msgid "Column Mode..."
-msgstr "Stulpelių veiksena..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:757
-msgid "Removed edit point..."
-msgstr "Pašalintas redagavimo taškas..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:920
-msgid "Cancelled column mode..."
-msgstr "Atsisakyta stulpelių veiksena..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1293
-msgid "Enter column edit mode using selection"
-msgstr "Įveskite stulpelių redagavimo veikseną naudodami pasirinkimą"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1294
-msgid "Enter <b>smart</b> column edit mode using selection"
-msgstr ""
-"Įveskite <b>išmanią</b> stulpelių redagavimo veikseną naudodami pasirinkimą"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1295
-msgid "<b>Smart</b> column align mode using selection"
-msgstr "<b>Išmanioji</b> stulpelių lygiavimo veiksena naudojant pasirinkimą"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1296
-msgid "<b>Smart</b> column align mode with additional space using selection"
-msgstr ""
-"<b>Išmanioji</b> stulpelių lygiavimo veiksena su papildomais tarpais "
-"naudojant pasirinkimą"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1298
-msgid "Toggle edit point"
-msgstr "Perjungti redagavimo tašką"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1299
-msgid "Add edit point at beginning of line/selection"
-msgstr "Pridėti redagavimo tašką eilutės/pažymėjimo pradžioje"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1300
-msgid "Add edit point at end of line/selection"
-msgstr "Pridėti redagavimo tašką eilutės/pažymėjimo pabaigoje"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1301
-msgid "Align edit points"
-msgstr "Lygiuoti redagavimo taškus"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1302
-msgid "Align edit points with additional space"
-msgstr "Lygiuoti redagavimo taškus papildomais tarpais"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1333
-#: ../plugins/multiedit/multiedit/__init__.py:79
+#: ../plugins/multiedit/multiedit/appactivatable.py:36
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "Multi Edit Mode"
 msgstr "Daugybinio redagavimo veiksena"
-
-#: ../plugins/multiedit/multiedit/__init__.py:81
-msgid "Start multi edit mode"
-msgstr "Pradėti daugybinį redagavimą"
 
 #. ex:ts=4:et:
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:1
@@ -385,6 +284,62 @@ msgstr "Daugybinis redagavimas"
 msgid "Edit document in multiple places at once"
 msgstr "Redaguoti dokumentą keliose vietose tuo pat metu"
 
+#: ../plugins/multiedit/multiedit/viewactivatable.py:306
+msgid "Added edit point..."
+msgstr "Pridėtas redagavimo taškas..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:648
+msgid "Column Mode..."
+msgstr "Stulpelių veiksena..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:766
+msgid "Removed edit point..."
+msgstr "Pašalintas redagavimo taškas..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:929
+msgid "Cancelled column mode..."
+msgstr "Atsisakyta stulpelių veiksena..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
+msgid "Enter column edit mode using selection"
+msgstr "Įveskite stulpelių redagavimo veikseną naudodami pasirinkimą"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
+msgid "Enter <b>smart</b> column edit mode using selection"
+msgstr ""
+"Įveskite <b>išmanią</b> stulpelių redagavimo veikseną naudodami pasirinkimą"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
+msgid "<b>Smart</b> column align mode using selection"
+msgstr "<b>Išmanioji</b> stulpelių lygiavimo veiksena naudojant pasirinkimą"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1269
+msgid "<b>Smart</b> column align mode with additional space using selection"
+msgstr ""
+"<b>Išmanioji</b> stulpelių lygiavimo veiksena su papildomais tarpais "
+"naudojant pasirinkimą"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
+msgid "Toggle edit point"
+msgstr "Perjungti redagavimo tašką"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
+msgid "Add edit point at beginning of line/selection"
+msgstr "Pridėti redagavimo tašką eilutės/pažymėjimo pradžioje"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
+msgid "Add edit point at end of line/selection"
+msgstr "Pridėti redagavimo tašką eilutės/pažymėjimo pabaigoje"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
+msgid "Align edit points"
+msgstr "Lygiuoti redagavimo taškus"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1275
+msgid "Align edit points with additional space"
+msgstr "Lygiuoti redagavimo taškus papildomais tarpais"
+
+#. ex:ts=4:et:
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 msgid "Smart Spaces"
 msgstr "Išmanieji tarpai"
@@ -590,25 +545,25 @@ msgstr "Įntegruotas terminalas"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Apatiniame polangyje integruotas terminalas."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:314
 msgid "Terminal"
 msgstr "Terminalas"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:335
 msgid "C_hange Directory"
 msgstr "Keis_ti katalogą"
 
-#: ../plugins/textsize/textsize/__init__.py:142
-msgid "_Larger Text"
-msgstr "_Didesnis tekstas"
+#: ../plugins/textsize/textsize/__init__.py:50
+msgid "_Normal size"
+msgstr "Įprasti_nis tekstas"
 
-#: ../plugins/textsize/textsize/__init__.py:145
+#: ../plugins/textsize/textsize/__init__.py:52
 msgid "S_maller Text"
 msgstr "_Mažesnis tekstas"
 
-#: ../plugins/textsize/textsize/__init__.py:148
-msgid "_Normal size"
-msgstr "Įprasti_nis tekstas"
+#: ../plugins/textsize/textsize/__init__.py:54
+msgid "_Larger Text"
+msgstr "_Didesnis tekstas"
 
 #. ex:ts=4:et:
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:1
@@ -620,7 +575,6 @@ msgid "Easily increase and decrease the text size"
 msgstr "Lengvai didinkite ir mažinkite teksto dydį"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive completion"
 msgstr "Interaktyvus užbaigimas"
 
@@ -633,7 +587,6 @@ msgid "Document Words"
 msgstr "Dokumento žodžiai"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive Completion"
 msgstr "Interaktyvus užbaigimas"
 
@@ -656,4 +609,3 @@ msgstr "Žodžių užbaigimas"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Žodžių užbaigimas naudojant užbaigimo karkasą"
-
