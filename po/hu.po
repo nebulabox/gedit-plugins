@@ -9,14 +9,14 @@
 # Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Mate Ory <orymate at gmail dot com>, 2006, 2007, 2008.
-# Balázs Úr <urbalazs at gmail dot com>, 2013.
+# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-08-02 13:25+0000\n"
-"PO-Revision-Date: 2013-08-25 10:46+0200\n"
+"POT-Creation-Date: 2014-02-23 06:20+0000\n"
+"PO-Revision-Date: 2014-02-23 16:58+0100\n"
 "Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: \n"
@@ -34,29 +34,17 @@ msgstr "Könyvjelzők"
 msgid "Easy document navigation with bookmarks"
 msgstr "Egyszerű dokumentumnavigáció könyvjelzőkkel"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:201
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:141
 msgid "Toggle Bookmark"
 msgstr "Könyvjelző be/ki"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:202
-msgid "Toggle bookmark status of the current line"
-msgstr "Könyvjelző állapotának átváltása a jelenlegi sorban"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:204
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:145
 msgid "Goto Next Bookmark"
 msgstr "Következő könyvjelző"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:205
-msgid "Goto the next bookmark"
-msgstr "Ugrás a következő könyvjelzőre"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:207
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:149
 msgid "Goto Previous Bookmark"
 msgstr "Előző könyvjelző"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:208
-msgid "Goto the previous bookmark"
-msgstr "Ugrás az előző könyvjelzőre"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
 msgid "Bracket Completion"
@@ -67,7 +55,7 @@ msgid "Automatically adds closing brackets."
 msgstr "Záró zárójelek automatikus hozzáadása"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:51
+#: ../plugins/charmap/charmap/__init__.py:49
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Karaktertábla"
@@ -77,7 +65,6 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Speciális karakterek beszúrása egy kattintással"
 
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-#| msgid "Code comment"
 msgid "Code Comment"
 msgstr "Kód megjegyzésbe"
 
@@ -85,21 +72,13 @@ msgstr "Kód megjegyzésbe"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Kijelölt kódblokk megjegyzésbe tétele vagy kivétele onnan"
 
-#: ../plugins/codecomment/codecomment.py:88
+#: ../plugins/codecomment/codecomment.py:111
 msgid "Co_mment Code"
 msgstr "Kó_d megjegyzésbe"
 
-#: ../plugins/codecomment/codecomment.py:90
-msgid "Comment the selected code"
-msgstr "A kijelölt kód kerüljön megjegyzésbe"
-
-#: ../plugins/codecomment/codecomment.py:94
+#: ../plugins/codecomment/codecomment.py:117
 msgid "U_ncomment Code"
 msgstr "A kód _nem megjegyzés"
-
-#: ../plugins/codecomment/codecomment.py:96
-msgid "Uncomment the selected code"
-msgstr "A kijelölt kód kerüljön ki a megjegyzésből"
 
 #. ex:ts=4:et:
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
@@ -111,21 +90,18 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Szín választása párbeszédablakból, és hexadecimális ábrázolásának beszúrása"
 
-#: ../plugins/colorpicker/colorpicker.py:161
+#: ../plugins/colorpicker/colorpicker.py:128
 msgid "Pick _Color..."
 msgstr "_Válasszon színt…"
 
-#: ../plugins/colorpicker/colorpicker.py:162
-msgid "Pick a color from a dialog"
-msgstr "Válasszon egy színt egy párbeszédablakból"
-
-#: ../plugins/colorpicker/colorpicker.py:178
+#: ../plugins/colorpicker/colorpicker.py:168
 msgid "Pick Color"
 msgstr "Válasszon színt"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
-#: ../plugins/colorschemer/schemer/schemer.ui.h:1
+#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Színséma szerkesztő"
 
@@ -133,62 +109,67 @@ msgstr "Színséma szerkesztő"
 msgid "Source code color scheme editor"
 msgstr "Forráskód színséma szerkesztő"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:2
+#: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
 msgstr "Félkövér"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
+#: ../plugins/colorschemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Dőlt"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
+#: ../plugins/colorschemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Aláhúzott"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
+#: ../plugins/colorschemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Áthúzott"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
+#: ../plugins/colorschemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "A háttérszín kiválasztása"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
+#: ../plugins/colorschemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Az előtérszín kiválasztása"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
+#: ../plugins/colorschemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "_Háttér"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+#: ../plugins/colorschemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "_Előtér"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "_Törlés "
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Név"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer.ui.h:12
 msgid "ID"
 msgstr "Azonosító"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Leírás"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
+#: ../plugins/colorschemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Szerző"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+#: ../plugins/colorschemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Minta"
 
+#: ../plugins/commander/commander/appactivatable.py:47
+msgid "Commander Mode"
+msgstr "Parancssor mód"
+
+#. vi:ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 msgid "Commander"
 msgstr "Parancssor"
@@ -196,14 +177,6 @@ msgstr "Parancssor"
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:2
 msgid "Command line interface for advanced editing"
 msgstr "Parancssoros felület speciális szerkesztéshez"
-
-#: ../plugins/commander/commander/windowactivatable.py:70
-msgid "Commander Mode"
-msgstr "Parancssor mód"
-
-#: ../plugins/commander/commander/windowactivatable.py:71
-msgid "Start commander mode"
-msgstr "Parancssor mód indítása"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
@@ -228,17 +201,13 @@ msgid "Draw Spaces"
 msgstr "Szóközök rajzolása"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-#| msgid "Draw Spaces and Tabs"
 msgid "Draw spaces and tabs"
 msgstr "Szóközök és tabok rajzolása"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
+#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:265
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Üres _helyek megjelenítése"
-
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:135
-msgid "Show spaces and tabs"
-msgstr "Szóközök és tabulátorok megjelenítése"
 
 #. ex:set ts=8 noet:
 #: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
@@ -269,10 +238,6 @@ msgstr "Szóközök rajzolása a szövegben"
 msgid "Draw trailing spaces"
 msgstr "Befejező szóközök rajzolása"
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
-msgid "Enabled"
-msgstr "Engedélyezve"
-
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Ha igazra van állítva, akkor a rajzolás engedélyezve lesz."
@@ -286,8 +251,8 @@ msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Git eltérések"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Sorok kiemelése, amelyek megváltoztak a legutóbbi véglegesítés óta"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -297,86 +262,18 @@ msgstr "Sorok egyesítése/szétvágása"
 msgid "Join several lines or split long ones"
 msgstr "Több sor egyesítése, vagy hosszúak szétvágása"
 
-#: ../plugins/joinlines/joinlines.py:74
+#: ../plugins/joinlines/joinlines.py:106
 msgid "_Join Lines"
 msgstr "S_orok egyesítése"
 
-#: ../plugins/joinlines/joinlines.py:75
-msgid "Join the selected lines"
-msgstr "Kijelölt sorok egyesítése"
-
-#: ../plugins/joinlines/joinlines.py:77
+#: ../plugins/joinlines/joinlines.py:112
 msgid "_Split Lines"
 msgstr "Sorok szét_vágása"
 
-#: ../plugins/joinlines/joinlines.py:78
-msgid "Split the selected lines"
-msgstr "A kijelölt sorok szétvágása"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:301
-msgid "Added edit point..."
-msgstr "Szerkesztési pont hozzáadása…"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:643
-msgid "Column Mode..."
-msgstr "Oszlopos mód…"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:757
-msgid "Removed edit point..."
-msgstr "Szerkesztési pont eltávolítva…"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:920
-msgid "Cancelled column mode..."
-msgstr "Oszlopos mód megszakítva…"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1293
-msgid "Enter column edit mode using selection"
-msgstr "Belépés az oszlopos szerkesztési módba a kijelölés használatával"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1294
-msgid "Enter <b>smart</b> column edit mode using selection"
-msgstr ""
-"Belépés az <b>intelligens</b> oszlopszerkesztési módba a kijelölés "
-"használatával"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1295
-msgid "<b>Smart</b> column align mode using selection"
-msgstr "<b>Intelligens</b> oszlopigazítási mód a kijelölés használatával"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1296
-msgid "<b>Smart</b> column align mode with additional space using selection"
-msgstr ""
-"<b>Intelligens</b> oszlopigazítási mód további hellyel a kijelölés "
-"használatával"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1298
-msgid "Toggle edit point"
-msgstr "Szerkesztési pont bekapcsolása"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1299
-msgid "Add edit point at beginning of line/selection"
-msgstr "Szerkesztési pont hozzáadása a sor vagy kijelölés elején"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1300
-msgid "Add edit point at end of line/selection"
-msgstr "Szerkesztési pont hozzáadása a sor vagy kijelölés végén"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1301
-msgid "Align edit points"
-msgstr "Szerkesztési pontok igazítása"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1302
-msgid "Align edit points with additional space"
-msgstr "Szerkesztési pontok igazítása további hellyel"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1333
-#: ../plugins/multiedit/multiedit/__init__.py:79
+#: ../plugins/multiedit/multiedit/appactivatable.py:36
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "Multi Edit Mode"
 msgstr "Párhuzamos szerkesztési mód"
-
-#: ../plugins/multiedit/multiedit/__init__.py:81
-msgid "Start multi edit mode"
-msgstr "Párhuzamos szerkesztési mód indítása"
 
 #. ex:ts=4:et:
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:1
@@ -387,6 +284,63 @@ msgstr "Párhuzamos szerkesztés"
 msgid "Edit document in multiple places at once"
 msgstr "Dokumentum szerkesztése egyszerre több helyen"
 
+#: ../plugins/multiedit/multiedit/viewactivatable.py:306
+msgid "Added edit point..."
+msgstr "Szerkesztési pont hozzáadása…"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:648
+msgid "Column Mode..."
+msgstr "Oszlopos mód…"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:766
+msgid "Removed edit point..."
+msgstr "Szerkesztési pont eltávolítva…"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:929
+msgid "Cancelled column mode..."
+msgstr "Oszlopos mód megszakítva…"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
+msgid "Enter column edit mode using selection"
+msgstr "Belépés az oszlopos szerkesztési módba a kijelölés használatával"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
+msgid "Enter <b>smart</b> column edit mode using selection"
+msgstr ""
+"Belépés az <b>intelligens</b> oszlopszerkesztési módba a kijelölés "
+"használatával"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
+msgid "<b>Smart</b> column align mode using selection"
+msgstr "<b>Intelligens</b> oszlopigazítási mód a kijelölés használatával"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1269
+msgid "<b>Smart</b> column align mode with additional space using selection"
+msgstr ""
+"<b>Intelligens</b> oszlopigazítási mód további hellyel a kijelölés "
+"használatával"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
+msgid "Toggle edit point"
+msgstr "Szerkesztési pont bekapcsolása"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
+msgid "Add edit point at beginning of line/selection"
+msgstr "Szerkesztési pont hozzáadása a sor vagy kijelölés elején"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
+msgid "Add edit point at end of line/selection"
+msgstr "Szerkesztési pont hozzáadása a sor vagy kijelölés végén"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
+msgid "Align edit points"
+msgstr "Szerkesztési pontok igazítása"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1275
+msgid "Align edit points with additional space"
+msgstr "Szerkesztési pontok igazítása további hellyel"
+
+#. ex:ts=4:et:
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 msgid "Smart Spaces"
 msgstr "Intelligens szóközök"
@@ -594,25 +548,25 @@ msgstr "Beágyazott terminál"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Terminál beágyazása az alsó ablaktáblába."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:314
 msgid "Terminal"
 msgstr "Terminál"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:335
 msgid "C_hange Directory"
 msgstr "Könyvtár_váltás"
 
-#: ../plugins/textsize/textsize/__init__.py:142
-msgid "_Larger Text"
-msgstr "_Nagyobb szöveg"
+#: ../plugins/textsize/textsize/__init__.py:50
+msgid "_Normal size"
+msgstr "_Normál méret"
 
-#: ../plugins/textsize/textsize/__init__.py:145
+#: ../plugins/textsize/textsize/__init__.py:52
 msgid "S_maller Text"
 msgstr "_Kisebb szöveg"
 
-#: ../plugins/textsize/textsize/__init__.py:148
-msgid "_Normal size"
-msgstr "_Normál méret"
+#: ../plugins/textsize/textsize/__init__.py:54
+msgid "_Larger Text"
+msgstr "_Nagyobb szöveg"
 
 #. ex:ts=4:et:
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:1
@@ -624,7 +578,6 @@ msgid "Easily increase and decrease the text size"
 msgstr "Szövegméret növelése és csökkentése egyszerűen"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive completion"
 msgstr "Interaktív kiegészítés"
 
@@ -637,7 +590,6 @@ msgid "Document Words"
 msgstr "Dokumentum szavai"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive Completion"
 msgstr "Interaktív kiegészítés"
 
@@ -660,6 +612,45 @@ msgstr "Szókiegészítés"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "A szókiegészítés használata a kiegészítő keretrendszer használatával"
+
+#~ msgid "Toggle bookmark status of the current line"
+#~ msgstr "Könyvjelző állapotának átváltása a jelenlegi sorban"
+
+#~ msgid "Goto the next bookmark"
+#~ msgstr "Ugrás a következő könyvjelzőre"
+
+#~ msgid "Goto the previous bookmark"
+#~ msgstr "Ugrás az előző könyvjelzőre"
+
+#~ msgid "Comment the selected code"
+#~ msgstr "A kijelölt kód kerüljön megjegyzésbe"
+
+#~ msgid "Uncomment the selected code"
+#~ msgstr "A kijelölt kód kerüljön ki a megjegyzésből"
+
+#~ msgid "Pick a color from a dialog"
+#~ msgstr "Válasszon egy színt egy párbeszédablakból"
+
+#~ msgid "Start commander mode"
+#~ msgstr "Parancssor mód indítása"
+
+#~ msgid "Show spaces and tabs"
+#~ msgstr "Szóközök és tabulátorok megjelenítése"
+
+#~ msgid "Enabled"
+#~ msgstr "Engedélyezve"
+
+#~ msgid "Git differences"
+#~ msgstr "Git eltérések"
+
+#~ msgid "Join the selected lines"
+#~ msgstr "Kijelölt sorok egyesítése"
+
+#~ msgid "Split the selected lines"
+#~ msgstr "A kijelölt sorok szétvágása"
+
+#~ msgid "Start multi edit mode"
+#~ msgstr "Párhuzamos szerkesztési mód indítása"
 
 #~ msgid "X"
 #~ msgstr "X"
