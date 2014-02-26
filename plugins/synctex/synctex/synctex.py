@@ -35,18 +35,6 @@ except:
 
 dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
 
-ui_str = """<ui>
-  <menubar name="MenuBar">
-    <menu name="ToolsMenu" action="Tools">
-      <placeholder name="ToolsOps_2">
-        <separator/>
-        <menuitem name="Synctex" action="SynctexForwardSearch"/>
-      </placeholder>
-    </menu>
-  </menubar>
-</ui>
-"""
-
 _logger = logging.getLogger("SynctexPlugin")
 
 def apply_style (style, tag):
@@ -242,7 +230,9 @@ class SynctexWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         GObject.Object.__init__(self)
 
     def do_activate(self):
-        self._insert_menu()
+        action = Gio.SimpleAction(name="synctex")
+        action.connect('activate', self.forward_search_cb)
+        self.window.add_action(action)
 
         for view in self.window.get_views():
             self.add_helper(view, self.window)
@@ -250,7 +240,6 @@ class SynctexWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.handlers = [
             self.window.connect("tab-added", lambda window, tab: self.add_helper(tab.get_view(), window)),
             self.window.connect("tab-removed", lambda window, tab: self.remove_helper(tab.get_view())),
-            self.window.connect("active-tab-changed", self.on_active_tab_changed)
         ]
 
     def do_deactivate(self):
@@ -260,17 +249,16 @@ class SynctexWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         for view in self.window.get_views():
             self.remove_helper(view)
 
-        self._remove_menu()
+        self.window.remove_action("synctex")
 
-    def on_active_tab_changed(self, window,  tab):
-        view_helper = self.get_helper(tab.get_view())
+    def do_update_state(self):
+        view_helper = self.get_helper(self.window.get_active_view())
 
-        if view_helper is None:
-            active = False
-        else:
+        active = False
+        if view_helper is not None:
             active = view_helper.active
 
-        self._action_group.set_sensitive(active)
+        self.window.lookup_action("synctex").set_enabled(active)
 
     def add_helper(self, view, window):
         helper = SynctexViewHelper(view, window, self)
@@ -294,29 +282,7 @@ class SynctexWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             return None
         return view.synctex_view_helper
 
-    def _remove_menu(self):
-        manager = self.window.get_ui_manager()
-        manager.remove_ui(self._ui_id)
-        manager.remove_action_group(self._action_group)
-        manager.ensure_update()
-
-    def _insert_menu(self):
-        # Get the GtkUIManager
-        manager = self.window.get_ui_manager()
-
-        # Create a new action group
-        self._action_group = Gtk.ActionGroup(name="SynctexWindowActivatableActions")
-        self._action_group.add_actions([("SynctexForwardSearch", None,
-                                        _("Forward Search"), "<Ctrl><Alt>F",
-                                        _("Forward Search"), self.forward_search_cb)])
-
-        # Insert the action group
-        manager.insert_action_group(self._action_group, -1)
-
-        # Merge the UI
-        self._ui_id = manager.add_ui_from_string(ui_str)
-
-    def forward_search_cb(self, action, what=None):
+    def forward_search_cb(self, action, parameter, user_data=None):
         self.get_helper(self.window.get_active_view()).sync_view(Gtk.get_current_event_time())
 
     def source_view_handler(self, out_gfile, uri_input, source_link, time):
@@ -355,5 +321,23 @@ class SynctexWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self._proxy_dict[uri][0] -= 1
             if self._proxy_dict[uri][0] == 0:
                 del self._proxy_dict[uri]
+
+class SynctexAppActivatable(GObject.Object, Gedit.AppActivatable):
+
+    app = GObject.property(type=Gedit.App)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+    def do_activate(self):
+        self.app.add_accelerator("<Primary><Alt>F", "win.synctex", None)
+
+        self.menu_ext = self.extend_menu("tools-section")
+        item = Gio.MenuItem.new(_("Forward Search"), "win.synctex")
+        self.menu_ext.append_menu_item(item)
+
+    def do_deactivate(self):
+        self.app.remove_accelerator("win.synctex", None)
+        self.menu_ext = None
 
 # ex:ts=4:et:
