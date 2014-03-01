@@ -17,7 +17,7 @@
 #  Foundation, Inc., 59 Temple Place, Suite 330,
 #  Boston, MA 02111-1307, USA.
 
-from gi.repository import GLib, GObject, Gio, Gtk, Gedit, Ggit
+from gi.repository import GLib, GObject, Gio, Gedit, Ggit
 
 import weakref
 
@@ -79,7 +79,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
                              self.deleted, None)
         ]
 
-        self.refresh();
+        self.refresh()
 
     def do_deactivate(self):
         self.clear_monitors()
@@ -97,7 +97,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.window_signals = []
         self.bus_signals = []
 
-        self.refresh();
+        self.refresh()
 
     def refresh(self):
         if self.bus.is_registered('/plugins/filebrowser', 'refresh'):
@@ -204,7 +204,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             if status is None or git_status & Ggit.StatusFlags.IGNORED:
                 status = git_status
 
-        markup = GLib.markup_escape_text(self.file_names[location.get_uri()]) 
+        markup = GLib.markup_escape_text(self.file_names[location.get_uri()])
 
         if status is not None:
             if status & Ggit.StatusFlags.INDEX_NEW or \
