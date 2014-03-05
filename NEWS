@@ -1,4 +1,20 @@
 ====================
+gedit-plugins 3.11.91
+====================
+
+New features and fixes
+======================
+- Port synctex to new menu API
+- Misc bugfixes
+
+New and updated translations
+============================
+- he (Yosef Or Boczko)
+- hu (Balázs Úr)
+- lt (Aurimas Černius)
+- pt (Tiago S.)
+
+====================
 gedit-plugins 3.11.2
 ====================
 
