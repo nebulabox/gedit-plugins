@@ -101,18 +101,20 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
     def update_location(self, *args):
         self.location = self.buffer.get_location()
-        if self.location is None:
-            return
 
-        try:
-            repo_file = Ggit.Repository.discover(self.location)
-            repo = Ggit.Repository.open(repo_file)
-            head = repo.get_head()
-            commit = repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
-            tree = commit.get_tree()
+        repo = None
+        if self.location is not None and self.location.has_uri_scheme('file'):
+            try:
+                repo_file = Ggit.Repository.discover(self.location)
+                repo = Ggit.Repository.open(repo_file)
+                head = repo.get_head()
+                commit = repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
+                tree = commit.get_tree()
 
-        except Exception:
-            # Not a git repository
+            except Exception:
+                repo = None
+
+        if repo is None:
             if self.file_contents_list is not None:
                 self.file_contents_list = None
                 self.gutter.remove(self.diff_renderer)

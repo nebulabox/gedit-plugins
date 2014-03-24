@@ -139,6 +139,9 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     def root_changed(self, bus, msg, data=None):
         self.clear_monitors()
 
+        if not msg.location.has_uri_scheme('file'):
+            return
+
         try:
             repo_file = Ggit.Repository.discover(msg.location)
             self.repo = Ggit.Repository.open(repo_file)
@@ -154,6 +157,9 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self.monitor_directory(msg.location)
 
     def inserted(self, bus, msg, data=None):
+        if not msg.location.has_uri_scheme('file'):
+            return
+
         self.files[msg.location.get_uri()] = msg.id
         self.file_names[msg.location.get_uri()] = msg.name
 
