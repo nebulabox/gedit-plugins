@@ -318,6 +318,9 @@ gedit_drawspaces_plugin_window_deactivate (GeditWindowActivatable *activatable)
 
 	priv = GEDIT_DRAWSPACES_PLUGIN (activatable)->priv;
 
+	g_action_map_remove_action (G_ACTION_MAP (priv->window),
+	                            SETTINGS_KEY_SHOW_WHITE_SPACE);
+
 	priv->enable = FALSE;
 	draw_spaces (GEDIT_DRAWSPACES_PLUGIN (activatable));
 
