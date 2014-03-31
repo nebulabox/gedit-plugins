@@ -29,10 +29,10 @@ BUILT_SOURCES +=						\
 	plugins/drawspaces/gedit-drawspaces-resources.c
 
 plugins_drawspaces_libdrawspaces_la_SOURCES =			\
-	plugins/drawspaces/gedit-drawspaces-plugin.h		\
-	plugins/drawspaces/gedit-drawspaces-plugin.c		\
 	plugins/drawspaces/gedit-drawspaces-app-activatable.h	\
 	plugins/drawspaces/gedit-drawspaces-app-activatable.c	\
+	plugins/drawspaces/gedit-drawspaces-window-activatable.h\
+	plugins/drawspaces/gedit-drawspaces-window-activatable.c\
 	$(BUILT_SOURCES)
 
 plugin_in_files += plugins/drawspaces/drawspaces.plugin.desktop.in
@@ -40,4 +40,4 @@ gsettings_SCHEMAS += plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gsche
 
 EXTRA_DIST += 							\
 	plugins/drawspaces/gedit-drawspaces.gresource.xml	\
-	plugins/drawspaces/gedit-drawspaces-plugin.ui
+	plugins/drawspaces/gedit-drawspaces-configurable.ui

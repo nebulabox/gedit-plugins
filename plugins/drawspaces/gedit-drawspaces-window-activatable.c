@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Ignacio Casal Quinteiro <nacho.resa@gmail.com>
+ * Copyright (C) 2008-2014 Ignacio Casal Quinteiro <nacho.resa@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 #include <config.h>
 #endif
 
-#include "gedit-drawspaces-plugin.h"
+#include "gedit-drawspaces-window-activatable.h"
 #include "gedit-drawspaces-app-activatable.h"
 
 #include <glib/gi18n-lib.h>
@@ -32,22 +32,20 @@
 #include <gedit/gedit-utils.h>
 #include <libpeas-gtk/peas-gtk-configurable.h>
 
-#define DRAWSPACES_SETTINGS_BASE   "org.gnome.gedit.plugins.drawspaces"
+#define DRAWSPACES_SETTINGS_BASE   "org.gnome.gedit.window_activatables.drawspaces"
 #define SETTINGS_KEY_SHOW_WHITE_SPACE "show-white-space"
 #define SETTINGS_KEY_DRAW_SPACES   "draw-spaces"
 
-#define UI_FILE "gedit-drawspaces-plugin.ui"
-
-#define GEDIT_DRAWSPACES_PLUGIN_GET_PRIVATE(object) \
+#define GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE_GET_PRIVATE(object) \
 				(G_TYPE_INSTANCE_GET_PRIVATE ((object),	\
-				GEDIT_TYPE_DRAWSPACES_PLUGIN,		\
-				GeditDrawspacesPluginPrivate))
+				GEDIT_TYPE_DRAWSPACES_WINDOW_ACTIVATABLE,		\
+				GeditDrawspacesWindowActivatablePrivate))
 
 static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
 static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
 
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesPlugin,
-				gedit_drawspaces_plugin,
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesWindowActivatable,
+				gedit_drawspaces_window_activatable,
 				PEAS_TYPE_EXTENSION_BASE,
 				0,
 				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
@@ -55,7 +53,7 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesPlugin,
 				G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
 							       peas_gtk_configurable_iface_init))
 
-struct _GeditDrawspacesPluginPrivate
+struct _GeditDrawspacesWindowActivatablePrivate
 {
 	GSettings *settings;
 	GeditWindow *window;
@@ -95,74 +93,74 @@ enum
 	PROP_WINDOW
 };
 
-static void draw_spaces (GeditDrawspacesPlugin *plugin);
+static void draw_spaces (GeditDrawspacesWindowActivatable *window_activatable);
 
 static void
-on_settings_changed (GSettings             *settings,
-		     const gchar           *key,
-		     GeditDrawspacesPlugin *plugin)
+on_settings_changed (GSettings                        *settings,
+		     const gchar                      *key,
+		     GeditDrawspacesWindowActivatable *window_activatable)
 {
-	plugin->priv->flags = g_settings_get_flags (plugin->priv->settings,
-						    SETTINGS_KEY_DRAW_SPACES);
+	window_activatable->priv->flags = g_settings_get_flags (window_activatable->priv->settings,
+	                                                        SETTINGS_KEY_DRAW_SPACES);
 
-	draw_spaces (plugin);
+	draw_spaces (window_activatable);
 }
 
 static void
-on_show_white_space_changed (GSettings             *settings,
-		             const gchar           *key,
-		             GeditDrawspacesPlugin *plugin)
+on_show_white_space_changed (GSettings                        *settings,
+		             const gchar                      *key,
+		             GeditDrawspacesWindowActivatable *window_activatable)
 {
-	plugin->priv->enable = g_settings_get_boolean (settings, key);
+	window_activatable->priv->enable = g_settings_get_boolean (settings, key);
 
-	draw_spaces (plugin);
+	draw_spaces (window_activatable);
 }
 
 static void
-gedit_drawspaces_plugin_init (GeditDrawspacesPlugin *plugin)
+gedit_drawspaces_window_activatable_init (GeditDrawspacesWindowActivatable *window_activatable)
 {
-	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesPlugin initializing");
+	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesWindowActivatable initializing");
 
-	plugin->priv = GEDIT_DRAWSPACES_PLUGIN_GET_PRIVATE (plugin);
+	window_activatable->priv = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE_GET_PRIVATE (window_activatable);
 
-	plugin->priv->settings = g_settings_new (DRAWSPACES_SETTINGS_BASE);
+	window_activatable->priv->settings = g_settings_new (DRAWSPACES_SETTINGS_BASE);
 
-	g_signal_connect (plugin->priv->settings,
+	g_signal_connect (window_activatable->priv->settings,
 	                  "changed::show-white-space",
 	                  G_CALLBACK (on_show_white_space_changed),
-	                  plugin);
-	g_signal_connect (plugin->priv->settings,
+	                  window_activatable);
+	g_signal_connect (window_activatable->priv->settings,
 			  "changed::draw-spaces",
 			  G_CALLBACK (on_settings_changed),
-			  plugin);
+			  window_activatable);
 }
 
 static void
-gedit_drawspaces_plugin_dispose (GObject *object)
+gedit_drawspaces_window_activatable_dispose (GObject *object)
 {
-	GeditDrawspacesPlugin *plugin = GEDIT_DRAWSPACES_PLUGIN (object);
-	GeditDrawspacesPluginPrivate *priv = plugin->priv;
+	GeditDrawspacesWindowActivatable *window_activatable = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (object);
+	GeditDrawspacesWindowActivatablePrivate *priv = window_activatable->priv;
 
-	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesPlugin disposing");
+	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesWindowActivatable disposing");
 
 	g_clear_object (&priv->settings);
 	g_clear_object (&priv->window);
 
-	G_OBJECT_CLASS (gedit_drawspaces_plugin_parent_class)->dispose (object);
+	G_OBJECT_CLASS (gedit_drawspaces_window_activatable_parent_class)->dispose (object);
 }
 
 static void
-gedit_drawspaces_plugin_set_property (GObject      *object,
-                                      guint         prop_id,
-                                      const GValue *value,
-                                      GParamSpec   *pspec)
+gedit_drawspaces_window_activatable_set_property (GObject      *object,
+                                                  guint         prop_id,
+                                                  const GValue *value,
+                                                  GParamSpec   *pspec)
 {
-	GeditDrawspacesPlugin *plugin = GEDIT_DRAWSPACES_PLUGIN (object);
+	GeditDrawspacesWindowActivatable *window_activatable = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (object);
 
 	switch (prop_id)
 	{
 		case PROP_WINDOW:
-			plugin->priv->window = GEDIT_WINDOW (g_value_dup_object (value));
+			window_activatable->priv->window = GEDIT_WINDOW (g_value_dup_object (value));
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -171,17 +169,17 @@ gedit_drawspaces_plugin_set_property (GObject      *object,
 }
 
 static void
-gedit_drawspaces_plugin_get_property (GObject    *object,
-                                      guint       prop_id,
-                                      GValue     *value,
-                                      GParamSpec *pspec)
+gedit_drawspaces_window_activatable_get_property (GObject    *object,
+                                                  guint       prop_id,
+                                                  GValue     *value,
+                                                  GParamSpec *pspec)
 {
-	GeditDrawspacesPlugin *plugin = GEDIT_DRAWSPACES_PLUGIN (object);
+	GeditDrawspacesWindowActivatable *window_activatable = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (object);
 
 	switch (prop_id)
 	{
 		case PROP_WINDOW:
-			g_value_set_object (value, plugin->priv->window);
+			g_value_set_object (value, window_activatable->priv->window);
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -190,12 +188,12 @@ gedit_drawspaces_plugin_get_property (GObject    *object,
 }
 
 static void
-draw_spaces (GeditDrawspacesPlugin *plugin)
+draw_spaces (GeditDrawspacesWindowActivatable *window_activatable)
 {
-	GeditDrawspacesPluginPrivate *priv;
+	GeditDrawspacesWindowActivatablePrivate *priv;
 	GList *views, *l;
 
-	priv = plugin->priv;
+	priv = window_activatable->priv;
 
 	views = gedit_window_get_views (priv->window);
 	for (l = views; l != NULL; l = g_list_next (l))
@@ -210,23 +208,23 @@ draw_spaces (GeditDrawspacesPlugin *plugin)
 static void
 tab_added_cb (GeditWindow *window,
 	      GeditTab *tab,
-	      GeditDrawspacesPlugin *plugin)
+	      GeditDrawspacesWindowActivatable *window_activatable)
 {
 	GeditView *view;
 
-	if (plugin->priv->enable)
+	if (window_activatable->priv->enable)
 	{
 		view = gedit_tab_get_view (tab);
 
 		gtk_source_view_set_draw_spaces (GTK_SOURCE_VIEW (view),
-						 plugin->priv->flags);
+						 window_activatable->priv->flags);
 	}
 }
 
 static void
-get_config_options (GeditDrawspacesPlugin *plugin)
+get_config_options (GeditDrawspacesWindowActivatable *window_activatable)
 {
-	GeditDrawspacesPluginPrivate *priv = plugin->priv;
+	GeditDrawspacesWindowActivatablePrivate *priv = window_activatable->priv;
 
 	priv->enable = g_settings_get_boolean (priv->settings,
 					       SETTINGS_KEY_SHOW_WHITE_SPACE);
@@ -236,17 +234,17 @@ get_config_options (GeditDrawspacesPlugin *plugin)
 }
 
 static void
-gedit_drawspaces_plugin_window_activate (GeditWindowActivatable *activatable)
+gedit_drawspaces_window_activatable_window_activate (GeditWindowActivatable *activatable)
 {
-	GeditDrawspacesPluginPrivate *priv;
+	GeditDrawspacesWindowActivatablePrivate *priv;
 	GMenuItem *item;
 	GAction *action;
 
 	gedit_debug (DEBUG_PLUGINS);
 
-	priv = GEDIT_DRAWSPACES_PLUGIN (activatable)->priv;
+	priv = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable)->priv;
 
-	get_config_options (GEDIT_DRAWSPACES_PLUGIN (activatable));
+	get_config_options (GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable));
 
 	action = g_settings_create_action (priv->settings,
 	                                   SETTINGS_KEY_SHOW_WHITE_SPACE);
@@ -256,7 +254,7 @@ gedit_drawspaces_plugin_window_activate (GeditWindowActivatable *activatable)
 
 	if (priv->enable)
 	{
-		draw_spaces (GEDIT_DRAWSPACES_PLUGIN (activatable));
+		draw_spaces (GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable));
 	}
 
 	g_signal_connect (priv->window, "tab-added",
@@ -264,20 +262,20 @@ gedit_drawspaces_plugin_window_activate (GeditWindowActivatable *activatable)
 }
 
 static void
-gedit_drawspaces_plugin_window_deactivate (GeditWindowActivatable *activatable)
+gedit_drawspaces_window_activatable_window_deactivate (GeditWindowActivatable *activatable)
 {
-	GeditDrawspacesPluginPrivate *priv;
+	GeditDrawspacesWindowActivatablePrivate *priv;
 	GtkUIManager *manager;
 
 	gedit_debug (DEBUG_PLUGINS);
 
-	priv = GEDIT_DRAWSPACES_PLUGIN (activatable)->priv;
+	priv = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable)->priv;
 
 	g_action_map_remove_action (G_ACTION_MAP (priv->window),
 	                            SETTINGS_KEY_SHOW_WHITE_SPACE);
 
 	priv->enable = FALSE;
-	draw_spaces (GEDIT_DRAWSPACES_PLUGIN (activatable));
+	draw_spaces (GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable));
 
 	g_signal_handlers_disconnect_by_func (priv->window, tab_added_cb,
 					      activatable);
@@ -355,7 +353,7 @@ on_draw_trailing_toggled (GtkToggleButton           *button,
 }
 
 static DrawspacesConfigureWidget *
-get_configuration_widget (GeditDrawspacesPlugin *plugin)
+get_configuration_widget (GeditDrawspacesWindowActivatable *window_activatable)
 {
 	DrawspacesConfigureWidget *widget = NULL;
 	GtkBuilder *builder;
@@ -372,7 +370,7 @@ get_configuration_widget (GeditDrawspacesPlugin *plugin)
 
 	builder = gtk_builder_new ();
 	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
-	gtk_builder_add_objects_from_resource (builder, "/org/gnome/gedit/plugins/drawspaces/ui/gedit-drawspaces-plugin.ui",
+	gtk_builder_add_objects_from_resource (builder, "/org/gnome/gedit/window_activatables/drawspaces/ui/gedit-drawspaces-configurable.ui",
 	                                       root_objects, NULL);
 	widget->content = GTK_WIDGET (gtk_builder_get_object (builder, "content"));
 	g_object_ref (widget->content);
@@ -439,59 +437,59 @@ get_configuration_widget (GeditDrawspacesPlugin *plugin)
 }
 
 static GtkWidget *
-gedit_drawspaces_plugin_create_configure_widget (PeasGtkConfigurable *configurable)
+gedit_drawspaces_window_activatable_create_configure_widget (PeasGtkConfigurable *configurable)
 {
 	DrawspacesConfigureWidget *widget;
 
-	widget = get_configuration_widget (GEDIT_DRAWSPACES_PLUGIN (configurable));
+	widget = get_configuration_widget (GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (configurable));
 
 	return widget->content;
 }
 
 static void
-gedit_drawspaces_plugin_class_init (GeditDrawspacesPluginClass *klass)
+gedit_drawspaces_window_activatable_class_init (GeditDrawspacesWindowActivatableClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	object_class->dispose = gedit_drawspaces_plugin_dispose;
-	object_class->set_property = gedit_drawspaces_plugin_set_property;
-	object_class->get_property = gedit_drawspaces_plugin_get_property;
+	object_class->dispose = gedit_drawspaces_window_activatable_dispose;
+	object_class->set_property = gedit_drawspaces_window_activatable_set_property;
+	object_class->get_property = gedit_drawspaces_window_activatable_get_property;
 
 	g_object_class_override_property (object_class, PROP_WINDOW, "window");
 
-	g_type_class_add_private (object_class, sizeof (GeditDrawspacesPluginPrivate));
+	g_type_class_add_private (object_class, sizeof (GeditDrawspacesWindowActivatablePrivate));
 }
 
 static void
-gedit_drawspaces_plugin_class_finalize (GeditDrawspacesPluginClass *klass)
+gedit_drawspaces_window_activatable_class_finalize (GeditDrawspacesWindowActivatableClass *klass)
 {
 }
 
 static void
 peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface)
 {
-	iface->create_configure_widget = gedit_drawspaces_plugin_create_configure_widget;
+	iface->create_configure_widget = gedit_drawspaces_window_activatable_create_configure_widget;
 }
 
 static void
 gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface)
 {
-	iface->activate = gedit_drawspaces_plugin_window_activate;
-	iface->deactivate = gedit_drawspaces_plugin_window_deactivate;
+	iface->activate = gedit_drawspaces_window_activatable_window_activate;
+	iface->deactivate = gedit_drawspaces_window_activatable_window_deactivate;
 }
 
 G_MODULE_EXPORT void
 peas_register_types (PeasObjectModule *module)
 {
-	gedit_drawspaces_plugin_register_type (G_TYPE_MODULE (module));
+	gedit_drawspaces_window_activatable_register_type (G_TYPE_MODULE (module));
 	gedit_drawspaces_app_activatable_register (G_TYPE_MODULE (module));
 
 	peas_object_module_register_extension_type (module,
 						    GEDIT_TYPE_WINDOW_ACTIVATABLE,
-						    GEDIT_TYPE_DRAWSPACES_PLUGIN);
+						    GEDIT_TYPE_DRAWSPACES_WINDOW_ACTIVATABLE);
 	peas_object_module_register_extension_type (module,
 						    PEAS_GTK_TYPE_CONFIGURABLE,
-						    GEDIT_TYPE_DRAWSPACES_PLUGIN);
+						    GEDIT_TYPE_DRAWSPACES_WINDOW_ACTIVATABLE);
 }
 
 /* ex:set ts=8 noet: */
