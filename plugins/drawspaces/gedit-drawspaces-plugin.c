@@ -21,13 +21,12 @@
 #endif
 
 #include "gedit-drawspaces-plugin.h"
+#include "gedit-drawspaces-app-activatable.h"
 
 #include <glib/gi18n-lib.h>
 #include <gedit/gedit-debug.h>
 #include <gedit/gedit-view.h>
 #include <gedit/gedit-tab.h>
-#include <gedit/gedit-app.h>
-#include <gedit/gedit-app-activatable.h>
 #include <gedit/gedit-window.h>
 #include <gedit/gedit-window-activatable.h>
 #include <gedit/gedit-utils.h>
@@ -44,7 +43,6 @@
 				GEDIT_TYPE_DRAWSPACES_PLUGIN,		\
 				GeditDrawspacesPluginPrivate))
 
-static void gedit_app_activatable_iface_init (GeditAppActivatableInterface *iface);
 static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
 static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
 
@@ -52,8 +50,6 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesPlugin,
 				gedit_drawspaces_plugin,
 				PEAS_TYPE_EXTENSION_BASE,
 				0,
-				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_APP_ACTIVATABLE,
-							       gedit_app_activatable_iface_init)
 				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
 							       gedit_window_activatable_iface_init)
 				G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
@@ -61,9 +57,6 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesPlugin,
 
 struct _GeditDrawspacesPluginPrivate
 {
-	GeditApp *app;
-	GeditMenuExtension *menu_ext;
-
 	GSettings *settings;
 	GeditWindow *window;
 	GtkSourceDrawSpacesFlags flags;
@@ -152,8 +145,6 @@ gedit_drawspaces_plugin_dispose (GObject *object)
 
 	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesPlugin disposing");
 
-	g_clear_object (&plugin->priv->app);
-	g_clear_object (&plugin->priv->menu_ext);
 	g_clear_object (&priv->settings);
 	g_clear_object (&priv->window);
 
@@ -170,9 +161,6 @@ gedit_drawspaces_plugin_set_property (GObject      *object,
 
 	switch (prop_id)
 	{
-		case PROP_APP:
-			plugin->priv->app = GEDIT_APP (g_value_dup_object (value));
-			break;
 		case PROP_WINDOW:
 			plugin->priv->window = GEDIT_WINDOW (g_value_dup_object (value));
 			break;
@@ -192,9 +180,6 @@ gedit_drawspaces_plugin_get_property (GObject    *object,
 
 	switch (prop_id)
 	{
-		case PROP_APP:
-			g_value_set_object (value, plugin->priv->app);
-			break;
 		case PROP_WINDOW:
 			g_value_set_object (value, plugin->priv->window);
 			break;
@@ -248,36 +233,6 @@ get_config_options (GeditDrawspacesPlugin *plugin)
 
 	priv->flags = g_settings_get_flags (priv->settings,
 					    SETTINGS_KEY_DRAW_SPACES);
-}
-
-static void
-gedit_drawspaces_plugin_app_activate (GeditAppActivatable *activatable)
-{
-	GeditDrawspacesPluginPrivate *priv;
-	GMenuItem *item;
-	GAction *action;
-
-	gedit_debug (DEBUG_PLUGINS);
-
-	priv = GEDIT_DRAWSPACES_PLUGIN (activatable)->priv;
-
-	priv->menu_ext = gedit_app_activatable_extend_menu (activatable, "view-section-2");
-	item = g_menu_item_new (_("Show _White Space"), "win.show-white-space");
-	gedit_menu_extension_append_menu_item (priv->menu_ext, item);
-	g_object_unref (item);
-}
-
-static void
-gedit_drawspaces_plugin_app_deactivate (GeditAppActivatable *activatable)
-{
-	GeditDrawspacesPluginPrivate *priv;
-	GtkUIManager *manager;
-
-	gedit_debug (DEBUG_PLUGINS);
-
-	priv = GEDIT_DRAWSPACES_PLUGIN (activatable)->priv;
-
-	g_clear_object (&priv->menu_ext);
 }
 
 static void
@@ -502,7 +457,6 @@ gedit_drawspaces_plugin_class_init (GeditDrawspacesPluginClass *klass)
 	object_class->set_property = gedit_drawspaces_plugin_set_property;
 	object_class->get_property = gedit_drawspaces_plugin_get_property;
 
-	g_object_class_override_property (object_class, PROP_APP, "app");
 	g_object_class_override_property (object_class, PROP_WINDOW, "window");
 
 	g_type_class_add_private (object_class, sizeof (GeditDrawspacesPluginPrivate));
@@ -520,13 +474,6 @@ peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface)
 }
 
 static void
-gedit_app_activatable_iface_init (GeditAppActivatableInterface *iface)
-{
-	iface->activate = gedit_drawspaces_plugin_app_activate;
-	iface->deactivate = gedit_drawspaces_plugin_app_deactivate;
-}
-
-static void
 gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface)
 {
 	iface->activate = gedit_drawspaces_plugin_window_activate;
@@ -537,10 +484,8 @@ G_MODULE_EXPORT void
 peas_register_types (PeasObjectModule *module)
 {
 	gedit_drawspaces_plugin_register_type (G_TYPE_MODULE (module));
+	gedit_drawspaces_app_activatable_register (G_TYPE_MODULE (module));
 
-	peas_object_module_register_extension_type (module,
-						    GEDIT_TYPE_APP_ACTIVATABLE,
-						    GEDIT_TYPE_DRAWSPACES_PLUGIN);
 	peas_object_module_register_extension_type (module,
 						    GEDIT_TYPE_WINDOW_ACTIVATABLE,
 						    GEDIT_TYPE_DRAWSPACES_PLUGIN);

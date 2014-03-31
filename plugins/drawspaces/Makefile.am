@@ -31,6 +31,8 @@ BUILT_SOURCES +=						\
 plugins_drawspaces_libdrawspaces_la_SOURCES =			\
 	plugins/drawspaces/gedit-drawspaces-plugin.h		\
 	plugins/drawspaces/gedit-drawspaces-plugin.c		\
+	plugins/drawspaces/gedit-drawspaces-app-activatable.h	\
+	plugins/drawspaces/gedit-drawspaces-app-activatable.c	\
 	$(BUILT_SOURCES)
 
 plugin_in_files += plugins/drawspaces/drawspaces.plugin.desktop.in
