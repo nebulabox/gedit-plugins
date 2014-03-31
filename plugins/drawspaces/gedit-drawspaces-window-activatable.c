@@ -21,7 +21,6 @@
 #endif
 
 #include "gedit-drawspaces-window-activatable.h"
-#include "gedit-drawspaces-app-activatable.h"
 
 #include <glib/gi18n-lib.h>
 #include <gedit/gedit-debug.h>
@@ -29,30 +28,16 @@
 #include <gedit/gedit-tab.h>
 #include <gedit/gedit-window.h>
 #include <gedit/gedit-window-activatable.h>
-#include <gedit/gedit-utils.h>
+#include <libpeas/peas-object-module.h>
 
-#define GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE_GET_PRIVATE(object) \
-				(G_TYPE_INSTANCE_GET_PRIVATE ((object),	\
-				GEDIT_TYPE_DRAWSPACES_WINDOW_ACTIVATABLE,		\
-				GeditDrawspacesWindowActivatablePrivate))
-
-static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
-
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesWindowActivatable,
-				gedit_drawspaces_window_activatable,
-				G_TYPE_OBJECT,
-				0,
-				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
-							       gedit_window_activatable_iface_init))
-
-struct _GeditDrawspacesWindowActivatablePrivate
+typedef struct _GeditDrawspacesWindowActivatablePrivate
 {
 	GSettings *settings;
 	GeditWindow *window;
 	GtkSourceDrawSpacesFlags flags;
 
 	guint enable : 1;
-};
+} GeditDrawspacesWindowActivatablePrivate;
 
 enum
 {
@@ -61,52 +46,65 @@ enum
 };
 
 static void draw_spaces (GeditDrawspacesWindowActivatable *window_activatable);
+static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesWindowActivatable,
+				gedit_drawspaces_window_activatable,
+				G_TYPE_OBJECT,
+				0,
+				G_ADD_PRIVATE_DYNAMIC (GeditDrawspacesWindowActivatable)
+				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
+							       gedit_window_activatable_iface_init))
 
 static void
 on_settings_changed (GSettings                        *settings,
 		     const gchar                      *key,
-		     GeditDrawspacesWindowActivatable *window_activatable)
+		     GeditDrawspacesWindowActivatable *activatable)
 {
-	window_activatable->priv->flags = g_settings_get_flags (window_activatable->priv->settings,
-	                                                        SETTINGS_KEY_DRAW_SPACES);
+	GeditDrawspacesWindowActivatablePrivate *priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
 
-	draw_spaces (window_activatable);
+	priv->flags = g_settings_get_flags (priv->settings,
+	                                    SETTINGS_KEY_DRAW_SPACES);
+
+	draw_spaces (activatable);
 }
 
 static void
 on_show_white_space_changed (GSettings                        *settings,
 		             const gchar                      *key,
-		             GeditDrawspacesWindowActivatable *window_activatable)
+		             GeditDrawspacesWindowActivatable *activatable)
 {
-	window_activatable->priv->enable = g_settings_get_boolean (settings, key);
+	GeditDrawspacesWindowActivatablePrivate *priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
 
-	draw_spaces (window_activatable);
+	priv->enable = g_settings_get_boolean (settings, key);
+
+	draw_spaces (activatable);
 }
 
 static void
-gedit_drawspaces_window_activatable_init (GeditDrawspacesWindowActivatable *window_activatable)
+gedit_drawspaces_window_activatable_init (GeditDrawspacesWindowActivatable *activatable)
 {
+	GeditDrawspacesWindowActivatablePrivate *priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
+
 	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesWindowActivatable initializing");
 
-	window_activatable->priv = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE_GET_PRIVATE (window_activatable);
+	priv->settings = g_settings_new (DRAWSPACES_SETTINGS_BASE);
 
-	window_activatable->priv->settings = g_settings_new (DRAWSPACES_SETTINGS_BASE);
-
-	g_signal_connect (window_activatable->priv->settings,
+	g_signal_connect (priv->settings,
 	                  "changed::show-white-space",
 	                  G_CALLBACK (on_show_white_space_changed),
-	                  window_activatable);
-	g_signal_connect (window_activatable->priv->settings,
+	                  activatable);
+	g_signal_connect (priv->settings,
 			  "changed::draw-spaces",
 			  G_CALLBACK (on_settings_changed),
-			  window_activatable);
+			  activatable);
 }
 
 static void
 gedit_drawspaces_window_activatable_dispose (GObject *object)
 {
-	GeditDrawspacesWindowActivatable *window_activatable = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (object);
-	GeditDrawspacesWindowActivatablePrivate *priv = window_activatable->priv;
+	GeditDrawspacesWindowActivatable *activatable = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (object);
+	GeditDrawspacesWindowActivatablePrivate *priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
 
 	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesWindowActivatable disposing");
 
@@ -122,12 +120,13 @@ gedit_drawspaces_window_activatable_set_property (GObject      *object,
                                                   const GValue *value,
                                                   GParamSpec   *pspec)
 {
-	GeditDrawspacesWindowActivatable *window_activatable = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (object);
+	GeditDrawspacesWindowActivatable *activatable = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (object);
+	GeditDrawspacesWindowActivatablePrivate *priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
 
 	switch (prop_id)
 	{
 		case PROP_WINDOW:
-			window_activatable->priv->window = GEDIT_WINDOW (g_value_dup_object (value));
+			priv->window = GEDIT_WINDOW (g_value_dup_object (value));
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -141,12 +140,13 @@ gedit_drawspaces_window_activatable_get_property (GObject    *object,
                                                   GValue     *value,
                                                   GParamSpec *pspec)
 {
-	GeditDrawspacesWindowActivatable *window_activatable = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (object);
+	GeditDrawspacesWindowActivatable *activatable = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (object);
+	GeditDrawspacesWindowActivatablePrivate *priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
 
 	switch (prop_id)
 	{
 		case PROP_WINDOW:
-			g_value_set_object (value, window_activatable->priv->window);
+			g_value_set_object (value, priv->window);
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -155,12 +155,12 @@ gedit_drawspaces_window_activatable_get_property (GObject    *object,
 }
 
 static void
-draw_spaces (GeditDrawspacesWindowActivatable *window_activatable)
+draw_spaces (GeditDrawspacesWindowActivatable *activatable)
 {
 	GeditDrawspacesWindowActivatablePrivate *priv;
 	GList *views, *l;
 
-	priv = window_activatable->priv;
+	priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
 
 	views = gedit_window_get_views (priv->window);
 	for (l = views; l != NULL; l = g_list_next (l))
@@ -175,23 +175,26 @@ draw_spaces (GeditDrawspacesWindowActivatable *window_activatable)
 static void
 tab_added_cb (GeditWindow *window,
 	      GeditTab *tab,
-	      GeditDrawspacesWindowActivatable *window_activatable)
+	      GeditDrawspacesWindowActivatable *activatable)
 {
+	GeditDrawspacesWindowActivatablePrivate *priv;
 	GeditView *view;
 
-	if (window_activatable->priv->enable)
+	priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
+
+	if (priv->enable)
 	{
 		view = gedit_tab_get_view (tab);
 
 		gtk_source_view_set_draw_spaces (GTK_SOURCE_VIEW (view),
-						 window_activatable->priv->flags);
+						 priv->flags);
 	}
 }
 
 static void
-get_config_options (GeditDrawspacesWindowActivatable *window_activatable)
+get_config_options (GeditDrawspacesWindowActivatable *activatable)
 {
-	GeditDrawspacesWindowActivatablePrivate *priv = window_activatable->priv;
+	GeditDrawspacesWindowActivatablePrivate *priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
 
 	priv->enable = g_settings_get_boolean (priv->settings,
 					       SETTINGS_KEY_SHOW_WHITE_SPACE);
@@ -204,12 +207,11 @@ static void
 gedit_drawspaces_window_activatable_window_activate (GeditWindowActivatable *activatable)
 {
 	GeditDrawspacesWindowActivatablePrivate *priv;
-	GMenuItem *item;
 	GAction *action;
 
 	gedit_debug (DEBUG_PLUGINS);
 
-	priv = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable)->priv;
+	priv = gedit_drawspaces_window_activatable_get_instance_private (GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable));
 
 	get_config_options (GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable));
 
@@ -232,11 +234,10 @@ static void
 gedit_drawspaces_window_activatable_window_deactivate (GeditWindowActivatable *activatable)
 {
 	GeditDrawspacesWindowActivatablePrivate *priv;
-	GtkUIManager *manager;
 
 	gedit_debug (DEBUG_PLUGINS);
 
-	priv = GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable)->priv;
+	priv = gedit_drawspaces_window_activatable_get_instance_private (GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable));
 
 	g_action_map_remove_action (G_ACTION_MAP (priv->window),
 	                            SETTINGS_KEY_SHOW_WHITE_SPACE);
@@ -258,8 +259,6 @@ gedit_drawspaces_window_activatable_class_init (GeditDrawspacesWindowActivatable
 	object_class->get_property = gedit_drawspaces_window_activatable_get_property;
 
 	g_object_class_override_property (object_class, PROP_WINDOW, "window");
-
-	g_type_class_add_private (object_class, sizeof (GeditDrawspacesWindowActivatablePrivate));
 }
 
 static void

@@ -38,15 +38,11 @@ G_BEGIN_DECLS
 #define SETTINGS_KEY_DRAW_SPACES   "draw-spaces"
 
 typedef struct _GeditDrawspacesWindowActivatable	GeditDrawspacesWindowActivatable;
-typedef struct _GeditDrawspacesWindowActivatablePrivate	GeditDrawspacesWindowActivatablePrivate;
 typedef struct _GeditDrawspacesWindowActivatableClass	GeditDrawspacesWindowActivatableClass;
 
 struct _GeditDrawspacesWindowActivatable
 {
 	GObject parent_instance;
-
-	/* private */
-	GeditDrawspacesWindowActivatablePrivate *priv;
 };
 
 struct _GeditDrawspacesWindowActivatableClass
