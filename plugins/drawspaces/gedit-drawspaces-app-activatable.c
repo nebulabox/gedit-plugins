@@ -28,11 +28,36 @@
 #include <gedit/gedit-debug.h>
 #include <gio/gio.h>
 #include <glib/gi18n-lib.h>
+#include <libpeas-gtk/peas-gtk-configurable.h>
 
 struct _GeditDrawspacesAppActivatablePrivate
 {
 	GeditApp *app;
 	GeditMenuExtension *menu_ext;
+};
+
+typedef struct _DrawspacesConfigureWidget DrawspacesConfigureWidget;
+
+struct _DrawspacesConfigureWidget
+{
+	GSettings *settings;
+	GtkSourceDrawSpacesFlags flags;
+
+	GtkWidget *content;
+
+	GtkWidget *draw_tabs;
+	GtkWidget *draw_spaces;
+	GtkWidget *draw_newline;
+	GtkWidget *draw_nbsp;
+	GtkWidget *draw_leading;
+	GtkWidget *draw_text;
+	GtkWidget *draw_trailing;
+};
+
+enum
+{
+	COLUMN_LABEL,
+	COLUMN_LOCATION
 };
 
 enum
@@ -42,6 +67,7 @@ enum
 };
 
 static void gedit_app_activatable_iface_init (GeditAppActivatableInterface *iface);
+static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesAppActivatable,
 				gedit_drawspaces_app_activatable,
@@ -49,7 +75,9 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesAppActivatable,
 				0,
 				G_ADD_PRIVATE_DYNAMIC (GeditDrawspacesAppActivatable)
 				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_APP_ACTIVATABLE,
-							       gedit_app_activatable_iface_init))
+							       gedit_app_activatable_iface_init)
+				G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
+							       peas_gtk_configurable_iface_init))
 
 static void
 gedit_drawspaces_app_activatable_dispose (GObject *object)
@@ -157,6 +185,177 @@ gedit_app_activatable_iface_init (GeditAppActivatableInterface *iface)
 	iface->deactivate = gedit_drawspaces_app_activatable_deactivate;
 }
 
+static void
+widget_destroyed (GtkWidget *obj, gpointer widget_pointer)
+{
+	DrawspacesConfigureWidget *widget = (DrawspacesConfigureWidget *)widget_pointer;
+
+	gedit_debug (DEBUG_PLUGINS);
+
+	g_object_unref (widget->settings);
+	g_slice_free (DrawspacesConfigureWidget, widget_pointer);
+
+	gedit_debug_message (DEBUG_PLUGINS, "END");
+}
+
+static void
+set_flag (DrawspacesConfigureWidget *widget, GtkSourceDrawSpacesFlags flag, gboolean active)
+{
+	widget->flags = active ? widget->flags | flag : widget->flags & ~flag;
+	g_settings_set_flags (widget->settings,
+			      SETTINGS_KEY_DRAW_SPACES,
+			      widget->flags);
+}
+
+static void
+on_draw_tabs_toggled (GtkToggleButton           *button,
+		      DrawspacesConfigureWidget *widget)
+{
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_TAB, gtk_toggle_button_get_active (button));
+}
+
+static void
+on_draw_spaces_toggled (GtkToggleButton           *button,
+			DrawspacesConfigureWidget *widget)
+{
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_SPACE, gtk_toggle_button_get_active (button));
+}
+
+static void
+on_draw_newline_toggled (GtkToggleButton           *button,
+			 DrawspacesConfigureWidget *widget)
+{
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_NEWLINE, gtk_toggle_button_get_active (button));
+}
+
+static void
+on_draw_nbsp_toggled (GtkToggleButton           *button,
+		      DrawspacesConfigureWidget *widget)
+{
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_NBSP, gtk_toggle_button_get_active (button));
+}
+
+static void
+on_draw_leading_toggled (GtkToggleButton           *button,
+			 DrawspacesConfigureWidget *widget)
+{
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_LEADING, gtk_toggle_button_get_active (button));
+}
+
+static void
+on_draw_text_toggled (GtkToggleButton           *button,
+		      DrawspacesConfigureWidget *widget)
+{
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_TEXT, gtk_toggle_button_get_active (button));
+}
+
+static void
+on_draw_trailing_toggled (GtkToggleButton           *button,
+			  DrawspacesConfigureWidget *widget)
+{
+	set_flag (widget, GTK_SOURCE_DRAW_SPACES_TRAILING, gtk_toggle_button_get_active (button));
+}
+
+static DrawspacesConfigureWidget *
+get_configuration_widget (GeditDrawspacesAppActivatable *activatable)
+{
+	DrawspacesConfigureWidget *widget = NULL;
+	GtkBuilder *builder;
+
+	gchar *root_objects[] = {
+		"content",
+		NULL
+	};
+
+	widget = g_slice_new (DrawspacesConfigureWidget);
+	widget->settings = g_settings_new (DRAWSPACES_SETTINGS_BASE);
+	widget->flags = g_settings_get_flags (widget->settings,
+					      SETTINGS_KEY_DRAW_SPACES);
+
+	builder = gtk_builder_new ();
+	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
+	gtk_builder_add_objects_from_resource (builder, "/org/gnome/gedit/plugins/drawspaces/ui/gedit-drawspaces-configurable.ui",
+	                                       root_objects, NULL);
+	widget->content = GTK_WIDGET (gtk_builder_get_object (builder, "content"));
+	g_object_ref (widget->content);
+	widget->draw_tabs = GTK_WIDGET (gtk_builder_get_object (builder, "check_button_draw_tabs"));
+	widget->draw_spaces = GTK_WIDGET (gtk_builder_get_object (builder, "check_button_draw_spaces"));
+	widget->draw_newline = GTK_WIDGET (gtk_builder_get_object (builder, "check_button_draw_new_lines"));
+	widget->draw_nbsp = GTK_WIDGET (gtk_builder_get_object (builder, "check_button_draw_nbsp"));
+	widget->draw_leading = GTK_WIDGET (gtk_builder_get_object (builder, "check_button_draw_leading"));
+	widget->draw_text = GTK_WIDGET (gtk_builder_get_object (builder, "check_button_draw_text"));
+	widget->draw_trailing = GTK_WIDGET (gtk_builder_get_object (builder, "check_button_draw_trailing"));
+	g_object_unref (builder);
+
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->draw_tabs),
+				      widget->flags & GTK_SOURCE_DRAW_SPACES_TAB);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->draw_spaces),
+				      widget->flags & GTK_SOURCE_DRAW_SPACES_SPACE);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->draw_newline),
+				      widget->flags & GTK_SOURCE_DRAW_SPACES_NEWLINE);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->draw_nbsp),
+				      widget->flags & GTK_SOURCE_DRAW_SPACES_NBSP);
+
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->draw_leading),
+				      widget->flags & GTK_SOURCE_DRAW_SPACES_LEADING);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->draw_text),
+				      widget->flags & GTK_SOURCE_DRAW_SPACES_TEXT);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->draw_trailing),
+				      widget->flags & GTK_SOURCE_DRAW_SPACES_TRAILING);
+
+	g_signal_connect (widget->draw_tabs,
+			  "toggled",
+			  G_CALLBACK (on_draw_tabs_toggled),
+			  widget);
+	g_signal_connect (widget->draw_spaces,
+			  "toggled",
+			  G_CALLBACK (on_draw_spaces_toggled),
+			  widget);
+	g_signal_connect (widget->draw_newline,
+			  "toggled",
+			  G_CALLBACK (on_draw_newline_toggled),
+			  widget);
+	g_signal_connect (widget->draw_nbsp,
+			  "toggled",
+			  G_CALLBACK (on_draw_nbsp_toggled),
+			  widget);
+	g_signal_connect (widget->draw_leading,
+			  "toggled",
+			  G_CALLBACK (on_draw_leading_toggled),
+			  widget);
+	g_signal_connect (widget->draw_text,
+			  "toggled",
+			  G_CALLBACK (on_draw_text_toggled),
+			  widget);
+	g_signal_connect (widget->draw_trailing,
+			  "toggled",
+			  G_CALLBACK (on_draw_trailing_toggled),
+			  widget);
+
+	g_signal_connect (widget->content,
+			  "destroy",
+			  G_CALLBACK (widget_destroyed),
+			  widget);
+
+	return widget;
+}
+
+static GtkWidget *
+gedit_drawspaces_app_activatable_create_configure_widget (PeasGtkConfigurable *configurable)
+{
+	DrawspacesConfigureWidget *widget;
+
+	widget = get_configuration_widget (GEDIT_DRAWSPACES_APP_ACTIVATABLE (configurable));
+
+	return widget->content;
+}
+
+static void
+peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface)
+{
+	iface->create_configure_widget = gedit_drawspaces_app_activatable_create_configure_widget;
+}
+
 G_MODULE_EXPORT void
 peas_register_types (PeasObjectModule *module)
 {
@@ -165,6 +364,9 @@ peas_register_types (PeasObjectModule *module)
 
 	peas_object_module_register_extension_type (module,
 	                                            GEDIT_TYPE_APP_ACTIVATABLE,
+	                                            GEDIT_TYPE_DRAWSPACES_APP_ACTIVATABLE);
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_GTK_TYPE_CONFIGURABLE,
 	                                            GEDIT_TYPE_DRAWSPACES_APP_ACTIVATABLE);
 }
 
