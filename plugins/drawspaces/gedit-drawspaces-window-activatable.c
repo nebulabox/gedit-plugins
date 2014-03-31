@@ -478,16 +478,15 @@ gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface)
 	iface->deactivate = gedit_drawspaces_window_activatable_window_deactivate;
 }
 
-G_MODULE_EXPORT void
-peas_register_types (PeasObjectModule *module)
+void
+gedit_drawspaces_window_activatable_register (GTypeModule *module)
 {
-	gedit_drawspaces_window_activatable_register_type (G_TYPE_MODULE (module));
-	gedit_drawspaces_app_activatable_register (G_TYPE_MODULE (module));
+	gedit_drawspaces_window_activatable_register_type (module);
 
-	peas_object_module_register_extension_type (module,
+	peas_object_module_register_extension_type (PEAS_OBJECT_MODULE (module),
 						    GEDIT_TYPE_WINDOW_ACTIVATABLE,
 						    GEDIT_TYPE_DRAWSPACES_WINDOW_ACTIVATABLE);
-	peas_object_module_register_extension_type (module,
+	peas_object_module_register_extension_type (PEAS_OBJECT_MODULE (module),
 						    PEAS_GTK_TYPE_CONFIGURABLE,
 						    GEDIT_TYPE_DRAWSPACES_WINDOW_ACTIVATABLE);
 }

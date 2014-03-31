@@ -24,7 +24,6 @@
 #include <glib.h>
 #include <glib-object.h>
 #include <libpeas/peas-extension-base.h>
-#include <libpeas/peas-object-module.h>
 
 G_BEGIN_DECLS
 
@@ -52,9 +51,9 @@ struct _GeditDrawspacesWindowActivatableClass
 	PeasExtensionBaseClass parent_class;
 };
 
-GType			gedit_drawspaces_window_activatable_get_type	(void) G_GNUC_CONST;
+GType          gedit_drawspaces_window_activatable_get_type   (void) G_GNUC_CONST;
 
-G_MODULE_EXPORT void	peas_register_types			(PeasObjectModule *module);
+void           gedit_drawspaces_window_activatable_register   (GTypeModule *module);
 
 G_END_DECLS
 

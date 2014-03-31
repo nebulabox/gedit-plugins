@@ -20,6 +20,7 @@
 #define __GEDIT_DRAWSPACES_APP_ACTIVATABLE_H__
 
 #include <glib-object.h>
+#include <libpeas/peas-object-module.h>
 
 G_BEGIN_DECLS
 
@@ -47,9 +48,9 @@ struct _GeditDrawspacesAppActivatableClass
 	GObjectClass parent_class;
 };
 
-GType          gedit_drawspaces_app_activatable_get_type   (void) G_GNUC_CONST;
+GType                   gedit_drawspaces_app_activatable_get_type   (void) G_GNUC_CONST;
 
-void           gedit_drawspaces_app_activatable_register   (GTypeModule *module);
+G_MODULE_EXPORT void    peas_register_types                         (PeasObjectModule *module);
 
 G_END_DECLS
 

@@ -21,11 +21,11 @@
 #endif
 
 #include "gedit-drawspaces-app-activatable.h"
+#include "gedit-drawspaces-window-activatable.h"
 
 #include <gedit/gedit-app.h>
 #include <gedit/gedit-app-activatable.h>
 #include <gedit/gedit-debug.h>
-#include <libpeas/peas-object-module.h>
 #include <gio/gio.h>
 #include <glib/gi18n-lib.h>
 
@@ -157,12 +157,13 @@ gedit_app_activatable_iface_init (GeditAppActivatableInterface *iface)
 	iface->deactivate = gedit_drawspaces_app_activatable_deactivate;
 }
 
-void
-gedit_drawspaces_app_activatable_register (GTypeModule *module)
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
 {
-	gedit_drawspaces_app_activatable_register_type (module);
+	gedit_drawspaces_app_activatable_register_type (G_TYPE_MODULE (module));
+	gedit_drawspaces_window_activatable_register (G_TYPE_MODULE (module));
 
-	peas_object_module_register_extension_type (PEAS_OBJECT_MODULE (module),
+	peas_object_module_register_extension_type (module,
 	                                            GEDIT_TYPE_APP_ACTIVATABLE,
 	                                            GEDIT_TYPE_DRAWSPACES_APP_ACTIVATABLE);
 }
