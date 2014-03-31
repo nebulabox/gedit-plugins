@@ -84,20 +84,6 @@ on_show_white_space_changed (GSettings                        *settings,
 static void
 gedit_drawspaces_window_activatable_init (GeditDrawspacesWindowActivatable *activatable)
 {
-	GeditDrawspacesWindowActivatablePrivate *priv = gedit_drawspaces_window_activatable_get_instance_private (activatable);
-
-	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesWindowActivatable initializing");
-
-	priv->settings = g_settings_new (DRAWSPACES_SETTINGS_BASE);
-
-	g_signal_connect (priv->settings,
-	                  "changed::show-white-space",
-	                  G_CALLBACK (on_show_white_space_changed),
-	                  activatable);
-	g_signal_connect (priv->settings,
-			  "changed::draw-spaces",
-			  G_CALLBACK (on_settings_changed),
-			  activatable);
 }
 
 static void
@@ -108,7 +94,6 @@ gedit_drawspaces_window_activatable_dispose (GObject *object)
 
 	gedit_debug_message (DEBUG_PLUGINS, "GeditDrawspacesWindowActivatable disposing");
 
-	g_clear_object (&priv->settings);
 	g_clear_object (&priv->window);
 
 	G_OBJECT_CLASS (gedit_drawspaces_window_activatable_parent_class)->dispose (object);
@@ -212,6 +197,7 @@ gedit_drawspaces_window_activatable_window_activate (GeditWindowActivatable *act
 	gedit_debug (DEBUG_PLUGINS);
 
 	priv = gedit_drawspaces_window_activatable_get_instance_private (GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable));
+	priv->settings = g_settings_new (DRAWSPACES_SETTINGS_BASE);
 
 	get_config_options (GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE (activatable));
 
@@ -228,6 +214,15 @@ gedit_drawspaces_window_activatable_window_activate (GeditWindowActivatable *act
 
 	g_signal_connect (priv->window, "tab-added",
 			  G_CALLBACK (tab_added_cb), activatable);
+
+	g_signal_connect (priv->settings,
+	                  "changed::show-white-space",
+	                  G_CALLBACK (on_show_white_space_changed),
+	                  activatable);
+	g_signal_connect (priv->settings,
+			  "changed::draw-spaces",
+			  G_CALLBACK (on_settings_changed),
+			  activatable);
 }
 
 static void
@@ -247,6 +242,7 @@ gedit_drawspaces_window_activatable_window_deactivate (GeditWindowActivatable *a
 
 	g_signal_handlers_disconnect_by_func (priv->window, tab_added_cb,
 					      activatable);
+	g_clear_object (&priv->settings);
 }
 
 static void
