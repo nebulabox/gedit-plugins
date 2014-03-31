@@ -30,11 +30,11 @@
 #include <glib/gi18n-lib.h>
 #include <libpeas-gtk/peas-gtk-configurable.h>
 
-struct _GeditDrawspacesAppActivatablePrivate
+typedef struct _GeditDrawspacesAppActivatablePrivate
 {
 	GeditApp *app;
 	GeditMenuExtension *menu_ext;
-};
+} GeditDrawspacesAppActivatablePrivate;
 
 typedef struct _DrawspacesConfigureWidget DrawspacesConfigureWidget;
 

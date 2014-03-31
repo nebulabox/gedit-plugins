@@ -34,13 +34,10 @@ G_BEGIN_DECLS
 
 typedef struct _GeditDrawspacesAppActivatable		GeditDrawspacesAppActivatable;
 typedef struct _GeditDrawspacesAppActivatableClass	GeditDrawspacesAppActivatableClass;
-typedef struct _GeditDrawspacesAppActivatablePrivate	GeditDrawspacesAppActivatablePrivate;
 
 struct _GeditDrawspacesAppActivatable
 {
 	GObject parent;
-
-	GeditDrawspacesAppActivatablePrivate *priv;
 };
 
 struct _GeditDrawspacesAppActivatableClass
