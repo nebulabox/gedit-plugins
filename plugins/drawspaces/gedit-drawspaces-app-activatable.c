@@ -22,6 +22,7 @@
 
 #include "gedit-drawspaces-app-activatable.h"
 #include "gedit-drawspaces-window-activatable.h"
+#include "gedit-drawspaces-view-activatable.h"
 
 #include <gedit/gedit-app.h>
 #include <gedit/gedit-app-activatable.h>
@@ -361,6 +362,7 @@ peas_register_types (PeasObjectModule *module)
 {
 	gedit_drawspaces_app_activatable_register_type (G_TYPE_MODULE (module));
 	gedit_drawspaces_window_activatable_register (G_TYPE_MODULE (module));
+	gedit_drawspaces_view_activatable_register (G_TYPE_MODULE (module));
 
 	peas_object_module_register_extension_type (module,
 	                                            GEDIT_TYPE_APP_ACTIVATABLE,

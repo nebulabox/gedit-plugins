@@ -33,10 +33,6 @@ G_BEGIN_DECLS
 #define GEDIT_IS_DRAWSPACES_WINDOW_ACTIVATABLE_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE ((k), GEDIT_TYPE_DRAWSPACES_WINDOW_ACTIVATABLE))
 #define GEDIT_DRAWSPACES_WINDOW_ACTIVATABLE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GEDIT_TYPE_DRAWSPACES_WINDOW_ACTIVATABLE, GeditDrawspacesWindowActivatableClass))
 
-#define DRAWSPACES_SETTINGS_BASE   "org.gnome.gedit.plugins.drawspaces"
-#define SETTINGS_KEY_SHOW_WHITE_SPACE "show-white-space"
-#define SETTINGS_KEY_DRAW_SPACES   "draw-spaces"
-
 typedef struct _GeditDrawspacesWindowActivatable	GeditDrawspacesWindowActivatable;
 typedef struct _GeditDrawspacesWindowActivatableClass	GeditDrawspacesWindowActivatableClass;
 
