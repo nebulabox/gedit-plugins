@@ -17,8 +17,8 @@ plugins/commander/commander/windowactivatable.py
 plugins/dashboard/dashboard/dashboard.py
 plugins/dashboard/dashboard.plugin.desktop.in.in
 plugins/drawspaces/drawspaces.plugin.desktop.in.in
-plugins/drawspaces/gedit-drawspaces-plugin.c
-[type: gettext/glade]plugins/drawspaces/gedit-drawspaces-plugin.ui
+plugins/drawspaces/gedit-drawspaces-app-activatable.c
+[type: gettext/glade]plugins/drawspaces/gedit-drawspaces-configurable.ui
 plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in
 plugins/git/git.plugin.desktop.in.in
 plugins/joinlines/joinlines.plugin.desktop.in.in
