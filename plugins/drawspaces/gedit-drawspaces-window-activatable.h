@@ -23,7 +23,6 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <libpeas/peas-extension-base.h>
 
 G_BEGIN_DECLS
 
@@ -44,7 +43,7 @@ typedef struct _GeditDrawspacesWindowActivatableClass	GeditDrawspacesWindowActiv
 
 struct _GeditDrawspacesWindowActivatable
 {
-	PeasExtensionBase parent_instance;
+	GObject parent_instance;
 
 	/* private */
 	GeditDrawspacesWindowActivatablePrivate *priv;
@@ -52,7 +51,7 @@ struct _GeditDrawspacesWindowActivatable
 
 struct _GeditDrawspacesWindowActivatableClass
 {
-	PeasExtensionBaseClass parent_class;
+	GObjectClass parent_class;
 };
 
 GType          gedit_drawspaces_window_activatable_get_type   (void) G_GNUC_CONST;

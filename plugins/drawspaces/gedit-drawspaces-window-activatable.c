@@ -40,7 +40,7 @@ static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditDrawspacesWindowActivatable,
 				gedit_drawspaces_window_activatable,
-				PEAS_TYPE_EXTENSION_BASE,
+				G_TYPE_OBJECT,
 				0,
 				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
 							       gedit_window_activatable_iface_init))
