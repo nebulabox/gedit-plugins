@@ -38,7 +38,7 @@ close_brackets = {
 language_brackets = {
     'changelog': { '<' : '>' },
     'html': { '<' : '>' },
-    'ruby': { '|' : '|', 'do': 'end' },
+    'ruby': { '|' : '|' },
     'sh': { '`' : '`' },
     'xml': { '<' : '>' },
     'php': { '<' : '>' },
