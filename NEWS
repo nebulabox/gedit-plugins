@@ -1,4 +1,18 @@
 ====================
+gedit-plugins 3.12.1
+====================
+
+New features and fixes
+======================
+- Split drawspaces into app/window/view activatables
+- Fix bug preventing synctex to work.
+- Misc bugfixes
+
+New and updated translations
+============================
+- id (Andika Triwidada)
+
+====================
 gedit-plugins 3.12.0
 ====================
 
