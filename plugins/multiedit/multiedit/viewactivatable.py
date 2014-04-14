@@ -93,7 +93,6 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
             self._delete_mode_id = 0
 
         delattr(self.view, 'multiedit_view_activatable')
-        self.view = None
 
     def enabled(self):
         return self._in_mode
