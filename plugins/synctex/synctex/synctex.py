@@ -204,7 +204,7 @@ class SynctexViewHelper:
 
             style = self._doc.get_style_scheme().get_style('search-match')
             apply_style(style, self._highlight_tag)
-            self._plugin._action_group.set_sensitive(True)
+            self._window.lookup_action("synctex").set_enabled(True)
             self.window_proxy = self._plugin.ref_evince_proxy(self.out_gfile, self._window)
 
         elif not self.active and self.window_proxy is not None:
@@ -214,7 +214,7 @@ class SynctexViewHelper:
             for handler in self._view_active_handlers:
                 self._view.disconnect(handler)
 
-            self._plugin._action_group.set_sensitive(False)
+            self._window.lookup_action("synctex").set_enabled(False)
             self._plugin.unref_evince_proxy(self.out_gfile)
             self.window_proxy = None
 
