@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit.help.master\n"
-"POT-Creation-Date: 2013-11-26 11:56+0000\n"
+"POT-Creation-Date: 2014-04-15 05:37+0000\n"
 "PO-Revision-Date: 2013-11-27 11:35+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -29,11 +29,6 @@ msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2006-2011\n"
 "María Majadas <maria.majadas@hispalinux.es>, 2005\n"
 "Milagros Alessandra Infante Montero <maim92@gmail.com>, 2013"
-
-#. (itstool) path: page/title
-#: C/index.page:7
-msgid "Gedit Plugins"
-msgstr "Complementos de gedit"
 
 #. (itstool) path: credit/name
 #: C/bookmarks.page:11 C/bracket-comp.page:11 C/character-map.page:11
@@ -535,7 +530,8 @@ msgstr ""
 #. (itstool) path: note/p
 #: C/commander.page:30
 msgid "The last key in the above key combination is a period."
-msgstr "La última tecla de la combinación de teclas indicada es un punto («.»)."
+msgstr ""
+"La última tecla de la combinación de teclas indicada es un punto («.»)."
 
 #. (itstool) path: td/p
 #: C/commander.page:36
@@ -598,8 +594,8 @@ msgid ""
 "go <input>[line number]</input> <em>or</em> just <key>G</key> <input>[line "
 "number]</input>"
 msgstr ""
-"go <input>[número de línea]</input> <em>o</em> simplemente <em>G</em> <input>"
-"[número de línea]</input>"
+"go <input>[número de línea]</input> <em>o</em> simplemente <em>G</em> "
+"<input>[número de línea]</input>"
 
 #. (itstool) path: td/p
 #: C/commander.page:69
@@ -1401,7 +1397,7 @@ msgstr ""
 "Mientras edita, el complemento de <app>Completado de palabras</app> mostrará "
 "automáticamente una lista emergente de palabras que comiencen por las letras "
 "que ya haya escrito. Las sugerencias de palabras se basan en palabras que "
-"aparecen en cualquier parte del documento y en palabras calve predefinidas "
+"aparecen en cualquier parte del documento y en palabras clave predefinidas "
 "si su documento tiene un formato reconocido."
 
 #. (itstool) path: page/p
@@ -1414,6 +1410,9 @@ msgstr ""
 "Para insertar una palabra sugerida, pulse dos veces en la lista emergente o "
 "pulse <keyseq><key>Alt</key><key>Num</key></keyseq>, donde <key>Num</key> es "
 "el número mostrado junto a la palabra que quiere."
+
+#~ msgid "Gedit Plugins"
+#~ msgstr "Complementos de gedit"
 
 #~ msgctxt "_"
 #~ msgid "external ref='figures/gedit-side-pane3.png' md5='__failed__'"
@@ -1724,8 +1723,8 @@ msgstr ""
 #~ "guiseq>, or press <keyseq><key>Ctrl</key><key>N</key></keyseq>."
 #~ msgstr ""
 #~ "La manera más fácil de crear un archivo nuevo en <app>gedit</app> es "
-#~ "pulsar en el icono que parece un trozo de papel en blanco con un signo «+» "
-#~ "junto a él. Si lo prefiere, también puede seleccionar "
+#~ "pulsar en el icono que parece un trozo de papel en blanco con un signo "
+#~ "«+» junto a él. Si lo prefiere, también puede seleccionar "
 #~ "<guiseq><gui>Archivo</gui><gui>Nuevo</gui></guiseq>, o pulsar "
 #~ "<keyseq><key>Ctrl</key><key>N</key></keyseq>."
 
@@ -2477,8 +2476,8 @@ msgstr ""
 #~ msgid ""
 #~ "After you have placed the plugin files into the correct directory, the "
 #~ "plugin will appear in the Preferences menu. Select <guiseq><gui>Edit </"
-#~ "gui><gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>"
-#~ "[Name of Plugin]</gui></guiseq> to enable the plugin."
+#~ "gui><gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> "
+#~ "<gui>[Name of Plugin]</gui></guiseq> to enable the plugin."
 #~ msgstr ""
 #~ "Después de mover el complemento a la carpeta correcta, aparecerá en el "
 #~ "menú «Preferencias». Seleccione <guiseq><gui>Editar</gui><gui style="
@@ -4532,8 +4531,8 @@ msgstr ""
 #~ "For example, if you enter \"1,3,5-7,9\" in the <gui>Pages</gui> textbox, "
 #~ "pages 1, 3, 5, 6, 7 and 9 will be printed."
 #~ msgstr ""
-#~ "Por ejemplo, si escribe «1,3,5-7,9» en la caja de texto <gui>Páginas</gui>,"
-#~ "se imprimirán las páginas 1,3,5,6,7 y 9."
+#~ "Por ejemplo, si escribe «1,3,5-7,9» en la caja de texto <gui>Páginas</"
+#~ "gui>,se imprimirán las páginas 1,3,5,6,7 y 9."
 
 #~ msgid "Ctrl + Alt + PageUp"
 #~ msgstr "Ctrl + Alt + Re Pág"
@@ -8134,9 +8133,10 @@ msgstr ""
 #~ "Para revisar la ortografía del texto en la casilla de texto de "
 #~ "<guilabel>Cambiar por</guilabel>, pulse <guibutton>Comprobar palabra</"
 #~ "guibutton>. Si ésta es una palabra conocida, la lista "
-#~ "<guilabel>Sugerencias</guilabel>será sustituida con el texto <literal>"
-#~ "(ortografía correcta)</literal>. Si la palabra es desconocida, aparecerán "
-#~ "nuevas entradas en la lista de <guilabel>Sugerencias</guilabel>."
+#~ "<guilabel>Sugerencias</guilabel>será sustituida con el texto "
+#~ "<literal>(ortografía correcta)</literal>. Si la palabra es desconocida, "
+#~ "aparecerán nuevas entradas en la lista de <guilabel>Sugerencias</"
+#~ "guilabel>."
 
 #~ msgid ""
 #~ "To ignore the current occurrence of the unknown word, click "
@@ -8202,8 +8202,8 @@ msgstr ""
 #~ "pane to show the tag list tab."
 #~ msgstr ""
 #~ "Por omisión, el panel lateral muestra una pestaña conteniendo una lista "
-#~ "de documentos abiertos. Pulse en la pestaña que muestra un icono «+» en la "
-#~ "parte de abajo del panel lateral para mostrar la pestaña de listas de "
+#~ "de documentos abiertos. Pulse en la pestaña que muestra un icono «+» en "
+#~ "la parte de abajo del panel lateral para mostrar la pestaña de listas de "
 #~ "etiquetas."
 
 #~ msgid ""
