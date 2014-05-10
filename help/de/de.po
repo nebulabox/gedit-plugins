@@ -10,17 +10,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit help\n"
 "POT-Creation-Date: 2013-04-15 20:57+0000\n"
-"PO-Revision-Date: 2013-04-02 21:27+0200\n"
+"PO-Revision-Date: 2014-05-11 01:00+0100\n"
 "Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -28,7 +26,7 @@ msgid "translator-credits"
 msgstr ""
 "Jan Arne Petersen <jap@gnome.org>, 2007\n"
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2008-2013\n"
-"Christian Kirbach <Christian.Kirbach@gmail.com>, 2011, 2012, 2013"
+"Christian Kirbach <Christian.Kirbach@gmail.com>, 2011, 2012, 2013, 2014"
 
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
@@ -2626,6 +2624,8 @@ msgid ""
 "You can add new Snippets that work either globally (that is, they are "
 "language agnostic) or only in a particular syntax."
 msgstr ""
+"Sie können neue Schnipsel hinzufügen, die entweder global (d.h. sprachweit) "
+"oder nur für eine bestimmte Syntax funktionieren."
 
 #: C/gedit-plugins-snippets.page:115(item/p)
 msgid ""
@@ -2640,6 +2640,9 @@ msgid ""
 "From the <gui>Manage Snippets</gui> sidebar select the desired syntax and "
 "click on the \"+\" button to list existing snippets for the selected syntax."
 msgstr ""
+"Wählen Sie in der Seitenleiste namens <gui>Schnipsel verwalten</gui> die "
+"gewünschte Syntax und klicken Sie dann auf den »+«-Knopf, um bereits für die "
+"gewählte Syntax vorhandene Schnipsel aufzulisten."
 
 #: C/gedit-plugins-snippets.page:123(note/p)
 msgid ""
@@ -2647,18 +2650,25 @@ msgid ""
 "language has been set for the document), select <gui>Global</gui> from the "
 "<gui>Manage Snippets</gui> sidebar."
 msgstr ""
+"Wählen Sie <gui>Global</gui> in der Seitenleiste <gui>Schnipsel verwalten</"
+"gui>, um ein Schnipsel hinzuzufügen, das global funktioniert (d.h. wenn "
+"keine Sprache oder Syntax für das Dokument festgelegt ist)."
 
 #: C/gedit-plugins-snippets.page:129(item/p)
 msgid ""
 "To add a new snippet, click on the \"plus\" icon in the <gui>Manage "
 "Snippets</gui> sidebar."
 msgstr ""
+"Klicken Sie auf das Plus-Symbol in der Seitenleiste <gui>Schnipsel "
+"verwalten</gui>, um einen neuen Schnipsel hinzuzufügen."
 
 #: C/gedit-plugins-snippets.page:133(item/p)
 msgid ""
 "Input a name for the new snippet. The name of the snippet can be different "
 "from the snippet you want to add."
 msgstr ""
+"Geben Sie einen Namen für den neuen Schnipsel ein. Der Schnipselname ist "
+"beliebig."
 
 #: C/gedit-plugins-snippets.page:137(item/p)
 msgid ""
@@ -2666,6 +2676,9 @@ msgid ""
 "term for the <gui style=\"input\">Tab trigger:</gui> textarea. You will be "
 "using this term to insert your snippet."
 msgstr ""
+"Sie müssen im Abschnitt <gui style=\"group\">Aktivierung</gui> einen Begriff "
+"für den Textbereich <gui style=\"input\">Tab-Auslöser:</gui> eingeben. "
+"Verwenden Sie dann diesen Begriff, um Ihren Schnipsel einzufügen."
 
 #: C/gedit-plugins-snippets.page:141(note/p)
 msgid ""
@@ -2674,6 +2687,10 @@ msgid ""
 "the desired combination of keys. Once you have pressed and released the "
 "keys, the keyboard shortcut will be set."
 msgstr ""
+"If you wish to insert a snippet with a keyboard shortcut, then click your "
+"mouse pointer on <gui style=\"input\">Shortcut key:</gui> textarea and press "
+"the desired combination of keys. Once you have pressed and released the "
+"keys, the keyboard shortcut will be set."
 
 #: C/gedit-plugins-snippets.page:148(item/p)
 msgid ""
@@ -2682,6 +2699,10 @@ msgid ""
 "where <em>n</em> is replaced with a number that represents the numerical "
 "order of variables included."
 msgstr ""
+"Geben Sie den für den Schnipsel gewünschten Text im Textbereich unter <gui "
+"style=\"input\">Bearbeiten:</gui> ein. Verwenden Sie <code>${n}</code>, um "
+"Variaben zu definieren, wobei <em>n</em> durch eine Zahl ersetzt wird, "
+"welche die numerische Reihenfolge der enthaltenen Variablen darstellt."
 
 #: C/gedit-plugins-snippets.page:158(section/title)
 msgid "New Snippet Example"
@@ -2693,6 +2714,9 @@ msgid ""
 "<gui style=\"input\">Tab trigger:</gui>. The <gui style=\"input\">Edit:</"
 "gui> textarea contains:"
 msgstr ""
+"Angenommen Sie haben einen Schnipsel mit dem Begriff <var>Grüße</var> in "
+"<gui style=\"input\">Tabulatorauslösung:</gui> erstellt. Das Texteingabefeld "
+"<gui style=\"input\">Bearbeiten:</gui> enthält:"
 
 #: C/gedit-plugins-snippets.page:164(section/code)
 #, no-wrap
@@ -2713,6 +2737,9 @@ msgid ""
 "and pressing the <key>Tab</key> key. The following text snippet will be "
 "inserted:"
 msgstr ""
+"Fügen Sie diesen Schnipsel ein, indem Sie <var>Grüße</var> im Dokument "
+"eingeben und die <key>Tabulatortaste</key> drücken. Daraufhin wird der "
+"folgende Schnipsel eingefügt:"
 
 #: C/gedit-plugins-snippets.page:173(section/code)
 #, no-wrap
@@ -2732,6 +2759,11 @@ msgid ""
 "\"wonderful\" and \"amazing\" and press <key>Del</key> to delete the least "
 "preferred option."
 msgstr ""
+"Die Worte »wunderbar« und »erstaunlich« können beibehalten oder gelöscht "
+"werden, je nach Ihrer Wahl der Nutzung?. Drücken Sie dazu die "
+"<key>Tabulatortaste</key> und wählen Sie zwischen »wunderbar« und "
+"»erstaunlich« und drücken Sie <key>Entf</key>, um die ungewünschte Option zu "
+"entfernen."
 
 #: C/gedit-plugins-sort.page:21(info/desc)
 msgid "Sort lines of text into alphabetical order"
@@ -2976,7 +3008,6 @@ msgstr ""
 "key><key>Eingabetaste</key></keyseq> einfügen."
 
 #: C/gedit-plugins-tag-list.page:101(note/p)
-#, fuzzy
 #| msgid ""
 #| "Pressing the <key>Return</key> key will insert the tag at the cursor "
 #| "position, and then return focus to the document. Pressing "
@@ -3035,7 +3066,6 @@ msgid "To enable the Embedded Terminal plugin:"
 msgstr "So aktivieren Sie das Plugin für das eingebettete Terminal:"
 
 #: C/gedit-plugins-terminal.page:40(item/p)
-#, fuzzy
 #| msgid "Select <gui>Embedded Terminal</gui> to enable the plugin."
 msgid ""
 "Select <gui style=\"menuitem\">Embedded Terminal</gui> to enable the plugin."
@@ -3347,7 +3377,6 @@ msgstr ""
 "\">Drucken</gui><gui style=\"tab\">Allgemein</gui></guiseq>."
 
 #: C/gedit-printing.page:64(item/p)
-#, fuzzy
 #| msgid "Select desired from printer from the list of printers available."
 msgid "Select the desired printer from the list of printers available."
 msgstr ""
@@ -3371,6 +3400,11 @@ msgid ""
 "programs, please consult <link href=\"help:gnome-help/printing#paper"
 "\">Layout and Paper options</link> help."
 msgstr ""
+"Zusätzlich können Sie im Reiter <gui style=\"tab\">Seite einrichten</gui>: "
+"<gui style=\"group\">Layout</gui> und <gui style=\"group\">Papier</gui> "
+"wählen. Diese Einstellungen sind in allen <app>GNOME</app>-Anwendungen "
+"verfügbar. Bitte lesen Sie dazu auch <link href=\"help:gnome-help/"
+"printing#paper\">Optionen für Layout und Papier</link>."
 
 #: C/gedit-printing.page:83(section/title)
 msgid "Print Multiple Copies And Between Specified Ranges"
@@ -3434,7 +3468,6 @@ msgid "Only Printing Certain Pages"
 msgstr "Nur bestimmte Seiten drucken"
 
 #: C/gedit-printing-select.page:21(page/p)
-#, fuzzy
 #| msgid ""
 #| "You can selectively print only certain pages from the document. For "
 #| "example, if you want to input page numbers \"1,3,5-7,9\", then only pages "
@@ -3444,9 +3477,9 @@ msgid ""
 "if you enter the page numbers \"1,3,5-7,9\", then only pages 1, 3, 5, 6, 7 "
 "and 9 will be printed. To print pages of your choice:"
 msgstr ""
-"Sie können ausgewählte Seiten Ihres Dokuments drucken. Wenn Sie zum Beispiel "
-"die Seitenzahlen »1,3,5-7,9« eingeben, so werden nur die Seiten 1, 3, 5, 6, "
-"7 und 9 gedruckt. So drucken Sie die Seiten Ihrer Wahl:"
+"Sie können gezielt nur bestimmte Seiten eines Dokuments drucken. Wenn Sie "
+"beispielsweise die Seitenzahlen »1,3,5-7,9« eingeben, so werden nur die "
+"Seiten 1, 3, 5, 6, 7 und 9 gedruckt. So drucken Sie Seiten Ihrer Wahl:"
 
 #: C/gedit-printing-select.page:27(item/p)
 msgid ""
@@ -3467,7 +3500,6 @@ msgstr ""
 "\">Bereich</gui>."
 
 #: C/gedit-printing-select.page:35(item/p)
-#, fuzzy
 #| msgid ""
 #| "Type the numbers of the pages you want to print in the document, "
 #| "separated by commas. Use a dash to denote a range of pages."
@@ -3475,7 +3507,7 @@ msgid ""
 "Type the numbers of the pages you want to print from the document, separated "
 "by commas. Use a dash to specify a range of pages."
 msgstr ""
-"Geben Sie die Nummern der Seiten ein, die Sie drucken möchten, jeweils durch "
+"Geben Sie die Nummern der zu druckenden Seiten in das Textfeld ein, durch "
 "Kommata getrennt. Verwenden Sie einen Bindestrich, um einen "
 "zusammenhängenden Bereich anzugeben."
 
@@ -3713,7 +3745,7 @@ msgid ""
 "the start of the <gui>search window</gui>."
 msgstr ""
 "Öffnen Sie das <gui>Suchfenster</gui>, indem Sie <guiseq><gui style=\"menu"
-"\">Suchen</gui><gui style=\"menuitem>Suchen</gui></guiseq> wählen oder "
+"\">Suchen</gui><gui style=\"menuitem\">Suchen</gui></guiseq> wählen oder "
 "<keyseq><key>Strg</key><key>F</key></keyseq> drücken. Dadurch wird die "
 "Eingabemarke an den Beginn der Eingabezeile im <gui>Suchfenster</gui> "
 "verschoben."
@@ -3966,76 +3998,64 @@ msgid "Shortcut keys for editing files"
 msgstr "Tastenkombinationen zum Bearbeiten von Dokumenten"
 
 #: C/gedit-shortcut-keys.page:149(td/p)
-#, fuzzy
 #| msgid "Toggle the bookmark indicator for the current line"
 msgid "Move to the beginning of the current line"
-msgstr "Den Lesezeichenindikator für die aktuelle Zeile ein- oder ausschalten"
+msgstr "An den Anfang der aktuellen Zeile springen"
 
 #: C/gedit-shortcut-keys.page:150(td/p)
-#, fuzzy
 #| msgid "<key>F9</key>"
 msgid "<key>Home</key>"
-msgstr "<key>F9</key>"
+msgstr "<key>Pos1</key>"
 
 #: C/gedit-shortcut-keys.page:153(td/p)
-#, fuzzy
 #| msgid "Delete the current line"
 msgid "Move to the end of the current line"
-msgstr "Die aktuelle Zeile löschen"
+msgstr "Ans Ende der aktuellen Zeile springen"
 
 #: C/gedit-shortcut-keys.page:154(td/p)
-#, fuzzy
 #| msgid "<key>F9</key>"
 msgid "<key>End</key>"
-msgstr "<key>F9</key>"
+msgstr "<key>Ende</key>"
 
 #: C/gedit-shortcut-keys.page:157(td/p)
-#, fuzzy
 #| msgid "Save the current document"
 msgid "Move to the beginning of the document"
-msgstr "Das aktuelle Dokument speichern"
+msgstr "An den Anfang des Dokuments springen"
 
 #: C/gedit-shortcut-keys.page:158(td/p)
-#, fuzzy
 #| msgid "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
 msgid "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
-msgstr "<keyseq><key>Strg</key><key>H</key></keyseq>"
+msgstr "<keyseq><key>Strg</key><key>Pos1</key></keyseq>"
 
 #: C/gedit-shortcut-keys.page:161(td/p)
-#, fuzzy
 #| msgid "Save the current document"
 msgid "Move to the end of the document"
-msgstr "Das aktuelle Dokument speichern"
+msgstr "An das Ende des Dokuments springen"
 
 #: C/gedit-shortcut-keys.page:162(td/p)
-#, fuzzy
 #| msgid "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
 msgid "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
-msgstr "<keyseq><key>Strg</key><key>W</key></keyseq>"
+msgstr "<keyseq><key>Strg</key><key>Ende</key></keyseq>"
 
 #: C/gedit-shortcut-keys.page:165(td/p)
-#, fuzzy
 #| msgid "Move the selected line up one line"
 msgid "Move the selected word right one word"
-msgstr "Die markierte Zeile um eine Position nach oben verschieben"
+msgstr "Das ausgewählte Wort ein Wort nach rechts verschieben"
 
 #: C/gedit-shortcut-keys.page:166(td/p)
-#, fuzzy
 #| msgid "<keyseq><key>Alt</key><key>Up Arrow</key></keyseq>"
 msgid "<keyseq><key>Alt</key><key>Right Arrow</key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key>↑</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>→</key></keyseq>"
 
 #: C/gedit-shortcut-keys.page:169(td/p)
-#, fuzzy
 #| msgid "Move the selected line up one line"
 msgid "Move the selected word left one word"
-msgstr "Die markierte Zeile um eine Position nach oben verschieben"
+msgstr "Das ausgewählte Wort ein Wort nach links verschieben"
 
 #: C/gedit-shortcut-keys.page:170(td/p)
-#, fuzzy
 #| msgid "<keyseq><key>Alt</key><key>Up Arrow</key></keyseq>"
 msgid "<keyseq><key>Alt</key><key>Left Arrow</key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key>↑</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>←</key></keyseq>"
 
 #: C/gedit-shortcut-keys.page:173(td/p)
 msgid "Undo the last action"
@@ -4299,12 +4319,19 @@ msgid ""
 "displayed in bold style next to <gui>Misspelled word:</gui>. You can choose "
 "from the following corrective actions:"
 msgstr ""
+"Sie können die korrekte Ersetzung für falsch geschriebene Wörter im Dialog "
+"»Rechtschreibung« prüfen wählen. Das falsch geschriebene Wort in Prüfung "
+"wird in fetter Schrift neben <gui>Falsch geschriebenes Wort:</gui> "
+"angezeigt. Sie können eine der folgenden korrigierenden Aktionen wählen:"
 
 #: C/gedit-spellcheck.page:76(item/p)
 msgid ""
 "<gui style=\"input\">Change to:</gui> allows you to input a word and use "
 "<gui style=\"button\">Check Word</gui> to check the validity of the spelling."
 msgstr ""
+"<gui style=\"input\">Ändern in:</gui> ermöglicht es Ihnen ein Wort "
+"einzugeben und mittels <gui style=\"button\">Wort prüfen</gui> die "
+"Rechtschreibung zu prüfen."
 
 #: C/gedit-spellcheck.page:81(item/p)
 msgid ""
@@ -4336,6 +4363,9 @@ msgid ""
 "word with <em>a</em> chosen substitute from the <gui style=\"menuitem"
 "\">Suggestions:</gui> list."
 msgstr ""
+"<gui style=\"button\">Ändern</gui> ersetzt das falsch geschriebene oder "
+"unbekannte Wort mit <em>einem</em> gewählten Ersatz aus der Liste der <gui "
+"style=\"menuitem\">Vorschläge:</gui> ."
 
 #: C/gedit-spellcheck.page:98(item/p)
 msgid ""
@@ -4343,6 +4373,9 @@ msgid ""
 "unrecognized words with the chosen substitute from the <gui style=\"menuitem"
 "\">Suggestions:</gui> list."
 msgstr ""
+"<gui style=\"button\">Alle ändern</gui> ersetzt <em>alle</em> falsch "
+"geschriebenen oder unbekannten Wörter mit dem gewählten Ersatz aus der Liste "
+"der <gui style=\"menuitem\">Vorschläge:</gui>."
 
 #: C/gedit-spellcheck.page:103(item/p)
 msgid ""
@@ -4351,6 +4384,11 @@ msgid ""
 "<gui>User dictionary</gui> will allow <app>gedit</app> to recognize the word "
 "in documents and thus will not be highlighted as a misspelt word."
 msgstr ""
+"<gui style=\"button\">Wort hinzufügen</gui> ermöglicht es das aktuelle Wort "
+"in <app>gedit</app> in das <gui>Benutzerwörterbuch</gui> aufzunehmen. Indem "
+"Sie eigene Wörter in das <gui>Benutzerwörterbuch</gui> aufnehmen wird "
+"<app>gedit</app> das Wort in Dokumenten erkennen und es nicht mehr als "
+"falsch geschrieben markieren."
 
 #: C/gedit-spellcheck.page:114(section/title)
 msgid "Define the language to use for spell checking"
@@ -4527,9 +4565,9 @@ msgid ""
 "See the <link xref=\"gedit-shortcut-keys\">tab-related shortcut keys</link> "
 "table to make it easier to manage your tabs."
 msgstr ""
-"Schauen Sie auch die Tabelle der <link xref=\"gedit-shortcut-keys\"/> "
-"Tastenkombinationen für Reiter</link> an, welche die Verwaltung Ihrer Reiter "
-"erleichtern."
+"Schauen Sie auch die Tabelle der <link xref=\"gedit-shortcut-keys"
+"\">Tastenkombinationen für Reiter</link> an, welche die Verwaltung Ihrer "
+"Reiter erleichtern."
 
 #: C/gedit-tabs.page:24(page/title)
 msgid "Add and remove tabs"
