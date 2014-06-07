@@ -11,18 +11,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&"
-"keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-07-01 18:47+0000\n"
-"PO-Revision-Date: 2013-07-13 08:30+0300\n"
-"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gedit&keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2014-06-07 05:15+0000\n"
+"PO-Revision-Date: 2014-06-07 12:55+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Project-Style: gnome\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
@@ -33,28 +33,16 @@ msgstr "Σελιδοδείκτες"
 msgid "Easy document navigation with bookmarks"
 msgstr "Εύκολη πλοήγηση εγγράφου με σελιδοδείκτες"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:201
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:141
 msgid "Toggle Bookmark"
 msgstr "Εναλλαγή σελιδοδείκτη"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:202
-msgid "Toggle bookmark status of the current line"
-msgstr "Εναλλαγή της κατάστασης σελιδοδείκτη της τρέχουσας γραμμής"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:204
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:145
 msgid "Goto Next Bookmark"
 msgstr "Μετάβαση στον επόμενο σελιδοδείκτη"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:205
-msgid "Goto the next bookmark"
-msgstr "Μετάβαση στον επόμενο σελιδοδείκτη"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:207
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:149
 msgid "Goto Previous Bookmark"
-msgstr "Μετάβαση στον προηγούμενο σελιδοδείκτη"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:208
-msgid "Goto the previous bookmark"
 msgstr "Μετάβαση στον προηγούμενο σελιδοδείκτη"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
@@ -66,7 +54,7 @@ msgid "Automatically adds closing brackets."
 msgstr "Συμπληρώνει αυτόματα τις αγκύλες."
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:51
+#: ../plugins/charmap/charmap/__init__.py:49
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Πίνακας χαρακτήρων"
@@ -83,21 +71,13 @@ msgstr "Σχόλιο κώδικα"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Σχολιάστε και αποσχολιάστε ένα επιλεγμένο τμήμα κώδικα."
 
-#: ../plugins/codecomment/codecomment.py:88
+#: ../plugins/codecomment/codecomment.py:111
 msgid "Co_mment Code"
 msgstr "Σχο_λιασμός κώδικα"
 
-#: ../plugins/codecomment/codecomment.py:90
-msgid "Comment the selected code"
-msgstr "Σχολιασμός του επιλεγμένου κώδικα"
-
-#: ../plugins/codecomment/codecomment.py:94
+#: ../plugins/codecomment/codecomment.py:117
 msgid "U_ncomment Code"
 msgstr "Α_ποσχολιάστε κώδικα"
-
-#: ../plugins/codecomment/codecomment.py:96
-msgid "Uncomment the selected code"
-msgstr "Αποσχολιασμός του επιλεγμένου κώδικα"
 
 #. ex:ts=4:et:
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
@@ -110,21 +90,18 @@ msgstr ""
 "Επιλέξτε ένα χρώμα από τον διάλογο και εισάγετε τη δεκαεξαδική του "
 "αναπαράσταση."
 
-#: ../plugins/colorpicker/colorpicker.py:161
+#: ../plugins/colorpicker/colorpicker.py:128
 msgid "Pick _Color..."
-msgstr "Επιλογή _Χρώματος..."
+msgstr "Επιλογή _χρώματος..."
 
-#: ../plugins/colorpicker/colorpicker.py:162
-msgid "Pick a color from a dialog"
-msgstr "Επιλογή χρωμάτων από ένα διάλογο"
-
-#: ../plugins/colorpicker/colorpicker.py:178
+#: ../plugins/colorpicker/colorpicker.py:168
 msgid "Pick Color"
 msgstr "Επιλογή χρώματος"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
-#: ../plugins/colorschemer/schemer/schemer.ui.h:1
+#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Επεξεργαστής συνδυασμού χρωμάτων"
 
@@ -132,62 +109,67 @@ msgstr "Επεξεργαστής συνδυασμού χρωμάτων"
 msgid "Source code color scheme editor"
 msgstr "Επεξεργαστής συνδυασμού χρωμάτων πηγαίου κώδικα"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:2
+#: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
 msgstr "Έντονα"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
+#: ../plugins/colorschemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Πλάγια"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
+#: ../plugins/colorschemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Υπογράμμιση"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
+#: ../plugins/colorschemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Διαγράμμιση"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
+#: ../plugins/colorschemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "Διαλέξτε το χρώμα παρασκηνίου"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
+#: ../plugins/colorschemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Διαλέξτε το χρώμα προσκηνίου"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
+#: ../plugins/colorschemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "Πα_ρασκήνιο"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+#: ../plugins/colorschemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "_Προσκήνιο"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "Εκκα_θάριση "
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Όνομα"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer.ui.h:12
 msgid "ID"
 msgstr "Αναγνωριστικό"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
+#: ../plugins/colorschemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Συγγραφέας"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+#: ../plugins/colorschemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Δείγμα"
 
+#: ../plugins/commander/commander/appactivatable.py:47
+msgid "Commander Mode"
+msgstr "Λειτουργία εντολών"
+
+#. vi:ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 msgid "Commander"
 msgstr "Εντολές"
@@ -195,14 +177,6 @@ msgstr "Εντολές"
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:2
 msgid "Command line interface for advanced editing"
 msgstr "Διεπαφή γραμμής εντολών για προχωρημένη επεξεργασία"
-
-#: ../plugins/commander/commander/windowactivatable.py:70
-msgid "Commander Mode"
-msgstr "Λειτουργία εντολών"
-
-#: ../plugins/commander/commander/windowactivatable.py:71
-msgid "Start commander mode"
-msgstr "Έναρξη λειτουργίας εντολών"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
@@ -215,11 +189,11 @@ msgstr "Πληκτρολογήστε για αναζήτηση..."
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
 msgid "Dashboard"
-msgstr "Ταμπλό"
+msgstr "Πίνακας ελέγχου"
 
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:2
 msgid "A Dashboard for new tabs"
-msgstr "Ένα ταμπλό για νέες καρτέλες"
+msgstr "Ένας πίνακας ελέγχου για νέες καρτέλες"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
@@ -230,46 +204,39 @@ msgstr "Σχεδίαση διαστημάτων"
 msgid "Draw spaces and tabs"
 msgstr "Σχεδίαση διαστημάτων και στηλοθετών"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Προβολή κ_ενού χαρακτήρα"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:135
-msgid "Show spaces and tabs"
-msgstr "Προβολή διαστημάτων και στηλοθετών"
-
 #. ex:set ts=8 noet:
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
 msgid "Draw spaces"
 msgstr "Σχεδίαση διαστημάτων"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:2
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:2
 msgid "Draw tabs"
 msgstr "Σχεδίαση στηλοθετών"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:3
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:3
 msgid "Draw new lines"
 msgstr "Σχεδίαση νέων γραμμών"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:4
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:4
 msgid "Draw non-breaking spaces"
 msgstr "Σχεδίαση διαστημάτων χωρίς αλλαγή"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:5
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:5
 msgid "Draw leading spaces"
 msgstr "Σχεδίαση αρχικών διαστημάτων"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:6
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:6
 msgid "Draw spaces in text"
 msgstr "Σχεδίαση διαστημάτων στο κείμενο"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:7
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:7
 msgid "Draw trailing spaces"
 msgstr "Σχεδίαση τελικών διαστημάτων"
-
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
-msgid "Enabled"
-msgstr "Ενεργοποιημένο"
 
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
 msgid "If TRUE drawing will be enabled."
@@ -279,6 +246,14 @@ msgstr "Αν είναι TRUE θα ενεργοποιηθεί η σχεδίαση
 msgid "The type of spaces to be drawn."
 msgstr "Ο τύπος των διαστημάτων που θα σχεδιαστούν."
 
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Git"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Επισημάνει γραμμές που έχουν αλλάξει από την τελευταία καταχώρηση"
+
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
 msgstr "Ένωση/διάσπαση γραμμών"
@@ -287,86 +262,18 @@ msgstr "Ένωση/διάσπαση γραμμών"
 msgid "Join several lines or split long ones"
 msgstr "Ένωση πολλών γραμμών ή διάσπαση των μεγάλων"
 
-#: ../plugins/joinlines/joinlines.py:74
+#: ../plugins/joinlines/joinlines.py:106
 msgid "_Join Lines"
 msgstr "Έ_νωση γραμμών"
 
-#: ../plugins/joinlines/joinlines.py:75
-msgid "Join the selected lines"
-msgstr "Ένωση των επιλεγμένων γραμμών"
-
-#: ../plugins/joinlines/joinlines.py:77
+#: ../plugins/joinlines/joinlines.py:112
 msgid "_Split Lines"
 msgstr "_Διάσπαση γραμμών"
 
-#: ../plugins/joinlines/joinlines.py:78
-msgid "Split the selected lines"
-msgstr "Διάσπαση των επιλεγμένων γραμμών"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:301
-msgid "Added edit point..."
-msgstr "Προσθήκη σημείου επεξεργασίας..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:643
-msgid "Column Mode..."
-msgstr "Λειτουργία στηλών..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:757
-msgid "Removed edit point..."
-msgstr "Αφαίρεση σημείου επεξεργασίας..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:920
-msgid "Cancelled column mode..."
-msgstr "Η λειτουργία στηλών ακυρώθηκε..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1293
-msgid "Enter column edit mode using selection"
-msgstr "Εισαγωγή επεξεργασίας λειτουργίας στηλών χρησιμοποιώντας την επιλογή"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1294
-msgid "Enter <b>smart</b> column edit mode using selection"
-msgstr ""
-"Εισαγωγή <b>έξυπνης</b> επεξεργασίας λειτουργίας στηλών χρησιμοποιώντας την "
-"επιλογή"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1295
-msgid "<b>Smart</b> column align mode using selection"
-msgstr "Λειτουργία <b>έξυπνης</b> στοίχισης στηλών χρησιμοποιώντας την επιλογή"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1296
-msgid "<b>Smart</b> column align mode with additional space using selection"
-msgstr ""
-"Λειτουργία <b>έξυπνης</b> στοίχισης στηλών με επιπρόσθετο διάστημα "
-"χρησιμοποιώντας την επιλογή"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1298
-msgid "Toggle edit point"
-msgstr "Εναλλαγή σημείου επεξεργασίας"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1299
-msgid "Add edit point at beginning of line/selection"
-msgstr "Προσθήκη σημείου επεξεργασίας στην αρχή της γραμμής/επιλογής"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1300
-msgid "Add edit point at end of line/selection"
-msgstr "Προσθήκη σημείου επεξεργασίας στο τέλος της γραμμής/επιλογής"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1301
-msgid "Align edit points"
-msgstr "Στοίχιση σημείων επεξεργασίας"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1302
-msgid "Align edit points with additional space"
-msgstr "Στοίχιση σημείων επεξεργασίας με επιπρόσθετο διάστημα"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1333
-#: ../plugins/multiedit/multiedit/__init__.py:79
+#: ../plugins/multiedit/multiedit/appactivatable.py:36
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
 msgid "Multi Edit Mode"
 msgstr "Λειτουργία πολλαπλής επεξεργασίας"
-
-#: ../plugins/multiedit/multiedit/__init__.py:81
-msgid "Start multi edit mode"
-msgstr "Έναρξη λειτουργίας πολλαπλής επεξεργασίας"
 
 #. ex:ts=4:et:
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:1
@@ -377,6 +284,63 @@ msgstr "Πολλαπλή επεξεργασία"
 msgid "Edit document in multiple places at once"
 msgstr "Επεξεργασία εγγράφου σε πολλαπλά σημεία ταυτόχρονα"
 
+#: ../plugins/multiedit/multiedit/viewactivatable.py:305
+msgid "Added edit point..."
+msgstr "Προσθήκη σημείου επεξεργασίας..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:647
+msgid "Column Mode..."
+msgstr "Λειτουργία στηλών..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:765
+msgid "Removed edit point..."
+msgstr "Αφαίρεση σημείου επεξεργασίας..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:928
+msgid "Cancelled column mode..."
+msgstr "Η λειτουργία στηλών ακυρώθηκε..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1265
+msgid "Enter column edit mode using selection"
+msgstr "Εισαγωγή επεξεργασίας λειτουργίας στηλών χρησιμοποιώντας την επιλογή"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
+msgid "Enter <b>smart</b> column edit mode using selection"
+msgstr ""
+"Εισαγωγή <b>έξυπνης</b> επεξεργασίας λειτουργίας στηλών χρησιμοποιώντας την "
+"επιλογή"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
+msgid "<b>Smart</b> column align mode using selection"
+msgstr "Λειτουργία <b>έξυπνης</b> στοίχισης στηλών χρησιμοποιώντας την επιλογή"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
+msgid "<b>Smart</b> column align mode with additional space using selection"
+msgstr ""
+"Λειτουργία <b>έξυπνης</b> στοίχισης στηλών με επιπρόσθετο διάστημα "
+"χρησιμοποιώντας την επιλογή"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1270
+msgid "Toggle edit point"
+msgstr "Εναλλαγή σημείου επεξεργασίας"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
+msgid "Add edit point at beginning of line/selection"
+msgstr "Προσθήκη σημείου επεξεργασίας στην αρχή της γραμμής/επιλογής"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
+msgid "Add edit point at end of line/selection"
+msgstr "Προσθήκη σημείου επεξεργασίας στο τέλος της γραμμής/επιλογής"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
+msgid "Align edit points"
+msgstr "Στοίχιση σημείων επεξεργασίας"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
+msgid "Align edit points with additional space"
+msgstr "Στοίχιση σημείων επεξεργασίας με επιπρόσθετο διάστημα"
+
+#. ex:ts=4:et:
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 msgid "Smart Spaces"
 msgstr "Έξυπνα διαστήματα"
@@ -393,8 +357,7 @@ msgstr "SyncTeX"
 msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Συγχρονισμός μεταξύ LaTeX και PDF με τα gedit και evince."
 
-#: ../plugins/synctex/synctex/synctex.py:310
-#: ../plugins/synctex/synctex/synctex.py:311
+#: ../plugins/synctex/synctex/synctex.py:336
 msgid "Forward Search"
 msgstr "Αναζήτηση μπροστά"
 
@@ -486,9 +449,9 @@ msgid ""
 "a range) should be the first character given."
 msgstr ""
 "Όταν επιλέγεται κείμενο ανά λέξη, οι ακολουθίες αυτών των χαρακτήρων "
-"θεωρούνται ενιαίες λέξεις. Οι περιοχές μπορούν να δοθούν ως \"A-Z\". Ο πρώτος "
-"χαρακτήρας που εισάγεται πρέπει να είναι το κυριολεκτικό ενωτικό - (εδώ δεν "
-"εκφράζει περιοχή)."
+"θεωρούνται ενιαίες λέξεις. Οι περιοχές μπορούν να δοθούν ως \"A-Z\". Ο "
+"πρώτος χαρακτήρας που εισάγεται πρέπει να είναι το κυριολεκτικό ενωτικό - "
+"(εδώ δεν εκφράζει περιοχή)."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
 msgid "Default color of text in the terminal"
@@ -600,25 +563,25 @@ msgstr "Ενσωματωμένο τερματικό"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Ενσωμάτωση τερματικού στο κάτω μέρος."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:314
 msgid "Terminal"
 msgstr "Τερματικό"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:335
 msgid "C_hange Directory"
 msgstr "_Αλλαγή καταλόγου"
 
-#: ../plugins/textsize/textsize/__init__.py:142
-msgid "_Larger Text"
-msgstr "Με_γαλύτερο κείμενο"
+#: ../plugins/textsize/textsize/__init__.py:50
+msgid "_Normal size"
+msgstr "_Κανονικό μέγεθος"
 
-#: ../plugins/textsize/textsize/__init__.py:145
+#: ../plugins/textsize/textsize/__init__.py:52
 msgid "S_maller Text"
 msgstr "Μι_κρότερο κείμενο"
 
-#: ../plugins/textsize/textsize/__init__.py:148
-msgid "_Normal size"
-msgstr "_Κανονικό μέγεθος"
+#: ../plugins/textsize/textsize/__init__.py:54
+msgid "_Larger Text"
+msgstr "Με_γαλύτερο κείμενο"
 
 #. ex:ts=4:et:
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:1
@@ -630,7 +593,6 @@ msgid "Easily increase and decrease the text size"
 msgstr "Εύκολη αύξηση και μείωση του μεγέθους του κειμένου"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive completion"
 msgstr "Διαδραστική συμπλήρωση"
 
@@ -643,7 +605,6 @@ msgid "Document Words"
 msgstr "Λέξεις εγγράφου"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive Completion"
 msgstr "Διαδραστική συμπλήρωση"
 
@@ -666,6 +627,45 @@ msgstr "Συμπλήρωση λέξεων"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Συμπλήρωση λέξεων με χρήση του υποσυστήματος συμπλήρωσης"
+
+#~ msgid "Toggle bookmark status of the current line"
+#~ msgstr "Εναλλαγή της κατάστασης σελιδοδείκτη της τρέχουσας γραμμής"
+
+#~ msgid "Goto the next bookmark"
+#~ msgstr "Μετάβαση στον επόμενο σελιδοδείκτη"
+
+#~ msgid "Goto the previous bookmark"
+#~ msgstr "Μετάβαση στον προηγούμενο σελιδοδείκτη"
+
+#~ msgid "Comment the selected code"
+#~ msgstr "Σχολιασμός του επιλεγμένου κώδικα"
+
+#~ msgid "Uncomment the selected code"
+#~ msgstr "Αποσχολιασμός του επιλεγμένου κώδικα"
+
+#~ msgid "Pick a color from a dialog"
+#~ msgstr "Επιλογή χρωμάτων από ένα διάλογο"
+
+#~ msgid "Start commander mode"
+#~ msgstr "Έναρξη λειτουργίας εντολών"
+
+#~ msgid "Show spaces and tabs"
+#~ msgstr "Προβολή διαστημάτων και στηλοθετών"
+
+#~ msgid "Enabled"
+#~ msgstr "Ενεργοποιημένο"
+
+#~ msgid "Git differences"
+#~ msgstr "Διαφορές Git"
+
+#~ msgid "Join the selected lines"
+#~ msgstr "Ένωση των επιλεγμένων γραμμών"
+
+#~ msgid "Split the selected lines"
+#~ msgstr "Διάσπαση των επιλεγμένων γραμμών"
+
+#~ msgid "Start multi edit mode"
+#~ msgstr "Έναρξη λειτουργίας πολλαπλής επεξεργασίας"
 
 #~ msgid "X"
 #~ msgstr "Χ"
