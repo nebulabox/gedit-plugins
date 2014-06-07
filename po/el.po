@@ -11,18 +11,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&"
-"keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-07-01 18:47+0000\n"
-"PO-Revision-Date: 2013-07-13 08:30+0300\n"
-"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gedit&keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2014-06-04 17:12+0000\n"
+"PO-Revision-Date: 2014-06-07 12:54+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Project-Style: gnome\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
@@ -112,7 +112,7 @@ msgstr ""
 
 #: ../plugins/colorpicker/colorpicker.py:161
 msgid "Pick _Color..."
-msgstr "Επιλογή _Χρώματος..."
+msgstr "Επιλογή _χρώματος..."
 
 #: ../plugins/colorpicker/colorpicker.py:162
 msgid "Pick a color from a dialog"
@@ -215,11 +215,11 @@ msgstr "Πληκτρολογήστε για αναζήτηση..."
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
 msgid "Dashboard"
-msgstr "Ταμπλό"
+msgstr "Πίνακας ελέγχου"
 
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:2
 msgid "A Dashboard for new tabs"
-msgstr "Ένα ταμπλό για νέες καρτέλες"
+msgstr "Ένας πίνακας ελέγχου για νέες καρτέλες"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
@@ -278,6 +278,14 @@ msgstr "Αν είναι TRUE θα ενεργοποιηθεί η σχεδίαση
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Ο τύπος των διαστημάτων που θα σχεδιαστούν."
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Git"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Git differences"
+msgstr "Διαφορές Git"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -486,9 +494,9 @@ msgid ""
 "a range) should be the first character given."
 msgstr ""
 "Όταν επιλέγεται κείμενο ανά λέξη, οι ακολουθίες αυτών των χαρακτήρων "
-"θεωρούνται ενιαίες λέξεις. Οι περιοχές μπορούν να δοθούν ως \"A-Z\". Ο πρώτος "
-"χαρακτήρας που εισάγεται πρέπει να είναι το κυριολεκτικό ενωτικό - (εδώ δεν "
-"εκφράζει περιοχή)."
+"θεωρούνται ενιαίες λέξεις. Οι περιοχές μπορούν να δοθούν ως \"A-Z\". Ο "
+"πρώτος χαρακτήρας που εισάγεται πρέπει να είναι το κυριολεκτικό ενωτικό - "
+"(εδώ δεν εκφράζει περιοχή)."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
 msgid "Default color of text in the terminal"
@@ -600,11 +608,11 @@ msgstr "Ενσωματωμένο τερματικό"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Ενσωμάτωση τερματικού στο κάτω μέρος."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Τερματικό"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "_Αλλαγή καταλόγου"
 
@@ -630,7 +638,6 @@ msgid "Easily increase and decrease the text size"
 msgstr "Εύκολη αύξηση και μείωση του μεγέθους του κειμένου"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive completion"
 msgstr "Διαδραστική συμπλήρωση"
 
@@ -643,7 +650,6 @@ msgid "Document Words"
 msgstr "Λέξεις εγγράφου"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive Completion"
 msgstr "Διαδραστική συμπλήρωση"
 
