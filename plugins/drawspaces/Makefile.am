@@ -38,6 +38,7 @@ plugins_drawspaces_libdrawspaces_la_SOURCES =			\
 	$(BUILT_SOURCES)
 
 plugin_in_files += plugins/drawspaces/drawspaces.plugin.desktop.in
+appdata_in_files += plugins/drawspaces/gedit-drawspaces.metainfo.xml.in
 gsettings_SCHEMAS += plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml
 
 EXTRA_DIST += 							\

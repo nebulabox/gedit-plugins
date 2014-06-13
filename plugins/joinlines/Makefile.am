@@ -4,3 +4,5 @@ plugin_in_files += plugins/joinlines/joinlines.plugin.desktop.in
 else
 dist_plugin_in_files += plugins/joinlines/joinlines.plugin.desktop.in
 endif
+
+appdata_in_files += plugins/joinlines/gedit-joinlines.metainfo.xml.in

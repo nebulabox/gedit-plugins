@@ -4,3 +4,5 @@ plugin_in_files += plugins/smartspaces/smartspaces.plugin.desktop.in
 else
 dist_plugin_in_files += plugins/smartspaces/smartspaces.plugin.desktop.in
 endif
+
+appdata_in_files += plugins/smartspaces/gedit-smartspaces.metainfo.xml.in

@@ -48,3 +48,5 @@ plugin_in_files += plugins/commander/commander.plugin.desktop.in
 else
 dist_plugin_in_files += plugins/commander/commander.plugin.desktop.in
 endif
+
+appdata_in_files += plugins/commander/gedit-commander.metainfo.xml.in

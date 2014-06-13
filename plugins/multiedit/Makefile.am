@@ -11,3 +11,5 @@ plugin_in_files += plugins/multiedit/multiedit.plugin.desktop.in
 else
 dist_plugin_in_files += plugins/multiedit/multiedit.plugin.desktop.in
 endif
+
+appdata_in_files += plugins/multiedit/gedit-multiedit.metainfo.xml.in

@@ -14,6 +14,8 @@ plugins_wordcompletion_libwordcompletion_la_LIBADD = $(GEDIT_LIBS)
 
 plugin_in_files += plugins/wordcompletion/wordcompletion.plugin.desktop.in
 
+appdata_in_files += plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in
+
 plugins_wordcompletion_resourcedeps =						\
 	plugins/wordcompletion/gedit-word-completion.gresource.xml		\
 	$(shell $(GLIB_COMPILE_RESOURCES) 					\

@@ -9,3 +9,5 @@ plugin_in_files += plugins/textsize/textsize.plugin.desktop.in
 else
 dist_plugin_in_files += plugins/textsize/textsize.plugin.desktop.in
 endif
+
+appdata_in_files += plugins/textsize/gedit-textsize.metainfo.xml.in

@@ -8,3 +8,5 @@ plugin_in_files += plugins/charmap/charmap.plugin.desktop.in
 else
 dist_plugin_in_files += plugins/charmap/charmap.plugin.desktop.in
 endif
+
+appdata_in_files += plugins/charmap/gedit-charmap.metainfo.xml.in

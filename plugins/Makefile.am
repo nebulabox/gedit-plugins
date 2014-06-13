@@ -7,6 +7,8 @@ endif
 plugin_LTLIBRARIES =
 plugin_in_files =
 dist_plugin_in_files =
+appdatadir = $(datadir)/appdata/
+appdata_in_files =
 gsettings_SCHEMAS =
 dist_gsettings_SCHEMAS =
 
@@ -37,17 +39,24 @@ GENERATED_PLUGIN_FILES = $(plugin_in_files:.plugin.desktop.in=.plugin)
 
 plugin_DATA = $(GENERATED_PLUGIN_FILES)
 
+GENERATED_APPDATA_FILES = $(appdata_in_files:.xml.in=.xml)
+
+appdata_DATA = $(GENERATED_APPDATA_FILES)
+
 DISTCLEANFILES +=			\
 	plugins/gpdefs.py		\
-	$(GENERATED_PLUGIN_FILES)
+	$(GENERATED_PLUGIN_FILES)	\
+	$(GENERATED_APPDATA_FILES)
 
 CLEANFILES +=				\
 	$(GENERATED_PLUGIN_FILES)	\
+	$(GENERATED_APPDATA_FILES)	\
 	$(gsettings_SCHEMAS)
 
 EXTRA_DIST +=								\
 	plugins/gpdefs.py.in						\
 	$(plugin_in_files)						\
+	$(appdata_in_files)						\
 	$(dist_plugin_in_files)						\
 	$(gsettings_SCHEMAS:%.gschema.xml=%.gschema.xml.in.in)		\
 	$(dist_gsettings_SCHEMAS:%.gschema.xml=%.gschema.xml.in.in)

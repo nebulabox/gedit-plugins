@@ -9,3 +9,5 @@ plugin_in_files += plugins/dashboard/dashboard.plugin.desktop.in
 else
 dist_plugin_in_files += plugins/dashboard/dashboard.plugin.desktop.in
 endif
+
+appdata_in_files += plugins/dashboard/gedit-dashboard.metainfo.xml.in

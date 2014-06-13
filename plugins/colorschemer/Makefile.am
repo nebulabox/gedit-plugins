@@ -12,3 +12,5 @@ plugin_in_files += plugins/colorschemer/colorschemer.plugin.desktop.in
 else
 dist_plugin_in_files += plugins/colorschemer/colorschemer.plugin.desktop.in
 endif
+
+appdata_in_files += plugins/colorschemer/gedit-colorschemer.metainfo.xml.in

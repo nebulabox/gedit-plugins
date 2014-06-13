@@ -4,3 +4,5 @@ plugin_in_files += plugins/bracketcompletion/bracketcompletion.plugin.desktop.in
 else
 dist_plugin_in_files += plugins/bracketcompletion/bracketcompletion.plugin.desktop.in
 endif
+
+appdata_in_files += plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in
