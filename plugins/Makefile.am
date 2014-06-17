@@ -9,6 +9,7 @@ plugin_in_files =
 dist_plugin_in_files =
 appdatadir = $(datadir)/appdata/
 appdata_in_files =
+dist_appdata_in_files =
 gsettings_SCHEMAS =
 dist_gsettings_SCHEMAS =
 
@@ -29,6 +30,7 @@ include plugins/synctex/Makefile.am
 include plugins/terminal/Makefile.am
 include plugins/textsize/Makefile.am
 include plugins/wordcompletion/Makefile.am
+include plugins/zeitgeist/Makefile.am
 
 @INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
@@ -56,7 +58,8 @@ CLEANFILES +=				\
 EXTRA_DIST +=								\
 	plugins/gpdefs.py.in						\
 	$(plugin_in_files)						\
-	$(appdata_in_files)						\
 	$(dist_plugin_in_files)						\
+	$(appdata_in_files)						\
+	$(dist_appdata_in_files)					\
 	$(gsettings_SCHEMAS:%.gschema.xml=%.gschema.xml.in.in)		\
 	$(dist_gsettings_SCHEMAS:%.gschema.xml=%.gschema.xml.in.in)

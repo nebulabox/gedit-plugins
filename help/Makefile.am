@@ -19,7 +19,8 @@ HELP_FILES = \
 	session-saver.page \
 	terminal.page \
 	text-size.page \
-	word-completion.page
+	word-completion.page \
+	zeitgeist-dataprovider.page
 
 HELP_MEDIA =
 

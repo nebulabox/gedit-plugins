@@ -106,6 +106,23 @@ AC_ARG_ENABLE([python],
 
 AM_CONDITIONAL([ENABLE_PYTHON], [test "x$enable_python" = "xyes"])
 
+dnl ================================================================
+dnl zeitgeist (libzeitgeist)
+dnl ================================================================
+LIBZEITGEIST_REQUIRED=0.9.12
+PKG_CHECK_MODULES([ZEITGEIST], \
+	[zeitgeist-2.0 >= $LIBZEITGEIST_REQUIRED],
+	[have_zeitgeist=yes],
+	[have_zeitgeist=no])
+
+if test "x$have_zeitgeist" = "xyes"; then
+	PLUGINS="$PLUGINS zeitgeist"
+else
+	disabled_plugins="$disabled_plugins zeitgeist"
+fi
+
+AM_CONDITIONAL([ENABLE_ZEITGEIST], test "x$have_zeitgeist" = "xyes")
+
 # ================================================================
 # disable all python plugins if there is no python support
 # ================================================================

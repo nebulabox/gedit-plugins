@@ -57,3 +57,5 @@ plugins/wordcompletion/gedit-word-completion-plugin.c
 plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in
 plugins/wordcompletion/wordcompletion.plugin.desktop.in.in
 plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in
+plugins/zeitgeist/zeitgeist.plugin.desktop.in
+plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in
