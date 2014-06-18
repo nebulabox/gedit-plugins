@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2014-06-07 05:15+0000\n"
-"PO-Revision-Date: 2014-06-07 12:55+0200\n"
+"POT-Creation-Date: 2014-06-16 20:17+0000\n"
+"PO-Revision-Date: 2014-06-18 11:47+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
@@ -22,14 +22,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Project-Style: gnome\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
+#: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
 msgid "Bookmarks"
 msgstr "Σελιδοδείκτες"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:2
+#: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:2
 msgid "Easy document navigation with bookmarks"
 msgstr "Εύκολη πλοήγηση εγγράφου με σελιδοδείκτες"
 
@@ -46,12 +48,17 @@ msgid "Goto Previous Bookmark"
 msgstr "Μετάβαση στον προηγούμενο σελιδοδείκτη"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
+#: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:1
 msgid "Bracket Completion"
 msgstr "Συμπλήρωση αγκύλων"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:2
 msgid "Automatically adds closing brackets."
 msgstr "Συμπληρώνει αυτόματα τις αγκύλες."
+
+#: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:2
+msgid "Automatically add a closing bracket when you insert one"
+msgstr "Αυτόματη προσθήκη αγκύλης κλεισίματος όταν εισάγετε μία"
 
 #. ex:et:ts=4:
 #: ../plugins/charmap/charmap/__init__.py:49
@@ -63,7 +70,17 @@ msgstr "Πίνακας χαρακτήρων"
 msgid "Insert special characters just by clicking on them."
 msgstr "Τοποθετήστε ειδικούς χαρακτήρες κάνοντας απλά κλικ πάνω τους."
 
+#: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:1
+msgid "Charmap"
+msgstr "Πίνακας χαρακτήρων"
+
+#: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:2
+msgid "Select characters from a character map"
+msgstr "Επιλογή χαρακτήρων από έναν πίνακα χαρακτήρων"
+
+#. ex:ts=4:et:
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
+#: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:1
 msgid "Code Comment"
 msgstr "Σχόλιο κώδικα"
 
@@ -79,7 +96,10 @@ msgstr "Σχο_λιασμός κώδικα"
 msgid "U_ncomment Code"
 msgstr "Α_ποσχολιάστε κώδικα"
 
-#. ex:ts=4:et:
+#: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:2
+msgid "Comment or uncomment blocks of code"
+msgstr "Σχολιάστε ή αποσχολιάστε τμήματα κώδικα."
+
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
 msgid "Color Picker"
 msgstr "Επιλογέας χρωμάτων"
@@ -89,6 +109,16 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Επιλέξτε ένα χρώμα από τον διάλογο και εισάγετε τη δεκαεξαδική του "
 "αναπαράσταση."
+
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
+msgid "Color picker"
+msgstr "Επιλογέας χρωμάτων"
+
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:2
+msgid "Select and insert a color from a dialog (for html, css, php)"
+msgstr ""
+"Επιλογή και εισαγωγή ενός χρώματος από ένα παράθυρο διαλόγου (για html, css, "
+"php)"
 
 #: ../plugins/colorpicker/colorpicker.py:128
 msgid "Pick _Color..."
@@ -100,6 +130,7 @@ msgstr "Επιλογή χρώματος"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
+#: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
 #: ../plugins/colorschemer/schemer/__init__.py:40
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
@@ -108,6 +139,12 @@ msgstr "Επεξεργαστής συνδυασμού χρωμάτων"
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:2
 msgid "Source code color scheme editor"
 msgstr "Επεξεργαστής συνδυασμού χρωμάτων πηγαίου κώδικα"
+
+#: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:2
+msgid "Create and edit the color scheme used for syntax highlighting"
+msgstr ""
+"Δημιουργία και επεξεργασία συνδυασμού χρωμάτων που χρησιμοποιούνται για την "
+"επισήμανση σύνταξης"
 
 #: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
@@ -171,10 +208,12 @@ msgstr "Λειτουργία εντολών"
 
 #. vi:ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
+#: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
 msgstr "Εντολές"
 
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:2
+#: ../plugins/commander/gedit-commander.metainfo.xml.in.h:2
 msgid "Command line interface for advanced editing"
 msgstr "Διεπαφή γραμμής εντολών για προχωρημένη επεξεργασία"
 
@@ -188,12 +227,19 @@ msgstr "Πληκτρολογήστε για αναζήτηση..."
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
+#: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:1
 msgid "Dashboard"
 msgstr "Πίνακας ελέγχου"
 
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:2
 msgid "A Dashboard for new tabs"
 msgstr "Ένας πίνακας ελέγχου για νέες καρτέλες"
+
+#: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:2
+msgid "Displays a grid of recently/most used files upon opening a new tab"
+msgstr ""
+"Εμφανίζει ένα πλέγμα των πρόσφατα/περισσότερο χρησιμοποιημένων αρχείων με το "
+"άνοιγμα μιας νέας καρτέλας"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
@@ -204,15 +250,20 @@ msgstr "Σχεδίαση διαστημάτων"
 msgid "Draw spaces and tabs"
 msgstr "Σχεδίαση διαστημάτων και στηλοθετών"
 
+#. ex:set ts=8 noet:
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
+msgid "Draw spaces"
+msgstr "Σχεδίαση διαστημάτων"
+
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
+msgid "Draw Spaces and Tabs"
+msgstr "Σχεδίαση διαστημάτων και στηλοθετών"
+
 #: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Προβολή κ_ενού χαρακτήρα"
-
-#. ex:set ts=8 noet:
-#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
-msgid "Draw spaces"
-msgstr "Σχεδίαση διαστημάτων"
 
 #: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:2
 msgid "Draw tabs"
@@ -247,12 +298,21 @@ msgid "The type of spaces to be drawn."
 msgstr "Ο τύπος των διαστημάτων που θα σχεδιαστούν."
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
+#: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
 msgid "Highlight lines that have been changed since the last commit"
 msgstr "Επισημάνει γραμμές που έχουν αλλάξει από την τελευταία καταχώρηση"
+
+#: ../plugins/git/gedit-git.metainfo.xml.in.h:2
+msgid ""
+"Use git information to display which lines and files changed since last "
+"commit"
+msgstr ""
+"Χρησιμοποιήστε πληροφορίες git για να εμφανίσετε τις γραμμές και τα αρχεία "
+"που έχουν αλλάξει από την τελευταία καταχώρηση"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -261,6 +321,14 @@ msgstr "Ένωση/διάσπαση γραμμών"
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:2
 msgid "Join several lines or split long ones"
 msgstr "Ένωση πολλών γραμμών ή διάσπαση των μεγάλων"
+
+#: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
+msgid "Join lines/ Split lines"
+msgstr "Ένωση γραμμών/ Διάσπαση γραμμών"
+
+#: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:2
+msgid "Join or split multiple lines through Ctrl+J and Ctrl+Shift+J"
+msgstr "Ένωση ή διάσπαση πολλαπλών γραμμών με Ctrl+J και Ctrl+Shift+J "
 
 #: ../plugins/joinlines/joinlines.py:106
 msgid "_Join Lines"
@@ -281,8 +349,13 @@ msgid "Multi Edit"
 msgstr "Πολλαπλή επεξεργασία"
 
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
 msgid "Edit document in multiple places at once"
 msgstr "Επεξεργασία εγγράφου σε πολλαπλά σημεία ταυτόχρονα"
+
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
+msgid "Multi edit"
+msgstr "Πολλαπλή επεξεργασία"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:305
 msgid "Added edit point..."
@@ -342,19 +415,31 @@ msgstr "Στοίχιση σημείων επεξεργασίας με επιπρ
 
 #. ex:ts=4:et:
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
+#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:1
 msgid "Smart Spaces"
 msgstr "Έξυπνα διαστήματα"
 
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:2
 msgid "Forget you're not using tabulations."
-msgstr "Αδιαφορία μη-χρήσης στηλοθετών."
+msgstr "Αδιαφορία μη χρήσης στηλοθετών."
+
+#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
+msgid "Allow to unindent like if you were using tabs while you're using spaces"
+msgstr ""
+"Να επιτρέπεται η κατάργηση εσοχής σαν να χρησιμοποιούσατε στηλοθέτες, ενώ "
+"χρησιμοποιείτε κενά"
 
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
+#: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
 msgid "SyncTeX"
 msgstr "SyncTeX"
 
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:2
 msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgstr "Συγχρονισμός μεταξύ LaTeX και PDF με τα gedit και evince."
+
+#: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
+msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Συγχρονισμός μεταξύ LaTeX και PDF με τα gedit και evince."
 
 #: ../plugins/synctex/synctex/synctex.py:336
@@ -563,9 +648,15 @@ msgstr "Ενσωματωμένο τερματικό"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Ενσωμάτωση τερματικού στο κάτω μέρος."
 
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
 #: ../plugins/terminal/terminal.py:314
 msgid "Terminal"
 msgstr "Τερματικό"
+
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
+msgid "A simple terminal widget accessible from the bottom panel"
+msgstr ""
+"Ένα απλό τερματικό γραφικού στοιχείου προσβάσιμο από το κάτω μέρος του πίνακα"
 
 #: ../plugins/terminal/terminal.py:335
 msgid "C_hange Directory"
@@ -589,8 +680,13 @@ msgid "Text Size"
 msgstr "Μέγεθος κειμένου"
 
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
 msgid "Easily increase and decrease the text size"
 msgstr "Εύκολη αύξηση και μείωση του μεγέθους του κειμένου"
+
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
+msgid "Text size"
+msgstr "Μέγεθος κειμένου"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
@@ -627,6 +723,17 @@ msgstr "Συμπλήρωση λέξεων"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Συμπλήρωση λέξεων με χρήση του υποσυστήματος συμπλήρωσης"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
+msgid "Word completion"
+msgstr "Συμπλήρωση λέξεων"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
+msgid ""
+"Propose automatic completion using words already present in the document"
+msgstr ""
+"Να προτείνει αυτόματη συμπλήρωση χρησιμοποιώντας λέξεις που υπάρχουν ήδη στο "
+"έγγραφο"
 
 #~ msgid "Toggle bookmark status of the current line"
 #~ msgstr "Εναλλαγή της κατάστασης σελιδοδείκτη της τρέχουσας γραμμής"
