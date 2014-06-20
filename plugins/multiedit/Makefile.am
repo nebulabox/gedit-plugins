@@ -8,8 +8,8 @@ plugins_multiedit_PYTHON =					\
 	plugins/multiedit/multiedit/signals.py
 
 plugin_in_files += plugins/multiedit/multiedit.plugin.desktop.in
+appstream_in_files += plugins/multiedit/gedit-multiedit.metainfo.xml.in
 else
 dist_plugin_in_files += plugins/multiedit/multiedit.plugin.desktop.in
+dist_appstream_in_files += plugins/multiedit/gedit-multiedit.metainfo.xml.in
 endif
-
-appdata_in_files += plugins/multiedit/gedit-multiedit.metainfo.xml.in

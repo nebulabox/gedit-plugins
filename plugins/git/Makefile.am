@@ -7,8 +7,8 @@ plugins_git_PYTHON =				\
 	plugins/git/git/windowactivatable.py
 
 plugin_in_files += plugins/git/git.plugin.desktop.in
+appstream_in_files += plugins/git/gedit-git.metainfo.xml.in
 else
 dist_plugin_in_files += plugins/git/git.plugin.desktop.in
+dist_appstream_in_files += plugins/git/gedit-git.metainfo.xml.in
 endif
-
-appdata_in_files += plugins/git/gedit-git.metainfo.xml.in

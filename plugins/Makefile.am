@@ -7,9 +7,9 @@ endif
 plugin_LTLIBRARIES =
 plugin_in_files =
 dist_plugin_in_files =
-appdatadir = $(datadir)/appdata/
-appdata_in_files =
-dist_appdata_in_files =
+appstreamdir = $(datadir)/appdata/
+appstream_in_files =
+dist_appstream_in_files =
 gsettings_SCHEMAS =
 dist_gsettings_SCHEMAS =
 
@@ -41,9 +41,9 @@ GENERATED_PLUGIN_FILES = $(plugin_in_files:.plugin.desktop.in=.plugin)
 
 plugin_DATA = $(GENERATED_PLUGIN_FILES)
 
-GENERATED_APPDATA_FILES = $(appdata_in_files:.xml.in=.xml)
+GENERATED_APPSTREAM_FILES = $(appstream_in_files:.xml.in=.xml)
 
-appdata_DATA = $(GENERATED_APPDATA_FILES)
+appstream_DATA = $(GENERATED_APPSTREAM_FILES)
 
 DISTCLEANFILES +=			\
 	plugins/gpdefs.py		\
@@ -52,14 +52,14 @@ DISTCLEANFILES +=			\
 
 CLEANFILES +=				\
 	$(GENERATED_PLUGIN_FILES)	\
-	$(GENERATED_APPDATA_FILES)	\
+	$(GENERATED_APPSTREAM_FILES)	\
 	$(gsettings_SCHEMAS)
 
 EXTRA_DIST +=								\
 	plugins/gpdefs.py.in						\
 	$(plugin_in_files)						\
 	$(dist_plugin_in_files)						\
-	$(appdata_in_files)						\
-	$(dist_appdata_in_files)					\
+	$(appstream_in_files)						\
+	$(dist_appstream_in_files)					\
 	$(gsettings_SCHEMAS:%.gschema.xml=%.gschema.xml.in.in)		\
 	$(dist_gsettings_SCHEMAS:%.gschema.xml=%.gschema.xml.in.in)

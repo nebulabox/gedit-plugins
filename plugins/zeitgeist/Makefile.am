@@ -24,13 +24,8 @@ plugins_zeitgeist_libzeitgeist_la_SOURCES =		\
 EXTRA_DIST += $(zeitgeist_resource_deps)
 
 plugin_in_files += plugins/zeitgeist/zeitgeist.plugin.desktop.in
-
 appstream_in_files += plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in
-
 else
-
 dist_plugin_in_files += plugins/zeitgeist/zeitgeist.plugin.desktop.in
-
 dist_appstream_in_files += plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in
-
 endif

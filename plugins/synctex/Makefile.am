@@ -6,8 +6,8 @@ plugins_synctex_PYTHON =			\
 	plugins/synctex/synctex/evince_dbus.py
 
 plugin_in_files += plugins/synctex/synctex.plugin.desktop.in
+appstream_in_files += plugins/synctex/gedit-synctex.metainfo.xml.in
 else
 dist_plugin_in_files += plugins/synctex/synctex.plugin.desktop.in
+dist_appstream_in_files += plugins/synctex/gedit-synctex.metainfo.xml.in
 endif
-
-appdata_in_files += plugins/synctex/gedit-synctex.metainfo.xml.in

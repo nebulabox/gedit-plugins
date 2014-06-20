@@ -45,8 +45,8 @@ plugins_commander_modules_find_PYTHON =			\
 	plugins/commander/modules/find/regex.py
 
 plugin_in_files += plugins/commander/commander.plugin.desktop.in
+appstream_in_files += plugins/commander/gedit-commander.metainfo.xml.in
 else
 dist_plugin_in_files += plugins/commander/commander.plugin.desktop.in
+dist_appstream_in_files += plugins/commander/gedit-commander.metainfo.xml.in
 endif
-
-appdata_in_files += plugins/commander/gedit-commander.metainfo.xml.in

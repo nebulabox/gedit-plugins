@@ -31,4 +31,4 @@ plugins_bookmarks_libbookmarks_la_SOURCES =					\
 
 plugin_in_files += plugins/bookmarks/bookmarks.plugin.desktop.in
 
-appdata_in_files += plugins/bookmarks/gedit-bookmarks.metainfo.xml.in
+appstream_in_files += plugins/bookmarks/gedit-bookmarks.metainfo.xml.in

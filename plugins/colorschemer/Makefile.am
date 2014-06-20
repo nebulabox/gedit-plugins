@@ -9,8 +9,8 @@ plugins_schemer_uidir = $(GEDIT_PLUGINS_DATA_DIR)/colorschemer/ui
 dist_plugins_schemer_ui_DATA = plugins/colorschemer/schemer.ui
 
 plugin_in_files += plugins/colorschemer/colorschemer.plugin.desktop.in
+appstream_in_files += plugins/colorschemer/gedit-colorschemer.metainfo.xml.in
 else
 dist_plugin_in_files += plugins/colorschemer/colorschemer.plugin.desktop.in
+dist_appstream_in_files += plugins/colorschemer/gedit-colorschemer.metainfo.xml.in
 endif
-
-appdata_in_files += plugins/colorschemer/gedit-colorschemer.metainfo.xml.in
