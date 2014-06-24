@@ -1,4 +1,20 @@
 ====================
+gedit-plugins 3.13.0
+====================
+
+New features and fixes
+======================
+- Moved zeitgeist plugin from gedit core to plugins
+
+New and updated translations
+============================
+- el (Tom Tryfonidis, MarMav)
+- es (Daniel Mustieles)
+- pt_BR (Rafael Ferreira)
+- fi (Lasse Liehu)
+- de (Christian Kirbach)
+
+====================
 gedit-plugins 3.12.1
 ====================
 
