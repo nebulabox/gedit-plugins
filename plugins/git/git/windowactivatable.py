@@ -146,6 +146,8 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     def root_changed(self, bus, msg, data=None):
         self.clear_monitors()
         self.git_status_thread.clear()
+        self.files = {}
+        self.file_names = {}
 
         location = msg.location
         if not location.has_uri_scheme('file'):
