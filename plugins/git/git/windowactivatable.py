@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#  Copyright (C) 2013 - Garrett Regier
+#  Copyright (C) 2013-2014 - Garrett Regier
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,6 +21,16 @@ from gi.repository import GLib, GObject, Gio, Gedit, Ggit
 
 import weakref
 
+from .workerthread import WorkerThread
+
+
+class GitStatusThread(WorkerThread):
+    def push(self, repo, location):
+        super().push(repo, location)
+
+    def handle_task(self, repo, location):
+        return location, repo.file_status(location)
+
 
 class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     window = GObject.property(type=Gedit.Window)
@@ -33,9 +43,6 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         Ggit.init()
 
         self.view_activatables = weakref.WeakSet()
-
-        self.files = {}
-        self.monitors = {}
 
         self.repo = None
         self.tree = None
@@ -61,6 +68,9 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         self.bus = self.window.get_message_bus()
 
+        self.git_status_thread = GitStatusThread(self.update_location)
+        self.git_status_thread.start()
+
         self.files = {}
         self.file_names = {}
         self.monitors = {}
@@ -83,6 +93,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     def do_deactivate(self):
         self.clear_monitors()
+        self.git_status_thread.terminate()
 
         for sid in self.window_signals:
             self.window.disconnect(sid)
@@ -107,7 +118,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         location = view_activatable.view.get_buffer().get_file().get_location()
 
         if location is not None:
-            self.update_location(location)
+            self.git_status_thread.push(self.repo, location)
 
     def tab_removed(self, window, tab):
         view = tab.get_view()
@@ -117,27 +128,24 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             return
 
         # Need to remove the view activatable otherwise update_location()
-        # will might use the view's status and not the file's actual status
+        # might use the view's status and not the file's actual status
         for view_activatable in self.view_activatables:
             if view_activatable.view == view:
                 self.view_activatables.remove(view_activatable)
                 break
 
-        self.update_location(location)
-
-    def update_location_idle(self, location):
-        self.update_location(location)
-        return False
+        self.git_status_thread.push(self.repo, location)
 
     def focus_in_event(self, window, event):
         for view_activatable in self.view_activatables:
             view_activatable.update()
 
         for uri in self.files:
-            GLib.idle_add(self.update_location_idle, Gio.File.new_for_uri(uri))
+            self.git_status_thread.push(self.repo, Gio.File.new_for_uri(uri))
 
     def root_changed(self, bus, msg, data=None):
         self.clear_monitors()
+        self.git_status_thread.clear()
 
         if not msg.location.has_uri_scheme('file'):
             return
@@ -157,16 +165,19 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self.monitor_directory(msg.location)
 
     def inserted(self, bus, msg, data=None):
-        if not msg.location.has_uri_scheme('file'):
+        location = msg.location
+        if not location.has_uri_scheme('file'):
             return
 
-        self.files[msg.location.get_uri()] = msg.id
-        self.file_names[msg.location.get_uri()] = msg.name
-
-        GLib.idle_add(self.update_location_idle, msg.location)
-
         if msg.is_directory:
-            self.monitor_directory(msg.location)
+            self.monitor_directory(location)
+
+        else:
+            uri = location.get_uri()
+            self.files[uri] = msg.id
+            self.file_names[uri] = msg.name
+
+            self.git_status_thread.push(self.repo, location)
 
     def deleted(self, bus, msg, data=None):
         # File browser's deleted signal is broken
@@ -174,43 +185,31 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         uri = msg.location.get_uri()
 
-        del self.files[uri]
-        del self.file_names[uri]
-
         if uri in self.monitors:
             self.monitors[uri].cancel()
             del self.monitors[uri]
 
-    def update_location(self, location):
-        if self.repo is None:
-            return
-
-        if location.get_uri() not in self.files:
-            return
-
-        status = None
-
-        # First get the status from the open documents
-        for view_activatable in self.view_activatables:
-            doc_location = view_activatable.view.get_buffer().get_file().get_location()
-
-            if doc_location is not None and doc_location.equal(location):
-                status = view_activatable.status
-                break
-
-        try:
-            git_status = self.repo.file_status(location)
-
-        except Exception:
-            pass
-
         else:
-            # Don't use the view activatable's
-            # status if the file is ignored
-            if status is None or git_status & Ggit.StatusFlags.IGNORED:
-                status = git_status
+            del self.files[uri]
+            del self.file_names[uri]
 
-        markup = GLib.markup_escape_text(self.file_names[location.get_uri()])
+    def update_location(self, result):
+        location, status = result
+
+        uri = location.get_uri()
+        if uri not in self.files:
+            return
+
+        if status is None or not status & Ggit.StatusFlags.IGNORED:
+            for view_activatable in self.view_activatables:
+                view = view_activatable.view
+                doc_location = view.get_buffer().get_file().get_location()
+
+                if doc_location is not None and doc_location.equal(location):
+                    status = view_activatable.status
+                    break
+
+        markup = GLib.markup_escape_text(self.file_names[uri])
 
         if status is not None:
             if status & Ggit.StatusFlags.INDEX_NEW or \
@@ -224,7 +223,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
                 markup = '<span strikethrough="true">%s</span>' % (markup)
 
         self.bus.send('/plugins/filebrowser', 'set_markup',
-                      id=self.files[location.get_uri()], markup=markup)
+                      id=self.files[uri], markup=markup)
 
     def clear_monitors(self):
         for uri in self.monitors:
