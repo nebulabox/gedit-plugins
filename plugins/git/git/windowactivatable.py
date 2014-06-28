@@ -147,22 +147,23 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.clear_monitors()
         self.git_status_thread.clear()
 
-        if not msg.location.has_uri_scheme('file'):
+        location = msg.location
+        if not location.has_uri_scheme('file'):
             return
 
         try:
-            repo_file = Ggit.Repository.discover(msg.location)
+            repo_file = Ggit.Repository.discover(location)
             self.repo = Ggit.Repository.open(repo_file)
             head = self.repo.get_head()
             commit = self.repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
             self.tree = commit.get_tree()
 
-        except Exception as e:
+        except Exception:
             self.repo = None
             self.tree = None
 
         else:
-            self.monitor_directory(msg.location)
+            self.monitor_directory(location)
 
     def inserted(self, bus, msg, data=None):
         location = msg.location
