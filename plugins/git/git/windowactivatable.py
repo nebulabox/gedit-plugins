@@ -166,6 +166,9 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self.monitor_directory(location)
 
     def inserted(self, bus, msg, data=None):
+        if self.repo is None:
+            return
+
         location = msg.location
         if not location.has_uri_scheme('file'):
             return
