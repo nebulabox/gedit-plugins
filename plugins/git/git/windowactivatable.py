@@ -245,7 +245,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         # file created and deleted files and emit inserted and deleted
         if event_type == Gio.FileMonitorEvent.CHANGED:
             for f in (file, other_file):
-                if f in self.files:
-                    self.update_location(f)
+                if f is not None and f.get_uri() in self.files:
+                    self.git_status_thread.push(self.repo, f)
 
 # ex:ts=4:et:
