@@ -140,7 +140,7 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
             if last_item[-1:] == '\n':
                 self.file_contents_list[-1] = last_item[:-1]
 
-        except Exception:
+        except GLib.Error:
             # New file in a git repository
             self.file_contents_list = []
 

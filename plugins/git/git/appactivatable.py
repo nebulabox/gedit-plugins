@@ -62,31 +62,28 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
         # Must check every dir, otherwise submodules will have issues
         try:
             repo_file = Ggit.Repository.discover(location)
-            repo_uri = repo_file.get_parent().get_uri()
 
-            # Reuse the repo if requested multiple times
-            try:
-                repo = self.__repos[repo_uri]
-
-            except KeyError:
-                repo = Ggit.Repository.open(repo_file)
-
-                # TODO: this was around even when not used, on purpose?
-                head = repo.get_head()
-                commit = repo.lookup(head.get_target(),
-                                     Ggit.Commit.__gtype__)
-                tree = commit.get_tree()
-
-                self.__repos[repo_uri] = repo
-                self.__repos[repo.get_workdir().get_uri()] = repo
-                #print(repo.get_workdir().get_uri())
-
-        except Exception:
+        except GLib.Error:
             return None
 
-        while dir_uri not in self.__repos:
-            #print(dir_uri)
+        repo_uri = repo_file.get_parent().get_uri()
 
+        # Reuse the repo if requested multiple times
+        try:
+            repo = self.__repos[repo_uri]
+
+        except KeyError:
+            repo = Ggit.Repository.open(repo_file)
+
+            # TODO: this was around even when not used, on purpose?
+            head = repo.get_head()
+            commit = repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
+            tree = commit.get_tree()
+
+            self.__repos[repo_uri] = repo
+            self.__repos[repo.get_workdir().get_uri()] = repo
+
+        while dir_uri not in self.__repos:
             self.__repos[dir_uri] = repo
             dir_location = dir_location.get_parent()
             dir_uri = dir_location.get_uri()
