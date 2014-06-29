@@ -145,7 +145,6 @@ class GeditTerminal(Vte.Terminal):
         self.set_allow_bold(self.profile_settings.get_boolean("allow-bold"))
         self.set_scroll_on_keystroke(self.profile_settings.get_boolean("scroll-on-keystroke"))
         self.set_scroll_on_output(self.profile_settings.get_boolean("scroll-on-output"))
-        self.set_word_chars(self.profile_settings.get_string("word-chars"))
         self.set_emulation(self.defaults['emulation'])
         self.set_visible_bell(self.defaults['visible_bell'])
 

@@ -63,16 +63,6 @@
         If true, allow applications in the terminal to make text boldface.
       </_description>
     </key>
-    <key name="word-chars" type="s">
-      <default>'-A-Za-z0-9,./?%&amp;#:_'</default>
-      <_summary>Characters that are considered "part of a word"</_summary>
-      <_description>
-        When selecting text by word, sequences of these characters
-        are considered single words. Ranges can be given as
-        "A-Z". Literal hyphen (not expressing a range) should be
-        the first character given.
-      </_description>
-    </key>
     <key name="foreground-color" type="s">
       <default>'#000000'</default>
       <_summary>Default color of text in the terminal</_summary>
