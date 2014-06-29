@@ -17,6 +17,7 @@
 #  Foundation, Inc., 59 Temple Place, Suite 330,
 #  Boston, MA 02111-1307, USA.
 
+from .appactivatable import GitAppActivatable
 from .viewactivatable import GitViewActivatable
 from .windowactivatable import GitWindowActivatable
 

@@ -22,6 +22,7 @@ from gi.repository import GLib, GObject, Gio, Gedit, Ggit
 import collections.abc
 import weakref
 
+from .appactivatable import GitAppActivatable
 from .debug import debug
 from .workerthread import WorkerThread
 
@@ -104,12 +105,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     def __init__(self):
         super().__init__()
 
-        Ggit.init()
-
         self.view_activatables = weakref.WeakSet()
-
-        self.repo = None
-        self.tree = None
 
     @classmethod
     def register_view_activatable(cls, view_activatable):
@@ -129,6 +125,8 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     def do_activate(self):
         # self.window is not set until now
         self.windows[self.window] = self
+
+        self.app_activatable = GitAppActivatable.get_instance()
 
         self.bus = self.window.get_message_bus()
 
@@ -164,8 +162,6 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         for sid in self.bus_signals:
             self.bus.disconnect(sid)
 
-        self.repo = None
-        self.tree = None
         self.file_nodes = FileNodes()
         self.window_signals = []
         self.bus_signals = []
@@ -178,16 +174,18 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     def notify_status(self, view_activatable, psepc):
         location = view_activatable.view.get_buffer().get_file().get_location()
+        if location is None:
+            return
 
-        if location is not None:
-            self.git_status_thread.push(self.repo, location)
+        if location not in self.file_nodes:
+            return
+
+        repo = self.get_repository(location)
+        if repo is not None:
+            self.git_status_thread.push(repo, location)
 
     def tab_removed(self, window, tab):
         view = tab.get_view()
-        location = view.get_buffer().get_file().get_location()
-
-        if location is None:
-            return
 
         # Need to remove the view activatable otherwise update_location()
         # might use the view's status and not the file's actual status
@@ -196,14 +194,25 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
                 self.view_activatables.remove(view_activatable)
                 break
 
-        self.git_status_thread.push(self.repo, location)
+        location = view.get_buffer().get_file().get_location()
+        if location is None:
+            return
+
+        repo = self.get_repository(location)
+        if repo is not None:
+            self.git_status_thread.push(repo, location)
 
     def focus_in_event(self, window, event):
         for view_activatable in self.view_activatables:
             view_activatable.update()
 
         for location in self.file_nodes:
-            self.git_status_thread.push(self.repo, location)
+            repo = self.get_repository(location)
+            if repo is not None:
+                self.git_status_thread.push(repo, location)
+
+    def get_repository(self, location, is_dir=False):
+        return self.app_activatable.get_repository(location, is_dir)
 
     def root_changed(self, bus, msg, data=None):
         self.clear_monitors()
@@ -211,29 +220,28 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.file_nodes = FileNodes()
 
         location = msg.location
-        if not location.has_uri_scheme('file'):
+
+        repo = self.get_repository(location, True)
+        if repo is None:
             return
 
-        try:
-            repo_file = Ggit.Repository.discover(location)
-            self.repo = Ggit.Repository.open(repo_file)
-            head = self.repo.get_head()
-            commit = self.repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
-            self.tree = commit.get_tree()
+        # Avoid the .git dir
+        repo_location = repo.get_location()
+        if location.get_uri().startswith(repo_location.get_uri()):
+            return
 
-        except Exception:
-            self.repo = None
-            self.tree = None
-
-        else:
-            self.monitor_directory(location)
+        self.monitor_directory(location)
 
     def inserted(self, bus, msg, data=None):
-        if self.repo is None:
+        location = msg.location
+
+        repo = self.get_repository(location, msg.is_directory)
+        if repo is None:
             return
 
-        location = msg.location
-        if not location.has_uri_scheme('file'):
+        # Avoid the .git dir
+        repo_location = repo.get_location()
+        if location.get_uri().startswith(repo_location.get_uri()):
             return
 
         if msg.is_directory:
@@ -241,13 +249,14 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         else:
             self.file_nodes[location] = FileNode(msg)
-            self.git_status_thread.push(self.repo, location)
+            self.git_status_thread.push(repo, location)
 
     def deleted(self, bus, msg, data=None):
         # File browser's deleted signal is broken
         return
 
-        uri = msg.location.get_uri()
+        location = msg.location
+        uri = location.get_uri()
 
         if uri in self.monitors:
             self.monitors[uri].cancel()
@@ -313,6 +322,8 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         if event_type == Gio.FileMonitorEvent.CHANGED:
             for f in (file, other_file):
                 if f is not None and f in self.file_nodes:
-                    self.git_status_thread.push(self.repo, f)
+                    repo = self.get_repository(f)
+                    if repo is not None:
+                        self.git_status_thread.push(repo, f)
 
 # ex:ts=4:et:

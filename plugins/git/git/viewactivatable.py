@@ -18,6 +18,8 @@
 #  Boston, MA 02111-1307, USA.
 
 from gi.repository import GLib, GObject, Gtk, Gedit, Ggit
+
+from .appactivatable import GitAppActivatable
 from .diffrenderer import DiffType, DiffRenderer
 from .windowactivatable import GitWindowActivatable
 
@@ -47,6 +49,8 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
     def do_activate(self):
         GitWindowActivatable.register_view_activatable(self)
+
+        self.app_activatable = GitAppActivatable.get_instance()
 
         self.diff_renderer = DiffRenderer()
         self.gutter = self.view.get_gutter(Gtk.TextWindowType.LEFT)
@@ -102,19 +106,10 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
     def update_location(self, *args):
         self.location = self.buffer.get_file().get_location()
 
-        repo = None
-        if self.location is not None and self.location.has_uri_scheme('file'):
-            try:
-                repo_file = Ggit.Repository.discover(self.location)
-                repo = Ggit.Repository.open(repo_file)
-                head = repo.get_head()
-                commit = repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
-                tree = commit.get_tree()
+        if self.location is not None:
+            repo = self.app_activatable.get_repository(self.location, False)
 
-            except Exception:
-                repo = None
-
-        if repo is None:
+        if self.location is None or repo is None:
             if self.file_contents_list is not None:
                 self.file_contents_list = None
                 self.gutter.remove(self.diff_renderer)
@@ -129,6 +124,10 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
                                                            self.update))
 
         try:
+            head = repo.get_head()
+            commit = repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
+            tree = commit.get_tree()
+
             relative_path = repo.get_workdir().get_relative_path(self.location)
 
             entry = tree.get_by_path(relative_path)
