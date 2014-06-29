@@ -2,6 +2,7 @@ if ENABLE_GIT
 plugins_gitdir = $(plugindir)/git
 plugins_git_PYTHON =				\
 	plugins/git/git/__init__.py		\
+	plugins/git/git/debug.py		\
 	plugins/git/git/diffrenderer.py		\
 	plugins/git/git/viewactivatable.py	\
 	plugins/git/git/windowactivatable.py	\

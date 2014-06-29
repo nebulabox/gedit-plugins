@@ -21,11 +21,22 @@ from gi.repository import GLib, GObject, Gio, Gedit, Ggit
 
 import weakref
 
+from .debug import debug
 from .workerthread import WorkerThread
 
 
 class GitStatusThread(WorkerThread):
     def push(self, repo, location):
+        if repo is None:
+            debug('Invalid repository', print_stack=True)
+            return
+ 
+        workdir = repo.get_workdir()
+        if workdir.get_relative_path(location) is None:
+            debug('Invalid location "%s" for workdir "%s"' %
+                  (location.get_uri(), workdir.get_uri()), print_stack=True)
+            return
+
         super().push(repo, location)
 
     def handle_task(self, repo, location):
