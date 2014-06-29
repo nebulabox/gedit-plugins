@@ -19,6 +19,7 @@
 
 from gi.repository import GLib, GObject, Gio, Gedit, Ggit
 
+import collections.abc
 import weakref
 
 from .debug import debug
@@ -31,6 +32,50 @@ class FileNode(object):
     def __init__(self, msg):
         self.id = msg.id
         self.name = msg.name
+
+
+class FileNodes(collections.abc.MutableMapping):
+    __slots__ = ('__data')
+
+    def __init__(self):
+        self.__data = {}
+
+    def __type_name(self, type):
+        if type.__module__ == 'builtins':
+            return type.__name__
+
+        return '.'.join((type.__module__, type.__name__))
+
+    def __typecheck(self, value, desired_type):
+        if not isinstance(value, desired_type):
+            raise TypeError('%s argument expected, got %s.' %
+                            (self.__type_name(desired_type),
+                             self.__type_name(type(value))))
+
+    def __delitem__(self, location):
+        self.__typecheck(location, Gio.File)
+
+        del self.__data[location.get_uri()]
+
+    def __getitem__(self, location):
+        self.__typecheck(location, Gio.File)
+
+        return self.__data[location.get_uri()]
+
+    def __setitem__(self, location, node):
+        self.__typecheck(location, Gio.File)
+        self.__typecheck(node, FileNode)
+
+        if location in self:
+            debug('Location is already inserted: %s' % (location.get_uri()))
+
+        self.__data[location.get_uri()] = node
+
+    def __iter__(self):
+        return (Gio.File.new_for_uri(x) for x in self.__data)
+
+    def __len__(self):
+        return len(self.__data)
 
 
 class GitStatusThread(WorkerThread):
@@ -90,7 +135,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.git_status_thread = GitStatusThread(self.update_location)
         self.git_status_thread.start()
 
-        self.file_nodes = {}
+        self.file_nodes = FileNodes()
         self.monitors = {}
 
         self.window_signals = [
@@ -119,9 +164,9 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         for sid in self.bus_signals:
             self.bus.disconnect(sid)
 
-        self.file_nodes = {}
         self.repo = None
         self.tree = None
+        self.file_nodes = FileNodes()
         self.window_signals = []
         self.bus_signals = []
 
@@ -157,13 +202,13 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         for view_activatable in self.view_activatables:
             view_activatable.update()
 
-        for uri in self.file_nodes:
-            self.git_status_thread.push(self.repo, Gio.File.new_for_uri(uri))
+        for location in self.file_nodes:
+            self.git_status_thread.push(self.repo, location)
 
     def root_changed(self, bus, msg, data=None):
         self.clear_monitors()
         self.git_status_thread.clear()
-        self.file_nodes = {}
+        self.file_nodes = FileNodes()
 
         location = msg.location
         if not location.has_uri_scheme('file'):
@@ -195,12 +240,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self.monitor_directory(location)
 
         else:
-            uri = location.get_uri()
-
-            if uri in self.file_nodes:
-                debug('Location is already inserted: %s' % (uri))
-
-            self.file_nodes[uri] = FileNode(msg)
+            self.file_nodes[location] = FileNode(msg)
             self.git_status_thread.push(self.repo, location)
 
     def deleted(self, bus, msg, data=None):
@@ -214,13 +254,17 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             del self.monitors[uri]
 
         else:
-            del self.file_nodes[uri]
+            del self.file_nodes[location]
 
     def update_location(self, result):
         location, status = result
 
-        uri = location.get_uri()
-        if uri not in self.file_nodes:
+        # The node may have been deleted
+        # before the status was determined
+        try:
+            file_node = self.file_nodes[location]
+
+        except KeyError:
             return
 
         if status is None or not status & Ggit.StatusFlags.IGNORED:
@@ -232,7 +276,6 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
                     status = view_activatable.status
                     break
 
-        file_node = self.file_nodes[uri]
         markup = GLib.markup_escape_text(file_node.name)
 
         if status is not None:
@@ -269,7 +312,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         # file created and deleted files and emit inserted and deleted
         if event_type == Gio.FileMonitorEvent.CHANGED:
             for f in (file, other_file):
-                if f is not None and f.get_uri() in self.file_nodes:
+                if f is not None and f in self.file_nodes:
                     self.git_status_thread.push(self.repo, f)
 
 # ex:ts=4:et:
