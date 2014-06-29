@@ -74,6 +74,7 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
 
         except KeyError:
             repo = Ggit.Repository.open(repo_file)
+            repo_workdir_uri = repo.get_workdir().get_uri()
 
             # TODO: this was around even when not used, on purpose?
             head = repo.get_head()
@@ -81,10 +82,15 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
             tree = commit.get_tree()
 
             self.__repos[repo_uri] = repo
-            self.__repos[repo.get_workdir().get_uri()] = repo
+            self.__repos[repo_workdir_uri] = repo
 
-        while dir_uri not in self.__repos:
+        else:
+            repo_workdir_uri = repo.get_workdir().get_uri()
+
+        # Avoid trouble with symbolic links
+        while dir_uri.startswith(repo_workdir_uri):
             self.__repos[dir_uri] = repo
+
             dir_location = dir_location.get_parent()
             dir_uri = dir_location.get_uri()
 
