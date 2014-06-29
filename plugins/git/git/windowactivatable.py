@@ -298,8 +298,8 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
                     status & Ggit.StatusFlags.WORKING_TREE_DELETED:
                 markup = '<span strikethrough="true">%s</span>' % (markup)
 
-        self.bus.send('/plugins/filebrowser', 'set_markup',
-                      id=file_node.id, markup=markup)
+        self.bus.send_sync('/plugins/filebrowser', 'set_markup',
+                           id=file_node.id, markup=markup)
 
     def clear_monitors(self):
         for uri in self.monitors:
