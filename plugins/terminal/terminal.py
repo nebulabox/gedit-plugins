@@ -322,7 +322,7 @@ class TerminalPlugin(GObject.Object, Gedit.WindowActivatable):
     def get_active_document_directory(self):
         doc = self.window.get_active_document()
         if doc:
-            location = doc.get_location()
+            location = doc.get_file().get_location()
             if location and location.has_uri_scheme("file"):
                 directory = location.get_parent()
                 return directory.get_path()

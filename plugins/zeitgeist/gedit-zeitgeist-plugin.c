@@ -159,9 +159,11 @@ gedit_zeitgeist_plugin_send_event (GeditZeitgeistPlugin *plugin,
 {
 	ZeitgeistEvent *event;
 	ZeitgeistSubject *subject;
+	GtkSourceFile *file;
 	GFile *location;
 
-	location = gedit_document_get_location (doc);
+	file = gedit_document_get_file (doc);
+	location = gtk_source_file_get_location (file);
 
 	if (location != NULL)
 	{
@@ -199,7 +201,6 @@ gedit_zeitgeist_plugin_send_event (GeditZeitgeistPlugin *plugin,
 
 		g_object_unref (event);
 		g_object_unref (subject);
-		g_object_unref (location);
 	}
 }
 

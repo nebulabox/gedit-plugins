@@ -128,7 +128,7 @@ class SynctexViewHelper:
         del self._highlight_tag
 
     def update_location(self):
-        gfile = self._doc.get_location()
+        gfile = self._doc.get_file().get_location()
 
         if gfile is None:
             return
@@ -262,7 +262,7 @@ class SynctexWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     def add_helper(self, view, window):
         helper = SynctexViewHelper(view, window, self)
-        location = view.get_buffer().get_location()
+        location = view.get_buffer().get_file().get_location()
 
         if location is not None:
             self.view_dict[location.get_uri()] = helper

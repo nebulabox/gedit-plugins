@@ -104,14 +104,14 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self.bus.send('/plugins/filebrowser', 'refresh')
 
     def notify_status(self, view_activatable, psepc):
-        location = view_activatable.view.get_buffer().get_location()
+        location = view_activatable.view.get_buffer().get_file().get_location()
 
         if location is not None:
             self.update_location(location)
 
     def tab_removed(self, window, tab):
         view = tab.get_view()
-        location = view.get_buffer().get_location()
+        location = view.get_buffer().get_file().get_location()
 
         if location is None:
             return
@@ -192,7 +192,7 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         # First get the status from the open documents
         for view_activatable in self.view_activatables:
-            doc_location = view_activatable.view.get_buffer().get_location()
+            doc_location = view_activatable.view.get_buffer().get_file().get_location()
 
             if doc_location is not None and doc_location.equal(location):
                 status = view_activatable.status

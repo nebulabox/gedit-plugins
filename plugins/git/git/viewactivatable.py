@@ -100,7 +100,7 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
         # update_location() as the buffer is currently empty
 
     def update_location(self, *args):
-        self.location = self.buffer.get_location()
+        self.location = self.buffer.get_file().get_location()
 
         repo = None
         if self.location is not None and self.location.has_uri_scheme('file'):

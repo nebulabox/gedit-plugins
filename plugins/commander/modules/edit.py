@@ -42,7 +42,7 @@ def __default__(filename, view):
     cwd = os.getcwd()
 
     if not doc.is_untitled():
-        cwd = doc.get_location().get_parent().get_path()
+        cwd = doc.get_file().get_location().get_parent().get_path()
     else:
         cwd = os.path.expanduser('~/')
 
@@ -85,7 +85,7 @@ def rename(view, newfile):
     if not doc.is_local():
         raise commander.commands.exceptions.Execute('You can only rename local files')
 
-    f = doc.get_location()
+    f = doc.get_file().get_location()
 
     if not f.query_exists(None):
         raise commander.commands.exceptions.Execute('Current document file does not exist')
