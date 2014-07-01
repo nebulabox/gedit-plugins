@@ -1142,27 +1142,19 @@ on_previous_bookmark_activate (GAction              *action,
 
 static void
 on_document_loaded (GeditDocument *doc,
-		    const GError  *error,
 		    GeditView     *view)
 {
-	if (error == NULL)
-	{
-		/* Reverting can leave one bookmark at the start, remove it. */
-		remove_all_bookmarks (GTK_SOURCE_BUFFER (doc));
+	/* Reverting can leave one bookmark at the start, remove it. */
+	remove_all_bookmarks (GTK_SOURCE_BUFFER (doc));
 
-		load_bookmark_metadata (view);
-	}
+	load_bookmark_metadata (view);
 }
 
 static void
 on_document_saved (GeditDocument *doc,
-		   const GError  *error,
 		   GeditView     *view)
 {
-	if (error == NULL)
-	{
-		save_bookmark_metadata (view);
-	}
+	save_bookmark_metadata (view);
 }
 
 static void

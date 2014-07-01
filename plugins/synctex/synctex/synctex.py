@@ -176,7 +176,7 @@ class SynctexViewHelper:
         self._highlight()
         self._window.present_with_time (time)
 
-    def goto_line_after_load(self, a, line, time):
+    def goto_line_after_load(self, line, time):
         GObject.idle_add (lambda : self.goto_line(line, time))
         self._doc.disconnect(self._goto_handler)
 

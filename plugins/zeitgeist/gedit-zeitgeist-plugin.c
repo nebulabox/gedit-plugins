@@ -205,7 +205,6 @@ gedit_zeitgeist_plugin_send_event (GeditZeitgeistPlugin *plugin,
 
 static void
 document_saved (GeditDocument        *doc,
-		const GError         *error,
 		GeditZeitgeistPlugin *plugin)
 {
 	gedit_zeitgeist_plugin_send_event (plugin, doc, ZEITGEIST_ZG_MODIFY_EVENT);
@@ -213,7 +212,6 @@ document_saved (GeditDocument        *doc,
 
 static void
 document_loaded (GeditDocument        *doc,
-		 const GError         *error,
 		 GeditZeitgeistPlugin *plugin)
 {
 	gedit_zeitgeist_plugin_send_event (plugin, doc, ZEITGEIST_ZG_ACCESS_EVENT);
