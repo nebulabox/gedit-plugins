@@ -120,7 +120,7 @@ def rename(view, newfile):
     try:
         f.move(dest, Gio.FileCopyFlags.OVERWRITE, None, _dummy_cb, None)
 
-        doc.set_location(dest)
+        doc.get_file().set_location(dest)
         yield commander.commands.result.HIDE
     except Exception as e:
         raise commander.commands.exceptions.Execute('Could not move file: %s' % (e,))
