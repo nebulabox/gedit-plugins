@@ -4,7 +4,7 @@
   <id>gedit-colorpicker</id>
   <extends>gedit.desktop</extends>
   <_name>Color picker</_name>
-  <_summary>Select and insert a color from a dialog (for html, css, php)</_summary>
+  <_summary>Select and insert a color from a dialog (for HTML, CSS, PHP)</_summary>
   <url type="homepage">https://wiki.gnome.org/Apps/Gedit/ShippedPlugins</url>
   <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=gedit&amp;component=Plugins</url>
   <metadata_license>CC0-1.0</metadata_license>
