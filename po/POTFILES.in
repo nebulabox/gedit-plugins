@@ -40,6 +40,9 @@ plugins/multiedit/multiedit.plugin.desktop.in.in
 plugins/multiedit/gedit-multiedit.metainfo.xml.in
 plugins/multiedit/multiedit/viewactivatable.py
 plugins/multiedit/multiedit/windowactivatable.py
+plugins/rpmchangelog/org.gnome.gedit.plugins.rpmchangelog.gschema.xml.in.in
+plugins/rpmchangelog/rpmchangelog.plugin.desktop.in.in
+plugins/rpmchangelog/gedit-rpmchangelog.metainfo.xml.in
 plugins/smartspaces/smartspaces.plugin.desktop.in.in
 plugins/smartspaces/gedit-smartspaces.metainfo.xml.in
 plugins/synctex/synctex.plugin.desktop.in.in

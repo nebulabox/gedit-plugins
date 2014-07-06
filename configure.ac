@@ -90,7 +90,7 @@ AC_ARG_ENABLE([verify-all],
 C_PLUGINS="bookmarks drawspaces wordcompletion"
 
 # Python plugins that don't need special dependencies, besides python
-PY_PLUGINS="bracketcompletion charmap codecomment colorpicker colorschemer commander dashboard joinlines multiedit smartspaces textsize"
+PY_PLUGINS="bracketcompletion charmap codecomment colorpicker colorschemer commander dashboard joinlines multiedit rpmchangelog smartspaces textsize"
 
 PLUGINS="$C_PLUGINS"
 disabled_plugins=""
@@ -244,6 +244,8 @@ plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in
 plugins/git/git.plugin.desktop.in
 plugins/joinlines/joinlines.plugin.desktop.in
 plugins/multiedit/multiedit.plugin.desktop.in
+plugins/rpmchangelog/org.gnome.gedit.plugins.rpmchangelog.gschema.xml.in
+plugins/rpmchangelog/rpmchangelog.plugin.desktop.in
 plugins/smartspaces/smartspaces.plugin.desktop.in
 plugins/synctex/synctex.plugin.desktop.in
 plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in

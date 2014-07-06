@@ -1,0 +1,19 @@
+<schemalist>
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit.plugins.rpmchangelog" path="/org/gnome/gedit/plugins/rpmchangelog/">
+    <key name="hotkey" type="s">
+      <default>'&lt;Alt&gt;l'</default>
+      <_summary>Hotkey</_summary>
+      <_description>Hotkey for adding new RPM ChangeLog entry.</_description>
+    </key>
+    <key name="username" type="s">
+      <default>'Firstname Lastname'</default>
+      <_summary>Username</_summary>
+      <_description>Firstname and Lastname of packager.</_description>
+    </key>
+    <key name="email" type="s">
+      <default>'me@example.com'</default>
+      <_summary>E-mail</_summary>
+      <_description>Email of packager.</_description>
+    </key>
+  </schema>
+</schemalist>

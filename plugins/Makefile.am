@@ -25,6 +25,7 @@ include plugins/drawspaces/Makefile.am
 include plugins/git/Makefile.am
 include plugins/joinlines/Makefile.am
 include plugins/multiedit/Makefile.am
+include plugins/rpmchangelog/Makefile.am
 include plugins/smartspaces/Makefile.am
 include plugins/synctex/Makefile.am
 include plugins/terminal/Makefile.am

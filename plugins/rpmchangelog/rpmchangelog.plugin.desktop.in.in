@@ -1,0 +1,10 @@
+[Plugin]
+Loader=python3
+Module=rpmchangelog
+IAge=3
+_Name=RPM ChangeLog
+_Description=Add RPM ChangeLog entry
+Authors=Igor Gnatenko <ignatenko@gnome.org>
+Copyright=Copyright © 2014 Igor Gnatenko
+Website=http://www.gedit.org
+Version=@VERSION@
