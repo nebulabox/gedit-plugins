@@ -66,7 +66,7 @@ PKG_CHECK_MODULES(GEDIT, [
 	glib-2.0 >= 2.32.0
 	gio-2.0 >= 2.32.0
 	gtk+-3.0 >= 3.9.0
-	gtksourceview-3.0 >= 3.9.2
+	gtksourceview-3.0 >= 3.13.2
 	libpeas-1.0 >= 1.7.0
 	libpeas-gtk-1.0 >= 1.7.0
 	gedit >= 3.11.3
