@@ -192,7 +192,7 @@ class Commands(Singleton):
 
         try:
             monitor = gfile.monitor_directory(Gio.FileMonitorFlags.NONE, None)
-        except Gio.Error as e:
+        except Exception as e:
             # Could not create monitor, this happens on systems where file monitoring is
             # not supported, but we don't really care
             pass
