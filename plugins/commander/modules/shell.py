@@ -139,7 +139,7 @@ def _run_command(entry, replace, background, argstr):
 
         # Write to temporary file
         tmpin = tempfile.NamedTemporaryFile(delete=False)
-        tmpin.write(inp)
+        tmpin.write(inp.encode('utf-8'))
         tmpin.flush()
 
         # Replace with temporary file
