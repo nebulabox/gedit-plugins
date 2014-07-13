@@ -44,6 +44,9 @@ class RollbackImporter:
 
         return mod
 
+    def insert_main(self, mod):
+        self._new_modules.insert(0, mod)
+
     def uninstall(self):
         self.cancel()
 

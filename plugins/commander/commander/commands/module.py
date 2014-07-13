@@ -125,11 +125,14 @@ class Module(method.Method):
             sys.path.insert(0, self._dirname)
 
             self._rollback.monitor()
-            self._rollback.cancel()
+
             self.mod = importlib.import_module(self.real_name)
+            self._rollback.cancel()
 
             if not utils.is_commander_module(self.mod):
                 raise Exception('Module is not a commander module...')
+
+            self._rollback.insert_main(self.real_name)
 
             if '__default__' in self.mod.__dict__:
                 self.method = self.mod.__dict__['__default__']
