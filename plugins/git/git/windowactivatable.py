@@ -233,9 +233,12 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.monitors = {}
 
     def monitor_directory(self, location):
-        monitor = location.monitor(Gio.FileMonitorFlags.NONE, None)
-        self.monitors[location.get_uri()] = monitor
+        try:
+            monitor = location.monitor(Gio.FileMonitorFlags.NONE, None)
+        except:
+            return
 
+        self.monitors[location.get_uri()] = monitor
         monitor.connect('changed', self.monitor_changed)
 
     def monitor_changed(self, monitor, file, other_file, event_type):
