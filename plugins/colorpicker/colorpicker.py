@@ -27,9 +27,10 @@ from gpdefs import *
 
 try:
     gettext.bindtextdomain(GETTEXT_PACKAGE, GP_LOCALEDIR)
-    _ = lambda s: gettext.dgettext(GETTEXT_PACKAGE, s);
+    _ = lambda s: gettext.dgettext(GETTEXT_PACKAGE, s)
 except:
     _ = lambda s: s
+
 
 class ColorHelper:
 
@@ -45,7 +46,7 @@ class ColorHelper:
 
             if char.lower() not in \
                     ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                    'a', 'b', 'c', 'd', 'e', 'f'):
+                     'a', 'b', 'c', 'd', 'e', 'f'):
                 return
 
             if not next_char(iter):
@@ -122,7 +123,7 @@ class ColorPickerAppActivatable(GObject.Object, Gedit.AppActivatable):
 
     def __init__(self):
         GObject.Object.__init__(self)
- 
+
     def do_activate(self):
         self.menu_ext = self.extend_menu("tools-section")
         item = Gio.MenuItem.new(_("Pick _Color..."), "win.colorpicker")
@@ -155,7 +156,7 @@ class ColorPickerWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     def _update(self):
         tab = self.window.get_active_tab()
-        self.window.lookup_action("colorpicker").set_enabled(tab != None)
+        self.window.lookup_action("colorpicker").set_enabled(tab is not None)
 
         if not tab and self._dialog and \
                 self._dialog.get_transient_for() == self.window:
@@ -184,8 +185,8 @@ class ColorPickerWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             rgba = dialog.get_rgba()
 
             self._color_helper.insert_color(self.window.get_active_view(),
-                                            "%02x%02x%02x" % (self._color_helper.scale_color_component(rgba.red), \
-                                                              self._color_helper.scale_color_component(rgba.green), \
+                                            "%02x%02x%02x" % (self._color_helper.scale_color_component(rgba.red),
+                                                              self._color_helper.scale_color_component(rgba.green),
                                                               self._color_helper.scale_color_component(rgba.blue)))
         else:
             self._dialog.destroy()
@@ -263,8 +264,8 @@ class ColorPickerViewActivatable(GObject.Object, Gedit.ViewActivatable):
         rgba = color_button.get_rgba()
 
         self._color_helper.insert_color(self.view,
-                                        "%02x%02x%02x" % (self._color_helper.scale_color_component(rgba.red), \
-                                                          self._color_helper.scale_color_component(rgba.green), \
+                                        "%02x%02x%02x" % (self._color_helper.scale_color_component(rgba.red),
+                                                          self._color_helper.scale_color_component(rgba.green),
                                                           self._color_helper.scale_color_component(rgba.blue)))
 
 # ex:ts=4:et:
