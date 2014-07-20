@@ -29,6 +29,7 @@ try:
 except:
     _ = lambda s: s
 
+
 class JoinLinesAppActivatable(GObject.Object, Gedit.AppActivatable):
     app = GObject.property(type=Gedit.App)
 
@@ -66,10 +67,9 @@ class JoinLinesWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     def do_update_state(self):
         view = self.window.get_active_view()
-        self.window.lookup_action("joinlines").set_enabled(view is not None and \
-                                                           view.get_editable())
-        self.window.lookup_action("splitlines").set_enabled(view is not None and \
-                                                            view.get_editable())
+        enable = view is not None and view.get_editable()
+        self.window.lookup_action("joinlines").set_enabled(enable)
+        self.window.lookup_action("splitlines").set_enabled(enable)
 
     def join_lines(self):
         view = self.window.get_active_view()
@@ -80,6 +80,7 @@ class JoinLinesWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         view = self.window.get_active_view()
         if view and hasattr(view, "join_lines_view_activatable"):
             view.join_lines_view_activatable.split_lines()
+
 
 class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
@@ -214,8 +215,8 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
                 doc.delete(previous_word_end, current_word_start)
 
-                line_offset = get_line_offset(current_word_start, tabwidth) + word_length
-                if line_offset > width - 1:
+                line_offset = self.view.get_visual_line_offset(current_word_start)
+                if line_offset + word_length > width - 1:
                     doc.insert(current_word_start, '\n' + indent)
                 else:
                     doc.insert(current_word_start, ' ')
@@ -228,26 +229,13 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
         doc.delete_mark(end_mark)
         doc.end_user_action()
 
-def get_line_offset(text_iter, tabwidth):
-    offset_iter = text_iter.copy()
-    offset_iter.set_line_offset(0)
-
-    line_offset = 0
-    while offset_iter.get_offset() < text_iter.get_offset():
-        char = offset_iter.get_char()
-        if char == '\t':
-            line_offset += tabwidth
-        else:
-            line_offset += 1
-        offset_iter.forward_char()
-
-    return line_offset
 
 def forward_to_word_start(text_iter):
     char = text_iter.get_char()
     while ord(char) and (char in (' ', '\t', '\n', '\r')):
         text_iter.forward_char()
         char = text_iter.get_char()
+
 
 def forward_to_word_end(text_iter):
     char = text_iter.get_char()
