@@ -327,7 +327,7 @@ class Dashboard (Gtk.Box):
         print("Dashboard search for:", query)
         result_type_relevancy = 100
         self.template = Zeitgeist.Event()
-        self.template.set_property("actor", "application://gedit.desktop")
+        self.template.set_property("actor", "application://org.gnome.gedit.desktop")
         timerange = Zeitgeist.TimeRange.anytime()
         ZG_FTS.search(query + "*",
             timerange,
@@ -347,7 +347,7 @@ class Dashboard (Gtk.Box):
 
     def get_recent(self):
         template = Zeitgeist.Event()
-        template.set_property("actor", "application://gedit.desktop")
+        template.set_property("actor", "application://org.gnome.gedit.desktop")
         CLIENT.find_events(
             Zeitgeist.TimeRange.anytime(),
             [template],
@@ -361,7 +361,7 @@ class Dashboard (Gtk.Box):
     def get_frequent(self, log, res, data):
         events = CLIENT.find_events_finish(res)
         template = Zeitgeist.Event()
-        template.set_property("actor", "application://gedit.desktop")
+        template.set_property("actor", "application://org.gnome.gedit.desktop")
         now = time.time() * 1000
         # 14 being the amount of days
         # and 86400000 the amount of milliseconds per day

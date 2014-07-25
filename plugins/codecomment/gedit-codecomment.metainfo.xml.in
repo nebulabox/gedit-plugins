@@ -2,7 +2,7 @@
 <!-- Copyright 2014 Igor Gnatenko <i.gnatenko.brain@gmail.com> -->
 <component type="addon">
   <id>gedit-codecomment</id>
-  <extends>gedit.desktop</extends>
+  <extends>org.gnome.gedit.desktop</extends>
   <_name>Code Comment</_name>
   <_summary>Comment or uncomment blocks of code</_summary>
   <url type="homepage">https://wiki.gnome.org/Apps/Gedit/ShippedPlugins</url>

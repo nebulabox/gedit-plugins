@@ -1,7 +1,7 @@
 <!-- Copyright 2014 Igor Gnatenko <i.gnatenko.brain@gmail.com> -->
 <component type="addon">
   <id>gedit-git</id>
-  <extends>gedit.desktop</extends>
+  <extends>org.gnome.gedit.desktop</extends>
   <_name>Git</_name>
   <_summary>Use git information to display which lines and files changed since last commit</_summary>
   <url type="homepage">https://wiki.gnome.org/Apps/Gedit/ShippedPlugins</url>

@@ -2,7 +2,7 @@
 <!-- Copyright 2014 Igor Gnatenko <i.gnatenko.brain@gmail.com> -->
 <component type="addon">
   <id>gedit-colorpicker</id>
-  <extends>gedit.desktop</extends>
+  <extends>org.gnome.gedit.desktop</extends>
   <_name>Color picker</_name>
   <_summary>Select and insert a color from a dialog (for HTML, CSS, PHP)</_summary>
   <url type="homepage">https://wiki.gnome.org/Apps/Gedit/ShippedPlugins</url>

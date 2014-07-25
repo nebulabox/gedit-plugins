@@ -2,7 +2,7 @@
 <!-- Copyright 2014 Igor Gnatenko <i.gnatenko.brain@gmail.com> -->
 <component type="addon">
   <id>gedit-commander</id>
-  <extends>gedit.desktop</extends>
+  <extends>org.gnome.gedit.desktop</extends>
   <_name>Commander</_name>
   <_summary>Command line interface for advanced editing</_summary>
   <url type="homepage">https://wiki.gnome.org/Apps/Gedit/ShippedPlugins</url>
