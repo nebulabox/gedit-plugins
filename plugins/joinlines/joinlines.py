@@ -215,7 +215,7 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
                 doc.delete(previous_word_end, current_word_start)
 
-                line_offset = self.view.get_visual_line_offset(current_word_start)
+                line_offset = self.view.get_visual_line_column(current_word_start)
                 if line_offset + word_length > width - 1:
                     doc.insert(current_word_start, '\n' + indent)
                 else:
