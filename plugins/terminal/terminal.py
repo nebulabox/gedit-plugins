@@ -21,7 +21,7 @@
 # Boston, MA  02110-1301  USA
 
 import gi
-gi.require_version('Vte', '2.90')
+gi.require_version('Vte', '2.91')
 from gi.repository import GObject, GLib, Gio, Pango, Gdk, Gtk, Gedit, Vte
 import os
 import gettext
@@ -36,7 +36,6 @@ except:
 class GeditTerminal(Vte.Terminal):
 
     defaults = {
-        'emulation'             : 'xterm',
         'visible_bell'          : False,
     }
 
@@ -62,7 +61,7 @@ class GeditTerminal(Vte.Terminal):
 
         self.reconfigure_vte()
 
-        self.fork_command_full(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
+        self.spawn_sync(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell()], None, GLib.SpawnFlags.SEARCH_PATH, None, None, None)
 
     def do_drag_data_received(self, drag_context, x, y, data, info, time):
         if info == self.TARGET_URI_LIST:
@@ -138,14 +137,13 @@ class GeditTerminal(Vte.Terminal):
                     palette = []
                     break
 
-        self.set_colors_rgba(fg, bg, palette)
+        self.set_colors(fg, bg, palette)
         self.set_cursor_blink_mode(self.profile_settings.get_enum("cursor-blink-mode"))
         self.set_cursor_shape(self.profile_settings.get_enum("cursor-shape"))
         self.set_audible_bell(self.profile_settings.get_boolean("audible-bell"))
         self.set_allow_bold(self.profile_settings.get_boolean("allow-bold"))
         self.set_scroll_on_keystroke(self.profile_settings.get_boolean("scroll-on-keystroke"))
         self.set_scroll_on_output(self.profile_settings.get_boolean("scroll-on-output"))
-        self.set_emulation(self.defaults['emulation'])
         self.set_visible_bell(self.defaults['visible_bell'])
 
         if self.profile_settings.get_boolean("scrollback-unlimited"):
@@ -200,7 +198,7 @@ class GeditTerminalPanel(Gtk.Box):
         scrollbar.show()
         self.pack_start(scrollbar, False, False, 0)
 
-    def on_vte_child_exited(self, term):
+    def on_vte_child_exited(self, term, status):
         for child in self.get_children():
             child.destroy()
 

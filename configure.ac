@@ -151,7 +151,7 @@ then
 	# ================================================================
 	# Terminal (vte)
 	# ================================================================
-	if `$PYTHON -c "import gi; gi.require_version('Vte', '2.90')" 2>/dev/null`;
+	if `$PYTHON -c "import gi; gi.require_version('Vte', '2.91')" 2>/dev/null`;
 	then
 		have_vte=yes
 		PLUGINS="$PLUGINS terminal"
