@@ -1,4 +1,4 @@
-if ENABLE_PYTHON
+if ENABLE_CHARMAP
 plugins_charmapdir = $(plugindir)/charmap
 plugins_charmap_PYTHON =			\
 	plugins/charmap/charmap/__init__.py	\

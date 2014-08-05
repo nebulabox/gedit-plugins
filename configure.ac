@@ -90,7 +90,7 @@ AC_ARG_ENABLE([verify-all],
 C_PLUGINS="bookmarks drawspaces wordcompletion"
 
 # Python plugins that don't need special dependencies, besides python
-PY_PLUGINS="bracketcompletion charmap codecomment colorpicker colorschemer commander dashboard joinlines multiedit smartspaces textsize"
+PY_PLUGINS="bracketcompletion codecomment colorpicker colorschemer commander dashboard joinlines multiedit smartspaces textsize"
 
 PLUGINS="$C_PLUGINS"
 disabled_plugins=""
@@ -161,6 +161,18 @@ then
 	fi
 
 	# ================================================================
+	# Charmap (Gucharmap)
+	# ================================================================
+	if `$PYTHON -c "import gi; gi.require_version('Gucharmap', '2.90')" 2>/dev/null`;
+	then
+		have_gucharmap=yes
+		PLUGINS="$PLUGINS charmap"
+	else
+		have_gucharmap=no
+		disabled_plugins="$disabled_plugins charmap (gucharmap not found)"
+	fi
+
+	# ================================================================
 	# Git (libgit2-glib)
 	# ================================================================
 	LIBGIT2_GLIB_REQUIRED=0.0.6
@@ -180,6 +192,7 @@ fi
 
 AM_CONDITIONAL([ENABLE_SYNCTEX], test "x$have_synctex" = "xyes")
 AM_CONDITIONAL([ENABLE_TERMINAL], test "x$have_vte" = "xyes")
+AM_CONDITIONAL([ENABLE_CHARMAP], test "x$have_gucharmap" = "xyes")
 AM_CONDITIONAL([ENABLE_GIT], test "x$have_git2" = "xyes")
 
 AC_SUBST(PLUGINS)
