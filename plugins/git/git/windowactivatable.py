@@ -203,6 +203,8 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self.git_status_thread.push(repo, location)
 
     def focus_in_event(self, window, event):
+        self.app_activatable.clear_repositories()
+
         for view_activatable in self.view_activatables:
             view_activatable.update()
 

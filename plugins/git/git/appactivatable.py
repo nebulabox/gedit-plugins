@@ -19,8 +19,6 @@
 
 from gi.repository import GLib, GObject, Gio, Gedit, Ggit
 
-import weakref
-
 
 class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
     app = GObject.property(type=Gedit.App)
@@ -35,7 +33,7 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
         GitAppActivatable.__instance = self
 
     def do_activate(self):
-        self.__repos = weakref.WeakValueDictionary()
+        self.__repos = {}
 
     def do_deactivate(self):
         self.__repos = None
@@ -43,6 +41,9 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
     @classmethod
     def get_instance(cls):
         return cls.__instance
+
+    def clear_repositories(self):
+        self.__repos = {}
 
     def get_repository(self, location, is_dir):
         dir_location = location if is_dir else location.get_parent()
@@ -64,6 +65,9 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
             repo_file = Ggit.Repository.discover(location)
 
         except GLib.Error:
+            # Prevent trying to find a git repository
+            # for every file in this directory
+            self.__repos[dir_uri] = None
             return None
 
         repo_uri = repo_file.get_parent().get_uri()
