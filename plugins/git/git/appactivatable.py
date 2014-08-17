@@ -98,6 +98,11 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
             dir_location = dir_location.get_parent()
             dir_uri = dir_location.get_uri()
 
+            # Avoid caching the repo all the
+            # way up to the workdir each time
+            if dir_uri in self.__repos:
+                break
+
         return repo
 
 # ex:ts=4:et:
