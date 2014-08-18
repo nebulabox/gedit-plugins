@@ -33,28 +33,40 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
         GitAppActivatable.__instance = self
 
     def do_activate(self):
-        self.__repos = {}
+        self.clear_repositories()
 
     def do_deactivate(self):
-        self.__repos = None
+        self.__git_repos = None
+        self.__workdir_repos = None
 
     @classmethod
     def get_instance(cls):
         return cls.__instance
 
     def clear_repositories(self):
-        self.__repos = {}
+        self.__git_repos = {}
+        self.__workdir_repos = {}
 
-    def get_repository(self, location, is_dir):
+    def get_repository(self, location, is_dir, *, allow_git_dir=False):
+        # The repos are cached by the directory
         dir_location = location if is_dir else location.get_parent()
         dir_uri = dir_location.get_uri()
 
         # Fast Path
         try:
-            return self.__repos[dir_uri]
+            return self.__workdir_repos[dir_uri]
 
         except KeyError:
             pass
+
+        try:
+            repo = self.__git_repos[dir_uri]
+
+        except KeyError:
+            pass
+
+        else:
+            return repo if allow_git_dir else None
 
         # Doing remote operations is too slow
         if not location.has_uri_scheme('file'):
@@ -67,41 +79,49 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
         except GLib.Error:
             # Prevent trying to find a git repository
             # for every file in this directory
-            self.__repos[dir_uri] = None
+            self.__workdir_repos[dir_uri] = None
             return None
 
-        repo_uri = repo_file.get_parent().get_uri()
+        repo_uri = repo_file.get_uri()
 
         # Reuse the repo if requested multiple times
         try:
-            repo = self.__repos[repo_uri]
+            repo = self.__git_repos[repo_uri]
 
         except KeyError:
             repo = Ggit.Repository.open(repo_file)
-            repo_workdir_uri = repo.get_workdir().get_uri()
 
             # TODO: this was around even when not used, on purpose?
             head = repo.get_head()
             commit = repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
             tree = commit.get_tree()
 
-            self.__repos[repo_uri] = repo
-            self.__repos[repo_workdir_uri] = repo
+            self.__git_repos[repo_uri] = repo
+
+        # Need to keep the caches for workdir and
+        # the .git dir separate to support allow_git_dir
+        if dir_uri.startswith(repo_uri):
+            top_uri = repo_uri
+            repos = self.__git_repos
 
         else:
-            repo_workdir_uri = repo.get_workdir().get_uri()
+            top_uri = repo.get_workdir().get_uri()
+            repos = self.__workdir_repos
 
         # Avoid trouble with symbolic links
-        while dir_uri.startswith(repo_workdir_uri):
-            self.__repos[dir_uri] = repo
+        while dir_uri.startswith(top_uri):
+            repos[dir_uri] = repo
 
             dir_location = dir_location.get_parent()
             dir_uri = dir_location.get_uri()
 
             # Avoid caching the repo all the
-            # way up to the workdir each time
-            if dir_uri in self.__repos:
+            # way up to the top dir each time
+            if dir_uri in repos:
                 break
+
+        if repos is self.__git_repos:
+            return repo if allow_git_dir else None
 
         return repo
 

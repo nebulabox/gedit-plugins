@@ -85,6 +85,12 @@ class GitStatusThread(WorkerThread):
             debug('Invalid repository', print_stack=True)
             return
  
+        git_dir = repo.get_location().get_uri()
+        if location.get_uri().startswith(git_dir):
+            debug('Invalid location: "%s" is in git dir "%s"' %
+                  (location.get_uri(), git_dir), print_stack=True)
+            return
+
         workdir = repo.get_workdir()
         if workdir.get_relative_path(location) is None:
             debug('Invalid location "%s" for workdir "%s"' %
@@ -224,26 +230,14 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         location = msg.location
 
         repo = self.get_repository(location, True)
-        if repo is None:
-            return
-
-        # Avoid the .git dir
-        repo_location = repo.get_location()
-        if location.get_uri().startswith(repo_location.get_uri()):
-            return
-
-        self.monitor_directory(location)
+        if repo is not None:
+            self.monitor_directory(location)
 
     def inserted(self, bus, msg, data=None):
         location = msg.location
 
         repo = self.get_repository(location, msg.is_directory)
         if repo is None:
-            return
-
-        # Avoid the .git dir
-        repo_location = repo.get_location()
-        if location.get_uri().startswith(repo_location.get_uri()):
             return
 
         if msg.is_directory:
