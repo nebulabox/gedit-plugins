@@ -55,9 +55,10 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
         self.diff_renderer = DiffRenderer()
         self.gutter = self.view.get_gutter(Gtk.TextWindowType.LEFT)
 
+        # Note: GitWindowActivatable will call
+        #       update_location() for us when needed
         self.view_signals = [
-            self.view.connect('notify::buffer', self.on_notify_buffer),
-            self.view.connect('focus-in-event', self.update_location)
+            self.view.connect('notify::buffer', self.on_notify_buffer)
         ]
 
         self.buffer = None
@@ -94,15 +95,18 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
         self.buffer = view.get_buffer()
 
-        # The changed signal is connected to in update_location()
+        # The changed signal is connected to in update_location().
+        # The saved signal is pointless as the window activatable
+        # will see the change and call update_location().
         self.buffer_signals = [
-            self.buffer.connect('loaded', self.update_location),
-            self.buffer.connect('saved', self.update_location)
+            self.buffer.connect('loaded', self.update_location)
         ]
 
         # We wait and let the loaded signal call
         # update_location() as the buffer is currently empty
 
+    # TODO: This can be called many times and by idles,
+    #       should instead do the work in another thread
     def update_location(self, *args):
         self.location = self.buffer.get_file().get_location()
 

@@ -141,11 +141,13 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         self.file_nodes = FileNodes()
         self.monitors = {}
+        self.has_focus = True
 
         self.gobject_signals = {
             self.window: [
                 self.window.connect('tab-removed', self.tab_removed),
-                self.window.connect('focus-in-event', self.focus_in_event)
+                self.window.connect('focus-in-event', self.focus_in_event),
+                self.window.connect('focus-out-event', self.focus_out_event)
             ],
 
             # GeditMessageBus.connect() shadows GObject.connect()
@@ -242,15 +244,29 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self.git_status_thread.push(repo, location)
 
     def focus_in_event(self, window, event):
+        # Enables the file monitors so they can cause things
+        # to update again. We disabled them when the focus
+        # was lost and we will instead do a full update now.
+        self.has_focus = True
+
         self.app_activatable.clear_repositories()
 
         for view_activatable in self.view_activatables:
-            view_activatable.update()
+            # Must reload the location's contents, not just rediff
+            GLib.idle_add(view_activatable.update_location)
 
         for location in self.file_nodes:
+            # Still need to update the git status
+            # as the file could now be in .gitignore
             repo = self.get_repository(location)
             if repo is not None:
                 self.git_status_thread.push(repo, location)
+
+    def focus_out_event(self, window, event):
+        # Disables the file monitors so they don't
+        # cause anything to update. We will do a
+        # full update when we have focus again.
+        self.has_focus = False
 
     def unregistered(self, bus, object_path, method):
         # Avoid warnings like crazy if the file browser becomes disabled
@@ -351,14 +367,34 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.monitors[location.get_uri()] = monitor
         monitor.connect('changed', self.monitor_changed)
 
-    def monitor_changed(self, monitor, file, other_file, event_type):
-        # Only monitor for changes as the file browser will monitor
-        # file created and deleted files and emit inserted and deleted
-        if event_type == Gio.FileMonitorEvent.CHANGED:
-            for f in (file, other_file):
-                if f is not None and f in self.file_nodes:
-                    repo = self.get_repository(f)
-                    if repo is not None:
-                        self.git_status_thread.push(repo, f)
+    def monitor_changed(self, monitor, file_a, file_b, event_type):
+        # Don't update anything as we will do
+        # a full update when we have focus again
+        if not self.has_focus:
+            return
+
+        # Only monitor for changes as the file browser
+        # will emit signals for the other event types
+        if event_type != Gio.FileMonitorEvent.CHANGED:
+            return
+
+        for f in (file_a, file_b):
+            if f is None:
+                continue
+
+            # Must let the view activatable know
+            # that its location's contents have changed
+            view_activatable = self.get_view_activatable_by_location(f)
+            if view_activatable is not None:
+                # Must reload the location's contents, not just rediff
+                GLib.idle_add(view_activatable.update_location)
+
+                # Still need to update the git status
+                # as the file could now be in .gitignore
+
+            if f in self.file_nodes:
+                repo = self.get_repository(f)
+                if repo is not None:
+                    self.git_status_thread.push(repo, f)
 
 # ex:ts=4:et:
