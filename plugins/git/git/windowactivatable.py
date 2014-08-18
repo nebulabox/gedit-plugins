@@ -306,7 +306,10 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     def monitor_directory(self, location):
         try:
             monitor = location.monitor(Gio.FileMonitorFlags.NONE, None)
-        except:
+
+        except GLib.Error as e:
+            debug('Failed to monitor directory "%s": %s' %
+                  (location.get_uri(), e))
             return
 
         self.monitors[location.get_uri()] = monitor
