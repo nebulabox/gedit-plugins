@@ -142,11 +142,21 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.file_nodes = FileNodes()
         self.monitors = {}
 
-        self.window_signals = [
-            self.window.connect('tab-removed', self.tab_removed),
-            self.window.connect('focus-in-event', self.focus_in_event)
-        ]
+        self.gobject_signals = {
+            self.window: [
+                self.window.connect('tab-removed', self.tab_removed),
+                self.window.connect('focus-in-event', self.focus_in_event)
+            ],
 
+            # GeditMessageBus.connect() shadows GObject.connect()
+            self.bus: [
+                GObject.Object.connect(self.bus, 'unregistered',
+                                       self.unregistered)
+            ]
+        }
+
+        # It is safe to connect to these even
+        # if the file browser is not enabled yet
         self.bus_signals = [
             self.bus.connect('/plugins/filebrowser', 'root_changed',
                              self.root_changed, None),
@@ -162,14 +172,16 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.clear_monitors()
         self.git_status_thread.terminate()
 
-        for sid in self.window_signals:
-            self.window.disconnect(sid)
+        for gobject, sids in self.gobject_signals.items():
+            for sid in sids:
+                # GeditMessageBus.disconnect() shadows GObject.disconnect()
+                GObject.Object.disconnect(gobject, sid)
 
         for sid in self.bus_signals:
             self.bus.disconnect(sid)
 
         self.file_nodes = FileNodes()
-        self.window_signals = []
+        self.gobject_signals = {}
         self.bus_signals = []
 
         self.refresh()
@@ -218,6 +230,13 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             repo = self.get_repository(location)
             if repo is not None:
                 self.git_status_thread.push(repo, location)
+
+    def unregistered(self, bus, object_path, method):
+        # Avoid warnings like crazy if the file browser becomes disabled
+        if object_path == '/plugins/filebrowser' and method == 'root_changed':
+            self.clear_monitors()
+            self.git_status_thread.clear()
+            self.file_nodes = FileNodes()
 
     def get_repository(self, location, is_dir=False):
         return self.app_activatable.get_repository(location, is_dir)
