@@ -190,6 +190,28 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         if self.bus.is_registered('/plugins/filebrowser', 'refresh'):
             self.bus.send('/plugins/filebrowser', 'refresh')
 
+    def get_view_activatable_by_view(self, view):
+        for view_activatable in self.view_activatables:
+            if view_activatable.view == view:
+                return view_activatable
+
+        return None
+
+    def get_view_activatable_by_location(self, location):
+        for view_activatable in self.view_activatables:
+            buf = view_activatable.view.get_buffer()
+            if buf is None:
+                continue
+
+            view_location = buf.get_file().get_location()
+            if view_location is None:
+                continue
+
+            if view_location.equal(location):
+                return view_activatable
+
+        return None
+
     def notify_status(self, view_activatable, psepc):
         location = view_activatable.view.get_buffer().get_file().get_location()
         if location is None:
@@ -207,10 +229,9 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         # Need to remove the view activatable otherwise update_location()
         # might use the view's status and not the file's actual status
-        for view_activatable in self.view_activatables:
-            if view_activatable.view == view:
-                self.view_activatables.remove(view_activatable)
-                break
+        view_activatable = self.get_view_activatable_by_view(view)
+        if view_activatable is not None:
+            self.view_activatables.remove(view_activatable)
 
         location = view.get_buffer().get_file().get_location()
         if location is None:
@@ -292,13 +313,9 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             return
 
         if status is None or not status & Ggit.StatusFlags.IGNORED:
-            for view_activatable in self.view_activatables:
-                view = view_activatable.view
-                doc_location = view.get_buffer().get_file().get_location()
-
-                if doc_location is not None and doc_location.equal(location):
-                    status = view_activatable.status
-                    break
+            view_activatable = self.get_view_activatable_by_location(location)
+            if view_activatable is not None:
+                status = view_activatable.status
 
         markup = GLib.markup_escape_text(file_node.name)
 
