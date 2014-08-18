@@ -59,8 +59,8 @@ def debug(msg, *, frames=1, print_stack=False, limit=None):
         if full_message.getvalue()[-1] != '\n':
             full_message.write('\n')
  
-        # Always write the message in a single call to avoid to
-        # avoid having the message get split when threads call it
+        # Always write the message in a single call to prevent
+        # the message from being split when using multiple threads
         sys.stderr.write(full_message.getvalue())
  
         full_message.close()
