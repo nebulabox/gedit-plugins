@@ -57,7 +57,7 @@ msgstr "Přejít na předchozí záložku"
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
 #: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:1
 msgid "Bracket Completion"
-msgstr "Dokončování závorek"
+msgstr "Doplňování závorek"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:2
 msgid "Automatically adds closing brackets."
@@ -662,7 +662,7 @@ msgstr "Velikost textu"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
-msgstr "Interaktivní dokončování"
+msgstr "Interaktivní doplňování"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
 msgid "Minimum word size:"
@@ -674,11 +674,11 @@ msgstr "Slova dokumentu"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
 msgid "Interactive Completion"
-msgstr "Interaktivní dokončování"
+msgstr "Interaktivní doplňování"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
 msgid "Whether to enable interactive completion."
-msgstr "Zda zapnout interaktivní dokončování."
+msgstr "Zda zapnout interaktivní doplňování."
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
 msgid "Minimum Word Size"
@@ -686,25 +686,25 @@ msgstr "Minimální délka slova"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
 msgid "The minimum word size to complete."
-msgstr "Minimální délka slova pro dokončení."
+msgstr "Minimální délka slova pro doplnění."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
-msgstr "Dokončování slov"
+msgstr "Doplňování slov"
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
-msgstr "Dokončování slov využívající vývojářský systém pro doplňování"
+msgstr "Doplňování slov využívající vývojářský systém pro doplňování"
 
 #: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
 msgid "Word completion"
-msgstr "Dokončování slov"
+msgstr "Doplňování slov"
 
 #: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
 msgid ""
 "Propose automatic completion using words already present in the document"
 msgstr ""
-"Navrhuje automatické dokončení podle slov, která se v dokumentu již vyskytují"
+"Navrhuje automatické doplnění podle slov, která se v dokumentu již vyskytují"
 
 #: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
 msgid "Zeitgeist dataprovider"
