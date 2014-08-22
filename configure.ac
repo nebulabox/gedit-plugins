@@ -90,7 +90,7 @@ AC_ARG_ENABLE([verify-all],
 C_PLUGINS="bookmarks drawspaces wordcompletion"
 
 # Python plugins that don't need special dependencies, besides python
-PY_PLUGINS="bracketcompletion codecomment colorpicker colorschemer commander dashboard joinlines multiedit smartspaces textsize"
+PY_PLUGINS="bracketcompletion codecomment colorpicker colorschemer commander joinlines multiedit smartspaces textsize"
 
 PLUGINS="$C_PLUGINS"
 disabled_plugins=""
@@ -161,6 +161,21 @@ then
 	fi
 
 	# ================================================================
+	# Dashboard (Zeitgeist)
+	# ================================================================
+	AC_MSG_CHECKING([for dashboard dependency zeitgeist])
+	if `$PYTHON -c "import gi; gi.require_version('Zeitgeist', '2.91')" 2>/dev/null`;
+	then
+		have_dashboard=yes
+		PLUGINS="$PLUGINS dashboard"
+	else
+		have_dashboard=no
+		disabled_plugins="$disabled_plugins dashboard (Zeitgeist gi not found)"
+	fi
+
+	AC_MSG_RESULT($have_dashboard)
+
+	# ================================================================
 	# Charmap (Gucharmap)
 	# ================================================================
 	if `$PYTHON -c "import gi; gi.require_version('Gucharmap', '2.90')" 2>/dev/null`;
@@ -187,11 +202,12 @@ then
 		disabled_plugins="$disabled_plugins git"
 	fi
 else
-	disabled_plugins="$disabled_plugins $PY_PLUGINS synctex vte git (python not found)"
+	disabled_plugins="$disabled_plugins $PY_PLUGINS synctex terminal dashboard charmap git (python not found)"
 fi
 
 AM_CONDITIONAL([ENABLE_SYNCTEX], test "x$have_synctex" = "xyes")
 AM_CONDITIONAL([ENABLE_TERMINAL], test "x$have_vte" = "xyes")
+AM_CONDITIONAL([ENABLE_DASHBOARD], test "x$have_dashboard" = "xyes")
 AM_CONDITIONAL([ENABLE_CHARMAP], test "x$have_gucharmap" = "xyes")
 AM_CONDITIONAL([ENABLE_GIT], test "x$have_git2" = "xyes")
 

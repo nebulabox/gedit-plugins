@@ -1,4 +1,4 @@
-if ENABLE_PYTHON
+if ENABLE_DASHBOARD
 plugins_dashboarddir = $(plugindir)/dashboard
 plugins_dashboard_PYTHON =				\
 	plugins/dashboard/dashboard/__init__.py		\
