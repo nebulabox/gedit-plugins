@@ -142,15 +142,22 @@ then
 	AC_SUBST([DBUS_PYTHON_CFLAGS])
 	AC_SUBST([DBUS_PYTHON_LIBS])
 
+	AC_MSG_CHECKING([for synctex dependency dbus-python])
+	AC_MSG_RESULT($have_synctex)
+
 	if test "x$have_synctex" = "xyes"; then
 		PLUGINS="$PLUGINS synctex"
 	else
+		AC_MSG_RESULT([yes])
 		disabled_plugins="$disabled_plugins synctex (dbus-python not found)"
 	fi
+
 
 	# ================================================================
 	# Terminal (vte)
 	# ================================================================
+	AC_MSG_CHECKING([for terminal dependency vte])
+
 	if `$PYTHON -c "import gi; gi.require_version('Vte', '2.91')" 2>/dev/null`;
 	then
 		have_vte=yes
@@ -159,6 +166,9 @@ then
 		have_vte=no
 		disabled_plugins="$disabled_plugins terminal (vte not found)"
 	fi
+
+	AC_MSG_RESULT($have_vte)
+
 
 	# ================================================================
 	# Dashboard (Zeitgeist)
@@ -175,17 +185,22 @@ then
 
 	AC_MSG_RESULT($have_dashboard)
 
+
 	# ================================================================
 	# Charmap (Gucharmap)
 	# ================================================================
+	AC_MSG_CHECKING([for charmap dependency gucharmap])
 	if `$PYTHON -c "import gi; gi.require_version('Gucharmap', '2.90')" 2>/dev/null`;
 	then
 		have_gucharmap=yes
 		PLUGINS="$PLUGINS charmap"
 	else
 		have_gucharmap=no
-		disabled_plugins="$disabled_plugins charmap (gucharmap not found)"
+		disabled_plugins="$disabled_plugins charmap (Gucharmap gi not found)"
 	fi
+
+	AC_MSG_RESULT($have_gucharmap)
+
 
 	# ================================================================
 	# Git (libgit2-glib)
@@ -195,6 +210,9 @@ then
 		[libgit2-glib-1.0 >= $LIBGIT2_GLIB_REQUIRED],
 		[have_git2=yes],
 		[have_git2=no])
+
+	AC_MSG_CHECKING([for git dependency libgit2-glib])
+	AC_MSG_RESULT($have_git2)
 
 	if test "x$have_git2" = "xyes"; then
 		PLUGINS="$PLUGINS git"
