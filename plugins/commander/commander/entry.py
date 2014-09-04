@@ -100,14 +100,11 @@ class Entry(Gtk.Box):
 GtkEntry#gedit-commander-entry {
     gtk-key-bindings: terminal-like-bindings;
 
-    /* Override background to anything. This is weird, but doing this we can
-       then in code use widget.override_background to set the color dynamically
-       to the same color as the gedit view */
-    background: transparent;
-    border-width: 0;
-    box-shadow: 0 0 transparent;
+    background-image: none;
+    box-shadow: 0 0;
     transition: none;
 }
+
 """, 'utf-8'))
 
         self._entry.get_style_context().add_provider(css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
@@ -173,7 +170,7 @@ GtkEntry#gedit-commander-entry {
             color = Gdk.RGBA()
             color.parse(style.props.foreground)
         else:
-            color = self.background_color.copy()
+            color = self._get_background_color(Gtk.StateFlags.NORMAL, 'bottom').copy()
             color.red = 1 - color.red
             color.green = 1 - color.green
             color.blue = 1 - color.blue
@@ -181,41 +178,53 @@ GtkEntry#gedit-commander-entry {
         color.alpha = 0.3
         return color
 
-    @property
-    def background_color(self):
+    def _get_background_color(self, state, cls=None):
         context = self._view.get_style_context()
 
         context.save()
 
-        context.add_class('bottom')
-        ret = context.get_background_color(Gtk.StateFlags.NORMAL)
+        if not cls is None:
+            context.add_class(cls)
+
+        ret = context.get_background_color(state)
 
         context.restore()
 
         return ret
 
-    @property
-    def foreground_color(self):
+    def _get_foreground_color(self, state, cls=None):
         context = self._view.get_style_context()
 
         context.save()
 
-        context.add_class('bottom')
-        ret = context.get_color(Gtk.StateFlags.NORMAL)
+        if not cls is None:
+            context.add_class(cls)
+
+        ret = context.get_color(state)
 
         context.restore()
 
         return ret
 
-    @property
-    def font(self):
+    def _get_font(self):
         context = self._view.get_style_context()
         return context.get_font(Gtk.StateFlags.NORMAL)
 
+    def _styled_widgets(self):
+        widgets = [self, self._entry, self._prompt_label]
+
+        if not self._info is None:
+            widgets.append(self._info.text_view)
+
+        return widgets
+
     def _copy_style_from_view(self, widgets=None):
-        font = self.font
-        fg = self.foreground_color
-        bg = self.background_color
+        font = self._get_font()
+        fg = self._get_foreground_color(Gtk.StateFlags.NORMAL, 'bottom')
+        bg = self._get_background_color(Gtk.StateFlags.NORMAL, 'bottom')
+
+        fgsel = self._get_foreground_color(Gtk.StateFlags.SELECTED)
+        bgsel = self._get_background_color(Gtk.StateFlags.SELECTED)
 
         cursor = self._view.style_get_property('cursor-color')
 
@@ -228,20 +237,16 @@ GtkEntry#gedit-commander-entry {
             secondary_cursor = Gdk.RGBA.from_color(secondary_cursor)
 
         if widgets is None:
-            widgets = [self, self._entry, self._prompt_label]
-
-            if not self._info is None:
-                widgets.append(self._info.text_view)
+            widgets = self._styled_widgets()
 
         for widget in widgets:
             widget.override_color(Gtk.StateFlags.NORMAL, fg)
-            widget.override_color(Gtk.StateFlags.SELECTED, bg)
-
             widget.override_background_color(Gtk.StateFlags.NORMAL, bg)
-            widget.override_background_color(Gtk.StateFlags.SELECTED, fg)
+
+            widget.override_color(Gtk.StateFlags.SELECTED, fgsel)
+            widget.override_background_color(Gtk.StateFlags.SELECTED, bgsel)
 
             widget.override_font(font)
-
             widget.override_cursor(cursor, secondary_cursor)
 
     def _attach(self):
