@@ -45,9 +45,9 @@ class Info(TransparentWindow):
 
         self._text = Gtk.TextView()
 
-        font = self._entry.get_font()
-        fgcolor = self._entry.get_foreground_color()
-        bgcolor = self.background_color()
+        font = self._entry.font
+        fgcolor = self._entry.foreground_color
+        bgcolor = self.background_color
 
         self._text.override_font(font)
         self._text.override_color(Gtk.StateFlags.NORMAL, fgcolor)
@@ -345,6 +345,7 @@ class Info(TransparentWindow):
 
         ct.line_to(w - 0.5, h)
 
+    @property
     def background_color(self):
         color = self._entry.get_background_color().copy()
         color.alpha = 0.9

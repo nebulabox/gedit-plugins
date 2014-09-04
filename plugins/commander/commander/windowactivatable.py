@@ -71,7 +71,7 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self._entry.grab_focus()
             self._view = view
         elif self._entry:
-            self._entry.destroy()
+            self._entry.remove()
             self._view = None
 
         action.set_state(GLib.Variant.new_boolean(active))
