@@ -154,7 +154,6 @@ GtkEntry#gedit-commander-entry {
         self._entry.set_margin_bottom(3)
         self._entry.set_margin_end(3)
 
-        self._entry.connect('focus-out-event', self._on_entry_focus_out)
         self._entry.connect('key-press-event', self._on_entry_key_press)
 
         self._entry.show()
@@ -265,14 +264,13 @@ GtkEntry#gedit-commander-entry {
         reveal.connect('notify::child-revealed', self._on_child_revealed)
         self._entry.grab_focus()
 
+    def grab_focus(self):
+        self._entry.grab_focus()
+
     def _on_child_revealed(self, widget, spec):
         if not self._reveal.get_child_revealed():
             self.destroy()
             widget.destroy()
-
-    def _on_entry_focus_out(self, widget, evnt):
-        if self._entry.get_sensitive():
-            self._reveal.set_reveal_child(False)
 
     def _on_entry_key_press(self, widget, evnt):
         state = evnt.state & Gtk.accelerator_get_default_mod_mask()

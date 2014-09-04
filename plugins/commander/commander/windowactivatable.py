@@ -54,6 +54,11 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     def activate_toggle(self, action, parameter):
         state = action.get_state()
+
+        if state.get_boolean() and not self._entry is None:
+            self._entry.grab_focus()
+            return
+
         action.change_state(GLib.Variant.new_boolean(not state.get_boolean()))
 
     def commander_mode(self, action, state):
@@ -63,6 +68,7 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             return False
 
         active = state.get_boolean()
+
         if active:
             if not self._entry or view != self._view:
                 self._entry = Entry(view)
