@@ -6,7 +6,6 @@ plugins_commander_PYTHON =					\
 	plugins/commander/commander/history.py			\
 	plugins/commander/commander/info.py			\
 	plugins/commander/commander/modules.py			\
-	plugins/commander/commander/transparentwindow.py	\
 	plugins/commander/commander/utils.py			\
 	plugins/commander/commander/appactivatable.py		\
 	plugins/commander/commander/windowactivatable.py
