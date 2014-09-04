@@ -247,10 +247,6 @@ class Info(Gtk.Box):
             self._vw.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
             self._vw.set_min_content_height(0)
 
-        if not too_many:
-            size = self.get_size()
-            self.resize(size[0], 1)
-
     def _ensure_button_bar(self):
         if not self._button_bar:
             self._button_bar = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=3)
