@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gedit-plugins master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2014-03-28 06:34+0000\n"
-"PO-Revision-Date: 2014-03-28 18:46+0700\n"
+"POT-Creation-Date: 2014-06-25 17:15+0000\n"
+"PO-Revision-Date: 2014-09-05 20:03+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -22,13 +22,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
+#: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
 msgid "Bookmarks"
 msgstr "Tanda taut"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:2
+#: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:2
 msgid "Easy document navigation with bookmarks"
 msgstr "Navigasi dokumen yang mudah dengan tanda taut"
 
@@ -45,12 +47,17 @@ msgid "Goto Previous Bookmark"
 msgstr "Ke Tanda Taut Sebelumnya"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
+#: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:1
 msgid "Bracket Completion"
 msgstr "Penyelesaian Tanda Kurung"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:2
 msgid "Automatically adds closing brackets."
 msgstr "Otomatis menambah kurung tutup."
+
+#: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:2
+msgid "Automatically add a closing bracket when you insert one"
+msgstr "Otomatis menambah kurung tutup ketika Anda menyisipkan pembukanya"
 
 #. ex:et:ts=4:
 #: ../plugins/charmap/charmap/__init__.py:49
@@ -62,7 +69,17 @@ msgstr "Tabel Karakter"
 msgid "Insert special characters just by clicking on them."
 msgstr "Sisipkan karakter khusus hanya dengan mengkliknya."
 
+#: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:1
+msgid "Charmap"
+msgstr "Tabel Karakter"
+
+#: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:2
+msgid "Select characters from a character map"
+msgstr "Pilih karakter dari suatu peta karakter"
+
+#. ex:ts=4:et:
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
+#: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:1
 msgid "Code Comment"
 msgstr "Komentar Kode"
 
@@ -78,7 +95,10 @@ msgstr "Ko_mentarkan Kode"
 msgid "U_ncomment Code"
 msgstr "Kode Jangan_beri Komentar"
 
-#. ex:ts=4:et:
+#: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:2
+msgid "Comment or uncomment blocks of code"
+msgstr "Jadikan komentar atau jangan jadikan komentar blok kode"
+
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
 msgid "Color Picker"
 msgstr "Pemilih Warna"
@@ -87,6 +107,15 @@ msgstr "Pemilih Warna"
 msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Memilih warna dari dialog dan menyisipkan representasi heksadesimalnya."
+
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
+msgid "Color picker"
+msgstr "Pemilih warna"
+
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:2
+msgid "Select and insert a color from a dialog (for html, css, php)"
+msgstr ""
+"Pilih dan sisipkan suatu warna dari sebuah dialog (untuk html, css, php)"
 
 #: ../plugins/colorpicker/colorpicker.py:128
 msgid "Pick _Color..."
@@ -98,6 +127,7 @@ msgstr "Pilih Warna"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
+#: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
 #: ../plugins/colorschemer/schemer/__init__.py:40
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
@@ -106,6 +136,10 @@ msgstr "Penyunting Skema Warna"
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:2
 msgid "Source code color scheme editor"
 msgstr "Penyunting skema warna kode sumber"
+
+#: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:2
+msgid "Create and edit the color scheme used for syntax highlighting"
+msgstr "Buat dan sunting skema warna yang dipakai untuk menyorot sintaks"
 
 #: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
@@ -169,10 +203,12 @@ msgstr "Moda Komandan"
 
 #. vi:ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
+#: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
 msgstr "Komandan"
 
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:2
+#: ../plugins/commander/gedit-commander.metainfo.xml.in.h:2
 msgid "Command line interface for advanced editing"
 msgstr "Antar muka baris perintah bagi penyuntingan tingkat lanjut"
 
@@ -186,12 +222,19 @@ msgstr "Ketik di sini untuk mencari..."
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
+#: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:1
 msgid "Dashboard"
 msgstr "Dashboard"
 
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:2
 msgid "A Dashboard for new tabs"
 msgstr "Dashboard bagi tab baru"
+
+#: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:2
+msgid "Displays a grid of recently/most used files upon opening a new tab"
+msgstr ""
+"Tampilkan kisi dari berkas yang baru-baru ini/paling sering dipakai saat "
+"membuka suatu tab baru"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
@@ -202,37 +245,42 @@ msgstr "Gambar Spasi"
 msgid "Draw spaces and tabs"
 msgstr "Gambar spasi dan tab"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:265
+#. ex:set ts=8 noet:
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
+msgid "Draw spaces"
+msgstr "Gambar spasi"
+
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
+msgid "Draw Spaces and Tabs"
+msgstr "Gambar Spasi dan Tab"
+
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Tampilkan _White Space"
 
-#. ex:set ts=8 noet:
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
-msgid "Draw spaces"
-msgstr "Gambar spasi"
-
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:2
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:2
 msgid "Draw tabs"
 msgstr "Menggambar tab"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:3
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:3
 msgid "Draw new lines"
 msgstr "Menggambar garis baru"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:4
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:4
 msgid "Draw non-breaking spaces"
 msgstr "Gambar spasi tak-pecah"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:5
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:5
 msgid "Draw leading spaces"
 msgstr "Gambar spasi awal"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:6
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:6
 msgid "Draw spaces in text"
 msgstr "Menggambar spasi dalam teks"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:7
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:7
 msgid "Draw trailing spaces"
 msgstr "Gambar spasi di ekor baris"
 
@@ -245,12 +293,21 @@ msgid "The type of spaces to be drawn."
 msgstr "Tipe spasi yang akan digambar."
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
+#: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
 msgid "Highlight lines that have been changed since the last commit"
 msgstr "Sorot baris yang telah berubah semenjak komit terakhir"
+
+#: ../plugins/git/gedit-git.metainfo.xml.in.h:2
+msgid ""
+"Use git information to display which lines and files changed since last "
+"commit"
+msgstr ""
+"Gunakan informasi git untuk menampilkan baris dan berkas mana yang berubah "
+"sejak komit terakhir"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -259,6 +316,14 @@ msgstr "Gabungkan/Putuskan Garis"
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:2
 msgid "Join several lines or split long ones"
 msgstr "Menggabungkan beberapa garis atau memutuskan garis yang panjang"
+
+#: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
+msgid "Join lines/ Split lines"
+msgstr "Gabungkan/putuskan baris"
+
+#: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:2
+msgid "Join or split multiple lines through Ctrl+J and Ctrl+Shift+J"
+msgstr "Gabung atau pisahkan beberapa baris melalui Ctrl+J dan Ctrl+Shift+J"
 
 #: ../plugins/joinlines/joinlines.py:106
 msgid "_Join Lines"
@@ -269,7 +334,7 @@ msgid "_Split Lines"
 msgstr "_Putuskan Garis"
 
 #: ../plugins/multiedit/multiedit/appactivatable.py:36
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
 msgid "Multi Edit Mode"
 msgstr "Moda Sunting Ganda"
 
@@ -279,64 +344,70 @@ msgid "Multi Edit"
 msgstr "Sunting Ganda"
 
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
 msgid "Edit document in multiple places at once"
 msgstr "Sunting dokumen di beberapa tempat sekaligus"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:306
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
+msgid "Multi edit"
+msgstr "Sunting ganda"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:305
 msgid "Added edit point..."
 msgstr "Titik sunting ditambahkan..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:648
+#: ../plugins/multiedit/multiedit/viewactivatable.py:647
 msgid "Column Mode..."
 msgstr "Moda Kolom..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:766
+#: ../plugins/multiedit/multiedit/viewactivatable.py:765
 msgid "Removed edit point..."
 msgstr "Titik sunting dihapus..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:929
+#: ../plugins/multiedit/multiedit/viewactivatable.py:928
 msgid "Cancelled column mode..."
 msgstr "Membatalkan moda kolom..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1265
 msgid "Enter column edit mode using selection"
 msgstr "Masuk moda sunting kolom memakai piliah"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr "Masuk moda sunting kolom <b>cerdas</b> memakai pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
 msgid "<b>Smart</b> column align mode using selection"
 msgstr "Mode perataan kolom <b>cerdas</b> memakai pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1269
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr ""
 "Mode perataan kolom <b>cerdas</b> dengan spasi tambahan memakai pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1270
 msgid "Toggle edit point"
 msgstr "Jungkit titik sunting"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
 msgid "Add edit point at beginning of line/selection"
 msgstr "Tambah titik sunting di awal baris/pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
 msgid "Add edit point at end of line/selection"
 msgstr "Tambah titik sunting di akhir baris/pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
 msgid "Align edit points"
 msgstr "Ratakan titik sunting"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1275
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
 msgid "Align edit points with additional space"
 msgstr "Ratakan titik sunting dengan spasi tambahan"
 
 #. ex:ts=4:et:
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
+#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:1
 msgid "Smart Spaces"
 msgstr "Spasi Cerdas"
 
@@ -344,13 +415,23 @@ msgstr "Spasi Cerdas"
 msgid "Forget you're not using tabulations."
 msgstr "Lupa bahwa Anda tidak menggunakan tabulasi."
 
+#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
+msgid "Allow to unindent like if you were using tabs while you're using spaces"
+msgstr ""
+"Ijinkan unindentasi seperti seolah Anda memakai tab ketika Anda memakai spasi"
+
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
+#: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
 msgid "SyncTeX"
 msgstr "SyncTeX"
 
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:2
 msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Selaraskan antara LaTeX dan PDF dengan gedit dan evince."
+
+#: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
+msgid "Synchronize between LaTeX and PDF with gedit and evince"
+msgstr "Selaraskan antara LaTeX dan PDF dengan gedit dan evince"
 
 #: ../plugins/synctex/synctex/synctex.py:336
 msgid "Forward Search"
@@ -550,9 +631,14 @@ msgstr "Terminal Tertanam"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Tanamkan terminal dalam panel bawah."
 
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
 #: ../plugins/terminal/terminal.py:314
 msgid "Terminal"
 msgstr "Terminal"
+
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
+msgid "A simple terminal widget accessible from the bottom panel"
+msgstr "Widget terminal sederhana yang dapat diakses dari panel dasar"
 
 #: ../plugins/terminal/terminal.py:335
 msgid "C_hange Directory"
@@ -576,8 +662,13 @@ msgid "Text Size"
 msgstr "Ukuran Teks"
 
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
 msgid "Easily increase and decrease the text size"
 msgstr "Memperbesar dan memperkecil ukuran teks secara mudah"
+
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
+msgid "Text size"
+msgstr "Ukuran teks"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
@@ -614,3 +705,33 @@ msgstr "Penyelesaian Kata"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Penyelesaian kata memakai kerangka kerja penyelesaian"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
+msgid "Word completion"
+msgstr "Penyelesaian kata"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
+msgid ""
+"Propose automatic completion using words already present in the document"
+msgstr ""
+"Usulkan pelengkapan otomatis memakai kata-kata yang telah ada dalam dokumen"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
+msgid "Zeitgeist dataprovider"
+msgstr "Penyedia data Zeitgeist"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
+msgid "Logs access and leave event for documents used with gedit"
+msgstr "Mencatat log kejadian akses dan pergi untuk dokumen yang memakai gedit"
+
+#: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:1
+msgid "Zeitgeist Data provider"
+msgstr "Penyedia Data Zeitgeist"
+
+#: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:2
+msgid ""
+"Records user activity and giving easy access to recently-used and frequently-"
+"used files"
+msgstr ""
+"Merekam aktivitas pengguna dan memberikan askes yang mudah ke berkas yang "
+"baru-baru ini dipakai dan sering dipakai"
