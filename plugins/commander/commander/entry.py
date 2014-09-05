@@ -481,6 +481,8 @@ GtkEntry#gedit-commander-entry {
         try:
             ret = cb()
         except Exception as e:
+            sys.stderr.write(self._format_trace() + '\n')
+
             self._command_history_done()
             self._command_state.clear()
 
@@ -526,7 +528,7 @@ GtkEntry#gedit-commander-entry {
         thisdir = os.path.dirname(__file__)
 
         # Skip frames up until after the last entry.py...
-        while True:
+        while not tb is None:
             filename = tb.tb_frame.f_code.co_filename
 
             dname = os.path.dirname(filename)
