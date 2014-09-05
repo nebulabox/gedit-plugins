@@ -59,6 +59,7 @@ class Entry(Gtk.Box):
         self._accel_group = None
 
         self._wait_timeout = 0
+        self._cancel_button = None
         self._info = None
         self._info_revealer = None
 
@@ -443,20 +444,11 @@ GtkEntry#gedit-commander-entry {
         self._entry.set_text('')
 
     def _on_wait_cancel(self):
-        if self._suspended:
-            self._suspended.resume()
-
-        if self._cancel_button:
-            self._cancel_button.destroy()
-
-        if not self._info is None and self._info.is_empty:
-            self._info_revealer.set_reveal_child(False)
-            self._entry.grab_focus()
-            self._entry.set_sensitive(True)
+        self._on_execute(None, 0)
 
     def _show_wait_cancel(self):
-        self._cancel_button = self._info_add_action(Gtk.STOCK_STOP, self._on_wait_cancel)
-        self.info_status('<i>Waiting to finish...</i>')
+        self._cancel_button = self._info_add_action('process-stop-symbolic', self._on_wait_cancel)
+        self.info_status('<i>Waiting to finish\u2026</i>')
 
         self._wait_timeout = 0
         return False
@@ -471,8 +463,10 @@ GtkEntry#gedit-commander-entry {
             GLib.source_remove(self._wait_timeout)
             self._wait_timeout = 0
         else:
-            self._cancel_button.destroy()
-            self._cancel_button = None
+            if not self._cancel_button is None:
+                self._cancel_button.destroy()
+                self._cancel_button = None
+
             self.info_status(None)
 
         self._entry.set_sensitive(True)
@@ -480,8 +474,6 @@ GtkEntry#gedit-commander-entry {
 
         if self._entry.props.has_focus or (not self._info is None and not self._info.is_empty):
             self._entry.grab_focus()
-
-        self._on_execute(None, 0)
 
     def _run_command(self, cb):
         self._suspended = None
