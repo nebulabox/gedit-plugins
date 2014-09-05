@@ -72,6 +72,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
         self.connect_signals(self.view, handlers)
         self.connect_signal_after(self.view, 'move-cursor', self.on_move_cursor_after)
+        self.connect_signal_after(self.view, 'draw', self.on_view_draw_after)
 
         self.view.props.has_tooltip = True
 
@@ -1291,9 +1292,12 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
     def on_view_draw(self, view, cr):
         window = view.get_window(Gtk.TextWindowType.TEXT)
 
-        if Gtk.cairo_should_draw_window (cr, window):
-            return self._draw_column_mode(cr)
+        if not window is None and Gtk.cairo_should_draw_window(cr, window):
+            self._draw_column_mode(cr)
 
+        return False
+
+    def on_view_draw_after(self, view, cr):
         window = view.get_window(Gtk.TextWindowType.TOP)
 
         if window is None or not Gtk.cairo_should_draw_window(cr, window):
@@ -1310,6 +1314,8 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
         Gtk.cairo_transform_to_window(cr, view, window)
 
+        cr.save()
+
         cr.translate(0.5, 0.5)
         cr.set_line_width(1)
 
@@ -1319,11 +1325,15 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         cr.move_to(0, h - 1)
         cr.rel_line_to(w, 0)
         cr.stroke()
+        cr.restore()
 
-        context = self.view.get_style_context()
-        Gdk.cairo_set_source_rgba(cr, context.get_color(Gtk.StateFlags.NORMAL))
-        cr.move_to(w - extents[1].width - 3, (h - extents[1].height) / 2)
-        PangoCairo.show_layout(cr, layout)
+        ctx = self.view.get_style_context()
+        ctx.save()
+        ctx.add_class('top')
+
+        cr.save()
+        Gtk.render_layout(ctx, cr, w - extents[1].width - 3, (h - extents[1].height) / 2, layout)
+        cr.restore()
 
         if not self._status:
             status = ''
@@ -1333,8 +1343,11 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         if status:
             layout.set_markup(status, -1)
 
-            cr.move_to(3, (h - extents[1].height) / 2)
-            PangoCairo.show_layout(cr, layout)
+            cr.save()
+            Gtk.render_layout(ctx, cr, 3, (h - extents[1].height) / 2, layout)
+            cr.restore()
+
+        ctx.restore()
 
         return False
 
