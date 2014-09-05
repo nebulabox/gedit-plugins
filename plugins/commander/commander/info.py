@@ -22,6 +22,57 @@
 from gi.repository import Pango, Gdk, Gtk
 import math
 
+class ScrolledWindow(Gtk.ScrolledWindow):
+    __gtype_name__ = "CommanderScrolledWindow"
+
+    def __init__(self):
+        Gtk.ScrolledWindow.__init__(self)
+
+        self._max_height = 0
+        self._max_lines = 10
+
+        self.view = Gtk.TextView()
+        self.view.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
+        self.view.set_editable(False)
+        self.view.set_can_focus(False)
+
+        self.view.connect('style-updated', self._on_style_updated)
+
+        self._update_max_height()
+
+        self.view.show()
+
+        self.add(self.view)
+
+        self.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
+
+    def _update_max_height(self):
+        layout = self.view.create_pango_layout('Some text to measure')
+        extents = layout.get_pixel_extents()
+
+        maxh = extents[1].height * self._max_lines
+
+        if maxh != self._max_height:
+            self._max_height = maxh
+            self.queue_resize()
+
+    def _on_style_updated(self, widget):
+        self._update_max_height()
+
+    def do_get_preferred_height(self):
+        hp, vp = self.get_policy()
+
+        ret = self.view.get_preferred_height()
+
+        if vp == Gtk.PolicyType.NEVER and ret[0] > self._max_height:
+            self.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.ALWAYS)
+            self.set_min_content_height(self._max_height)
+        elif vp == Gtk.PolicyType.ALWAYS and ret[0] < self._max_height:
+            self.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
+            self.set_min_content_height(0)
+
+        return Gtk.ScrolledWindow.do_get_preferred_height(self)
+
 class Info(Gtk.Box):
     __gtype_name__ = "CommanderInfo"
 
@@ -30,7 +81,6 @@ class Info(Gtk.Box):
 
         self._button_bar = None
         self._status_label = None
-        self._max_lines = 10
 
         self._build_ui()
 
@@ -38,10 +88,9 @@ class Info(Gtk.Box):
         self.set_orientation(Gtk.Orientation.VERTICAL)
         self.set_spacing(3)
         self.set_can_focus(False)
-        self.set_border_width(3)
 
-        self._vw = Gtk.ScrolledWindow()
-        self._vw.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
+        self._sw = ScrolledWindow()
+        self._sw.set_border_width(6)
 
         css = Gtk.CssProvider()
         css.load_from_data(bytes("""
@@ -50,22 +99,10 @@ class Info(Gtk.Box):
 }
 """, 'utf-8'))
 
-        self._vw.get_vscrollbar().get_style_context().add_provider(css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        self._sw.get_vscrollbar().get_style_context().add_provider(css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
-        self._vw.show()
-        self.add(self._vw)
-
-        self._text = Gtk.TextView()
-        self._text.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
-        self._text.set_editable(False)
-        self._text.show()
-
-        buf = self._text.get_buffer()
-
-        buf.connect_after('insert-text', self._on_text_insert_text)
-        buf.connect_after('delete-range', self._on_text_delete_range)
-
-        self._vw.add(self._text)
+        self._sw.show()
+        self.add(self._sw)
 
         self._attr_map = {
             Pango.AttrType.STYLE: ('style', Pango.AttrInt),
@@ -83,18 +120,18 @@ class Info(Gtk.Box):
 
     @property
     def text_view(self):
-        return self._text
+        return self._sw.view
 
     @property
     def is_empty(self):
-        buf = self._text.get_buffer()
+        buf = self.text_view.get_buffer()
         return buf.get_start_iter().equal(buf.get_end_iter())
 
     def status(self, text=None):
         if self._status_label == None and text != None:
             self._status_label = Gtk.Label()
 
-            context = self._text.get_style_context()
+            context = self.text_view.get_style_context()
             state = context.get_state()
             font_desc = context.get_font(state)
 
@@ -118,7 +155,7 @@ class Info(Gtk.Box):
                 self.destroy()
 
     def _attr_to_tag(self, attr):
-        buf = self._text.get_buffer()
+        buf = self.text_view.get_buffer()
         table = buf.get_tag_table()
         ret = []
 
@@ -152,7 +189,7 @@ class Info(Gtk.Box):
         return tag
 
     def add_lines(self, line, use_markup=False):
-        buf = self._text.get_buffer()
+        buf = self.text_view.get_buffer()
 
         if not buf.get_start_iter().equal(buf.get_end_iter()):
             line = "\n" + line
@@ -216,36 +253,7 @@ class Info(Gtk.Box):
         return ev
 
     def clear(self):
-        self._text.get_buffer().set_text('')
-
-    def _has_too_many_lines(self):
-        buf = self._text.get_buffer()
-        piter = buf.get_start_iter()
-        num = 0
-
-        while self._text.forward_display_line(piter):
-            num += 1
-
-            if num > self._max_lines:
-                return True
-
-        return False
-
-    def _contents_changed(self):
-        buf = self._text.get_buffer()
-
-        too_many = self._has_too_many_lines()
-
-        if too_many and (self._vw.get_policy()[1] != Gtk.PolicyType.ALWAYS):
-            self._vw.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.ALWAYS)
-
-            layout = self._text.create_pango_layout('Some text to measure')
-            extents = layout.get_pixel_extents()
-
-            self._vw.set_min_content_height(extents[1].height * self._max_lines)
-        elif not too_many and (self._vw.get_policy()[1] == Gtk.PolicyType.ALWAYS):
-            self._vw.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
-            self._vw.set_min_content_height(0)
+        self.text_view.get_buffer().set_text('')
 
     def _ensure_button_bar(self):
         if not self._button_bar:
@@ -279,11 +287,5 @@ class Info(Gtk.Box):
             callback(data)
         else:
             callback()
-
-    def _on_text_insert_text(self, buf, piter, text, length):
-        self._contents_changed()
-
-    def _on_text_delete_range(self, buf, start, end):
-        self._contents_changed()
 
 # vi:ex:ts=4:et
