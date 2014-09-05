@@ -144,15 +144,18 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         self._buffer = newbuf
 
     def initialize_event_handlers(self):
+        keymap = Gdk.Keymap.get_for_display(self.view.get_display())
+        modmask = keymap.get_modifier_mask(Gdk.ModifierIntent.PRIMARY_ACCELERATOR)
+
         self._event_handlers = [
             [('Escape',), 0, self.do_escape_mode, True],
             [('Return',), 0, self.do_column_edit, True],
-            [('Return',), Gdk.ModifierType.CONTROL_MASK, self.do_smart_column_edit, True],
-            [('Return',), Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK, self.do_smart_column_align, True],
-            [('Return',), Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK | Gdk.ModifierType.MOD1_MASK, self.do_smart_column_align, True],
-            [('Home',), Gdk.ModifierType.CONTROL_MASK, self.do_mark_start, True],
-            [('End',), Gdk.ModifierType.CONTROL_MASK, self.do_mark_end, True],
-            [('e', 'E'), Gdk.ModifierType.CONTROL_MASK, self.do_toggle_edit_point, True]
+            [('Return',), modmask, self.do_smart_column_edit, True],
+            [('Return',), modmask | Gdk.ModifierType.SHIFT_MASK, self.do_smart_column_align, True],
+            [('Return',), modmask | Gdk.ModifierType.SHIFT_MASK | Gdk.ModifierType.MOD1_MASK, self.do_smart_column_align, True],
+            [('Home',), modmask, self.do_mark_start, True],
+            [('End',), modmask, self.do_mark_end, True],
+            [('e', 'E'), modmask, self.do_toggle_edit_point, True]
         ]
 
         for handler in self._event_handlers:
@@ -770,10 +773,13 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         return True
 
     def on_key_press_event(self, view, event):
+        keymap = Gdk.Keymap.get_for_display(view.get_display())
         defmod = Gtk.accelerator_get_default_mod_mask() & event.state
 
         for handler in self._event_handlers:
-            if (not handler[3] or self._in_mode) and event.keyval in handler[0] and (defmod == handler[1]):
+            state = keymap.add_virtual_modifiers(handler[1])
+
+            if (not handler[3] or self._in_mode) and event.keyval in handler[0] and (defmod == state):
                 return handler[2](event)
 
         return False
