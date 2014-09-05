@@ -132,7 +132,7 @@ GtkEntry#gedit-commander-entry {
         self._info_revealer = Gtk.Revealer()
 
         self._info_revealer.set_transition_type(Gtk.RevealerTransitionType.SLIDE_UP)
-        self._info_revealer.set_transition_duration(100)
+        self._info_revealer.set_transition_duration(150)
 
         self.pack_start(self._info_revealer, False, False, 0)
         self._info_revealer.connect('notify::child-revealed', self._on_info_revealer_child_revealed)
