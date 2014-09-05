@@ -142,6 +142,7 @@ class Info(Gtk.Box):
             self._status_label.set_alignment(0, 0.5)
             self._status_label.set_padding(10, 0)
             self._status_label.set_use_markup(True)
+            self._status_label.set_halign(Gtk.Align.FILL)
 
             self._ensure_button_bar()
             self._button_bar.pack_start(self._status_label, True, True, 0)
