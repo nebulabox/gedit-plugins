@@ -103,6 +103,7 @@ GtkEntry#gedit-commander-entry {
     background-image: none;
     box-shadow: 0 0;
     transition: none;
+    border: 0;
 }
 
 """, 'utf-8'))
