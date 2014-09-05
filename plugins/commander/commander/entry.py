@@ -25,6 +25,7 @@ import os
 import re
 import inspect
 import sys
+import colorsys
 
 import commander.commands as commands
 import commands.completion
@@ -215,9 +216,30 @@ GtkEntry#gedit-commander-entry {
         widgets = [self, self._entry, self._prompt_label]
 
         if not self._info is None:
+            widgets.append(self._info)
             widgets.append(self._info.text_view)
 
         return widgets
+
+    def _modify_bg(self, col, widget):
+        if self._info is None or (self._info.text_view != widget and self._info != widget):
+            return col
+
+        d = 0.1
+
+        h, l, s = colorsys.rgb_to_hls(col.red, col.green, col.blue)
+
+        if l < 0.5:
+            factor = 1 + d
+        else:
+            factor = 1 - d
+
+        l = max(0, min(1, l * factor))
+        s = max(0, min(1, s * factor))
+
+        r, g, b = colorsys.hls_to_rgb(h, l, s)
+
+        return Gdk.RGBA(r, g, b, col.alpha)
 
     def _copy_style_from_view(self, widgets=None):
         font = self._get_font()
@@ -242,10 +264,10 @@ GtkEntry#gedit-commander-entry {
 
         for widget in widgets:
             widget.override_color(Gtk.StateFlags.NORMAL, fg)
-            widget.override_background_color(Gtk.StateFlags.NORMAL, bg)
+            widget.override_background_color(Gtk.StateFlags.NORMAL, self._modify_bg(bg, widget))
 
             widget.override_color(Gtk.StateFlags.SELECTED, fgsel)
-            widget.override_background_color(Gtk.StateFlags.SELECTED, bgsel)
+            widget.override_background_color(Gtk.StateFlags.SELECTED, self._modify_bg(bgsel, widget))
 
             widget.override_font(font)
             widget.override_cursor(cursor, secondary_cursor)
@@ -385,7 +407,7 @@ GtkEntry#gedit-commander-entry {
         if self._info is None:
             self._info = Info()
 
-            self._copy_style_from_view([self._info.text_view])
+            self._copy_style_from_view([self._info, self._info.text_view])
 
             self._info_revealer.add(self._info)
             self._info.show()
@@ -741,12 +763,13 @@ GtkEntry#gedit-commander-entry {
         ctx.stroke()
 
         if not self._info is None:
-            alloc = self._info.get_allocation()
-            y = alloc.y + alloc.height + 0.5 + self._info.get_border_width()
+            alloc = self._info_revealer.get_allocation()
+            y = alloc.y + alloc.height + 0.5
 
-            ctx.move_to(0, y)
-            ctx.line_to(w, y)
-            ctx.stroke()
+            if y >= 3:
+                ctx.move_to(0, y)
+                ctx.line_to(w, y)
+                ctx.stroke()
 
         return ret
 
