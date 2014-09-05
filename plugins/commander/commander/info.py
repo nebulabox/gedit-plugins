@@ -230,20 +230,21 @@ class Info(Gtk.Box):
 
                 buf.apply_tag(tag, start, end)
 
-    def add_action(self, stock, callback, data=None):
-        image = Gtk.Image.new_from_stock(stock, Gtk.IconSize.MENU)
+    def add_action(self, name, callback, data=None):
+        image = Gtk.Image.new_from_icon_name(name, Gtk.IconSize.MENU)
         image.show()
-
-        image.commander_action_stock_item = (stock, Gtk.IconSize.MENU)
 
         self._ensure_button_bar()
 
         ev = Gtk.EventBox()
-        ev.set_visible_window(False)
+        ev.set_visible_window(True)
         ev.add(image)
         ev.show()
 
+        ev.set_halign(Gtk.Align.END)
+
         self._button_bar.pack_end(ev, False, False, 0)
+        ev.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.HAND2))
 
         ev.connect('button-press-event', self._on_action_activate, callback, data)
         ev.connect('enter-notify-event', self._on_action_enter_notify)
@@ -269,18 +270,10 @@ class Info(Gtk.Box):
     def _on_action_enter_notify(self, widget, evnt):
         img = widget.get_child()
         img.set_state(Gtk.StateType.PRELIGHT)
-        widget.get_window().set_cursor(Gdk.Cursor.new(Gdk.HAND2))
-
-        pix = img.render_icon(*img.commander_action_stock_item)
-        img.set_from_pixbuf(pix)
 
     def _on_action_leave_notify(self, widget, evnt):
         img = widget.get_child()
         img.set_state(Gtk.StateType.NORMAL)
-        widget.get_window().set_cursor(None)
-
-        pix = img.render_icon(*img.commander_action_stock_item)
-        img.set_from_pixbuf(pix)
 
     def _on_action_activate(self, widget, evnt, callback, data):
         if data:
