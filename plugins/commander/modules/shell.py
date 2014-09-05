@@ -68,15 +68,17 @@ class Process:
                 ret = fd.read()
 
                 # This seems to happen on OS X...
-                if ret == '':
-                    condition = condition | GLib.IOConditiom.HUP
+                if len(ret) == 0:
+                    condition = condition | GLib.IOCondition.HUP
                 else:
-                    self._buffer += ret
+                    self._buffer += ret.decode('utf-8')
 
                     if not self.replace:
                         self.update()
-            except:
-                self.entry.info_show(self._buffer.strip("\n"))
+            except Exception as e:
+                if len(self._buffer) > 0:
+                    self.entry.info_show(self._buffer.strip("\n"))
+
                 self.stop()
                 return False
 
@@ -92,7 +94,7 @@ class Process:
 
                 buf.insert_at_cursor(self._buffer)
                 buf.end_user_action()
-            else:
+            elif len(self._buffer) > 0:
                 self.entry.info_show(self._buffer.strip("\n"))
 
             self.stop()
