@@ -143,7 +143,7 @@ class Info(Gtk.Box):
             self._status_label.set_padding(10, 0)
             self._status_label.set_use_markup(True)
 
-            self.ensure_button_bar()
+            self._ensure_button_bar()
             self._button_bar.pack_start(self._status_label, True, True, 0)
 
         if text != None:
