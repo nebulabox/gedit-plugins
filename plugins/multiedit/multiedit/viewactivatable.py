@@ -146,20 +146,25 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
     def initialize_event_handlers(self):
         keymap = Gdk.Keymap.get_for_display(self.view.get_display())
+
         modmask = keymap.get_modifier_mask(Gdk.ModifierIntent.PRIMARY_ACCELERATOR)
+        withvirt = keymap.add_virtual_modifiers(modmask)
 
-        self._event_handlers = [
-            [('Escape',), 0, self.do_escape_mode, True],
-            [('Return',), 0, self.do_column_edit, True],
-            [('Return',), modmask, self.do_smart_column_edit, True],
-            [('Return',), modmask | Gdk.ModifierType.SHIFT_MASK, self.do_smart_column_align, True],
-            [('Return',), modmask | Gdk.ModifierType.SHIFT_MASK | Gdk.ModifierType.MOD1_MASK, self.do_smart_column_align, True],
-            [('Home',), modmask, self.do_mark_start, True],
-            [('End',), modmask, self.do_mark_end, True],
-            [('e', 'E'), modmask, self.do_toggle_edit_point, True]
-        ]
+        if modmask != withvirt:
+            modmask = Gdk.ModifierType(withvirt & ~modmask)
 
-        for handler in self._event_handlers:
+        self._event_handlers = {
+            'escape_mode': [('Escape',), 0, self.do_escape_mode, True],
+            'column_edit': [('Return',), 0, self.do_column_edit, True],
+            'smart_column_edit': [('Return',), modmask, self.do_smart_column_edit, True],
+            'smart_column_align': [('Return',), modmask | Gdk.ModifierType.SHIFT_MASK, self.do_smart_column_align, True],
+            'smart_column_align_space': [('Return',), modmask | Gdk.ModifierType.SHIFT_MASK | Gdk.ModifierType.MOD1_MASK, self.do_smart_column_align, True],
+            'mark_start': [('Home',), modmask, self.do_mark_start, True],
+            'mark_end': [('End',), modmask, self.do_mark_end, True],
+            'toggle_edit_point': [('E', 'e'), modmask, self.do_toggle_edit_point, True]
+        }
+
+        for handler in self._event_handlers.values():
             handler[0] = list(map(lambda x: Gdk.keyval_from_name(x), handler[0]))
 
     def get_window_activatable(self):
@@ -777,8 +782,8 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         keymap = Gdk.Keymap.get_for_display(view.get_display())
         defmod = Gtk.accelerator_get_default_mod_mask() & event.state
 
-        for handler in self._event_handlers:
-            state = keymap.add_virtual_modifiers(handler[1])
+        for handler in self._event_handlers.values():
+            _, state = keymap.map_virtual_modifiers(handler[1])
 
             if (not handler[3] or self._in_mode) and event.keyval in handler[0] and (defmod == state):
                 return handler[2](event)
@@ -1240,6 +1245,14 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
         return lbl
 
+    def event_handler_accel_name(self, name):
+        handler = self._event_handlers[name]
+
+        keyval = handler[0][0]
+        modmask = handler[1]
+
+        return Gtk.accelerator_name(keyval, modmask)
+
     def on_query_tooltip(self, view, x, y, keyboard_mode, tooltip):
         if not self._in_mode:
             return False
@@ -1263,22 +1276,30 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
             grid.set_row_spacing(3)
             grid.set_column_spacing(12)
 
+            self._event_handlers['column_edit']
+            self._event_handlers['smart_column_edit']
+            self._event_handlers['smart_column_align']
+            self._event_handlers['smart_column_align_space']
+            self._event_handlers['mark_start']
+            self._event_handlers['mark_end']
+            self._event_handlers['toggle_edit_point']
+
             grid.attach(self.make_label('<b>Selection</b>', True), 0, 0, 1, 1)
-            grid.attach(self.make_label('<Enter>', False), 0, 1, 1, 1)
-            grid.attach(self.make_label('<Ctrl><Enter>', False), 0, 2, 1, 1)
-            grid.attach(self.make_label('<Ctrl><Shift><Enter>', False), 0, 3, 1, 1)
-            grid.attach(self.make_label('<Ctrl><Alt><Shift><Enter>', False), 0, 4, 1, 1)
+            grid.attach(self.make_label(self.event_handler_accel_name('column_edit'), False), 0, 1, 1, 1)
+            grid.attach(self.make_label(self.event_handler_accel_name('smart_column_edit'), False), 0, 2, 1, 1)
+            grid.attach(self.make_label(self.event_handler_accel_name('smart_column_align'), False), 0, 3, 1, 1)
+            grid.attach(self.make_label(self.event_handler_accel_name('smart_column_align_space'), False), 0, 4, 1, 1)
 
             sep = Gtk.Separator.new(Gtk.Orientation.HORIZONTAL)
             sep.show()
 
             grid.attach(sep, 0, 5, 2, 1)
             grid.attach(self.make_label('<b>Edit points</b>', True), 0, 6, 1, 1)
-            grid.attach(self.make_label('<Ctrl>+E', False), 0, 7, 1, 1)
-            grid.attach(self.make_label('<Ctrl><Home>', False), 0, 8, 1, 1)
-            grid.attach(self.make_label('<Ctrl><End>', False), 0, 9, 1, 1)
-            grid.attach(self.make_label('<Ctrl><Shift><Enter>', False), 0, 10, 1, 1)
-            grid.attach(self.make_label('<Ctrl><Alt><Shift><Enter>', False), 0, 11, 1, 1)
+            grid.attach(self.make_label(self.event_handler_accel_name('toggle_edit_point'), False), 0, 7, 1, 1)
+            grid.attach(self.make_label(self.event_handler_accel_name('mark_start'), False), 0, 8, 1, 1)
+            grid.attach(self.make_label(self.event_handler_accel_name('mark_end'), False), 0, 9, 1, 1)
+            grid.attach(self.make_label(self.event_handler_accel_name('smart_column_align'), False), 0, 10, 1, 1)
+            grid.attach(self.make_label(self.event_handler_accel_name('smart_column_align_space'), False), 0, 11, 1, 1)
 
             grid.attach(self.make_label(_('Enter column edit mode using selection')), 1, 1, 1, 1)
             grid.attach(self.make_label(_('Enter <b>smart</b> column edit mode using selection')), 1, 2, 1, 1)
