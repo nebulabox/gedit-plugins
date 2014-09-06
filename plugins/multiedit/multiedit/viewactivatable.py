@@ -52,6 +52,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         self._status = None
         self._status_timeout = 0
         self._delete_mode_id = 0
+        self._tooltip_widget = None
 
     def do_activate(self):
         self.view.multiedit_view_activatable = self
@@ -1248,40 +1249,43 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         if x < geom[0] or x > geom[0] + geom[2] or y < geom[1] or y > geom[1] + geom[3]:
             return False
 
-        grid = Gtk.Grid()
-        grid.set_row_spacing(3)
-        grid.set_column_spacing(12)
+        if self._tooltip_widget is None:
+            grid = Gtk.Grid()
+            grid.set_row_spacing(3)
+            grid.set_column_spacing(12)
 
-        grid.attach(self.make_label('<b>Selection</b>', True), 0, 0, 1, 1)
-        grid.attach(self.make_label('<Enter>', False), 0, 1, 1, 1)
-        grid.attach(self.make_label('<Ctrl><Enter>', False), 0, 2, 1, 1)
-        grid.attach(self.make_label('<Ctrl><Shift><Enter>', False), 0, 3, 1, 1)
-        grid.attach(self.make_label('<Ctrl><Alt><Shift><Enter>', False), 0, 4, 1, 1)
+            grid.attach(self.make_label('<b>Selection</b>', True), 0, 0, 1, 1)
+            grid.attach(self.make_label('<Enter>', False), 0, 1, 1, 1)
+            grid.attach(self.make_label('<Ctrl><Enter>', False), 0, 2, 1, 1)
+            grid.attach(self.make_label('<Ctrl><Shift><Enter>', False), 0, 3, 1, 1)
+            grid.attach(self.make_label('<Ctrl><Alt><Shift><Enter>', False), 0, 4, 1, 1)
 
-        sep = Gtk.Separator.new(Gtk.Orientation.HORIZONTAL)
-        sep.show()
+            sep = Gtk.Separator.new(Gtk.Orientation.HORIZONTAL)
+            sep.show()
 
-        grid.attach(sep, 0, 5, 2, 1)
-        grid.attach(self.make_label('<b>Edit points</b>', True), 0, 6, 1, 1)
-        grid.attach(self.make_label('<Ctrl>+E', False), 0, 7, 1, 1)
-        grid.attach(self.make_label('<Ctrl><Home>', False), 0, 8, 1, 1)
-        grid.attach(self.make_label('<Ctrl><End>', False), 0, 9, 1, 1)
-        grid.attach(self.make_label('<Ctrl><Shift><Enter>', False), 0, 10, 1, 1)
-        grid.attach(self.make_label('<Ctrl><Alt><Shift><Enter>', False), 0, 11, 1, 1)
+            grid.attach(sep, 0, 5, 2, 1)
+            grid.attach(self.make_label('<b>Edit points</b>', True), 0, 6, 1, 1)
+            grid.attach(self.make_label('<Ctrl>+E', False), 0, 7, 1, 1)
+            grid.attach(self.make_label('<Ctrl><Home>', False), 0, 8, 1, 1)
+            grid.attach(self.make_label('<Ctrl><End>', False), 0, 9, 1, 1)
+            grid.attach(self.make_label('<Ctrl><Shift><Enter>', False), 0, 10, 1, 1)
+            grid.attach(self.make_label('<Ctrl><Alt><Shift><Enter>', False), 0, 11, 1, 1)
 
-        grid.attach(self.make_label(_('Enter column edit mode using selection')), 1, 1, 1, 1)
-        grid.attach(self.make_label(_('Enter <b>smart</b> column edit mode using selection')), 1, 2, 1, 1)
-        grid.attach(self.make_label(_('<b>Smart</b> column align mode using selection')), 1, 3, 1, 1)
-        grid.attach(self.make_label(_('<b>Smart</b> column align mode with additional space using selection')), 1, 4, 1, 1)
+            grid.attach(self.make_label(_('Enter column edit mode using selection')), 1, 1, 1, 1)
+            grid.attach(self.make_label(_('Enter <b>smart</b> column edit mode using selection')), 1, 2, 1, 1)
+            grid.attach(self.make_label(_('<b>Smart</b> column align mode using selection')), 1, 3, 1, 1)
+            grid.attach(self.make_label(_('<b>Smart</b> column align mode with additional space using selection')), 1, 4, 1, 1)
 
-        grid.attach(self.make_label(_('Toggle edit point')), 1, 7, 1, 1)
-        grid.attach(self.make_label(_('Add edit point at beginning of line/selection')), 1, 8, 1, 1)
-        grid.attach(self.make_label(_('Add edit point at end of line/selection')), 1, 9, 1, 1)
-        grid.attach(self.make_label(_('Align edit points')), 1, 10, 1, 1)
-        grid.attach(self.make_label(_('Align edit points with additional space')), 1, 11, 1, 1)
+            grid.attach(self.make_label(_('Toggle edit point')), 1, 7, 1, 1)
+            grid.attach(self.make_label(_('Add edit point at beginning of line/selection')), 1, 8, 1, 1)
+            grid.attach(self.make_label(_('Add edit point at end of line/selection')), 1, 9, 1, 1)
+            grid.attach(self.make_label(_('Align edit points')), 1, 10, 1, 1)
+            grid.attach(self.make_label(_('Align edit points with additional space')), 1, 11, 1, 1)
 
-        grid.show_all()
-        tooltip.set_custom(grid)
+            grid.show_all()
+            self._tooltip_widget = grid
+
+        tooltip.set_custom(self._tooltip_widget)
         return True
 
     def get_border_color(self):
