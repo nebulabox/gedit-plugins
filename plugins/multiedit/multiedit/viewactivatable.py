@@ -1244,7 +1244,16 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         if not self._in_mode:
             return False
 
-        geom = view.get_window(Gtk.TextWindowType.TOP).get_geometry()
+        win = view.get_window(Gtk.TextWindowType.TOP)
+        parent = win.get_parent()
+
+        while view.get_window_type(parent) != Gtk.TextWindowType.WIDGET:
+            parent = parent.get_parent()
+
+        wino = win.get_origin()
+        paro = parent.get_origin()
+
+        geom = (wino[1] - paro[1], wino[2] - paro[2], win.get_width(), win.get_height())
 
         if x < geom[0] or x > geom[0] + geom[2] or y < geom[1] or y > geom[1] + geom[3]:
             return False
