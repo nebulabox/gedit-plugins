@@ -77,6 +77,8 @@ class Entry(Gtk.Box):
         self._re_complete = re.compile('("((?:\\\\"|[^"])*)"?|\'((?:\\\\\'|[^\'])*)\'?|[^\s]+)')
         self._command_state = commands.Commands.State()
 
+        self.connect('destroy', self._on_destroy)
+
         self._build_ui()
         self._setup_keybindings()
 
@@ -767,13 +769,14 @@ GtkEntry#gedit-commander-entry {
 
         return ret
 
-    def do_destroy(self):
+    def _on_destroy(self, widget):
+        # Note we do this not as an override because somehow something
+        # goes wrong when finalizing in that case, maybe self is NULL
+        # or something like that, and then gets some new empty instance?
         self._view.disconnect(self._view_style_updated_id)
 
         self._history.save()
 
         self._view = None
-
-        Gtk.Box.do_destroy(self)
 
 # vi:ex:ts=4:et
