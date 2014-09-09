@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the gedit help.
 #
 # Lucas Lommer <llommer@svn.gnome.org>, 2009.
-# Marek Černocký <marek@manet.cz>, 2009, 2010, 2013.
+# Marek Černocký <marek@manet.cz>, 2009, 2010, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
-"POT-Creation-Date: 2013-10-25 14:26+0000\n"
-"PO-Revision-Date: 2013-10-30 08:05+0100\n"
+"POT-Creation-Date: 2014-09-09 05:16+0000\n"
+"PO-Revision-Date: 2014-09-09 10:06+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -27,18 +27,12 @@ msgctxt "_"
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>, 2013."
 
-#. (itstool) path: page/title
-#: C/index.page:7
-msgid "Gedit Plugins"
-msgstr "Zásuvné moduly Gedit"
-
 #. (itstool) path: credit/name
 #: C/bookmarks.page:11 C/bracket-comp.page:11 C/character-map.page:11
 #: C/code-assistance.page:11 C/code-comment.page:11 C/color-picker.page:11
 #: C/commander.page:11 C/dashboard.page:11 C/draw-spaces.page:11
 #: C/join-split-lines.page:11 C/multi-edit.page:11 C/session-saver.page:11
-#: C/tag-list.page:16 C/terminal.page:12 C/text-size.page:12
-#: C/word-completion.page:11
+#: C/terminal.page:12 C/text-size.page:12 C/word-completion.page:11
 msgid "Jim Campbell"
 msgstr "Jim Campbell"
 
@@ -819,10 +813,6 @@ msgstr ""
 
 #. (itstool) path: page/p
 #: C/git.page:24
-#| msgid ""
-#| "To enable this plugin, select <guiseq><gui style=\"menu\">gedit</gui> "
-#| "<gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>Join/"
-#| "Split Lines</gui></guiseq>."
 msgid ""
 "To enable the plugin, select <guiseq><gui style=\"menu\">gedit</gui> <gui "
 "style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>Git</gui></"
@@ -866,7 +856,6 @@ msgstr "Červená"
 
 #. (itstool) path: item/p
 #: C/git.page:41
-#| msgid "Select the name of the session that you want to delete."
 msgid "Shows the parts of the document that have been deleted."
 msgstr "Ukazuje části, které byly z dokumentu vymazány."
 
@@ -1177,189 +1166,10 @@ msgstr ""
 "Název sezení bude stále uveden v seznamu sezení, dokud <app>gedit</app> "
 "neukončíte."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/tag-list.page:63
-msgctxt "_"
-msgid "external ref='figures/gedit-side-pane3.png' md5='__failed__'"
-msgstr "external ref='figures/gedit-side-pane3.png' md5='__failed__'"
-
 #. (itstool) path: credit/name
-#: C/tag-list.page:12
-msgid "Daniel Neel"
-msgstr "Daniel Neel"
-
-#. (itstool) path: credit/name
-#: C/tag-list.page:20 C/terminal.page:16 C/text-size.page:16
-#: C/word-completion.page:19
+#: C/terminal.page:16 C/text-size.page:16 C/word-completion.page:19
 msgid "Sindhu S"
 msgstr "Sindhu S"
-
-#. (itstool) path: info/desc
-#: C/tag-list.page:26
-msgid ""
-"Automatically insert tags, strings and special characters into a document."
-msgstr "Automaticky vkládat značky, řetězce a speciální znaky do dokumentu."
-
-#. (itstool) path: page/title
-#: C/tag-list.page:29
-msgid "Tag List"
-msgstr "Seznam značek"
-
-#. (itstool) path: page/p
-#: C/tag-list.page:31
-msgid ""
-"The <app>Tag List</app> plugin allows you to insert common tags and special "
-"characters from a list in the side pane. By default, the plugin can insert "
-"tags and special characters for <app>HTML</app>, <app>XHTML</app>, "
-"<app>XSLT</app>, <app>XUL</app> and <app>LaTeX</app>."
-msgstr ""
-"Zásuvný modul <app>Seznam značek</app> umožňuje vkládat běžné značky a "
-"speciální znaky ze seznamu v postranním panelu. Standardně lze vkládat "
-"značky a speciální znaky <app>HTML</app>, <app>XHTML</app>, <app>XSLT</app>, "
-"<app>XUL</app> a <app>LaTeX</app>."
-
-#. (itstool) path: section/title
-#: C/tag-list.page:37
-msgid "Enable Tag List Plugin"
-msgstr "Povolení zásuvného modulu Seznam značek"
-
-#. (itstool) path: section/p
-#: C/tag-list.page:39
-msgid "To enable the <app>Tag List</app> plugin:"
-msgstr "Pokud chcete zásuvný modul <app>Seznam značek</app> povolit:"
-
-#. (itstool) path: item/p
-#: C/tag-list.page:43 C/terminal.page:38 C/text-size.page:37
-msgid ""
-"Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"tab\">Plugins</gui></guiseq>."
-msgstr ""
-"Zvolte <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
-"\">Předvolby</gui> <gui style=\"tab\">Zásuvné moduly</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/tag-list.page:48
-msgid "Select <gui style=\"menuitem\">Tag List</gui> to enable the plugin."
-msgstr ""
-"Zásuvný modul povolíte vybráním <gui style=\"menuitem\">Seznam značek</gui>."
-
-#. (itstool) path: item/p
-#: C/tag-list.page:51
-msgid ""
-"Access the tag list by selecting <guiseq><gui style=\"menu\">View</gui> <gui "
-"style=\"menuitem\">Side Pane</gui></guiseq>, or by pressing <key>F9</key>."
-msgstr ""
-"K seznamu značek se dostanete zvolením <guiseq><gui style=\"menu\">Zobrazit</"
-"gui><gui style=\"menuitem\">Postranní panel</gui></guiseq> nebo zmáčknutím "
-"<key>F9</key>."
-
-#. (itstool) path: section/p
-#: C/tag-list.page:58
-msgid ""
-"The side pane will initially show a list of open documents, so to view and "
-"use the <app>Tag List</app>, you will need to click on the tab showing the "
-"\"plus\" icon at the bottom of the side pane. The icon will look similar to "
-"this:"
-msgstr ""
-"Postranní panel v počátečním stavu zobrazuje seznam otevřených dokumentů, "
-"takže pro zobrazení a pro používání <app>Seznamu značek</app> musíte "
-"kliknout na kartu s ikonou „plus“ ve spodní části panelu. Ikona vypadá nějak "
-"takto:"
-
-#. (itstool) path: section/title
-#: C/tag-list.page:68
-msgid "Inserting Tags and Special Characters"
-msgstr "Vkládání značek a speciálních znaků"
-
-#. (itstool) path: section/p
-#: C/tag-list.page:70
-msgid ""
-"The <app>tag list</app> uses a drop-down menu to let you choose from the "
-"different types of tags. For example, one tag option is <gui>HTML - Tags</"
-"gui>."
-msgstr ""
-"<app>Seznam značek</app> používá rozbalovací nabídku pro volbu mezi různými "
-"typy značek. Například jednou z voleb je <gui>HTML – značky</gui>."
-
-#. (itstool) path: section/p
-#: C/tag-list.page:74
-msgid "To start inserting tags, complete the following:"
-msgstr "Když chcete vložit značku, proveďte následující:"
-
-#. (itstool) path: item/p
-#: C/tag-list.page:78
-msgid ""
-"Move the cursor to where you will want to insert the tag or special "
-"character."
-msgstr "Přesuňte kurzor tam, kde chcete značku nebo speciální znak vložit."
-
-#. (itstool) path: item/p
-#: C/tag-list.page:82
-msgid ""
-"Select the desired tag type from the drop-down menu at the top of the side "
-"pane."
-msgstr ""
-"Vyberte požadovaný typ značek v rozbalovací nabídce v horní části "
-"postranního panelu."
-
-#. (itstool) path: item/p
-#: C/tag-list.page:86
-msgid "Scroll through the list to find the desired tag or character."
-msgstr "V seznamu si nalistujte požadovanou značku nebo znak."
-
-#. (itstool) path: item/p
-#: C/tag-list.page:89
-msgid "Double-click on the tag in the tag list."
-msgstr "V seznamu značek na značku dvojitě klikněte."
-
-#. (itstool) path: section/p
-#: C/tag-list.page:93
-msgid ""
-"The tag or special character you have chosen will then be displayed in your "
-"document."
-msgstr ""
-"Značka nebo speciální znak, který jste si vybrali, se zobrazí ve vašem "
-"dokumentu."
-
-#. (itstool) path: section/title
-#: C/tag-list.page:98
-msgid "Tag List Tips"
-msgstr "Tipy pro práci se seznamem značek"
-
-#. (itstool) path: note/p
-#: C/tag-list.page:101
-msgid ""
-"You can also insert a tag by pressing <key>Return</key> or "
-"<keyseq><key>Shift</key><key>Return</key></keyseq>."
-msgstr ""
-"Značku můžete vložit také zmáčknutím <key>Enter</key> nebo "
-"<keyseq><key>Shift</key><key>Enter</key></keyseq>."
-
-#. (itstool) path: note/p
-#: C/tag-list.page:103
-msgid ""
-"Pressing the <key>Return</key> key will insert the tag at the cursor "
-"position, and then return focus to the document. Pressing "
-"<keyseq><key>Shift</key><key>Return</key></keyseq> will insert the tag at "
-"the cursor position, but will keep the focus on the <app>tag-list</app>."
-msgstr ""
-"Zmáčknutí <key>Enter</key> vloží značku na místo kurzoru a předá zaměření do "
-"dokumentu. Zmáčknutí <keyseq><key>Shift</key><key>Enter</key></keyseq> vloží "
-"značku na místo kurzoru ale zaměření ponechá v <app>Seznamu značek</app>."
-
-#. (itstool) path: note/p
-#: C/tag-list.page:111
-msgid ""
-"You can see a preview of what text will be inserted for each tag and special "
-"character by clicking on the word the <gui>Preview</gui> at the bottom of "
-"the side pane."
-msgstr ""
-"Po rozkliknutí <gui>Náhled</gui> ve spodní části postranního panelu můžete "
-"vidět náhled textu, který se pro danou značku nebo speciální znak vloží."
 
 #. (itstool) path: info/desc
 #: C/terminal.page:22
@@ -1393,6 +1203,15 @@ msgstr "Povolení vestavěného terminálu"
 #: C/terminal.page:36
 msgid "To enable the <app>Embedded Terminal</app> plugin:"
 msgstr "Pokud chcete zásuvný modul <app>Vestavěný terminál</app> povolit:"
+
+#. (itstool) path: item/p
+#: C/terminal.page:38 C/text-size.page:37 C/zeitgeist-dataprovider.page:28
+msgid ""
+"Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
+"\">Preferences</gui> <gui style=\"tab\">Plugins</gui></guiseq>."
+msgstr ""
+"Zvolte <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
+"\">Předvolby</gui> <gui style=\"tab\">Zásuvné moduly</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/terminal.page:43
@@ -1562,3 +1381,44 @@ msgstr ""
 "Aby se doporučované slovo vložilo, klikněte na něj v rozbalovacím seznamu "
 "nebo zmáčkněte <keyseq><key>Alt</key><key>číslo</key></keyseq>, kde "
 "<key>číslo</key> je číslo zobrazené vedle požadovaného slova."
+
+#. (itstool) path: credit/name
+#: C/zeitgeist-dataprovider.page:10
+msgid "Shobha Tyagi"
+msgstr "Shobha Tyagi"
+
+#. (itstool) path: info/desc
+#: C/zeitgeist-dataprovider.page:14
+msgid "Log user activity for documents which are opened in gedit"
+msgstr ""
+"Zaznamenává uživatelovy činnosti u dokumentů otevřených v aplikaci gedit"
+
+#. (itstool) path: page/title
+#: C/zeitgeist-dataprovider.page:17
+msgid "Zeitgeist dataprovider"
+msgstr "Poskytovatel dat Zeitgeist"
+
+#. (itstool) path: page/p
+#: C/zeitgeist-dataprovider.page:19
+msgid ""
+"Zeitgeist is a service that logs user activities and events. Zeitgeist lets "
+"other applications access this information in the form of statistics and "
+"timelines.The Zeitgeist dataprovider plugin for <app>gedit</app> records "
+"user activity for documents used with gedit giving easy access to recently-"
+"used and frequently-used files."
+msgstr ""
+"Zeitgeist je služba, která zaznamenává uživatelovy činnosti a události. "
+"Ostatním aplikacím tyto informace zpřístupňuje ve formě statistik a časové "
+"osy. Zásuvný modul Poskytovatel dat Zeitgeist pro aplikaci <app>gedit</app> "
+"zaznamenává uživatelovy činnosti u dokumentů použitých v aplikaci gedit, aby "
+"jednoduše zpřístupnil nedávno použité a často používané soubory."
+
+#. (itstool) path: steps/title
+#: C/zeitgeist-dataprovider.page:26
+msgid "Enable Zeitgeist dataprovider"
+msgstr "Povolení poskytovatele dat Zeitgeist"
+
+#. (itstool) path: item/p
+#: C/zeitgeist-dataprovider.page:33
+msgid "Select <gui style=\"menuitem\">Zeitgeist Dataprovider</gui>."
+msgstr "Vyberte <gui style=\"menuitem\">Poskytovatel dat Zeitgeist</gui>."
