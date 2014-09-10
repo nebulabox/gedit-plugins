@@ -6,10 +6,16 @@
   <info>
     <link type="guide" xref="gedit-plugin-guide#gedit-additional-plugins"/>
     <revision version="3.4" date="2013-02-24" status="review"/>
+    <revision version="3.14" date="2014-09-10" status="review"/>
 
     <credit type="author">
       <name>Jim Campbell</name>
       <email its:translate="no">jwcampbell@gmail.com</email>
+    </credit>
+    <credit type="copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2014</years>
     </credit>
 
     <desc>Record commonly-referenced locations with bookmarks.</desc>
@@ -35,12 +41,12 @@
     </item>
     <item>
       <p>Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or
-      click <guiseq><gui style="menu">Edit</gui><gui style="menuitem">Toggle
-      Bookmark</gui></guiseq>.</p>
+      open the menu in the top-right corner and select
+      <gui style="menuitem">Toggle Bookmark</gui>.</p>
     </item>
   </steps>
   
-  <steps>
+  <list>
     <title>To move between bookmarks:</title>
     <item>
       <p>Press <keyseq><key>Ctrl</key><key>B</key></keyseq> to move to the next
@@ -49,13 +55,13 @@
     <item>
       <p>Press <keyseq><key>Ctrl</key><key>Shift</key><key>B</key></keyseq> to
       move to the previous bookmark.</p>
-      <note>
-        <p>If you prefer using the mouse, you can click
-        <guiseq><gui style="menu">gedit</gui><gui style="menuitem">Go to Next
-        Bookmark</gui></guiseq> or <guiseq><gui style="menu">Edit</gui>
-        <gui style="menuitem">Go to Previous Bookmark</gui></guiseq>.</p>
-      </note>
     </item>
-  </steps>
+  </list>
+
+  <note>
+    <p>If you prefer to use the mouse, you can open the menu in the top-right
+    corner and select <gui style="menuitem">Go to Next Bookmark</gui> or
+    <gui style="menuitem">Go to Previous Bookmark</gui>.</p>
+  </note>
 
 </page>
