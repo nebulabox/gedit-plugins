@@ -207,7 +207,7 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
             current_word_end = current_word_start.copy()
             forward_to_word_end(current_word_end)
 
-            if ord(current_word_end.get_char()) and \
+            if (not current_word_end.is_end()) and \
                doc.get_iter_at_mark(end_mark).compare(current_word_end) >= 0:
 
                 word_length = current_word_end.get_offset() - \
@@ -232,14 +232,14 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
 def forward_to_word_start(text_iter):
     char = text_iter.get_char()
-    while ord(char) and (char in (' ', '\t', '\n', '\r')):
+    while not text_iter.is_end() and char in (' ', '\t', '\n', '\r'):
         text_iter.forward_char()
         char = text_iter.get_char()
 
 
 def forward_to_word_end(text_iter):
     char = text_iter.get_char()
-    while ord(char) and (not (char in (' ', '\t', '\n', '\r'))):
+    while not text_iter.is_end() and not (char in (' ', '\t', '\n', '\r')):
         text_iter.forward_char()
         char = text_iter.get_char()
 
