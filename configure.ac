@@ -3,8 +3,8 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.63])
  
 m4_define(gedit_plugins_major_version, 3)
-m4_define(gedit_plugins_minor_version, 13)
-m4_define(gedit_plugins_micro_version, 2)
+m4_define(gedit_plugins_minor_version, 14)
+m4_define(gedit_plugins_micro_version, 0)
 m4_define(gedit_plugins_version, gedit_plugins_major_version.gedit_plugins_minor_version.gedit_plugins_micro_version)
 
 AC_INIT([gedit-plugins],
@@ -66,10 +66,10 @@ PKG_CHECK_MODULES(GEDIT, [
 	glib-2.0 >= 2.32.0
 	gio-2.0 >= 2.32.0
 	gtk+-3.0 >= 3.9.0
-	gtksourceview-3.0 >= 3.13.2
+	gtksourceview-3.0 >= 3.14.0
 	libpeas-1.0 >= 1.7.0
 	libpeas-gtk-1.0 >= 1.7.0
-	gedit >= 3.11.3
+	gedit >= 3.14.0
 ])
 
 dnl ================================================================
@@ -174,7 +174,7 @@ then
 	# Dashboard (Zeitgeist)
 	# ================================================================
 	AC_MSG_CHECKING([for dashboard dependency zeitgeist])
-	if `$PYTHON -c "import gi; gi.require_version('Zeitgeist', '2.91')" 2>/dev/null`;
+	if `$PYTHON -c "import gi; gi.require_version('Zeitgeist', '2.0')" 2>/dev/null`;
 	then
 		have_dashboard=yes
 		PLUGINS="$PLUGINS dashboard"

@@ -1,4 +1,26 @@
 ====================
+gedit-plugins 3.14.0
+====================
+
+New features and fixes
+======================
+- Improve joinlines plugin
+- Improve multiedit plugin
+- Improve commander plugin
+- Improve git plugin
+- terminal: Port to vte-2.91
+
+New features and fixes
+======================
+- cs (Marek Černocký)
+- el (Tom Tryfonidis)
+- fi (Jiri Grönroos)
+- fr (Alain Lojewski)
+- hu (Balázs Úr)
+- id (Andika Triwidada)
+- ko (Changwoo Ryu)
+
+====================
 gedit-plugins 3.13.2
 ====================
 
