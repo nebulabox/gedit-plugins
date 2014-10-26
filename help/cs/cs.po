@@ -8,10 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
-"POT-Creation-Date: 2014-09-09 05:16+0000\n"
-"PO-Revision-Date: 2014-09-09 10:06+0200\n"
+"POT-Creation-Date: 2014-10-26 18:04+0000\n"
+"PO-Revision-Date: 2014-10-26 22:19+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
-"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>, 2013."
 
 #. (itstool) path: credit/name
-#: C/bookmarks.page:11 C/bracket-comp.page:11 C/character-map.page:11
+#: C/bookmarks.page:12 C/bracket-comp.page:11 C/character-map.page:11
 #: C/code-assistance.page:11 C/code-comment.page:11 C/color-picker.page:11
 #: C/commander.page:11 C/dashboard.page:11 C/draw-spaces.page:11
 #: C/join-split-lines.page:11 C/multi-edit.page:11 C/session-saver.page:11
@@ -36,18 +36,28 @@ msgstr "Marek Černocký <marek@manet.cz>, 2013."
 msgid "Jim Campbell"
 msgstr "Jim Campbell"
 
+#. (itstool) path: credit/name
+#: C/bookmarks.page:16
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: credit/years
+#: C/bookmarks.page:18
+msgid "2014"
+msgstr "2014"
+
 #. (itstool) path: info/desc
-#: C/bookmarks.page:15
+#: C/bookmarks.page:21
 msgid "Record commonly-referenced locations with bookmarks."
 msgstr "Poznačit si často nahlížená místa pomocí záložek."
 
 #. (itstool) path: page/title
-#: C/bookmarks.page:18
+#: C/bookmarks.page:24
 msgid "Bookmarks"
 msgstr "Záložky"
 
 #. (itstool) path: page/p
-#: C/bookmarks.page:20
+#: C/bookmarks.page:26
 msgid ""
 "<app>gedit</app> bookmarks allow you to highlight important lines of text "
 "within your document or program, making them easier to find. You can also "
@@ -58,7 +68,7 @@ msgstr ""
 "přeskakovat nahoru a dolů, takže je pohyb po dokumentu je o něco rychlejší."
 
 #. (itstool) path: page/p
-#: C/bookmarks.page:25
+#: C/bookmarks.page:31
 msgid ""
 "To enable the bookmark plugin, select <guiseq><gui style=\"menu\">gedit</"
 "gui> <gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> "
@@ -69,7 +79,7 @@ msgstr ""
 "gui><gui>Záložky</gui></guiseq>."
 
 #. (itstool) path: steps/title
-#: C/bookmarks.page:30
+#: C/bookmarks.page:36
 msgid ""
 "Bookmarks are inserted and removed by completing the same action. To insert "
 "or remove bookmarks:"
@@ -78,28 +88,28 @@ msgstr ""
 "záložky:"
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:33
+#: C/bookmarks.page:39
 msgid "Navigate to the line where you want to insert or remove the bookmark."
 msgstr "Přejděte na řádek, kde chcete vložit nebo odebrat záložku."
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:37
+#: C/bookmarks.page:43
 msgid ""
-"Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or click "
-"<guiseq><gui style=\"menu\">Edit</gui><gui style=\"menuitem\">Toggle "
-"Bookmark</gui></guiseq>."
+"Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or open "
+"the menu in the top-right corner and select <gui style=\"menuitem\">Toggle "
+"Bookmark</gui>."
 msgstr ""
 "Zmáčkněte <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq> nebo "
-"klikněte na <guiseq><gui style=\"menu\">Upravit</gui><gui style=\"menuitem"
-"\">Přepnout záložku</gui></guiseq>."
+"klikněte na nabídku v pravém horním rohu a vyberte <gui style=\"menuitem"
+"\">Přepnout záložku</gui>."
 
-#. (itstool) path: steps/title
-#: C/bookmarks.page:44
+#. (itstool) path: list/title
+#: C/bookmarks.page:50
 msgid "To move between bookmarks:"
 msgstr "Když se chcete přesouvat mezi záložkami:"
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:46
+#: C/bookmarks.page:52
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>B</key></keyseq> to move to the next "
 "bookmark."
@@ -108,7 +118,7 @@ msgstr ""
 "následující záložku."
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:50
+#: C/bookmarks.page:56
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>Shift</key><key>B</key></keyseq> to move "
 "to the previous bookmark."
@@ -117,17 +127,15 @@ msgstr ""
 "přesun na předchozí záložku."
 
 #. (itstool) path: note/p
-#: C/bookmarks.page:53
+#: C/bookmarks.page:62
 msgid ""
-"If you prefer using the mouse, you can click <guiseq><gui style=\"menu"
-"\">gedit</gui><gui style=\"menuitem\">Go to Next Bookmark</gui></guiseq> or "
-"<guiseq><gui style=\"menu\">Edit</gui> <gui style=\"menuitem\">Go to "
-"Previous Bookmark</gui></guiseq>."
+"If you prefer to use the mouse, you can open the menu in the top-right "
+"corner and select <gui style=\"menuitem\">Go to Next Bookmark</gui> or <gui "
+"style=\"menuitem\">Go to Previous Bookmark</gui>."
 msgstr ""
-"Jestli dáváte přednost myši, můžete kliknout na <guiseq><gui style=\"menu"
-"\">Upravit</gui><gui style=\"menuitem\">Přejít na následující záložku</gui></"
-"guiseq> nebo <guiseq><gui style=\"menu\">Upravit</gui> <gui style=\"menuitem"
-"\">Přejít na předchozí záložku</gui></guiseq>."
+"Jestli dáváte přednost myši, můžete otevřít nabídku v pravém horním rohu a "
+"vybrat <gui style=\"menuitem\">Přejít na následující záložku</gui> nebo <gui "
+"style=\"menuitem\">Přejít na předchozí záložku</gui>."
 
 #. (itstool) path: info/desc
 #: C/bracket-comp.page:15
