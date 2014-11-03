@@ -1,5 +1,5 @@
 # gedit Finnish Translation
-# Suomennos: http://www.gnome.fi/
+# Suomennos: https://l10n.gnome.org/teams/fi/
 # Copyright (C) 1999-2010 Free Software Foundation Inc.
 #
 # Jarkko Ranta <jjranta@cc.joensuu.fi>, 2000-2004.
