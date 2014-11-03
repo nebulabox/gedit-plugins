@@ -36,7 +36,7 @@ except:
 class GeditTerminal(Vte.Terminal):
 
     defaults = {
-        'visible_bell'          : False,
+        'audible_bell'          : False,
     }
 
     TARGET_URI_LIST = 200
@@ -144,7 +144,7 @@ class GeditTerminal(Vte.Terminal):
         self.set_allow_bold(self.profile_settings.get_boolean("allow-bold"))
         self.set_scroll_on_keystroke(self.profile_settings.get_boolean("scroll-on-keystroke"))
         self.set_scroll_on_output(self.profile_settings.get_boolean("scroll-on-output"))
-        self.set_visible_bell(self.defaults['visible_bell'])
+        self.set_audible_bell(self.defaults['audible_bell'])
 
         if self.profile_settings.get_boolean("scrollback-unlimited"):
             lines = -1
