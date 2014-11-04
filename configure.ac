@@ -27,8 +27,6 @@ AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 
-AM_PATH_PYTHON(3)
-
 # Initialize libtool
 LT_PREREQ([2.2])
 LT_INIT([disable-static])
@@ -128,6 +126,7 @@ AM_CONDITIONAL([ENABLE_ZEITGEIST], test "x$have_zeitgeist" = "xyes")
 # ================================================================
 if test "x$enable_python" = "xyes"
 then
+	AM_PATH_PYTHON(3)
 	PLUGINS="$PLUGINS $PY_PLUGINS"
 
 	# ================================================================
