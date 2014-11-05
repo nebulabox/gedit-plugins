@@ -96,7 +96,7 @@ class SynctexViewHelper:
         if event.button == 1 and event_state == Gdk.ModifierType.CONTROL_MASK:
             self.sync_view(event.time)
 
-    def on_saved_or_loaded(self, doc, data):
+    def on_saved_or_loaded(self, doc):
         self.update_location()
 
     def get_output_file(self):
