@@ -97,7 +97,7 @@ class SynctexViewHelper:
             self.sync_view(event.time)
 
     def on_saved_or_loaded(self, doc):
-        self.update_location()
+        GObject.idle_add(self.update_location)
 
     def get_output_file(self):
         file_output = None
