@@ -36,7 +36,7 @@ SIZE_TEXT_THUMBVIEW = ["x-small", "small", "large", "xx-large"]
 
 GRID_ITEM_COUNT = 7
 
-no_pixbuf = Gtk.IconTheme.get_default().load_icon("gtk-file", 48, 0)
+no_pixbuf = Gtk.IconTheme.get_default().load_icon("text-x-generic", 48, 0)
 
 
 def uri_exists(uri):
