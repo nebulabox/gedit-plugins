@@ -1,22 +1,25 @@
-# translation of eu.po to Basque
+# Basque translation for gedit-plugins
 # Copyright (C) 2001, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
-#
+# 
 # Hizkuntza Politikarako Sailburuordetza <hizpol@ej-gv.es>, 2004.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007, 2008, 2010, 2014.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007, 2008, 2010, 2014, 2015.
+# Edurne Labaka <elabaka@uzei.com>, 2015.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-15 12:42+0200\n"
-"PO-Revision-Date: 2014-07-15 12:42+0200\n"
+"Project-Id-Version: gedit-plugins gnome-3-12\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gedit&keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2015-02-07 12:45+0100\n"
+"PO-Revision-Date: 2014-11-10 17:04+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Poedit 1.6.10\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
@@ -65,7 +68,7 @@ msgstr "Kodearen iruzkina"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Jarri edo kendu iruzkina hautatutako kodearen blokeari."
 
-#
+# 
 #: ../plugins/codecomment/codecomment.py:111
 msgid "Co_mment Code"
 msgstr "_Jarri iruzkina kodeari"
@@ -89,7 +92,7 @@ msgstr ""
 msgid "Pick _Color..."
 msgstr "Hautatu _kolorea..."
 
-#
+# 
 #: ../plugins/colorpicker/colorpicker.py:168
 msgid "Pick Color"
 msgstr "Hautatu kolorea"
@@ -105,7 +108,7 @@ msgstr "Kolore-eskemaren editorea"
 msgid "Source code color scheme editor"
 msgstr "Iturburuaren kodearen kolore-eskemaren editorea"
 
-#
+# 
 #: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
 msgstr "Lodia"
@@ -192,7 +195,7 @@ msgstr "Aginte-panela"
 msgid "A Dashboard for new tabs"
 msgstr "Fitxa berrien aginte-panela"
 
-#
+# 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
 msgid "Draw Spaces"
@@ -207,7 +210,7 @@ msgstr "Marraztu zuriuneak eta tabulazioak"
 msgid "Show _White Space"
 msgstr "Erakutsi _zuriunea"
 
-#
+# 
 #. ex:set ts=8 noet:
 #: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
 msgid "Draw spaces"
@@ -219,7 +222,7 @@ msgstr "Marraztu tabulazioak"
 
 #: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:3
 msgid "Draw new lines"
-msgstr "Maraztu lerro berriak"
+msgstr "Marraztu lerro berriak"
 
 #: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:4
 msgid "Draw non-breaking spaces"
@@ -233,7 +236,7 @@ msgstr "Marraztu hasierako zuriuneak"
 msgid "Draw spaces in text"
 msgstr "Marraztu zuriuneak testuan"
 
-#
+# 
 #: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:7
 msgid "Draw trailing spaces"
 msgstr "Marraztu amaierako zuriuneak"
@@ -338,7 +341,7 @@ msgstr "Lerrokatu edizio-puntuak"
 msgid "Align edit points with additional space"
 msgstr "Lerrokatu edizio-puntuak tarte gehigarriarekin"
 
-#
+# 
 #. ex:ts=4:et:
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 msgid "Smart Spaces"
@@ -385,12 +388,12 @@ msgid ""
 msgstr ""
 "Korritze-barran zenbat lerro mantendu. Lerro horiek izango dituzu atzera "
 "korritu ahal izateko; kopuru hori gainditu ahala, lerroak galduz joango "
-"dira. 'scrollback_unlimited' TRUE (egia) bada, balio honi ezikusi egingo "
+"dira. 'scrollback_unlimited' TRUE (egia) bada, balio honi ez ikusi egingo "
 "zaio."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:5
 msgid "Whether an unlimited number of lines should be kept in scrollback"
-msgstr "Korritze-barran mugarik gabeko lerro-kopurua mantenduko diren ala ez"
+msgstr "Korritze-barran mugarik gabeko lerro kopurua mantenduko diren ala ez"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:6
 msgid ""
@@ -509,7 +512,7 @@ msgid ""
 "settings, or \"on\" or \"off\" to set the mode explicitly."
 msgstr ""
 "Balio erabilgarriak: 'system', kurtsore globala ezarpen keinukariak "
-"erabiltzeko; 'on' edo 'off' modua esplizitoki ezartzeko."
+"erabiltzeko; 'on' edo 'off' modua esplizituki ezartzeko."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
 msgid "The cursor appearance"
@@ -556,7 +559,7 @@ msgstr "Kapsulatu terminal bat azpiko panelean."
 msgid "Terminal"
 msgstr "Terminala"
 
-#
+# 
 #: ../plugins/terminal/terminal.py:335
 msgid "C_hange Directory"
 msgstr "_Aldatu direktorioa"
@@ -584,7 +587,7 @@ msgstr "Handiagotu eta txikiagotu testuaren tamaina erraz"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
-msgstr "Osaketa elkarreragilea"
+msgstr "Osaketa interaktiboa"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
 msgid "Minimum word size:"
@@ -596,11 +599,11 @@ msgstr "Dokumentuko hitzak"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
 msgid "Interactive Completion"
-msgstr "Osaketa elkarreragilea"
+msgstr "Osaketa interaktiboa"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
 msgid "Whether to enable interactive completion."
-msgstr "Osaketa elkarreragilea gaitu edo ez."
+msgstr "Osaketa interaktiboa gaitu edo ez."
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
 msgid "Minimum Word Size"
@@ -645,7 +648,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Git differences"
 #~ msgstr "Git-eko diferentziak"
 
-#
+# 
 #~ msgid "Join the selected lines"
 #~ msgstr "Elkartu hautatutako lerroak"
 
@@ -655,7 +658,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Start multi edit mode"
 #~ msgstr "Hasi edizio anitzeko modua"
 
-#
+# 
 #~ msgid "_Insert"
 #~ msgstr "_Txertatu"
 
@@ -695,14 +698,14 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Session name:"
 #~ msgstr "Saioaren izena:"
 
-#
+# 
 #~ msgid "Tags"
 #~ msgstr "Etiketak"
 
 #~ msgid "Select the group of tags you want to use"
 #~ msgstr "Hautatu erabili nahi duzun etiketa-taldea"
 
-#
+# 
 #~ msgid "_Preview"
 #~ msgstr "_Aurrebista"
 
@@ -724,7 +727,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Acronym"
 #~ msgstr "Akronimo"
 
-#
+# 
 #~ msgid "Align"
 #~ msgstr "Lerrokatu"
 
@@ -740,11 +743,11 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Anchor URI"
 #~ msgstr "Ainguratu URIa"
 
-#
+# 
 #~ msgid "Applet class file code"
 #~ msgstr "Miniaplikazioaren klase-fitxategiaren kodea"
 
-#
+# 
 #~ msgid "Applet class file code (deprecated)"
 #~ msgstr "Miniaplikazioaren klase-fitxategiaren kodea (zaharkitua)"
 
@@ -757,15 +760,15 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Axis related headers"
 #~ msgstr "Ardatzarekin zerikusia duten goiburuak"
 
-#
+# 
 #~ msgid "Background color (deprecated)"
 #~ msgstr "Atzeko planoaren kolorea (zaharkitua)"
 
-#
+# 
 #~ msgid "Background texture tile"
 #~ msgstr "Atzeko planoaren testuraren mosaikoa"
 
-#
+# 
 #~ msgid "Background texture tile (deprecated)"
 #~ msgstr "Atzeko planoaren testuraren mosaikoa (zaharkitua)"
 
@@ -778,14 +781,14 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Base font (deprecated)"
 #~ msgstr "Oinarrizko letra-tipoa (zaharkitua)"
 
-#
+# 
 #~ msgid "Border"
 #~ msgstr "Ertza"
 
 #~ msgid "Border (deprecated)"
 #~ msgstr "Ertza (zaharkitua)"
 
-#
+# 
 #~ msgid "Border color"
 #~ msgstr "Ertzaren kolorea"
 
@@ -798,7 +801,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Center (deprecated)"
 #~ msgstr "Zentratua (zaharkitua)"
 
-#
+# 
 #~ msgid "Character encoding of linked resource"
 #~ msgstr "Karaktere-kodeketa (estekatutako baliabidearena)"
 
@@ -808,7 +811,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Checked state"
 #~ msgstr "Egoera egiaztatua"
 
-#
+# 
 #~ msgid "Citation"
 #~ msgstr "Aipua"
 
@@ -824,15 +827,15 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Clear text flow control"
 #~ msgstr "Garbitu testu-fluxuaren kontrola"
 
-#
+# 
 #~ msgid "Code content type"
-#~ msgstr "Kodearen eduki-mota"
+#~ msgstr "Kodearen eduki mota"
 
-#
+# 
 #~ msgid "Color of selected links"
 #~ msgstr "Kolorea hautatutako estekena"
 
-#
+# 
 #~ msgid "Color of selected links (deprecated)"
 #~ msgstr "Hautatutako esteken kolorea (zaharkitua)"
 
@@ -842,25 +845,25 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Columns"
 #~ msgstr "Zutabeak"
 
-#
+# 
 #~ msgid "Comment"
 #~ msgstr "Iruzkina"
 
 #~ msgid "Computer code fragment"
 #~ msgstr "Ordenagailuaren kode-zatia"
 
-#
+# 
 #~ msgid "Content scheme"
 #~ msgstr "Edukiaren eskema"
 
-#
+# 
 #~ msgid "Content type"
-#~ msgstr "Eduki-mota"
+#~ msgstr "Eduki mota"
 
 #~ msgid "Content type (deprecated)"
 #~ msgstr "Eduki mota (zaharkitua)"
 
-#
+# 
 #~ msgid "Coordinates"
 #~ msgstr "Koordinatuak"
 
@@ -879,7 +882,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Defer attribute"
 #~ msgstr "Geroratu atributua"
 
-#
+# 
 #~ msgid "Definition description"
 #~ msgstr "Definizioaren azalpena"
 
@@ -893,13 +896,13 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgstr "Ezabatutako testua"
 
 #~ msgid "Direction"
-#~ msgstr "Norabidea"
+#~ msgstr "Noranzkoa"
 
 #~ msgid "Directionality"
-#~ msgstr "Norabidetasuna"
+#~ msgstr "Noranzkotasuna"
 
 #~ msgid "Directionality (deprecated)"
-#~ msgstr "Norabidetasuna (zaharkitua)"
+#~ msgstr "Noranzkotasuna (zaharkitua)"
 
 #~ msgid "Directory list"
 #~ msgstr "Direktorio-zerrenda"
@@ -932,7 +935,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgstr "Enfasia"
 
 #~ msgid "Encode type"
-#~ msgstr "Kodeketa-mota"
+#~ msgstr "Kodeketa mota"
 
 #~ msgid "Figure"
 #~ msgstr "Irudia"
@@ -962,7 +965,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgstr "Inprimakiaren sarrera"
 
 #~ msgid "Form input type"
-#~ msgstr "Inprimakiaren sarrera-mota"
+#~ msgstr "Inprimakiaren sarrera mota"
 
 #~ msgid "Form method"
 #~ msgstr "Inprimakiaren metodoa"
@@ -991,11 +994,11 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Frameborder"
 #~ msgstr "Markoaren ertza"
 
-#
+# 
 #~ msgid "Frameset"
 #~ msgstr "Marko-multzoa"
 
-#
+# 
 #~ msgid "Frameset columns"
 #~ msgstr "Marko-multzoaren zutabeak"
 
@@ -1086,14 +1089,14 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Image source"
 #~ msgstr "Irudiaren iturburua"
 
-#
+# 
 #~ msgid "Inline frame"
 #~ msgstr "Markoa lerroan"
 
 #~ msgid "Inline layer"
 #~ msgstr "Geruza lerroan"
 
-#
+# 
 #~ msgid "Inserted text"
 #~ msgstr "Txertatutako testua"
 
@@ -1115,11 +1118,11 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Layer"
 #~ msgstr "Geruza"
 
-#
+# 
 #~ msgid "Link color"
 #~ msgstr "Estekaren kolorea"
 
-#
+# 
 #~ msgid "Link color (deprecated)"
 #~ msgstr "Estekaren kolorea (zaharkitua)"
 
@@ -1135,11 +1138,11 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Listing"
 #~ msgstr "Zerrendatzea"
 
-#
+# 
 #~ msgid "Local change to font"
 #~ msgstr "Letra-tipoaren aldaketa lokala"
 
-#
+# 
 #~ msgid "Long description link"
 #~ msgstr "Azalpen luzeko esteka"
 
@@ -1236,7 +1239,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "OnBlur event"
 #~ msgstr "OnBlur gertaera"
 
-#
+# 
 #~ msgid "OnChange event"
 #~ msgstr "OnChange gertaera"
 
@@ -1291,7 +1294,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Option group"
 #~ msgstr "Aukera-taldea"
 
-#
+# 
 #~ msgid "Option selector"
 #~ msgstr "Aukeren hautatzailea"
 
@@ -1313,7 +1316,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Preformatted listing"
 #~ msgstr "Aurrez formateatutako zerrenda"
 
-#
+# 
 #~ msgid "Preformatted text"
 #~ msgstr "Aurrez formateatutako testua"
 
@@ -1329,7 +1332,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Quote"
 #~ msgstr "Aipua"
 
-#
+# 
 #~ msgid "Range"
 #~ msgstr "Barrutia"
 
@@ -1342,7 +1345,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Reduced spacing (deprecated)"
 #~ msgstr "Tarte gutxitua (zaharkitua)"
 
-#
+# 
 #~ msgid "Reverse link"
 #~ msgstr "Alderantzizko esteka"
 
@@ -1370,11 +1373,11 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Scrollbar"
 #~ msgstr "Korritze-barra"
 
-#
+# 
 #~ msgid "Selectable option"
 #~ msgstr "Aukera hautagarria"
 
-#
+# 
 #~ msgid "Selected"
 #~ msgstr "Hautatuta"
 
@@ -1402,7 +1405,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Sound"
 #~ msgstr "Soinua"
 
-#
+# 
 #~ msgid "Source"
 #~ msgstr "Iturburua"
 
@@ -1427,11 +1430,11 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Standby load message"
 #~ msgstr "Mezua kargatu bitartean"
 
-#
+# 
 #~ msgid "Starting sequence number"
 #~ msgstr "Zenbaki sekuentzia hastea"
 
-#
+# 
 #~ msgid "Starting sequence number (deprecated)"
 #~ msgstr "Zenbaki sekuentzia hastea (zaharkitua)"
 
@@ -1453,7 +1456,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Subscript"
 #~ msgstr "Azpi-indizea"
 
-#
+# 
 #~ msgid "Superscript"
 #~ msgstr "Goi-indizea"
 
@@ -1466,7 +1469,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Table body"
 #~ msgstr "Taularen gorputza"
 
-#
+# 
 #~ msgid "Table caption"
 #~ msgstr "Taularen epigrafea"
 
@@ -1512,18 +1515,18 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Text"
 #~ msgstr "Testua"
 
-#
+# 
 #~ msgid "Text color"
 #~ msgstr "Testuaren kolorea"
 
-#
+# 
 #~ msgid "Text color (deprecated)"
 #~ msgstr "Testuaren kolorea (zaharkitua)"
 
 #~ msgid "Text entered by user"
 #~ msgstr "Erabiltzaileak sartutako testua"
 
-#
+# 
 #~ msgid "Title"
 #~ msgstr "Izenburua"
 
@@ -1533,7 +1536,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "URL"
 #~ msgstr "URLa"
 
-#
+# 
 #~ msgid "Unordered list"
 #~ msgstr "Ordenatu gabeko zerrenda"
 
@@ -1552,19 +1555,19 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Vertical cell alignment"
 #~ msgstr "Gelaxkaren lerrokadura bertikala"
 
-#
+# 
 #~ msgid "Vertical space"
 #~ msgstr "Tarte bertikala"
 
-#
+# 
 #~ msgid "Vertical space (deprecated)"
 #~ msgstr "Tarte bertikala (zaharkitua)"
 
-#
+# 
 #~ msgid "Visited link color"
 #~ msgstr "Bisitatutako esteken kolorea"
 
-#
+# 
 #~ msgid "Visited link color (deprecated)"
 #~ msgstr "Bisitatutako esteken kolorea (zaharkitua)"
 
@@ -1601,7 +1604,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "File input"
 #~ msgstr "Sarrerako fitxategia"
 
-#
+# 
 #~ msgid "Footnote"
 #~ msgstr "Orri-oina"
 
@@ -1695,7 +1698,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "Maths (inline)"
 #~ msgstr "Matematikak (lerroan)"
 
-#
+# 
 #~ msgid "Operator fraction"
 #~ msgstr "Eragilea: zatikia"
 
@@ -1835,7 +1838,7 @@ msgstr "Osaketaren lanmarkoa darabilen hitz-osaketa"
 #~ msgid "following-sibling"
 #~ msgstr "hurrengoa-senidea"
 
-#
+# 
 #~ msgid "namespace"
 #~ msgstr "izen-lekua"
 
