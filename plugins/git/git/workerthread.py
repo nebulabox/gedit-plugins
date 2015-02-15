@@ -117,10 +117,11 @@ class WorkerThread(threading.Thread):
             if not self.__has_idle.is_set():
                 self.__has_idle.set()
 
-                debug('%s<%s>: idle added' % (type(self).__name__, self.name))
+                debug('%s<%s>: result callback idle started' %
+                      (type(self).__name__, self.name))
                 GLib.source_set_name_by_id(GLib.idle_add(self.__in_idle),
-                                           '[gedit] %s result callback idle' %
-                                           (self.__class__.__name__))
+                                           '[gedit] git %s result callback idle' %
+                                           (type(self).__name__,))
 
     def __in_idle(self):
         try:
@@ -140,7 +141,8 @@ class WorkerThread(threading.Thread):
             # Only remove the idle when there are no more items,
             # some could have been added after the IndexError was raised
             if len(self.__results) == 0:
-                debug('%s<%s>: idle done' % (type(self).__name__, self.name))
+                debug('%s<%s>: result callback idle finished' %
+                      (type(self).__name__, self.name))
                 return GLib.SOURCE_REMOVE
 
         return GLib.SOURCE_CONTINUE
