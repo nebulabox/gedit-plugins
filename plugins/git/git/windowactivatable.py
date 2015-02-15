@@ -239,6 +239,9 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         if location is None:
             return
 
+        if location not in self.file_nodes:
+            return
+
         repo = self.get_repository(location)
         if repo is not None:
             self.git_status_thread.push(repo, location)
