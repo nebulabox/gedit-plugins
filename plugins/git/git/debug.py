@@ -48,7 +48,7 @@ def debug(msg, *, frames=1, print_stack=False, limit=None):
             path = path[1:]
  
         full_message = io.StringIO()
-        full_message.writelines((info.filename, ':', str(info.lineno),
+        full_message.writelines((path, ':', str(info.lineno),
                                  ' (', info.function, ') ', msg, '\n'))
  
         if print_stack:
