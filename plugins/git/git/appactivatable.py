@@ -93,7 +93,7 @@ class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
 
             # TODO: this was around even when not used, on purpose?
             head = repo.get_head()
-            commit = repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
+            commit = repo.lookup(head.get_target(), Ggit.Commit)
             tree = commit.get_tree()
 
             self.__git_repos[repo_uri] = repo

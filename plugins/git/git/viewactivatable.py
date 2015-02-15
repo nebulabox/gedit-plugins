@@ -129,13 +129,13 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
         try:
             head = repo.get_head()
-            commit = repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
+            commit = repo.lookup(head.get_target(), Ggit.Commit)
             tree = commit.get_tree()
 
             relative_path = repo.get_workdir().get_relative_path(self.location)
 
             entry = tree.get_by_path(relative_path)
-            file_blob = repo.lookup(entry.get_id(), Ggit.Blob.__gtype__)
+            file_blob = repo.lookup(entry.get_id(), Ggit.Blob)
             file_contents = file_blob.get_raw_content().decode('utf-8')
             self.file_contents_list = file_contents.splitlines()
 
