@@ -3,8 +3,8 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.63])
  
 m4_define(gedit_plugins_major_version, 3)
-m4_define(gedit_plugins_minor_version, 14)
-m4_define(gedit_plugins_micro_version, 1)
+m4_define(gedit_plugins_minor_version, 15)
+m4_define(gedit_plugins_micro_version, 0)
 m4_define(gedit_plugins_version, gedit_plugins_major_version.gedit_plugins_minor_version.gedit_plugins_micro_version)
 
 AC_INIT([gedit-plugins],
@@ -67,7 +67,7 @@ PKG_CHECK_MODULES(GEDIT, [
 	gtksourceview-3.0 >= 3.14.0
 	libpeas-1.0 >= 1.7.0
 	libpeas-gtk-1.0 >= 1.7.0
-	gedit >= 3.14.0
+	gedit >= 3.15.90
 ])
 
 dnl ================================================================
