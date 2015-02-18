@@ -307,9 +307,6 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             self.git_status_thread.push(repo, location)
 
     def deleted(self, bus, msg, data=None):
-        # File browser's deleted signal is broken
-        return
-
         location = msg.location
         uri = location.get_uri()
 
