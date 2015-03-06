@@ -38,9 +38,6 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         GObject.Object.__init__(self)
 
     def do_activate(self):
-        self._entry = None
-        self._view = None
-
         action = Gio.SimpleAction.new_stateful("commander", None, GLib.Variant.new_boolean(False))
         action.connect('activate', self.activate_toggle)
         action.connect('change-state', self.commander_mode)
@@ -50,16 +47,20 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self.window.remove_action("commander")
 
     def do_update_state(self):
-        pass
-
-    def activate_toggle(self, action, parameter):
+        action = self.window.lookup_action("commander")
         state = action.get_state()
 
-        if state.get_boolean() and not self._entry is None:
-            self._entry.grab_focus()
-            return
+        action.change_state(GLib.Variant.new_boolean(state.get_boolean()))
+
+    def activate_toggle(self, action, parameter):
+        view = self.window.get_active_view()
+        state = action.get_state()
 
         action.change_state(GLib.Variant.new_boolean(not state.get_boolean()))
+
+        if state.get_boolean() and view._entry:
+            view._entry.grab_focus()
+            return
 
     def commander_mode(self, action, state):
         view = self.window.get_active_view()
@@ -67,25 +68,26 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         if not view:
             return False
 
+        if not hasattr(view, '_entry'):
+            view._entry = None
+
         active = state.get_boolean()
-
         if active:
-            if not self._entry or view != self._view:
-                self._entry = Entry(view)
-                self._entry.connect('destroy', self.on_entry_destroy)
+            if not view._entry:
+                view._entry = Entry(view)
+                view._entry.connect('destroy', self.on_entry_destroy, view)
 
-            self._entry.grab_focus()
-            self._view = view
-        elif self._entry:
-            self._entry.remove()
-            self._view = None
+            view._entry._show()
+            view._entry.grab_focus()
+
+        elif view._entry:
+            view._entry._hide()
 
         action.set_state(GLib.Variant.new_boolean(active))
 
         return True
 
-    def on_entry_destroy(self, widget, user_data=None):
-        self._entry = None
-        self.window.lookup_action("commander").change_state(GLib.Variant.new_boolean(False))
+    def on_entry_destroy(self, widget, view):
+        view._entry = None
 
 # vi:ex:ts=4:et

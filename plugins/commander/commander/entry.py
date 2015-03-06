@@ -44,13 +44,17 @@ import traceback
 class Entry(Gtk.Box):
     __gtype_name__ = "CommanderEntry"
 
-    def remove(self):
+    def _show(self):
+        self._reveal.set_reveal_child(True)
+
+    def _hide(self):
         self._reveal.set_reveal_child(False)
 
     def __init__(self, view):
         super(Entry, self).__init__()
 
         self._view = view
+        view.connect("destroy", self._on_view_destroyed)
 
         self._history = History(os.path.join(GLib.get_user_config_dir(), 'gedit/commander/history'))
         self._history_prefix = None
@@ -163,6 +167,10 @@ GtkEntry#gedit-commander-entry {
 
         self._copy_style_from_view()
         self._view_style_updated_id = self._view.connect('style-updated', self._on_view_style_updated)
+
+    def _on_view_destroyed (self, widget, user_data=None):
+        self._view.disconnect(self._view_style_updated_id)
+        self._view_style_updated_id = None
 
     def _on_view_style_updated(self, widget):
         self._copy_style_from_view()
@@ -292,16 +300,10 @@ GtkEntry#gedit-commander-entry {
         reveal.set_reveal_child(True)
         self._reveal = reveal
 
-        reveal.connect('notify::child-revealed', self._on_child_revealed)
         self._entry.grab_focus()
 
     def grab_focus(self):
         self._entry.grab_focus()
-
-    def _on_child_revealed(self, widget, spec):
-        if not self._reveal.get_child_revealed():
-            self.destroy()
-            widget.destroy()
 
     def _on_entry_key_press(self, widget, evnt):
         state = evnt.state & Gtk.accelerator_get_default_mod_mask()
@@ -773,10 +775,12 @@ GtkEntry#gedit-commander-entry {
         # Note we do this not as an override because somehow something
         # goes wrong when finalizing in that case, maybe self is NULL
         # or something like that, and then gets some new empty instance?
-        self._view.disconnect(self._view_style_updated_id)
+        if self._view_style_updated_id:
+            self._view.disconnect(self._view_style_updated_id)
 
         self._history.save()
 
         self._view = None
+        self._view_style_updated_id = None
 
 # vi:ex:ts=4:et
