@@ -25,7 +25,7 @@ import commander.commands as commands
 
 class CommanderAppActivatable(GObject.Object, Gedit.AppActivatable):
 
-    app = GObject.property(type=Gedit.App)
+    app = GObject.Property(type=Gedit.App)
 
     def __init__(self):
         GObject.Object.__init__(self)

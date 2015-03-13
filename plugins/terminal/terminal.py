@@ -160,7 +160,7 @@ class GeditTerminalPanel(Gtk.Box):
 
     __gsignals__ = {
         "populate-popup": (
-            GObject.SIGNAL_RUN_LAST,
+            GObject.SignalFlags.RUN_LAST,
             None,
             (GObject.TYPE_OBJECT,)
         )
@@ -297,7 +297,7 @@ class GeditTerminalPanel(Gtk.Box):
 class TerminalPlugin(GObject.Object, Gedit.WindowActivatable):
     __gtype_name__ = "TerminalPlugin"
 
-    window = GObject.property(type=Gedit.Window)
+    window = GObject.Property(type=Gedit.Window)
 
     def __init__(self):
         GObject.Object.__init__(self)
