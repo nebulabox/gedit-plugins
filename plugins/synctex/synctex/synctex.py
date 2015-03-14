@@ -222,7 +222,7 @@ class SynctexViewHelper:
 class SynctexWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     __gtype_name__ = "SynctexWindowActivatable"
 
-    window = GObject.property(type=Gedit.Window)
+    window = GObject.Property(type=Gedit.Window)
     view_dict = {}
     _proxy_dict = {}
 
@@ -324,7 +324,7 @@ class SynctexWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
 class SynctexAppActivatable(GObject.Object, Gedit.AppActivatable):
 
-    app = GObject.property(type=Gedit.App)
+    app = GObject.Property(type=Gedit.App)
 
     def __init__(self):
         GObject.Object.__init__(self)
