@@ -26,7 +26,7 @@ from .schemer import GUI
 
 class AppActivatable(GObject.Object, Gedit.AppActivatable):
 
-  app = GObject.property(type=Gedit.App)
+  app = GObject.Property(type=Gedit.App)
 
   def __init__(self):
     GObject.Object.__init__(self)
