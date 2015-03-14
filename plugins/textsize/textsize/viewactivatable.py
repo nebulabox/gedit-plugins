@@ -24,7 +24,7 @@ from gi.repository import GObject, Gtk, Gdk, Pango, Gedit
 
 class TextSizeViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
-    view = GObject.property(type=Gedit.View)
+    view = GObject.Property(type=Gedit.View)
 
     def __init__(self):
         GObject.Object.__init__(self)
