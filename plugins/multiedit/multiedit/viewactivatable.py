@@ -35,7 +35,7 @@ except:
 
 class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
-    view = GObject.property(type=Gedit.View)
+    view = GObject.Property(type=Gedit.View)
 
     def __init__(self):
         GObject.Object.__init__(self)

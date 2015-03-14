@@ -34,7 +34,7 @@ except:
 
 class MultiEditWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
-    window = GObject.property(type=Gedit.Window)
+    window = GObject.Property(type=Gedit.Window)
 
     def do_activate(self):
         action = Gio.SimpleAction.new_stateful("multiedit", None, GLib.Variant.new_boolean(False))
