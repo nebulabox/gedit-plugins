@@ -31,7 +31,7 @@ except:
 
 
 class JoinLinesAppActivatable(GObject.Object, Gedit.AppActivatable):
-    app = GObject.property(type=Gedit.App)
+    app = GObject.Property(type=Gedit.App)
 
     def __init__(self):
         GObject.Object.__init__(self)
@@ -47,7 +47,7 @@ class JoinLinesAppActivatable(GObject.Object, Gedit.AppActivatable):
 
 class JoinLinesWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
-    window = GObject.property(type=Gedit.Window)
+    window = GObject.Property(type=Gedit.Window)
 
     def __init__(self):
         GObject.Object.__init__(self)
@@ -84,7 +84,7 @@ class JoinLinesWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
 class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
-    view = GObject.property(type=Gedit.View)
+    view = GObject.Property(type=Gedit.View)
 
     def __init__(self):
         GObject.Object.__init__(self)
