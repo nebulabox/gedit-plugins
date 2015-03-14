@@ -39,7 +39,7 @@ block_comment_languages = [
 
 class CodeCommentAppActivatable(GObject.Object, Gedit.AppActivatable):
 
-    app = GObject.property(type=Gedit.App)
+    app = GObject.Property(type=Gedit.App)
 
     def __init__(self):
         GObject.Object.__init__(self)
@@ -88,7 +88,7 @@ class CodeCommentWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
 class CodeCommentViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
-    view = GObject.property(type=Gedit.View)
+    view = GObject.Property(type=Gedit.View)
 
     def __init__(self):
         GObject.Object.__init__(self)
