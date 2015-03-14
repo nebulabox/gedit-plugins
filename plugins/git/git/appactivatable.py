@@ -21,7 +21,7 @@ from gi.repository import GLib, GObject, Gio, Gedit, Ggit
 
 
 class GitAppActivatable(GObject.Object, Gedit.AppActivatable):
-    app = GObject.property(type=Gedit.App)
+    app = GObject.Property(type=Gedit.App)
 
     __instance = None
 

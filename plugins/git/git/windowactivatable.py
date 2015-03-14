@@ -104,7 +104,7 @@ class GitStatusThread(WorkerThread):
 
 
 class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
-    window = GObject.property(type=Gedit.Window)
+    window = GObject.Property(type=Gedit.Window)
 
     windows = weakref.WeakValueDictionary()
 

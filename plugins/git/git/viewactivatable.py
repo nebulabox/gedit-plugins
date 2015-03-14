@@ -35,9 +35,9 @@ class LineContext:
 
 
 class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
-    view = GObject.property(type=Gedit.View)
+    view = GObject.Property(type=Gedit.View)
 
-    status = GObject.property(type=Ggit.StatusFlags,
+    status = GObject.Property(type=Ggit.StatusFlags,
                               default=Ggit.StatusFlags.CURRENT)
 
     def __init__(self):
