@@ -119,7 +119,7 @@ class ColorHelper:
 
 class ColorPickerAppActivatable(GObject.Object, Gedit.AppActivatable):
 
-    app = GObject.property(type=Gedit.App)
+    app = GObject.Property(type=Gedit.App)
 
     def __init__(self):
         GObject.Object.__init__(self)
@@ -135,7 +135,7 @@ class ColorPickerAppActivatable(GObject.Object, Gedit.AppActivatable):
 
 class ColorPickerWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
-    window = GObject.property(type=Gedit.Window)
+    window = GObject.Property(type=Gedit.Window)
 
     def __init__(self):
         GObject.Object.__init__(self)
@@ -195,7 +195,7 @@ class ColorPickerWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
 class ColorPickerViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
-    view = GObject.property(type=Gedit.View)
+    view = GObject.Property(type=Gedit.View)
 
     def __init__(self):
         GObject.Object.__init__(self)
