@@ -139,15 +139,15 @@ class DashView(Gtk.Box):
 class SearchEntry(Gtk.Entry):
 
     __gsignals__ = {
-        "clear": (GObject.SIGNAL_RUN_FIRST,
+        "clear": (GObject.SignalFlags.RUN_FIRST,
+                  GObject.TYPE_NONE,
+                  ()),
+        "search": (GObject.SignalFlags.RUN_FIRST,
                    GObject.TYPE_NONE,
-                   ()),
-        "search": (GObject.SIGNAL_RUN_FIRST,
-                    GObject.TYPE_NONE,
-                    (GObject.TYPE_STRING,)),
-        "close": (GObject.SIGNAL_RUN_FIRST,
-                   GObject.TYPE_NONE,
-                   ()),
+                   (GObject.TYPE_STRING,)),
+        "close": (GObject.SignalFlags.RUN_FIRST,
+                  GObject.TYPE_NONE,
+                  ()),
     }
 
     search_timeout = 0
