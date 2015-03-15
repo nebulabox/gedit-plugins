@@ -8,15 +8,15 @@
 # Žygimantas Beručka <zygis@gnome.org>, 2003-2006.
 # Vytautas Povilaitis <punktyras@nkm.lt>, 2007.
 # Gintautas Miliauskas <gintas@akl.lt>, 2007, 2008, 2010.
-# Aurimas Černius <aurisc4@gmail.com>, 2010, 2013, 2014.
+# Aurimas Černius <aurisc4@gmail.com>, 2010, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2014-02-15 06:21+0000\n"
-"PO-Revision-Date: 2014-02-15 19:49+0200\n"
+"POT-Creation-Date: 2015-03-15 18:11+0000\n"
+"PO-Revision-Date: 2015-03-15 21:05+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -28,10 +28,12 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
+#: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
 msgid "Bookmarks"
 msgstr "Žymelės"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:2
+#: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:2
 msgid "Easy document navigation with bookmarks"
 msgstr "Paprasta dokumentų paieška su gairėmis"
 
@@ -48,12 +50,18 @@ msgid "Goto Previous Bookmark"
 msgstr "Pereiti prie ankstesnės žymelės"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
+#: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:1
 msgid "Bracket Completion"
 msgstr "Skliaustų užbaigimas"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:2
 msgid "Automatically adds closing brackets."
 msgstr "Automatiškai prideda užveriančius skliaustus."
+
+#: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:2
+#| msgid "Automatically adds closing brackets."
+msgid "Automatically add a closing bracket when you insert one"
+msgstr "Automatiškai pridėti užveriančius skliaustus parašius atidarantį"
 
 #. ex:et:ts=4:
 #: ../plugins/charmap/charmap/__init__.py:49
@@ -65,7 +73,18 @@ msgstr "Simbolių žemėlapis"
 msgid "Insert special characters just by clicking on them."
 msgstr "Įterpti specialiuosius simbolius tiesiog spaudžiant ant jų."
 
+#: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:1
+#| msgid "Character Map"
+msgid "Charmap"
+msgstr "Simbolių lentelė"
+
+#: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:2
+msgid "Select characters from a character map"
+msgstr "Pasirinkite simbolius iš simbolių lentelės"
+
+#. ex:ts=4:et:
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
+#: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:1
 msgid "Code Comment"
 msgstr "Kodo komentaras"
 
@@ -81,7 +100,11 @@ msgstr "_Komentuoti kodą"
 msgid "U_ncomment Code"
 msgstr "Atkome_ntuoti kodą"
 
-#. ex:ts=4:et:
+#: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:2
+#| msgid "Comment out or uncomment a selected block of code."
+msgid "Comment or uncomment blocks of code"
+msgstr "Komentuoti ar atkomentuoti kodo bloką"
+
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
 msgid "Color Picker"
 msgstr "Spalvų pasirinkėjas"
@@ -90,16 +113,26 @@ msgstr "Spalvų pasirinkėjas"
 msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr "Pasirinkti spalvą iš dialogo ir įterpti jos šešioliktainę išraišką."
 
-#: ../plugins/colorpicker/colorpicker.py:128
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
+#| msgid "Color Picker"
+msgid "Color picker"
+msgstr "Spalvų pasirinkėjas"
+
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:2
+msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
+msgstr "Pasirinkite ir įveskite spalvą iš dialogo (HTML, CSS, PHP kodui)"
+
+#: ../plugins/colorpicker/colorpicker.py:129
 msgid "Pick _Color..."
 msgstr "Pasirinkti _spalvą..."
 
-#: ../plugins/colorpicker/colorpicker.py:168
+#: ../plugins/colorpicker/colorpicker.py:169
 msgid "Pick Color"
 msgstr "Pasirinkti spalvą"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
+#: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
 #: ../plugins/colorschemer/schemer/__init__.py:40
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
@@ -108,6 +141,10 @@ msgstr "Spalvų schemos redaktorius"
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:2
 msgid "Source code color scheme editor"
 msgstr "Pradinio kodo spalvų schemos redaktorius"
+
+#: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:2
+msgid "Create and edit the color scheme used for syntax highlighting"
+msgstr "Sukurti ir keisti spalvų schemą sintaksės paryškinimui"
 
 #: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
@@ -171,10 +208,12 @@ msgstr "Commander veiksena"
 
 #. vi:ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
+#: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
 msgstr "Commander"
 
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:2
+#: ../plugins/commander/gedit-commander.metainfo.xml.in.h:2
 msgid "Command line interface for advanced editing"
 msgstr "Komandų eilutės sąsaja sudėtingesniam redagavimui"
 
@@ -188,12 +227,19 @@ msgstr "Rašykite čia paieškai..."
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
+#: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:1
 msgid "Dashboard"
 msgstr "Apžvalga"
 
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:2
 msgid "A Dashboard for new tabs"
 msgstr "Apžvalga naujoms kortelėms"
+
+#: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:2
+msgid "Displays a grid of recently/most used files upon opening a new tab"
+msgstr ""
+"Parodo lentelę su neseniai/dažniausiai naudotais failais atveriant naują "
+"kortelę"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
@@ -204,37 +250,43 @@ msgstr "Piešti tarpus"
 msgid "Draw spaces and tabs"
 msgstr "Piešti tarpus ir tabuliacijas"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:265
+#. ex:set ts=8 noet:
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
+msgid "Draw spaces"
+msgstr "Piešti tarpus"
+
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
+#| msgid "Draw spaces and tabs"
+msgid "Draw Spaces and Tabs"
+msgstr "Piešti tarpus ir tabuliacijas"
+
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Rodyti tuščią _erdvę"
 
-#. ex:set ts=8 noet:
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
-msgid "Draw spaces"
-msgstr "Piešti tarpus"
-
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:2
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:2
 msgid "Draw tabs"
 msgstr "Piešti tabuliacijas"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:3
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:3
 msgid "Draw new lines"
 msgstr "Piešti eilučių pabaigas"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:4
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:4
 msgid "Draw non-breaking spaces"
 msgstr "Piešti nekeliamus tarpus"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:5
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:5
 msgid "Draw leading spaces"
 msgstr "Piešti tarpus pradžioje"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:6
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:6
 msgid "Draw spaces in text"
 msgstr "Piešti tarpus tekste"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:7
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:7
 msgid "Draw trailing spaces"
 msgstr "Piešti tarpus pabaigoje"
 
@@ -247,12 +299,21 @@ msgid "The type of spaces to be drawn."
 msgstr "Piešiamų tarpų tipas."
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
+#: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
 msgid "Highlight lines that have been changed since the last commit"
 msgstr "Paryškinti eilutes, kurios buvo pakeisto nuo paskutinio patvirtinimo"
+
+#: ../plugins/git/gedit-git.metainfo.xml.in.h:2
+msgid ""
+"Use git information to display which lines and files changed since last "
+"commit"
+msgstr ""
+"Naudojant git informaciją parodyti, kurios eilutės ir failai pasikeitė nuo "
+"paskutinio patvirtinimo"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -262,16 +323,25 @@ msgstr "Sujungti/padalinti eilutes"
 msgid "Join several lines or split long ones"
 msgstr "Sujungti kelias eilutes arba padalinti ilgas"
 
-#: ../plugins/joinlines/joinlines.py:106
+#: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
+#| msgid "Join/Split Lines"
+msgid "Join lines/ Split lines"
+msgstr "Sujungti/padalinti eilutes"
+
+#: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:2
+msgid "Join or split multiple lines through Ctrl+J and Ctrl+Shift+J"
+msgstr "Sujungti ar padalinti kelias eilutes naudojant Vald+J bei Vald+Lyg2+J"
+
+#: ../plugins/joinlines/joinlines.py:107
 msgid "_Join Lines"
 msgstr "Su_jungti eilutes"
 
-#: ../plugins/joinlines/joinlines.py:112
+#: ../plugins/joinlines/joinlines.py:113
 msgid "_Split Lines"
 msgstr "Pa_dalinti eilutes"
 
 #: ../plugins/multiedit/multiedit/appactivatable.py:36
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1349
 msgid "Multi Edit Mode"
 msgstr "Daugybinio redagavimo veiksena"
 
@@ -281,66 +351,73 @@ msgid "Multi Edit"
 msgstr "Daugybinis redagavimas"
 
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
 msgid "Edit document in multiple places at once"
 msgstr "Redaguoti dokumentą keliose vietose tuo pat metu"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:306
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
+#| msgid "Multi Edit"
+msgid "Multi edit"
+msgstr "Daugybinis redagavimas"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:315
 msgid "Added edit point..."
 msgstr "Pridėtas redagavimo taškas..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:648
+#: ../plugins/multiedit/multiedit/viewactivatable.py:657
 msgid "Column Mode..."
 msgstr "Stulpelių veiksena..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:766
+#: ../plugins/multiedit/multiedit/viewactivatable.py:775
 msgid "Removed edit point..."
 msgstr "Pašalintas redagavimo taškas..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:929
+#: ../plugins/multiedit/multiedit/viewactivatable.py:941
 msgid "Cancelled column mode..."
 msgstr "Atsisakyta stulpelių veiksena..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
 msgstr "Įveskite stulpelių redagavimo veikseną naudodami pasirinkimą"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr ""
 "Įveskite <b>išmanią</b> stulpelių redagavimo veikseną naudodami pasirinkimą"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "<b>Smart</b> column align mode using selection"
 msgstr "<b>Išmanioji</b> stulpelių lygiavimo veiksena naudojant pasirinkimą"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1269
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr ""
 "<b>Išmanioji</b> stulpelių lygiavimo veiksena su papildomais tarpais "
 "naudojant pasirinkimą"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
 msgid "Toggle edit point"
 msgstr "Perjungti redagavimo tašką"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1310
 msgid "Add edit point at beginning of line/selection"
 msgstr "Pridėti redagavimo tašką eilutės/pažymėjimo pradžioje"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
 msgid "Add edit point at end of line/selection"
 msgstr "Pridėti redagavimo tašką eilutės/pažymėjimo pabaigoje"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
 msgid "Align edit points"
 msgstr "Lygiuoti redagavimo taškus"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1275
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
 msgid "Align edit points with additional space"
 msgstr "Lygiuoti redagavimo taškus papildomais tarpais"
 
 #. ex:ts=4:et:
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
+#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:1
 msgid "Smart Spaces"
 msgstr "Išmanieji tarpai"
 
@@ -348,7 +425,13 @@ msgstr "Išmanieji tarpai"
 msgid "Forget you're not using tabulations."
 msgstr "Pamiršti, kad nenaudojate tabuliacijų."
 
+#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
+msgid "Allow to unindent like if you were using tabs while you're using spaces"
+msgstr ""
+"Leisti įtraukos sumažinimą lyg naudotumės tabuliaciją, nors naudojate tarpus"
+
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
+#: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
 msgid "SyncTeX"
 msgstr "SyncTeX"
 
@@ -356,8 +439,12 @@ msgstr "SyncTeX"
 msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Sinchronizuokite tarp LaTeX ir PDF su gedit ir evince."
 
-#: ../plugins/synctex/synctex/synctex.py:310
-#: ../plugins/synctex/synctex/synctex.py:311
+#: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
+#| msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgid "Synchronize between LaTeX and PDF with gedit and evince"
+msgstr "Sinchronizuoti tarp LaTeX ir PDF su gedit ir evince."
+
+#: ../plugins/synctex/synctex/synctex.py:336
 msgid "Forward Search"
 msgstr "Paieška pirmyn"
 
@@ -428,24 +515,10 @@ msgid "If true, allow applications in the terminal to make text boldface."
 msgstr "Jei teigiama, leisti programoms terminale paryškinti tekstą."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:13
-msgid "Characters that are considered \"part of a word\""
-msgstr "Simboliai, kurie yra laikomi „žodžio dalimi“"
-
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:14
-msgid ""
-"When selecting text by word, sequences of these characters are considered "
-"single words. Ranges can be given as \"A-Z\". Literal hyphen (not expressing "
-"a range) should be the first character given."
-msgstr ""
-"Žymint tekstą po žodį, simbolių sekos yra laikomos pavieniais žodžiais. Gali "
-"būti nurodomi rėžiai kaip „A-Z“. Brūkšnelis (nereiškianti rėžio) turi būti "
-"pirmas pateiktas simbolis."
-
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
 msgid "Default color of text in the terminal"
 msgstr "Numatytoji teksto spalva terminale"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:16
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:14
 msgid ""
 "Default color of text in the terminal, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
@@ -454,11 +527,11 @@ msgstr ""
 "HTML stiliaus šešioliktainiai simboliai arba spalvos pavadinimas, pvz. "
 "„red“)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:17
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
 msgid "Default color of terminal background"
 msgstr "Numatytoji terminalo fono spalva"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:18
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:16
 msgid ""
 "Default color of terminal background, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
@@ -466,11 +539,11 @@ msgstr ""
 "Numatytoji terminalo fono spalva kaip spalvos specifikacija (gali būti HTML "
 "stiliaus šešioliktainiai simboliai arba spalvos pavadinimas, pvz. „red“)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:19
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:17
 msgid "Palette for terminal applications"
 msgstr "Paletė terminalo programoms"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:20
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:18
 msgid ""
 "Terminals have a 16-color palette that applications inside the terminal can "
 "use. This is that palette, in the form of a colon-separated list of color "
@@ -480,11 +553,11 @@ msgstr ""
 "yra dvitaškiais skiriamų spalvų pavadinimų paletė. Spalvų pavadinimai turi "
 "būti šešioliktainio formato, pvz. „#FF00FF“"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:21
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:19
 msgid "Whether to use the colors from the theme for the terminal widget"
 msgstr "Ar naudoti temos spalvas terminalo elementui"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:22
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:20
 msgid ""
 "If true, the theme color scheme used for text entry boxes will be used for "
 "the terminal, instead of colors provided by the user."
@@ -492,11 +565,11 @@ msgstr ""
 "Jei teigiama, temos spalvų schema yra naudojama teksto įvedimo laukams "
 "terminalui, užuot naudotus naudotojo pateiktas spalvas."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:21
 msgid "Whether to blink the cursor"
 msgstr "Ar žymiklis mirksi"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:24
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:22
 msgid ""
 "The possible values are \"system\" to use the global cursor blinking "
 "settings, or \"on\" or \"off\" to set the mode explicitly."
@@ -504,11 +577,11 @@ msgstr ""
 "Galimos vertės yra „system“ sistemos visuotiniams žymiklio mirksėjimo "
 "nustatymams, arba „on“ ar „off“ išreikštiniams veikseno nustatymui."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
 msgid "The cursor appearance"
 msgstr "Žymiklio išvaizda"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:26
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:24
 msgid ""
 "The possible values are \"block\" to use a block cursor, \"ibeam\" to use a "
 "vertical line cursor, or \"underline\" to use an underline cursor."
@@ -516,11 +589,11 @@ msgstr ""
 "Galimos vertės yra „block“ bloko žymikliui naudoti, „ibeam“ vertikaliai "
 "linijai arba „underline“ pabraukimui."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:27
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
 msgid "Whether to use the system font"
 msgstr "Ar naudoti sistemos šriftą"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:28
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:26
 msgid ""
 "If true, the terminal will use the desktop-global standard font if it's "
 "monospace (and the most similar font it can come up with otherwise)."
@@ -528,11 +601,11 @@ msgstr ""
 "Jei teigiama, terminalas naudos desktop-global standartinė šriftą, jei jis "
 "lygiaplotis (ir patį panašiausią įmanomą šriftą priešingu atveju)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:29
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:27
 msgid "Font"
 msgstr "Šriftas"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:30
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:28
 msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
 msgstr ""
 "Pango šrifto pavadinimas. Pavyzdžiai yra „Sans 12“ ir „Monospace Bold 14“."
@@ -545,11 +618,17 @@ msgstr "Įntegruotas terminalas"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Apatiniame polangyje integruotas terminalas."
 
-#: ../plugins/terminal/terminal.py:314
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
+#: ../plugins/terminal/terminal.py:311
 msgid "Terminal"
 msgstr "Terminalas"
 
-#: ../plugins/terminal/terminal.py:335
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
+#| msgid "Embed a terminal in the bottom pane."
+msgid "A simple terminal widget accessible from the bottom panel"
+msgstr "Paprastas apatiniame polangyje integruotas terminalas"
+
+#: ../plugins/terminal/terminal.py:332
 msgid "C_hange Directory"
 msgstr "Keis_ti katalogą"
 
@@ -571,8 +650,14 @@ msgid "Text Size"
 msgstr "Teksto dydis"
 
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
 msgid "Easily increase and decrease the text size"
 msgstr "Lengvai didinkite ir mažinkite teksto dydį"
+
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
+#| msgid "Text Size"
+msgid "Text size"
+msgstr "Teksto dydis"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
@@ -609,3 +694,46 @@ msgstr "Žodžių užbaigimas"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Žodžių užbaigimas naudojant užbaigimo karkasą"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
+#| msgid "Word Completion"
+msgid "Word completion"
+msgstr "Žodžių užbaigimas"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
+msgid ""
+"Propose automatic completion using words already present in the document"
+msgstr ""
+"Pasiūlyti automatinį žodžių užbaigimą naudojant dokumente jau esamus žodžius"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
+msgid "Zeitgeist dataprovider"
+msgstr "Zeitgeist duomenų tiekėjas"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
+msgid "Logs access and leave event for documents used with gedit"
+msgstr "Įrašo dokumentų atvėrimą bei užvėrimą su gedit"
+
+#: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:1
+msgid "Zeitgeist Data provider"
+msgstr "Zeitgeist duomenų tiekėjas"
+
+#: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:2
+msgid ""
+"Records user activity and giving easy access to recently-used and frequently-"
+"used files"
+msgstr ""
+"Įrašo naudotojo veiklą ir suteikia prieigą prie neseniai bei dažnai "
+"naudojamų failų"
+
+#~ msgid "Characters that are considered \"part of a word\""
+#~ msgstr "Simboliai, kurie yra laikomi „žodžio dalimi“"
+
+#~ msgid ""
+#~ "When selecting text by word, sequences of these characters are considered "
+#~ "single words. Ranges can be given as \"A-Z\". Literal hyphen (not "
+#~ "expressing a range) should be the first character given."
+#~ msgstr ""
+#~ "Žymint tekstą po žodį, simbolių sekos yra laikomos pavieniais žodžiais. "
+#~ "Gali būti nurodomi rėžiai kaip „A-Z“. Brūkšnelis (nereiškianti rėžio) "
+#~ "turi būti pirmas pateiktas simbolis."
