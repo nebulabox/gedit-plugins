@@ -107,11 +107,22 @@ AM_CONDITIONAL([ENABLE_PYTHON], [test "x$enable_python" = "xyes"])
 dnl ================================================================
 dnl zeitgeist (libzeitgeist)
 dnl ================================================================
-LIBZEITGEIST_REQUIRED=0.9.12
-PKG_CHECK_MODULES([ZEITGEIST], \
-	[zeitgeist-2.0 >= $LIBZEITGEIST_REQUIRED],
-	[have_zeitgeist=yes],
-	[have_zeitgeist=no])
+AC_MSG_CHECKING([whether Zeitgeist support is requested])
+AC_ARG_ENABLE([zeitgeist],
+              AS_HELP_STRING([--enable-zeitgeist], [Enable zeitgeist support]),
+              [enable_zeitgeist=$enableval],
+              [enable_zeitgeist="yes"])
+
+if test "x$enable_zeitgeist" = "xyes"
+then
+	LIBZEITGEIST_REQUIRED=0.9.12
+	PKG_CHECK_MODULES([ZEITGEIST], \
+		[zeitgeist-2.0 >= $LIBZEITGEIST_REQUIRED],
+		[have_zeitgeist=yes],
+		[have_zeitgeist=no])
+else
+    have_zeitgeist=no
+fi
 
 if test "x$have_zeitgeist" = "xyes"; then
 	PLUGINS="$PLUGINS zeitgeist"
@@ -172,14 +183,20 @@ then
 	# ================================================================
 	# Dashboard (Zeitgeist)
 	# ================================================================
-	AC_MSG_CHECKING([for dashboard dependency zeitgeist])
-	if `$PYTHON -c "import gi; gi.require_version('Zeitgeist', '2.0')" 2>/dev/null`;
+	if test "x$enable_zeitgeist" = "xyes"
 	then
-		have_dashboard=yes
-		PLUGINS="$PLUGINS dashboard"
+		AC_MSG_CHECKING([for dashboard dependency zeitgeist])
+		if `$PYTHON -c "import gi; gi.require_version('Zeitgeist', '2.0')" 2>/dev/null`;
+		then
+			have_dashboard=yes
+			PLUGINS="$PLUGINS dashboard"
+		else
+			have_dashboard=no
+			disabled_plugins="$disabled_plugins dashboard (Zeitgeist gi not found)"
+		fi
 	else
 		have_dashboard=no
-		disabled_plugins="$disabled_plugins dashboard (Zeitgeist gi not found)"
+		disabled_plugins="$disabled_plugins dashboard (Zeitgeist disabled)"
 	fi
 
 	AC_MSG_RESULT($have_dashboard)
