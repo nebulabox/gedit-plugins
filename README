@@ -10,33 +10,3 @@ Installation
 For the moment, you have to ./configure with --prefix=same prefix as you
 configured gedit with.
 
-How to choose which plugins to build:
-
-./configure --with-plugins=pl1,pl2,...
-
-where pl1, pl2 ... are one of the following:
-
-bookmarks		Easy document navigation with bookmarks
-bracketcompletion	Automatically adds closing brackets.
-charmap			Insert special characters just by clicking on them.
-codecomment		Comment and uncomment blocks of code.
-colorpicker		Pick a color from a dialog and insert its hexadecimal 
-			representation.
-colorschemer		Create and edit the color scheme used for syntax highlighting.
-commander		Command gedit from a command line like interface
-dashboard		A Dashboard created in every new tab for quick finding of
-			recently and frequently used items, with an ability to search
-drawspaces		Draw spaces and tabs.
-git			Shows document changes related to git's HEAD.
-joinlines		Join several lines or split long ones.
-multiedit		Edit document in multiple places at once
-showtabbar		Add a menu entry to show/hide the tabbar.
-smartspaces		Forget you're not using tabulations.
-synctex			SyncTeX synchronization of TeX files and PDF output.
-terminal		Embed a terminal in the bottom pane.
-textsize		Easily increase and decrease the text size.
-wordcompletion		Word completion using the completion framework.
-zeitgeist		Records user activity and giving easy access to recently-used
-			and frequently-used files.
-
-all			All of the above plugins
