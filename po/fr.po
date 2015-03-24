@@ -15,15 +15,16 @@ msgstr ""
 "Project-Id-Version: gedit-plugins HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-05-13 10:35+0000\n"
-"PO-Revision-Date: 2013-05-13 15:07+0200\n"
+"POT-Creation-Date: 2015-03-24 06:19+0000\n"
+"PO-Revision-Date: 2015-03-24 11:47+0100\n"
 "Last-Translator: Pierre Henry <pierrehenry73@yahoo.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
-"Language: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Generator: Poedit 1.7.5\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 msgid "Bookmarks"
@@ -33,29 +34,17 @@ msgstr "Signets"
 msgid "Easy document navigation with bookmarks"
 msgstr "Navigation aisée dans vos documents avec des signets"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:201
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:141
 msgid "Toggle Bookmark"
 msgstr "Activer/désactiver le signet"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:202
-msgid "Toggle bookmark status of the current line"
-msgstr "Inverse l'état de signet de la ligne actuelle"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:204
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:145
 msgid "Goto Next Bookmark"
 msgstr "Aller au signet suivant"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:205
-msgid "Goto the next bookmark"
-msgstr "Va au signet suivant"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:207
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:149
 msgid "Goto Previous Bookmark"
 msgstr "Aller au signet précédent"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:208
-msgid "Goto the previous bookmark"
-msgstr "Va au signet précédent"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
 msgid "Bracket Completion"
@@ -66,7 +55,7 @@ msgid "Automatically adds closing brackets."
 msgstr "Ajoute automatiquement les parenthèses fermantes."
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:51
+#: ../plugins/charmap/charmap/__init__.py:49
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Table de caractères"
@@ -83,21 +72,13 @@ msgstr "Commentateur de code"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Commente ou décommente un bloc de code sélectionné."
 
-#: ../plugins/codecomment/codecomment.py:88
+#: ../plugins/codecomment/codecomment.py:111
 msgid "Co_mment Code"
 msgstr "_Commenter le code"
 
-#: ../plugins/codecomment/codecomment.py:90
-msgid "Comment the selected code"
-msgstr "Commente le code sélectionné"
-
-#: ../plugins/codecomment/codecomment.py:94
+#: ../plugins/codecomment/codecomment.py:117
 msgid "U_ncomment Code"
 msgstr "_Décommenter le code"
-
-#: ../plugins/codecomment/codecomment.py:96
-msgid "Uncomment the selected code"
-msgstr "Décommente le code sélectionné"
 
 #. ex:ts=4:et:
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
@@ -110,21 +91,18 @@ msgstr ""
 "Pioche une couleur dans une boîte de dialogue et l'insère sous sa forme "
 "hexadécimale."
 
-#: ../plugins/colorpicker/colorpicker.py:161
+#: ../plugins/colorpicker/colorpicker.py:128
 msgid "Pick _Color..."
 msgstr "Sélectionner une _couleur..."
 
-#: ../plugins/colorpicker/colorpicker.py:162
-msgid "Pick a color from a dialog"
-msgstr "Choisir une couleur à partir d'une boîte de dialogue"
-
-#: ../plugins/colorpicker/colorpicker.py:178
+#: ../plugins/colorpicker/colorpicker.py:168
 msgid "Pick Color"
 msgstr "Sélectionner une couleur"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
-#: ../plugins/colorschemer/schemer/schemer.ui.h:1
+#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Éditeur de jeu de couleurs"
 
@@ -132,62 +110,67 @@ msgstr "Éditeur de jeu de couleurs"
 msgid "Source code color scheme editor"
 msgstr "Éditeur de jeu de couleurs de code source"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:2
+#: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
 msgstr "Gras"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
+#: ../plugins/colorschemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Italique"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
+#: ../plugins/colorschemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Souligné"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
+#: ../plugins/colorschemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Barré"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
+#: ../plugins/colorschemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "Choisir la couleur d'arrière-plan"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
+#: ../plugins/colorschemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Choisir la couleur du premier plan"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
+#: ../plugins/colorschemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "A_rrière-plan"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+#: ../plugins/colorschemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "_Premier plan"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "Effa_cer"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Nom"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer.ui.h:12
 msgid "ID"
 msgstr "Identifiant"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Description"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
+#: ../plugins/colorschemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Auteur"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+#: ../plugins/colorschemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Exemple"
 
+#: ../plugins/commander/commander/appactivatable.py:47
+msgid "Commander Mode"
+msgstr "Mode Commander"
+
+#. vi:ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 msgid "Commander"
 msgstr "Commander"
@@ -195,14 +178,6 @@ msgstr "Commander"
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:2
 msgid "Command line interface for advanced editing"
 msgstr "Interface en ligne de commande pour l'édition avancée"
-
-#: ../plugins/commander/commander/windowactivatable.py:70
-msgid "Commander Mode"
-msgstr "Mode Commander"
-
-#: ../plugins/commander/commander/windowactivatable.py:71
-msgid "Start commander mode"
-msgstr "Démarre le mode Commander"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
@@ -230,46 +205,39 @@ msgstr "Indicateur d'espaces"
 msgid "Draw spaces and tabs"
 msgstr "Indique les espaces et les tabulations"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Afficher les _espaces vides"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:135
-msgid "Show spaces and tabs"
-msgstr "Affiche les espaces et les tabulations"
-
 #. ex:set ts=8 noet:
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
 msgid "Draw spaces"
 msgstr "Indiquer les espaces"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:2
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:2
 msgid "Draw tabs"
 msgstr "Indiquer les tabulations"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:3
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:3
 msgid "Draw new lines"
 msgstr "Indiquer les sauts de ligne"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:4
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:4
 msgid "Draw non-breaking spaces"
 msgstr "Indiquer les espaces insécables"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:5
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:5
 msgid "Draw leading spaces"
 msgstr "Indiquer les espaces de début"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:6
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:6
 msgid "Draw spaces in text"
 msgstr "Indiquer les espaces dans le texte"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:7
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:7
 msgid "Draw trailing spaces"
 msgstr "Indiquer les espaces de fin"
-
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
-msgid "Enabled"
-msgstr "Activé"
 
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
 msgid "If TRUE drawing will be enabled."
@@ -279,6 +247,16 @@ msgstr "Si VRAI (TRUE), l'affichage est activé."
 msgid "The type of spaces to be drawn."
 msgstr "Le type d'espace à indiquer."
 
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
+msgid "Git"
+msgstr "Git"
+
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Highlight lines that have been changed since the last commit"
+msgstr ""
+"Surligner les lignes qui ont été changées depuis la dernière validation de "
+"modifications"
+
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
 msgstr "Joindre/couper les lignes"
@@ -287,87 +265,18 @@ msgstr "Joindre/couper les lignes"
 msgid "Join several lines or split long ones"
 msgstr "Joint plusieurs lignes ou sépare les longues lignes"
 
-#: ../plugins/joinlines/joinlines.py:74
+#: ../plugins/joinlines/joinlines.py:106
 msgid "_Join Lines"
 msgstr "_Joindre des lignes"
 
-#: ../plugins/joinlines/joinlines.py:75
-msgid "Join the selected lines"
-msgstr "Joint les lignes sélectionnées"
-
-#: ../plugins/joinlines/joinlines.py:77
+#: ../plugins/joinlines/joinlines.py:112
 msgid "_Split Lines"
 msgstr "_Couper des lignes"
 
-#: ../plugins/joinlines/joinlines.py:78
-msgid "Split the selected lines"
-msgstr "Coupe les lignes sélectionnées"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:301
-msgid "Added edit point..."
-msgstr "Point d'édition ajouté..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:643
-msgid "Column Mode..."
-msgstr "Mode colonne..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:757
-msgid "Removed edit point..."
-msgstr "Point d'édition supprimé..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:920
-msgid "Cancelled column mode..."
-msgstr "Mode colonne annulé..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1293
-msgid "Enter column edit mode using selection"
-msgstr "Démarre le mode d'édition en colonne en utilisant la sélection"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1294
-msgid "Enter <b>smart</b> column edit mode using selection"
-msgstr ""
-"Démarre le mode d'édition en colonne <b>intelligent</b> en utilisant la "
-"sélection"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1295
-msgid "<b>Smart</b> column align mode using selection"
-msgstr ""
-"Mode d'alignement de colonne <b>intelligent</b> en utilisant la sélection"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1296
-msgid "<b>Smart</b> column align mode with additional space using selection"
-msgstr ""
-"Mode d'alignement de colonne <b>intelligent</b> avec espace supplémentaire "
-"en utilisant la sélection"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1298
-msgid "Toggle edit point"
-msgstr "Basculer le point d'édition"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1299
-msgid "Add edit point at beginning of line/selection"
-msgstr "Ajoute un point d'édition au début de la ligne ou de la sélection"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1300
-msgid "Add edit point at end of line/selection"
-msgstr "Ajoute un point d'édition à la fin de la ligne ou de la sélection"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1301
-msgid "Align edit points"
-msgstr "Aligner les points d'édition"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1302
-msgid "Align edit points with additional space"
-msgstr "Aligner les points d'édition avec espace supplémentaire"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1333
-#: ../plugins/multiedit/multiedit/__init__.py:79
+#: ../plugins/multiedit/multiedit/appactivatable.py:36
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
 msgid "Multi Edit Mode"
 msgstr "Mode d'édition multiple"
-
-#: ../plugins/multiedit/multiedit/__init__.py:81
-msgid "Start multi edit mode"
-msgstr "Lancer le mode édition multiple"
 
 #. ex:ts=4:et:
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:1
@@ -378,6 +287,64 @@ msgstr "Édition multiple"
 msgid "Edit document in multiple places at once"
 msgstr "Éditer un document à plusieurs endroits en même temps"
 
+#: ../plugins/multiedit/multiedit/viewactivatable.py:305
+msgid "Added edit point..."
+msgstr "Point d'édition ajouté..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:647
+msgid "Column Mode..."
+msgstr "Mode colonne..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:765
+msgid "Removed edit point..."
+msgstr "Point d'édition supprimé..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:928
+msgid "Cancelled column mode..."
+msgstr "Mode colonne annulé..."
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1265
+msgid "Enter column edit mode using selection"
+msgstr "Démarre le mode d'édition en colonne en utilisant la sélection"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
+msgid "Enter <b>smart</b> column edit mode using selection"
+msgstr ""
+"Démarre le mode d'édition en colonne <b>intelligent</b> en utilisant la "
+"sélection"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
+msgid "<b>Smart</b> column align mode using selection"
+msgstr ""
+"Mode d'alignement de colonne <b>intelligent</b> en utilisant la sélection"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
+msgid "<b>Smart</b> column align mode with additional space using selection"
+msgstr ""
+"Mode d'alignement de colonne <b>intelligent</b> avec espace supplémentaire "
+"en utilisant la sélection"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1270
+msgid "Toggle edit point"
+msgstr "Basculer le point d'édition"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
+msgid "Add edit point at beginning of line/selection"
+msgstr "Ajoute un point d'édition au début de la ligne ou de la sélection"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
+msgid "Add edit point at end of line/selection"
+msgstr "Ajoute un point d'édition à la fin de la ligne ou de la sélection"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
+msgid "Align edit points"
+msgstr "Aligner les points d'édition"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
+msgid "Align edit points with additional space"
+msgstr "Aligner les points d'édition avec espace supplémentaire"
+
+#. ex:ts=4:et:
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 msgid "Smart Spaces"
 msgstr "Espaces intelligents"
@@ -394,8 +361,7 @@ msgstr "SyncTeX"
 msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Synchroniser entre LaTeX et PDF avec gedit et evince."
 
-#: ../plugins/synctex/synctex/synctex.py:310
-#: ../plugins/synctex/synctex/synctex.py:311
+#: ../plugins/synctex/synctex/synctex.py:336
 msgid "Forward Search"
 msgstr "Recherche en avant"
 
@@ -600,25 +566,25 @@ msgstr "Terminal intégré"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Intègre un terminal dans le panneau du bas."
 
-#: ../plugins/terminal/terminal.py:262
+#: ../plugins/terminal/terminal.py:314
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../plugins/terminal/terminal.py:283
+#: ../plugins/terminal/terminal.py:335
 msgid "C_hange Directory"
 msgstr "C_hanger de répertoire"
 
-#: ../plugins/textsize/textsize/__init__.py:142
-msgid "_Larger Text"
-msgstr "Texte p_lus grand"
+#: ../plugins/textsize/textsize/__init__.py:50
+msgid "_Normal size"
+msgstr "Taille _normale"
 
-#: ../plugins/textsize/textsize/__init__.py:145
+#: ../plugins/textsize/textsize/__init__.py:52
 msgid "S_maller Text"
 msgstr "Texte plus _petit"
 
-#: ../plugins/textsize/textsize/__init__.py:148
-msgid "_Normal size"
-msgstr "Taille _normale"
+#: ../plugins/textsize/textsize/__init__.py:54
+msgid "_Larger Text"
+msgstr "Texte p_lus grand"
 
 #. ex:ts=4:et:
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:1
@@ -629,10 +595,33 @@ msgstr "Taille de texte"
 msgid "Easily increase and decrease the text size"
 msgstr "Augmente ou diminue facilement la taille du texte"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:153
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:200
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
+msgid "Interactive completion"
+msgstr "Complétion interactive"
+
+#: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
+msgid "Minimum word size:"
+msgstr "Longueur minimum de mot :"
+
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
 msgid "Document Words"
 msgstr "Mots du document"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+msgid "Interactive Completion"
+msgstr "Complétion interactive"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+msgid "Whether to enable interactive completion."
+msgstr "Activer ou non la complétion interactive."
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+msgid "Minimum Word Size"
+msgstr "Longueur minimum de mot"
+
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+msgid "The minimum word size to complete."
+msgstr "La longueur minimum de mot à compléter."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
@@ -641,6 +630,42 @@ msgstr "Complétion de mots"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Complétion de mots, utilise la structure de complétion"
+
+#~ msgid "Toggle bookmark status of the current line"
+#~ msgstr "Inverse l'état de signet de la ligne actuelle"
+
+#~ msgid "Goto the next bookmark"
+#~ msgstr "Va au signet suivant"
+
+#~ msgid "Goto the previous bookmark"
+#~ msgstr "Va au signet précédent"
+
+#~ msgid "Comment the selected code"
+#~ msgstr "Commente le code sélectionné"
+
+#~ msgid "Uncomment the selected code"
+#~ msgstr "Décommente le code sélectionné"
+
+#~ msgid "Pick a color from a dialog"
+#~ msgstr "Choisir une couleur à partir d'une boîte de dialogue"
+
+#~ msgid "Start commander mode"
+#~ msgstr "Démarre le mode Commander"
+
+#~ msgid "Show spaces and tabs"
+#~ msgstr "Affiche les espaces et les tabulations"
+
+#~ msgid "Enabled"
+#~ msgstr "Activé"
+
+#~ msgid "Join the selected lines"
+#~ msgstr "Joint les lignes sélectionnées"
+
+#~ msgid "Split the selected lines"
+#~ msgstr "Coupe les lignes sélectionnées"
+
+#~ msgid "Start multi edit mode"
+#~ msgstr "Lancer le mode édition multiple"
 
 #~ msgid "Most Used"
 #~ msgstr "Utilisé fréquemment"
