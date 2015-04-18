@@ -29,6 +29,11 @@ plugins/drawspaces/gedit-drawspaces.metainfo.xml.in
 plugins/drawspaces/gedit-drawspaces-app-activatable.c
 [type: gettext/glade]plugins/drawspaces/gedit-drawspaces-configurable.ui
 plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in
+plugins/findinfiles/dialog.vala
+plugins/findinfiles/plugin.vala
+plugins/findinfiles/result-panel.vala
+plugins/findinfiles/findinfiles.plugin.desktop.in.in
+[type: gettext/glade]plugins/findinfiles/dialog.ui
 plugins/git/git.plugin.desktop.in.in
 plugins/git/gedit-git.metainfo.xml.in
 plugins/joinlines/joinlines.plugin.desktop.in.in

@@ -71,6 +71,9 @@ C_PLUGINS="bookmarks drawspaces wordcompletion"
 # Python plugins that don't need special dependencies, besides Python
 PY_PLUGINS="bracketcompletion codecomment colorpicker colorschemer commander joinlines multiedit smartspaces textsize"
 
+# Vala plugins that don't need special dependencies, besides Vala
+VALA_PLUGINS="findinfiles"
+
 PLUGINS="$C_PLUGINS"
 disabled_plugins=""
 
@@ -97,6 +100,33 @@ then
 fi
 
 AM_CONDITIONAL([ENABLE_PYTHON], [test "x$have_python" = "xyes"])
+
+# Vala
+AC_MSG_CHECKING([whether Vala support is requested])
+AC_ARG_ENABLE([vala],
+              AS_HELP_STRING([--enable-vala], [Enable Vala support]),
+              [enable_vala=$enableval],
+              [enable_vala=auto])
+AC_MSG_RESULT([$enable_vala])
+
+if test "x$enable_vala" != "xno"
+then
+	# This could probably be lower, but let's take the current version
+	VALA_REQUIRED=0.28.0
+	AM_PROG_VALAC([$VALA_REQS])
+	if test "x$VALAC" = "x"; then
+		if test "x$enable_vala" = "xyes"; then
+			AC_MSG_ERROR([Vala support explicitly requested, but not found])
+		fi
+		have_vala=no
+	else
+		have_vala=yes
+	fi
+else
+	have_vala=no
+fi
+
+AM_CONDITIONAL([ENABLE_VALA], [test "x$have_vala" = "xyes"])
 
 # zeitgeist (libzeitgeist)
 AC_MSG_CHECKING([whether Zeitgeist support is requested])
@@ -224,6 +254,13 @@ AM_CONDITIONAL([ENABLE_DASHBOARD], test "x$have_dashboard" = "xyes")
 AM_CONDITIONAL([ENABLE_CHARMAP], test "x$have_gucharmap" = "xyes")
 AM_CONDITIONAL([ENABLE_GIT], test "x$have_git2" = "xyes")
 
+# disable all Vala plugins if there is no Vala support
+if test "x$have_vala" = "xyes"; then
+	PLUGINS="$PLUGINS $VALA_PLUGINS"
+else
+	disabled_plugins="$disabled_plugins $VALA_PLUGINS"
+fi
+
 AC_SUBST(PLUGINS)
 
 # ================================================================
@@ -283,6 +320,7 @@ plugins/commander/commander.plugin.desktop.in
 plugins/dashboard/dashboard.plugin.desktop.in
 plugins/drawspaces/drawspaces.plugin.desktop.in
 plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in
+plugins/findinfiles/findinfiles.plugin.desktop.in
 plugins/git/git.plugin.desktop.in
 plugins/joinlines/joinlines.plugin.desktop.in
 plugins/multiedit/multiedit.plugin.desktop.in
@@ -305,6 +343,7 @@ Configuration:
 	Compiler:               ${CC}
 	Prefix:                 ${prefix}
 	Python Plugins Support: ${have_python}
+	Vala Plugins Support:   ${have_vala}
 
 	Plugins:
 	  ${PLUGINS}

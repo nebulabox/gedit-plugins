@@ -22,6 +22,7 @@ include plugins/colorschemer/Makefile.am
 include plugins/commander/Makefile.am
 include plugins/dashboard/Makefile.am
 include plugins/drawspaces/Makefile.am
+include plugins/findinfiles/Makefile.am
 include plugins/git/Makefile.am
 include plugins/joinlines/Makefile.am
 include plugins/multiedit/Makefile.am
