@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.63])
- 
+
 m4_define(gedit_plugins_major_version, 3)
 m4_define(gedit_plugins_minor_version, 16)
 m4_define(gedit_plugins_micro_version, 0)
@@ -44,9 +44,6 @@ esac
 AC_MSG_RESULT([$platform_win32])
 AM_CONDITIONAL(PLATFORM_WIN32, test "$platform_win32" = "yes")
 
-# ================================================================
-# Gettext stuff.
-# ================================================================
 IT_PROG_INTLTOOL([0.40.0])
 
 AM_GNU_GETTEXT_VERSION([0.17])
@@ -55,10 +52,6 @@ AM_GNU_GETTEXT([external])
 GETTEXT_PACKAGE=gedit-plugins
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
-
-# ================================================================
-# Start of pkg-config checks
-# ================================================================
 
 PKG_CHECK_MODULES(GEDIT, [
 	glib-2.0 >= 2.32.0
@@ -70,58 +63,61 @@ PKG_CHECK_MODULES(GEDIT, [
 	gedit >= 3.16.0
 ])
 
-dnl ================================================================
-dnl GSettings stuff
-dnl ================================================================
 GLIB_GSETTINGS
-
-# ================================================================
-# Plugins
-# ================================================================
-
-AC_ARG_ENABLE([verify-all],
-              AC_HELP_STRING([--enable-verify-all], [verify that all plugins are enabled]),
-              [enable_verify_all=$enableval],
-              [enable_verify_all="no"])
 
 # C plugins that don't need special dependencies
 C_PLUGINS="bookmarks drawspaces wordcompletion"
 
-# Python plugins that don't need special dependencies, besides python
+# Python plugins that don't need special dependencies, besides Python
 PY_PLUGINS="bracketcompletion codecomment colorpicker colorschemer commander joinlines multiedit smartspaces textsize"
 
 PLUGINS="$C_PLUGINS"
 disabled_plugins=""
 
-# ================================================================
+# Check all plugins are built
+AC_ARG_ENABLE([verify-all],
+              AC_HELP_STRING([--enable-verify-all], [verify that all plugins are enabled]),
+              [enable_verify_all=$enableval],
+              [enable_verify_all="no"])
+
 # Python
-# ================================================================
 AC_MSG_CHECKING([whether Python support is requested])
 AC_ARG_ENABLE([python],
-              AS_HELP_STRING([--enable-python], [Enable python support]),
+              AS_HELP_STRING([--enable-python], [Enable Python support]),
               [enable_python=$enableval],
-              [enable_python="yes"])
+              [enable_python=auto])
+AC_MSG_RESULT([$enable_python])
 
-AM_CONDITIONAL([ENABLE_PYTHON], [test "x$enable_python" = "xyes"])
+if test "x$enable_python" != "xno"
+then
+	AM_PATH_PYTHON(3, [have_python=yes], [have_python=no])
+	if test "x$enable_python" = "xyes" -a "x$have_python" = "xno"; then
+		AC_MSG_ERROR([Python support explicitly requested, but not found])
+	fi
+fi
 
-dnl ================================================================
-dnl zeitgeist (libzeitgeist)
-dnl ================================================================
+AM_CONDITIONAL([ENABLE_PYTHON], [test "x$have_python" = "xyes"])
+
+# zeitgeist (libzeitgeist)
 AC_MSG_CHECKING([whether Zeitgeist support is requested])
 AC_ARG_ENABLE([zeitgeist],
               AS_HELP_STRING([--enable-zeitgeist], [Enable zeitgeist support]),
               [enable_zeitgeist=$enableval],
-              [enable_zeitgeist="yes"])
+              [enable_zeitgeist=auto])
+AC_MSG_RESULT([$enable_zeitgeist])
 
-if test "x$enable_zeitgeist" = "xyes"
+if test "x$enable_zeitgeist" != "xno"
 then
 	LIBZEITGEIST_REQUIRED=0.9.12
 	PKG_CHECK_MODULES([ZEITGEIST], \
 		[zeitgeist-2.0 >= $LIBZEITGEIST_REQUIRED],
 		[have_zeitgeist=yes],
 		[have_zeitgeist=no])
+	if test "x$enable_zeitgeist" = "xyes" -a "x$have_zeitgeist" = "xno"; then
+		AC_MSG_ERROR([Zeitgeist support explicitly requested, but not found])
+	fi
 else
-    have_zeitgeist=no
+	have_zeitgeist=no
 fi
 
 if test "x$have_zeitgeist" = "xyes"; then
@@ -130,19 +126,14 @@ else
 	disabled_plugins="$disabled_plugins zeitgeist"
 fi
 
-AM_CONDITIONAL([ENABLE_ZEITGEIST], test "x$have_zeitgeist" = "xyes")
+AM_CONDITIONAL([ENABLE_ZEITGEIST], [test "x$have_zeitgeist" = "xyes"])
 
-# ================================================================
 # disable all python plugins if there is no python support
-# ================================================================
-if test "x$enable_python" = "xyes"
+if test "x$have_python" = "xyes"
 then
-	AM_PATH_PYTHON(3)
 	PLUGINS="$PLUGINS $PY_PLUGINS"
 
-	# ================================================================
 	# Synctex (dbus-python)
-	# ================================================================
 	DBUSPYTHON_REQUIRED=0.82
 	PKG_CHECK_MODULES([DBUSPYTHON],
 		[dbus-python >= $DBUSPYTHON_REQUIRED],
@@ -162,10 +153,7 @@ then
 		disabled_plugins="$disabled_plugins synctex (dbus-python not found)"
 	fi
 
-
-	# ================================================================
 	# Terminal (vte)
-	# ================================================================
 	AC_MSG_CHECKING([for terminal dependency vte])
 
 	if `$PYTHON -c "import gi; gi.require_version('Vte', '2.91')" 2>/dev/null`;
@@ -179,11 +167,8 @@ then
 
 	AC_MSG_RESULT($have_vte)
 
-
-	# ================================================================
 	# Dashboard (Zeitgeist)
-	# ================================================================
-	if test "x$enable_zeitgeist" = "xyes"
+	if test "x$have_zeitgeist" = "xyes"
 	then
 		AC_MSG_CHECKING([for dashboard dependency zeitgeist])
 		if `$PYTHON -c "import gi; gi.require_version('Zeitgeist', '2.0')" 2>/dev/null`;
@@ -201,10 +186,7 @@ then
 
 	AC_MSG_RESULT($have_dashboard)
 
-
-	# ================================================================
 	# Charmap (Gucharmap)
-	# ================================================================
 	AC_MSG_CHECKING([for charmap dependency gucharmap])
 	if `$PYTHON -c "import gi; gi.require_version('Gucharmap', '2.90')" 2>/dev/null`;
 	then
@@ -217,10 +199,7 @@ then
 
 	AC_MSG_RESULT($have_gucharmap)
 
-
-	# ================================================================
 	# Git (libgit2-glib)
-	# ================================================================
 	LIBGIT2_GLIB_REQUIRED=0.0.6
 	PKG_CHECK_MODULES([GIT2_GLIB],
 		[libgit2-glib-1.0 >= $LIBGIT2_GLIB_REQUIRED],
@@ -324,12 +303,14 @@ Configuration:
 
 	Source code location:   ${srcdir}
 	Compiler:               ${CC}
-	Prefix:			${prefix}
-	Python Plugins Support: $enable_python
-	Plugins:
-	  $PLUGINS
+	Prefix:                 ${prefix}
+	Python Plugins Support: ${have_python}
 
-	Disabled plugins:       $disabled_plugins
+	Plugins:
+	  ${PLUGINS}
+
+	Disabled plugins:
+	  ${disabled_plugins}
 
 Note: you have to install these plugins into the same prefix as your gedit
 installation (probably /usr if you're using your distro packages, /usr/local
