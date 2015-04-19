@@ -214,7 +214,7 @@ class ResultPanel : Overlay {
 
         // The stop button is showed in the bottom-left corner of the TreeView
         stop_button = new Button.from_icon_name ("process-stop-symbolic", IconSize.BUTTON);
-        stop_button.set_tooltip_text ("Stop the search");
+        stop_button.set_tooltip_text _("Stop the search");
         stop_button.set_visible (false);
         stop_button.set_valign (Align.END);
         stop_button.set_halign (Align.END);

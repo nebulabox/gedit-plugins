@@ -71,7 +71,7 @@ class FindDialog : Gtk.Dialog {
         if (Gtk.Settings.get_default ().gtk_dialogs_use_header) {
             var header_bar = new Gtk.HeaderBar ();
 
-            header_bar.set_title ("Find in Files");
+            header_bar.set_title _("Find in Files");
             header_bar.set_show_close_button (true);
 
             this.set_titlebar (header_bar);
