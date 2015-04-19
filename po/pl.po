@@ -10,14 +10,14 @@
 # Wadim Dziedzic <wdziedzic@aviary.pl>, 2007.
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008-2009.
 # Piotr Zaryk <pzaryk@aviary.pl>, 2008.
-# Piotr Drąg <piotrdrag@gmail.com>, 2009-2014.
-# Aviary.pl <gnomepl@aviary.pl>, 2006-2014.
+# Piotr Drąg <piotrdrag@gmail.com>, 2009-2015.
+# Aviary.pl <gnomepl@aviary.pl>, 2006-2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-01 15:04+0200\n"
-"PO-Revision-Date: 2014-07-01 15:05+0200\n"
+"POT-Creation-Date: 2015-04-19 16:32+0200\n"
+"PO-Revision-Date: 2015-04-19 16:33+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -123,11 +123,11 @@ msgstr ""
 "Umożliwia wybieranie i wstawianie koloru z okna dialogowego (dla języków "
 "HTML, CSS, PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:128
-msgid "Pick _Color..."
-msgstr "Wybór _koloru..."
+#: ../plugins/colorpicker/colorpicker.py:129
+msgid "Pick _Color…"
+msgstr "Wybierz _kolor…"
 
-#: ../plugins/colorpicker/colorpicker.py:168
+#: ../plugins/colorpicker/colorpicker.py:169
 msgid "Pick Color"
 msgstr "Wybór koloru"
 
@@ -225,8 +225,8 @@ msgid "Empty Document"
 msgstr "Pusty dokument"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "Wyszukiwanie..."
+msgid "Type here to search…"
+msgstr "Wyszukiwanie…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -300,6 +300,67 @@ msgstr "Jeśli wynosi \"true\", to rysowanie zostanie wyłączone."
 msgid "The type of spaces to be drawn."
 msgstr "Typy spacji do rysowania."
 
+#: ../plugins/findinfiles/dialog.vala:61
+msgid "Select a _folder"
+msgstr "Wybierz _katalog"
+
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:74
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "Wyszukiwanie w plikach"
+
+#: ../plugins/findinfiles/dialog.vala:79
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "Za_mknij"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Znajdź w plikach…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Brak wyników"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Zatrzymuje wyszukiwanie"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Wyszukiwanie tekstu we wszystkich plikach w katalogu."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_Znajdź"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "Wy_szukiwanie "
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_W "
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "_Match case"
+msgstr "_Rozróżnianie małych i wielkich liter"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "Match _entire word only"
+msgstr "Tylko _całe wyrazy"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Re_gular expression"
+msgstr "Wyrażenie reg_ularne"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -335,16 +396,16 @@ msgstr ""
 "Umożliwia łączenie lub dzielenie wielu wierszy za pomocą klawiszy Ctrl+J i "
 "Ctrl+Shift+J"
 
-#: ../plugins/joinlines/joinlines.py:106
+#: ../plugins/joinlines/joinlines.py:107
 msgid "_Join Lines"
 msgstr "_Połącz wiersze"
 
-#: ../plugins/joinlines/joinlines.py:112
+#: ../plugins/joinlines/joinlines.py:113
 msgid "_Split Lines"
 msgstr "P_odziel wiersze"
 
 #: ../plugins/multiedit/multiedit/appactivatable.py:36
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1349
 msgid "Multi Edit Mode"
 msgstr "Tryb edycji w wieli miejscach"
 
@@ -362,58 +423,58 @@ msgstr "Modyfikowanie dokumentu w wielu miejscach na raz"
 msgid "Multi edit"
 msgstr "Edycja w wielu miejscach"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:305
-msgid "Added edit point..."
-msgstr "Dodano punkt modyfikowania..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:315
+msgid "Added edit point…"
+msgstr "Dodano punkt modyfikowania…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:647
-msgid "Column Mode..."
-msgstr "Tryb kolumny..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:657
+msgid "Column Mode…"
+msgstr "Tryb kolumny…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:765
-msgid "Removed edit point..."
-msgstr "Usunięto punkt modyfikowania..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:775
+msgid "Removed edit point…"
+msgstr "Usunięto punkt modyfikowania…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:928
-msgid "Cancelled column mode..."
-msgstr "Anulowano tryb kolumny..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:941
+msgid "Cancelled column mode…"
+msgstr "Anulowano tryb kolumny…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1265
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
 msgstr "Proszę podać tryb edycji kolumny używając zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr ""
 "Proszę podać <b>inteligentny</b> tryb edycji kolumny używając zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "<b>Smart</b> column align mode using selection"
 msgstr "<b>Inteligentny</b> tryb dopasowania kolumny używając zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr ""
 "<b>Inteligentny</b> tryb dopasowania kolumny za pomocą dodatkowego miejsca "
 "używając zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1270
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
 msgid "Toggle edit point"
 msgstr "Przełącz punkt modyfikowania"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1310
 msgid "Add edit point at beginning of line/selection"
 msgstr "Dodaj punkt modyfikowania na początku wiersza/zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
 msgid "Add edit point at end of line/selection"
 msgstr "Dodaj punkt modyfikowania na końcu wiersza/zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
 msgid "Align edit points"
 msgstr "Dopasuj punkt modyfikowania"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
 msgid "Align edit points with additional space"
 msgstr "Dopasuj punkty modyfikowania za pomocą dodatkowego miejsca"
 
@@ -633,7 +694,7 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Osadza terminal w dolnym panelu."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:313
+#: ../plugins/terminal/terminal.py:311
 msgid "Terminal"
 msgstr "Terminal"
 
@@ -641,7 +702,7 @@ msgstr "Terminal"
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Prosty widżet terminala dostępny w dolnym panelu"
 
-#: ../plugins/terminal/terminal.py:334
+#: ../plugins/terminal/terminal.py:332
 msgid "C_hange Directory"
 msgstr "Zmień _katalog"
 
