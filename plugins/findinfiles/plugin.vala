@@ -156,7 +156,7 @@ public class App : GLib.Object, Gedit.AppActivatable {
     public void activate () {
         menu_ext = extend_menu ("search-section");
 
-        var item = new GLib.MenuItem (_("Find in Files..."), "win.find-in-files");
+        var item = new GLib.MenuItem (_("Find in Files…"), "win.find-in-files");
         menu_ext.append_menu_item (item);
 
         app.add_accelerator ("<Shift><Ctrl>f", "win.find-in-files", null);

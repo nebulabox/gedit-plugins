@@ -126,7 +126,7 @@ class ColorPickerAppActivatable(GObject.Object, Gedit.AppActivatable):
 
     def do_activate(self):
         self.menu_ext = self.extend_menu("tools-section")
-        item = Gio.MenuItem.new(_("Pick _Color..."), "win.colorpicker")
+        item = Gio.MenuItem.new(_("Pick _Color…"), "win.colorpicker")
         self.menu_ext.prepend_menu_item(item)
 
     def do_deactivate(self):

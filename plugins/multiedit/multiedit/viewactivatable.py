@@ -312,7 +312,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         mark.set_visible(True)
 
         self._edit_points.append(mark)
-        self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Added edit point...'),)))
+        self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Added edit point…'),)))
 
     def _remove_duplicate_edit_points(self):
         buf = self._buffer
@@ -654,7 +654,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
         # Set the column mode
         self._column_mode = (start_line, end_line, soff, eoff)
-        self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Column Mode...')),))
+        self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Column Mode…')),))
 
         if singlecolumn:
             self._apply_column_mode()
@@ -772,7 +772,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
                 buf.delete_mark(mark)
                 self._edit_points.remove(mark)
 
-                self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Removed edit point...'),)))
+                self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Removed edit point…'),)))
                 return True
 
         self._add_edit_point(piter)
@@ -938,7 +938,7 @@ class MultiEditViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
 
         buf.remove_tag(self._selection_tag, bounds[0], bounds[1])
 
-        self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Cancelled column mode...'),)))
+        self.status('<i>%s</i>' % (xml.sax.saxutils.escape(_('Cancelled column mode…'),)))
         self.view.queue_draw()
 
     def _column_text(self):

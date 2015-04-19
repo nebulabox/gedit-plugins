@@ -155,7 +155,7 @@ class SearchEntry(Gtk.Entry):
     def __init__(self, accel_group = None):
         Gtk.Entry.__init__(self)
         self.set_width_chars(40)
-        self.set_placeholder_text(_("Type here to search..."))
+        self.set_placeholder_text(_("Type here to search…"))
         self.connect("changed", lambda w: self._queue_search())
 
         search_icon =\
