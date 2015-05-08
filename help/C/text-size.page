@@ -25,7 +25,7 @@
   <title>Text Size</title>
 
   <p>The text size plugin allows you to temporarily change the text size for
-  better readibility in <app>gedit</app> without changing the program's default
+  better readability in <app>gedit</app> without changing the program's default
   text size.</p>
 
 <section id="enable-text-size">
