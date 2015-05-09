@@ -7,7 +7,7 @@
 # Andras Timar <timar at gnome dot hu>, 2001, 2002, 2003.
 # Gabor Sari <saga at gnome dot hu>, 2003.
 # Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2015.
 # Mate Ory <orymate at gmail dot com>, 2006, 2007, 2008.
 # Balázs Úr <urbalazs at gmail dot com>, 2013, 2014.
 msgid ""
@@ -15,16 +15,16 @@ msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2014-09-21 05:10+0000\n"
-"PO-Revision-Date: 2014-09-21 16:51+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
-"Language: \n"
+"POT-Creation-Date: 2015-05-09 05:24+0000\n"
+"PO-Revision-Date: 2015-05-09 11:01+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at ubuntu dot com>\n"
+"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -58,7 +58,6 @@ msgid "Automatically adds closing brackets."
 msgstr "Automatikusan hozzáadja a záró zárójeleket."
 
 #: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:2
-#| msgid "Automatically adds closing brackets."
 msgid "Automatically add a closing bracket when you insert one"
 msgstr "Záró zárójelek automatikus hozzáadása, amikor beszúr egyet"
 
@@ -73,7 +72,6 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Speciális karakterek beszúrása egy kattintással"
 
 #: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:1
-#| msgid "Character Map"
 msgid "Charmap"
 msgstr "Karaktertábla"
 
@@ -100,7 +98,6 @@ msgid "U_ncomment Code"
 msgstr "A kód _nem megjegyzés"
 
 #: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:2
-#| msgid "Comment out or uncomment a selected block of code."
 msgid "Comment or uncomment blocks of code"
 msgstr "Kijelölt kódblokk megjegyzésbe tétele vagy kivétele onnan"
 
@@ -114,7 +111,6 @@ msgstr ""
 "Szín választása párbeszédablakból, és hexadecimális ábrázolásának beszúrása."
 
 #: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
-#| msgid "Color Picker"
 msgid "Color picker"
 msgstr "Színválasztó"
 
@@ -124,8 +120,9 @@ msgstr ""
 "Szín kiválasztása és beszúrása egy párbeszédablakból (HTML, CSS, PHP esetén)"
 
 #: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
-msgstr "_Válasszon színt…"
+#| msgid "Pick Color"
+msgid "Pick _Color…"
+msgstr "Válasszon színt…"
 
 #: ../plugins/colorpicker/colorpicker.py:169
 msgid "Pick Color"
@@ -223,7 +220,8 @@ msgid "Empty Document"
 msgstr "Üres dokumentum"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
+#| msgid "Type here to search..."
+msgid "Type here to search…"
 msgstr "Gépeljen a kereséshez…"
 
 #. ex:ts=4:et:
@@ -258,7 +256,6 @@ msgid "Draw spaces"
 msgstr "Szóközök rajzolása"
 
 #: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
-#| msgid "Draw spaces and tabs"
 msgid "Draw Spaces and Tabs"
 msgstr "Szóközök és tabulátorok kirajzolása"
 
@@ -299,6 +296,67 @@ msgstr "Ha igazra van állítva, akkor a rajzolás engedélyezve lesz."
 msgid "The type of spaces to be drawn."
 msgstr "A megrajzolandó szóközök típusa."
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "Keresés fájlokban"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "_Bezárás"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Keresés fájlokban…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Nincs találat"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Keresés leállítása"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Szöveg keresése egy mappa minden fájljában."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_Keresés"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "_Keresés "
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_Itt "
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "Válasszon _mappát"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "Kis- és _nagybetű"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "Csak _teljes szóra"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "_Reguláris kifejezés"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -325,7 +383,6 @@ msgid "Join several lines or split long ones"
 msgstr "Több sor egyesítése, vagy hosszúak szétvágása"
 
 #: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
-#| msgid "Join/Split Lines"
 msgid "Join lines/ Split lines"
 msgstr "Sorok egyesítése / szétvágása"
 
@@ -359,24 +416,27 @@ msgid "Edit document in multiple places at once"
 msgstr "Dokumentum szerkesztése egyszerre több helyen"
 
 #: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
-#| msgid "Multi Edit"
 msgid "Multi edit"
 msgstr "Párhuzamos szerkesztés"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-msgid "Added edit point..."
-msgstr "Szerkesztési pont hozzáadása…"
+#| msgid "Added edit point..."
+msgid "Added edit point…"
+msgstr "Szerkesztési pont hozzáadva…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-msgid "Column Mode..."
+#| msgid "Column Mode..."
+msgid "Column Mode…"
 msgstr "Oszlopos mód…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-msgid "Removed edit point..."
+#| msgid "Removed edit point..."
+msgid "Removed edit point…"
 msgstr "Szerkesztési pont eltávolítva…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-msgid "Cancelled column mode..."
+#| msgid "Cancelled column mode..."
+msgid "Cancelled column mode…"
 msgstr "Oszlopos mód megszakítva…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1304
@@ -445,7 +505,6 @@ msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Szinkronizálás LaTeX és PDF között a gedit és evince használatával."
 
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
-#| msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Szinkronizálás LaTeX és PDF között a gedit és evince használatával"
 
@@ -630,7 +689,6 @@ msgid "Terminal"
 msgstr "Terminál"
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
-#| msgid "Embed a terminal in the bottom pane."
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Az alsó panelről elérhető egyszerű terminál felületi elem"
 
@@ -661,7 +719,6 @@ msgid "Easily increase and decrease the text size"
 msgstr "Szövegméret növelése és csökkentése egyszerűen"
 
 #: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
-#| msgid "Text Size"
 msgid "Text size"
 msgstr "Szövegméret"
 
@@ -702,7 +759,6 @@ msgid "Word completion using the completion framework"
 msgstr "A szókiegészítés használata a kiegészítő keretrendszer használatával"
 
 #: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
-#| msgid "Word Completion"
 msgid "Word completion"
 msgstr "Szókiegészítés"
 
@@ -733,6 +789,9 @@ msgid ""
 msgstr ""
 "Rögzíti a felhasználói tevékenységet, és könnyű hozzáférést nyújt a legutóbb "
 "használt és a leggyakrabban használt fájlokhoz"
+
+#~ msgid "Pick _Color..."
+#~ msgstr "_Válasszon színt…"
 
 #~ msgid "Characters that are considered \"part of a word\""
 #~ msgstr "Karakterek, amelyek részei lehetnek egy szónak"
