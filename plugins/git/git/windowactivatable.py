@@ -315,7 +315,11 @@ class GitWindowActivatable(GObject.Object, Gedit.WindowActivatable):
             del self.monitors[uri]
 
         else:
-            del self.file_nodes[location]
+            try:
+                del self.file_nodes[location]
+
+            except KeyError:
+                pass
 
     def update_location(self, result):
         location, status = result
