@@ -82,7 +82,7 @@ def rename(view, newfile):
     if doc.get_modified():
         raise commander.commands.exceptions.Execute('You have unsaved changes in your document')
 
-    if not doc.is_local():
+    if not doc.get_file().is_local():
         raise commander.commands.exceptions.Execute('You can only rename local files')
 
     f = doc.get_file().get_location()

@@ -127,7 +127,7 @@ def _run_command(entry, replace, background, argstr):
     cwd = None
     doc = entry.view().get_buffer()
 
-    if not doc.is_untitled() and doc.is_local():
+    if not doc.is_untitled() and doc.get_file().is_local():
         gfile = doc.get_file().get_location()
         cwd = os.path.dirname(gfile.get_path())
 
