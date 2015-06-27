@@ -783,4 +783,4 @@ GtkEntry#gedit-commander-entry {
         self._view = None
         self._view_style_updated_id = None
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

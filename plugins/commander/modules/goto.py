@@ -60,4 +60,4 @@ def __default__(view, line, column=1):
 
     return commander.commands.result.HIDE
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

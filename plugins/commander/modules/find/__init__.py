@@ -96,4 +96,4 @@ locals()['//'] = replace
 locals()['r/'] = regex.__default__
 locals()['r//'] = regex.replace
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

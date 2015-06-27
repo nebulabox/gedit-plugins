@@ -63,4 +63,4 @@ def getargspec(func):
 
     return ret
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

@@ -282,4 +282,4 @@ class Info(Gtk.Box):
         else:
             callback()
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

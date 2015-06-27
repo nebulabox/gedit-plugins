@@ -124,4 +124,4 @@ class Method:
         else:
             return self.name < other
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

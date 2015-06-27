@@ -155,4 +155,4 @@ for drawing spaces and tabs: <i>set.draw-spaces space tab</i>"""
     view.set_draw_spaces(flags)
     return False
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

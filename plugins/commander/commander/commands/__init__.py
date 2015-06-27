@@ -459,4 +459,4 @@ class Commands(Singleton):
             # Reload the module
             self.reload_module(path)
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

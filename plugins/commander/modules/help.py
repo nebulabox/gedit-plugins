@@ -73,4 +73,4 @@ Show detailed information on how to use a certain command (if available)"""
     entry.info_show(_doc_text(command, res[0][0]), True)
     return commands.result.DONE
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

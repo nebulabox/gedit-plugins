@@ -57,4 +57,4 @@ class CommanderAppActivatable(GObject.Object, Gedit.AppActivatable):
         self.app.remove_accelerator("win.commander", None)
         self.menu_ext = None
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

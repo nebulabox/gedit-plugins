@@ -34,4 +34,4 @@ gi.require_version('Gtk', '3.0')
 from appactivatable import CommanderAppActivatable
 from windowactivatable import CommanderWindowActivatable
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

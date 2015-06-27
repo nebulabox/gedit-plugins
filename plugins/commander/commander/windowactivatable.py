@@ -90,4 +90,4 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     def on_entry_destroy(self, widget, view):
         view._entry = None
 
-# vi:ex:ts=4:et
+# ex:ts=4:et
