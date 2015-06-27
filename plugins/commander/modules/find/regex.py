@@ -255,4 +255,4 @@ Find and replace semantically"""
     fd = SemanticFinder(entry)
     yield fd.replace(findstr, True, replstr)
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

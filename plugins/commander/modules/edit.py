@@ -201,7 +201,7 @@ def __default__(view, entry):
 Use this to apply the cool new feature\"\"\"
     pass
 
-# vi:ts=4:et
+# ex:ts=4:et
 """
 
 def new_command(view, entry, name):
@@ -238,4 +238,4 @@ def save_all(view):
 locals()['file'] = __default__
 move = rename
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

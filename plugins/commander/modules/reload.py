@@ -49,4 +49,4 @@ does not work correctly."""
     commander.commands.Commands().reload_module(mod)
     return commander.commands.result.DONE
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

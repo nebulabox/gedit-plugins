@@ -86,4 +86,4 @@ Jump to the previous bookmark location"""
 
     window.get_message_bus().send('/plugins/bookmarks', 'goto_previous', view=view)
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

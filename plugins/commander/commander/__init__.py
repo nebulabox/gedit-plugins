@@ -30,4 +30,4 @@ if not path in sys.path:
 from appactivatable import CommanderAppActivatable
 from windowactivatable import CommanderWindowActivatable
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

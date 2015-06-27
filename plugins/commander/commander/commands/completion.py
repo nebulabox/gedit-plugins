@@ -218,4 +218,4 @@ def words(ret):
 
     return decorator
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

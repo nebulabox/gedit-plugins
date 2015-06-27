@@ -56,4 +56,4 @@ class RollbackImporter:
 
         self._new_modules = []
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

@@ -98,4 +98,4 @@ class History:
         except IOError:
             pass
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

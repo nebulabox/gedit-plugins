@@ -113,4 +113,4 @@ Move the cursor per regex (use negative num to move backwards)"""
 
     return commands.result.HIDE
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

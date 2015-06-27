@@ -236,4 +236,4 @@ for it to work."""
     doc.append(" *\n */\n")
     doc.insert()
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

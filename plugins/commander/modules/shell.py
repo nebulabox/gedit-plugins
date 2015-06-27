@@ -196,4 +196,4 @@ locals()['!'] = __default__
 locals()['!!'] = replace
 locals()['!&'] = background
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

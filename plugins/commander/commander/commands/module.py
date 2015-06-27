@@ -150,4 +150,4 @@ class Module(method.Method):
 
         sys.path = oldpath
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

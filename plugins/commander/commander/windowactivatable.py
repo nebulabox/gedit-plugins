@@ -88,4 +88,4 @@ class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self._entry = None
         self.window.lookup_action("commander").change_state(GLib.Variant.new_boolean(False))
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

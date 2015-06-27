@@ -779,4 +779,4 @@ GtkEntry#gedit-commander-entry {
 
         self._view = None
 
-# vi:ex:ts=4:et
+# ex:ts=4:et

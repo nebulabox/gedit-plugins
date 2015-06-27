@@ -325,4 +325,4 @@ class Finder:
         self.cancel()
         yield commander.commands.result.DONE
 
-# vi:ex:ts=4:et
+# ex:ts=4:et
