@@ -18,7 +18,8 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
+import gi
+gi.require_version('Gedit', '3.0')
 from gi.repository import GObject, Gio, Gedit, Gtk
 import os
 from .schemer import GUI

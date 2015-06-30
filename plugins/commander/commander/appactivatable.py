@@ -19,6 +19,8 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
+import gi
+gi.require_version('Gedit', '3.0')
 from gi.repository import GLib, GObject, Gio, Gedit
 import sys, os
 import commander.commands as commands

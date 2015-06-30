@@ -19,6 +19,8 @@
 #
 #
 
+import gi
+gi.require_version('Zeitgeist', '2.0')
 from gi.repository import GObject, Gedit
 from .dashboard import Dashboard
 

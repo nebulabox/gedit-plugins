@@ -17,6 +17,8 @@
 #  Foundation, Inc., 59 Temple Place, Suite 330,
 #  Boston, MA 02111-1307, USA.
 
+import gi
+gi.require_version('Ggit', '1.0')
 from gi.repository import GLib, GObject, Gio, Gedit, Ggit
 
 
