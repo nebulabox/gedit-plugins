@@ -7,22 +7,22 @@
 # Simos Xenitellis <simos@gnome.org>, 2006.
 # Dimitris Glezos <dimitris@glezos.com>, 2006, 2007.
 # Konstantinos Kouratoras <kouratoras@gmail.com>, 2008, 2009.
-# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013.
+# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2014-08-05 12:26+0000\n"
-"PO-Revision-Date: 2014-08-11 11:00+0200\n"
-"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
-"Language-Team: team@gnome.gr\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&"
+"keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2015-06-26 05:26+0000\n"
+"PO-Revision-Date: 2015-06-27 12:09+0300\n"
+"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"Language-Team: www.gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
@@ -121,8 +121,9 @@ msgstr ""
 "PHP)"
 
 #: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
-msgstr "Επιλογή _χρώματος..."
+#| msgid "Pick Color"
+msgid "Pick _Color…"
+msgstr "Επιλογή _χρώματος…"
 
 #: ../plugins/colorpicker/colorpicker.py:169
 msgid "Pick Color"
@@ -222,8 +223,9 @@ msgid "Empty Document"
 msgstr "Κενό έγγραφο"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "Πληκτρολογήστε για αναζήτηση..."
+#| msgid "Type here to search..."
+msgid "Type here to search…"
+msgstr "Πληκτρολογήστε εδώ για αναζήτηση…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -297,6 +299,67 @@ msgstr "Αν είναι αληθές, θα ενεργοποιηθεί η σχε�
 msgid "The type of spaces to be drawn."
 msgstr "Ο τύπος των διαστημάτων που θα σχεδιαστούν."
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "Εύρεση σε αρχεία"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "_Κλείσιμο"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Εύρεση σε αρχεία…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Δε βρέθηκαν αποτελέσματα"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Τερματισμός αναζήτησης"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Εύρεση κειμένου σε όλα τα αρχεία ενός φακέλου."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_Εύρεση"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "Εύ_ρεση"
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_Στο "
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "Επιλογή ενός _φακέλου"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "_Διάκριση πεζών από κεφαλαία"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "Ταίριασμα μόνο _ολόκληρης λέξης"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "_Kανονική έκφραση"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -339,7 +402,7 @@ msgid "_Split Lines"
 msgstr "_Διάσπαση γραμμών"
 
 #: ../plugins/multiedit/multiedit/appactivatable.py:36
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1349
 msgid "Multi Edit Mode"
 msgstr "Λειτουργία πολλαπλής επεξεργασίας"
 
@@ -357,59 +420,63 @@ msgstr "Επεξεργασία εγγράφου σε πολλαπλά σημεί
 msgid "Multi edit"
 msgstr "Πολλαπλή επεξεργασία"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:305
-msgid "Added edit point..."
-msgstr "Προσθήκη σημείου επεξεργασίας..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:315
+#| msgid "Added edit point..."
+msgid "Added edit point…"
+msgstr "Προσθήκη σημείου επεξεργασίας…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:647
-msgid "Column Mode..."
-msgstr "Λειτουργία στηλών..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:657
+#| msgid "Column Mode..."
+msgid "Column Mode…"
+msgstr "Κατάσταση στήλης…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:765
-msgid "Removed edit point..."
-msgstr "Αφαίρεση σημείου επεξεργασίας..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:775
+#| msgid "Removed edit point..."
+msgid "Removed edit point…"
+msgstr "Αφαίρεση σημείου επεξεργασίας…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:928
-msgid "Cancelled column mode..."
-msgstr "Η λειτουργία στηλών ακυρώθηκε..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:941
+#| msgid "Cancelled column mode..."
+msgid "Cancelled column mode…"
+msgstr "Η λειτουργία στηλών ακυρώθηκε…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1265
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
 msgstr "Εισαγωγή επεξεργασίας λειτουργίας στηλών χρησιμοποιώντας την επιλογή"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr ""
 "Εισαγωγή <b>έξυπνης</b> επεξεργασίας λειτουργίας στηλών χρησιμοποιώντας την "
 "επιλογή"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "<b>Smart</b> column align mode using selection"
 msgstr "Λειτουργία <b>έξυπνης</b> στοίχισης στηλών χρησιμοποιώντας την επιλογή"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr ""
 "Λειτουργία <b>έξυπνης</b> στοίχισης στηλών με επιπρόσθετο διάστημα "
 "χρησιμοποιώντας την επιλογή"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1270
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
 msgid "Toggle edit point"
 msgstr "Εναλλαγή σημείου επεξεργασίας"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1310
 msgid "Add edit point at beginning of line/selection"
 msgstr "Προσθήκη σημείου επεξεργασίας στην αρχή της γραμμής/επιλογής"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
 msgid "Add edit point at end of line/selection"
 msgstr "Προσθήκη σημείου επεξεργασίας στο τέλος της γραμμής/επιλογής"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
 msgid "Align edit points"
 msgstr "Στοίχιση σημείων επεξεργασίας"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
 msgid "Align edit points with additional space"
 msgstr "Στοίχιση σημείων επεξεργασίας με επιπρόσθετο διάστημα"
 
@@ -442,7 +509,7 @@ msgstr "Συγχρονισμός μεταξύ LaTeX και PDF με τα gedit �
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Συγχρονισμός μεταξύ LaTeX και PDF με τα gedit και evince"
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Αναζήτηση μπροστά"
 
@@ -741,6 +808,9 @@ msgid ""
 msgstr ""
 "Εγγραφές δραστηριοτήτων χρήστη και παροχή εύκολης πρόσβασης σε πρόσφατα και "
 "συχνά χρησιμοποιούμενα αρχεία"
+
+#~ msgid "Pick _Color..."
+#~ msgstr "Επιλογή _χρώματος..."
 
 #~ msgid "Characters that are considered \"part of a word\""
 #~ msgstr "Χαρακτήρες που θεωρούνται \"μέρος λέξης\""
