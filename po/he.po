@@ -6,14 +6,14 @@
 # Gil 'Dolfin' Osher <dolfin@rpg.org.il>, 2003.
 # Gil Osher <dolfin@rpg.org.il>, 2004.
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2010.
-# Yosef Or Boczko <yoseforb@gnome.org>, 2013, 2014.
+# Yosef Or Boczko <yoseforb@gnome.org>, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-04 18:20+0200\n"
-"PO-Revision-Date: 2014-11-04 18:31+0200\n"
+"POT-Creation-Date: 2015-07-19 13:21+0300\n"
+"PO-Revision-Date: 2015-07-19 13:24+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural= (n!=1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -59,7 +59,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "הוספה אוטומטית של סוגר סוגר כאשר אחד מוכנס"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:51
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "מפת תווים"
@@ -86,11 +86,11 @@ msgstr "הערת קוד"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "סימון או ביטול סימון כהערה למקטע קוד נבחר."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "סימון קוד כה_ערה"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "_ביטול סימון קוד כהערה"
 
@@ -114,18 +114,18 @@ msgstr "בוחר צבע"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "בחירה והכנסת צבא מתיבת דו־שיח (עבור HTML, CSS, PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
-msgstr "בחירת _צבע..."
+#: ../plugins/colorpicker/colorpicker.py:132
+msgid "Pick _Color…"
+msgstr "בחירת _צבע…"
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "בחירת צבע"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:41
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "עורך ערכת צבע"
@@ -194,7 +194,7 @@ msgstr "יוצר"
 msgid "Sample"
 msgstr "דוגמה"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:49
 msgid "Commander Mode"
 msgstr "מצב פיקוד"
 
@@ -214,8 +214,8 @@ msgid "Empty Document"
 msgstr "מסמך ריק"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "יש להקליד כאן כדי לחפש..."
+msgid "Type here to search…"
+msgstr "יש להקליד כאן כדי לחפש…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -287,6 +287,67 @@ msgstr "If TRUE drawing will be enabled."
 msgid "The type of spaces to be drawn."
 msgstr "The type of spaces to be drawn."
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "חיפוש בקבצים"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "_סגירה"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "חיפוש בקבצים…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "לא נמצאו תוצאות"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "לעצור את החיפוש"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "מציאת טקסט בכל הקבצים בתיקייה."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_חיפוש"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "_חיפוש"
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_ב"
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "בחירת _תיקייה"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "ה_תאמת רישיות"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "התאמת _כל מילה בלבד"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "ביטוי _רגולורי"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -327,7 +388,7 @@ msgid "_Split Lines"
 msgstr "פי_צול שורות"
 
 #: ../plugins/multiedit/multiedit/appactivatable.py:36
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1349
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1351
 msgid "Multi Edit Mode"
 msgstr "מצב עריכה מרובה"
 
@@ -345,55 +406,55 @@ msgstr "עריכת מסמך במספר מקומות בו זמנית"
 msgid "Multi edit"
 msgstr "עריכה מרובה"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:315
-msgid "Added edit point..."
-msgstr "נוספה נקודת עריכה..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:317
+msgid "Added edit point…"
+msgstr "נוספה נקודת עריכה…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:657
-msgid "Column Mode..."
-msgstr "מצב עמודות..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:659
+msgid "Column Mode…"
+msgstr "מצב עמודות…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:775
-msgid "Removed edit point..."
-msgstr "הוסרה נקודת עריכה..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:777
+msgid "Removed edit point…"
+msgstr "הוסרה נקודת עריכה…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:941
-msgid "Cancelled column mode..."
-msgstr "בוטל מצב העמודות..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:943
+msgid "Cancelled column mode…"
+msgstr "בוטל מצב העמודות…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1304
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "Enter column edit mode using selection"
 msgstr "כניסה למצב עריכת עמודות באמצעות הבחירה"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr "כניסה למצב עריכת עמודות <b>חכם</b> באמצעות הבחירה"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1308
 msgid "<b>Smart</b> column align mode using selection"
 msgstr "מצב יישור עמודות <b>חכם</b> באמצעות הבחירה"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr "מצב יישור עמודות <b>חכם</b> עם רווחים נוספים באמצעות הבחירה"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
 msgid "Toggle edit point"
 msgstr "החלפת השימוש בנקודת עריכה"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1310
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
 msgid "Add edit point at beginning of line/selection"
 msgstr "הוספת נקודת עריכה בתחילת השורה/בחירה"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
 msgid "Add edit point at end of line/selection"
 msgstr "הוספת נקודת עריכה בסוף השורה/בחירה"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1314
 msgid "Align edit points"
 msgstr "יישור נקודות העריכה"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1315
 msgid "Align edit points with additional space"
 msgstr "יישור נקודות העריכה ברווחים נוספים"
 
@@ -424,7 +485,7 @@ msgstr "תאום בין LaTeX ו־PDF עם gedit ו־evince."
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "תאום בין LaTeX ו־PDF עם gedit ו־evince."
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "חיפוש קדימה"
 
@@ -698,6 +759,9 @@ msgid ""
 "Records user activity and giving easy access to recently-used and frequently-"
 "used files"
 msgstr "רישום פעילות משתמש ומתן גישה נוחה לקבצים בשימוש נפוץ ולאחרונים בשימוש."
+
+#~ msgid "Pick _Color..."
+#~ msgstr "בחירת _צבע..."
 
 #~ msgid "Characters that are considered \"part of a word\""
 #~ msgstr "Characters that are considered \"part of a word\""
