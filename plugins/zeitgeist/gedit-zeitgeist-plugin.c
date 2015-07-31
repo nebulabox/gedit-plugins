@@ -278,6 +278,7 @@ gedit_zeitgeist_plugin_app_activate (GeditAppActivatable *activatable)
 	                                  "application://org.gnome.gedit.desktop", NULL, NULL);
 	ptr_arr = g_ptr_array_new ();
 	g_ptr_array_add (ptr_arr, event);
+	g_ptr_array_ref (ptr_arr);
 
 	ds = zeitgeist_data_source_new_full ("org.gnome.gedit,dataprovider",
 	                                     "Gedit dataprovider",
