@@ -5,15 +5,15 @@
 # María Majadas <maria.majadas@hispalinux.es>, 2005.
 # Jorge González <jorgegonz@svn.gnome.org>, 2006, 2007, 2009, 2010, 2011.
 # Milagros Alessandra Infante Montero <maim92@gmail.com>, 2013.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014.
 #
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit.help.master\n"
-"POT-Creation-Date: 2014-07-04 05:18+0000\n"
-"PO-Revision-Date: 2014-07-04 12:53+0200\n"
+"POT-Creation-Date: 2015-07-29 05:27+0000\n"
+"PO-Revision-Date: 2015-08-05 \n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: Spanish <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,13 +25,13 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2014\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2015\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2006-2011\n"
 "María Majadas <maria.majadas@hispalinux.es>, 2005\n"
 "Milagros Alessandra Infante Montero <maim92@gmail.com>, 2013"
 
 #. (itstool) path: credit/name
-#: C/bookmarks.page:11 C/bracket-comp.page:11 C/character-map.page:11
+#: C/bookmarks.page:12 C/bracket-comp.page:11 C/character-map.page:11
 #: C/code-assistance.page:11 C/code-comment.page:11 C/color-picker.page:11
 #: C/commander.page:11 C/dashboard.page:11 C/draw-spaces.page:11
 #: C/join-split-lines.page:11 C/multi-edit.page:11 C/session-saver.page:11
@@ -39,18 +39,28 @@ msgstr ""
 msgid "Jim Campbell"
 msgstr "Jim Campbell"
 
+#. (itstool) path: credit/name
+#: C/bookmarks.page:16
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: credit/years
+#: C/bookmarks.page:18
+msgid "2014"
+msgstr "2014"
+
 #. (itstool) path: info/desc
-#: C/bookmarks.page:15
+#: C/bookmarks.page:21
 msgid "Record commonly-referenced locations with bookmarks."
 msgstr "Guardar ubicaciones usadas frecuentemente con los marcadores"
 
 #. (itstool) path: page/title
-#: C/bookmarks.page:18
+#: C/bookmarks.page:24
 msgid "Bookmarks"
 msgstr "Marcadores"
 
 #. (itstool) path: page/p
-#: C/bookmarks.page:20
+#: C/bookmarks.page:26
 msgid ""
 "<app>gedit</app> bookmarks allow you to highlight important lines of text "
 "within your document or program, making them easier to find. You can also "
@@ -62,7 +72,7 @@ msgstr ""
 "navegación por el documento."
 
 #. (itstool) path: page/p
-#: C/bookmarks.page:25
+#: C/bookmarks.page:31
 msgid ""
 "To enable the bookmark plugin, select <guiseq><gui style=\"menu\">gedit</"
 "gui> <gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> "
@@ -73,7 +83,7 @@ msgstr ""
 "gui><gui>Complementos</gui> <gui>Marcadores</gui></guiseq>."
 
 #. (itstool) path: steps/title
-#: C/bookmarks.page:30
+#: C/bookmarks.page:36
 msgid ""
 "Bookmarks are inserted and removed by completing the same action. To insert "
 "or remove bookmarks:"
@@ -82,28 +92,32 @@ msgstr ""
 "insertar o quitar marcadores:"
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:33
+#: C/bookmarks.page:39
 msgid "Navigate to the line where you want to insert or remove the bookmark."
 msgstr "Navegue hasta la línea en la que quiere insertar o quitar el marcador."
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:37
+#: C/bookmarks.page:43
+#| msgid ""
+#| "Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or "
+#| "click <guiseq><gui style=\"menu\">Edit</gui><gui style=\"menuitem"
+#| "\">Toggle Bookmark</gui></guiseq>."
 msgid ""
-"Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or click "
-"<guiseq><gui style=\"menu\">Edit</gui><gui style=\"menuitem\">Toggle "
-"Bookmark</gui></guiseq>."
+"Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or open "
+"the menu in the top-right corner and select <gui style=\"menuitem\">Toggle "
+"Bookmark</gui>."
 msgstr ""
-"Pulse <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, o pulse en "
-"<guiseq><gui style=\"menu\">Editar</gui> <gui style=\"menuitem\">Alternar "
-"marcador</gui></guiseq>."
+"Puñse <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, o abra el "
+"menú en la esquina superior derecha y elija <gui style=\"menuitem\">Alternar "
+"marcador</gui>."
 
-#. (itstool) path: steps/title
-#: C/bookmarks.page:44
+#. (itstool) path: list/title
+#: C/bookmarks.page:50
 msgid "To move between bookmarks:"
 msgstr "Para moverse entre marcadores:"
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:46
+#: C/bookmarks.page:52
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>B</key></keyseq> to move to the next "
 "bookmark."
@@ -112,7 +126,7 @@ msgstr ""
 "marcador."
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:50
+#: C/bookmarks.page:56
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>Shift</key><key>B</key></keyseq> to move "
 "to the previous bookmark."
@@ -121,17 +135,20 @@ msgstr ""
 "moverse al marcador anterior."
 
 #. (itstool) path: note/p
-#: C/bookmarks.page:53
+#: C/bookmarks.page:62
+#| msgid ""
+#| "If you prefer using the mouse, you can click <guiseq><gui style=\"menu"
+#| "\">gedit</gui><gui style=\"menuitem\">Go to Next Bookmark</gui></guiseq> "
+#| "or <guiseq><gui style=\"menu\">Edit</gui> <gui style=\"menuitem\">Go to "
+#| "Previous Bookmark</gui></guiseq>."
 msgid ""
-"If you prefer using the mouse, you can click <guiseq><gui style=\"menu"
-"\">gedit</gui><gui style=\"menuitem\">Go to Next Bookmark</gui></guiseq> or "
-"<guiseq><gui style=\"menu\">Edit</gui> <gui style=\"menuitem\">Go to "
-"Previous Bookmark</gui></guiseq>."
+"If you prefer to use the mouse, you can open the menu in the top-right "
+"corner and select <gui style=\"menuitem\">Go to Next Bookmark</gui> or <gui "
+"style=\"menuitem\">Go to Previous Bookmark</gui>."
 msgstr ""
-"Si prefiere usar el ratón, puede pulsar <guiseq><gui style=\"menu\">gedit</"
-"gui><gui style=\"menuitem\">Ir al siguiente marcador</gui></guiseq> o "
-"<guiseq><gui style=\"menu\">Editar</gui><gui style=\"menuitem\">ir al "
-"marcador siguiente</gui></guiseq>."
+"Si prefiere usar el ratón, puede abrir el menú en la esquina superior "
+"derecha y elegir <gui style=\"menuitem\">Ir al siguiente marcador</gui> o "
+"<gui style=\"menuitem\">Ir al marcador siguiente</gui>."
 
 #. (itstool) path: info/desc
 #: C/bracket-comp.page:15
@@ -241,8 +258,12 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/character-map.page:57
+#| msgid ""
+#| "If neccessary, choose the character set to which your character belongs "
+#| "from the list at the top of the <gui style=\"tab\">Character Map</gui> "
+#| "tab (for example, Arabic)."
 msgid ""
-"If neccessary, choose the character set to which your character belongs from "
+"If necessary, choose the character set to which your character belongs from "
 "the list at the top of the <gui style=\"tab\">Character Map</gui> tab (for "
 "example, Arabic)."
 msgstr ""
@@ -530,8 +551,7 @@ msgstr ""
 #. (itstool) path: note/p
 #: C/commander.page:30
 msgid "The last key in the above key combination is a period."
-msgstr ""
-"La última tecla de la combinación de teclas indicada es un punto («.»)."
+msgstr "La última tecla de la combinación de teclas indicada es un punto («.»)."
 
 #. (itstool) path: td/p
 #: C/commander.page:36
@@ -594,8 +614,8 @@ msgid ""
 "go <input>[line number]</input> <em>or</em> just <key>G</key> <input>[line "
 "number]</input>"
 msgstr ""
-"go <input>[número de línea]</input> <em>o</em> simplemente <em>G</em> "
-"<input>[número de línea]</input>"
+"go <input>[número de línea]</input> <em>o</em> simplemente <em>G</em> <input>"
+"[número de línea]</input>"
 
 #. (itstool) path: td/p
 #: C/commander.page:69
@@ -1281,14 +1301,18 @@ msgstr "Tamaño del texto"
 
 #. (itstool) path: page/p
 #: C/text-size.page:27
+#| msgid ""
+#| "The text size plugin allows you to temporarily change the text size for "
+#| "better readibility in <app>gedit</app> without changing the program's "
+#| "default text size."
 msgid ""
 "The text size plugin allows you to temporarily change the text size for "
-"better readibility in <app>gedit</app> without changing the program's "
+"better readability in <app>gedit</app> without changing the program's "
 "default text size."
 msgstr ""
 "El complemento de tamaño del texto le permite cambiar temporalmente el "
-"tamaño del texto en <app>gedit</app> sin cambiar el tamaño del texto "
-"predeterminado del programa."
+"tamaño del texto en <app>gedit</app> para una mejor lectura. sin tener que "
+"cambiar el tamaño del texto predeterminado del programa."
 
 #. (itstool) path: section/title
 #: C/text-size.page:32
@@ -1451,8 +1475,8 @@ msgstr "Activa el proveedor de datos Zeitgeist"
 
 #. (itstool) path: item/p
 #: C/zeitgeist-dataprovider.page:33
-#| msgid "Select <gui style=\"menuitem\">Snippets</gui> to enable the plugin."
-msgid "Select <gui style=\"menuitem\">Zietgeist Dataprovider</gui>."
+#| msgid "Select <gui style=\"menuitem\">Zietgeist Dataprovider</gui>."
+msgid "Select <gui style=\"menuitem\">Zeitgeist Dataprovider</gui>."
 msgstr "Seleccione <gui style=\"menuitem\">Proveedor de datos Zeitgeist</gui>."
 
 #~ msgid "Gedit Plugins"
@@ -1767,8 +1791,8 @@ msgstr "Seleccione <gui style=\"menuitem\">Proveedor de datos Zeitgeist</gui>."
 #~ "guiseq>, or press <keyseq><key>Ctrl</key><key>N</key></keyseq>."
 #~ msgstr ""
 #~ "La manera más fácil de crear un archivo nuevo en <app>gedit</app> es "
-#~ "pulsar en el icono que parece un trozo de papel en blanco con un signo "
-#~ "«+» junto a él. Si lo prefiere, también puede seleccionar "
+#~ "pulsar en el icono que parece un trozo de papel en blanco con un signo «+» "
+#~ "junto a él. Si lo prefiere, también puede seleccionar "
 #~ "<guiseq><gui>Archivo</gui><gui>Nuevo</gui></guiseq>, o pulsar "
 #~ "<keyseq><key>Ctrl</key><key>N</key></keyseq>."
 
@@ -2520,8 +2544,8 @@ msgstr "Seleccione <gui style=\"menuitem\">Proveedor de datos Zeitgeist</gui>."
 #~ msgid ""
 #~ "After you have placed the plugin files into the correct directory, the "
 #~ "plugin will appear in the Preferences menu. Select <guiseq><gui>Edit </"
-#~ "gui><gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> "
-#~ "<gui>[Name of Plugin]</gui></guiseq> to enable the plugin."
+#~ "gui><gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>"
+#~ "[Name of Plugin]</gui></guiseq> to enable the plugin."
 #~ msgstr ""
 #~ "Después de mover el complemento a la carpeta correcta, aparecerá en el "
 #~ "menú «Preferencias». Seleccione <guiseq><gui>Editar</gui><gui style="
@@ -4567,8 +4591,8 @@ msgstr "Seleccione <gui style=\"menuitem\">Proveedor de datos Zeitgeist</gui>."
 #~ "For example, if you enter \"1,3,5-7,9\" in the <gui>Pages</gui> textbox, "
 #~ "pages 1, 3, 5, 6, 7 and 9 will be printed."
 #~ msgstr ""
-#~ "Por ejemplo, si escribe «1,3,5-7,9» en la caja de texto <gui>Páginas</"
-#~ "gui>,se imprimirán las páginas 1,3,5,6,7 y 9."
+#~ "Por ejemplo, si escribe «1,3,5-7,9» en la caja de texto <gui>Páginas</gui>,"
+#~ "se imprimirán las páginas 1,3,5,6,7 y 9."
 
 #~ msgid "Ctrl + Alt + PageUp"
 #~ msgstr "Ctrl + Alt + Re Pág"
@@ -8169,10 +8193,9 @@ msgstr "Seleccione <gui style=\"menuitem\">Proveedor de datos Zeitgeist</gui>."
 #~ "Para revisar la ortografía del texto en la casilla de texto de "
 #~ "<guilabel>Cambiar por</guilabel>, pulse <guibutton>Comprobar palabra</"
 #~ "guibutton>. Si ésta es una palabra conocida, la lista "
-#~ "<guilabel>Sugerencias</guilabel>será sustituida con el texto "
-#~ "<literal>(ortografía correcta)</literal>. Si la palabra es desconocida, "
-#~ "aparecerán nuevas entradas en la lista de <guilabel>Sugerencias</"
-#~ "guilabel>."
+#~ "<guilabel>Sugerencias</guilabel>será sustituida con el texto <literal>"
+#~ "(ortografía correcta)</literal>. Si la palabra es desconocida, aparecerán "
+#~ "nuevas entradas en la lista de <guilabel>Sugerencias</guilabel>."
 
 #~ msgid ""
 #~ "To ignore the current occurrence of the unknown word, click "
@@ -8238,8 +8261,8 @@ msgstr "Seleccione <gui style=\"menuitem\">Proveedor de datos Zeitgeist</gui>."
 #~ "pane to show the tag list tab."
 #~ msgstr ""
 #~ "Por omisión, el panel lateral muestra una pestaña conteniendo una lista "
-#~ "de documentos abiertos. Pulse en la pestaña que muestra un icono «+» en "
-#~ "la parte de abajo del panel lateral para mostrar la pestaña de listas de "
+#~ "de documentos abiertos. Pulse en la pestaña que muestra un icono «+» en la "
+#~ "parte de abajo del panel lateral para mostrar la pestaña de listas de "
 #~ "etiquetas."
 
 #~ msgid ""
