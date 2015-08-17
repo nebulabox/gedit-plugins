@@ -27,6 +27,10 @@ path = os.path.dirname(__file__)
 if not path in sys.path:
     sys.path.insert(0, path)
 
+import gi
+gi.require_version('Gedit', '3.0')
+gi.require_version('Gtk', '3.0')
+
 from appactivatable import CommanderAppActivatable
 from windowactivatable import CommanderWindowActivatable
 

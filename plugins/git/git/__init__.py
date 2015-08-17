@@ -17,6 +17,11 @@
 #  Foundation, Inc.  51 Franklin Street, Fifth Floor, Boston, MA
 #  02110-1301 USA.
 
+import gi
+gi.require_version('Gedit', '3.0')
+gi.require_version('Gtk', '3.0')
+gi.require_version('Ggit', '1.0')
+
 from .appactivatable import GitAppActivatable
 from .viewactivatable import GitViewActivatable
 from .windowactivatable import GitWindowActivatable

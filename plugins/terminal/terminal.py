@@ -20,11 +20,15 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor,
 # Boston, MA  02110-1301  USA
 
-import gi
-gi.require_version('Vte', '2.91')
-from gi.repository import GObject, GLib, Gio, Pango, Gdk, Gtk, Gedit, Vte
 import os
 import gettext
+
+import gi
+gi.require_version('Gedit', '3.0')
+gi.require_version('Gtk', '3.0')
+gi.require_version('Vte', '2.91')
+from gi.repository import GObject, GLib, Gio, Pango, Gdk, Gtk, Gedit, Vte
+
 from gpdefs import *
 
 try:

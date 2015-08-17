@@ -22,8 +22,6 @@
 import re, time, gettext
 import xml.sax.saxutils
 
-import gi
-gi.require_version('PangoCairo', '1.0')
 from gi.repository import GLib, GObject, Pango, PangoCairo, Gdk, Gtk, Gedit
 
 from .signals import Signals
