@@ -17,12 +17,16 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
+import sys
+import gettext
+
 import gi
+gi.require_version('Gedit', '3.0')
+gi.require_version('Pango', '1.0')
+gi.require_version('Gtk', '3.0')
 gi.require_version('Gucharmap', '2.90')
 from gi.repository import GObject, Gio, Pango, Gtk, Gedit, Gucharmap
 from .panel import CharmapPanel
-import sys
-import gettext
 from gpdefs import *
 
 try:
@@ -30,6 +34,7 @@ try:
     _ = lambda s: gettext.dgettext(GETTEXT_PACKAGE, s);
 except:
     _ = lambda s: s
+
 
 class CharmapPlugin(GObject.Object, Gedit.WindowActivatable):
     __gtype_name__ = "CharmapPlugin"
