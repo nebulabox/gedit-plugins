@@ -5,14 +5,15 @@
 # Stanislav Visnovsky <visnovsky@kde.org>, 2003, 2004.
 # Marcel Telka <marcel@telka.sk>, 2005, 2009.
 # Ivan Masár <helix84@centrum.sk>, 2011, 2012.
+# Dušan Kazik <prescott66@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2015-03-10 06:09+0000\n"
-"PO-Revision-Date: 2015-03-10 11:29+0100\n"
+"POT-Creation-Date: 2015-08-20 05:29+0000\n"
+"PO-Revision-Date: 2015-08-20 11:45+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -58,7 +59,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "Automaticky pridá pravé zátvorky po zadaní ľavých"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Mapa znakov"
@@ -85,11 +86,11 @@ msgstr "Komentár kódu"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Zakomentovanie alebo odkomentovanie vybraného bloku kódu."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "Ko_mentovať kód"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "Odkome_ntovať kód"
 
@@ -113,18 +114,18 @@ msgstr "Výber farieb"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "Vyberie a vloží farbu z dialógového okna (pre jazyky HTML, CSS, PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
-msgstr "Vybrať _farbu..."
+#: ../plugins/colorpicker/colorpicker.py:132
+msgid "Pick _Color…"
+msgstr "Vybrať _farbu…"
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Vybrať farbu"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Editor farebných schém"
@@ -193,7 +194,7 @@ msgstr "Autor"
 msgid "Sample"
 msgstr "Vzorka"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "Režim commander"
 
@@ -213,8 +214,8 @@ msgid "Empty Document"
 msgstr "Prázdny dokument"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "Hľadanie začnete písaním sem..."
+msgid "Type here to search…"
+msgstr "Hľadanie začnete písaním sem…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -287,6 +288,70 @@ msgstr "Ak je voľba zapnutá, kreslenie bude povolené."
 msgid "The type of spaces to be drawn."
 msgstr "Typ medzier, ktoré sa majú vykresliť."
 
+# dialog title
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "Nájdenie v súboroch"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "_Zavrieť"
+
+# menu item
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Nájsť v súboroch…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Nenašli sa žiadne výsledky"
+
+# tooltip
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Zastaví vyhľadávanie"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Nájde text vo všetkých súboroch priečinka."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_Nájsť"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "Ná_jsť"
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_V "
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "Vybrať _priečinok"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "_Rozlišovať veľkosť písmen"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "Porovnávať _len celé slová"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "Re_gulárny výraz"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -350,20 +415,20 @@ msgid "Multi edit"
 msgstr "Multiúpravy"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-msgid "Added edit point..."
-msgstr "Pridané miesto úpravy..."
+msgid "Added edit point…"
+msgstr "Pridané miesto úpravy…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-msgid "Column Mode..."
-msgstr "Stĺpcový režim..."
+msgid "Column Mode…"
+msgstr "Stĺpcový režim…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-msgid "Removed edit point..."
-msgstr "Odstránené miesto úpravy..."
+msgid "Removed edit point…"
+msgstr "Odstránené miesto úpravy…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-msgid "Cancelled column mode..."
-msgstr "Zrušený stĺpcový režim..."
+msgid "Cancelled column mode…"
+msgstr "Zrušený stĺpcový režim…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
@@ -431,7 +496,7 @@ msgstr "Synchronizácia medzi LaTeXom a PDF pomocou programov gedit a evince."
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Synchronizuje medzi LaTeXom a PDF pomocou programov gedit a evince"
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Hľdanie dopredu"
 
@@ -614,7 +679,7 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Vloží terminál do spodného panelu."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Terminál"
 
@@ -622,19 +687,19 @@ msgstr "Terminál"
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Jednoduchá miniaplikácia temrinálu prístupná z dolného panela"
 
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "_Zmeniť adresár"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "_Normálna veľkosť"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "_Menší text"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "_Väčší text"
 
@@ -718,6 +783,9 @@ msgid ""
 msgstr ""
 "Zaznamenáva aktivitu používateľa a poskytuje jednoduchý prístup k nedávno a "
 "často používaným súborom"
+
+#~ msgid "Pick _Color..."
+#~ msgstr "Vybrať _farbu..."
 
 #~ msgid "Toggle bookmark status of the current line"
 #~ msgstr "Prepnúť stav záložky na aktuálnom riadku"
