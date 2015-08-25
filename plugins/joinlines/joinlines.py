@@ -29,6 +29,12 @@ try:
 except:
     _ = lambda s: s
 
+def iter_get_char(iter):
+    char = iter.get_char()
+    if len(char) > 1:
+        char = char.decode('utf8')
+    return char
+
 
 class JoinLinesAppActivatable(GObject.Object, Gedit.AppActivatable):
     app = GObject.property(type=Gedit.App)
@@ -138,13 +144,13 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
             start.forward_to_line_end()
 
         # Include trailing spaces in the chunk to be removed
-        while start.backward_char() and start.get_char() in ('\t', ' '):
+        while start.backward_char() and iter_get_char(start) in ('\t', ' '):
             pass
         start.forward_char()
 
         while doc.get_iter_at_mark(end_mark).compare(start) == 1:
             end = start.copy()
-            while end.get_char() in ('\r', '\n', ' ', '\t'):
+            while iter_get_char(end) in ('\r', '\n', ' ', '\t'):
                 end.forward_char()
             doc.delete(start, end)
 
@@ -173,7 +179,7 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
             indent_iter.set_line_offset(0)
             indent = ''
             while indent_iter.get_offset() != start.get_offset():
-                if indent_iter.get_char() == '\t':
+                if iter_get_char(indent_iter) == '\t':
                     indent = indent + '\t'
                 else:
                     indent = indent + ' '
@@ -189,8 +195,8 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
             # measure indent of line
             indent_iter = start.copy()
             indent = ''
-            while indent_iter.get_char() in (' ', '\t'):
-                indent = indent + indent_iter.get_char()
+            while iter_get_char(indent_iter) in (' ', '\t'):
+                indent = indent + iter_get_char(indent_iter)
                 indent_iter.forward_char()
 
         end_mark = doc.create_mark(None, end)
@@ -231,16 +237,16 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
 
 def forward_to_word_start(text_iter):
-    char = text_iter.get_char()
+    char = iter_get_char(text_iter)
     while not text_iter.is_end() and char in (' ', '\t', '\n', '\r'):
         text_iter.forward_char()
-        char = text_iter.get_char()
+        char = iter_get_char(text_iter)
 
 
 def forward_to_word_end(text_iter):
-    char = text_iter.get_char()
+    char = iter_get_char(text_iter)
     while not text_iter.is_end() and not (char in (' ', '\t', '\n', '\r')):
         text_iter.forward_char()
-        char = text_iter.get_char()
+        char = iter_get_char(text_iter)
 
 # ex:ts=4:et:
