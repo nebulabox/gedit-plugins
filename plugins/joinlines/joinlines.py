@@ -19,8 +19,9 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from gi.repository import GObject, Gio, Gtk, Gedit
 import gettext
+
+from gi.repository import GObject, Gedit, Gio, Gtk
 from gpdefs import *
 
 try:
@@ -166,7 +167,7 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
             return
 
         width = self.view.get_right_margin_position()
-        tabwidth = self.view.get_tab_width()
+        #tabwidth = self.view.get_tab_width()
 
         doc.begin_user_action()
 
@@ -217,7 +218,7 @@ class JoinLinesViewActivatable(GObject.Object, Gedit.ViewActivatable):
                doc.get_iter_at_mark(end_mark).compare(current_word_end) >= 0:
 
                 word_length = current_word_end.get_offset() - \
-                              current_word_start.get_offset()
+                    current_word_start.get_offset()
 
                 doc.delete(previous_word_end, current_word_start)
 
