@@ -19,6 +19,10 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('Peas', '1.0')
+gi.require_version('Gedit', '3.0')
 from gi.repository import GObject, Gtk, Gdk, Gedit
 
 common_brackets = {
@@ -168,14 +172,14 @@ class BracketCompletionPlugin(GObject.Object, Gedit.ViewActivatable):
         else:
             return None, None, None
 
-    def compute_indentation (self, cur):
+    def compute_indentation(self, cur):
         """
         Compute indentation at the given iterator line
         view : gtk.TextView
         cur : gtk.TextIter
         """
         start = self._doc.get_iter_at_line(cur.get_line())
-        end = start.copy();
+        end = start.copy()
 
         c = end.get_char()
         while c.isspace() and c not in ('\n', '\r') and end.compare(cur) < 0:
