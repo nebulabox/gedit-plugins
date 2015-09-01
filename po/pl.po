@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-19 16:32+0200\n"
-"PO-Revision-Date: 2015-04-19 16:33+0200\n"
+"POT-Creation-Date: 2015-09-01 03:19+0200\n"
+"PO-Revision-Date: 2015-09-01 03:20+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -65,7 +65,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "Automatycznie dodaje nawias zamykający po wstawieniu nawiasu"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Tablica znaków"
@@ -92,11 +92,11 @@ msgstr "Komentarze w kodzie"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Pozwala komentować lub odkomentować zaznaczony blok kodu."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "Sko_mentuj kod"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "Odkome_ntuj kod"
 
@@ -121,20 +121,20 @@ msgstr "Wybór koloru"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr ""
 "Umożliwia wybieranie i wstawianie koloru z okna dialogowego (dla języków "
-"HTML, CSS, PHP)"
+"HTML, CSS i PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
+#: ../plugins/colorpicker/colorpicker.py:132
 msgid "Pick _Color…"
 msgstr "Wybierz _kolor…"
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Wybór koloru"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Edytor schematów kolorów"
@@ -205,11 +205,11 @@ msgstr "Autor"
 msgid "Sample"
 msgstr "Przykład"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "Tryb poleceń"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -294,25 +294,21 @@ msgstr "Wyświetlanie spacji na końcach wierszy"
 
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
 msgid "If TRUE drawing will be enabled."
-msgstr "Jeśli wynosi \"true\", to rysowanie zostanie wyłączone."
+msgstr "Jeśli wynosi „true”, to rysowanie zostanie wyłączone."
 
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Typy spacji do rysowania."
 
-#: ../plugins/findinfiles/dialog.vala:61
-msgid "Select a _folder"
-msgstr "Wybierz _katalog"
-
 #. namespace FindInFilesPlugin
 #. namespace Gedit
-#: ../plugins/findinfiles/dialog.vala:74
+#: ../plugins/findinfiles/dialog.vala:53
 #: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
 #: ../plugins/findinfiles/dialog.ui.h:1
 msgid "Find in Files"
 msgstr "Wyszukiwanie w plikach"
 
-#: ../plugins/findinfiles/dialog.vala:79
+#: ../plugins/findinfiles/dialog.vala:58
 #: ../plugins/findinfiles/result-panel.vala:63
 #: ../plugins/findinfiles/dialog.ui.h:2
 msgid "_Close"
@@ -350,14 +346,18 @@ msgid "_In "
 msgstr "_W "
 
 #: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "Wybierz _katalog"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
 msgid "_Match case"
 msgstr "_Rozróżnianie małych i wielkich liter"
 
-#: ../plugins/findinfiles/dialog.ui.h:7
+#: ../plugins/findinfiles/dialog.ui.h:8
 msgid "Match _entire word only"
 msgstr "Tylko _całe wyrazy"
 
-#: ../plugins/findinfiles/dialog.ui.h:8
+#: ../plugins/findinfiles/dialog.ui.h:9
 msgid "Re_gular expression"
 msgstr "Wyrażenie reg_ularne"
 
@@ -507,7 +507,7 @@ msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr ""
 "Synchronizuje między plikami LaTeX i PDF za pomocą programów gedit i Evince"
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Wyszukiwanie w przód"
 
@@ -521,7 +521,7 @@ msgid ""
 "If true, don't make a noise when applications send the escape sequence for "
 "the terminal bell."
 msgstr ""
-"Jeśli wynosi \"true\", to nie hałasuje, kiedy program wysyła sekwencję "
+"Jeśli wynosi „true”, to nie hałasuje, kiedy program wysyła sekwencję "
 "sterującą dla dzwonka terminala."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:3
@@ -536,7 +536,7 @@ msgid ""
 msgstr ""
 "Liczba wierszy zachowywanych przewijania. Można przewijać wstecz w terminalu "
 "o tę liczbę wierszy; wiersze nie mieszczące się w tej liczbie zostaną "
-"odrzucone. Jeśli opcja scrollback-unlimited ma wartość \"true\", to ta opcja "
+"odrzucone. Jeśli opcja „scrollback-unlimited” ma wartość „true”, to ta opcja "
 "zostanie zignorowana."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:5
@@ -549,7 +549,7 @@ msgid ""
 "stored on disk temporarily, so this may cause the system to run out of disk "
 "space if there is a lot of output to the terminal."
 msgstr ""
-"Jeśli wynosi \"true\", to wiersze przewijania nigdy nie będą odrzucane. "
+"Jeśli wynosi „true”, to wiersze przewijania nigdy nie będą odrzucane. "
 "Historia przewijania jest przechowywana tymczasowo na dysku, więc może to "
 "spowodować brak miejsca na dysku, jeśli w terminalu zostanie wyświetlone "
 "wiele danych."
@@ -560,7 +560,7 @@ msgstr "Określa, czy przewijać do dołu po naciśnięciu klawisza"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:8
 msgid "If true, pressing a key jumps the scrollbar to the bottom."
-msgstr "Jeśli wynosi \"true\", to naciśnięcie klawisza przewija na dół."
+msgstr "Jeśli wynosi „true”, to naciśnięcie klawisza przewija na dół."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:9
 msgid "Whether to scroll to the bottom when there's new output"
@@ -570,8 +570,8 @@ msgstr "Określa, czy przewijać do dołu, kiedy pojawiają się nowe dane"
 msgid ""
 "If true, whenever there's new output the terminal will scroll to the bottom."
 msgstr ""
-"Jeśli wynosi \"true\", to okno zostanie przewinięte na dół, jeśli pojawią "
-"się nowe dane w terminalu."
+"Jeśli wynosi „true”, to okno zostanie przewinięte na dół, jeśli pojawią się "
+"nowe dane w terminalu."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:11
 msgid "Whether to allow bold text"
@@ -580,8 +580,7 @@ msgstr "Określa, czy zezwalać na pogrubiony tekst"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:12
 msgid "If true, allow applications in the terminal to make text boldface."
 msgstr ""
-"Jeśli wynosi \"true\", to zezwala programom w terminalu na pogrubianie "
-"tekstu."
+"Jeśli wynosi „true”, to zezwala programom w terminalu na pogrubianie tekstu."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:13
 msgid "Default color of text in the terminal"
@@ -594,7 +593,7 @@ msgid ""
 msgstr ""
 "Domyślny kolor tekstu w terminalu, jako specyfikacja koloru (może być "
 "szesnastkową wartością w stylu HTML lub nazwą koloru w języku angielskim, "
-"taką jak \"red\")."
+"taką jak „red”)."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
 msgid "Default color of terminal background"
@@ -607,7 +606,7 @@ msgid ""
 msgstr ""
 "Domyślny kolor tła terminala, jako specyfikacja koloru (może być "
 "szesnastkową wartością w stylu HTML lub nazwą koloru w języku angielskim, "
-"taką jak \"red\")."
+"taką jak „red”)."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:17
 msgid "Palette for terminal applications"
@@ -622,7 +621,7 @@ msgstr ""
 "Terminale posiadają 16 kolorową paletę, którą mogą używać programy w "
 "terminalu. To jest ta paleta, w formie listy nazw kolorów oddzielonych "
 "przecinkami. Nazwy kolorów powinny być w formacie szesnastkowym, np. "
-"\"#FF00FF\""
+"„#FF00FF”"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:19
 msgid "Whether to use the colors from the theme for the terminal widget"
@@ -633,7 +632,7 @@ msgid ""
 "If true, the theme color scheme used for text entry boxes will be used for "
 "the terminal, instead of colors provided by the user."
 msgstr ""
-"Jeśli wynosi \"true\", to schemat motywu kolorów używany w polach wpisywania "
+"Jeśli wynosi „true”, to schemat motywu kolorów używany w polach wpisywania "
 "tekstu zostanie użyty w terminalu, zamiast kolorów dostarczonych przez "
 "użytkownika."
 
@@ -646,8 +645,8 @@ msgid ""
 "The possible values are \"system\" to use the global cursor blinking "
 "settings, or \"on\" or \"off\" to set the mode explicitly."
 msgstr ""
-"Możliwe wartości to \"system\", aby używać globalnych ustawień migania "
-"kursora albo \"on\" lub \"off\", aby ustawić tryb."
+"Możliwe wartości to „system”, aby używać globalnych ustawień migania kursora "
+"albo „on” lub „off”, aby ustawić tryb."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
 msgid "The cursor appearance"
@@ -658,9 +657,9 @@ msgid ""
 "The possible values are \"block\" to use a block cursor, \"ibeam\" to use a "
 "vertical line cursor, or \"underline\" to use an underline cursor."
 msgstr ""
-"Możliwe wartości to \"block\", aby używać kursora blokowego, \"ibeam\", aby "
-"używać kursora w formie pionowej linii lub \"underline\", aby używać kursora "
-"w formie podkreślnika."
+"Możliwe wartości to „block”, aby używać kursora blokowego, „ibeam”, aby "
+"używać kursora w formie pionowej linii lub „underline”, aby używać kursora w "
+"formie podkreślenia."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
 msgid "Whether to use the system font"
@@ -671,7 +670,7 @@ msgid ""
 "If true, the terminal will use the desktop-global standard font if it's "
 "monospace (and the most similar font it can come up with otherwise)."
 msgstr ""
-"Jeśli wynosi \"true\", to terminal użyje globalnej, standardowej czcionki, "
+"Jeśli wynosi „true”, to terminal użyje globalnej, standardowej czcionki, "
 "jeśli ma ona stałą szerokość (lub najbardziej podobną czcionkę, jeśli nie "
 "jest)."
 
@@ -682,8 +681,8 @@ msgstr "Czcionka"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:28
 msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
 msgstr ""
-"Nazwa czcionki biblioteki Pango. Przykłady to \"Sans 12\" lub \"Monospace "
-"Bold 14\"."
+"Nazwa czcionki biblioteki Pango. Przykłady to „Sans 12” lub „Monospace Bold "
+"14”."
 
 #: ../plugins/terminal/terminal.plugin.desktop.in.in.h:1
 msgid "Embedded Terminal"
@@ -694,7 +693,7 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Osadza terminal w dolnym panelu."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Terminal"
 
@@ -702,19 +701,19 @@ msgstr "Terminal"
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Prosty widżet terminala dostępny w dolnym panelu"
 
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "Zmień _katalog"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "_Zwykły rozmiar"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "_Mniejszy tekst"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "_Większy tekst"
 
