@@ -1,20 +1,20 @@
 # Hungarian translation of gedit help
 #
 # Mate Ory <orymate at gmail dot com>, 2007, 2008.
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015.
 # Balázs Úr <urbalazs at gmail dot com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit_help master\n"
-"POT-Creation-Date: 2014-09-21 05:10+0000\n"
-"PO-Revision-Date: 2014-09-21 10:55+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
-"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
+"POT-Creation-Date: 2015-09-02 05:28+0000\n"
+"PO-Revision-Date: 2015-09-02 13:56+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <openscope at gmail dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -95,10 +95,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/bookmarks.page:43
-#| msgid ""
-#| "Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or "
-#| "click <guiseq><gui style=\"menu\">Edit</gui><gui style=\"menuitem"
-#| "\">Toggle Bookmark</gui></guiseq>."
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or open "
 "the menu in the top-right corner and select <gui style=\"menuitem\">Toggle "
@@ -133,19 +129,14 @@ msgstr ""
 
 #. (itstool) path: note/p
 #: C/bookmarks.page:62
-#| msgid ""
-#| "If you prefer using the mouse, you can click <guiseq><gui style=\"menu"
-#| "\">gedit</gui><gui style=\"menuitem\">Go to Next Bookmark</gui></guiseq> "
-#| "or <guiseq><gui style=\"menu\">Edit</gui> <gui style=\"menuitem\">Go to "
-#| "Previous Bookmark</gui></guiseq>."
 msgid ""
 "If you prefer to use the mouse, you can open the menu in the top-right "
 "corner and select <gui style=\"menuitem\">Go to Next Bookmark</gui> or <gui "
 "style=\"menuitem\">Go to Previous Bookmark</gui>."
 msgstr ""
 "Ha inkább az egeret szeretné használni, akkor nyissa meg a jobb felső "
-"sarokban lévő menüt, és válassza az <gui style=\"menuitem\">Ugrás a következő "
-"könyvjelzőre</gui> vagy az <gui style=\"menuitem\">Ugrás az előző "
+"sarokban lévő menüt, és válassza az <gui style=\"menuitem\">Ugrás a "
+"következő könyvjelzőre</gui> vagy az <gui style=\"menuitem\">Ugrás az előző "
 "könyvjelzőre</gui> menüpontot."
 
 #. (itstool) path: info/desc
@@ -255,8 +246,12 @@ msgstr "Válassza az oldalpanel <gui>Karaktertábla</gui> lapját."
 
 #. (itstool) path: item/p
 #: C/character-map.page:57
+#| msgid ""
+#| "If neccessary, choose the character set to which your character belongs "
+#| "from the list at the top of the <gui style=\"tab\">Character Map</gui> "
+#| "tab (for example, Arabic)."
 msgid ""
-"If neccessary, choose the character set to which your character belongs from "
+"If necessary, choose the character set to which your character belongs from "
 "the list at the top of the <gui style=\"tab\">Character Map</gui> tab (for "
 "example, Arabic)."
 msgstr ""
@@ -1295,9 +1290,13 @@ msgstr "Szövegméret"
 
 #. (itstool) path: page/p
 #: C/text-size.page:27
+#| msgid ""
+#| "The text size plugin allows you to temporarily change the text size for "
+#| "better readibility in <app>gedit</app> without changing the program's "
+#| "default text size."
 msgid ""
 "The text size plugin allows you to temporarily change the text size for "
-"better readibility in <app>gedit</app> without changing the program's "
+"better readability in <app>gedit</app> without changing the program's "
 "default text size."
 msgstr ""
 "A szövegméret bővítmény a jobb olvashatósága érdekében lehetővé teszi a "
@@ -1453,12 +1452,12 @@ msgid ""
 "used and frequently-used files."
 msgstr ""
 "A Zeitgeist egy olyan szolgáltatás, amely naplózza a felhasználó "
-"tevékenységeit és az eseményeket. A Zeitgeist lehetővé teszi más alkalmazások "
-"számára ezen információkhoz való hozzáférést statisztikák és idővonalak "
-"formájában. A <app>gedit</app> Zeitgeist adatszolgáltató bővítménye rögzíti a "
-"felhasználói tevékenységet a gedit programmal használt dokumentumoknál, "
-"ezáltal könnyű hozzáférést adva a legutóbb használt és a gyakran használt "
-"fájlokhoz."
+"tevékenységeit és az eseményeket. A Zeitgeist lehetővé teszi más "
+"alkalmazások számára ezen információkhoz való hozzáférést statisztikák és "
+"idővonalak formájában. A <app>gedit</app> Zeitgeist adatszolgáltató "
+"bővítménye rögzíti a felhasználói tevékenységet a gedit programmal használt "
+"dokumentumoknál, ezáltal könnyű hozzáférést adva a legutóbb használt és a "
+"gyakran használt fájlokhoz."
 
 #. (itstool) path: steps/title
 #: C/zeitgeist-dataprovider.page:26
@@ -1467,10 +1466,10 @@ msgstr "Zeitgeist adatszolgáltató engedélyezése"
 
 #. (itstool) path: item/p
 #: C/zeitgeist-dataprovider.page:33
-#| msgid "Select <gui style=\"menuitem\">Sort</gui> to enable the plugin."
 msgid "Select <gui style=\"menuitem\">Zeitgeist Dataprovider</gui>."
 msgstr ""
-"Válassza a <gui style=\"menuitem\">Zeitgeist adatszolgáltató</gui> menüpontot."
+"Válassza a <gui style=\"menuitem\">Zeitgeist adatszolgáltató</gui> "
+"menüpontot."
 
 #~ msgctxt "_"
 #~ msgid ""
