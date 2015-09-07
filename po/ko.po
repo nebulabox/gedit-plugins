@@ -4,7 +4,7 @@
 # Sung-Hyun Nam <namsh@lgic.co.kr>, 1998
 # Chideok Hwang <hwang@mizi.co.kr>, 2000, 2001
 # Young-Ho, Cha <ganadist@chollian.net>, 2000, 2002, 2007
-# Changwoo Ryu <cwryu@debian.org>, 2004, 2007-2009, 2010, 2013-2014.
+# Changwoo Ryu <cwryu@debian.org>, 2004, 2007-2009, 2010, 2013-2015.
 #
 # 새로 번역하시는 분은 아래 translator-credits에 추가하세요.
 #
@@ -15,9 +15,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2014-09-08 13:25+0000\n"
-"PO-Revision-Date: 2014-09-08 11:32+0900\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gedit&keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2015-09-07 05:29+0000\n"
+"PO-Revision-Date: 2015-09-08 02:29+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: Korean\n"
@@ -62,7 +63,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "각괄호를 입력하면 자동으로 닫는 각괄호를 추가합니다."
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "문자표"
@@ -89,11 +90,11 @@ msgstr "코드 주석"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "지정한 블럭의 코드를 주석으로 만들거나 해제합니다."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "코드 주석(_M)"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "코드 주석 해제(_N)"
 
@@ -117,18 +118,18 @@ msgstr "색 고르기"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "대화 창에서 색을 고르고 추가합니다(HTML, CSS, PHP에서 사용하는 용도)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
-msgstr "색 고르기(_C)..."
+#: ../plugins/colorpicker/colorpicker.py:132
+msgid "Pick _Color…"
+msgstr "색 고르기(_C)…"
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "색 고르기"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "색 편집"
@@ -197,11 +198,11 @@ msgstr "만든이"
 msgid "Sample"
 msgstr "예제"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "명령어 모드"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -217,8 +218,8 @@ msgid "Empty Document"
 msgstr "빈 문서"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "검색하려면 입력하십시오..."
+msgid "Type here to search…"
+msgstr "검색하려면 입력하십시오…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -290,6 +291,67 @@ msgstr "참이면 공백을 봅니다."
 msgid "The type of spaces to be drawn."
 msgstr "볼 공백의 종류."
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "파일에서 찾기"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "닫기(_C)"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "파일에서 찾기…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "결과 없음"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "검색 중지"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "폴더의 모든 파일에서 문자열 찾기"
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "찾기(_F)"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "찾기(_I)"
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "다음 내부(_I): "
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "폴더 선택(_F)"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "대소문자 구별(_M)"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "전체 단어가 일치할 경우만(_E)"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "정규식(_G)"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -349,20 +411,20 @@ msgid "Multi edit"
 msgstr "다중 편집"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-msgid "Added edit point..."
-msgstr "편집 위치 추가..."
+msgid "Added edit point…"
+msgstr "편집 위치 추가…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-msgid "Column Mode..."
-msgstr "열 모드..."
+msgid "Column Mode…"
+msgstr "열 모드…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-msgid "Removed edit point..."
-msgstr "편집 위치 제거..."
+msgid "Removed edit point…"
+msgstr "편집 위치 제거…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-msgid "Cancelled column mode..."
-msgstr "열 모드 취소..."
+msgid "Cancelled column mode…"
+msgstr "취소한 열 모드…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
@@ -427,7 +489,7 @@ msgstr "지에디트와 에빈스의 LaTeX과 PDF 문서를 동기화합니다."
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "지에디트와 에빈스의 LaTeX과 PDF 문서를 동기화합니다"
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "앞으로 검색"
 
@@ -596,7 +658,7 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "맨 아래 창에 터미널을 엽니다."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "터미널"
 
@@ -604,19 +666,19 @@ msgstr "터미널"
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "맨 아래 창에서 간단한 터미널을 엽니다"
 
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "디렉터리 바꾸기(_H)"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "보통 크기(_N)"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "작은 텍스트(_M)"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "큰 텍스트(_L)"
 
@@ -695,4 +757,9 @@ msgstr "자이트가이스트 데이터 제공"
 msgid ""
 "Records user activity and giving easy access to recently-used and frequently-"
 "used files"
-msgstr "사용자 동작을 기록해 최근에 자주 사용하는 파일을 더 쉽게 사용할 수 있게 합니다."
+msgstr ""
+"사용자 동작을 기록해 최근에 자주 사용하는 파일을 더 쉽게 사용할 수 있게 합니"
+"다."
+
+#~ msgid "Pick _Color..."
+#~ msgstr "색 고르기(_C)..."
