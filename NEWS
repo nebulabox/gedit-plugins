@@ -1,4 +1,29 @@
 ====================
+gedit-plugins 3.17.1
+====================
+
+New features and fixes
+======================
+- Silence runtime warnings about gi.require_version in python
+- Misc bugfixes
+
+New and updated translations
+============================
+- ar (Khaled Hosny)
+- cs (Marek Černocký)
+- el (Dimitris Spingos (Δημήτρης Σπίγγος))
+- es (Daniel Mustieles)
+- he (Yosef Or Boczko)
+- hu (Gabor Kelemen)
+- it (Milo Casagrande)
+- ko (Changwoo Ryu)
+- lt (Aurimas Černius)
+- pl (Piotr Drąg)
+- pt (Pedro Albuquerque)
+- sk (Dušan Kazik)
+- tr (Simge Sezgin)
+
+====================
 gedit-plugins 3.17.0
 ====================
 
