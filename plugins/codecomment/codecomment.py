@@ -37,7 +37,7 @@ except:
 # If the language is listed here we prefer block comments over line comments.
 # Maybe this list should be user configurable, but just C comes to my mind...
 block_comment_languages = [
-    'c',
+    'c', 'chdr'
 ]
 
 class CodeCommentAppActivatable(GObject.Object, Gedit.AppActivatable):
