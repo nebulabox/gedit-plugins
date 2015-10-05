@@ -22,23 +22,23 @@
 # Henrique P. Machado <hpmachado@gnome.org>, 2010.
 # Krix Apolinário <krixapolinario@gmail.com>, 2010, 2011.
 # Enrico Nicoletto <liverig@gmail.com>, 2013.
-# Rafael Ferreira <rafael.f.f1@gmail.com>, 2013, 2014.
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2014-07-14 17:13+0000\n"
-"PO-Revision-Date: 2014-07-14 22:38-0300\n"
-"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"POT-Creation-Date: 2015-10-05 17:47+0000\n"
+"PO-Revision-Date: 2015-10-05 17:24-0300\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_BR-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.8.3\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -76,7 +76,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "Fecha parênteses automaticamente quando você insere um."
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Mapa de caracteres"
@@ -103,11 +103,11 @@ msgstr "Comentar código"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Comenta ou descomenta um determinado bloco de código."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "Co_mentar código"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "Descome_ntar código"
 
@@ -131,18 +131,18 @@ msgstr "Seletor de cores"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "Seleciona e insere um cor a partir de um diálogo (para HTML, CSS, PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:128
-msgid "Pick _Color..."
-msgstr "Selecionar _cor..."
+#: ../plugins/colorpicker/colorpicker.py:132
+msgid "Pick _Color…"
+msgstr "Selecionar _cor…"
 
-#: ../plugins/colorpicker/colorpicker.py:168
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Selecionar cor"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Editor de esquemas de cor"
@@ -211,11 +211,11 @@ msgstr "Autor"
 msgid "Sample"
 msgstr "Exemplo"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "Modo de comando"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -231,8 +231,8 @@ msgid "Empty Document"
 msgstr "Documento vazio"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "Digite aqui para pesquisar..."
+msgid "Type here to search…"
+msgstr "Digite aqui para pesquisar…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -305,6 +305,67 @@ msgstr "Se VERDADEIRO o drawing será habilitado."
 msgid "The type of spaces to be drawn."
 msgstr "O tipo de espaços a serem desenhados."
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "Localizar no Arquivos"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "_Fechar"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Localizar no Arquivos…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Nenhum resultado encontrar"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Para a pesquisa"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Localizar texto em todos os arquivos de uma pasta."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_Lozalizar"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "Local_izar "
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_Em "
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "Selecionar uma _pasta"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "_Diferenciar maiúscula/minúscula"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "Coincidir palara int_eira"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "Expressão re_gular"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -338,16 +399,16 @@ msgstr "Juntar/Dividir linhas"
 msgid "Join or split multiple lines through Ctrl+J and Ctrl+Shift+J"
 msgstr "Junta ou divide linhas múltiplas por meio de Ctrl+J e Ctrl+Shift+J"
 
-#: ../plugins/joinlines/joinlines.py:106
+#: ../plugins/joinlines/joinlines.py:107
 msgid "_Join Lines"
 msgstr "_Juntar linhas"
 
-#: ../plugins/joinlines/joinlines.py:112
+#: ../plugins/joinlines/joinlines.py:113
 msgid "_Split Lines"
 msgstr "_Dividir linhas"
 
 #: ../plugins/multiedit/multiedit/appactivatable.py:36
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1349
 msgid "Multi Edit Mode"
 msgstr "Modo de multi edição"
 
@@ -365,57 +426,57 @@ msgstr "Edite um documento em múltiplos lugares ao mesmo tempo"
 msgid "Multi edit"
 msgstr "Multi edição"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:305
-msgid "Added edit point..."
-msgstr "Ponto de edição adicionado..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:315
+msgid "Added edit point…"
+msgstr "Ponto de edição adicionado…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:647
-msgid "Column Mode..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:657
+msgid "Column Mode…"
 msgstr "Modo de colunas..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:765
-msgid "Removed edit point..."
-msgstr "Ponto de edição removido..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:775
+msgid "Removed edit point…"
+msgstr "Ponto de edição removido…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:928
-msgid "Cancelled column mode..."
-msgstr "Modo de colunas cancelado..."
+#: ../plugins/multiedit/multiedit/viewactivatable.py:941
+msgid "Cancelled column mode…"
+msgstr "Modo de colunas cancelado…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1265
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
 msgstr "Entre no modo de edição de colunas usando a seleção"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1266
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr "Entre no modo de edição de colunas <b>inteligente</b> usando a seleção"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1267
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "<b>Smart</b> column align mode using selection"
 msgstr "Modo de alinhamento de colunas <b>inteligente</b> usando a seleção"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1268
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr ""
 "Modo de alinhamento de colunas <b>inteligente</b> com espaço adicional "
 "usando a seleção"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1270
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
 msgid "Toggle edit point"
 msgstr "Alternar ponto de edição"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1271
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1310
 msgid "Add edit point at beginning of line/selection"
 msgstr "Adicionar ponto de edição no início da linha/seleção"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1272
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
 msgid "Add edit point at end of line/selection"
 msgstr "Adicionar ponto de edição no fim da linha/seleção"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1273
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
 msgid "Align edit points"
 msgstr "Alinhar pontos de edição"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1274
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
 msgid "Align edit points with additional space"
 msgstr "Alinha os pontos de edição com espaço adicional"
 
@@ -452,7 +513,7 @@ msgstr "Sincroniza entre LaTeX e PDF com gedit e evince"
 # This attribute describes the relationship from the current document to the
 # anchor specified by the href attribute. The value of this attribute is a
 # space-separated list of link types.
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Pesquisa seguinte"
 
@@ -635,7 +696,7 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Embute um terminal no painel inferior."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:313
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Terminal"
 
@@ -643,19 +704,19 @@ msgstr "Terminal"
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Um widget de terminal simples acessível no painel inferior"
 
-#: ../plugins/terminal/terminal.py:334
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "Al_ternar diretório"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "Tamanho _normal"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "Texto m_enor"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "Texto m_aior"
 
@@ -738,6 +799,9 @@ msgid ""
 msgstr ""
 "Registra atividade do usuário e dá acesso fácil a arquivos usados "
 "recentemente e usados frequentemente"
+
+#~ msgid "Pick _Color..."
+#~ msgstr "Selecionar _cor..."
 
 #~ msgid "Characters that are considered \"part of a word\""
 #~ msgstr "Caracteres que são considerados \"parte de uma palavra\""
