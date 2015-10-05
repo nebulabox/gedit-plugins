@@ -8,15 +8,15 @@
 # Ilkka Tuohela <hile@iki.fi>, 2005-2009.
 # Tommi Vainikainen <thv@iki.fi>, 2009-2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2014.
-# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2010, 2013, 2014.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2010, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2014-09-15 05:15+0000\n"
-"PO-Revision-Date: 2014-09-15 16:31+0300\n"
+"POT-Creation-Date: 2015-10-05 05:46+0000\n"
+"PO-Revision-Date: 2015-10-05 17:26+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -59,12 +59,11 @@ msgid "Automatically adds closing brackets."
 msgstr "Lisää suluille pääte automaattisesti."
 
 #: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:2
-#| msgid "Automatically adds closing brackets."
 msgid "Automatically add a closing bracket when you insert one"
 msgstr "Lisää suluille automaattisesti vastasulku."
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Merkistökartta"
@@ -74,7 +73,6 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Lisää erikoismerkkejä napsauttamalla niitä."
 
 #: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:1
-#| msgid "Character Map"
 msgid "Charmap"
 msgstr "Merkistökartta"
 
@@ -92,11 +90,11 @@ msgstr "Koodikommentti"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Kommentoi tai poista kommentit valitusta lähdekoodin alueesta."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "Komment_oi koodia"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "_Poista kommentti koodista"
 
@@ -115,7 +113,6 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr "Valitse väri ikkunasta ja syötä tekstiin sen heksadesimaaliesitys."
 
 #: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
-#| msgid "Color Picker"
 msgid "Color picker"
 msgstr "Värivalitsin"
 
@@ -123,18 +120,19 @@ msgstr "Värivalitsin"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "Valitse ja syötä väri valintaikkunasta (HTML, CSS, PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
-msgstr "Valitse _väri..."
+#: ../plugins/colorpicker/colorpicker.py:132
+#| msgid "Pick Color"
+msgid "Pick _Color…"
+msgstr "Valitse _väri…"
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Valitse väri"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr ""
@@ -164,17 +162,14 @@ msgid "Strikethrough"
 msgstr "Lävistetty"
 
 #: ../plugins/colorschemer/schemer.ui.h:6
-#| msgid "Background color"
 msgid "Pick the background color"
 msgstr "Valitse taustaväri"
 
 #: ../plugins/colorschemer/schemer.ui.h:7
-#| msgid "Background color"
 msgid "Pick the foreground color"
 msgstr "Valitse edustaväri"
 
 #: ../plugins/colorschemer/schemer.ui.h:8
-#| msgid "Background color"
 msgid "_Background"
 msgstr "_Taustaväri"
 
@@ -199,21 +194,20 @@ msgid "Description"
 msgstr "Kuvaus"
 
 #: ../plugins/colorschemer/schemer.ui.h:14
-#, fuzzy
 #| msgid "Author info"
 msgid "Author"
-msgstr "Tekijätiedot"
+msgstr "Tekijä"
 
 #: ../plugins/colorschemer/schemer.ui.h:15
 msgid "Sample"
 msgstr ""
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 #, fuzzy
 msgid "Commander Mode"
 msgstr "_Komennon väri:"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 #, fuzzy
@@ -230,8 +224,9 @@ msgid "Empty Document"
 msgstr "Tyhjä asiakirja"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "Kirjoita etsiäksesi..."
+#| msgid "Type here to search..."
+msgid "Type here to search…"
+msgstr "Kirjoita etsiäksesi…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -314,6 +309,67 @@ msgstr ""
 msgid "The type of spaces to be drawn."
 msgstr ""
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr ""
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "_Sulje"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr ""
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Ei tuloksia"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Pysäytä haku"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr ""
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_Etsi"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "E_tsi"
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr ""
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "Valitse _kansio"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr ""
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr ""
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr ""
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -378,19 +434,20 @@ msgid "Multi edit"
 msgstr ""
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-msgid "Added edit point..."
+msgid "Added edit point…"
 msgstr ""
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-msgid "Column Mode..."
-msgstr ""
+#, fuzzy
+msgid "Column Mode…"
+msgstr "_Komennon väri:"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-msgid "Removed edit point..."
+msgid "Removed edit point…"
 msgstr ""
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-msgid "Cancelled column mode..."
+msgid "Cancelled column mode…"
 msgstr ""
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1304
@@ -457,7 +514,7 @@ msgstr "Synkronoi LaTeXin ja PDF:n välillä käyttäen geditiä ja evinceä."
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Synkronoi LaTeXin ja PDF:n välillä käyttäen geditiä ja evinceä"
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 #, fuzzy
 msgid "Forward Search"
 msgstr "Linkki eteenpäin"
@@ -608,28 +665,27 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Upota pääte alapaneeliin."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Pääteikkuna"
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
-#| msgid "Embed a terminal in the bottom pane."
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Yksinkertainen pääte, joka on käytettävissä alapaneelista"
 
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "_Vaihda hakemistoa"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "_Tavallinen koko"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "_Pienempi teksti"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "_Suurempi teksti"
 
@@ -644,7 +700,6 @@ msgid "Easily increase and decrease the text size"
 msgstr "Pienennä tai suurenna tekstin kokoa helposti"
 
 #: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
-#| msgid "Text Size"
 msgid "Text size"
 msgstr "Tekstin koko"
 
@@ -686,7 +741,6 @@ msgid "Word completion using the completion framework"
 msgstr ""
 
 #: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
-#| msgid "Word Completion"
 msgid "Word completion"
 msgstr "Sanan täydentäminen"
 
@@ -712,3 +766,6 @@ msgid ""
 "Records user activity and giving easy access to recently-used and frequently-"
 "used files"
 msgstr ""
+
+#~ msgid "Pick _Color..."
+#~ msgstr "Valitse _väri..."
