@@ -159,13 +159,15 @@ public class App : GLib.Object, Gedit.AppActivatable {
         var item = new GLib.MenuItem (_("Find in Files…"), "win.find-in-files");
         menu_ext.append_menu_item (item);
 
-        app.add_accelerator ("<Shift><Ctrl>f", "win.find-in-files", null);
+        const string accels[] = { "<Shift><Ctrl>f" };
+        app.set_accels_for_action ("win.find-in-files", accels);
     }
 
     public void deactivate () {
         menu_ext.remove_items ();
 
-        app.remove_accelerator ("win.find-in-files", null);
+        const string accels[] = {  };
+        app.set_accels_for_action ("win.find-in-files", accels);
     }
 }
 
