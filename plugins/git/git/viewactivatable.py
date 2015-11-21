@@ -23,6 +23,8 @@ from .appactivatable import GitAppActivatable
 from .diffrenderer import DiffType, DiffRenderer
 from .windowactivatable import GitWindowActivatable
 
+import sys
+import os.path
 import difflib
 
 
@@ -132,20 +134,29 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
             commit = repo.lookup(head.get_target(), Ggit.Commit)
             tree = commit.get_tree()
 
-            relative_path = repo.get_workdir().get_relative_path(self.location)
+            relative_path = os.path.relpath(
+                os.path.normpath(os.path.realpath(self.location.get_path())),
+                repo.get_workdir().get_path()
+            )
 
             entry = tree.get_by_path(relative_path)
             file_blob = repo.lookup(entry.get_id(), Ggit.Blob)
-            file_contents = file_blob.get_raw_content().decode('utf-8')
+            try:
+                gitconfig = repo.get_config()
+                encoding = gitconfig.get_string('gui.encoding')
+            except GLib.Error:
+                encoding = 'utf8'
+            file_contents = file_blob.get_raw_content().decode(encoding)
             self.file_contents_list = file_contents.splitlines()
 
             # Remove the last empty line added by gedit automatically
-            if len(self.file_contents_list) > 0:
+            if self.file_contents_list:
                 last_item = self.file_contents_list[-1]
                 if last_item[-1:] == '\n':
                     self.file_contents_list[-1] = last_item[:-1]
 
         except GLib.Error:
+            print("GLib.Error", sys.exc_info()[0])
             # New file in a git repository
             self.file_contents_list = []
 
