@@ -133,9 +133,8 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
             head = repo.get_head()
             commit = repo.lookup(head.get_target(), Ggit.Commit.__gtype__)
             tree = commit.get_tree()
-
             relative_path = os.path.relpath(
-                os.path.normpath(os.path.realpath(self.location.get_path())),
+                os.path.realpath(self.location.get_path()),
                 repo.get_workdir().get_path()
             )
 
@@ -156,7 +155,6 @@ class GitViewActivatable(GObject.Object, Gedit.ViewActivatable):
                     self.file_contents_list[-1] = last_item[:-1]
 
         except GLib.Error:
-            print("GLib.Error", sys.exc_info()[0])
             # New file in a git repository
             self.file_contents_list = []
 
