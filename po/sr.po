@@ -1,18 +1,18 @@
 # Serbian translation of gedit
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003 — 2012.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003 — 2016.
 # This file is distributed under the same license as the gedit package.
-# Maintainer: Горан Ракић <grakic@devbase.net>
+# Горан Ракић <grakic@devbase.net>
 # Данило Шеган <danilo@prevod.org>, 2005.
-# Reviewed on 2005-09-03 by: Игор Несторовић <igor@prevod.org>
-# Translated on 2010-03-07 by: Бранко Кокановић <branko.kokanovic@gmail.com>
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2014.
+# Игор Несторовић <igor@prevod.org>, 2005
+# Бранко Кокановић <branko.kokanovic@gmail.com>, 2010
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&k"
 "eywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2014-10-26 18:04+0000\n"
-"PO-Revision-Date: 2014-10-27 05:32+0200\n"
+"POT-Creation-Date: 2016-01-02 07:03+0000\n"
+"PO-Revision-Date: 2016-01-02 18:02+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -55,12 +55,11 @@ msgid "Automatically adds closing brackets."
 msgstr "Сам додаје затварајуће заграде."
 
 #: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:2
-#| msgid "Automatically adds closing brackets."
 msgid "Automatically add a closing bracket when you insert one"
 msgstr "Сам додаје затворену заграду када унесете отворену"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Таблица знакова"
@@ -70,7 +69,6 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Убаците посебне знакове једноставним кликом на њих."
 
 #: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:1
-#| msgid "Character Map"
 msgid "Charmap"
 msgstr "Таблица знакова"
 
@@ -88,16 +86,15 @@ msgstr "Кодна примедба"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Додајте или поништите примедбу кодног блока."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "Додај кодну при_медбу"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "По_ништи кодну примедбу"
 
 #: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:2
-#| msgid "Comment out or uncomment a selected block of code."
 msgid "Comment or uncomment blocks of code"
 msgstr "Додајте или поништите примедбу кодног блока"
 
@@ -111,7 +108,6 @@ msgstr ""
 "Изаберите боју из прозорчета и убаците њено хексадецимално представљање."
 
 #: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
-#| msgid "Color Picker"
 msgid "Color picker"
 msgstr "Бирач боја"
 
@@ -119,18 +115,19 @@ msgstr "Бирач боја"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "Изаберите и убаците боју из прозорчета (за ХТМЛ, ЦСС, ПХП)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
-msgstr "Изабери _боју..."
+#: ../plugins/colorpicker/colorpicker.py:132
+#| msgid "Pick Color"
+msgid "Pick _Color…"
+msgstr "Изабери _боју…"
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Изаберите боју"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Уређивач шеме боја"
@@ -199,11 +196,11 @@ msgstr "Стваралац"
 msgid "Sample"
 msgstr "Узорак"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "Режим командира"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -219,8 +216,9 @@ msgid "Empty Document"
 msgstr "Празан документ"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "Упишите овде да потражите..."
+#| msgid "Type here to search..."
+msgid "Type here to search…"
+msgstr "Упишите овде да потражите…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -254,7 +252,6 @@ msgid "Draw spaces"
 msgstr "Исцртај размаке"
 
 #: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
-#| msgid "Draw spaces and tabs"
 msgid "Draw Spaces and Tabs"
 msgstr "Исцртајте размаке и табулаторе"
 
@@ -295,6 +292,67 @@ msgstr "Уколико је изабрано исцртавање ће бити 
 msgid "The type of spaces to be drawn."
 msgstr "Врсте размака које ће бити исцртане."
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "Пронађи у датотекама"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "_Затвори"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Пронађи у датотекама…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Нисам пронашао резултате"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Заустави претрагу"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Пронађите текст у свим датотекама у фасцикли."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_Нађи"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "На_ђи"
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_У"
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "Изабери _фасциклу"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "Упореди _величину слова"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "Упореди само _целу реч"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "Ре_гуларни израз"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -321,7 +379,6 @@ msgid "Join several lines or split long ones"
 msgstr "Спојите неколико редова или поделите оне предуге"
 
 #: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
-#| msgid "Join/Split Lines"
 msgid "Join lines/ Split lines"
 msgstr "Споји/ Подели редове"
 
@@ -353,25 +410,28 @@ msgid "Edit document in multiple places at once"
 msgstr "Уређујте документ на више места одједном"
 
 #: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
-#| msgid "Multi Edit"
 msgid "Multi edit"
 msgstr "Вишемесно уређивање"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-msgid "Added edit point..."
-msgstr "Додата тачка уређивања..."
+#| msgid "Added edit point..."
+msgid "Added edit point…"
+msgstr "Тачка додатог уређивања…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-msgid "Column Mode..."
-msgstr "Режим колона..."
+#| msgid "Column Mode..."
+msgid "Column Mode…"
+msgstr "Режим колона…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-msgid "Removed edit point..."
-msgstr "Уклоњена тачка уређивања..."
+#| msgid "Removed edit point..."
+msgid "Removed edit point…"
+msgstr "Тачка уклоњеног уређивања…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-msgid "Cancelled column mode..."
-msgstr "Режим отказане колоне..."
+#| msgid "Cancelled column mode..."
+msgid "Cancelled column mode…"
+msgstr "Режим отказане колоне…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
@@ -436,11 +496,10 @@ msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Усклађивање између ЛаТеКс-а и ПДФ-а са гедитом и евинсом."
 
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
-#| msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Усклађујте између ЛаТеКс-а и ПДФ-а са гедитом и евинсом"
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Потражи унапред"
 
@@ -618,29 +677,28 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Угради терминал у доњи панел."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Терминал"
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
-#| msgid "Embed a terminal in the bottom pane."
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Једноставан елемент терминала приступљив из доњег панела"
 
 # хм, хм?
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "_Промени директоријум"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "_Уобичајена величина"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "_Мањи текст"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "_Велики текст"
 
@@ -655,7 +713,6 @@ msgid "Easily increase and decrease the text size"
 msgstr "Лако повећајте и смањите величину текста"
 
 #: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
-#| msgid "Text Size"
 msgid "Text size"
 msgstr "Величина текста"
 
@@ -696,7 +753,6 @@ msgid "Word completion using the completion framework"
 msgstr "Довршавајте речи користећи радни оквир довршавања"
 
 #: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
-#| msgid "Word Completion"
 msgid "Word completion"
 msgstr "Довршавање речи"
 
@@ -726,6 +782,9 @@ msgid ""
 msgstr ""
 "Бележи корисников рад и даје лак приступ недавно коришћеним и често "
 "коришћеним датотекама"
+
+#~ msgid "Pick _Color..."
+#~ msgstr "Изабери _боју..."
 
 #~ msgid "Characters that are considered \"part of a word\""
 #~ msgstr "Знаци који се сматрају „делом речи“"
