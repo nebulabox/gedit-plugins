@@ -1,5 +1,5 @@
 # Thai translation of gedit.
-# Copyright (C) 2004-2014 Free Software Foundation, Inc.
+# Copyright (C) 2004-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gedit package.
 #
 # Supakorn Siddhichai <supakorn.siddhichai@nectec.or.th>, 2003, 2004.
@@ -7,15 +7,15 @@
 # Chanchai Junlouchai <taz@opentle.org>, 2004.
 # Theppitak Karoonboonyanan <theppitak@gmail.com>, 2004-2009.
 # Kittiphong Meesawat <ktphong@yahoo.com>, 2010.
-# Akom Chotiphantawanon <knight2000@gmail.com>, 2009, 2014-2015.
+# Akom Chotiphantawanon <knight2000@gmail.com>, 2009, 2014-2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2015-03-14 06:08+0000\n"
-"PO-Revision-Date: 2015-03-26 23:59+0700\n"
+"POT-Creation-Date: 2015-12-30 19:04+0000\n"
+"PO-Revision-Date: 2016-01-04 12:23+0700\n"
 "Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -63,7 +63,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "เติมวงเล็บปิดโดยอัตโนมัติเมื่อคุณใส่วงเล็บตัวหนึ่ง"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "ผังอักขระ"
@@ -90,11 +90,11 @@ msgstr "หมายเหตุโค้ด"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "ทำหมายเหตุหรือเลิกทำหมายเหตุชุดโค้ดที่เลือก"
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "_หมายเหตุโค้ด"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "เ_ลิกทำหมายเหตุโค้ด"
 
@@ -118,18 +118,18 @@ msgstr "เครื่องมือเลือกสี"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "เลือกและแทรกรหัสสีจากกล่องโต้ตอบ (สำหรับ HTML, CSS, PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
-msgstr "เลือก_สี..."
+#: ../plugins/colorpicker/colorpicker.py:132
+msgid "Pick _Color…"
+msgstr "เลือก_สี…"
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "เลือกสี"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "เครื่องมือแก้ไขชุดสี"
@@ -198,11 +198,11 @@ msgstr "ผู้เขียน"
 msgid "Sample"
 msgstr "ตัวอย่าง"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "โหมดเรียกใช้งานตามคำสั่ง"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -218,8 +218,8 @@ msgid "Empty Document"
 msgstr "เอกสารเปล่า"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "พิมพ์ที่นี่เพื่อค้นหา..."
+msgid "Type here to search…"
+msgstr "พิมพ์ที่นี่เพื่อค้นหา…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -291,6 +291,67 @@ msgstr "ถ้าเลือก จะเปิดใช้การแสด�
 msgid "The type of spaces to be drawn."
 msgstr "ชนิดของช่องว่างที่จะแสดง"
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "หาในแฟ้ม"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "ปิ_ด"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "หาในแฟ้ม…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "ไม่พบผลลัพธ์"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "หยุดค้นหา"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "หาข้อความในแฟ้มทั้งหมดของโฟลเดอร์"
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_หา"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "ห_า"
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "ใ_น "
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "เลือกโ_ฟลเดอร์"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "ตัวพิมพ์ใหญ่-เ_ล็กตรงกัน"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "ค้นหาทั้_งคำ"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "_นิพจน์เรกิวลาร์"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -350,20 +411,20 @@ msgid "Multi edit"
 msgstr "แก้ไขหลายจุด"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-msgid "Added edit point..."
-msgstr "เพิ่มจุดแก้ไข..."
+msgid "Added edit point…"
+msgstr "เพิ่มจุดแก้ไข…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-msgid "Column Mode..."
-msgstr "โหมดคอลัมน์..."
+msgid "Column Mode…"
+msgstr "โหมดคอลัมน์…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-msgid "Removed edit point..."
-msgstr "ลบจุดแก้ไข..."
+msgid "Removed edit point…"
+msgstr "ลบจุดแก้ไข…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-msgid "Cancelled column mode..."
-msgstr "ยกเลิกโหมดคอลัมน์..."
+msgid "Cancelled column mode…"
+msgstr "ยกเลิกโหมดคอลัมน์…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
@@ -428,7 +489,7 @@ msgstr "ปรับข้อมูลระหว่าง LaTeX และ PDF 
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "ปรับข้อมูลระหว่าง LaTeX และ PDF ด้วย gedit และ evince"
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "ค้นหาไปข้างหน้า"
 
@@ -599,7 +660,7 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "เทอร์มินัลฝังตัวในช่องด้านล่าง"
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "เทอร์มินัล"
 
@@ -607,19 +668,19 @@ msgstr "เทอร์มินัล"
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "วิดเจ็ตเทอร์มินัลอย่างง่ายที่สามารถใช้งานได้จากพาเนลด้านล่าง"
 
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "เ_ปลี่ยนไดเรกทอรี"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "ขนาด_ปกติ"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "ตัวอักษรเ_ล็ก"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "ตัวอักษรใ_หญ่"
 
@@ -699,6 +760,9 @@ msgid ""
 "Records user activity and giving easy access to recently-used and frequently-"
 "used files"
 msgstr "บันทึกกิจกรรมของผู้ใช้และให้เข้าถึงแฟ้มที่ใช้งานล่าสุดและแฟ้มที่ใช้บ่อยได้อย่างง่ายดาย"
+
+#~ msgid "Pick _Color..."
+#~ msgstr "เลือก_สี..."
 
 #~ msgid "Characters that are considered \"part of a word\""
 #~ msgstr "อักขระที่ถือว่าเป็น \"ส่วนหนึ่งของคำ\""
