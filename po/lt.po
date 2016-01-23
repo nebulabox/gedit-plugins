@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2015-09-09 05:29+0000\n"
-"PO-Revision-Date: 2015-09-09 17:08+0300\n"
+"POT-Creation-Date: 2016-01-08 07:04+0000\n"
+"PO-Revision-Date: 2016-01-08 13:25+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -119,7 +119,6 @@ msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "Pasirinkite ir įveskite spalvą iš dialogo (HTML, CSS, PHP kodui)"
 
 #: ../plugins/colorpicker/colorpicker.py:132
-#| msgid "Pick Color"
 msgid "Pick _Color…"
 msgstr "Pasirinkti _spalvą…"
 
@@ -219,7 +218,6 @@ msgid "Empty Document"
 msgstr "Tuščias dokumentas"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-#| msgid "Type here to search..."
 msgid "Type here to search…"
 msgstr "Rašykite čia paieškai…"
 
@@ -417,22 +415,18 @@ msgid "Multi edit"
 msgstr "Daugybinis redagavimas"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-#| msgid "Added edit point..."
 msgid "Added edit point…"
 msgstr "Pridėtas redagavimo taškas…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-#| msgid "Column Mode..."
 msgid "Column Mode…"
 msgstr "Stulpelių veiksena…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-#| msgid "Removed edit point..."
 msgid "Removed edit point…"
 msgstr "Pašalintas redagavimo taškas…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-#| msgid "Cancelled column mode..."
 msgid "Cancelled column mode…"
 msgstr "Atsisakyta stulpelių veiksenos…"
 
@@ -634,7 +628,7 @@ msgid ""
 "settings, or \"on\" or \"off\" to set the mode explicitly."
 msgstr ""
 "Galimos vertės yra „system“ sistemos visuotiniams žymiklio mirksėjimo "
-"nustatymams, arba „on“ ar „off“ išreikštiniams veikseno nustatymui."
+"nustatymams, arba „on“ ar „off“ išreikštinės veiksenos nustatymui."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
 msgid "The cursor appearance"
