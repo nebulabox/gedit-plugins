@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit help\n"
-"POT-Creation-Date: 2016-02-03 19:02+0000\n"
-"PO-Revision-Date: 2016-02-04 09:25+0100\n"
+"POT-Creation-Date: 2016-02-04 08:28+0000\n"
+"PO-Revision-Date: 2016-02-04 09:30+0100\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -250,7 +250,7 @@ msgstr "Wählen Sie den Reiter <gui>Zeichentabelle</gui> in der Seitenleiste."
 #. (itstool) path: item/p
 #: C/character-map.page:57
 msgid ""
-"If neccessary, choose the character set to which your character belongs from "
+"If necessary, choose the character set to which your character belongs from "
 "the list at the top of the <gui style=\"tab\">Character Map</gui> tab (for "
 "example, Arabic)."
 msgstr ""
@@ -564,7 +564,6 @@ msgstr "Alle verfügbaren Befehle auflisten"
 
 #. (itstool) path: td/p
 #: C/commander.page:43
-#| msgid "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
 msgid "<keyseq><key>Tab</key><key>Tab</key></keyseq>"
 msgstr "<keyseq><key>Tab</key><key>Tab</key></keyseq>"
 
@@ -590,7 +589,6 @@ msgstr "Ein Wort in der aktuellen Datei ersetzen"
 
 #. (itstool) path: td/p
 #: C/commander.page:55
-#| msgid "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
 msgid "<keyseq><key>/</key><key>/</key></keyseq> <input>foo bar</input>"
 msgstr "<keyseq><key>/</key><key>/</key></keyseq> <input>bla blub</input>"
 
@@ -1308,12 +1306,12 @@ msgstr "Textgröße"
 #: C/text-size.page:27
 msgid ""
 "The text size plugin allows you to temporarily change the text size for "
-"better readibility in <app>gedit</app> without changing the program's "
+"better readability in <app>gedit</app> without changing the program's "
 "default text size."
 msgstr ""
-"Das <app>Textgröße</app>-Plugin ermöglicht das vorübergehende Ändern der "
-"Textgröße in <app>gedit</app>, ohne die vorgegebene Textgröße des Programms "
-"zu ändern."
+"Das <app>Textgröße</app>-Plugin ermöglicht zwecks besserer Lesbarkeit das "
+"vorübergehende Ändern der Textgröße in <app>gedit</app>, ohne die "
+"vorgegebene Textgröße des Programms zu ändern."
 
 #. (itstool) path: section/title
 #: C/text-size.page:32
@@ -1477,7 +1475,6 @@ msgstr "Datenlieferant für Zeitgeist aktivieren"
 
 #. (itstool) path: item/p
 #: C/zeitgeist-dataprovider.page:33
-#| msgid "Select <gui style=\"menuitem\">Sort</gui> to enable the plugin."
 msgid "Select <gui style=\"menuitem\">Zeitgeist Dataprovider</gui>."
 msgstr "Wählen Sie <gui style=\"menuitem\">Datenlieferant für Zeitgeist</gui>."
 
