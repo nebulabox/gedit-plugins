@@ -3,15 +3,15 @@
 #
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007, 2009.
 # Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2009, 2010.
-# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012, 2013, 2016.
 # Anita Reitere <nitalynx@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2013-08-02 13:25+0000\n"
-"PO-Revision-Date: 2013-09-22 00:02+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&"
+"keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2016-03-05 07:05+0000\n"
+"PO-Revision-Date: 2016-03-05 17:39+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -20,41 +20,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 2.0\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
+#: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
 msgid "Bookmarks"
 msgstr "Grāmatzīmes"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:2
+#: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:2
 msgid "Easy document navigation with bookmarks"
 msgstr "Vienkārša pārvietošanās pa dokumentiem, izmantojot grāmatzīmes"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:201
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:141
 msgid "Toggle Bookmark"
 msgstr "Ielikt / izņemt grāmatzīmi"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:202
-msgid "Toggle bookmark status of the current line"
-msgstr "Pārslēgt grāmatzīmes statusu šai rindiņai"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:204
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:145
 msgid "Goto Next Bookmark"
 msgstr "Pāriet uz nākamo grāmatzīmi"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:205
-msgid "Goto the next bookmark"
-msgstr "Pāriet uz nākamo grāmatzīmi"
-
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:207
+#: ../plugins/bookmarks/gedit-bookmarks-app-activatable.c:149
 msgid "Goto Previous Bookmark"
 msgstr "Pāriet uz iepriekšējo grāmatzīmi"
 
-#: ../plugins/bookmarks/gedit-bookmarks-plugin.c:208
-msgid "Goto the previous bookmark"
-msgstr "Pāriet uz iepriekšējo grāmatzīmi"
-
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:1
+#: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:1
 msgid "Bracket Completion"
 msgstr "Iekavu noslēgšana"
 
@@ -62,8 +53,13 @@ msgstr "Iekavu noslēgšana"
 msgid "Automatically adds closing brackets."
 msgstr "Automātiski pievieno aizverošās iekavas."
 
+#: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:2
+#| msgid "Automatically adds closing brackets."
+msgid "Automatically add a closing bracket when you insert one"
+msgstr "Automātiski pievienot aizverošās iekavas, kad jūs kādu ievietojat"
+
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:51
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Rakstzīmju tabula"
@@ -72,8 +68,18 @@ msgstr "Rakstzīmju tabula"
 msgid "Insert special characters just by clicking on them."
 msgstr "Ar klikšķu palīdzību ļauj ievietot speciālās rakstzīmes."
 
+#: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:1
+#| msgid "Character Map"
+msgid "Charmap"
+msgstr "Rakstzīmju tabula"
+
+#: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:2
+msgid "Select characters from a character map"
+msgstr "Izvēlieties rakstzīmes no rakstzīmju tabulas"
+
+#. ex:ts=4:et:
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
-#| msgid "Code comment"
+#: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:1
 msgid "Code Comment"
 msgstr "Koda komentārs"
 
@@ -81,23 +87,19 @@ msgstr "Koda komentārs"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Aizkomentē vai atkomentē izvēlēto koda daļu."
 
-#: ../plugins/codecomment/codecomment.py:88
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "Ko_mentēt kodu"
 
-#: ../plugins/codecomment/codecomment.py:90
-msgid "Comment the selected code"
-msgstr "Komentēt izvēlēto kodu"
-
-#: ../plugins/codecomment/codecomment.py:94
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "Atkome_ntēt kodu"
 
-#: ../plugins/codecomment/codecomment.py:96
-msgid "Uncomment the selected code"
-msgstr "Atkomentēt izvēlēto kodu"
+#: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:2
+#| msgid "Comment out or uncomment a selected block of code."
+msgid "Comment or uncomment blocks of code"
+msgstr "Aizkomentēt vai atkomentēt koda blokus"
 
-#. ex:ts=4:et:
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
 msgid "Color Picker"
 msgstr "Krāsu pipete"
@@ -107,21 +109,30 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Izvēlēties krāsu dialoglodziņā un ievietot tekstā tās heksadecimālo kodu."
 
-#: ../plugins/colorpicker/colorpicker.py:161
-msgid "Pick _Color..."
-msgstr "Izvēlēties _krāsu..."
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
+#| msgid "Color Picker"
+msgid "Color picker"
+msgstr "Krāsu pipete"
 
-#: ../plugins/colorpicker/colorpicker.py:162
-msgid "Pick a color from a dialog"
-msgstr "Izvēlieties krāsu dialoglodziņā"
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:2
+msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
+msgstr ""
+"Izvēlieties un ievietojiet krāsu no dialoglodziņa (HTML, CSS, PHP vajadzībām)"
 
-#: ../plugins/colorpicker/colorpicker.py:178
+#: ../plugins/colorpicker/colorpicker.py:132
+#| msgid "Pick Color"
+msgid "Pick _Color…"
+msgstr "Izvēlieties _krāsu…"
+
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Izvēlieties krāsu"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
-#: ../plugins/colorschemer/schemer/schemer.ui.h:1
+#: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
+#: ../plugins/colorschemer/schemer/__init__.py:42
+#: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Krāsu paletes redaktors"
 
@@ -129,96 +140,94 @@ msgstr "Krāsu paletes redaktors"
 msgid "Source code color scheme editor"
 msgstr "Pirmkoda krāsu paletes redaktors"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:2
+#: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:2
+msgid "Create and edit the color scheme used for syntax highlighting"
+msgstr ""
+"Izveidojiet un rediģējiet krāsu motīvu, ko izmantot sintakses izcelšanai"
+
+#: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
 msgstr "Treknraksts"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:3
-#| msgid "Italic text"
+#: ../plugins/colorschemer/schemer.ui.h:3
 msgid "Italic"
 msgstr "Kursīvs"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:4
-#| msgid "Underlined text style"
+#: ../plugins/colorschemer/schemer.ui.h:4
 msgid "Underline"
 msgstr "Pasvītrots"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:5
-#| msgid "Strike-through text"
+#: ../plugins/colorschemer/schemer.ui.h:5
 msgid "Strikethrough"
 msgstr "Pārsvītrots"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:6
-#| msgid "Background color"
+#: ../plugins/colorschemer/schemer.ui.h:6
 msgid "Pick the background color"
 msgstr "Izvēlieties fona krāsu"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:7
-#| msgid "Background color"
+#: ../plugins/colorschemer/schemer.ui.h:7
 msgid "Pick the foreground color"
 msgstr "Izvēlieties priekšplāna krāsu"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:8
-#| msgid "Background color"
+#: ../plugins/colorschemer/schemer.ui.h:8
 msgid "_Background"
 msgstr "_Fons"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:9
+#: ../plugins/colorschemer/schemer.ui.h:9
 msgid "_Foreground"
 msgstr "_Priekšplāns"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:10
+#: ../plugins/colorschemer/schemer.ui.h:10
 msgid "_Clear "
 msgstr "_Attīrīt "
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:11
+#: ../plugins/colorschemer/schemer.ui.h:11
 msgid "Name"
 msgstr "Nosaukums"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:12
+#: ../plugins/colorschemer/schemer.ui.h:12
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:13
-#| msgid "List description"
+#: ../plugins/colorschemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Apraksts"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:14
-#| msgid "Author info"
+#: ../plugins/colorschemer/schemer.ui.h:14
 msgid "Author"
 msgstr "Autors"
 
-#: ../plugins/colorschemer/schemer/schemer.ui.h:15
+#: ../plugins/colorschemer/schemer.ui.h:15
 msgid "Sample"
 msgstr "Paraugs"
 
+#: ../plugins/commander/commander/appactivatable.py:48
+msgid "Commander Mode"
+msgstr "Commander režīms"
+
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
+#: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
 msgstr "Commander"
 
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:2
+#: ../plugins/commander/gedit-commander.metainfo.xml.in.h:2
 msgid "Command line interface for advanced editing"
 msgstr "Komandrindas saskarne paplašinātai rediģēšanai"
-
-#: ../plugins/commander/commander/windowactivatable.py:70
-msgid "Commander Mode"
-msgstr "Commander režīms"
-
-#: ../plugins/commander/commander/windowactivatable.py:71
-msgid "Start commander mode"
-msgstr "Startēt commander režīmu"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:117
 msgid "Empty Document"
 msgstr "Tukšs dokuments"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "Rakstiet šeit, lai meklētu..."
+#| msgid "Type here to search..."
+msgid "Type here to search…"
+msgstr "Rakstiet šeit, lai meklētu…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
+#: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:1
 msgid "Dashboard"
 msgstr "Datņu panelis"
 
@@ -226,56 +235,58 @@ msgstr "Datņu panelis"
 msgid "A Dashboard for new tabs"
 msgstr "Panelis jaunām cilnēm"
 
+#: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:2
+msgid "Displays a grid of recently/most used files upon opening a new tab"
+msgstr "Atverot jaunu cilni rāda režģi ar nesen/biežāk izmantotajām datnēm"
+
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
 msgid "Draw Spaces"
 msgstr "Zīmēt atstarpes"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-#| msgid "Draw Spaces and Tabs"
 msgid "Draw spaces and tabs"
 msgstr "Zīmēt atstarpes un tabulatorus"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:134
-msgid "Show _White Space"
-msgstr "Rādīt _tukšās atstarpes"
-
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.c:135
-msgid "Show spaces and tabs"
-msgstr "Rādīt atstarpes un tabulatorus"
-
 #. ex:set ts=8 noet:
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:1
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
 msgid "Draw spaces"
 msgstr "Zīmēt atstarpes"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:2
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
+#| msgid "Draw spaces and tabs"
+msgid "Draw Spaces and Tabs"
+msgstr "Zīmēt atstarpes un tabulatorus"
+
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
+msgid "Show _White Space"
+msgstr "Rādīt _tukšās atstarpes"
+
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:2
 msgid "Draw tabs"
 msgstr "Zīmēt tabulatorus"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:3
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:3
 msgid "Draw new lines"
 msgstr "Zīmēt jaunās rindas"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:4
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:4
 msgid "Draw non-breaking spaces"
 msgstr "Zīmēt nedalāmās atstarpes"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:5
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:5
 msgid "Draw leading spaces"
 msgstr "Zīmēt atstarpes rindas sākumā"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:6
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:6
 msgid "Draw spaces in text"
 msgstr "Zīmēt atstarpes tekstā"
 
-#: ../plugins/drawspaces/gedit-drawspaces-plugin.ui.h:7
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:7
 msgid "Draw trailing spaces"
 msgstr "Zīmēt atstarpes rindas beigās"
-
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
-msgid "Enabled"
-msgstr "Aktivēts"
 
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
 msgid "If TRUE drawing will be enabled."
@@ -285,13 +296,83 @@ msgstr "Ja patiess, zīmēšana tiks aktivēta."
 msgid "The type of spaces to be drawn."
 msgstr "Kāda veida atstarpes zīmēt."
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "Meklēt datnēs"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "_Aizvērt"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Meklēt datnēs…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Nav atrastu rezultātu"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Apturēt meklēšanu"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Meklēt tekstu visās datnēs un mapēs."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_Meklēt"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "_Meklēt "
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_Iekš"
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "Izvēlieties _mapi"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "_Reģistrjutīgs"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "Atbilst tikai _viss vārds"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "Re_gulārā izteiksme"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
+#: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
 msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Git differences"
-msgstr "Git atšķirības"
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Izcelt rindas, kas ir mainījušās kopš pēdējās iesniegšanas"
+
+#: ../plugins/git/gedit-git.metainfo.xml.in.h:2
+msgid ""
+"Use git information to display which lines and files changed since last "
+"commit"
+msgstr ""
+"Izmantot git informāciju, lai attēlotu, kuras rindas ir mainījušās kopš "
+"pēdējās iesniegšanas"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -301,84 +382,27 @@ msgstr "Sadalīt / apvienot rindas"
 msgid "Join several lines or split long ones"
 msgstr "Savieno vairākas rindas vai sadala garās"
 
-#: ../plugins/joinlines/joinlines.py:74
+#: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
+#| msgid "Join/Split Lines"
+msgid "Join lines/ Split lines"
+msgstr "Sadalīt rindas / apvienot rindas"
+
+#: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:2
+msgid "Join or split multiple lines through Ctrl+J and Ctrl+Shift+J"
+msgstr "Savienot vai sadalīt vairākas rindas ar Ctrl+J un Ctrl+Shift+J"
+
+#: ../plugins/joinlines/joinlines.py:107
 msgid "_Join Lines"
 msgstr "_Savienot rindas"
 
-#: ../plugins/joinlines/joinlines.py:75
-msgid "Join the selected lines"
-msgstr "Savienot izvēlētās rindas"
-
-#: ../plugins/joinlines/joinlines.py:77
+#: ../plugins/joinlines/joinlines.py:113
 msgid "_Split Lines"
 msgstr "_Šķelt rindas"
 
-#: ../plugins/joinlines/joinlines.py:78
-msgid "Split the selected lines"
-msgstr "Šķelt izvēlētās rindas"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:301
-msgid "Added edit point..."
-msgstr "Pievienotais rediģēšanas punkts..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:643
-msgid "Column Mode..."
-msgstr "Kolonnas režīms..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:757
-msgid "Removed edit point..."
-msgstr "Izņemtais rediģēšanas punkts..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:920
-msgid "Cancelled column mode..."
-msgstr "Atceltais kolonnas režīms..."
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1293
-msgid "Enter column edit mode using selection"
-msgstr "Ieiet kolonnu rediģēšanas režīmā, lietojot izvēli"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1294
-msgid "Enter <b>smart</b> column edit mode using selection"
-msgstr "Ieiet <b>gudrajā</b> kolonnu rediģēšanas režīmā, lietojot izvēli"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1295
-msgid "<b>Smart</b> column align mode using selection"
-msgstr "<b>Gudrais</b> kolonu līdzināšanas režīms, lietojot izvēli"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1296
-msgid "<b>Smart</b> column align mode with additional space using selection"
-msgstr ""
-"<b>Gudrais</b> kolonu līdzināšanas režīms ar papildu atstarpēm, lietojot "
-"izvēli"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1298
-msgid "Toggle edit point"
-msgstr "Pārslēgt rediģēšanas punktu"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1299
-msgid "Add edit point at beginning of line/selection"
-msgstr "Rindas / izvēles sākumā pievienot rediģēšanas punktu"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1300
-msgid "Add edit point at end of line/selection"
-msgstr "Rindas / izvēles beigās pievienot rediģēšanas punktu"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1301
-msgid "Align edit points"
-msgstr "Līdzināt rediģēšanas punktus"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1302
-msgid "Align edit points with additional space"
-msgstr "Līdzināt rediģēšanas punktus ar papildu atstarpēm"
-
-#: ../plugins/multiedit/multiedit/documenthelper.py:1333
-#: ../plugins/multiedit/multiedit/__init__.py:79
+#: ../plugins/multiedit/multiedit/appactivatable.py:36
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1349
 msgid "Multi Edit Mode"
 msgstr "Multirediģēšanas režīms"
-
-#: ../plugins/multiedit/multiedit/__init__.py:81
-msgid "Start multi edit mode"
-msgstr "Sākt multirediģēšanas režīmu"
 
 #. ex:ts=4:et:
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:1
@@ -386,10 +410,76 @@ msgid "Multi Edit"
 msgstr "Multirediģēšana"
 
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
 msgid "Edit document in multiple places at once"
 msgstr "Rediģēt dokumentu vairākās vietās vienlaicīgi"
 
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
+#| msgid "Multi Edit"
+msgid "Multi edit"
+msgstr "Multirediģēšana"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:315
+#| msgid "Added edit point..."
+msgid "Added edit point…"
+msgstr "Pievienotais rediģēšanas punkts…"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:657
+#| msgid "Column Mode..."
+msgid "Column Mode…"
+msgstr "Kolonnu režīms…"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:775
+#| msgid "Removed edit point..."
+msgid "Removed edit point…"
+msgstr "Izņemtais rediģēšanas punkts…"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:941
+#| msgid "Cancelled column mode..."
+msgid "Cancelled column mode…"
+msgstr "Atceltais kolonnu režīms…"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1304
+msgid "Enter column edit mode using selection"
+msgstr "Ieiet kolonnu rediģēšanas režīmā, lietojot izvēli"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
+msgid "Enter <b>smart</b> column edit mode using selection"
+msgstr "Ieiet <b>gudrajā</b> kolonnu rediģēšanas režīmā, lietojot izvēli"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
+msgid "<b>Smart</b> column align mode using selection"
+msgstr "<b>Gudrais</b> kolonu līdzināšanas režīms, lietojot izvēli"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
+msgid "<b>Smart</b> column align mode with additional space using selection"
+msgstr ""
+"<b>Gudrais</b> kolonu līdzināšanas režīms ar papildu atstarpēm, lietojot "
+"izvēli"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
+msgid "Toggle edit point"
+msgstr "Pārslēgt rediģēšanas punktu"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1310
+msgid "Add edit point at beginning of line/selection"
+msgstr "Rindas / izvēles sākumā pievienot rediģēšanas punktu"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
+msgid "Add edit point at end of line/selection"
+msgstr "Rindas / izvēles beigās pievienot rediģēšanas punktu"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
+msgid "Align edit points"
+msgstr "Līdzināt rediģēšanas punktus"
+
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
+msgid "Align edit points with additional space"
+msgstr "Līdzināt rediģēšanas punktus ar papildu atstarpēm"
+
+#. ex:ts=4:et:
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
+#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:1
 msgid "Smart Spaces"
 msgstr "Gudrās atstarpes"
 
@@ -397,7 +487,14 @@ msgstr "Gudrās atstarpes"
 msgid "Forget you're not using tabulations."
 msgstr "Aizmirstiet, ka neizmantojat tabulatorus."
 
+#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
+msgid "Allow to unindent like if you were using tabs while you're using spaces"
+msgstr ""
+"Atļaut samazināt atkāpi, it kā jūs izmantotu tabulācijas, kamēr izmantojat "
+"atstarpes"
+
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
+#: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
 msgid "SyncTeX"
 msgstr "SyncTeX"
 
@@ -405,8 +502,12 @@ msgstr "SyncTeX"
 msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Sinhronizēt starp LaTeX un PDF ar gedit un evince."
 
-#: ../plugins/synctex/synctex/synctex.py:310
-#: ../plugins/synctex/synctex/synctex.py:311
+#: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
+#| msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgid "Synchronize between LaTeX and PDF with gedit and evince"
+msgstr "Sinhronizēt starp LaTeX un PDF ar gedit un evince"
+
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Meklēt uz priekšu"
 
@@ -482,24 +583,10 @@ msgstr ""
 "Ja patiess, lietotnēm atļauts terminālī tekstu pārveidot treknā rakstā."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:13
-msgid "Characters that are considered \"part of a word\""
-msgstr "Rakstzīmes, kuras tiek uzskatītas par “vārda daļu“"
-
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:14
-msgid ""
-"When selecting text by word, sequences of these characters are considered "
-"single words. Ranges can be given as \"A-Z\". Literal hyphen (not expressing "
-"a range) should be the first character given."
-msgstr ""
-"Simbolu virknes tiek uzskatītas par vārdiem, ja teksts tiek izvēlētas pa "
-"vārdam. Intervāli var tik uzdoti kā \"A-Z\". Burtiskai defisei (neizsaka "
-"intervālu) vajadzētu būt pirmajam padotajam simbolam."
-
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
 msgid "Default color of text in the terminal"
 msgstr "Noklusējuma teksta krāsa terminālī"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:16
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:14
 msgid ""
 "Default color of text in the terminal, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
@@ -507,11 +594,11 @@ msgstr ""
 "Noklusējuma termināļa teksta krāsa, kā krāsu specifikācija (var būt HTML-"
 "stila heksadecimāli cipari vai krāsas vārds, piemēram, “red”)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:17
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
 msgid "Default color of terminal background"
 msgstr "Noklusējuma termināļa fona krāsa"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:18
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:16
 msgid ""
 "Default color of terminal background, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
@@ -519,11 +606,11 @@ msgstr ""
 "Noklusējuma termināļa fona krāsa, kā krāsu specifikācija (var būt HTML-stila "
 "heksadecimāli cipari vai krāsas vārds, piemēram “red”)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:19
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:17
 msgid "Palette for terminal applications"
 msgstr "Terminālo lietotņu palete"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:20
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:18
 msgid ""
 "Terminals have a 16-color palette that applications inside the terminal can "
 "use. This is that palette, in the form of a colon-separated list of color "
@@ -533,11 +620,11 @@ msgstr ""
 "tā palete krāsu nosaukumu, kas atdalīti ar kolu, saraksta veidā. Krāsu "
 "nosaukumiem vajadzētu būt pierakstītiem heksadecimālā formā, piem., “#FF00FF”"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:21
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:19
 msgid "Whether to use the colors from the theme for the terminal widget"
 msgstr "Vai lietot pašreizējos motīvus krāsas termināļa logrīkam"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:22
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:20
 msgid ""
 "If true, the theme color scheme used for text entry boxes will be used for "
 "the terminal, instead of colors provided by the user."
@@ -545,11 +632,11 @@ msgstr ""
 "Ja patiess, motīva krāsu shēma, kas tiek lietota teksta ievades laukos, tiks "
 "izmantota terminālī lietotāja uzdoto krāsu vietā."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:21
 msgid "Whether to blink the cursor"
 msgstr "Vai kursoram ir jāmirgo"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:24
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:22
 msgid ""
 "The possible values are \"system\" to use the global cursor blinking "
 "settings, or \"on\" or \"off\" to set the mode explicitly."
@@ -557,11 +644,11 @@ msgstr ""
 "Iespējamās vērtības ir “system” lai izmantotu globālos mirgošanas "
 "iestatījumus, vai arī “on” vai “off”."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
 msgid "The cursor appearance"
 msgstr "Kursora izskats"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:26
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:24
 msgid ""
 "The possible values are \"block\" to use a block cursor, \"ibeam\" to use a "
 "vertical line cursor, or \"underline\" to use an underline cursor."
@@ -570,11 +657,11 @@ msgstr ""
 "izmantotu vertikālu līniju, vai “underline”, lai izmantotu pasvītrojuma "
 "kursoru."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:27
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
 msgid "Whether to use the system font"
 msgstr "Vai izmantot sistēmas fontu"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:28
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:26
 msgid ""
 "If true, the terminal will use the desktop-global standard font if it's "
 "monospace (and the most similar font it can come up with otherwise)."
@@ -582,11 +669,11 @@ msgstr ""
 "Ja patiess, terminālis izmantos globālo darba virsmas fontu, ja tas ir "
 "monospace (vai arī vistuvāko pēc līdzības, kādu tas var atrast)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:29
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:27
 msgid "Font"
 msgstr "Fonts"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:30
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:28
 msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
 msgstr "Pango fonta nosaukums. Piemēri: \"Sans 12\" vai \"Monospace Bold 14\"."
 
@@ -598,28 +685,31 @@ msgstr "Iegultais terminālis"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Iegult termināli apakšējā rūtī."
 
-#: ../plugins/terminal/terminal.py:318
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Terminālis"
 
-#: ../plugins/terminal/terminal.py:339
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
+#| msgid "Embed a terminal in the bottom pane."
+msgid "A simple terminal widget accessible from the bottom panel"
+msgstr "Vienkārša termināļa logdaļa, kas ir pieejama apakšējā rūtī"
+
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "_Mainīt direktoriju"
 
-#: ../plugins/textsize/textsize/__init__.py:142
-#| msgid "Large text style"
-msgid "_Larger Text"
-msgstr "_Lielāks teksts"
+#: ../plugins/textsize/textsize/__init__.py:53
+msgid "_Normal size"
+msgstr "_Normāls izmērs"
 
-#: ../plugins/textsize/textsize/__init__.py:145
-#| msgid "Small text style"
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "_Mazāks teksts"
 
-#: ../plugins/textsize/textsize/__init__.py:148
-#| msgid "No resize"
-msgid "_Normal size"
-msgstr "_Normāls izmērs"
+#: ../plugins/textsize/textsize/__init__.py:57
+msgid "_Larger Text"
+msgstr "_Lielāks teksts"
 
 #. ex:ts=4:et:
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:1
@@ -627,11 +717,16 @@ msgid "Text Size"
 msgstr "Teksta izmērs"
 
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
 msgid "Easily increase and decrease the text size"
 msgstr "Viegli palielināt vai samazināt teksta izmēru"
 
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
+#| msgid "Text Size"
+msgid "Text size"
+msgstr "Teksta izmērs"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive completion"
 msgstr "Interaktīva pabeigšana"
 
@@ -644,7 +739,6 @@ msgid "Document Words"
 msgstr "Dokumenta vārdi"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
-#| msgid "Bracket Completion"
 msgid "Interactive Completion"
 msgstr "Interaktīva pabeigšana"
 
@@ -667,6 +761,93 @@ msgstr "Vārdu pabeigšana"
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
 msgstr "Vārdu pabeigšana, lietojot pabeigšanas rāmja struktūru"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
+#| msgid "Word Completion"
+msgid "Word completion"
+msgstr "Vārdu pabeigšana"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
+msgid ""
+"Propose automatic completion using words already present in the document"
+msgstr ""
+"Ieteikt automātisku vārdu pabeigšanu, izmantojot vārdus, kas jau ir dokumentā"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
+msgid "Zeitgeist dataprovider"
+msgstr "Zeitgeist datu piegādātājs"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
+msgid "Logs access and leave event for documents used with gedit"
+msgstr ""
+"Reģistrē piekļūšanas un pamešanas notikumus dokumentiem, kurus izmanto ar "
+"gedit"
+
+#: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:1
+msgid "Zeitgeist Data provider"
+msgstr "Zeitgeist datu piegādātājs"
+
+#: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:2
+msgid ""
+"Records user activity and giving easy access to recently-used and frequently-"
+"used files"
+msgstr ""
+"Ieraksta lietotāja aktivitātes un sniedz vienkāršu piekļuvi nesen "
+"izmantotajām un biežāk izmantotajām datnēm"
+
+#~ msgid "Toggle bookmark status of the current line"
+#~ msgstr "Pārslēgt grāmatzīmes statusu šai rindiņai"
+
+#~ msgid "Goto the next bookmark"
+#~ msgstr "Pāriet uz nākamo grāmatzīmi"
+
+#~ msgid "Goto the previous bookmark"
+#~ msgstr "Pāriet uz iepriekšējo grāmatzīmi"
+
+#~ msgid "Comment the selected code"
+#~ msgstr "Komentēt izvēlēto kodu"
+
+#~ msgid "Uncomment the selected code"
+#~ msgstr "Atkomentēt izvēlēto kodu"
+
+#~ msgid "Pick _Color..."
+#~ msgstr "Izvēlēties _krāsu..."
+
+#~ msgid "Pick a color from a dialog"
+#~ msgstr "Izvēlieties krāsu dialoglodziņā"
+
+#~ msgid "Start commander mode"
+#~ msgstr "Startēt commander režīmu"
+
+#~ msgid "Show spaces and tabs"
+#~ msgstr "Rādīt atstarpes un tabulatorus"
+
+#~ msgid "Enabled"
+#~ msgstr "Aktivēts"
+
+#~ msgid "Git differences"
+#~ msgstr "Git atšķirības"
+
+#~ msgid "Join the selected lines"
+#~ msgstr "Savienot izvēlētās rindas"
+
+#~ msgid "Split the selected lines"
+#~ msgstr "Šķelt izvēlētās rindas"
+
+#~ msgid "Start multi edit mode"
+#~ msgstr "Sākt multirediģēšanas režīmu"
+
+#~ msgid "Characters that are considered \"part of a word\""
+#~ msgstr "Rakstzīmes, kuras tiek uzskatītas par “vārda daļu“"
+
+#~ msgid ""
+#~ "When selecting text by word, sequences of these characters are considered "
+#~ "single words. Ranges can be given as \"A-Z\". Literal hyphen (not "
+#~ "expressing a range) should be the first character given."
+#~ msgstr ""
+#~ "Simbolu virknes tiek uzskatītas par vārdiem, ja teksts tiek izvēlētas pa "
+#~ "vārdam. Intervāli var tik uzdoti kā \"A-Z\". Burtiskai defisei (neizsaka "
+#~ "intervālu) vajadzētu būt pirmajam padotajam simbolam."
 
 #~ msgid "Most Used"
 #~ msgstr "Biežāk lietotie"
