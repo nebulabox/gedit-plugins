@@ -6,30 +6,31 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
-"POT-Creation-Date: 2014-06-16 17:16+0000\n"
-"PO-Revision-Date: 2014-06-17 13:30+0200\n"
-"Last-Translator: Maria Mavridou <mavridou@gmail.com>\n"
+"POT-Creation-Date: 2016-03-12 07:04+0000\n"
+"PO-Revision-Date: 2016-03-12 15:26+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-" Μάριος Ζηντίλης <m.zindilis@dmajor.org>, 2009\n"
+"Ελληνική μεταφραστική ομάδα GNOME <team@gnome.gr>, 2009-2016\n"
+"Μάριος Ζηντίλης <m.zindilis@dmajor.org>, 2009\n"
 " Μιχαήλ Κοτσαρίνης <mk73628@hotmail.com>,2009\n"
 " Βασίλης Τσιβίκης <vasitsiv@hotmail.gr>, 2011\n"
-" Θάνος Τρυφωνίδης <tomtryf@gmail.com>, 2012\n"
+" Θάνος Τρυφωνίδης <tomtryf@gnom.org>, 2012, 2016\n"
 " Δημήτρης Σπίγγος <dmtrs32@gmail.com>, 2013\n"
-" Maria Mavridou <mavridou@gmail.com>, 2014"
+" Μαρία Μαυρίδου <mavridou@gmail.com>, 2014"
 
 #. (itstool) path: credit/name
-#: C/bookmarks.page:11 C/bracket-comp.page:11 C/character-map.page:11
+#: C/bookmarks.page:12 C/bracket-comp.page:11 C/character-map.page:11
 #: C/code-assistance.page:11 C/code-comment.page:11 C/color-picker.page:11
 #: C/commander.page:11 C/dashboard.page:11 C/draw-spaces.page:11
 #: C/join-split-lines.page:11 C/multi-edit.page:11 C/session-saver.page:11
@@ -37,18 +38,28 @@ msgstr ""
 msgid "Jim Campbell"
 msgstr "Jim Campbell"
 
+#. (itstool) path: credit/name
+#: C/bookmarks.page:16
+msgid "Ekaterina Gerasimova"
+msgstr "Ekaterina Gerasimova"
+
+#. (itstool) path: credit/years
+#: C/bookmarks.page:18
+msgid "2014"
+msgstr "2014"
+
 #. (itstool) path: info/desc
-#: C/bookmarks.page:15
+#: C/bookmarks.page:21
 msgid "Record commonly-referenced locations with bookmarks."
 msgstr "Καταγραφή συχνά αναφερόμενων τοποθεσιών με σελιδοδείκτες"
 
 #. (itstool) path: page/title
-#: C/bookmarks.page:18
+#: C/bookmarks.page:24
 msgid "Bookmarks"
 msgstr "Σελιδοδείκτες"
 
 #. (itstool) path: page/p
-#: C/bookmarks.page:20
+#: C/bookmarks.page:26
 msgid ""
 "<app>gedit</app> bookmarks allow you to highlight important lines of text "
 "within your document or program, making them easier to find. You can also "
@@ -60,7 +71,7 @@ msgstr ""
 "μεταξύ των σελιδοδεικτών, κάνοντας την πλοήγηση σας στο κειμένο γρηγορότερη."
 
 #. (itstool) path: page/p
-#: C/bookmarks.page:25
+#: C/bookmarks.page:31
 msgid ""
 "To enable the bookmark plugin, select <guiseq><gui style=\"menu\">gedit</"
 "gui> <gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> "
@@ -71,7 +82,7 @@ msgstr ""
 "gui><gui>Πρόσθετα</gui> <gui>Σελιδοδείκτες</gui></guiseq>."
 
 #. (itstool) path: steps/title
-#: C/bookmarks.page:30
+#: C/bookmarks.page:36
 msgid ""
 "Bookmarks are inserted and removed by completing the same action. To insert "
 "or remove bookmarks:"
@@ -80,30 +91,30 @@ msgstr ""
 "ενέργειας. Για να προσθέσετε ή να αφαιρέσετε σελιδοδείκτες:"
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:33
+#: C/bookmarks.page:39
 msgid "Navigate to the line where you want to insert or remove the bookmark."
 msgstr ""
 "Πλοηγηθείτε στη γραμμή που θέλετε να προσθέσετε ή να αφαιρέσετε τον "
 "σελιδοδείκτη."
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:37
+#: C/bookmarks.page:43
 msgid ""
-"Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or click "
-"<guiseq><gui style=\"menu\">Edit</gui><gui style=\"menuitem\">Toggle "
-"Bookmark</gui></guiseq>."
+"Press <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, or open "
+"the menu in the top-right corner and select <gui style=\"menuitem\">Toggle "
+"Bookmark</gui>."
 msgstr ""
-"Πατήστε <keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, ή "
-"πατήστε στο <guiseq><gui style=\"menu\">Επεξεργασία</gui><gui style="
-"\"menuitem\">Εναλλαγή σελιδιδείκτη</gui></guiseq>."
+"Πατήστε<keyseq><key>Ctrl</key><key>Alt</key><key>B</key></keyseq>, ή ανοίξτε "
+"το μενού από την πάνω δεξιά γωνία επιλέγοντας <gui style=\"menuitem"
+"\">Εναλλαγή σελιδιδείκτη</gui>."
 
-#. (itstool) path: steps/title
-#: C/bookmarks.page:44
+#. (itstool) path: list/title
+#: C/bookmarks.page:50
 msgid "To move between bookmarks:"
 msgstr "Για να μετακινηθείτε μεταξύ των σελιδοδεικτών:"
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:46
+#: C/bookmarks.page:52
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>B</key></keyseq> to move to the next "
 "bookmark."
@@ -112,7 +123,7 @@ msgstr ""
 "στον επόμενο σελιδοδείκτη."
 
 #. (itstool) path: item/p
-#: C/bookmarks.page:50
+#: C/bookmarks.page:56
 msgid ""
 "Press <keyseq><key>Ctrl</key><key>Shift</key><key>B</key></keyseq> to move "
 "to the previous bookmark."
@@ -121,18 +132,16 @@ msgstr ""
 "μετακινηθείτε στον προηγούμενο σελιδοδείκτη."
 
 #. (itstool) path: note/p
-#: C/bookmarks.page:53
+#: C/bookmarks.page:62
 msgid ""
-"If you prefer using the mouse, you can click <guiseq><gui style=\"menu"
-"\">gedit</gui><gui style=\"menuitem\">Go to Next Bookmark</gui></guiseq> or "
-"<guiseq><gui style=\"menu\">Edit</gui> <gui style=\"menuitem\">Go to "
-"Previous Bookmark</gui></guiseq>."
+"If you prefer to use the mouse, you can open the menu in the top-right "
+"corner and select <gui style=\"menuitem\">Go to Next Bookmark</gui> or <gui "
+"style=\"menuitem\">Go to Previous Bookmark</gui>."
 msgstr ""
-"Εάν προτιμάτε τη χρήση του ποντικιού, μπορείτε να πατήσετε στο <guiseq><gui "
-"style=\"menu\">gedit</gui><gui style=\"menuitem\">Μετάβαση στον επόμενο "
-"σελιδοδείκτη</gui></guiseq> ή <guiseq><gui style=\"menu\">Επεξεργασία</gui> "
-"<gui style=\"menuitem\">Μετάβαση στον προηγούμενο σελιδοδείκτη</gui></"
-"guiseq>."
+"Εάν προτιμάτε τη χρήση του ποντικιού, μπορείτε να ανοίξετε το μενού από την "
+"πάνω δεξιά γωνία και να επιλέξετε <gui style=\"menuitem\">Μετάβαση στον "
+"επόμενο σελιδοδείκτη</gui> ή <gui style=\"menuitem\">Μετάβαση στον "
+"προηγούμενο σελιδοδείκτη</gui>."
 
 #. (itstool) path: info/desc
 #: C/bracket-comp.page:15
@@ -242,7 +251,7 @@ msgstr "Επιλέξτε την καρτέλα <em>Πίνακας χαρακτή
 #. (itstool) path: item/p
 #: C/character-map.page:57
 msgid ""
-"If neccessary, choose the character set to which your character belongs from "
+"If necessary, choose the character set to which your character belongs from "
 "the list at the top of the <gui style=\"tab\">Character Map</gui> tab (for "
 "example, Arabic)."
 msgstr ""
@@ -1243,7 +1252,7 @@ msgid "To enable the <app>Embedded Terminal</app> plugin:"
 msgstr "Για ενεργοποίηση του πρόσθετου <app>Ενσωματωμένο τερματικό</app>:"
 
 #. (itstool) path: item/p
-#: C/terminal.page:38 C/text-size.page:37
+#: C/terminal.page:38 C/text-size.page:37 C/zeitgeist-dataprovider.page:28
 msgid ""
 "Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
 "\">Preferences</gui> <gui style=\"tab\">Plugins</gui></guiseq>."
@@ -1296,7 +1305,7 @@ msgstr "Μέγεθος κειμένου"
 #: C/text-size.page:27
 msgid ""
 "The text size plugin allows you to temporarily change the text size for "
-"better readibility in <app>gedit</app> without changing the program's "
+"better readability in <app>gedit</app> without changing the program's "
 "default text size."
 msgstr ""
 "Το πρόσθετο μέγεθος κειμένου επιτρέπει την προσωρινή αλλαγή του μεγέθους του "
@@ -1423,6 +1432,48 @@ msgstr ""
 "Για να εισαγάγετε μια λέξη, κάντε διπλό κλικ πάνω του στην αναδυόμενη λίστα "
 "ή πατήστε <keyseq><key>Alt</key><key>Num</key></keyseq>, όπου <key>Num</key> "
 "είναι ο αριθμός που εμφανίζεται στην επιθυμητή σας λέξη."
+
+#. (itstool) path: credit/name
+#: C/zeitgeist-dataprovider.page:10
+msgid "Shobha Tyagi"
+msgstr "Shobha Tyagi"
+
+#. (itstool) path: info/desc
+#: C/zeitgeist-dataprovider.page:14
+msgid "Log user activity for documents which are opened in gedit"
+msgstr ""
+"Καταγραφή δραστηριότητας χρήστη για έγγραφα που είναι ανοικτά στο gedit"
+
+#. (itstool) path: page/title
+#: C/zeitgeist-dataprovider.page:17
+msgid "Zeitgeist dataprovider"
+msgstr "Πάροχος δεδομένων Zeitgeist"
+
+#. (itstool) path: page/p
+#: C/zeitgeist-dataprovider.page:19
+msgid ""
+"Zeitgeist is a service that logs user activities and events. Zeitgeist lets "
+"other applications access this information in the form of statistics and "
+"timelines.The Zeitgeist dataprovider plugin for <app>gedit</app> records "
+"user activity for documents used with gedit giving easy access to recently-"
+"used and frequently-used files."
+msgstr ""
+"Το Zeitgeist είναι μια υπηρεσία που καταγράφει τις δραστηριότητες του χρήστη "
+"και των συμβάντων. Το Zeitgeist επιτρέπει σε άλλες εφαρμογές να προσπελάσουν "
+"αυτήν την πληροφορία στη μορφή των στατιστικών και των χρονοδιαγραμμάτων. Το "
+"πρόσθετο παρόχου δεδομένων Zeitgeist για το <app>gedit</app> γράφει τη "
+"δραστηριότητα του χρήστη για έγγραφα που χρησιμοποιούνται με το gedit "
+"δίνοντας εύκολη πρόσβαση σε πρόσφατα και συχνά χρησιμοποιούμενα αρχεία."
+
+#. (itstool) path: steps/title
+#: C/zeitgeist-dataprovider.page:26
+msgid "Enable Zeitgeist dataprovider"
+msgstr "Ενεργοποίηση του παρόχου δεδομένων Zeitgeist"
+
+#. (itstool) path: item/p
+#: C/zeitgeist-dataprovider.page:33
+msgid "Select <gui style=\"menuitem\">Zeitgeist Dataprovider</gui>."
+msgstr "Επιλέξτε <gui style=\"menuitem\">πάροχος δεδομένων Zeitgeist</gui>."
 
 #~ msgctxt "_"
 #~ msgid "external ref='figures/gedit-side-pane3.png' md5='__failed__'"
@@ -2747,9 +2798,6 @@ msgstr ""
 #~ "gui>, θα εμφανιστεί η <gui>Κονσόλα Python</gui> ως μια ξεχωριστή καρτέλα "
 #~ "στο κάτω μέρος του παραθύρου."
 
-#~ msgid "Shobha Tyagi"
-#~ msgstr "Shobha Tyagi"
-
 #~ msgid "Quickly open a file or set of files"
 #~ msgstr "Γρήγορο άνοιγμα ενός αρχείου ή ενός συνόλου αρχείων"
 
@@ -3145,11 +3193,6 @@ msgstr ""
 
 #~ msgid "To enable the <app>Sort</app> plugin:"
 #~ msgstr "Για ενεργοποίηση του προσθέτου <app>Ταξινόμηση</app>:"
-
-#~ msgid "Select <gui style=\"menuitem\">Sort</gui> to enable the plugin."
-#~ msgstr ""
-#~ "Επιλέξτε <gui style=\"menuitem\">Ταξινόμηση</gui> για ενεργοποίηση του "
-#~ "προσθέτου."
 
 #~ msgid "Using Sort Plugin"
 #~ msgstr "Χρήση του προσθέτου ταξινόμησης"
