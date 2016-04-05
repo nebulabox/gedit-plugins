@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2016-02-29 19:07+0000\n"
+"POT-Creation-Date: 2016-03-04 19:06+0000\n"
 "PO-Revision-Date: 2016-02-17 23:05+0100\n"
 "Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -51,11 +51,11 @@ msgstr "Parenteskomplettering"
 
 #: ../plugins/bracketcompletion/bracketcompletion.plugin.desktop.in.in.h:2
 msgid "Automatically adds closing brackets."
-msgstr "Lägger automatiskt till avslutande klamrar."
+msgstr "Lägger automatiskt till avslutande parenteser."
 
 #: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:2
 msgid "Automatically add a closing bracket when you insert one"
-msgstr "Lägg automatiskt till en avslutande klammer när du infogar en"
+msgstr "Lägg automatiskt till en avslutande parentes när du infogar en"
 
 #. ex:et:ts=4:
 #: ../plugins/charmap/charmap/__init__.py:56
@@ -530,8 +530,8 @@ msgid ""
 "space if there is a lot of output to the terminal."
 msgstr ""
 "Om true kommer rader som kan rullas tillbaka aldrig att kastas. "
-"Tillbakarullningshistoriken lagras tillfälligt på disk, så detta kan orsaka att "
-"systemet får slut på diskutrymme om det sker massor av utmatning till "
+"Tillbakarullningshistoriken lagras tillfälligt på disk, så detta kan orsaka "
+"att systemet får slut på diskutrymme om det sker massor av utmatning till "
 "terminalen."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:7
