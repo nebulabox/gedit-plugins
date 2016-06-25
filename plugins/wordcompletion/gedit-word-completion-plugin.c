@@ -32,7 +32,6 @@
 #include <gedit/gedit-view-activatable.h>
 #include <libpeas-gtk/peas-gtk-configurable.h>
 #include <gtksourceview/gtksource.h>
-#include <gtksourceview/completion-providers/words/gtksourcecompletionwords.h>
 
 #define WINDOW_PROVIDER "GeditWordCompletionPluginProvider"
 
