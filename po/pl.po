@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 19:04+0200\n"
-"PO-Revision-Date: 2016-08-19 19:05+0200\n"
+"POT-Creation-Date: 2016-09-08 04:28+0200\n"
+"PO-Revision-Date: 2016-09-08 04:29+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -68,7 +68,7 @@ msgstr "Tablica znaków"
 
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:2
 msgid "Insert special characters just by clicking on them."
-msgstr "Wstawia znaki specjalne po kliknięciu na nie."
+msgstr "Wstawia znaki specjalne po ich kliknięciu."
 
 #: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:1
 msgid "Charmap"
@@ -413,7 +413,7 @@ msgstr "Edycja w wielu miejscach"
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
 #: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
 msgid "Edit document in multiple places at once"
-msgstr "Modyfikowanie dokumentu w wielu miejscach na raz"
+msgstr "Modyfikowanie dokumentu w wielu miejscach naraz"
 
 #: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
 msgid "Multi edit"
@@ -437,22 +437,22 @@ msgstr "Anulowano tryb kolumny…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
-msgstr "Proszę podać tryb edycji kolumny używając zaznaczenia"
+msgstr "Proszę podać tryb edycji kolumny za pomocą zaznaczenia"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1305
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr ""
-"Proszę podać <b>inteligentny</b> tryb edycji kolumny używając zaznaczenia"
+"Proszę podać <b>inteligentny</b> tryb edycji kolumny za pomocą zaznaczenia"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "<b>Smart</b> column align mode using selection"
-msgstr "<b>Inteligentny</b> tryb dopasowania kolumny używając zaznaczenia"
+msgstr "<b>Inteligentny</b> tryb dopasowania kolumny za pomocą zaznaczenia"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1307
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr ""
 "<b>Inteligentny</b> tryb dopasowania kolumny za pomocą dodatkowego miejsca "
-"używając zaznaczenia"
+"za pomocą zaznaczenia"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1309
 msgid "Toggle edit point"
@@ -531,7 +531,7 @@ msgid ""
 "discarded. If scrollback-unlimited is true, this value is ignored."
 msgstr ""
 "Liczba wierszy zachowywanych przewijania. Można przewijać wstecz w terminalu "
-"o tę liczbę wierszy; wiersze nie mieszczące się w tej liczbie zostaną "
+"o tę liczbę wierszy; wiersze niemieszczące się w tej liczbie zostaną "
 "odrzucone. Jeśli opcja „scrollback-unlimited” ma wartość „true”, to ta opcja "
 "zostanie zignorowana."
 
@@ -614,10 +614,9 @@ msgid ""
 "use. This is that palette, in the form of a colon-separated list of color "
 "names. Color names should be in hex format e.g. \"#FF00FF\""
 msgstr ""
-"Terminale posiadają 16 kolorową paletę, którą mogą używać programy "
-"w terminalu. To jest ta paleta, w formie listy nazw kolorów oddzielonych "
-"przecinkami. Nazwy kolorów powinny być w formacie szesnastkowym, np. "
-"„#FF00FF”"
+"Terminale mają 16-kolorową paletę, którą mogą używać programy w terminalu. "
+"To jest ta paleta, w formie listy nazw kolorów oddzielonych przecinkami. "
+"Nazwy kolorów powinny być w formacie szesnastkowym, np. „#FF00FF”"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:19
 msgid "Whether to use the colors from the theme for the terminal widget"
@@ -761,7 +760,7 @@ msgstr "Uzupełnianie wyrazów"
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:2
 msgid "Word completion using the completion framework"
-msgstr "Uzupełnia wyrazy używając struktury uzupełniania"
+msgstr "Uzupełnia wyrazy za pomocą struktury uzupełniania"
 
 #: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
 msgid "Word completion"
@@ -771,7 +770,8 @@ msgstr "Uzupełnianie wyrazów"
 msgid ""
 "Propose automatic completion using words already present in the document"
 msgstr ""
-"Sugeruje automatyczne uzupełnianie używając wyrazów już obecnych w dokumencie"
+"Sugeruje automatyczne uzupełnianie za pomocą wyrazów już obecnych "
+"w dokumencie"
 
 #: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
 msgid "Zeitgeist dataprovider"
