@@ -2,7 +2,7 @@
 # translation of gedit to spanish
 # Copyright © 1999-2003, 2006, 2007, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gedit package.
-#
+# 
 # Pablo Saratxaga <srtxg@chanae.alphanet.ch>, 1999-2000.
 # Carlos Perelló Marín <carlos@gnome-db.org>, 2000-2001.
 # Chema Celorio <chema@celorio.com>, 2000.
@@ -14,14 +14,14 @@
 # Leandro Machacón <leandroman@gemail.com>, 2010.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010.
 # Gustavo Jasso Ahuja <gjasso@gmail.com>, 2012.
-#
+# 
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2015-06-09 05:26+0000\n"
+"POT-Creation-Date: 2016-08-19 17:08+0000\n"
 "PO-Revision-Date: 2015-06-09 \n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
@@ -68,7 +68,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "Añadir automáticamente cierres de paréntesis cuando inserta uno"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Mapa de caracteres"
@@ -95,11 +95,11 @@ msgstr "Comentar código"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Comentar o descomentar un bloque de código seleccionado."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "Co_mentar código"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "_Descomentar el código"
 
@@ -123,19 +123,18 @@ msgstr "Selector de color"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "Seleccionar e insertar un color desde un diálogo (para HTML, CSS, PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
-#| msgid "Pick Color"
+#: ../plugins/colorpicker/colorpicker.py:132
 msgid "Pick _Color…"
 msgstr "Escoger _color…"
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Escoger un color"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Editor de esquemas de color"
@@ -204,11 +203,11 @@ msgstr "Autor"
 msgid "Sample"
 msgstr "Ejemplo"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "Modo «commander»"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -224,7 +223,6 @@ msgid "Empty Document"
 msgstr "Documento vacío"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-#| msgid "Type here to search..."
 msgid "Type here to search…"
 msgstr "Escribir aquí para buscar…"
 
@@ -422,22 +420,18 @@ msgid "Multi edit"
 msgstr "Multiedición"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-#| msgid "Added edit point..."
 msgid "Added edit point…"
 msgstr "Punto de edición añadido…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-#| msgid "Column Mode..."
 msgid "Column Mode…"
 msgstr "Modo columna…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-#| msgid "Removed edit point..."
 msgid "Removed edit point…"
 msgstr "Punto de edición eliminado…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-#| msgid "Cancelled column mode..."
 msgid "Cancelled column mode…"
 msgstr "Modo columna cancelado…"
 
@@ -539,8 +533,8 @@ msgid ""
 msgstr ""
 "Número de líneas de desplazamiento que guardar aproximadamente. Puede "
 "desplazarse hacia atrás en la terminal esta cantidad de líneas; las líneas "
-"que no entran en el desplazamiento se descartan. Si «scrollback-unlimited» es "
-"cierto, este valor se ignora."
+"que no entran en el desplazamiento se descartan. Si «scrollback-unlimited» "
+"es cierto, este valor se ignora."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:5
 msgid "Whether an unlimited number of lines should be kept in scrollback"
@@ -655,8 +649,8 @@ msgid ""
 "The possible values are \"system\" to use the global cursor blinking "
 "settings, or \"on\" or \"off\" to set the mode explicitly."
 msgstr ""
-"Los valores posibles son «system» para usar los ajustes de parpadeo globales, "
-"u «on» u «off» para establecer el modo explícito."
+"Los valores posibles son «system» para usar los ajustes de parpadeo "
+"globales, u «on» u «off» para establecer el modo explícito."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
 msgid "The cursor appearance"
@@ -701,7 +695,7 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Empotre un terminal en el panel inferior."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Terminal"
 
@@ -709,19 +703,19 @@ msgstr "Terminal"
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Un sencillo widget de terminal accesible desde el panel inferior"
 
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "_Cambiar de carpeta"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "Tamaño _normal"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "Texto más _pequeño"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "Texto más _grande"
 
@@ -747,7 +741,7 @@ msgstr "Completado interactivo"
 msgid "Minimum word size:"
 msgstr "Tamaño mínimo de la palabra:"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
 msgstr "Palabras del documento"
 
@@ -818,8 +812,8 @@ msgstr ""
 #~ "expressing a range) should be the first character given."
 #~ msgstr ""
 #~ "Al seleccionar texto por palabras, las secuencias de estos caracteres se "
-#~ "consideran palabras simples. Los rangos se pueden dar como «A-Z». Un guión "
-#~ "literal (sin expresar un rango) debería ser el primer carácter dado."
+#~ "consideran palabras simples. Los rangos se pueden dar como «A-Z». Un "
+#~ "guión literal (sin expresar un rango) debería ser el primer carácter dado."
 
 #~ msgid "Toggle bookmark status of the current line"
 #~ msgstr "Conmutar el estado del marcador de la línea actual"
