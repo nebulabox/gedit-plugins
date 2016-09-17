@@ -2,7 +2,7 @@
 # Copyright © 2000-2007, Free Software Foundation, Inc.
 # Quico Llach <quico@softcatala.org>, 2000, 2001, 2002.
 # Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004.
-# Jordi Mas i Hernàndez <jmas@softcatala.org>, 2003.
+# Jordi Mas i Hernàndez <jmas@softcatala.org>, 2003, 2016
 # Aleix Badia i Bosch <abadia@ica.es>, 2004.
 # Josep Puigdemont <josep.puigdemont@gmail.com>, 2005, 2006, 2007.
 # Gil Forcada <gilforcada@guifi.net>, 2008, 2009, 2010.
@@ -10,17 +10,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catalan translation of gedit plugins\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2015-04-12 05:24+0000\n"
-"PO-Revision-Date: 2013-01-20 17:23+0100\n"
-"Last-Translator: cubells <vicent@vcubells.net>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-16 21:30+0200\n"
+"PO-Revision-Date: 2016-09-16 21:30+0200\n"
+"Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -54,13 +54,11 @@ msgid "Automatically adds closing brackets."
 msgstr "Afegeix claudàtors de tancada automàticament."
 
 #: ../plugins/bracketcompletion/gedit-bracketcompletion.metainfo.xml.in.h:2
-#, fuzzy
-#| msgid "Automatically adds closing brackets."
 msgid "Automatically add a closing bracket when you insert one"
-msgstr "Afegeix claudàtors de tancada automàticament."
+msgstr "Afegeix claudàtors de tancada quan afegiu un."
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Mapa de caràcters"
@@ -70,43 +68,37 @@ msgid "Insert special characters just by clicking on them."
 msgstr "Inseriu caràcters especials fent-hi clic."
 
 #: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:1
-#, fuzzy
-#| msgid "Character Map"
 msgid "Charmap"
 msgstr "Mapa de caràcters"
 
 #: ../plugins/charmap/gedit-charmap.metainfo.xml.in.h:2
 msgid "Select characters from a character map"
-msgstr ""
+msgstr "Seleccioneu caràcters des d'un mapa de caràcters"
 
 #. ex:ts=4:et:
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:1
 #: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:1
-#, fuzzy
-#| msgid "Code comment"
 msgid "Code Comment"
-msgstr "Comentaris al codi"
+msgstr "Comentari del codi"
 
 # FIXME: "descomentar" (si no fos que no existeix)
 #: ../plugins/codecomment/codecomment.plugin.desktop.in.in.h:2
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Comenteu o traieu els comentaris del bloc de codi seleccionat."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "Co_menta el codi"
 
 # FIXME: "descomentar" (si no fos que no existeix)
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "_Treu el comentari del codi"
 
 # FIXME: "descomentar" (si no fos que no existeix)
 #: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:2
-#, fuzzy
-#| msgid "Comment out or uncomment a selected block of code."
 msgid "Comment or uncomment blocks of code"
-msgstr "Comenteu o traieu els comentaris del bloc de codi seleccionat."
+msgstr "Comenta o descomenta els blocs de codi seleccionats"
 
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
 msgid "Color Picker"
@@ -118,100 +110,98 @@ msgstr ""
 "Seleccioneu un color mitjançant un diàleg i inseriu-ne el codi hexadecimal."
 
 #: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
-#, fuzzy
-#| msgid "Color Picker"
 msgid "Color picker"
 msgstr "Selector de color"
 
 #: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:2
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
-msgstr ""
+msgstr "Seleccioneu i inseriu un color des d'un diàleg (per HTML, CSS, PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
+#: ../plugins/colorpicker/colorpicker.py:132
+msgid "Pick _Color…"
 msgstr "Escolliu un _color..."
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Escolliu un color"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
-msgstr ""
+msgstr "Editor de l'esquema de color"
 
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:2
 msgid "Source code color scheme editor"
-msgstr ""
+msgstr "Editor del l'esquema de color del codi font"
 
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:2
 msgid "Create and edit the color scheme used for syntax highlighting"
-msgstr ""
+msgstr "Crea i edita l'esquema de colors utilitzat pel ressaltat de sintaxi"
 
 #: ../plugins/colorschemer/schemer.ui.h:2
 msgid "Bold"
-msgstr ""
+msgstr "Negreta"
 
 #: ../plugins/colorschemer/schemer.ui.h:3
 msgid "Italic"
-msgstr ""
+msgstr "Cursiva"
 
 #: ../plugins/colorschemer/schemer.ui.h:4
 msgid "Underline"
-msgstr ""
+msgstr "Subratllat"
 
 #: ../plugins/colorschemer/schemer.ui.h:5
 msgid "Strikethrough"
-msgstr ""
+msgstr "Ratllat"
 
 #: ../plugins/colorschemer/schemer.ui.h:6
 msgid "Pick the background color"
-msgstr ""
+msgstr "Trieu un color de fons"
 
 #: ../plugins/colorschemer/schemer.ui.h:7
 msgid "Pick the foreground color"
-msgstr ""
+msgstr "Trieu un color pel primer pla"
 
 #: ../plugins/colorschemer/schemer.ui.h:8
 msgid "_Background"
-msgstr ""
+msgstr "F_ons"
 
 #: ../plugins/colorschemer/schemer.ui.h:9
 msgid "_Foreground"
-msgstr ""
+msgstr "Primer pla:"
 
 #: ../plugins/colorschemer/schemer.ui.h:10
 msgid "_Clear "
-msgstr ""
+msgstr "_Buida "
 
 #: ../plugins/colorschemer/schemer.ui.h:11
 msgid "Name"
-msgstr ""
+msgstr "Nom:"
 
 #: ../plugins/colorschemer/schemer.ui.h:12
 msgid "ID"
-msgstr ""
+msgstr "Id."
 
-#: ../plugins/colorschemer/schemer.ui.h:13
+#: ../plugins/colorschemer/schemer.ui.h:13s
 msgid "Description"
-msgstr ""
+msgstr "Descripció"
 
 #: ../plugins/colorschemer/schemer.ui.h:14
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../plugins/colorschemer/schemer.ui.h:15
 msgid "Sample"
-msgstr ""
+msgstr "Exemple"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "Mode commander"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -227,8 +217,8 @@ msgid "Empty Document"
 msgstr "Document buit"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "Feu clic aquí per cercar..."
+msgid "Type here to search…"
+msgstr "Escriviu aquí per cercar..."
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -242,7 +232,7 @@ msgstr "Un tauler per a pestanyes noves"
 
 #: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:2
 msgid "Displays a grid of recently/most used files upon opening a new tab"
-msgstr ""
+msgstr "Mostra una graella amb els fitxers més usats o usats recrement obrint-los a una pestanya nova"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
@@ -250,10 +240,8 @@ msgid "Draw Spaces"
 msgstr "Dibuixa els espais"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:2
-#, fuzzy
-#| msgid "Draw Spaces and Tabs"
 msgid "Draw spaces and tabs"
-msgstr "Dibuixa els espais i les tabulacions"
+msgstr "Dibuixa espais i tabulacions"
 
 #. ex:set ts=8 noet:
 #: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
@@ -303,20 +291,82 @@ msgstr "Si és «TRUE» (cert) s'activarà el dibuix."
 msgid "The type of spaces to be drawn."
 msgstr "El tipus d'espai que es dibuixarà."
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "Cerca als fitxers"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "_Tanca"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Cerca als fitxers..."
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "No hi ha resultats"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Atura la cerca"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Cerca text en tots els fitxers d'una carpeta."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "Ce_rca"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "_Cerca "
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_A "
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "_Seleccioneu una carpeta"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "Coincidència de _majúscules i minúscules"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "Només coincideix la paraula sencera"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "Expressió _regular"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
 msgid "Highlight lines that have been changed since the last commit"
-msgstr ""
+msgstr "Ressalta les línees que han canviat des de la darrera entrega"
 
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:2
 msgid ""
 "Use git information to display which lines and files changed since last "
 "commit"
 msgstr ""
+"Usa la informació del git per mostrar quines línies han canviat des de la darrera entrega"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -327,14 +377,12 @@ msgid "Join several lines or split long ones"
 msgstr "Uneix diverses línies, o separa les llargues"
 
 #: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
-#, fuzzy
-#| msgid "Join/Split Lines"
 msgid "Join lines/ Split lines"
 msgstr "Uneix/separa les línies"
 
 #: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:2
 msgid "Join or split multiple lines through Ctrl+J and Ctrl+Shift+J"
-msgstr ""
+msgstr "Uneix o separa múltiples línies mitjançant Ctrl+J i Ctrl+Shift+J"
 
 #: ../plugins/joinlines/joinlines.py:107
 msgid "_Join Lines"
@@ -360,25 +408,23 @@ msgid "Edit document in multiple places at once"
 msgstr "Edita document en diversos llocs alhora"
 
 #: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
-#, fuzzy
-#| msgid "Multi Edit"
 msgid "Multi edit"
 msgstr "Edició múltiple"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-msgid "Added edit point..."
+msgid "Added edit point…"
 msgstr "S'ha afegit el punt d'edició..."
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-msgid "Column Mode..."
+msgid "Column Mode…"
 msgstr "Mode de columnes..."
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-msgid "Removed edit point..."
+msgid "Removed edit point…"
 msgstr "S'ha suprimit el punt d'edició..."
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-msgid "Cancelled column mode..."
+msgid "Cancelled column mode…"
 msgstr "S'ha cancel·lat el mode de columnes..."
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1304
@@ -433,7 +479,7 @@ msgstr "Oblideu-vos que no utilitzeu les tabulacions."
 
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
 msgid "Allow to unindent like if you were using tabs while you're using spaces"
-msgstr ""
+msgstr "Permet desfer el sagnat com si estiguéssiu usant tabuladors quan useu espais"
 
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
@@ -445,12 +491,10 @@ msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Sincronitza entre LaTeX i PDF amb el gedit i l'evince."
 
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
-#, fuzzy
-#| msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Sincronitza entre LaTeX i PDF amb el gedit i l'evince."
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Cerca endavant"
 
@@ -611,7 +655,7 @@ msgstr ""
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
 msgid "Whether to use the system font"
-msgstr "Si s'ha d'utilitzar la font del sistema"
+msgstr "Si s'utilitza el tipus de lletra del sistema"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:26
 msgid ""
@@ -641,31 +685,29 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Incrusta un terminal a la subfinestra inferior."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Terminal"
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
-#, fuzzy
-#| msgid "Embed a terminal in the bottom pane."
 msgid "A simple terminal widget accessible from the bottom panel"
-msgstr "Incrusta un terminal a la subfinestra inferior."
+msgstr "Un giny de terminal simple accessible des de la subfinestra inferior"
 
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "_Canvia el directori"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
-msgstr ""
+msgstr "Mida _normal"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
-msgstr ""
+msgstr "Text més _petit"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
-msgstr ""
+msgstr "Text més _gran"
 
 #. ex:ts=4:et:
 #: ../plugins/textsize/textsize.plugin.desktop.in.in.h:1
@@ -678,42 +720,36 @@ msgid "Easily increase and decrease the text size"
 msgstr "Augmenta i redueix fàcilment la mida del text"
 
 #: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
-#, fuzzy
-#| msgid "Text Size"
 msgid "Text size"
 msgstr "Mida del text"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
-#, fuzzy
-#| msgid "Bracket Completion"
 msgid "Interactive completion"
-msgstr "Compleció dels claudàtors"
+msgstr "Compleció interactiva"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
 msgid "Minimum word size:"
-msgstr ""
+msgstr "Mida mínima de la paraula:"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
 msgstr "Paraules del document"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
-#, fuzzy
-#| msgid "Bracket Completion"
 msgid "Interactive Completion"
-msgstr "Compleció dels claudàtors"
+msgstr "Compleció interactiva"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
 msgid "Whether to enable interactive completion."
-msgstr ""
+msgstr "Si s'habilita la compleció interactiva."
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
 msgid "Minimum Word Size"
-msgstr ""
+msgstr "Mida mínima de la paraula"
 
 #: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
 msgid "The minimum word size to complete."
-msgstr ""
+msgstr "La mida mínima de la paraula a completar."
 
 #: ../plugins/wordcompletion/wordcompletion.plugin.desktop.in.in.h:1
 msgid "Word Completion"
@@ -724,8 +760,6 @@ msgid "Word completion using the completion framework"
 msgstr "Compleció de paraules utilitzant l'entorn de treball de compleció"
 
 #: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
-#, fuzzy
-#| msgid "Word Completion"
 msgid "Word completion"
 msgstr "Compleció de paraules"
 
@@ -733,24 +767,29 @@ msgstr "Compleció de paraules"
 msgid ""
 "Propose automatic completion using words already present in the document"
 msgstr ""
+"Proposa compleció automàtica usant paraules ja presents al document"
 
 #: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
 msgid "Zeitgeist dataprovider"
-msgstr ""
+msgstr "Proveïdor de dades del Zeitgeist"
 
 #: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
 msgid "Logs access and leave event for documents used with gedit"
-msgstr ""
+msgstr "Registra els esdeveniments d'accés i tancament dels documents usats amb el gedit"
 
 #: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:1
 msgid "Zeitgeist Data provider"
-msgstr ""
+msgstr "Proveïdor de dades del Zeitgeist"
 
 #: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:2
 msgid ""
 "Records user activity and giving easy access to recently-used and frequently-"
 "used files"
 msgstr ""
+"Registra l'activitat d'usuari donant accés als fitxers usats de forma freqüent i recent."
+
+#~ msgid "Pick _Color..."
+#~ msgstr "Escolliu un _color..."
 
 #~ msgid "Toggle bookmark status of the current line"
 #~ msgstr "Commuta l'estat de l'adreça d'interès de la línia actual"
