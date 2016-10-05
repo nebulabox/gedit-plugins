@@ -57,12 +57,6 @@ struct _DrawspacesConfigureWidget
 
 enum
 {
-	COLUMN_LABEL,
-	COLUMN_LOCATION
-};
-
-enum
-{
 	PROP_0,
 	PROP_APP
 };
