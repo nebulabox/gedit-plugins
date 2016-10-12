@@ -135,7 +135,7 @@ msgstr "Editor de l'esquema de color"
 
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:2
 msgid "Source code color scheme editor"
-msgstr "Editor del l'esquema de color del codi font"
+msgstr "Editor de l'esquema de color del codi font"
 
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:2
 msgid "Create and edit the color scheme used for syntax highlighting"
@@ -232,7 +232,7 @@ msgstr "Un tauler per a pestanyes noves"
 
 #: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:2
 msgid "Displays a grid of recently/most used files upon opening a new tab"
-msgstr "Mostra una graella amb els fitxers més usats o usats recrement obrint-los a una pestanya nova"
+msgstr "Mostra una graella amb els fitxers més usats o usats recentment obrint-los a una pestanya nova"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
@@ -359,7 +359,7 @@ msgstr "Git"
 
 #: ../plugins/git/git.plugin.desktop.in.in.h:2
 msgid "Highlight lines that have been changed since the last commit"
-msgstr "Ressalta les línees que han canviat des de la darrera entrega"
+msgstr "Ressalta les línies que han canviat des de la darrera entrega"
 
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:2
 msgid ""
@@ -382,7 +382,7 @@ msgstr "Uneix/separa les línies"
 
 #: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:2
 msgid "Join or split multiple lines through Ctrl+J and Ctrl+Shift+J"
-msgstr "Uneix o separa múltiples línies mitjançant Ctrl+J i Ctrl+Shift+J"
+msgstr "Uneix o separa múltiples línies mitjançant Ctrl+J i Ctrl+Maj+J"
 
 #: ../plugins/joinlines/joinlines.py:107
 msgid "_Join Lines"
