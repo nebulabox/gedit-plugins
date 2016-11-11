@@ -4,7 +4,7 @@
   <id>gedit-smartspaces</id>
   <extends>org.gnome.gedit.desktop</extends>
   <_name>Smart Spaces</_name>
-  <_summary>Allow to unindent like if you were using tabs while you're using spaces</_summary>
+  <_summary>Allow to unindent like if you were using tabs while you’re using spaces</_summary>
   <url type="homepage">https://wiki.gnome.org/Apps/Gedit/ShippedPlugins</url>
   <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=gedit&amp;component=Plugins</url>
   <metadata_license>CC0-1.0</metadata_license>
