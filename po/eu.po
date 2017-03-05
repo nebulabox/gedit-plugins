@@ -4,21 +4,22 @@
 #
 # Hizkuntza Politikarako Sailburuordetza <hizpol@ej-gv.es>, 2004.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007, 2008, 2010, 2014, 2015.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007, 2008, 2010, 2014, 2015, 2017.
 # Edurne Labaka <elabaka@uzei.com>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: gedit-plugins master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-07 12:46+0100\n"
-"PO-Revision-Date: 2015-02-07 12:48+0100\n"
+"Project-Id-Version: gedit-plugins gnome-3-20\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gedit&keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2016-10-16 17:24+0000\n"
+"PO-Revision-Date: 2017-03-04 20:11+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
-"Language-Team: Basque <librezale@librezale.org>\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
@@ -57,7 +58,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "Automatikoki gehitzen du itxierako parentesiak bat txertatzean"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Karaktere-mapa"
@@ -85,11 +86,11 @@ msgid "Comment out or uncomment a selected block of code."
 msgstr "Jarri edo kendu iruzkina hautatutako kodearen blokeari."
 
 #
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "_Jarri iruzkina kodeari"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "_Kendu iruzkina kodeari"
 
@@ -116,19 +117,20 @@ msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr ""
 "Hautatu eta txertatu kolorea elkarrizketa-koadrotik (HTML, CSS eta PHPRako)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
-msgid "Pick _Color..."
-msgstr "Hautatu _kolorea..."
+#: ../plugins/colorpicker/colorpicker.py:132
+#| msgid "Pick Color"
+msgid "Pick _Color…"
+msgstr "Hautatu _kolorea…"
 
 #
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Hautatu kolorea"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Kolore-eskemaren editorea"
@@ -198,11 +200,11 @@ msgstr "Egilea"
 msgid "Sample"
 msgstr "Lagina"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "Komandoaren modua"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -218,8 +220,9 @@ msgid "Empty Document"
 msgstr "Dokumentu hutsa"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-msgid "Type here to search..."
-msgstr "Idatzi bilatzeko..."
+#| msgid "Type here to search..."
+msgid "Type here to search…"
+msgstr "Idatzi hemen bilatzeko…"
 
 #. ex:ts=4:et:
 #: ../plugins/dashboard/dashboard.plugin.desktop.in.in.h:1
@@ -296,6 +299,67 @@ msgstr "TRUE (egia) bada, marrazketa gaituta egongo da."
 msgid "The type of spaces to be drawn."
 msgstr "Zuriune mota marrazteko."
 
+#. namespace FindInFilesPlugin
+#. namespace Gedit
+#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/dialog.ui.h:1
+msgid "Find in Files"
+msgstr "Bilatu fitxategietan"
+
+#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/result-panel.vala:63
+#: ../plugins/findinfiles/dialog.ui.h:2
+msgid "_Close"
+msgstr "It_xi"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Bilatu fitxategietan…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Ez da emaitzarik aurkitu"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Gelditu bilaketa"
+
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Bilatu testua karpeta bateko fitxategi guztietan."
+
+#: ../plugins/findinfiles/dialog.ui.h:3
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_Bilatu"
+
+#: ../plugins/findinfiles/dialog.ui.h:4
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr "_Bilatu "
+
+#: ../plugins/findinfiles/dialog.ui.h:5
+msgid "_In "
+msgstr "_Hemen "
+
+#: ../plugins/findinfiles/dialog.ui.h:6
+msgid "Select a _folder"
+msgstr "Hautatu _karpeta"
+
+#: ../plugins/findinfiles/dialog.ui.h:7
+msgid "_Match case"
+msgstr "_Maiuskula/minuskula"
+
+#: ../plugins/findinfiles/dialog.ui.h:8
+msgid "Match _entire word only"
+msgstr "_Hitz osoak soilik"
+
+#: ../plugins/findinfiles/dialog.ui.h:9
+msgid "Re_gular expression"
+msgstr "A_dierazpen erregularrak"
+
 #: ../plugins/git/git.plugin.desktop.in.in.h:1
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
 msgid "Git"
@@ -310,8 +374,8 @@ msgid ""
 "Use git information to display which lines and files changed since last "
 "commit"
 msgstr ""
-"Erabili Git-en informazioa azken egikaritzetik aldatutako lerroak "
-"eta fitxategiak bistaratzeko"
+"Erabili Git-en informazioa azken egikaritzetik aldatutako lerroak eta "
+"fitxategiak bistaratzeko"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -327,7 +391,7 @@ msgstr "Elkartu/Zatitu lerroak"
 
 #: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:2
 msgid "Join or split multiple lines through Ctrl+J and Ctrl+Shift+J"
-msgstr ""
+msgstr "Batu edo zatitu hainbat lerro Ktrl+J eta Ktrl+Maius+J erabiliz"
 
 #: ../plugins/joinlines/joinlines.py:107
 msgid "_Join Lines"
@@ -357,20 +421,24 @@ msgid "Multi edit"
 msgstr "Edizio anitzekoa"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-msgid "Added edit point..."
-msgstr "Edizio-puntua gehituta..."
+#| msgid "Added edit point..."
+msgid "Added edit point…"
+msgstr "Edizio-puntua gehituta…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-msgid "Column Mode..."
-msgstr "Zutabearen modua..."
+#| msgid "Column Mode..."
+msgid "Column Mode…"
+msgstr "Zutabearen modua…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-msgid "Removed edit point..."
-msgstr "Edizio-puntua kenduta..."
+#| msgid "Removed edit point..."
+msgid "Removed edit point…"
+msgstr "Edizio-puntua kenduta…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-msgid "Cancelled column mode..."
-msgstr "Zutabearen modua bertan behera utzita..."
+#| msgid "Cancelled column mode..."
+msgid "Cancelled column mode…"
+msgstr "Zutabearen modua bertan behera utzita…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1304
 msgid "Enter column edit mode using selection"
@@ -440,7 +508,7 @@ msgstr "Sinkronizatu LaTeX eta PDF artean gedit eta evince-rekin."
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Sinkronizatu LaTeX eta PDF artean gedit eta evince-rekin."
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Bilatu aurrerantz"
 
@@ -623,7 +691,7 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Kapsulatu terminal bat azpiko panelean."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Terminala"
 
@@ -632,19 +700,19 @@ msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Azpiko paneletik erabilgarri dagoen terminal xume baten trepeta "
 
 #
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "_Aldatu direktorioa"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "Tamaina _normala"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "Testu _txikiagoa"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "Testu _handiagoa"
 
@@ -730,6 +798,9 @@ msgid ""
 msgstr ""
 "Erabiltzailearen jarduerak erregistratzen ditu eta maiz erabilitako azken "
 "fitxategiei atzipen azkarra ematen die"
+
+#~ msgid "Pick _Color..."
+#~ msgstr "Hautatu _kolorea..."
 
 #~ msgid "Characters that are considered \"part of a word\""
 #~ msgstr "'Hitz baten zati' gisa hartzen diren karaktereak"
