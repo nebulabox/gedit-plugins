@@ -94,13 +94,17 @@ class CodeCommentViewActivatable(GObject.Object, Gedit.ViewActivatable):
     view = GObject.Property(type=Gedit.View)
 
     def __init__(self):
+        self.popup_handler_id = 0
         GObject.Object.__init__(self)
 
     def do_activate(self):
         self.view.code_comment_view_activatable = self
-        self.view.connect('populate-popup', self.populate_popup)
+        self.popup_handler_id = self.view.connect('populate-popup', self.populate_popup)
 
     def do_deactivate(self):
+        if self.popup_handler_id != 0:
+            self.view.disconnect(self.popup_handler_id)
+            self.popup_handler_id = 0
         delattr(self.view, "code_comment_view_activatable")
 
     def populate_popup(self, view, popup):
