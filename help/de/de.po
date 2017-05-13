@@ -104,8 +104,8 @@ msgid ""
 "Bookmark</gui>."
 msgstr ""
 "Drücken Sie <keyseq><key>Strg</key><key>Alt</key><key>B</key></keyseq> oder "
-"öffnen Sie das Menü in der oberen rechten Ecke und wählen Sie<gui style="
-"\"menuitem\">Lesezeichen ein-/ausschalten</gui></guiseq>."
+"öffnen Sie das Menü in der oberen rechten Ecke und wählen Sie <gui style="
+"\"menuitem\">Lesezeichen ein-/ausschalten</gui>."
 
 #. (itstool) path: list/title
 #: C/bookmarks.page:50
@@ -138,9 +138,8 @@ msgid ""
 "style=\"menuitem\">Go to Previous Bookmark</gui>."
 msgstr ""
 "Falls Sie die Maus bevorzugen, können Sie das Menü in der rechten oberen "
-"Ecke öffnen und <gui style=\"menuitem\">Nächstes Lesezeichen</gui></guiseq> "
-"oder <gui style=\"menuitem\">Zum vorherigen Lesezeichen gehen</gui></guiseq> "
-"wählen."
+"Ecke öffnen und <gui style=\"menuitem\">Nächstes Lesezeichen</gui> "
+"oder <gui style=\"menuitem\">Zum vorherigen Lesezeichen gehen</gui> wählen."
 
 #. (itstool) path: info/desc
 #: C/bracket-comp.page:15
