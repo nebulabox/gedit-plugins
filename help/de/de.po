@@ -9,16 +9,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit help\n"
-"POT-Creation-Date: 2016-02-04 08:28+0000\n"
-"PO-Revision-Date: 2016-02-04 09:30+0100\n"
-"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
+"POT-Creation-Date: 2017-04-27 14:24+0000\n"
+"PO-Revision-Date: 2017-05-14 23:09+0200\n"
+"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -105,7 +105,7 @@ msgid ""
 msgstr ""
 "Drücken Sie <keyseq><key>Strg</key><key>Alt</key><key>B</key></keyseq> oder "
 "öffnen Sie das Menü in der oberen rechten Ecke und wählen Sie<gui style="
-"\"menuitem\">Lesezeichen ein-/ausschalten</gui></guiseq>."
+"\"menuitem\">Lesezeichen ein-/ausschalten</gui>."
 
 #. (itstool) path: list/title
 #: C/bookmarks.page:50
@@ -138,9 +138,8 @@ msgid ""
 "style=\"menuitem\">Go to Previous Bookmark</gui>."
 msgstr ""
 "Falls Sie die Maus bevorzugen, können Sie das Menü in der rechten oberen "
-"Ecke öffnen und <gui style=\"menuitem\">Nächstes Lesezeichen</gui></guiseq> "
-"oder <gui style=\"menuitem\">Zum vorherigen Lesezeichen gehen</gui></guiseq> "
-"wählen."
+"Ecke öffnen und <gui style=\"menuitem\">Nächstes Lesezeichen</gui> oder <gui "
+"style=\"menuitem\">Zum vorherigen Lesezeichen gehen</gui> wählen."
 
 #. (itstool) path: info/desc
 #: C/bracket-comp.page:15
