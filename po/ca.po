@@ -10,8 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catalan translation of gedit plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-16 21:30+0200\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gedit&keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2017-05-09 16:27+0000\n"
 "PO-Revision-Date: 2016-09-16 21:30+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -98,7 +99,7 @@ msgstr "_Treu el comentari del codi"
 # FIXME: "descomentar" (si no fos que no existeix)
 #: ../plugins/codecomment/gedit-codecomment.metainfo.xml.in.h:2
 msgid "Comment or uncomment blocks of code"
-msgstr "Comenta o descomenta els blocs de codi seleccionats"
+msgstr "Comenta o treu els comentaris els blocs de codi seleccionats"
 
 #: ../plugins/colorpicker/colorpicker.plugin.desktop.in.in.h:1
 msgid "Color Picker"
@@ -185,7 +186,7 @@ msgstr "Nom:"
 msgid "ID"
 msgstr "Id."
 
-#: ../plugins/colorschemer/schemer.ui.h:13s
+#: ../plugins/colorschemer/schemer.ui.h:13
 msgid "Description"
 msgstr "Descripció"
 
@@ -232,7 +233,9 @@ msgstr "Un tauler per a pestanyes noves"
 
 #: ../plugins/dashboard/gedit-dashboard.metainfo.xml.in.h:2
 msgid "Displays a grid of recently/most used files upon opening a new tab"
-msgstr "Mostra una graella amb els fitxers més usats o usats recentment obrint-los a una pestanya nova"
+msgstr ""
+"Mostra una graella amb els fitxers més usats o usats recentment obrint-los a "
+"una pestanya nova"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
@@ -253,7 +256,7 @@ msgstr "Dibuixa els espais"
 msgid "Draw Spaces and Tabs"
 msgstr "Dibuixa els espais i les tabulacions"
 
-#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Mostra els espais en _blanc"
@@ -366,7 +369,8 @@ msgid ""
 "Use git information to display which lines and files changed since last "
 "commit"
 msgstr ""
-"Usa la informació del git per mostrar quines línies han canviat des de la darrera entrega"
+"Usa la informació del git per mostrar quines línies han canviat des de la "
+"darrera entrega"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -479,7 +483,8 @@ msgstr "Oblideu-vos que no utilitzeu les tabulacions."
 
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
 msgid "Allow to unindent like if you were using tabs while you're using spaces"
-msgstr "Permet desfer el sagnat com si estiguéssiu usant tabuladors quan useu espais"
+msgstr ""
+"Permet desfer el sagnat com si estiguéssiu usant tabuladors quan useu espais"
 
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
@@ -766,8 +771,7 @@ msgstr "Compleció de paraules"
 #: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
 msgid ""
 "Propose automatic completion using words already present in the document"
-msgstr ""
-"Proposa compleció automàtica usant paraules ja presents al document"
+msgstr "Proposa compleció automàtica usant paraules ja presents al document"
 
 #: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
 msgid "Zeitgeist dataprovider"
@@ -775,7 +779,9 @@ msgstr "Proveïdor de dades del Zeitgeist"
 
 #: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
 msgid "Logs access and leave event for documents used with gedit"
-msgstr "Registra els esdeveniments d'accés i tancament dels documents usats amb el gedit"
+msgstr ""
+"Registra els esdeveniments d'accés i tancament dels documents usats amb el "
+"gedit"
 
 #: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:1
 msgid "Zeitgeist Data provider"
@@ -786,7 +792,8 @@ msgid ""
 "Records user activity and giving easy access to recently-used and frequently-"
 "used files"
 msgstr ""
-"Registra l'activitat d'usuari donant accés als fitxers usats de forma freqüent i recent."
+"Registra l'activitat d'usuari donant accés als fitxers usats de forma "
+"freqüent i recent."
 
 #~ msgid "Pick _Color..."
 #~ msgstr "Escolliu un _color..."
