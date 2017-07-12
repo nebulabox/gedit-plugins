@@ -8,7 +8,7 @@
       </description>
     </key>
    <key name="language-pair" type="s">
-      <default>'spa-eng'</default>
+      <default>'spa|eng'</default>
       <summary>Language pair used</summary>
       <description>
         Language pair used to translate from one language to another
