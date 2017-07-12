@@ -69,7 +69,7 @@ GLIB_GSETTINGS
 C_PLUGINS="bookmarks drawspaces wordcompletion"
 
 # Python plugins that don't need special dependencies, besides Python
-PY_PLUGINS="bracketcompletion codecomment colorpicker colorschemer commander joinlines multiedit smartspaces textsize"
+PY_PLUGINS="bracketcompletion codecomment colorpicker colorschemer commander joinlines multiedit smartspaces textsize translate"
 
 # Vala plugins that don't need special dependencies, besides Vala
 VALA_PLUGINS="findinfiles"
@@ -327,6 +327,7 @@ plugins/synctex/synctex.plugin.desktop.in
 plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in
 plugins/terminal/terminal.plugin.desktop.in
 plugins/textsize/textsize.plugin.desktop.in
+plugins/translate/translate.plugin.desktop.in
 plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in
 plugins/wordcompletion/wordcompletion.plugin.desktop.in
 po/Makefile.in])
