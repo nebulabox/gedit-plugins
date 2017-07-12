@@ -57,6 +57,10 @@ plugins/terminal/terminal.py
 plugins/textsize/textsize/__init__.py
 plugins/textsize/textsize.plugin.desktop.in.in
 plugins/textsize/gedit-textsize.metainfo.xml.in
+[type: gettext/glade]plugins/translate/translate/ui/preferences.ui
+plugins/translate/translate/__init__.py
+plugins/translate/translate.plugin.desktop.in.in
+plugins/translate/gedit-translate.metainfo.xml.in
 [type: gettext/glade]plugins/wordcompletion/gedit-word-completion-configure.ui
 plugins/wordcompletion/gedit-word-completion-plugin.c
 plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in

@@ -30,6 +30,7 @@ include plugins/smartspaces/Makefile.am
 include plugins/synctex/Makefile.am
 include plugins/terminal/Makefile.am
 include plugins/textsize/Makefile.am
+include plugins/translate/Makefile.am
 include plugins/wordcompletion/Makefile.am
 include plugins/zeitgeist/Makefile.am
 
