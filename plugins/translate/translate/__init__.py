@@ -68,7 +68,7 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
         g_console.write(_('Welcome!'))
         bottom = self.window.get_bottom_panel()
         g_console.show_all()
-        bottom.add_titled(g_console, "GeditPythonConsolePanel", 'Translate Console')
+        bottom.add_titled(g_console, "GeditTranslateConsolePanel", _('Translate Console'))
      
     def do_deactivate(self):
         self.window.remove_action("translate")
