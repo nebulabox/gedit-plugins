@@ -12,4 +12,8 @@ dist_plugins_preferences_ui_DATA = plugins/translate/translate/ui/preferences.ui
 plugin_in_files += plugins/translate/translate.plugin.desktop.in
 appstream_in_files += plugins/translate/gedit-translate.metainfo.xml.in
 gsettings_SCHEMAS += plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml
+else
+dist_plugin_in_files += plugins/translate/translate.plugin.desktop.in
+dist_appstream_in_files += plugins/translate/gedit-translate.metainfo.xml.in
 endif
+
