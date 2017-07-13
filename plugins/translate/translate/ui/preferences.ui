@@ -82,7 +82,7 @@
             </child>
             <child>
               <object class="GtkRadioButton" id="output_window">
-                <property name="label" translatable="yes">Output translate window</property>
+                <property name="label" translatable="yes">Translate console (bottom panel)</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
