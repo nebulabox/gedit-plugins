@@ -19,6 +19,8 @@
 
 import os
 from gi.repository import Gio, Gtk
+import gettext
+from gpdefs import *
 
 
 class Preferences(object):
@@ -37,6 +39,7 @@ class Preferences(object):
         self._settings = Gio.Settings.new(self.TRANSLATE_KEY_BASE)
         self._ui_path = os.path.join(datadir, 'ui', 'preferences.ui')
         self._ui = Gtk.Builder()
+        self._ui.set_translation_domain(GETTEXT_PACKAGE)
         self._ui.add_from_file(self._ui_path)
 
         self.init_radiobuttons()
