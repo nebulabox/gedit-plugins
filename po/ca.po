@@ -10,9 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catalan translation of gedit plugins\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2017-05-09 16:27+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-13 08:01+0200\n"
 "PO-Revision-Date: 2016-09-16 21:30+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -727,6 +726,45 @@ msgstr "Augmenta i redueix fàcilment la mida del text"
 #: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
 msgid "Text size"
 msgstr "Mida del text"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr "Llengües de traducció"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "On mostrar la traducció:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "Mateixa finestra del document"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Output translate window"
+msgstr "Finestra de sortida de la traducció"
+
+#: ../plugins/translate/translate/__init__.py:68
+msgid "Welcome!"
+msgstr "Benvinguts!"
+
+#: ../plugins/translate/translate/__init__.py:71
+msgid "Translate Console"
+msgstr "Consola de traducció"
+
+#: ../plugins/translate/translate/__init__.py:136
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Tradueix el text seleccionat [{0}]"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+msgid "Translate"
+msgstr "Tradueix"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+msgid "Translates text into different languages"
+msgstr "Tradueix text a llengües diferents"
 
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
