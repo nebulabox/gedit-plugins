@@ -4,7 +4,8 @@ plugins_translate_PYTHON = \
 	plugins/translate/translate/apertium.py		\
     plugins/translate/translate/__init__.py	\
 	plugins/translate/translate/preferences.py	\
-	plugins/translate/translate/translateview.py
+	plugins/translate/translate/translator.py	\
+	plugins/translate/translate/translateview.py 
 
 plugins_preferences_uidir = $(GEDIT_PLUGINS_DATA_DIR)/translate/ui
 dist_plugins_preferences_ui_DATA = plugins/translate/translate/ui/preferences.ui

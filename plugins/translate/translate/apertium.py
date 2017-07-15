@@ -20,8 +20,9 @@
 import urllib.request, urllib.parse, urllib.error
 import json
 import locale
+from .translator import Translator
 
-class Apertium():
+class Apertium(Translator):
 
     g_language_codes = []
     g_language_names = []
