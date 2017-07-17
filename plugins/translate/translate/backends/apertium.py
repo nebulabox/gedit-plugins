@@ -44,6 +44,9 @@ class Apertium(Translator):
     def __init__(self):
         self._get_remote_language_names_and_pairs()
 
+    def __init__(self, string):
+        pass      
+
     def get_language_names(self):
         if len(Apertium.g_language_codes) > 0 and len(Apertium.g_language_names) > 0:
             return Apertium.g_language_names

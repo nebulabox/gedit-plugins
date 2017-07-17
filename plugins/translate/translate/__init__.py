@@ -23,7 +23,7 @@ gi.require_version('GtkSource', '3.0')
 gi.require_version('PeasGtk', '1.0')
 
 from gi.repository import GObject, Gio, Gtk, Gedit, PeasGtk
-from .apertium import Apertium
+from .backends.apertium import Apertium
 from .translateview import TranslateView
 from .preferences import Preferences
 import gettext
