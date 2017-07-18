@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catalan translation of gedit plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-13 08:01+0200\n"
-"PO-Revision-Date: 2016-09-16 21:30+0200\n"
+"POT-Creation-Date: 2017-07-18 20:29+0200\n"
+"PO-Revision-Date: 2017-07-18 21:30+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
@@ -740,8 +740,8 @@ msgid "Same document window"
 msgstr "Mateixa finestra del document"
 
 #: ../plugins/translate/translate/ui/preferences.ui.h:4
-msgid "Output translate window"
-msgstr "Finestra de sortida de la traducció"
+msgid "Translate console (bottom panel)"
+msgstr "Consola de traducció (quadre inferior)"
 
 #: ../plugins/translate/translate/__init__.py:68
 msgid "Welcome!"
@@ -833,69 +833,3 @@ msgstr ""
 "Registra l'activitat d'usuari donant accés als fitxers usats de forma "
 "freqüent i recent."
 
-#~ msgid "Pick _Color..."
-#~ msgstr "Escolliu un _color..."
-
-#~ msgid "Toggle bookmark status of the current line"
-#~ msgstr "Commuta l'estat de l'adreça d'interès de la línia actual"
-
-#~ msgid "Goto the next bookmark"
-#~ msgstr "Vés a l'adreça d'interès següent"
-
-#~ msgid "Goto the previous bookmark"
-#~ msgstr "Vés a l'adreça d'interès anterior"
-
-#~ msgid "Comment the selected code"
-#~ msgstr "Comenta del codi seleccionat"
-
-#~ msgid "Uncomment the selected code"
-#~ msgstr "Treu el comentari del codi seleccionat"
-
-#~ msgid "Pick a color from a dialog"
-#~ msgstr "Escolliu un color mitjançant un diàleg"
-
-#~ msgid "Start commander mode"
-#~ msgstr "Inicia el mode commander"
-
-#~ msgid "Most Used"
-#~ msgstr "Més utilitzats"
-
-#~ msgid "Recently Used"
-#~ msgstr "Utilitzats recentment"
-
-#~ msgid "Show spaces and tabs"
-#~ msgstr "Mostra els espais i les tabulacions"
-
-#~ msgid "Enabled"
-#~ msgstr "Habilitat"
-
-#~ msgid "Join the selected lines"
-#~ msgstr "Uneix les línies seleccionades"
-
-#~ msgid "Split the selected lines"
-#~ msgstr "Separa les línies seleccionades"
-
-#~ msgid "Start multi edit mode"
-#~ msgstr "Inicia el mode d'edició múltiple"
-
-#~ msgid "Characters that are considered \"part of a word\""
-#~ msgstr "Els caràcters que es consideren \"part d'una paraula\""
-
-#~ msgid ""
-#~ "When selecting text by word, sequences of these characters are considered "
-#~ "single words. Ranges can be given as \"A-Z\". Literal hyphen (not "
-#~ "expressing a range) should be the first character given."
-#~ msgstr ""
-#~ "Quan se selecciona el text per paraula, les seqüències d'aquests "
-#~ "caràcters es consideren paraules individuals. Els intervals es poden "
-#~ "especificar com a «A-Z». El guió sol (que no expressa un interval) hauria "
-#~ "de ser el primer caràcter donat."
-
-#~ msgid "_Increase font size"
-#~ msgstr "_Augmenta la mida del tipus de lletra"
-
-#~ msgid "_Decrease font size"
-#~ msgstr "_Redueix la mida del tipus de lletra"
-
-#~ msgid "_Reset font size"
-#~ msgstr "_Reinicia la mida del tipus de lletra"
