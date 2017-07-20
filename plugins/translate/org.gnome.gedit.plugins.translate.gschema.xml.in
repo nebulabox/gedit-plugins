@@ -14,5 +14,19 @@
         Language pair used to translate from one language to another
       </description>
     </key>
+   <key type="s" name="api-key">
+      <default>''</default>
+      <summary>API key for remote web service</summary>
+      <description>
+       API key for remote web service
+      </description>
+    </key>
+   <key type="i" name="service">
+      <default>0</default>
+      <summary>Remote web service to use</summary>
+      <description>
+       Remote web service to use
+      </description>
+    </key>
    </schema>
 </schemalist>

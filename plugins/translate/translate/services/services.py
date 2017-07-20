@@ -17,11 +17,26 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from abc import ABCMeta, abstractmethod
+from .apertium import Apertium
+from .yandex import Yandex
 
-class Translator(metaclass=ABCMeta):
 
-    @abstractmethod
-    def translate_text(self, text, language_pair):
-        pass
+class Services():
 
+    SERVICES = {0: "Apertium", 1: "Yandex"}
+
+    @staticmethod
+    def get_name(service_id):
+        return Services.SERVICES[service_id]
+
+    @staticmethod
+    def get(service_id):
+        print(service_id)
+        if service_id == 0:
+            return Apertium()
+        elif service_id == 1:
+            return Yandex()
+
+    @staticmethod
+    def get_names_and_ids():
+        return Services.SERVICES

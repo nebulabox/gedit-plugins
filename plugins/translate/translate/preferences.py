@@ -21,6 +21,7 @@ import os
 from gi.repository import Gio, Gtk
 import gettext
 from gpdefs import *
+from .services.services import Services
 
 
 class Preferences(object):
@@ -28,6 +29,8 @@ class Preferences(object):
     TRANSLATE_KEY_BASE = 'org.gnome.gedit.plugins.translate'
     OUTPUT_TO_DOCUMENT = 'output-to-document'
     LANGUAGE_PAIR = 'language-pair'
+    API_KEY = 'api-key'
+    SERVICE = 'service'
     LANG_NAME = 0
     LANG_CODE = 1
 
@@ -42,13 +45,47 @@ class Preferences(object):
         self._ui.set_translation_domain(GETTEXT_PACKAGE)
         self._ui.add_from_file(self._ui_path)
 
-        self.init_radiobuttons()
-        self.init_combobox()
+        self._init_radiobuttons()
+        self._init_combobox_languages()
+        self._init_combobox_services()
+        self._init_api_entry()
 
-    def init_radiobuttons(self):
+    def _init_api_entry(self):
 
+        service_id = self._settings.get_uint(self.SERVICE)
+        service = Services.get(service_id)
+        if service.has_api_key() is True:
+            self._update_api_key_ui(True)
+            return
+        else:
+            self._apikey = None
+            return
+            
+        self._apikey.connect('changed', self._changed_apikey)
+        key = self._settings.get_string(self.API_KEY)
+        self._apikey.set_text(key)
+
+    def _update_api_key_ui(self, show):
+        apibox = self._ui.get_object('api_box')
+
+        print("_update_api_key_ui show:" + str(show))
+        if show is True:
+            self._apilabel = Gtk.Label("API Key")
+            self._apikey= Gtk.Entry(expand=True)
+
+            apibox.add(self._apilabel)
+            apibox.add(self._apikey)
+            apibox.show_all()
+        else:
+            apibox.remove(self._apilabel)
+            apibox.remove(self._apikey)
+            self._apilabel = None
+            self._apikey = None
+       
+    def _init_radiobuttons(self):
         self._radio_samedoc = self._ui.get_object('same_document')
         self._output_window = self._ui.get_object('output_window')
+        self._radio_samedoc.connect("toggled", self._radio_samedoc_callback)
         active = self._settings.get_boolean(self.OUTPUT_TO_DOCUMENT)
 
         if active:
@@ -56,22 +93,39 @@ class Preferences(object):
         else:
             self._output_window.set_active(active is False)
 
-    def init_combobox(self):
+    def _init_combobox_services(self):
+        self._services = self._ui.get_object('services')
+
+        cell = Gtk.CellRendererText()
+        self._services.pack_start(cell, 1)
+        self._services.add_attribute(cell, 'text', 0)
+        services = Services.get_names_and_ids()
+
+        model = Gtk.ListStore(str, int)
+        for service_id in services.keys():
+            model.append((services[service_id], service_id))
+
+        self._services.set_model(model)
+        service_id = self._settings.get_uint(self.SERVICE)
+        self._services.set_active(service_id)
+        self._services.connect('changed', self._changed_services)
+        
+    def _init_combobox_languages(self):
         self._languages = self._ui.get_object('languages')
 
         cell = Gtk.CellRendererText()
         self._languages.pack_start(cell, 1)
         self._languages.add_attribute(cell, 'text', 0)
 
-        self._model = self._get_stored_model()
+        self._model = self._get_languages_stored_model()
         self._languages.set_model(self._model)
-        self._languages.connect('changed', self.changed_cb)
+        self._languages.connect('changed', self._changed_lang_pair)
 
         selected = self._settings.get_string(self.LANGUAGE_PAIR)
-        index = self.get_index(selected)
+        index = self._get_index(selected)
         self._languages.set_active(index)
 
-    def _get_stored_model(self):
+    def _get_languages_stored_model(self):
         sorted_language_names = set()
 
         for i in range(len(self._language_names)):
@@ -86,13 +140,13 @@ class Preferences(object):
 
         return model
 
-    def get_index(self, selected):
+    def _get_index(self, selected):
         for i in range(len(self._model)):
             if self._model[i][Preferences.LANG_CODE] == selected:
                 return i
         return -1
 
-    def changed_cb(self, combobox):
+    def _changed_lang_pair(self, combobox):
         model = combobox.get_model()
         index = combobox.get_active()
         if index > -1:
@@ -100,16 +154,26 @@ class Preferences(object):
             self._settings.set_string(self.LANGUAGE_PAIR, item[Preferences.LANG_CODE])
         return
 
-    def set_output_to_doc(self, active):
-        self._settings.set_boolean(self.OUTPUT_TO_DOCUMENT, active)
+    def _changed_services(self, combobox):
+        model = combobox.get_model()
+        index = combobox.get_active()
+        if index > -1:
+            item = model[index]
+            service_id = item[1]
+            self._settings.set_uint(self.SERVICE, service_id)
+            service = Services.get(service_id)
+            self._update_api_key_ui(service.has_api_key())
+        return
 
-    def radio_samedoc_callback(self, widget, data=None):
-        self.set_output_to_doc(widget.get_active())
+    def _changed_apikey(self, text_entry):
+        text = text_entry.get_text()
+        self._settings.set_string(self.API_KEY, text)
+        return
+
+    def _radio_samedoc_callback(self, widget, data=None):
+        self._settings.set_boolean(self.OUTPUT_TO_DOCUMENT, widget.get_active())
 
     def configure_widget(self):
         self._ui.connect_signals(self)
-        self._radio_samedoc.connect("toggled", self.radio_samedoc_callback)
-
         widget = self._ui.get_object('grid')
         return widget
-

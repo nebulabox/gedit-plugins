@@ -5,9 +5,11 @@ plugins_translate_PYTHON = \
 	plugins/translate/translate/preferences.py	\
 	plugins/translate/translate/translateview.py 
 
-plugins_backendsdir = $(plugindir)/translate/backends
-dist_plugins_backends_DATA = plugins/translate/translate/backends/apertium.py \
-	plugins/translate/translate/backends/translator.py
+plugins_servicesdir = $(plugindir)/translate/services
+dist_plugins_services_DATA = plugins/translate/translate/services/apertium.py \
+	plugins/translate/translate/services/service.py \
+	plugins/translate/translate/services/services.py \
+	plugins/translate/translate/services/yandex.py
 
 plugins_preferences_uidir = $(GEDIT_PLUGINS_DATA_DIR)/translate/ui
 dist_plugins_preferences_ui_DATA = plugins/translate/translate/ui/preferences.ui
