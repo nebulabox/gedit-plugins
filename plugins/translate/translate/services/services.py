@@ -23,7 +23,9 @@ from .yandex import Yandex
 
 class Services():
 
-    SERVICES = {0: "Apertium", 1: "Yandex"}
+    APERTIUM_ID = 0
+    YANDEX_ID = 1
+    SERVICES = {APERTIUM_ID: "Apertium", YANDEX_ID: "Yandex"}
 
     @staticmethod
     def get_name(service_id):
@@ -32,9 +34,9 @@ class Services():
     @staticmethod
     def get(service_id):
         print(service_id)
-        if service_id == 0:
+        if service_id == Services.APERTIUM_ID:
             return Apertium()
-        elif service_id == 1:
+        elif service_id == Services.YANDEX_ID:
             return Yandex()
 
     @staticmethod

@@ -60,7 +60,7 @@ class Preferences(object):
         else:
             self._apikey = None
             return
-            
+
         self._apikey.connect('changed', self._changed_apikey)
         key = self._settings.get_string(self.API_KEY)
         self._apikey.set_text(key)
@@ -81,7 +81,7 @@ class Preferences(object):
             apibox.remove(self._apikey)
             self._apilabel = None
             self._apikey = None
-       
+
     def _init_radiobuttons(self):
         self._radio_samedoc = self._ui.get_object('same_document')
         self._output_window = self._ui.get_object('output_window')
@@ -109,7 +109,7 @@ class Preferences(object):
         service_id = self._settings.get_uint(self.SERVICE)
         self._services.set_active(service_id)
         self._services.connect('changed', self._changed_services)
-        
+
     def _init_combobox_languages(self):
         self._languages = self._ui.get_object('languages')
 
