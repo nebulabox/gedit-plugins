@@ -48,7 +48,7 @@ class Apertium(Service):
     def has_api_key(self):
         return False
     
-    def set_api_key(self):
+    def set_api_key(self, key):
         pass
 
     def get_language_names(self):

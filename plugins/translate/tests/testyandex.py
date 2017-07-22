@@ -19,24 +19,26 @@
 
 
 import unittest
-from services.apertium import Apertium
+from services.yandex import Yandex
 from unittest.mock import patch, MagicMock
 
 
-class TestApertium(unittest.TestCase):
+class TestYandex(unittest.TestCase):
 
     @patch('urllib.request.urlopen')
     def test_translate_text(self, mock_urlopen):
         cm = MagicMock()
         cm.getcode.return_value = 200
-        cm.read.return_value = bytes('{"responseData": {"translatedText": "Hauries d\'haver-hi rebut una c\u00f2pia"}, "responseDetails": null, "responseStatus": 200}', 'utf-8')
+        cm.read.return_value = bytes('{"code":200,"lang":"ca-en","text":["Hello friends"]}', 'utf-8')
         cm.__enter__.return_value = cm
         mock_urlopen.return_value = cm
 
-        apertium = Apertium(False)
-        translated = apertium.translate_text('You should have received a copy', 'eng|cat')
-        self.assertEqual('Hauries d\'haver-hi rebut una còpia', translated)
-        mock_urlopen.assert_called_with("https://www.apertium.org/apy/translate?langpair=eng|cat&markUnknown=no&q=You+should+have+received+a+copy")
+        yandex = Yandex()
+        yandex.set_api_key('our_key')
+        translated = yandex.translate_text('Hola amics', 'ca|en')
+        self.assertEqual('Hello friends', translated)
+        url = "https://translate.yandex.net/api/v1.5/tr.json/translate?lang=ca-en&format=plain&key=our_key&text=Hola+amics"
+        mock_urlopen.assert_called_with(url)
 
 
 if __name__ == '__main__':

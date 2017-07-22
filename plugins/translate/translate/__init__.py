@@ -23,6 +23,7 @@ gi.require_version('GtkSource', '3.0')
 gi.require_version('PeasGtk', '1.0')
 
 from gi.repository import GObject, Gio, Gtk, Gedit, PeasGtk
+from .services.services import Services
 from .services.apertium import Apertium
 from .translateview import TranslateView
 from .preferences import Preferences
@@ -103,6 +104,8 @@ class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
     TRANSLATE_KEY_BASE = 'org.gnome.gedit.plugins.translate'
     OUTPUT_TO_DOCUMENT = 'output-to-document'
     LANGUAGE_PAIR = 'language-pair'
+    SERVICE = 'service'
+    API_KEY = 'api-key'
 
     view = GObject.Property(type=Gedit.View)
 
@@ -157,13 +160,22 @@ class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
         return start is not None and end is not None
 
+    def _get_translation_service(self):
+        service_id = self._settings.get_uint(self.SERVICE)
+        service = Services.get(service_id)
+        if service.has_api_key() is True:
+            key = self._settings.get_string(self.API_KEY)
+            service.set_api_key(key)
+
+        return service
+
     def translate_text(self, document, start, end):
         doc = self.view.get_buffer()
         text = doc.get_text(start, end, False)
         language_pair = self._settings.get_string(self.LANGUAGE_PAIR)
       
-        apertium = Apertium()
-        translated = apertium.translate_text(text, language_pair)
+        service = self._get_translation_service()
+        translated = service.translate_text(text, language_pair)
 
         if self._settings.get_boolean(self.OUTPUT_TO_DOCUMENT):
             doc.insert(start, translated)

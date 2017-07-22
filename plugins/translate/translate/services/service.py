@@ -38,6 +38,6 @@ class Service(metaclass=ABCMeta):
         pass
     
     @abstractmethod    
-    def set_api_key(self):
+    def set_api_key(self, key):
         pass
 

@@ -61,10 +61,6 @@ class Preferences(object):
             self._apikey = None
             return
 
-        self._apikey.connect('changed', self._changed_apikey)
-        key = self._settings.get_string(self.API_KEY)
-        self._apikey.set_text(key)
-
     def _update_api_key_ui(self, show):
         apibox = self._ui.get_object('api_box')
 
@@ -72,6 +68,10 @@ class Preferences(object):
         if show is True:
             self._apilabel = Gtk.Label("API Key")
             self._apikey= Gtk.Entry(expand=True)
+
+            self._apikey.connect('changed', self._changed_apikey)
+            key = self._settings.get_string(self.API_KEY)
+            self._apikey.set_text(key)
 
             apibox.add(self._apilabel)
             apibox.add(self._apikey)
