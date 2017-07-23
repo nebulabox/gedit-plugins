@@ -27,6 +27,7 @@ from .services.services import Services
 from .services.apertium import Apertium
 from .translateview import TranslateView
 from .preferences import Preferences
+from .settings import Settings
 import gettext
 from gpdefs import *
 
@@ -101,17 +102,11 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
     
 class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
-    TRANSLATE_KEY_BASE = 'org.gnome.gedit.plugins.translate'
-    OUTPUT_TO_DOCUMENT = 'output-to-document'
-    LANGUAGE_PAIR = 'language-pair'
-    SERVICE = 'service'
-    API_KEY = 'api-key'
-
     view = GObject.Property(type=Gedit.View)
 
     def __init__(self):
         GObject.Object.__init__(self)
-        self._settings = Gio.Settings.new(self.TRANSLATE_KEY_BASE)
+        self._settings = Settings()
 
     def do_activate(self):
         self.view.translate_view_activatable = self
@@ -121,11 +116,11 @@ class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
         delattr(self.view, "translate_view_activatable")
 
     def _get_language_pair_name(self):
-        language_pair = self._settings.get_string(self.LANGUAGE_PAIR)
+        language_pair = self._settings.get_language_pair()
         languages = language_pair.split('|')
 
-        apertium = Apertium()
-        return apertium.get_language_pair_name(languages[0], languages[1])
+        service = self._get_translation_service()
+        return service.get_language_pair_name(languages[0], languages[1])
 
     def populate_popup(self, view, popup):
         if not isinstance(popup, Gtk.MenuShell):
@@ -161,10 +156,10 @@ class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
         return start is not None and end is not None
 
     def _get_translation_service(self):
-        service_id = self._settings.get_uint(self.SERVICE)
+        service_id = self._settings.get_service()
         service = Services.get(service_id)
         if service.has_api_key() is True:
-            key = self._settings.get_string(self.API_KEY)
+            key = self._settings.get_apikey()
             service.set_api_key(key)
 
         return service
@@ -172,12 +167,12 @@ class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
     def translate_text(self, document, start, end):
         doc = self.view.get_buffer()
         text = doc.get_text(start, end, False)
-        language_pair = self._settings.get_string(self.LANGUAGE_PAIR)
+        language_pair = self._settings.get_language_pair()
       
         service = self._get_translation_service()
         translated = service.translate_text(text, language_pair)
 
-        if self._settings.get_boolean(self.OUTPUT_TO_DOCUMENT):
+        if self._settings.get_output_document():
             doc.insert(start, translated)
         else:
             g_console.write(translated)

@@ -3,7 +3,8 @@ plugins_translatedir = $(plugindir)/translate
 plugins_translate_PYTHON = \
     plugins/translate/translate/__init__.py	\
 	plugins/translate/translate/preferences.py	\
-	plugins/translate/translate/translateview.py 
+	plugins/translate/translate/translateview.py \
+	plugins/translate/translate/settings.py
 
 plugins_servicesdir = $(plugindir)/translate/services
 dist_plugins_services_DATA = plugins/translate/translate/services/apertium.py \
