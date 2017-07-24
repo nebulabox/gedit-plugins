@@ -45,6 +45,12 @@ class Apertium(Service):
         if init is True:
             self._get_remote_language_names_and_pairs()
 
+    @staticmethod
+    def _clean_for_ut():
+        Apertium.g_language_codes = []
+        Apertium.g_language_names = []
+        Apertium.g_locales_names = {}       
+
     def has_api_key(self):
         return False
     
