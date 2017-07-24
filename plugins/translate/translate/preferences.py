@@ -30,12 +30,13 @@ class Preferences(object):
     LANG_NAME = 0
     LANG_CODE = 1
 
-    def __init__(self, datadir, language_names, language_codes):
+    def __init__(self, datadir, get_languages_names_codes):
         object.__init__(self)
-        self._language_codes = language_codes
-        self._language_names = language_names
 
+        self._get_languages_names_codes = get_languages_names_codes
         self._settings = Settings()
+        self._service_id = self._settings.get_service()
+
         self._ui_path = os.path.join(datadir, 'ui', 'preferences.ui')
         self._ui = Gtk.Builder()
         self._ui.set_translation_domain(GETTEXT_PACKAGE)
@@ -46,10 +47,16 @@ class Preferences(object):
         self._init_combobox_services()
         self._init_api_entry()
 
-    def _init_api_entry(self):
+    def _populate_languages(self):
+        self._language_names, self._language_codes = self._get_languages_names_codes(self._service_id)
+        self._model = self._get_languages_stored_model()
+        self._languages.set_model(self._model)
+        selected = self._settings.get_language_pair()
+        index = self._get_index(selected)
+        self._languages.set_active(index)
 
-        service_id = self._settings.get_service()
-        service = Services.get(service_id)
+    def _init_api_entry(self):
+        service = Services.get(self._service_id)
         if service.has_api_key() is True:
             self._update_api_key_ui(True)
             return
@@ -60,7 +67,6 @@ class Preferences(object):
     def _update_api_key_ui(self, show):
         apibox = self._ui.get_object('api_box')
 
-        print("_update_api_key_ui show:" + str(show))
         if show is True:
             self._apilabel = Gtk.Label("API Key")
             self._apikey= Gtk.Entry(expand=True)
@@ -112,14 +118,8 @@ class Preferences(object):
         cell = Gtk.CellRendererText()
         self._languages.pack_start(cell, 1)
         self._languages.add_attribute(cell, 'text', 0)
-
-        self._model = self._get_languages_stored_model()
-        self._languages.set_model(self._model)
+        self._populate_languages()
         self._languages.connect('changed', self._changed_lang_pair)
-
-        selected = self._settings.get_language_pair()
-        index = self._get_index(selected)
-        self._languages.set_active(index)
 
     def _get_languages_stored_model(self):
         sorted_language_names = set()
@@ -152,12 +152,16 @@ class Preferences(object):
     def _changed_services(self, combobox):
         model = combobox.get_model()
         index = combobox.get_active()
-        if index > -1:
-            item = model[index]
-            service_id = item[1]
-            self._settings.set_service(service_id)
-            service = Services.get(service_id)
-            self._update_api_key_ui(service.has_api_key())
+        if index == -1:
+            return
+
+        item = model[index]
+        self._service_id = item[1]
+        self._settings.set_service(self._service_id)
+        service = Services.get(self._service_id)
+        self._update_api_key_ui(service.has_api_key())
+        self._populate_languages()
+      
 
     def _changed_apikey(self, text_entry):
         text = text_entry.get_text()

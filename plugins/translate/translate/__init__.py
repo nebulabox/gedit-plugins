@@ -83,12 +83,19 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
 
         self.window.lookup_action('translate').set_enabled(sensitive)
 
+ 
+    def get_languages_names_codes(self, service_id):
+        print("get_languages_names_codes. service_id: " + str(service_id))
+        settings = Settings()
+        service_id = settings.get_service()
+        service = Services.get(service_id)
+        return service.get_language_names(), service.get_language_codes()
+
     def do_create_configure_widget(self):
         print("called do_create_configure_widget")
         apertium = Apertium()
         config_widget = Preferences(self.plugin_info.get_data_dir(),
-                                    apertium.get_language_names(),
-                                    apertium.get_language_codes())
+                                    self.get_languages_names_codes)
         widget = config_widget.configure_widget()
         print("called do_create_configure_widget return:" + str(type(widget)))
         return widget
