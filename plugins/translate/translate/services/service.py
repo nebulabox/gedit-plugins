@@ -34,7 +34,7 @@ class Service(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def get_language_pair_name(self):
+    def get_language_pair_name(self, source, target, locales_names=None):
         pass
 
     @abstractmethod

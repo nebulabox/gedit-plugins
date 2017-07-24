@@ -33,7 +33,6 @@ class Services():
 
     @staticmethod
     def get(service_id):
-        print(service_id)
         if service_id == Services.APERTIUM_ID:
             return Apertium()
         elif service_id == Services.YANDEX_ID:
