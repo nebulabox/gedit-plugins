@@ -65,5 +65,23 @@ class TestApertium(unittest.TestCase):
         self.assertEqual(['Català -> English'], Apertium.g_language_names)
         self.assertEqual(['ca|en'], Apertium.g_language_codes)
 
+    @patch('urllib.request.urlopen')
+    def test_get_remote_language_pairs(self, mock_urlopen):
+        cm = MagicMock()
+        cm.getcode.return_value = 200
+        cm.read.return_value = bytes('{"responseStatus": 200, "responseData": [{"targetLanguage": "cat", "sourceLanguage": "oci_aran"}]}', 'utf-8')
+        cm.__enter__.return_value = cm
+        mock_urlopen.return_value = cm
+
+        apertium = Apertium(False)
+        language_pair_source, language_pair_target, locales, language_codes = apertium._get_remote_language_pairs()
+        self.assertEqual(['oci_aran'], language_pair_source)
+        self.assertEqual(['cat'], language_pair_target)
+        self.assertEqual({'oci_aran', 'cat'}, locales)
+        self.assertEqual(['oci_aran|cat'], language_codes)
+        mock_urlopen.assert_called_with("https://www.apertium.org/apy/listPairs")
+
+
+
 if __name__ == '__main__':
     unittest.main()

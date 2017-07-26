@@ -151,7 +151,7 @@ class Apertium(Service):
             Apertium.g_language_codes = language_codes
 
         except Exception as e:
-            print("_get_remote_language_pairs exception {0}".format(e))
+            print("_get_remote_language_names_and_pairs exception {0}".format(e))
 
 
     def _get_remote_language_pairs(self):
