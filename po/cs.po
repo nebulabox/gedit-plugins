@@ -14,23 +14,23 @@
 # Kamil Páral <ripper42@gmail.com>, 2009.
 # Lucas Lommer <llommer@svn.gnome.org>, 2009. (just one fix).
 # Petr Kovar <pknbe@volny.cz>, 2008 – 2010.
-# Marek Černocký <marek@manet.cz>, 2009, 2010, 2011, 2012, 2013, 2014, 2015.
+# Marek Černocký <marek@manet.cz>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2015-04-23 05:30+0000\n"
-"PO-Revision-Date: 2015-04-23 11:37+0200\n"
+"POT-Creation-Date: 2017-07-14 08:29+0000\n"
+"PO-Revision-Date: 2017-08-01 12:33+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
-"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language-Team: čeština <gnome-cs-list@gnome.org>>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -68,7 +68,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "Automaticky přidává zavírací závorku, když nějakou závorku vložíte."
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:49
+#: ../plugins/charmap/charmap/__init__.py:56
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Mapa znaků"
@@ -95,11 +95,11 @@ msgstr "Komentování kódu"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Zakomentovat nebo odkomentovat vybraný blok kódu."
 
-#: ../plugins/codecomment/codecomment.py:111
+#: ../plugins/codecomment/codecomment.py:114
 msgid "Co_mment Code"
 msgstr "Zako_mentovat kód"
 
-#: ../plugins/codecomment/codecomment.py:117
+#: ../plugins/codecomment/codecomment.py:120
 msgid "U_ncomment Code"
 msgstr "_Odkomentovat kód"
 
@@ -124,18 +124,18 @@ msgstr "Barevná pipeta"
 msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "Výběr a vkládání barev z dialogového okna (pro HTML, CSS, PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:129
+#: ../plugins/colorpicker/colorpicker.py:132
 msgid "Pick _Color…"
 msgstr "Vybrat barvu…"
 
-#: ../plugins/colorpicker/colorpicker.py:169
+#: ../plugins/colorpicker/colorpicker.py:172
 msgid "Pick Color"
 msgstr "Výběr barvy"
 
 #. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:40
+#: ../plugins/colorschemer/schemer/__init__.py:42
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Editor barevného schématu"
@@ -205,11 +205,11 @@ msgstr "Autor"
 msgid "Sample"
 msgstr "Ukázka"
 
-#: ../plugins/commander/commander/appactivatable.py:47
+#: ../plugins/commander/commander/appactivatable.py:48
 msgid "Commander Mode"
 msgstr "Příkazový režim"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -262,7 +262,7 @@ msgstr "Vykreslovat mezery"
 msgid "Draw Spaces and Tabs"
 msgstr "Vykresluje mezery a tabulátory"
 
-#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Ukázat _bílé znaky"
@@ -502,7 +502,7 @@ msgstr "Synchronizuje mezi formáty LaTeX a PDF v aplikacích gedit a evince."
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Synchronizuje mezi formáty LaTeX a PDF v aplikacích gedit a evince"
 
-#: ../plugins/synctex/synctex/synctex.py:336
+#: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Hledat vpřed"
 
@@ -683,7 +683,7 @@ msgid "Embed a terminal in the bottom pane."
 msgstr "Vložení terminálu do dolního panelu."
 
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:311
+#: ../plugins/terminal/terminal.py:315
 msgid "Terminal"
 msgstr "Terminál"
 
@@ -691,19 +691,19 @@ msgstr "Terminál"
 msgid "A simple terminal widget accessible from the bottom panel"
 msgstr "Jednoduchý prvek s terminálem přístupným ve spodním panelu"
 
-#: ../plugins/terminal/terminal.py:332
+#: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "Z_měnit složku"
 
-#: ../plugins/textsize/textsize/__init__.py:50
+#: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
 msgstr "_Normální velikost"
 
-#: ../plugins/textsize/textsize/__init__.py:52
+#: ../plugins/textsize/textsize/__init__.py:55
 msgid "S_maller Text"
 msgstr "_Menší text"
 
-#: ../plugins/textsize/textsize/__init__.py:54
+#: ../plugins/textsize/textsize/__init__.py:57
 msgid "_Larger Text"
 msgstr "_Větší text"
 
@@ -721,6 +721,45 @@ msgstr "Snadné zvětšování a zmenšování velikosti textu"
 msgid "Text size"
 msgstr "Velikost textu"
 
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr " "
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "Překlady vypisovat do:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "Stejného okna, jako je dokument"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Translate console (bottom panel)"
+msgstr "Překladové konzoly (spodní panel)"
+
+#: ../plugins/translate/translate/__init__.py:68
+msgid "Welcome!"
+msgstr "Vítejte!"
+
+#: ../plugins/translate/translate/__init__.py:71
+msgid "Translate Console"
+msgstr "Překladová konzola"
+
+#: ../plugins/translate/translate/__init__.py:136
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Přeložit vybraný text [{0}]"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+msgid "Translate"
+msgstr "Překlady"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+msgid "Translates text into different languages"
+msgstr "Překládá texty do různých jazyků"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Interaktivní doplňování"
@@ -729,7 +768,7 @@ msgstr "Interaktivní doplňování"
 msgid "Minimum word size:"
 msgstr "Minimální délka slova:"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
 msgstr "Slova dokumentu"
 
