@@ -166,6 +166,12 @@ class TextSizeViewActivatable(GObject.Object, Gedit.ViewActivatable, Signals):
         if state != Gdk.ModifierType.CONTROL_MASK:
             return False
 
+        # Scroll to the keep the line in the centre of the screen anchored
+        visible_rect = self.view.get_visible_rect()
+        central_line_y = visible_rect.height / 2 + visible_rect.y
+        central_line_iter, _ = self.view.get_line_at_y(central_line_y)
+        self.view.scroll_to_iter(central_line_iter, 0, True, 0.5, 0.5)
+
         if event.direction == Gdk.ScrollDirection.UP:
             self.larger_text()
             return True
