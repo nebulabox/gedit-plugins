@@ -41,10 +41,6 @@ class Apertium(Service):
 
     SERVER = "https://www.apertium.org/apy"
 
-    def __init__(self, init = True):
-        if init is True:
-            self._get_remote_language_names_and_pairs()
-
     @staticmethod
     def _clean_for_ut():
         Apertium.g_language_codes = []
@@ -56,6 +52,9 @@ class Apertium(Service):
     
     def set_api_key(self, key):
         pass
+
+    def init(self):
+        self._get_remote_language_names_and_pairs()
 
     def get_language_names(self):
         if len(Apertium.g_language_codes) > 0 and len(Apertium.g_language_names) > 0:

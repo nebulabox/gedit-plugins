@@ -83,12 +83,21 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
 
         self.window.lookup_action('translate').set_enabled(sensitive)
 
- 
-    def get_languages_names_codes(self, service_id):
-        print("get_languages_names_codes. service_id: " + str(service_id))
+
+    def _get_translation_service(self):
         settings = Settings()
         service_id = settings.get_service()
         service = Services.get(service_id)
+        if service.has_api_key() is True:
+            key = settings.get_apikey()
+            service.set_api_key(key)
+            service.init()
+
+        return service
+ 
+    def get_languages_names_codes(self, service_id):
+        print("get_languages_names_codes. service_id: " + str(service_id))
+        service = self._get_translation_service();
         return service.get_language_names(), service.get_language_codes()
 
     def do_create_configure_widget(self):
@@ -168,6 +177,7 @@ class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
         if service.has_api_key() is True:
             key = self._settings.get_apikey()
             service.set_api_key(key)
+            service.init()
 
         return service
 

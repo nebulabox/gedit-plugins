@@ -159,6 +159,11 @@ class Preferences(object):
         self._service_id = item[1]
         self._settings.set_service(self._service_id)
         service = Services.get(self._service_id)
+        if service.has_api_key() is True:
+            key = settings.get_apikey()
+            service.set_api_key(key)
+        
+        service.init()
         self._update_api_key_ui(service.has_api_key())
         self._populate_languages()
       
