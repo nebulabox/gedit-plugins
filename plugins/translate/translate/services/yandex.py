@@ -88,8 +88,7 @@ class Yandex(Service):
 
         response = urllib.request.urlopen(url)
         payload = json.loads(response.read().decode("utf-8"))
-        print("json:" + str(payload))
-
+    
         language_codes = payload['dirs']
         language_codes = [x.replace('-', '|') for x in language_codes]
         locales_names = payload['langs']
@@ -97,7 +96,6 @@ class Yandex(Service):
         language_names = []
         for lang_pair in language_codes:
             langs = lang_pair.split('|')
-            print("langs: " + str(langs))
             source = langs[0]
             target = langs[1]
             name = self.get_language_pair_name(source, target, locales_names)
@@ -106,9 +104,7 @@ class Yandex(Service):
         Yandex.g_locales_names = locales_names
         Yandex.g_language_names = language_names
         Yandex.g_language_codes = language_codes
-        print("g_locales_names:" + str(Yandex.g_locales_names))
-        print("g_language_codes:" + str(Yandex.g_language_codes))
-        print("g_language_names:" + str(Yandex.g_language_names))
+    
 
     def translate_text(self, text, language_pair):
         language_pair = language_pair.replace('|', '-')

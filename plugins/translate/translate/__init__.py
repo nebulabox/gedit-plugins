@@ -91,8 +91,8 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
         if service.has_api_key() is True:
             key = settings.get_apikey()
             service.set_api_key(key)
-            service.init()
 
+        service.init()
         return service
  
     def get_languages_names_codes(self, service_id):
@@ -177,8 +177,8 @@ class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
         if service.has_api_key() is True:
             key = self._settings.get_apikey()
             service.set_api_key(key)
-            service.init()
 
+        service.init()
         return service
 
     def translate_text(self, document, start, end):
