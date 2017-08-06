@@ -160,7 +160,7 @@ class Preferences(object):
         self._settings.set_service(self._service_id)
         service = Services.get(self._service_id)
         if service.has_api_key() is True:
-            key = settings.get_apikey()
+            key = self._settings.get_apikey()
             service.set_api_key(key)
         
         service.init()
