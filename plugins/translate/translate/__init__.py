@@ -102,7 +102,6 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
 
     def do_create_configure_widget(self):
         print("called do_create_configure_widget")
-        apertium = Apertium()
         config_widget = Preferences(self.plugin_info.get_data_dir(),
                                     self.get_languages_names_codes)
         widget = config_widget.configure_widget()
