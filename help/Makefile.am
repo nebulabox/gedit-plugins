@@ -16,7 +16,6 @@ HELP_FILES = \
 	join-split-lines.page \
 	legal-plugins.xml \
 	multi-edit.page \
-	session-saver.page \
 	terminal.page \
 	text-size.page \
 	word-completion.page \
