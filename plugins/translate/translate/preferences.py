@@ -31,21 +31,21 @@ class Preferences(object):
     LANG_CODE = 1
 
     def __init__(self, datadir, get_languages_names_codes):
-        object.__init__(self)
-
         self._get_languages_names_codes = get_languages_names_codes
         self._settings = Settings()
         self._service_id = self._settings.get_service()
 
-        self._ui_path = os.path.join(datadir, 'ui', 'preferences.ui')
-        self._ui = Gtk.Builder()
-        self._ui.set_translation_domain(GETTEXT_PACKAGE)
-        self._ui.add_from_file(self._ui_path)
-
+        self._load_ui(datadir)
         self._init_radiobuttons()
         self._init_combobox_languages()
         self._init_combobox_services()
         self._init_api_entry()
+
+    def _load_ui(self, datadir):
+        self._ui_path = os.path.join(datadir, 'ui', 'preferences.ui')
+        self._ui = Gtk.Builder()
+        self._ui.set_translation_domain(GETTEXT_PACKAGE)
+        self._ui.add_from_file(self._ui_path)
 
     def _populate_languages(self):
         self._language_names, self._language_codes = self._get_languages_names_codes(self._service_id)
@@ -59,17 +59,13 @@ class Preferences(object):
         service = Services.get(self._service_id)
         if service.has_api_key() is True:
             self._update_api_key_ui(True)
-            return
-        else:
-            self._apikey = None
-            return
 
     def _update_api_key_ui(self, show):
         apibox = self._ui.get_object('api_box')
 
         if show is True:
             self._apilabel = Gtk.Label("API Key")
-            self._apikey= Gtk.Entry(expand=True)
+            self._apikey = Gtk.Entry(expand=True)
 
             self._apikey.connect('changed', self._changed_apikey)
             key = self._settings.get_apikey()
@@ -162,11 +158,10 @@ class Preferences(object):
         if service.has_api_key() is True:
             key = self._settings.get_apikey()
             service.set_api_key(key)
-        
+
         service.init()
         self._update_api_key_ui(service.has_api_key())
         self._populate_languages()
-      
 
     def _changed_apikey(self, text_entry):
         text = text_entry.get_text()
