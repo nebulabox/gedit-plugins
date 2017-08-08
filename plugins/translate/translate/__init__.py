@@ -67,7 +67,9 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
         g_console = TranslateView(namespace = {'__builtins__' : __builtins__,
                                                    'gedit' : Gedit,
                                                    'window' : self.window})
-        g_console.write(_('Welcome!'))
+
+        name = self._get_translation_service_name()
+        g_console.write(_('Translations powered by {0}'.format(name)))
         bottom = self.window.get_bottom_panel()
         g_console.show_all()
         bottom.add_titled(g_console, "GeditTranslateConsolePanel", _('Translate Console'))
@@ -83,7 +85,11 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
 
         self.window.lookup_action('translate').set_enabled(sensitive)
 
-
+    def _get_translation_service_name(self):
+        settings = Settings()
+        service_id = settings.get_service()
+        return Services.get_name(service_id)
+     
     def _get_translation_service(self):
         settings = Settings()
         service_id = settings.get_service()
@@ -97,7 +103,7 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
  
     def get_languages_names_codes(self, service_id):
         print("get_languages_names_codes. service_id: " + str(service_id))
-        service = self._get_translation_service();
+        service = self._get_translation_service()
         return service.get_language_names(), service.get_language_codes()
 
     def do_create_configure_widget(self):

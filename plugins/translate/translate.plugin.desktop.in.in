@@ -5,6 +5,6 @@ IAge=3
 _Name=Translate
 _Description=Translates text into different languages
 Authors=Jordi Mas i Hernàndez <jmas@softcatala.org>
-Copyright=Copyright @ 2017 Jordi Mas i Hernàndez
+Copyright=Copyright @ 2017 Jordi Mas i Hernàndez. Powered by Apertium and Yandex.Translate translation engines. 
 Website=http://www.gedit.org
 Version=@VERSION@
