@@ -6,7 +6,6 @@ HELP_FILES = \
 	bookmarks.page \
 	bracket-comp.page \
 	character-map.page \
-	code-assistance.page \
 	code-comment.page \
 	color-picker.page \
 	commander.page \
