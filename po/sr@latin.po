@@ -1,21 +1,21 @@
 # Serbian translation of gedit
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003 — 2016.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003 — 2017.
 # This file is distributed under the same license as the gedit package.
 # Goran Rakić <grakic@devbase.net>
 # Danilo Šegan <danilo@prevod.org>, 2005.
 # Igor Nestorović <igor@prevod.org>, 2005
 # Branko Kokanović <branko.kokanovic@gmail.com>, 2010
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011—2016.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011—2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gedit&k"
-"eywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2016-01-02 07:03+0000\n"
-"PO-Revision-Date: 2016-01-02 18:02+0200\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gedit&"
+"keywords=I18N+L10N&component=Plugins\n"
+"POT-Creation-Date: 2017-07-14 08:29+0000\n"
+"PO-Revision-Date: 2017-08-13 10:00+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian <gnom@prevod.org>\n"
-"Language: sr@latin\n"
+"Language-Team: srpski <gnome-sr@googlegroups.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -116,7 +116,6 @@ msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
 msgstr "Izaberite i ubacite boju iz prozorčeta (za HTML, CSS, PHP)"
 
 #: ../plugins/colorpicker/colorpicker.py:132
-#| msgid "Pick Color"
 msgid "Pick _Color…"
 msgstr "Izaberi _boju…"
 
@@ -216,7 +215,6 @@ msgid "Empty Document"
 msgstr "Prazan dokument"
 
 #: ../plugins/dashboard/dashboard/dashboard.py:158
-#| msgid "Type here to search..."
 msgid "Type here to search…"
 msgstr "Upišite ovde da potražite…"
 
@@ -255,7 +253,7 @@ msgstr "Iscrtaj razmake"
 msgid "Draw Spaces and Tabs"
 msgstr "Iscrtajte razmake i tabulatore"
 
-#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Prikaži pra_zan razmak"
@@ -414,22 +412,18 @@ msgid "Multi edit"
 msgstr "Višemesno uređivanje"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
-#| msgid "Added edit point..."
 msgid "Added edit point…"
 msgstr "Tačka dodatog uređivanja…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
-#| msgid "Column Mode..."
 msgid "Column Mode…"
 msgstr "Režim kolona…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
-#| msgid "Removed edit point..."
 msgid "Removed edit point…"
 msgstr "Tačka uklonjenog uređivanja…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:941
-#| msgid "Cancelled column mode..."
 msgid "Cancelled column mode…"
 msgstr "Režim otkazane kolone…"
 
@@ -716,6 +710,45 @@ msgstr "Lako povećajte i smanjite veličinu teksta"
 msgid "Text size"
 msgstr "Veličina teksta"
 
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr "Jezici prevoda"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "Gde da pošaljem prevod:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "Isti prozor dokumenta"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Translate console (bottom panel)"
+msgstr "Konzola prevoda (donji panel)"
+
+#: ../plugins/translate/translate/__init__.py:68
+msgid "Welcome!"
+msgstr "Dobrodošli!"
+
+#: ../plugins/translate/translate/__init__.py:71
+msgid "Translate Console"
+msgstr "Konzola prevoda"
+
+#: ../plugins/translate/translate/__init__.py:136
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Prevedi izabrani tekst [{0}]"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+msgid "Translate"
+msgstr "Prevedi"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+msgid "Translates text into different languages"
+msgstr "Prevedite tekst na razne jezike"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Međudejstveno dovršavanje"
@@ -724,7 +757,7 @@ msgstr "Međudejstveno dovršavanje"
 msgid "Minimum word size:"
 msgstr "Najmanja veličina reči:"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
 msgstr "Reči dokumenta"
 
