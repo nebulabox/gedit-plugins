@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catalan translation of gedit plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-18 20:29+0200\n"
+"POT-Creation-Date: 2017-08-14 18:52+0200\n"
 "PO-Revision-Date: 2017-07-18 21:30+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -743,15 +743,20 @@ msgstr "Mateixa finestra del document"
 msgid "Translate console (bottom panel)"
 msgstr "Consola de traducció (quadre inferior)"
 
-#: ../plugins/translate/translate/__init__.py:68
-msgid "Welcome!"
-msgstr "Benvinguts!"
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Servei de traducció:"
 
-#: ../plugins/translate/translate/__init__.py:71
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Traduccions proporcionades per [{0}]"
+
+#: ../plugins/translate/translate/__init__.py:75
 msgid "Translate Console"
 msgstr "Consola de traducció"
 
-#: ../plugins/translate/translate/__init__.py:136
+#: ../plugins/translate/translate/__init__.py:155
 #, python-brace-format
 msgid "Translate selected text [{0}]"
 msgstr "Tradueix el text seleccionat [{0}]"
@@ -833,3 +838,5 @@ msgstr ""
 "Registra l'activitat d'usuari donant accés als fitxers usats de forma "
 "freqüent i recent."
 
+#~ msgid "Welcome!"
+#~ msgstr "Benvinguts!"
