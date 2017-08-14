@@ -23,9 +23,11 @@ gi.require_version('GtkSource', '3.0')
 gi.require_version('PeasGtk', '1.0')
 
 from gi.repository import GObject, Gio, Gtk, Gedit, PeasGtk
-from .apertium import Apertium
+from .services.services import Services
+from .services.apertium import Apertium
 from .translateview import TranslateView
 from .preferences import Preferences
+from .settings import Settings
 import gettext
 from gpdefs import *
 
@@ -65,7 +67,9 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
         g_console = TranslateView(namespace = {'__builtins__' : __builtins__,
                                                    'gedit' : Gedit,
                                                    'window' : self.window})
-        g_console.write(_('Welcome!'))
+
+        name = self._get_translation_service_name()
+        g_console.write(_('Translations powered by {0}'.format(name)))
         bottom = self.window.get_bottom_panel()
         g_console.show_all()
         bottom.add_titled(g_console, "GeditTranslateConsolePanel", _('Translate Console'))
@@ -81,12 +85,31 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
 
         self.window.lookup_action('translate').set_enabled(sensitive)
 
+    def _get_translation_service_name(self):
+        settings = Settings()
+        service_id = settings.get_service()
+        return Services.get_name(service_id)
+     
+    def _get_translation_service(self):
+        settings = Settings()
+        service_id = settings.get_service()
+        service = Services.get(service_id)
+        if service.has_api_key() is True:
+            key = settings.get_apikey()
+            service.set_api_key(key)
+
+        service.init()
+        return service
+ 
+    def get_languages_names_codes(self, service_id):
+        print("get_languages_names_codes. service_id: " + str(service_id))
+        service = self._get_translation_service()
+        return service.get_language_names(), service.get_language_codes()
+
     def do_create_configure_widget(self):
         print("called do_create_configure_widget")
-        apertium = Apertium()
         config_widget = Preferences(self.plugin_info.get_data_dir(),
-                                    apertium.get_language_names(),
-                                    apertium.get_language_codes())
+                                    self.get_languages_names_codes)
         widget = config_widget.configure_widget()
         print("called do_create_configure_widget return:" + str(type(widget)))
         return widget
@@ -100,15 +123,11 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
     
 class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
-    TRANSLATE_KEY_BASE = 'org.gnome.gedit.plugins.translate'
-    OUTPUT_TO_DOCUMENT = 'output-to-document'
-    LANGUAGE_PAIR = 'language-pair'
-
     view = GObject.Property(type=Gedit.View)
 
     def __init__(self):
         GObject.Object.__init__(self)
-        self._settings = Gio.Settings.new(self.TRANSLATE_KEY_BASE)
+        self._settings = Settings()
 
     def do_activate(self):
         self.view.translate_view_activatable = self
@@ -118,11 +137,11 @@ class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
         delattr(self.view, "translate_view_activatable")
 
     def _get_language_pair_name(self):
-        language_pair = self._settings.get_string(self.LANGUAGE_PAIR)
+        language_pair = self._settings.get_language_pair()
         languages = language_pair.split('|')
 
-        apertium = Apertium()
-        return apertium.get_language_pair_name(languages[0], languages[1])
+        service = self._get_translation_service()
+        return service.get_language_pair_name(languages[0], languages[1])
 
     def populate_popup(self, view, popup):
         if not isinstance(popup, Gtk.MenuShell):
@@ -157,15 +176,25 @@ class TranslateViewActivatable(GObject.Object, Gedit.ViewActivatable):
 
         return start is not None and end is not None
 
+    def _get_translation_service(self):
+        service_id = self._settings.get_service()
+        service = Services.get(service_id)
+        if service.has_api_key() is True:
+            key = self._settings.get_apikey()
+            service.set_api_key(key)
+
+        service.init()
+        return service
+
     def translate_text(self, document, start, end):
         doc = self.view.get_buffer()
         text = doc.get_text(start, end, False)
-        language_pair = self._settings.get_string(self.LANGUAGE_PAIR)
+        language_pair = self._settings.get_language_pair()
       
-        apertium = Apertium()
-        translated = apertium.translate_text(text, language_pair)
+        service = self._get_translation_service()
+        translated = service.translate_text(text, language_pair)
 
-        if self._settings.get_boolean(self.OUTPUT_TO_DOCUMENT):
+        if self._settings.get_output_document():
             doc.insert(start, translated)
         else:
             g_console.write(translated)

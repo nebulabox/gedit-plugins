@@ -20,8 +20,9 @@
 import urllib.request, urllib.parse, urllib.error
 import json
 import locale
+from .service import Service
 
-class Apertium():
+class Apertium(Service):
 
     g_language_codes = []
     g_language_names = []
@@ -40,7 +41,19 @@ class Apertium():
 
     SERVER = "https://www.apertium.org/apy"
 
-    def __init__(self):
+    @staticmethod
+    def _clean_for_ut():
+        Apertium.g_language_codes = []
+        Apertium.g_language_names = []
+        Apertium.g_locales_names = {}       
+
+    def has_api_key(self):
+        return False
+    
+    def set_api_key(self, key):
+        pass
+
+    def init(self):
         self._get_remote_language_names_and_pairs()
 
     def get_language_names(self):
@@ -137,7 +150,7 @@ class Apertium():
             Apertium.g_language_codes = language_codes
 
         except Exception as e:
-            print("_get_remote_language_pairs exception {0}".format(e))
+            print("_get_remote_language_names_and_pairs exception {0}".format(e))
 
 
     def _get_remote_language_pairs(self):

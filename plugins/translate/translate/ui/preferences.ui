@@ -5,6 +5,7 @@
   <object class="GtkGrid" id="grid">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="row_spacing">6</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -14,6 +15,7 @@
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="halign">start</property>
             <property name="margin_right">3</property>
             <property name="label" translatable="yes">Translation languages</property>
             <property name="justify">right</property>
@@ -29,7 +31,6 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="active">0</property>
-            <property name="has_entry">False</property>
             <property name="id_column">0</property>
           </object>
           <packing>
@@ -41,7 +42,7 @@
       </object>
       <packing>
         <property name="left_attach">0</property>
-        <property name="top_attach">1</property>
+        <property name="top_attach">2</property>
       </packing>
     </child>
     <child>
@@ -107,6 +108,49 @@
       <packing>
         <property name="left_attach">0</property>
         <property name="top_attach">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox" id ="api_box">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Translation service:</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBox" id="services">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">1</property>
       </packing>
     </child>
   </object>
