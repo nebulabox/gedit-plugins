@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-16 18:50+0200\n"
-"PO-Revision-Date: 2017-07-16 18:52+0200\n"
+"POT-Creation-Date: 2017-08-15 16:01+0200\n"
+"PO-Revision-Date: 2017-08-15 16:02+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -742,15 +742,20 @@ msgstr "To samo okno dokumentu"
 msgid "Translate console (bottom panel)"
 msgstr "Konsola tłumaczenia (dolny panel)"
 
-#: ../plugins/translate/translate/__init__.py:68
-msgid "Welcome!"
-msgstr "Witamy!"
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Usługa tłumaczeń:"
 
-#: ../plugins/translate/translate/__init__.py:71
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Tłumaczenia dostarcza: {0}"
+
+#: ../plugins/translate/translate/__init__.py:75
 msgid "Translate Console"
 msgstr "Konsola tłumaczenia"
 
-#: ../plugins/translate/translate/__init__.py:136
+#: ../plugins/translate/translate/__init__.py:155
 #, python-brace-format
 msgid "Translate selected text [{0}]"
 msgstr "Przetłumacz zaznaczony tekst ({0})"
