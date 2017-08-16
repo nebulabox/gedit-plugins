@@ -1,5 +1,5 @@
 # Serbian translation of gedit
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003 — 2017.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2017.
 # This file is distributed under the same license as the gedit package.
 # Goran Rakić <grakic@devbase.net>
 # Danilo Šegan <danilo@prevod.org>, 2005.
@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gedit&"
 "keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2017-07-14 08:29+0000\n"
-"PO-Revision-Date: 2017-08-13 10:00+0200\n"
+"POT-Creation-Date: 2017-08-14 16:51+0000\n"
+"PO-Revision-Date: 2017-08-16 17:59+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: srpski <gnome-sr@googlegroups.org>\n"
 "Language: sr\n"
@@ -726,15 +726,22 @@ msgstr "Isti prozor dokumenta"
 msgid "Translate console (bottom panel)"
 msgstr "Konzola prevoda (donji panel)"
 
-#: ../plugins/translate/translate/__init__.py:68
-msgid "Welcome!"
-msgstr "Dobrodošli!"
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+#| msgid "Translate Console"
+msgid "Translation service:"
+msgstr "Usluga prevoda:"
 
-#: ../plugins/translate/translate/__init__.py:71
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+#| msgid "Translate selected text [{0}]"
+msgid "Translations powered by {0}"
+msgstr "Prevede pogoni [{0}]"
+
+#: ../plugins/translate/translate/__init__.py:75
 msgid "Translate Console"
 msgstr "Konzola prevoda"
 
-#: ../plugins/translate/translate/__init__.py:136
+#: ../plugins/translate/translate/__init__.py:155
 #, python-brace-format
 msgid "Translate selected text [{0}]"
 msgstr "Prevedi izabrani tekst [{0}]"
@@ -815,6 +822,9 @@ msgid ""
 msgstr ""
 "Beleži korisnikov rad i daje lak pristup nedavno korišćenim i često "
 "korišćenim datotekama"
+
+#~ msgid "Welcome!"
+#~ msgstr "Dobrodošli!"
 
 #~ msgid "Pick _Color..."
 #~ msgstr "Izaberi _boju..."
