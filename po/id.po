@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gedit-plugins gnome-3-20\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2017-07-14 08:29+0000\n"
-"PO-Revision-Date: 2017-07-20 15:44+0700\n"
+"POT-Creation-Date: 2017-08-14 16:51+0000\n"
+"PO-Revision-Date: 2017-08-18 17:03+0700\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -732,15 +732,20 @@ msgstr "Jendela dokumen yang sama"
 msgid "Translate console (bottom panel)"
 msgstr "Konsol terjemahan (panel bawah)"
 
-#: ../plugins/translate/translate/__init__.py:68
-msgid "Welcome!"
-msgstr "Selamat Datang!"
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Layanan terjemahan:"
 
-#: ../plugins/translate/translate/__init__.py:71
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Terjemahkan ditenagai oleh {0}"
+
+#: ../plugins/translate/translate/__init__.py:75
 msgid "Translate Console"
 msgstr "Konsol Terjemahan"
 
-#: ../plugins/translate/translate/__init__.py:136
+#: ../plugins/translate/translate/__init__.py:155
 #, python-brace-format
 msgid "Translate selected text [{0}]"
 msgstr "Terjemahkan teks terpilih [{0}]"
@@ -820,3 +825,6 @@ msgid ""
 msgstr ""
 "Merekam aktivitas pengguna dan memberikan askes yang mudah ke berkas yang "
 "baru-baru ini dipakai dan sering dipakai"
+
+#~ msgid "Welcome!"
+#~ msgstr "Selamat Datang!"
