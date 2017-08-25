@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2017-07-14 08:29+0000\n"
-"PO-Revision-Date: 2017-08-01 12:33+0200\n"
+"POT-Creation-Date: 2017-08-14 16:51+0000\n"
+"PO-Revision-Date: 2017-08-25 18:36+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>>\n"
 "Language: cs\n"
@@ -737,15 +737,20 @@ msgstr "Stejného okna, jako je dokument"
 msgid "Translate console (bottom panel)"
 msgstr "Překladové konzoly (spodní panel)"
 
-#: ../plugins/translate/translate/__init__.py:68
-msgid "Welcome!"
-msgstr "Vítejte!"
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Překladová služba:"
 
-#: ../plugins/translate/translate/__init__.py:71
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Překlady provádí {0}"
+
+#: ../plugins/translate/translate/__init__.py:75
 msgid "Translate Console"
 msgstr "Překladová konzola"
 
-#: ../plugins/translate/translate/__init__.py:136
+#: ../plugins/translate/translate/__init__.py:155
 #, python-brace-format
 msgid "Translate selected text [{0}]"
 msgstr "Přeložit vybraný text [{0}]"
@@ -825,3 +830,4 @@ msgid ""
 msgstr ""
 "Zaznamenává činnosti a poskytuje snadný přístup k nedávno použitým a často "
 "používaným souborům"
+
