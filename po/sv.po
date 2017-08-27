@@ -1,18 +1,18 @@
 # Swedish messages for gedit plugins
-# Copyright © 1998-2016 Free Software Foundation, Inc.
+# Copyright © 1998-2017 Free Software Foundation, Inc.
 # Martin Wahlen <mva@sslug.dk>, 1998.
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 1999, 2000.
 # Andreas Hyden <a.hyden@cyberpoint.se>, 2000.
 # Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010.
-# Josef Andersson <josef.andersson@fripost.org>, 2016.
+# Josef Andersson <josef.andersson@fripost.org>, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2016-03-04 19:06+0000\n"
-"PO-Revision-Date: 2016-02-17 23:05+0100\n"
+"POT-Creation-Date: 2017-08-18 11:16+0000\n"
+"PO-Revision-Date: 2017-08-25 21:05+0200\n"
 "Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -250,7 +250,7 @@ msgstr "Rita ut blanksteg"
 msgid "Draw Spaces and Tabs"
 msgstr "Rita ut blanksteg och tabulatorer"
 
-#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Visa _tomt utrymme"
@@ -708,6 +708,50 @@ msgstr "Öka och minska textstorleken enkelt"
 msgid "Text size"
 msgstr "Textstorlek"
 
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr "Översättningsspråk"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "Var översättning ska matas ut:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "Samma dokumentfönster"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Translate console (bottom panel)"
+msgstr "Översättningskonsol (nederpanel)"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Översättningstjänst:"
+
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Översättningar med hjälp av {0}"
+
+#: ../plugins/translate/translate/__init__.py:75
+msgid "Translate Console"
+msgstr "Översättningskonsol"
+
+#: ../plugins/translate/translate/__init__.py:155
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Översätt vald text [{0}]"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+msgid "Translate"
+msgstr "Översätt"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+msgid "Translates text into different languages"
+msgstr "Översätter text till olika språk"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Interaktiv komplettering"
@@ -716,7 +760,7 @@ msgstr "Interaktiv komplettering"
 msgid "Minimum word size:"
 msgstr "Minsta ordstorlek:"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
 msgstr "Dokumentord"
 
