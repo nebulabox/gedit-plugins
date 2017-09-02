@@ -10,10 +10,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2015-08-20 05:29+0000\n"
-"PO-Revision-Date: 2015-08-20 11:45+0200\n"
+"POT-Creation-Date: 2017-08-14 16:51+0000\n"
+"PO-Revision-Date: 2017-09-02 11:45+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -198,7 +198,7 @@ msgstr "Vzorka"
 msgid "Commander Mode"
 msgstr "Režim commander"
 
-#. vi:ex:ts=4:et
+#. ex:ts=4:et
 #: ../plugins/commander/commander.plugin.desktop.in.in.h:1
 #: ../plugins/commander/gedit-commander.metainfo.xml.in.h:1
 msgid "Commander"
@@ -251,7 +251,7 @@ msgstr "Vykresľovať medzery"
 msgid "Draw Spaces and Tabs"
 msgstr "Vykresľovanie medzier a tabulátorov"
 
-#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
 msgid "Show _White Space"
 msgstr "Zobrazovať _netlačiteľné znaky"
@@ -717,6 +717,50 @@ msgstr "Jednoduché zväčšenie a zmenšenie veľkosti textu"
 msgid "Text size"
 msgstr "Veľkosť textu"
 
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr "Jazyky prekladov"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "Kam umiestniť výstupný preklad:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "Rovnaké okno s dokumentom"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Translate console (bottom panel)"
+msgstr "Konzola prekladov (spodný panel)"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Prekladateľská služba:"
+
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Preklady sú uskutočňované pomocou služby {0}"
+
+#: ../plugins/translate/translate/__init__.py:75
+msgid "Translate Console"
+msgstr "Konzola prekladov"
+
+#: ../plugins/translate/translate/__init__.py:155
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Preložiť vybraný text [{0}]"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+msgid "Translate"
+msgstr "Prekladanie"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+msgid "Translates text into different languages"
+msgstr "Prekladá text do rôznych jazykov"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Interaktívne dopĺňanie"
@@ -725,7 +769,7 @@ msgstr "Interaktívne dopĺňanie"
 msgid "Minimum word size:"
 msgstr "Minimálna dĺžka slova:"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
 msgstr "Slová dokumentu"
 
