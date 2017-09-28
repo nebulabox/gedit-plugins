@@ -8,5 +8,4 @@ gsettings_SCHEMAS += plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.x
 else
 dist_plugin_in_files += plugins/terminal/terminal.plugin.desktop.in
 dist_appstream_in_files += plugins/terminal/gedit-terminal.metainfo.xml.in
-dist_gsettings_SCHEMAS += plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml
 endif

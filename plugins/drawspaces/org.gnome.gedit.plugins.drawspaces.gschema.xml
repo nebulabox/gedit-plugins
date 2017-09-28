@@ -9,16 +9,16 @@
     <value nick='trailing' value='64'/>
   </flags>
 
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit.plugins.drawspaces" path="/org/gnome/gedit/plugins/drawspaces/">
+  <schema gettext-domain="gedit-plugins" id="org.gnome.gedit.plugins.drawspaces" path="/org/gnome/gedit/plugins/drawspaces/">
     <key name="show-white-space" type="b">
       <default>true</default>
-      <_summary>Show _White Space</_summary>
-      <_description>If TRUE drawing will be enabled.</_description>
+      <summary>Show _White Space</summary>
+      <description>If TRUE drawing will be enabled.</description>
     </key>
     <key name="draw-spaces" flags="org.gnome.gedit.plugins.drawspaces.GtkSourceDrawSpacesFlags">
       <default>['space', 'tab', 'leading', 'text', 'trailing']</default>
-      <_summary>Draw Spaces</_summary>
-      <_description>The type of spaces to be drawn.</_description>
+      <summary>Draw Spaces</summary>
+      <description>The type of spaces to be drawn.</description>
     </key>
   </schema>
 </schemalist>

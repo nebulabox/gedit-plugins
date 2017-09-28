@@ -11,7 +11,6 @@ appstreamdir = $(datadir)/appdata/
 appstream_in_files =
 dist_appstream_in_files =
 gsettings_SCHEMAS =
-dist_gsettings_SCHEMAS =
 
 include plugins/bookmarks/Makefile.am
 include plugins/bracketcompletion/Makefile.am
@@ -34,7 +33,8 @@ include plugins/translate/Makefile.am
 include plugins/wordcompletion/Makefile.am
 include plugins/zeitgeist/Makefile.am
 
-@INTLTOOL_XML_NOMERGE_RULE@
+@INTLTOOL_DESKTOP_RULE@
+@INTLTOOL_XML_RULE@
 @GSETTINGS_RULES@
 
 %.plugin: %.plugin.desktop.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
@@ -54,8 +54,7 @@ DISTCLEANFILES +=			\
 
 CLEANFILES +=				\
 	$(GENERATED_PLUGIN_FILES)	\
-	$(GENERATED_APPSTREAM_FILES)	\
-	$(gsettings_SCHEMAS)
+	$(GENERATED_APPSTREAM_FILES)
 
 EXTRA_DIST +=								\
 	plugins/gpdefs.py.in						\
@@ -63,5 +62,4 @@ EXTRA_DIST +=								\
 	$(dist_plugin_in_files)						\
 	$(appstream_in_files)						\
 	$(dist_appstream_in_files)					\
-	$(gsettings_SCHEMAS:%.gschema.xml=%.gschema.xml.in.in)		\
-	$(dist_gsettings_SCHEMAS:%.gschema.xml=%.gschema.xml.in.in)
+	$(gsettings_SCHEMAS)

@@ -1,5 +1,5 @@
 <schemalist>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit.plugins.translate" path="/org/gnome/gedit/plugins/translate/">
+  <schema gettext-domain="gedit-plugins" id="org.gnome.gedit.plugins.translate" path="/org/gnome/gedit/plugins/translate/">
     <key name="output-to-document" type="b">
       <default>true</default>
       <summary>Where translation output is shown</summary>
