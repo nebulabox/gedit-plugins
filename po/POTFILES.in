@@ -1,3 +1,5 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
 plugins/bookmarks/bookmarks.plugin.desktop.in.in
 plugins/bookmarks/gedit-bookmarks.metainfo.xml.in
 plugins/bookmarks/gedit-bookmarks-app-activatable.c
@@ -28,11 +30,12 @@ plugins/drawspaces/drawspaces.plugin.desktop.in.in
 plugins/drawspaces/gedit-drawspaces.metainfo.xml.in
 plugins/drawspaces/gedit-drawspaces-app-activatable.c
 [type: gettext/glade]plugins/drawspaces/gedit-drawspaces-configurable.ui
-plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in
+plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml
 plugins/findinfiles/dialog.vala
 plugins/findinfiles/plugin.vala
 plugins/findinfiles/result-panel.vala
 plugins/findinfiles/findinfiles.plugin.desktop.in.in
+plugins/findinfiles/gedit-findinfiles.metainfo.xml.in
 [type: gettext/glade]plugins/findinfiles/dialog.ui
 plugins/git/git.plugin.desktop.in.in
 plugins/git/gedit-git.metainfo.xml.in
@@ -50,7 +53,7 @@ plugins/smartspaces/gedit-smartspaces.metainfo.xml.in
 plugins/synctex/synctex.plugin.desktop.in.in
 plugins/synctex/gedit-synctex.metainfo.xml.in
 plugins/synctex/synctex/synctex.py
-plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in
+plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml
 plugins/terminal/terminal.plugin.desktop.in.in
 plugins/terminal/gedit-terminal.metainfo.xml.in
 plugins/terminal/terminal.py
@@ -61,9 +64,10 @@ plugins/textsize/gedit-textsize.metainfo.xml.in
 plugins/translate/translate/__init__.py
 plugins/translate/translate.plugin.desktop.in.in
 plugins/translate/gedit-translate.metainfo.xml.in
+plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml
 [type: gettext/glade]plugins/wordcompletion/gedit-word-completion-configure.ui
 plugins/wordcompletion/gedit-word-completion-plugin.c
-plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in
+plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml
 plugins/wordcompletion/wordcompletion.plugin.desktop.in.in
 plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in
 plugins/zeitgeist/zeitgeist.plugin.desktop.in
