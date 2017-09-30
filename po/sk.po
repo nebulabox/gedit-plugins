@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2017-08-14 16:51+0000\n"
-"PO-Revision-Date: 2017-09-02 11:45+0200\n"
+"POT-Creation-Date: 2017-09-28 17:40+0000\n"
+"PO-Revision-Date: 2017-09-30 11:06+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -172,7 +172,7 @@ msgstr "_Popredie"
 
 #: ../plugins/colorschemer/schemer.ui.h:10
 msgid "_Clear "
-msgstr "V_ymazať"
+msgstr "V_ymazať "
 
 #: ../plugins/colorschemer/schemer.ui.h:11
 msgid "Name"
@@ -233,7 +233,7 @@ msgstr ""
 "Zobrazí tabuľku nedávno/často používaných súborov pred otvorením novej karty"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:3
 msgid "Draw Spaces"
 msgstr "Vykresľovať medzery"
 
@@ -252,7 +252,7 @@ msgid "Draw Spaces and Tabs"
 msgstr "Vykresľovanie medzier a tabulátorov"
 
 #: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:1
 msgid "Show _White Space"
 msgstr "Zobrazovať _netlačiteľné znaky"
 
@@ -280,11 +280,11 @@ msgstr "Vykresľovať medzery v texte"
 msgid "Draw trailing spaces"
 msgstr "Vykresľovať medzery na konci riadka"
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Ak je voľba zapnutá, kreslenie bude povolené."
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Typ medzier, ktoré sa majú vykresliť."
 
@@ -293,6 +293,7 @@ msgstr "Typ medzier, ktoré sa majú vykresliť."
 #. namespace Gedit
 #: ../plugins/findinfiles/dialog.vala:53
 #: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:1
 #: ../plugins/findinfiles/dialog.ui.h:1
 msgid "Find in Files"
 msgstr "Nájdenie v súboroch"
@@ -322,6 +323,10 @@ msgstr "Zastaví vyhľadávanie"
 msgid "Find text in all files of a folder."
 msgstr "Nájde text vo všetkých súboroch priečinka."
 
+#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
+msgid "Find text in all files of a folder"
+msgstr "Nájde text vo všetkých súboroch priečinka"
+
 #: ../plugins/findinfiles/dialog.ui.h:3
 msgctxt "label of the find button"
 msgid "_Find"
@@ -330,7 +335,7 @@ msgstr "_Nájsť"
 #: ../plugins/findinfiles/dialog.ui.h:4
 msgctxt "label on the left of the GtkEntry containing text to search"
 msgid "F_ind "
-msgstr "Ná_jsť"
+msgstr "Ná_jsť "
 
 #: ../plugins/findinfiles/dialog.ui.h:5
 msgid "_In "
@@ -501,11 +506,11 @@ msgid "Forward Search"
 msgstr "Hľdanie dopredu"
 
 #. ex:ts=4:et:
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:1
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:1
 msgid "Whether to silence terminal bell"
 msgstr "Či sa má umlčať zvonček terminálu"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:2
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:2
 msgid ""
 "If true, don't make a noise when applications send the escape sequence for "
 "the terminal bell."
@@ -513,11 +518,11 @@ msgstr ""
 "Ak je voľba zapnutá, nevydáva zvuk, keď aplikácie pošlú špeciálnu (escape) "
 "sekvenciu zvončeka terminálu."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:3
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:3
 msgid "Number of lines to keep in scrollback"
 msgstr "Počet riadkov, ktoré sa majú zachovať v histórii terminálu"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:4
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:4
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
 "terminal by this number of lines; lines that don't fit in the scrollback are "
@@ -528,11 +533,11 @@ msgstr ""
 "nezmestia do histórie, budú zahodené. Ak je voľba scrollback-unlimited "
 "zapnutá, táto hodnota sa ignoruje."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:5
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:5
 msgid "Whether an unlimited number of lines should be kept in scrollback"
 msgstr "Či sa má v histórii terminálu uchovávať neobmedzený počet riadkov"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:6
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:6
 msgid ""
 "If true, scrollback lines will never be discarded. The scrollback history is "
 "stored on disk temporarily, so this may cause the system to run out of disk "
@@ -543,41 +548,41 @@ msgstr ""
 "nebude mať dostatok miesta na disku v prípade množstva textového výstupu na "
 "terminál."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:7
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:7
 msgid "Whether to scroll to the bottom when a key is pressed"
 msgstr "Či sa má terminál posunúť na spodok pri stlačení klávesu"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:8
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:8
 msgid "If true, pressing a key jumps the scrollbar to the bottom."
 msgstr ""
 "Ak je voľba zapnutá, stlačenie klávesu spôsobí preskočenie posuvníka na "
 "spodok."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:9
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:9
 msgid "Whether to scroll to the bottom when there's new output"
 msgstr "Či sa má terminál posunúť na spodok pri novom výstupe"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:10
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:10
 msgid ""
 "If true, whenever there's new output the terminal will scroll to the bottom."
 msgstr ""
 "Ak je voľba zapnutá, terminál sa posunie na spodok vždy, keď v ňom pribudne "
 "textový výstup."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:11
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:11
 msgid "Whether to allow bold text"
 msgstr "Či sa má povoliť tučný text"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:12
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:12
 msgid "If true, allow applications in the terminal to make text boldface."
 msgstr ""
 "Ak je voľba zapnutá, umožniť aplikáciám v termináli používať tučný text."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:13
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:13
 msgid "Default color of text in the terminal"
 msgstr "Predvolená farba popredia terminálu"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:14
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:14
 msgid ""
 "Default color of text in the terminal, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
@@ -585,11 +590,11 @@ msgstr ""
 "Predvolená farba popredia terminálu ako kód farby (môžu to byť hexadecimálne "
 "čísla v štýle HTML alebo anglický názov farby ako „red“)"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:15
 msgid "Default color of terminal background"
 msgstr "Predvolená farba pozadia terminálu"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:16
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:16
 msgid ""
 "Default color of terminal background, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
@@ -597,12 +602,12 @@ msgstr ""
 "Predvolená farba pozadia terminálu ako kód farby (môžu to byť hexadecimálne "
 "čísla v štýle HTML alebo anglický názov farby ako „red“)"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:17
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:17
 msgid "Palette for terminal applications"
 msgstr "Paleta terminálových aplikácií"
 
 # PK: v originali chyba bodka na konci vety
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:18
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:18
 msgid ""
 "Terminals have a 16-color palette that applications inside the terminal can "
 "use. This is that palette, in the form of a colon-separated list of color "
@@ -612,11 +617,11 @@ msgstr ""
 "Toto je paleta v tvare zoznamu farieb oddelenom dvojbodkami. Názvy farieb by "
 "mali byť v šestnástkovom tvare, napr. „#FF00FF“."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:19
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:19
 msgid "Whether to use the colors from the theme for the terminal widget"
 msgstr "Či sa majú použiť farby z témy vzhľadu ovládacieho prvku terminálu"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:20
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:20
 msgid ""
 "If true, the theme color scheme used for text entry boxes will be used for "
 "the terminal, instead of colors provided by the user."
@@ -624,11 +629,11 @@ msgstr ""
 "Ak je voľba zapnutá, farebná schéma témy vzhľadu použitá pre textové polia "
 "sa použije pre terminál, v opačnom prípade farby, ktoré poskytol používateľ."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:21
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:21
 msgid "Whether to blink the cursor"
 msgstr "Či má kurzor blikať"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:22
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:22
 msgid ""
 "The possible values are \"system\" to use the global cursor blinking "
 "settings, or \"on\" or \"off\" to set the mode explicitly."
@@ -636,11 +641,11 @@ msgstr ""
 "Možné hodnoty sú „system“ na použitie globálnych nastavení blikania kurzora, "
 "„on“ alebo „off“ na explicitné nastavenie režimu."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:23
 msgid "The cursor appearance"
 msgstr "Vzhľad kurzora"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:24
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:24
 msgid ""
 "The possible values are \"block\" to use a block cursor, \"ibeam\" to use a "
 "vertical line cursor, or \"underline\" to use an underline cursor."
@@ -648,11 +653,11 @@ msgstr ""
 "Možné hodnoty sú „block“ pre blokový kurzor, „ibeam“ pre zvislú čiaru alebo "
 "„underline“ pre podčiarkovník."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:25
 msgid "Whether to use the system font"
 msgstr "Či sa má použiť systémové písmo"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:26
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:26
 msgid ""
 "If true, the terminal will use the desktop-global standard font if it's "
 "monospace (and the most similar font it can come up with otherwise)."
@@ -661,11 +666,11 @@ msgstr ""
 "pracovné prostredie, ak je to písmo s pevnou šírkou znaku (a v opačnom "
 "prípade najpodobnejšie písmo, ktoré dokáže nájsť)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:27
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:27
 msgid "Font"
 msgstr "Písmo"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:28
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:28
 msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
 msgstr ""
 "Názov písma sústému Pango. Napríklad „Sans 12“ alebo „Monospace Bold 14“."
@@ -761,6 +766,34 @@ msgstr "Prekladanie"
 msgid "Translates text into different languages"
 msgstr "Prekladá text do rôznych jazykov"
 
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:1
+msgid "Where translation output is shown"
+msgstr "Kam umiestniť výstupný preklad"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:2
+msgid ""
+"If true, output of the translation is inserted in the document window if not "
+"in the Output Translate Window."
+msgstr ""
+"Ak je nastavené na true, výstupný preklad je vložený v okne dokumentu, inak "
+"je vložený v okne výstupného prekladu."
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:3
+msgid "Language pair used"
+msgstr "Použitý jazykový pár"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:4
+msgid "Language pair used to translate from one language to another"
+msgstr "Jazykový pár použitý na preklad z jedného jazyka do druhého"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:5
+msgid "API key for remote web service"
+msgstr "Kľúč API pre vzdialenú webovú službu"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:6
+msgid "Remote web service to use"
+msgstr "Vzdialená webová služba, ktorá sa má použiť"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Interaktívne dopĺňanie"
@@ -773,19 +806,19 @@ msgstr "Minimálna dĺžka slova:"
 msgid "Document Words"
 msgstr "Slová dokumentu"
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:1
 msgid "Interactive Completion"
 msgstr "Interaktívne dopĺňanie"
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:2
 msgid "Whether to enable interactive completion."
 msgstr "Určuje, či sa má povoliť interaktívne dopĺňanie."
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:3
 msgid "Minimum Word Size"
 msgstr "Minimálna dĺžka slova"
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:4
 msgid "The minimum word size to complete."
 msgstr "Minimálna dĺžka slova na doplnenie."
 
@@ -1225,9 +1258,6 @@ msgstr ""
 
 #~ msgid "Label"
 #~ msgstr "Popis"
-
-#~ msgid "Language code"
-#~ msgstr "Kód jazyka"
 
 #~ msgid "Link color (deprecated)"
 #~ msgstr "Farba odkazu (zavrhované)"
