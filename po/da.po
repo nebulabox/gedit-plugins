@@ -6,7 +6,7 @@
 # Ole Laursen <olau@hardworking.dk>, 2002, 03, 04.
 # Niels Rasmussen <nielsrasmus@gmail.com>, 2008
 # Joe Hansen (joedalton2@yahoo.dk), 2010, 2011, 2012.
-# Alan Mortensen <alanmortensen.am@gmail.com>, 2016.
+# Alan Mortensen <alanmortensen.am@gmail.com>, 2016, 2017.
 #
 # Konventioner:
 #
@@ -18,10 +18,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2016-10-13 16:54+0000\n"
-"PO-Revision-Date: 2016-11-16 13:26+0100\n"
+"POT-Creation-Date: 2017-09-28 17:40+0000\n"
+"PO-Revision-Date: 2017-10-18 17:24+0200\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -241,7 +241,7 @@ msgstr ""
 "faneblad"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:3
 msgid "Draw Spaces"
 msgstr "Vis mellemrum"
 
@@ -260,7 +260,7 @@ msgid "Draw Spaces and Tabs"
 msgstr "Vis mellemrum og tabulatorer"
 
 #: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:1
 msgid "Show _White Space"
 msgstr "Vis _blanktegn"
 
@@ -290,11 +290,11 @@ msgstr "Vis mellemrum i tekst"
 msgid "Draw trailing spaces"
 msgstr "Vis efterfølgende mellemrum"
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Hvis SAND (TRUE) vil tegning blive aktiveret."
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:4
 msgid "The type of spaces to be drawn."
 msgstr "Mellemrumstypen som tegnes."
 
@@ -302,6 +302,7 @@ msgstr "Mellemrumstypen som tegnes."
 #. namespace Gedit
 #: ../plugins/findinfiles/dialog.vala:53
 #: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:1
 #: ../plugins/findinfiles/dialog.ui.h:1
 msgid "Find in Files"
 msgstr "Find i filer"
@@ -328,6 +329,10 @@ msgstr "Stands søgningen"
 #: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
 msgid "Find text in all files of a folder."
 msgstr "Find tekst i alle filerne i en mappe."
+
+#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
+msgid "Find text in all files of a folder"
+msgstr "Find tekst i alle filerne i en mappe"
 
 #: ../plugins/findinfiles/dialog.ui.h:3
 msgctxt "label of the find button"
@@ -373,8 +378,8 @@ msgid ""
 "Use git information to display which lines and files changed since last "
 "commit"
 msgstr ""
-"Brug git-information til at vise linjerne og filerne, der er ændret "
-"siden sidste commit"
+"Brug git-information til at vise linjerne og filerne, der er ændret siden "
+"sidste commit"
 
 #: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
 msgid "Join/Split Lines"
@@ -507,11 +512,11 @@ msgid "Forward Search"
 msgstr "Søg fremad"
 
 #. ex:ts=4:et:
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:1
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:1
 msgid "Whether to silence terminal bell"
 msgstr "Hvorvidt terminalklokken skal slukkes"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:2
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:2
 msgid ""
 "If true, don't make a noise when applications send the escape sequence for "
 "the terminal bell."
@@ -519,11 +524,11 @@ msgstr ""
 "Hvis sand (true) så giv ikke lyd når programmer sender undvigelsessekvensen "
 "for terminalklokken."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:3
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:3
 msgid "Number of lines to keep in scrollback"
 msgstr "Antal linjer i tilbagerulningen"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:4
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:4
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
 "terminal by this number of lines; lines that don't fit in the scrollback are "
@@ -533,11 +538,11 @@ msgstr ""
 "rulle tilbage i terminalen; linjer som ikke passer ind i tilbagerulningen "
 "fjernes. Hvis scrollback-unlimited er sand (true) så ignoreres denne værdi."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:5
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:5
 msgid "Whether an unlimited number of lines should be kept in scrollback"
 msgstr "Hvorvidt en ubegrænset linjeantal skal bevares i tilbagerulningen"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:6
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:6
 msgid ""
 "If true, scrollback lines will never be discarded. The scrollback history is "
 "stored on disk temporarily, so this may cause the system to run out of disk "
@@ -548,37 +553,37 @@ msgstr ""
 "systemet til at løbe tør for diskplads, hvis der er masser af uddata til "
 "terminalen."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:7
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:7
 msgid "Whether to scroll to the bottom when a key is pressed"
 msgstr "Hvorvidt der skal rulles ned, når der trykkes på en tast"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:8
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:8
 msgid "If true, pressing a key jumps the scrollbar to the bottom."
 msgstr "Hvis sand (true) så vil et tastetryk føre rullebjælken nederst."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:9
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:9
 msgid "Whether to scroll to the bottom when there's new output"
 msgstr "Hvorvidt der skal rulles ned, når der er nye uddata"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:10
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:10
 msgid ""
 "If true, whenever there's new output the terminal will scroll to the bottom."
 msgstr "Hvis sand (true) så vil terminalen, når der er nye uddata, rulle ned."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:11
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:11
 msgid "Whether to allow bold text"
 msgstr "Hvorvidt fed tekst er tilladt"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:12
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:12
 msgid "If true, allow applications in the terminal to make text boldface."
 msgstr ""
 "Hvis sand (true) så tillad at programmer i terminalen kan gøre tekst fed."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:13
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:13
 msgid "Default color of text in the terminal"
 msgstr "Standardfarven for tekst i terminalen"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:14
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:14
 msgid ""
 "Default color of text in the terminal, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
@@ -586,11 +591,11 @@ msgstr ""
 "Standardfarven for tekst i terminalen, som en farvespecifikation (kan være "
 "heks-tal i HTML-stil eller et farvenavn såsom \"rød\")."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:15
 msgid "Default color of terminal background"
 msgstr "Standardfarve på terminalbaggrunden"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:16
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:16
 msgid ""
 "Default color of terminal background, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
@@ -598,11 +603,11 @@ msgstr ""
 "Standardfarve på terminalbaggrunden, som en farvespecifikation (kan være "
 "heks-tal i HTML-stil eller et farvenavn såsom \"rød\")."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:17
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:17
 msgid "Palette for terminal applications"
 msgstr "Palet for terminalprogrammer"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:18
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:18
 msgid ""
 "Terminals have a 16-color palette that applications inside the terminal can "
 "use. This is that palette, in the form of a colon-separated list of color "
@@ -612,11 +617,11 @@ msgstr ""
 "Dette er den palet, i form af en kolonadskilt liste over farvenavne. "
 "Farvenavne skal være i heksformat (for eksempel #FF00FF)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:19
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:19
 msgid "Whether to use the colors from the theme for the terminal widget"
 msgstr "Hvorvidt farverne fra temaet for terminalkontrollen skal bruges"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:20
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:20
 msgid ""
 "If true, the theme color scheme used for text entry boxes will be used for "
 "the terminal, instead of colors provided by the user."
@@ -624,11 +629,11 @@ msgstr ""
 "Hvis sand (true) så vil temafarveskemaet brugt for indtastningsbokse blive "
 "brugt i terminalen i stedet for farver angivet af brugeren."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:21
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:21
 msgid "Whether to blink the cursor"
 msgstr "Hvorvidt markøren blinker"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:22
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:22
 msgid ""
 "The possible values are \"system\" to use the global cursor blinking "
 "settings, or \"on\" or \"off\" to set the mode explicitly."
@@ -637,11 +642,11 @@ msgstr ""
 "markørblinkopsætning eller \"on\" eller \"off\" for at angive tilstanden "
 "eksplicit."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:23
 msgid "The cursor appearance"
 msgstr "Markørfremtoningen"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:24
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:24
 msgid ""
 "The possible values are \"block\" to use a block cursor, \"ibeam\" to use a "
 "vertical line cursor, or \"underline\" to use an underline cursor."
@@ -650,11 +655,11 @@ msgstr ""
 "bruge en lodret linjemarkør, eller \"underline\" for at bruge en "
 "understregningsmarkør."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:25
 msgid "Whether to use the system font"
 msgstr "Hvorvidt systemskriften skal bruges"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:26
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:26
 msgid ""
 "If true, the terminal will use the desktop-global standard font if it's "
 "monospace (and the most similar font it can come up with otherwise)."
@@ -662,11 +667,11 @@ msgstr ""
 "Hvis sand (true) så vil terminalen bruge standardskriften desktop-global, "
 "hvis den er monospace (og ellers den skrift som ligner mest)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:27
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:27
 msgid "Font"
 msgstr "Skrift"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:28
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:28
 msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
 msgstr ""
 "Et Pangoskriftnavn. Eksempler: \"Sans 12\" eller \"Monospace Bold 14\"."
@@ -718,6 +723,79 @@ msgstr "Øg og formindsk nemt tekststørrelsen"
 msgid "Text size"
 msgstr "Tekststørrelse"
 
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr "Oversættelsessprog"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "Hvor oversættelsen skal sendes hen:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "Samme dokumentvindue"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Translate console (bottom panel)"
+msgstr "Oversættelseskonsol (nederste panel)"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Oversættelsestjeneste:"
+
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Oversættelser leveret af {0}"
+
+#: ../plugins/translate/translate/__init__.py:75
+msgid "Translate Console"
+msgstr "Oversættelseskonsol"
+
+#: ../plugins/translate/translate/__init__.py:155
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Oversæt den valgte tekst [{0}]"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+msgid "Translate"
+msgstr "Oversæt"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+msgid "Translates text into different languages"
+msgstr "Oversæt tekst til forskellige sprog"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:1
+msgid "Where translation output is shown"
+msgstr "Hvor oversættelsen vises"
+
+# output tranlate window optræder ikke andre steder
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:2
+msgid ""
+"If true, output of the translation is inserted in the document window if not "
+"in the Output Translate Window."
+msgstr ""
+"Hvis sand indsættes oversættelsen i dokumentvinduet ellers i vinduet output "
+"fra oversættelse."
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:3
+msgid "Language pair used"
+msgstr "Anvendt sprogpar"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:4
+msgid "Language pair used to translate from one language to another"
+msgstr "Sprogpar til brug for oversættelse fra et sprog til et andet"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:5
+msgid "API key for remote web service"
+msgstr "API-nøgle til ekstern webtjeneste"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:6
+msgid "Remote web service to use"
+msgstr "Ekstern webtjeneste der skal bruges"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Interaktiv fuldførelse"
@@ -730,19 +808,19 @@ msgstr "Minimal ordstørrelse:"
 msgid "Document Words"
 msgstr "Ord i dokumentet"
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:1
 msgid "Interactive Completion"
 msgstr "Interaktiv fuldførelse"
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:2
 msgid "Whether to enable interactive completion."
 msgstr "Om interaktiv fuldførelse skal aktiveres."
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:3
 msgid "Minimum Word Size"
 msgstr "Minimal ordstørrelse"
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:4
 msgid "The minimum word size to complete."
 msgstr "Den minimale ordstørrelse der skal fuldføres."
 
@@ -1184,9 +1262,6 @@ msgstr ""
 
 #~ msgid "Label"
 #~ msgstr "Etiket"
-
-#~ msgid "Language code"
-#~ msgstr "Sprogkode"
 
 #~ msgid "Link color (deprecated)"
 #~ msgstr "Henvisningsfarve (forældet)"
