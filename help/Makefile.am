@@ -22,6 +22,6 @@ HELP_FILES = \
 
 HELP_MEDIA =
 
-HELP_LINGUAS =  ar bg ca cs da de el es eu fi fr gl hu it ja ko lv oc pt_BR ru sl sv te th uk zh_CN zh_HK zh_TW
+HELP_LINGUAS =  ar bg ca cs da de el es eu fi fr gl hu it ja ko lv oc pl pt_BR ru sl sv te th uk zh_CN zh_HK zh_TW
 
 -include $(top_srcdir)/git.mk
