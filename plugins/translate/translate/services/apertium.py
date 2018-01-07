@@ -81,7 +81,6 @@ class Apertium(Service):
         user_locale = self._get_lang_from_langcountry(user_locale)
         if user_locale is None:
             user_locale = 'en'
-        print("User locale:" + user_locale)
         return user_locale
 
     def _get_language_name(self, langcode, locales_names):
@@ -114,7 +113,6 @@ class Apertium(Service):
         locales_names_en = self._get_remote_language_names(locales, 'en')
         for l in locales_names_en:
             if l not in locales_names:
-                print("Adding from EN: " + locales_names_en[l])
                 locales_names[l] = locales_names_en[l]
 
         return locales_names
@@ -155,7 +153,6 @@ class Apertium(Service):
 
     def _get_remote_language_pairs(self):
         url = "{0}/listPairs".format(self.SERVER)
-        print("url->" + url)
 
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode("utf-8"))
@@ -185,7 +182,6 @@ class Apertium(Service):
 
         url = "{0}/listLanguageNames?locale={1}&languages={2}".format(self.SERVER,
                 user_locale, locales_string)
-        print("url->" + url)
 
         response = urllib.request.urlopen(url)
         return json.loads(response.read().decode("utf-8"))
@@ -193,7 +189,6 @@ class Apertium(Service):
     def translate_text(self, text, language_pair):
         url = "{0}/translate?langpair={1}&markUnknown=no".format(self.SERVER, language_pair)
         url += "&q=" + urllib.parse.quote_plus(text.encode('utf-8'))
-        print("url->" + url)
 
         response = urllib.request.urlopen(url)
         data = json.loads(response.read().decode("utf-8"))

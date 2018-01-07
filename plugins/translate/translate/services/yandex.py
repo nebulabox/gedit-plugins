@@ -47,11 +47,11 @@ class Yandex(Service):
     def _clean_for_ut():
         Yandex.g_language_codes = []
         Yandex.g_language_names = []
-        Yandex.g_locales_names = {}      
- 
+        Yandex.g_locales_names = {}
+
     def has_api_key(self):
         return True
-    
+
     def set_api_key(self, key):
         self._key = key
 
@@ -65,10 +65,10 @@ class Yandex(Service):
         return self.DEFAULT_LANGUAGE_NAMES
 
     def get_language_codes(self):
-       if len(Yandex.g_language_codes) > 0 and len(Yandex.g_language_names) > 0:
+        if len(Yandex.g_language_codes) > 0 and len(Yandex.g_language_names) > 0:
             return Yandex.g_language_codes
 
-       return self.DEFAULT_LANGUAGE_CODES
+        return self.DEFAULT_LANGUAGE_CODES
 
     def get_language_pair_name(self, source, target, locales_names=None):
         if locales_names is None:
@@ -80,15 +80,13 @@ class Yandex(Service):
 
     def _get_language_name(self, langcode, locales_names):
         return locales_names[langcode]
-      
-    def _get_remote_language_names(self):
-        
-        url = "{0}/getLangs?ui=en&key={1}".format(self.SERVER, self._key)
-        print("url->" + url)
 
+    def _get_remote_language_names(self):
+
+        url = "{0}/getLangs?ui=en&key={1}".format(self.SERVER, self._key)
         response = urllib.request.urlopen(url)
         payload = json.loads(response.read().decode("utf-8"))
-    
+
         language_codes = payload['dirs']
         language_codes = [x.replace('-', '|') for x in language_codes]
         locales_names = payload['langs']
@@ -100,17 +98,16 @@ class Yandex(Service):
             target = langs[1]
             name = self.get_language_pair_name(source, target, locales_names)
             language_names.append(name)
-            
+
         Yandex.g_locales_names = locales_names
         Yandex.g_language_names = language_names
         Yandex.g_language_codes = language_codes
-    
+
 
     def translate_text(self, text, language_pair):
         language_pair = language_pair.replace('|', '-')
         url = "{0}/translate?lang={1}&format=plain&key={2}".format(self.SERVER, language_pair, self._key)
         url += "&text=" + urllib.parse.quote_plus(text.encode('utf-8'))
-        print("url->" + url)
         response = urllib.request.urlopen(url)
         r = response.read().decode("utf-8")
         data = json.loads(r)
