@@ -1,5 +1,5 @@
 # Brazilian Portuguese translation of gedit.
-# Copyright (C) 1999-2013 Free Software Foundation, Inc.
+# Copyright (C) 1999-2018 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gedit package.
 # Frederic L. W. Meunier <linux@urbi.com.br>, 1999.
 # Evandro Fernandes Giovanini <evandrofg@ig.com.br>, 2000.
@@ -22,23 +22,23 @@
 # Henrique P. Machado <hpmachado@gnome.org>, 2010.
 # Krix Apolinário <krixapolinario@gmail.com>, 2010, 2011.
 # Enrico Nicoletto <liverig@gmail.com>, 2013.
-# Rafael Fontenelle <rffontenelle@gmail.com>, 2013, 2014, 2015.
-#
+# Rafael Fontenelle <rafaelff@gnome.org>, 2013, 2014, 2015, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2015-10-05 17:47+0000\n"
-"PO-Revision-Date: 2015-10-05 17:24-0300\n"
-"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>\n"
+"POT-Creation-Date: 2017-09-28 17:40+0000\n"
+"PO-Revision-Date: 2018-01-09 08:53-0200\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_BR-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.3\n"
+"X-Generator: Virtaal 1.0.0-beta1\n"
+"X-Project-Style: gnome\n"
 
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
@@ -250,7 +250,7 @@ msgstr ""
 "Exibe uma grade de arquivos recentemente/mais usados ao abrir uma nova aba"
 
 #: ../plugins/drawspaces/drawspaces.plugin.desktop.in.in.h:1
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:3
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:3
 msgid "Draw Spaces"
 msgstr "Desenhar espaços"
 
@@ -268,8 +268,8 @@ msgstr "Desenhar espaços"
 msgid "Draw Spaces and Tabs"
 msgstr "Desenha espaços e tabulações"
 
-#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:166
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:1
+#: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:1
 msgid "Show _White Space"
 msgstr "Mostrar _espaço em branco"
 
@@ -297,11 +297,11 @@ msgstr "Desenhar espaços no texto"
 msgid "Draw trailing spaces"
 msgstr "Desenhar espaços perdidos"
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:2
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Se VERDADEIRO o drawing será habilitado."
 
-#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.in.in.h:4
+#: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:4
 msgid "The type of spaces to be drawn."
 msgstr "O tipo de espaços a serem desenhados."
 
@@ -309,6 +309,7 @@ msgstr "O tipo de espaços a serem desenhados."
 #. namespace Gedit
 #: ../plugins/findinfiles/dialog.vala:53
 #: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:1
 #: ../plugins/findinfiles/dialog.ui.h:1
 msgid "Find in Files"
 msgstr "Localizar no Arquivos"
@@ -336,10 +337,15 @@ msgstr "Para a pesquisa"
 msgid "Find text in all files of a folder."
 msgstr "Localizar texto em todos os arquivos de uma pasta."
 
+#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
+#| msgid "Find text in all files of a folder."
+msgid "Find text in all files of a folder"
+msgstr "Localiza texto em todos os arquivos de uma pasta"
+
 #: ../plugins/findinfiles/dialog.ui.h:3
 msgctxt "label of the find button"
 msgid "_Find"
-msgstr "_Lozalizar"
+msgstr "_Localizar"
 
 #: ../plugins/findinfiles/dialog.ui.h:4
 msgctxt "label on the left of the GtkEntry containing text to search"
@@ -360,7 +366,7 @@ msgstr "_Diferenciar maiúscula/minúscula"
 
 #: ../plugins/findinfiles/dialog.ui.h:8
 msgid "Match _entire word only"
-msgstr "Coincidir palara int_eira"
+msgstr "Coincidir palavra int_eira"
 
 #: ../plugins/findinfiles/dialog.ui.h:9
 msgid "Re_gular expression"
@@ -432,7 +438,7 @@ msgstr "Ponto de edição adicionado…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:657
 msgid "Column Mode…"
-msgstr "Modo de colunas..."
+msgstr "Modo de colunas…"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:775
 msgid "Removed edit point…"
@@ -493,7 +499,7 @@ msgstr "Esqueça que não está usando tabulações."
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
 msgid "Allow to unindent like if you were using tabs while you're using spaces"
 msgstr ""
-"Permite retirar recuo como se você estivesse usando tabs enquando usa espaços"
+"Permite retirar recuo como se você estivesse usando tabs enquanto usa espaços"
 
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
@@ -518,23 +524,23 @@ msgid "Forward Search"
 msgstr "Pesquisa seguinte"
 
 #. ex:ts=4:et:
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:1
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:1
 msgid "Whether to silence terminal bell"
 msgstr "Se silenciar ou não a campainha do terminal"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:2
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:2
 msgid ""
 "If true, don't make a noise when applications send the escape sequence for "
 "the terminal bell."
 msgstr ""
-"Se verdadeiro, não produz som quando os aplicativos enviarem a seqüência de "
+"Se verdadeiro, não produz som quando os aplicativos enviarem a sequência de "
 "escape para a campainha do terminal."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:3
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:3
 msgid "Number of lines to keep in scrollback"
 msgstr "Número de linhas para manter ao rolar de volta"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:4
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:4
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
 "terminal by this number of lines; lines that don't fit in the scrollback are "
@@ -545,12 +551,12 @@ msgstr ""
 "volta serão descartadas. Se o scrollback-unlimited for verdadeiro, esse "
 "valor é ignorado."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:5
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:5
 msgid "Whether an unlimited number of lines should be kept in scrollback"
 msgstr ""
 "Se deverá ou não ser mantido um número ilimitado de linhas para rolar atrás"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:6
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:6
 msgid ""
 "If true, scrollback lines will never be discarded. The scrollback history is "
 "stored on disk temporarily, so this may cause the system to run out of disk "
@@ -561,64 +567,64 @@ msgstr ""
 "pode levar o sistema a executar sem espaço em disco se houver muita saída "
 "para o terminal."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:7
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:7
 msgid "Whether to scroll to the bottom when a key is pressed"
 msgstr "Se rolar ou não para o fundo ao pressionar uma tecla"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:8
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:8
 msgid "If true, pressing a key jumps the scrollbar to the bottom."
 msgstr ""
 "Se verdadeiro, pressionar uma tecla faz a barra de rolagem pular para a "
 "última linha."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:9
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:9
 msgid "Whether to scroll to the bottom when there's new output"
 msgstr "Se rolar ou não para o fundo ao receber novo texto"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:10
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:10
 msgid ""
 "If true, whenever there's new output the terminal will scroll to the bottom."
 msgstr ""
 "Se verdadeiro, sempre que houver nova saída, o terminal rolará até o final."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:11
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:11
 msgid "Whether to allow bold text"
 msgstr "Se permitir ou não texto negrito"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:12
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:12
 msgid "If true, allow applications in the terminal to make text boldface."
 msgstr ""
 "Se verdadeiro, permite que os aplicativos no terminal usem texto em negrito."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:13
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:13
 msgid "Default color of text in the terminal"
 msgstr "Cor padrão do texto no terminal"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:14
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:14
 msgid ""
 "Default color of text in the terminal, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
 msgstr ""
 "Cor padrão do texto no terminal, como uma especificação de cor (pode ser no "
-"estilo HTML de dígitos hexadecimais, ou um nome como \"red\", para vermelho)."
+"estilo HTML de dígitos hexadecimais, ou um nome como “red”, para vermelho)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:15
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:15
 msgid "Default color of terminal background"
 msgstr "Cor padrão do fundo do terminal"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:16
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:16
 msgid ""
 "Default color of terminal background, as a color specification (can be HTML-"
 "style hex digits, or a color name such as \"red\")."
 msgstr ""
 "Cor padrão do fundo do terminal, como uma especificação de cor (pode ser no "
-"estilo HTML de dígitos hexadecimais ou um nome como \"red\", para vermelho)."
+"estilo HTML de dígitos hexadecimais ou um nome como “red”, para vermelho)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:17
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:17
 msgid "Palette for terminal applications"
 msgstr "Paleta para aplicações do terminal"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:18
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:18
 msgid ""
 "Terminals have a 16-color palette that applications inside the terminal can "
 "use. This is that palette, in the form of a colon-separated list of color "
@@ -627,13 +633,13 @@ msgstr ""
 "Terminais tem uma paleta de 16 cores que as aplicações dentro do console "
 "podem utilizar. Esta é essa paleta, no formato de uma lista de nomes de "
 "cores separados por vírgulas. Nomes de cores deverão ser no formato "
-"hexadecimal, por ex: \"#FF00FF\""
+"hexadecimal, por ex: “#FF00FF”"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:19
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:19
 msgid "Whether to use the colors from the theme for the terminal widget"
 msgstr "Se utilizar ou não as cores do tema para o terminal widget"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:20
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:20
 msgid ""
 "If true, the theme color scheme used for text entry boxes will be used for "
 "the terminal, instead of colors provided by the user."
@@ -641,36 +647,36 @@ msgstr ""
 "Se verdadeiro, o esquema de cores do tema usado para caixas de texto será "
 "usado para o terminal, ao invés das cores fornecidas pelo usuário."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:21
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:21
 msgid "Whether to blink the cursor"
 msgstr "Se piscar ou não o cursor"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:22
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:22
 msgid ""
 "The possible values are \"system\" to use the global cursor blinking "
 "settings, or \"on\" or \"off\" to set the mode explicitly."
 msgstr ""
-"Os valores possíveis são \"system\" para utilizar as definições globais de "
-"piscar de cursor, ou \"on\" ou \"off\" para definir o modo explicitamente."
+"Os valores possíveis são “system” para utilizar as definições globais de "
+"piscar de cursor, ou “on” ou “off” para definir o modo explicitamente."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:23
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:23
 msgid "The cursor appearance"
 msgstr "A aparência do cursor"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:24
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:24
 msgid ""
 "The possible values are \"block\" to use a block cursor, \"ibeam\" to use a "
 "vertical line cursor, or \"underline\" to use an underline cursor."
 msgstr ""
-"Os valores possíveis são \"block\" para utilizar um bloco como cursor, "
-"\"ibeam\" para utilizar um cursor que é uma linha vertical, ou \"underline\" "
-"para utilizar um cursor que é um sublinhado."
+"Os valores possíveis são “block” para utilizar um bloco como cursor, “ibeam” "
+"para utilizar um cursor que é uma linha vertical, ou “underline” para "
+"utilizar um cursor que é um sublinhado."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:25
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:25
 msgid "Whether to use the system font"
 msgstr "Se utilizar ou não a fonte de sistema"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:26
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:26
 msgid ""
 "If true, the terminal will use the desktop-global standard font if it's "
 "monospace (and the most similar font it can come up with otherwise)."
@@ -678,14 +684,13 @@ msgstr ""
 "Se verdadeiro, o terminal usará a fonte padrão do ambiente se ela for mono-"
 "espaçada (ou a fonte mais próxima que ele conseguir caso contrário)."
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:27
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:27
 msgid "Font"
 msgstr "Fonte"
 
-#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.in.in.h:28
+#: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:28
 msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
-msgstr ""
-"Um nome de fonte Pango. Por exemplo \"Sans 12\" ou \"Monospace Bold 14\"."
+msgstr "Um nome de fonte Pango. Por exemplo “Sans 12” ou “Monospace Bold 14”."
 
 #: ../plugins/terminal/terminal.plugin.desktop.in.in.h:1
 msgid "Embedded Terminal"
@@ -734,6 +739,78 @@ msgstr "Aumente e diminua o facilmente o tamanho do texto"
 msgid "Text size"
 msgstr "Tamanho do texto"
 
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr "Idiomas de tradução"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "Onde emitir a tradução:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "Na mesma janela do documento"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Translate console (bottom panel)"
+msgstr "Console de tradução (painel inferior)"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Serviço de tradução:"
+
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Traduções fornecidas por {0}"
+
+#: ../plugins/translate/translate/__init__.py:75
+msgid "Translate Console"
+msgstr "Console de tradução"
+
+#: ../plugins/translate/translate/__init__.py:155
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Traduzir o texto selecionado [{0}]"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+msgid "Translate"
+msgstr "Traduzir"
+
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
+#: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+msgid "Translates text into different languages"
+msgstr "Traduzir texto em diferentes idiomas"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:1
+msgid "Where translation output is shown"
+msgstr "Onde a saída da tradução é mostrada"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:2
+msgid ""
+"If true, output of the translation is inserted in the document window if not "
+"in the Output Translate Window."
+msgstr ""
+"Se verdadeiro, a saída da tradução é inserida na janela do documento se não "
+"estiver na janela de saída de tradução"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:3
+msgid "Language pair used"
+msgstr "Par de idiomas usado"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:4
+msgid "Language pair used to translate from one language to another"
+msgstr "Par de idiomas usados para traduzir de um idioma para o outro"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:5
+msgid "API key for remote web service"
+msgstr "Chave de API para o serviço web remoto"
+
+#: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:6
+msgid "Remote web service to use"
+msgstr "Serviço web remoto a ser usado"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Preenchimento interativo"
@@ -742,23 +819,23 @@ msgstr "Preenchimento interativo"
 msgid "Minimum word size:"
 msgstr "Tamanho mínimo da palavra:"
 
-#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:186
+#: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
 msgstr "Palavras do documento"
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:1
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:1
 msgid "Interactive Completion"
 msgstr "Preenchimento interativo"
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:2
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:2
 msgid "Whether to enable interactive completion."
 msgstr "Se habilita ou não o preenchimento interativo."
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:3
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:3
 msgid "Minimum Word Size"
 msgstr "Tamanho mínimo da palavra"
 
-#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.in.in.h:4
+#: ../plugins/wordcompletion/org.gnome.gedit.plugins.wordcompletion.gschema.xml.h:4
 msgid "The minimum word size to complete."
 msgstr "Tamanho mínimo da palavra para completar."
 
@@ -778,7 +855,7 @@ msgstr "Completar palavras"
 msgid ""
 "Propose automatic completion using words already present in the document"
 msgstr ""
-"Propôe completação automática usando palavras já presentes no documento"
+"Propõe completação automática usando palavras já presentes no documento"
 
 #: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
 msgid "Zeitgeist dataprovider"
