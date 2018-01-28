@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-28 19:44+0200\n"
+"POT-Creation-Date: 2018-01-28 19:24+0100\n"
 "PO-Revision-Date: 2017-09-28 19:45+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
@@ -486,11 +486,11 @@ msgid "Smart Spaces"
 msgstr "Inteligentne spacje"
 
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:2
-msgid "Forget you're not using tabulations."
+msgid "Forget you’re not using tabulations."
 msgstr "Tabulacja nie jest już potrzebna."
 
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
-msgid "Allow to unindent like if you were using tabs while you're using spaces"
+msgid "Allow to unindent like if you were using tabs while you’re using spaces"
 msgstr "Pozwala na używanie spacji tak, jakby używane były tabulacje"
 
 #: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
@@ -519,7 +519,7 @@ msgstr "Określa, czy wyciszyć dzwonek terminala"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:2
 msgid ""
-"If true, don't make a noise when applications send the escape sequence for "
+"If true, don’t make a noise when applications send the escape sequence for "
 "the terminal bell."
 msgstr ""
 "Jeśli wynosi „true”, to nie hałasuje, kiedy program wysyła sekwencję "
@@ -532,7 +532,7 @@ msgstr "Liczba wierszy przewijania"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:4
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
-"terminal by this number of lines; lines that don't fit in the scrollback are "
+"terminal by this number of lines; lines that don’t fit in the scrollback are "
 "discarded. If scrollback-unlimited is true, this value is ignored."
 msgstr ""
 "Liczba wierszy zachowywanych przewijania. Można przewijać wstecz w terminalu "
@@ -564,12 +564,12 @@ msgid "If true, pressing a key jumps the scrollbar to the bottom."
 msgstr "Jeśli wynosi „true”, to naciśnięcie klawisza przewija na dół."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:9
-msgid "Whether to scroll to the bottom when there's new output"
+msgid "Whether to scroll to the bottom when there’s new output"
 msgstr "Określa, czy przewijać do dołu, kiedy pojawiają się nowe dane"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:10
 msgid ""
-"If true, whenever there's new output the terminal will scroll to the bottom."
+"If true, whenever there’s new output the terminal will scroll to the bottom."
 msgstr ""
 "Jeśli wynosi „true”, to okno zostanie przewinięte na dół, jeśli pojawią się "
 "nowe dane w terminalu."
@@ -590,7 +590,7 @@ msgstr "Domyślny kolor tekstu w terminalu"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:14
 msgid ""
 "Default color of text in the terminal, as a color specification (can be HTML-"
-"style hex digits, or a color name such as \"red\")."
+"style hex digits, or a color name such as “red”)."
 msgstr ""
 "Domyślny kolor tekstu w terminalu, jako specyfikacja koloru (może być "
 "szesnastkową wartością w stylu HTML lub nazwą koloru w języku angielskim, "
@@ -603,7 +603,7 @@ msgstr "Domyślny kolor tła terminala"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:16
 msgid ""
 "Default color of terminal background, as a color specification (can be HTML-"
-"style hex digits, or a color name such as \"red\")."
+"style hex digits, or a color name such as “red”)."
 msgstr ""
 "Domyślny kolor tła terminala, jako specyfikacja koloru (może być "
 "szesnastkową wartością w stylu HTML lub nazwą koloru w języku angielskim, "
@@ -617,7 +617,7 @@ msgstr "Paleta dla programów w terminalu"
 msgid ""
 "Terminals have a 16-color palette that applications inside the terminal can "
 "use. This is that palette, in the form of a colon-separated list of color "
-"names. Color names should be in hex format e.g. \"#FF00FF\""
+"names. Color names should be in hex format e.g. “#FF00FF”"
 msgstr ""
 "Terminale mają 16-kolorową paletę, którą mogą używać programy w terminalu. "
 "To jest ta paleta, w formie listy nazw kolorów oddzielonych przecinkami. "
@@ -642,8 +642,8 @@ msgstr "Określa, czy kursor ma migać"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:22
 msgid ""
-"The possible values are \"system\" to use the global cursor blinking "
-"settings, or \"on\" or \"off\" to set the mode explicitly."
+"The possible values are “system” to use the global cursor blinking settings, "
+"or “on” or “off” to set the mode explicitly."
 msgstr ""
 "Możliwe wartości to „system”, aby używać globalnych ustawień migania kursora "
 "albo „on” lub „off”, aby ustawić tryb."
@@ -654,8 +654,8 @@ msgstr "Wygląd kursora"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:24
 msgid ""
-"The possible values are \"block\" to use a block cursor, \"ibeam\" to use a "
-"vertical line cursor, or \"underline\" to use an underline cursor."
+"The possible values are “block” to use a block cursor, “ibeam” to use a "
+"vertical line cursor, or “underline” to use an underline cursor."
 msgstr ""
 "Możliwe wartości to „block”, aby używać kursora blokowego, „ibeam”, aby "
 "używać kursora w formie pionowej linii lub „underline”, aby używać kursora "
@@ -667,7 +667,7 @@ msgstr "Określa, czy używać czcionki systemowej"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:26
 msgid ""
-"If true, the terminal will use the desktop-global standard font if it's "
+"If true, the terminal will use the desktop-global standard font if it’s "
 "monospace (and the most similar font it can come up with otherwise)."
 msgstr ""
 "Jeśli wynosi „true”, to terminal użyje globalnej, standardowej czcionki, "
@@ -679,7 +679,7 @@ msgid "Font"
 msgstr "Czcionka"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:28
-msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+msgid "A Pango font name. Examples are “Sans 12” or “Monospace Bold 14”."
 msgstr ""
 "Nazwa czcionki biblioteki Pango. Przykłady to „Sans 12” lub „Monospace Bold "
 "14”."
@@ -760,7 +760,7 @@ msgstr "Tłumaczenia dostarcza: {0}"
 msgid "Translate Console"
 msgstr "Konsola tłumaczenia"
 
-#: ../plugins/translate/translate/__init__.py:155
+#: ../plugins/translate/translate/__init__.py:152
 #, python-brace-format
 msgid "Translate selected text [{0}]"
 msgstr "Przetłumacz zaznaczony tekst ({0})"

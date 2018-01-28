@@ -1,14 +1,14 @@
 # Polish translation for gedit-plugins help.
-# Copyright © 2017 the gedit-plugins authors.
-# This file is distributed under the same license as the gedit-plugins package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2017.
-# Aviary.pl <community-poland@mozilla.org>, 2017.
+# Copyright © 2017-2018 the gedit-plugins authors.
+# This file is distributed under the same license as the gedit-plugins help.
+# Piotr Drąg <piotrdrag@gmail.com>, 2017-2018.
+# Aviary.pl <community-poland@mozilla.org>, 2017-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins-help\n"
-"POT-Creation-Date: 2017-11-11 17:50+0000\n"
-"PO-Revision-Date: 2017-11-11 23:44+0100\n"
+"POT-Creation-Date: 2018-01-28 17:47+0000\n"
+"PO-Revision-Date: 2018-01-28 19:27+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -22,8 +22,8 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2017\n"
-"Aviary.pl <community-poland@mozilla.org>, 2017"
+"Piotr Drąg <piotrdrag@gmail.com>, 2017-2018\n"
+"Aviary.pl <community-poland@mozilla.org>, 2017-2018"
 
 #. (itstool) path: credit/name
 #: C/bookmarks.page:12 C/bracket-comp.page:11 C/character-map.page:11
@@ -1215,7 +1215,7 @@ msgid ""
 "<keyseq><key>Alt</key><key>Num</key></keyseq>, where <key>Num</key> is the "
 "number displayed next to your desired word."
 msgstr ""
-"Aby wstawić podpowiadane słowo, kliknij je dwukrotnie na liście lub naciśnij "
+"Aby wstawić podpowiadane słowo, kliknij je podwójnie na liście lub naciśnij "
 "klawisze <keyseq><key>Alt</key><key>liczba</key></keyseq>, gdzie "
 "<key>liczba</key> to liczba wyświetlana obok danego słowa."
 
