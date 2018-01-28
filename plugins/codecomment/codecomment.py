@@ -25,12 +25,13 @@ import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('GtkSource', '3.0')
 from gi.repository import GObject, Gio, Gtk, GtkSource, Gedit
-import gettext
 from gpdefs import *
 
 try:
-    gettext.bindtextdomain(GETTEXT_PACKAGE, GP_LOCALEDIR)
-    _ = lambda s: gettext.dgettext(GETTEXT_PACKAGE, s);
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
 except:
     _ = lambda s: s
 

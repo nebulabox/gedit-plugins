@@ -23,6 +23,14 @@ from gi.repository import GLib, GObject, Gio, Gedit
 import sys, os
 import commander.commands as commands
 
+try:
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
+except:
+    _ = lambda s: s
+
 
 class CommanderAppActivatable(GObject.Object, Gedit.AppActivatable):
 

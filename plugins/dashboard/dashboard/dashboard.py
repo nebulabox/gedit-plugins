@@ -29,6 +29,14 @@ import urllib
 import dbus
 import datetime
 
+try:
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
+except:
+    _ = lambda s: s
+
 CLIENT = Zeitgeist.Log.get_default()
 
 try:

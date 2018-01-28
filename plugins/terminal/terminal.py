@@ -21,7 +21,6 @@
 # Boston, MA  02110-1301  USA
 
 import os
-import gettext
 
 import gi
 gi.require_version('Gedit', '3.0')
@@ -32,8 +31,10 @@ from gi.repository import GObject, GLib, Gio, Pango, Gdk, Gtk, Gedit, Vte
 from gpdefs import *
 
 try:
-    gettext.bindtextdomain(GETTEXT_PACKAGE, GP_LOCALEDIR)
-    _ = lambda s: gettext.dgettext(GETTEXT_PACKAGE, s);
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
 except:
     _ = lambda s: s
 

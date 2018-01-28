@@ -23,14 +23,8 @@ from gi.repository import GLib, GObject, Gio, Gedit
 
 from .viewactivatable import MultiEditViewActivatable
 
-import gettext
 from gpdefs import *
 
-try:
-    gettext.bindtextdomain(GETTEXT_PACKAGE, GP_LOCALEDIR)
-    _ = lambda s: gettext.dgettext(GETTEXT_PACKAGE, s);
-except:
-    _ = lambda s: s
 
 class MultiEditWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 

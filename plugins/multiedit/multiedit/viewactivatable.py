@@ -19,7 +19,7 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-import re, time, gettext
+import re, time
 import xml.sax.saxutils
 
 from gi.repository import GLib, GObject, Pango, PangoCairo, Gdk, Gtk, Gedit
@@ -28,8 +28,10 @@ from .signals import Signals
 from gpdefs import *
 
 try:
-    gettext.bindtextdomain(GETTEXT_PACKAGE, GP_LOCALEDIR)
-    _ = lambda s: gettext.dgettext(GETTEXT_PACKAGE, s);
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
 except:
     _ = lambda s: s
 

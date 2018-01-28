@@ -20,12 +20,13 @@
 #  Boston, MA 02110-1301, USA.
 
 from gi.repository import GObject, Gio, Gtk, Gedit
-import gettext
 from gpdefs import *
 
 try:
-    gettext.bindtextdomain(GETTEXT_PACKAGE, GP_LOCALEDIR)
-    _ = lambda s: gettext.dgettext(GETTEXT_PACKAGE, s)
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
 except:
     _ = lambda s: s
 

@@ -24,12 +24,6 @@ from entry import Entry
 from info import Info
 from gpdefs import *
 
-try:
-    gettext.bindtextdomain(GETTEXT_PACKAGE, GP_LOCALEDIR)
-    _ = lambda s: gettext.dgettext(GETTEXT_PACKAGE, s);
-except:
-    _ = lambda s: s
-
 class CommanderWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
     window = GObject.Property(type=Gedit.Window)

@@ -21,6 +21,14 @@
 
 from gi.repository import GObject, Gio, Gedit
 
+try:
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
+except:
+    _ = lambda s: s
+
 
 class MultiEditAppActivatable(GObject.Object, Gedit.AppActivatable):
 

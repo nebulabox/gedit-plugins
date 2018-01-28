@@ -25,6 +25,14 @@ from gi.repository import GObject, Gio, Gedit, Gtk
 import os
 from .schemer import GUI
 
+try:
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
+except:
+    _ = lambda s: s
+
 
 class AppActivatable(GObject.Object, Gedit.AppActivatable):
 
