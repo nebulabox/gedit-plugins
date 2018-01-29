@@ -14,15 +14,15 @@
 # Kamil Páral <ripper42@gmail.com>, 2009.
 # Lucas Lommer <llommer@svn.gnome.org>, 2009. (just one fix).
 # Petr Kovar <pknbe@volny.cz>, 2008 – 2010.
-# Marek Černocký <marek@manet.cz>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017.
+# Marek Černocký <marek@manet.cz>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2017-09-28 17:40+0000\n"
-"PO-Revision-Date: 2017-10-01 19:54+0200\n"
+"POT-Creation-Date: 2018-01-28 22:32+0000\n"
+"PO-Revision-Date: 2018-01-29 10:15+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -32,6 +32,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Gtranslator 2.91.7\n"
 
+#. ex:ts=8:noet:
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
 msgid "Bookmarks"
@@ -95,11 +96,11 @@ msgstr "Komentování kódu"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Zakomentovat nebo odkomentovat vybraný blok kódu."
 
-#: ../plugins/codecomment/codecomment.py:114
+#: ../plugins/codecomment/codecomment.py:118
 msgid "Co_mment Code"
 msgstr "Zako_mentovat kód"
 
-#: ../plugins/codecomment/codecomment.py:120
+#: ../plugins/codecomment/codecomment.py:124
 msgid "U_ncomment Code"
 msgstr "_Odkomentovat kód"
 
@@ -116,14 +117,6 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Vyběr barvy v dialogovém okně a vložení jejího šestnáctkového vyjádření."
 
-#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
-msgid "Color picker"
-msgstr "Barevná pipeta"
-
-#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:2
-msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
-msgstr "Výběr a vkládání barev z dialogového okna (pro HTML, CSS, PHP)"
-
 #: ../plugins/colorpicker/colorpicker.py:132
 msgid "Pick _Color…"
 msgstr "Vybrat barvu…"
@@ -133,6 +126,14 @@ msgid "Pick Color"
 msgstr "Výběr barvy"
 
 #. ex:ts=4:et:
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
+msgid "Color picker"
+msgstr "Barevná pipeta"
+
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:2
+msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
+msgstr "Výběr a vkládání barev z dialogového okna (pro HTML, CSS, PHP)"
+
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
 #: ../plugins/colorschemer/schemer/__init__.py:42
@@ -252,20 +253,16 @@ msgstr "Vykreslovat mezery"
 msgid "Draw spaces and tabs"
 msgstr "Vykresluje mezery a tabulátory"
 
-#. ex:set ts=8 noet:
-#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
-#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
-msgid "Draw spaces"
-msgstr "Vykreslovat mezery"
-
-#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
-msgid "Draw Spaces and Tabs"
-msgstr "Vykresluje mezery a tabulátory"
-
 #: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:1
 msgid "Show _White Space"
 msgstr "Ukázat _bílé znaky"
+
+#. ex:set ts=8 noet:
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
+msgid "Draw spaces"
+msgstr "Vykreslovat mezery"
 
 #: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:2
 msgid "Draw tabs"
@@ -291,6 +288,10 @@ msgstr "Vykreslovat mezery v textu"
 msgid "Draw trailing spaces"
 msgstr "Vykreslovat koncové mezery"
 
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
+msgid "Draw Spaces and Tabs"
+msgstr "Vykresluje mezery a tabulátory"
+
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Pokud je ZAPNUTO, bude se používat vykreslování bílých znaků."
@@ -301,39 +302,16 @@ msgstr "Typ mezer, které se mají vykreslovat."
 
 #. namespace FindInFilesPlugin
 #. namespace Gedit
-#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/dialog.ui.h:1 ../plugins/findinfiles/dialog.vala:53
 #: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
 #: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:1
-#: ../plugins/findinfiles/dialog.ui.h:1
 msgid "Find in Files"
 msgstr "Hledat v souborech"
 
-#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/dialog.ui.h:2 ../plugins/findinfiles/dialog.vala:58
 #: ../plugins/findinfiles/result-panel.vala:63
-#: ../plugins/findinfiles/dialog.ui.h:2
 msgid "_Close"
 msgstr "_Zavřít"
-
-#: ../plugins/findinfiles/plugin.vala:159
-msgid "Find in Files…"
-msgstr "Hledat v souborech…"
-
-#: ../plugins/findinfiles/result-panel.vala:195
-msgid "No results found"
-msgstr "Nenalezen žádný výsledek"
-
-#. The stop button is showed in the bottom-left corner of the TreeView
-#: ../plugins/findinfiles/result-panel.vala:217
-msgid "Stop the search"
-msgstr "Zastavit hledání"
-
-#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
-msgid "Find text in all files of a folder."
-msgstr "Hledá text ve všech souborech ve složce."
-
-#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
-msgid "Find text in all files of a folder"
-msgstr "Hledá text ve všech souborech ve složce"
 
 #: ../plugins/findinfiles/dialog.ui.h:3
 msgctxt "label of the find button"
@@ -365,14 +343,33 @@ msgstr "Porovnávat jen c_elá slova"
 msgid "Re_gular expression"
 msgstr "Re_gulární výraz"
 
-#: ../plugins/git/git.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Hledá text ve všech souborech ve složce."
+
+#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
+msgid "Find text in all files of a folder"
+msgstr "Hledá text ve všech souborech ve složce"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Hledat v souborech…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Nenalezen žádný výsledek"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Zastavit hledání"
+
+#. namespace FindInFilesPlugin
+#. namespace Gedit
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
 msgid "Git"
 msgstr "Git"
-
-#: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Highlight lines that have been changed since the last commit"
-msgstr "Zvýrazňovat řádky, které byly změněny od posledního zařazení"
 
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:2
 msgid ""
@@ -382,13 +379,9 @@ msgstr ""
 "Používá informace git k zobrazení, které řádky a soubory se od posledního "
 "zařazení změnily"
 
-#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
-msgid "Join/Split Lines"
-msgstr "Spojit/rozdělit řádky"
-
-#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:2
-msgid "Join several lines or split long ones"
-msgstr "Spojí několik řádků nebo rozdělí dlouhé řádky"
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Zvýrazňovat řádky, které byly změněny od posledního zařazení"
 
 #: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
 msgid "Join lines/ Split lines"
@@ -398,13 +391,31 @@ msgstr "Spojit/rozdělit řádky"
 msgid "Join or split multiple lines through Ctrl+J and Ctrl+Shift+J"
 msgstr "Spojí nebo rozdělí několi řádků přes Ctrl+J a Ctrl+Shift+J"
 
-#: ../plugins/joinlines/joinlines.py:107
+#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
+msgid "Join/Split Lines"
+msgstr "Spojit/rozdělit řádky"
+
+#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:2
+msgid "Join several lines or split long ones"
+msgstr "Spojí několik řádků nebo rozdělí dlouhé řádky"
+
+#: ../plugins/joinlines/joinlines.py:111
 msgid "_Join Lines"
 msgstr "Spo_jit řádky"
 
-#: ../plugins/joinlines/joinlines.py:113
+#: ../plugins/joinlines/joinlines.py:117
 msgid "_Split Lines"
 msgstr "_Rozdělit řádky"
+
+#. ex:ts=4:et:
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
+msgid "Multi edit"
+msgstr "Vícenásobná úprava"
+
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
+#: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
+msgid "Edit document in multiple places at once"
+msgstr "Úprava dokumentu na více místech současně"
 
 #: ../plugins/multiedit/multiedit/appactivatable.py:36
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1349
@@ -414,15 +425,6 @@ msgstr "Režim vícenásobné úpravy"
 #. ex:ts=4:et:
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:1
 msgid "Multi Edit"
-msgstr "Vícenásobná úprava"
-
-#: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
-#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
-msgid "Edit document in multiple places at once"
-msgstr "Úprava dokumentu na více místech současně"
-
-#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
-msgid "Multi edit"
 msgstr "Vícenásobná úprava"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
@@ -479,46 +481,55 @@ msgid "Align edit points with additional space"
 msgstr "Editační body zarovnání s doplňujícím místem"
 
 #. ex:ts=4:et:
-#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:1
+#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 msgid "Smart Spaces"
 msgstr "Inteligentní mezery"
 
+#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
+msgid "Allow to unindent like if you were using tabs while you’re using spaces"
+msgstr ""
+"Umožňuje rušit odsazení při používání mezer stejně snadno, jako při používání "
+"tabulátorů"
+
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:2
-msgid "Forget you're not using tabulations."
+msgid "Forget you’re not using tabulations."
 msgstr "Zapomeňte, že nepoužíváte tabulátory."
 
-#: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
-msgid "Allow to unindent like if you were using tabs while you're using spaces"
-msgstr ""
-"Umožňuje rušit odsazení při používání mezer stejně snadno, jako při "
-"používání tabulátorů"
-
-#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
+#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
 msgid "SyncTeX"
 msgstr "SyncTeX"
-
-#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:2
-msgid "Synchronize between LaTeX and PDF with gedit and evince."
-msgstr "Synchronizuje mezi formáty LaTeX a PDF v aplikacích gedit a evince."
 
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Synchronizuje mezi formáty LaTeX a PDF v aplikacích gedit a evince"
+
+#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:2
+msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgstr "Synchronizuje mezi formáty LaTeX a PDF v aplikacích gedit a evince."
 
 #: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Hledat vpřed"
 
 #. ex:ts=4:et:
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
+#: ../plugins/terminal/terminal.py:315
+msgid "Terminal"
+msgstr "Terminál"
+
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
+msgid "A simple terminal widget accessible from the bottom panel"
+msgstr "Jednoduchý prvek s terminálem přístupným ve spodním panelu"
+
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:1
 msgid "Whether to silence terminal bell"
 msgstr "Zda ztišit terminálový zvonek"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:2
 msgid ""
-"If true, don't make a noise when applications send the escape sequence for "
+"If true, don’t make a noise when applications send the escape sequence for "
 "the terminal bell."
 msgstr ""
 "Pokud je zapnuto, nebude vás rušit zvuk, když aplikace odešle sekvenci "
@@ -531,11 +542,11 @@ msgstr "Počet řádků udržovaných pro rolování zpět"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:4
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
-"terminal by this number of lines; lines that don't fit in the scrollback are "
+"terminal by this number of lines; lines that don’t fit in the scrollback are "
 "discarded. If scrollback-unlimited is true, this value is ignored."
 msgstr ""
-"Počet řádků, který se má pamatovat pro rolování zpět. V terminálu můžete "
-"rolovat zpět o tento počet řádků, řádky které jsou za tímto rozsahem se "
+"Počet řádků, který se má pamatovat pro posuv zpět. V terminálu se můžete "
+"posouvat zpět o tento počet řádků, řádky které jsou za tímto rozsahem se "
 "zahazují. V případě, že není počet řádků omezen (zapnuto scrollback-"
 "unlimited), tato hodnota se ignoruje."
 
@@ -563,15 +574,15 @@ msgstr ""
 "Pokud je zapnuto, způsobí stisk klávesy skok posuvníku do spodní části."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:9
-msgid "Whether to scroll to the bottom when there's new output"
+msgid "Whether to scroll to the bottom when there’s new output"
 msgstr "Zda odrolovat na spodní část, když se objeví nový výstup"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:10
 msgid ""
-"If true, whenever there's new output the terminal will scroll to the bottom."
+"If true, whenever there’s new output the terminal will scroll to the bottom."
 msgstr ""
-"Pokud je zapnuto, kdykoliv se objeví nějaký nový výstup, terminál odroluje "
-"na spodní část."
+"Pokud je zapnuto, kdykoliv se objeví nějaký nový výstup, zobrazení terminálu "
+"se posune na spodní části."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:11
 msgid "Whether to allow bold text"
@@ -589,7 +600,7 @@ msgstr "Výchozí barva textu v terminálu"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:14
 msgid ""
 "Default color of text in the terminal, as a color specification (can be HTML-"
-"style hex digits, or a color name such as \"red\")."
+"style hex digits, or a color name such as “red”)."
 msgstr ""
 "Výchozí barva textu v terminálu v podobě specifikace barvy (což může být "
 "šestnáctkový zápis ve stylu HTML nebo anglický název barvy, např. „red“)"
@@ -601,7 +612,7 @@ msgstr "Výchozí barva pozadí terminálu"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:16
 msgid ""
 "Default color of terminal background, as a color specification (can be HTML-"
-"style hex digits, or a color name such as \"red\")."
+"style hex digits, or a color name such as “red”)."
 msgstr ""
 "Výchozí barva pozadí terminálu v podobě specifikace barvy (což může být "
 "šestnáctkový zápis ve stylu HTML nebo anglický název barvy, např. „red“)"
@@ -614,11 +625,11 @@ msgstr "Paleta pro terminálové aplikace"
 msgid ""
 "Terminals have a 16-color palette that applications inside the terminal can "
 "use. This is that palette, in the form of a colon-separated list of color "
-"names. Color names should be in hex format e.g. \"#FF00FF\""
+"names. Color names should be in hex format e.g. “#FF00FF”"
 msgstr ""
 "Terminál má 16barevnou paletu, kterou mohou aplikace uvnitř terminálu "
 "použít. Toto je paleta v podobě seznamu názvů barev oddělených dvojtečkou. "
-"Názvy barev mohou být v šestnáctkovém formátu, např. „#FF00FF“"
+"Názvy barev by měly být v šestnáctkovém formátu, např. „#FF00FF“"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:19
 msgid "Whether to use the colors from the theme for the terminal widget"
@@ -638,8 +649,8 @@ msgstr "Zda blikat kurzorem"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:22
 msgid ""
-"The possible values are \"system\" to use the global cursor blinking "
-"settings, or \"on\" or \"off\" to set the mode explicitly."
+"The possible values are “system” to use the global cursor blinking settings, "
+"or “on” or “off” to set the mode explicitly."
 msgstr ""
 "Možné hodnoty jsou „system“ pro použití globálního nastavení blikání kurzoru "
 "a nebo „on“ (zapnuto) nebo „off“ (vypnuto) pro přímé nastavení režimu"
@@ -650,8 +661,8 @@ msgstr "Vzhled kurzoru"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:24
 msgid ""
-"The possible values are \"block\" to use a block cursor, \"ibeam\" to use a "
-"vertical line cursor, or \"underline\" to use an underline cursor."
+"The possible values are “block” to use a block cursor, “ibeam” to use a "
+"vertical line cursor, or “underline” to use an underline cursor."
 msgstr ""
 "Možné hodnoty jsou „block“ pro použití blokového kurzoru, „ibeam“ pro "
 "použití kurzoru v podobě svislé čárky nebo „underline“ pro použití podtržení "
@@ -663,19 +674,19 @@ msgstr "Zda používat systémové písmo"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:26
 msgid ""
-"If true, the terminal will use the desktop-global standard font if it's "
+"If true, the terminal will use the desktop-global standard font if it’s "
 "monospace (and the most similar font it can come up with otherwise)."
 msgstr ""
 "Pokud je zapnuto, bude terminál používat standardní písmo globálně nastavené "
-"pro pracovní prostředí, za předpokladu že jde o monospace (a většina "
-"podobných písem může použít alias)."
+"pro uživatelské prostředí, za předpokladu, že jde o písmo s pevnou šířkou ("
+"monospace nebo nějaké podobné)."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:27
 msgid "Font"
 msgstr "Písmo"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:28
-msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+msgid "A Pango font name. Examples are “Sans 12” or “Monospace Bold 14”."
 msgstr ""
 "Název písma systému Pango. Například „Sans 12“ nebo „Monospace Bold 14“."
 
@@ -687,18 +698,20 @@ msgstr "Vestavěný terminál"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Vložení terminálu do dolního panelu."
 
-#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:315
-msgid "Terminal"
-msgstr "Terminál"
-
-#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
-msgid "A simple terminal widget accessible from the bottom panel"
-msgstr "Jednoduchý prvek s terminálem přístupným ve spodním panelu"
-
 #: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "Z_měnit složku"
+
+#. Let's conform to PEP8
+#. ex:ts=4:et:
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
+msgid "Text size"
+msgstr "Velikost textu"
+
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
+#: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
+msgid "Easily increase and decrease the text size"
+msgstr "Snadné zvětšování a zmenšování velikosti textu"
 
 #: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
@@ -717,56 +730,13 @@ msgstr "_Větší text"
 msgid "Text Size"
 msgstr "Velikost textu"
 
-#: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
-#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
-msgid "Easily increase and decrease the text size"
-msgstr "Snadné zvětšování a zmenšování velikosti textu"
-
-#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
-msgid "Text size"
-msgstr "Velikost textu"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:1
-msgid "Translation languages"
-msgstr " "
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:2
-msgid "Where to output translation:"
-msgstr "Překlady vypisovat do:"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:3
-msgid "Same document window"
-msgstr "Stejného okna, jako je dokument"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:4
-msgid "Translate console (bottom panel)"
-msgstr "Překladové konzoly (spodní panel)"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:5
-msgid "Translation service:"
-msgstr "Překladová služba:"
-
-#: ../plugins/translate/translate/__init__.py:72
-#, python-brace-format
-msgid "Translations powered by {0}"
-msgstr "Překlady provádí {0}"
-
-#: ../plugins/translate/translate/__init__.py:75
-msgid "Translate Console"
-msgstr "Překladová konzola"
-
-#: ../plugins/translate/translate/__init__.py:155
-#, python-brace-format
-msgid "Translate selected text [{0}]"
-msgstr "Přeložit vybraný text [{0}]"
-
-#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
 #: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
 msgid "Translate"
 msgstr "Překlady"
 
-#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
 #: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
 msgid "Translates text into different languages"
 msgstr "Překládá texty do různých jazyků"
 
@@ -798,6 +768,40 @@ msgstr "Klíč API pro vzdálenou webovou službu"
 msgid "Remote web service to use"
 msgstr "Vzdálená webová služba, která se má použít"
 
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Překlady provádí {0}"
+
+#: ../plugins/translate/translate/__init__.py:75
+msgid "Translate Console"
+msgstr "Překladová konzola"
+
+#: ../plugins/translate/translate/__init__.py:152
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Přeložit vybraný text [{0}]"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr " "
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "Překlady vypisovat do:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "Stejného okna, jako je dokument"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Translate console (bottom panel)"
+msgstr "Překladové konzoly (spodní panel)"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Překladová služba:"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Interaktivní doplňování"
@@ -805,6 +809,16 @@ msgstr "Interaktivní doplňování"
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
 msgid "Minimum word size:"
 msgstr "Minimální délka slova:"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
+msgid "Word completion"
+msgstr "Doplňování slov"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
+msgid ""
+"Propose automatic completion using words already present in the document"
+msgstr ""
+"Navrhuje automatické doplnění podle slov, která se v dokumentu již vyskytují"
 
 #: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
@@ -834,24 +848,6 @@ msgstr "Doplňování slov"
 msgid "Word completion using the completion framework"
 msgstr "Doplňování slov využívající vývojářský systém pro doplňování"
 
-#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
-msgid "Word completion"
-msgstr "Doplňování slov"
-
-#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
-msgid ""
-"Propose automatic completion using words already present in the document"
-msgstr ""
-"Navrhuje automatické doplnění podle slov, která se v dokumentu již vyskytují"
-
-#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
-msgid "Zeitgeist dataprovider"
-msgstr "Poskytovatel dat Zeitgeist"
-
-#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
-msgid "Logs access and leave event for documents used with gedit"
-msgstr "Zaznamenává přístup a události pro dokumenty použité v editoru gedit"
-
 #: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:1
 msgid "Zeitgeist Data provider"
 msgstr "Poskytovatel dat Zeitgeist"
@@ -863,3 +859,11 @@ msgid ""
 msgstr ""
 "Zaznamenává činnosti a poskytuje snadný přístup k nedávno použitým a často "
 "používaným souborům"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
+msgid "Zeitgeist dataprovider"
+msgstr "Poskytovatel dat Zeitgeist"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
+msgid "Logs access and leave event for documents used with gedit"
+msgstr "Zaznamenává přístup a události pro dokumenty použité v editoru gedit"
