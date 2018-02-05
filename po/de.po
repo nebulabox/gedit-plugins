@@ -9,7 +9,7 @@
 # Andre Klapper <ak-47@gmx.net>, 2008, 2009.
 # Christian Kirbach <Christian.Kirbach@googlemail.com>, 2008-2010, 2012.
 # Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2010.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2009-2011, 2017.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2009-2011, 2017-2018.
 # Wolfgang Stöggl <c72578@yahoo.de>, 2012, 2014-2015.
 # Simon Linden <xhi2018@gmail.com>, 2013, 2014.
 # Benjamin Steinwender <b@stbe.at>, 2014.
@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: gedit-plugins master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2017-09-28 17:40+0000\n"
-"PO-Revision-Date: 2017-10-02 10:58+0200\n"
+"POT-Creation-Date: 2018-01-28 22:32+0000\n"
+"PO-Revision-Date: 2018-02-05 20:39+0100\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -28,8 +28,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.6\n"
 
+#. ex:ts=8:noet:
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
 msgid "Bookmarks"
@@ -95,11 +96,11 @@ msgid "Comment out or uncomment a selected block of code."
 msgstr ""
 "Einen markierten Quelltextabsatz auskommentieren oder wieder entkommentieren."
 
-#: ../plugins/codecomment/codecomment.py:114
+#: ../plugins/codecomment/codecomment.py:118
 msgid "Co_mment Code"
 msgstr "Quelltext ko_mmentieren"
 
-#: ../plugins/codecomment/codecomment.py:120
+#: ../plugins/codecomment/codecomment.py:124
 msgid "U_ncomment Code"
 msgstr "Quelltext e_ntkommentieren"
 
@@ -118,14 +119,6 @@ msgstr ""
 "Wählen Sie eine Farbe aus einem Dialog und fügen Sie deren Hexadezimal-"
 "Darstellung ein."
 
-#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
-msgid "Color picker"
-msgstr "Farbwähler"
-
-#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:2
-msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
-msgstr "Eine Farbe mittels Dialog wählen und einfügen (für HTML, CSS, PHP)"
-
 #: ../plugins/colorpicker/colorpicker.py:132
 msgid "Pick _Color…"
 msgstr "_Farbe auswählen …"
@@ -135,6 +128,14 @@ msgid "Pick Color"
 msgstr "Farbe auswählen"
 
 #. ex:ts=4:et:
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
+msgid "Color picker"
+msgstr "Farbwähler"
+
+#: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:2
+msgid "Select and insert a color from a dialog (for HTML, CSS, PHP)"
+msgstr "Eine Farbe mittels Dialog wählen und einfügen (für HTML, CSS, PHP)"
+
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
 #: ../plugins/colorschemer/schemer/__init__.py:42
@@ -256,20 +257,16 @@ msgstr "Leerzeichen darstellen"
 msgid "Draw spaces and tabs"
 msgstr "Leerzeichen und Einzüge anzeigen"
 
-#. ex:set ts=8 noet:
-#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
-#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
-msgid "Draw spaces"
-msgstr "Leerzeichen anzeigen"
-
-#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
-msgid "Draw Spaces and Tabs"
-msgstr "Leerzeichen und Einzüge anzeigen"
-
 #: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:1
 msgid "Show _White Space"
 msgstr "Leerzei_chen anzeigen"
+
+#. ex:set ts=8 noet:
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
+msgid "Draw spaces"
+msgstr "Leerzeichen anzeigen"
 
 #: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:2
 msgid "Draw tabs"
@@ -295,6 +292,10 @@ msgstr "Leerzeichen im Text anzeigen"
 msgid "Draw trailing spaces"
 msgstr "Angehängte Leerzeichen anzeigen"
 
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
+msgid "Draw Spaces and Tabs"
+msgstr "Leerzeichen und Einzüge anzeigen"
+
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Falls auf »wahr« gesetzt, wird die Anzeige aktiviert."
@@ -305,39 +306,16 @@ msgstr "Der Typ der anzuzeigenden Leerzeichen."
 
 #. namespace FindInFilesPlugin
 #. namespace Gedit
-#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/dialog.ui.h:1 ../plugins/findinfiles/dialog.vala:53
 #: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
 #: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:1
-#: ../plugins/findinfiles/dialog.ui.h:1
 msgid "Find in Files"
 msgstr "In Dateien suchen"
 
-#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/dialog.ui.h:2 ../plugins/findinfiles/dialog.vala:58
 #: ../plugins/findinfiles/result-panel.vala:63
-#: ../plugins/findinfiles/dialog.ui.h:2
 msgid "_Close"
 msgstr "_Schließen"
-
-#: ../plugins/findinfiles/plugin.vala:159
-msgid "Find in Files…"
-msgstr "In Dateien suchen …"
-
-#: ../plugins/findinfiles/result-panel.vala:195
-msgid "No results found"
-msgstr "Keine Ergebnisse gefunden"
-
-#. The stop button is showed in the bottom-left corner of the TreeView
-#: ../plugins/findinfiles/result-panel.vala:217
-msgid "Stop the search"
-msgstr "Suchvorgang anhalten"
-
-#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
-msgid "Find text in all files of a folder."
-msgstr "Text in allen Dateien eines Ordners suchen."
-
-#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
-msgid "Find text in all files of a folder"
-msgstr "Text in allen Dateien eines Ordners suchen"
 
 #: ../plugins/findinfiles/dialog.ui.h:3
 msgctxt "label of the find button"
@@ -369,14 +347,33 @@ msgstr "Nur _vollständige Wörter beachten"
 msgid "Re_gular expression"
 msgstr "Re_gulärer Ausdruck"
 
-#: ../plugins/git/git.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Text in allen Dateien eines Ordners suchen."
+
+#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
+msgid "Find text in all files of a folder"
+msgstr "Text in allen Dateien eines Ordners suchen"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "In Dateien suchen …"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Keine Ergebnisse gefunden"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Suchvorgang anhalten"
+
+#. namespace FindInFilesPlugin
+#. namespace Gedit
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
 msgid "Git"
 msgstr "Git"
-
-#: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Highlight lines that have been changed since the last commit"
-msgstr "Geänderte Zeilen seit letztem Commit hervorheben"
 
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:2
 msgid ""
@@ -386,13 +383,9 @@ msgstr ""
 "Informationen aus Git verwenden, um Zeilen und Dateien anzuzeigen, die seit "
 "dem letzten Einspielen geändert worden sind"
 
-#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
-msgid "Join/Split Lines"
-msgstr "Zeilen zusammenfügen/umbrechen"
-
-#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:2
-msgid "Join several lines or split long ones"
-msgstr "Mehrere Zeilen zusammenfügen oder lange Zeilen umbrechen"
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Geänderte Zeilen seit letztem Commit hervorheben"
 
 #: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
 msgid "Join lines/ Split lines"
@@ -404,13 +397,31 @@ msgstr ""
 "Mehrere Zeilen mittels Strg+J und Strg+Umschalt+J zusammenfügen oder "
 "umbrechen"
 
-#: ../plugins/joinlines/joinlines.py:107
+#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
+msgid "Join/Split Lines"
+msgstr "Zeilen zusammenfügen/umbrechen"
+
+#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:2
+msgid "Join several lines or split long ones"
+msgstr "Mehrere Zeilen zusammenfügen oder lange Zeilen umbrechen"
+
+#: ../plugins/joinlines/joinlines.py:111
 msgid "_Join Lines"
 msgstr "_Zeilen zusammenfügen"
 
-#: ../plugins/joinlines/joinlines.py:113
+#: ../plugins/joinlines/joinlines.py:117
 msgid "_Split Lines"
 msgstr "Zeilen umbrechen"
+
+#. ex:ts=4:et:
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
+msgid "Multi edit"
+msgstr "Mehrfachbearbeitung"
+
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
+#: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
+msgid "Edit document in multiple places at once"
+msgstr "Dokument an mehreren Stellen gleichzeitig bearbeiten"
 
 #: ../plugins/multiedit/multiedit/appactivatable.py:36
 #: ../plugins/multiedit/multiedit/viewactivatable.py:1349
@@ -420,15 +431,6 @@ msgstr "Mehrfachbearbeitungsmodus"
 #. ex:ts=4:et:
 #: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:1
 msgid "Multi Edit"
-msgstr "Mehrfachbearbeitung"
-
-#: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
-#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
-msgid "Edit document in multiple places at once"
-msgstr "Dokument an mehreren Stellen gleichzeitig bearbeiten"
-
-#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
-msgid "Multi edit"
 msgstr "Mehrfachbearbeitung"
 
 #: ../plugins/multiedit/multiedit/viewactivatable.py:315
@@ -488,50 +490,60 @@ msgid "Align edit points with additional space"
 msgstr "Bearbeitungspunkte mit zusätzlichem Abstand ausrichten"
 
 #. ex:ts=4:et:
-#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:1
+#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 msgid "Smart Spaces"
 msgstr "Intelligente Leerzeichen"
 
-#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:2
-msgid "Forget you're not using tabulations."
-msgstr "Vergessen Sie, dass Sie keine Einzüge benutzen."
-
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
-msgid "Allow to unindent like if you were using tabs while you're using spaces"
+msgid "Allow to unindent like if you were using tabs while you’re using spaces"
 msgstr ""
 "Ausrücken ermöglichen, wie wenn Sie Einzüge während der Verwendung von "
 "Leerzeichen einsetzen"
 
-#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
+#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:2
+msgid "Forget you’re not using tabulations."
+msgstr "Vergessen Sie, dass Sie keine Einzüge benutzen."
+
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
+#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
 msgid "SyncTeX"
 msgstr "SyncTeX"
-
-#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:2
-msgid "Synchronize between LaTeX and PDF with gedit and evince."
-msgstr "Abgleich zwischen LaTeX und PDF mit gedit und Evince."
 
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr "Abgleich zwischen LaTeX und PDF mit gedit und Evince"
+
+#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:2
+msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgstr "Abgleich zwischen LaTeX und PDF mit gedit und Evince."
 
 #: ../plugins/synctex/synctex/synctex.py:342
 msgid "Forward Search"
 msgstr "Vorwärtssuche"
 
 #. ex:ts=4:et:
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
+#: ../plugins/terminal/terminal.py:315
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
+msgid "A simple terminal widget accessible from the bottom panel"
+msgstr ""
+"Ein einfaches »Terminal-Widget«, welches vom unteren Panel aus erreichbar ist"
+
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:1
 msgid "Whether to silence terminal bell"
 msgstr "Terminalglocke stummschalten?"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:2
 msgid ""
-"If true, don't make a noise when applications send the escape sequence for "
+"If true, don’t make a noise when applications send the escape sequence for "
 "the terminal bell."
 msgstr ""
-"Falls dieser Schlüssel wahr ist, wird kein akustisches Signal ausgegeben, "
-"wenn Anwendungen die Terminiersequenz für die Terminalglocke ausgeben."
+"Legt fest, ob wird kein akustisches Signal ausgegeben, wenn Anwendungen die "
+"Terminiersequenz für die Terminalglocke ausgeben."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:3
 msgid "Number of lines to keep in scrollback"
@@ -540,7 +552,7 @@ msgstr "Anzahl der im Puffer vorzuhaltenden Zeilen"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:4
 msgid ""
 "Number of scrollback lines to keep around. You can scroll back in the "
-"terminal by this number of lines; lines that don't fit in the scrollback are "
+"terminal by this number of lines; lines that don’t fit in the scrollback are "
 "discarded. If scrollback-unlimited is true, this value is ignored."
 msgstr ""
 "Die Anzahl der vorzuhaltenden Pufferzeilen. Sie können im Terminal diese "
@@ -573,12 +585,12 @@ msgstr ""
 "eine Taste gedrückt wird."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:9
-msgid "Whether to scroll to the bottom when there's new output"
+msgid "Whether to scroll to the bottom when there’s new output"
 msgstr "Bei neuer Ausgabe ans Ende rollen?"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:10
 msgid ""
-"If true, whenever there's new output the terminal will scroll to the bottom."
+"If true, whenever there’s new output the terminal will scroll to the bottom."
 msgstr ""
 "Falls dieser Schlüssel wahr ist, springt die Rollleiste nach unten, sobald "
 "neuer Text ausgegeben wird."
@@ -600,10 +612,10 @@ msgstr "Voreingestellte Terminal-Textfarbe"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:14
 msgid ""
 "Default color of text in the terminal, as a color specification (can be HTML-"
-"style hex digits, or a color name such as \"red\")."
+"style hex digits, or a color name such as “red”)."
 msgstr ""
 "Die voreingestellte Textfarbe des Terminals als Farbangabe (kann als HTML-"
-"artige Hex-Zahl oder als Schriftfarbe wie »red« angegeben werden)."
+"artige Hexadezimalzahl oder als Schriftfarbe wie »red« angegeben werden)."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:15
 msgid "Default color of terminal background"
@@ -612,10 +624,11 @@ msgstr "Voreingestellte Terminal-Hintergrundfarbe"
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:16
 msgid ""
 "Default color of terminal background, as a color specification (can be HTML-"
-"style hex digits, or a color name such as \"red\")."
+"style hex digits, or a color name such as “red”)."
 msgstr ""
 "Die voreingestellte Hintergrundfarbe des Terminals als Farbangabe (kann als "
-"HTML-artige Hex-Zahl oder als Schriftfarbe wie »red« angegeben werden)."
+"HTML-artige Hexadezimalzahl oder als Schriftfarbe wie »red« angegeben "
+"werden)."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:17
 msgid "Palette for terminal applications"
@@ -625,7 +638,7 @@ msgstr "Palette für Terminal-Anwendungen"
 msgid ""
 "Terminals have a 16-color palette that applications inside the terminal can "
 "use. This is that palette, in the form of a colon-separated list of color "
-"names. Color names should be in hex format e.g. \"#FF00FF\""
+"names. Color names should be in hex format e.g. “#FF00FF”"
 msgstr ""
 "Terminals haben eine 16-farbige Palette, auf die Terminal-Anwendungen "
 "zugreifen können. Dies ist jene Liste in Form einer kommaunterteilten Liste "
@@ -651,8 +664,8 @@ msgstr "Blinkenden Cursor erlauben?"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:22
 msgid ""
-"The possible values are \"system\" to use the global cursor blinking "
-"settings, or \"on\" or \"off\" to set the mode explicitly."
+"The possible values are “system” to use the global cursor blinking settings, "
+"or “on” or “off” to set the mode explicitly."
 msgstr ""
 "Mögliche Einstellungen sind »system«, um die globalen Cursoreinstellungen zu "
 "übernehmen und »on« bzw. »off«, um den Modus explizit festzulegen."
@@ -663,8 +676,8 @@ msgstr "Erscheinungsbild der Eingabemarke"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:24
 msgid ""
-"The possible values are \"block\" to use a block cursor, \"ibeam\" to use a "
-"vertical line cursor, or \"underline\" to use an underline cursor."
+"The possible values are “block” to use a block cursor, “ibeam” to use a "
+"vertical line cursor, or “underline” to use an underline cursor."
 msgstr ""
 "Mögliche Werte sind »block« für eine blockförmige Marke, »ibeam« für einen "
 "senkrechten dünnen Balken oder »underline« für einen Unterstrich als Marke."
@@ -675,7 +688,7 @@ msgstr "Systemschrift verwenden?"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:26
 msgid ""
-"If true, the terminal will use the desktop-global standard font if it's "
+"If true, the terminal will use the desktop-global standard font if it’s "
 "monospace (and the most similar font it can come up with otherwise)."
 msgstr ""
 "Falls dieser Schlüssel wahr ist, verwendet das Terminal die Desktop-weite "
@@ -687,7 +700,7 @@ msgid "Font"
 msgstr "Schrift"
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:28
-msgid "A Pango font name. Examples are \"Sans 12\" or \"Monospace Bold 14\"."
+msgid "A Pango font name. Examples are “Sans 12” or “Monospace Bold 14”."
 msgstr "Ein Pango-Schriftname, wie z.B.: »Sans 12« oder »Monospace Bold 14«."
 
 #: ../plugins/terminal/terminal.plugin.desktop.in.in.h:1
@@ -698,19 +711,20 @@ msgstr "Eingebettetes Terminal"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Terminal in die untere Leiste einbetten."
 
-#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:315
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
-msgid "A simple terminal widget accessible from the bottom panel"
-msgstr ""
-"Ein einfaches »Terminal-Widget«, welches vom unteren Panel aus erreichbar ist"
-
 #: ../plugins/terminal/terminal.py:336
 msgid "C_hange Directory"
 msgstr "_Ordner wechseln"
+
+#. Let's conform to PEP8
+#. ex:ts=4:et:
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
+msgid "Text size"
+msgstr "Textgröße"
+
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
+#: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
+msgid "Easily increase and decrease the text size"
+msgstr "Die Textgröße einfach vergrößern und verkleinern"
 
 #: ../plugins/textsize/textsize/__init__.py:53
 msgid "_Normal size"
@@ -729,56 +743,13 @@ msgstr "_Großer Text"
 msgid "Text Size"
 msgstr "Textgröße"
 
-#: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
-#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
-msgid "Easily increase and decrease the text size"
-msgstr "Die Textgröße einfach vergrößern und verkleinern"
-
-#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
-msgid "Text size"
-msgstr "Textgröße"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:1
-msgid "Translation languages"
-msgstr "Übersetzungssprachen"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:2
-msgid "Where to output translation:"
-msgstr "Ausgabe der Übersetzung:"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:3
-msgid "Same document window"
-msgstr "Gleiches Dokumentfenster"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:4
-msgid "Translate console (bottom panel)"
-msgstr "Übersetzungskonsole (untere Leiste)"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:5
-msgid "Translation service:"
-msgstr "Übersetzungsdienst:"
-
-#: ../plugins/translate/translate/__init__.py:72
-#, python-brace-format
-msgid "Translations powered by {0}"
-msgstr "Übersetzungen bereitgestellt von {0}"
-
-#: ../plugins/translate/translate/__init__.py:75
-msgid "Translate Console"
-msgstr "Übersetzungskonsole"
-
-#: ../plugins/translate/translate/__init__.py:155
-#, python-brace-format
-msgid "Translate selected text [{0}]"
-msgstr "Ausgewählten Text übersetzen [{0}]"
-
-#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
 #: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
 msgid "Translate"
 msgstr "Übersetzen"
 
-#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
 #: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
 msgid "Translates text into different languages"
 msgstr "Übersetzt Text in verschiedene Sprachen"
 
@@ -812,6 +783,40 @@ msgstr "API-Schlüssel für entfernten Webdienst"
 msgid "Remote web service to use"
 msgstr "Zu verwendender entfernter Webdienst"
 
+#: ../plugins/translate/translate/__init__.py:72
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Übersetzungen bereitgestellt von {0}"
+
+#: ../plugins/translate/translate/__init__.py:75
+msgid "Translate Console"
+msgstr "Übersetzungskonsole"
+
+#: ../plugins/translate/translate/__init__.py:152
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Ausgewählten Text übersetzen [{0}]"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr "Übersetzungssprachen"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "Ausgabe der Übersetzung:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "Gleiches Dokumentfenster"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Translate console (bottom panel)"
+msgstr "Übersetzungskonsole (untere Leiste)"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Übersetzungsdienst:"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Interaktive Vervollständigung"
@@ -819,6 +824,17 @@ msgstr "Interaktive Vervollständigung"
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
 msgid "Minimum word size:"
 msgstr "Minimale Wortlänge:"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
+msgid "Word completion"
+msgstr "Wortvervollständigung"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
+msgid ""
+"Propose automatic completion using words already present in the document"
+msgstr ""
+"Vorschläge für automatische Vervollständigung mit Wörtern erstellen, die im "
+"Dokument bereits vorhanden sind"
 
 #: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
@@ -848,27 +864,6 @@ msgstr "Wortvervollständigung"
 msgid "Word completion using the completion framework"
 msgstr "Wortvervollständigung mit Hilfe des Vervollständigungs-Frameworks"
 
-#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
-msgid "Word completion"
-msgstr "Wortvervollständigung"
-
-#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
-msgid ""
-"Propose automatic completion using words already present in the document"
-msgstr ""
-"Vorschläge für automatische Vervollständigung mit Wörtern erstellen, die im "
-"Dokument bereits vorhanden sind"
-
-#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
-msgid "Zeitgeist dataprovider"
-msgstr "Datenlieferant für Zeitgeist"
-
-#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
-msgid "Logs access and leave event for documents used with gedit"
-msgstr ""
-"Zugriffe werden protokolliert und Ereignisse für Dokumente, die mit gedit "
-"verwendet worden sind, hinterlassen"
-
 #: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:1
 msgid "Zeitgeist Data provider"
 msgstr "Datenlieferant für Zeitgeist"
@@ -880,3 +875,13 @@ msgid ""
 msgstr ""
 "Benutzeraktivitäten werden aufgezeichnet; dies ermöglicht einfachen Zugriff "
 "auf kürzlich und häufig verwendete Dateien"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
+msgid "Zeitgeist dataprovider"
+msgstr "Datenlieferant für Zeitgeist"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
+msgid "Logs access and leave event for documents used with gedit"
+msgstr ""
+"Zugriffe werden protokolliert und Ereignisse für Dokumente, die mit gedit "
+"verwendet worden sind, hinterlassen"
