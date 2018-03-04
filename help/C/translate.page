@@ -14,18 +14,18 @@
 
     <include href="legal-plugins.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
-    <desc>Translates text into different languages</desc>
+    <desc>Translate text into different languages</desc>
   </info>
 
   <title>Translate</title>
 
-  <p>The translate plugin allows you to translate text from <app>gedit</app> using Apertium and Yandex engines.</p>
+  <p>The <app>Translate</app> plugin allows you to translate text from <app>gedit</app> using Apertium and Yandex engines.</p>
 
 <section id="enable-translate">
-  <title>Enable Translate Plugin and Configure</title>
+  <title>Enabling and configuring the Translate plugin</title>
 
   <steps>
-    <title>To enable Translate plugin:</title>
+    <title>To enable the <app>Translate</app> plugin:</title>
     <item>
       <p>Select <guiseq><gui style="menu">gedit</gui>
       <gui style="menuitem">Preferences</gui>
@@ -37,23 +37,23 @@
     </item>
 
     <item>
-      <p>Select <gui style="menuitem">Preferences</gui> to configure with translation engine to use and language pair.</p>
+      <p>Select <gui style="button">Preferences</gui> to configure the translation engine to use and a language pair.</p>
     </item>
   </steps>
 
 </section>
 
 <section id="use-translate">
-  <title>Use the <app>Translate</app> plugin</title>
+  <title>Using the Translate plugin</title>
 
  <steps>
     <title>To translate a text:</title>
     <item>
-      <p>Select the piece of text that you will like to translate.</p>
+      <p>Select the part of text that you would like to translate.</p>
     </item>
     <item>
       <p>Press <keyseq><key>Ctrl</key><key>M</key></keyseq> or use the context menu to translate it.</p>
-      <p>The translation appears on the document or in the Bottom Panel depending on your configuration.</p>
+      <p>The translation appears in the document or in the bottom panel, depending on your configuration.</p>
     </item>
   </steps>
 
