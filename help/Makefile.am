@@ -17,6 +17,7 @@ HELP_FILES = \
 	multi-edit.page \
 	terminal.page \
 	text-size.page \
+    translate.page \
 	word-completion.page \
 	zeitgeist-dataprovider.page
 

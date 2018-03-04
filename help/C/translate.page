@@ -1,0 +1,62 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its"
+      type="topic" style="task"
+      id="plugin-translate">
+
+  <info>
+    <link type="guide" xref="gedit-plugin-guide#gedit-additional-plugins"/>
+    <revision version="1.0" date="2018-03-04" status="review"/>
+
+    <credit type="author">
+      <name>Jordi Mas i Hernàndez</name>
+      <email its:translate="no">jmas@softcatala.org</email>
+    </credit>
+
+    <include href="legal-plugins.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <desc>Translates text into different languages</desc>
+  </info>
+
+  <title>Translate</title>
+
+  <p>The translate plugin allows you to translate text from <app>gedit</app> using Apertium and Yandex engines.</p>
+
+<section id="enable-translate">
+  <title>Enable Translate Plugin and Configure</title>
+
+  <steps>
+    <title>To enable Translate plugin:</title>
+    <item>
+      <p>Select <guiseq><gui style="menu">gedit</gui>
+      <gui style="menuitem">Preferences</gui>
+      <gui style="tab">Plugins</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Select <gui style="menuitem">Translate</gui> to enable the
+      plugin.</p>
+    </item>
+
+    <item>
+      <p>Select <gui style="menuitem">Preferences</gui> to configure with translation engine to use and language pair.</p>
+    </item>
+  </steps>
+
+</section>
+
+<section id="use-translate">
+  <title>Use the <app>Translate</app> plugin</title>
+
+ <steps>
+    <title>To translate a text:</title>
+    <item>
+      <p>Select the piece of text that you will like to translate.</p>
+    </item>
+    <item>
+      <p>Press <keyseq><key>Ctrl</key><key>M</key></keyseq> or use the context menu to translate it.</p>
+      <p>The translation appears on the document or in the Bottom Panel depending on your configuration.</p>
+    </item>
+  </steps>
+
+</section>
+
+</page>
