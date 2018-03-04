@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins-help\n"
-"POT-Creation-Date: 2018-01-28 17:47+0000\n"
-"PO-Revision-Date: 2018-01-28 19:27+0100\n"
+"POT-Creation-Date: 2018-03-04 16:13+0000\n"
+"PO-Revision-Date: 2018-03-04 17:18+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -1047,7 +1047,8 @@ msgid "To enable the <app>Embedded Terminal</app> plugin:"
 msgstr "Aby włączyć wtyczkę <app>Osadzony terminal</app>:"
 
 #. (itstool) path: item/p
-#: C/terminal.page:38 C/text-size.page:37 C/zeitgeist-dataprovider.page:28
+#: C/terminal.page:38 C/text-size.page:37 C/translate.page:30
+#: C/zeitgeist-dataprovider.page:28
 msgid ""
 "Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
 "\">Preferences</gui> <gui style=\"tab\">Plugins</gui></guiseq>."
@@ -1060,7 +1061,7 @@ msgstr ""
 msgid ""
 "Select <gui style=\"menuitem\">Embedded Terminal</gui> to enable the plugin."
 msgstr ""
-"Wybierz <gui style=\"menuitem\">Osadzony terminal</gui>, aby włączyć wtyczkę."
+"Zaznacz <gui style=\"menuitem\">Osadzony terminal</gui>, aby włączyć wtyczkę."
 
 #. (itstool) path: section/title
 #: C/terminal.page:51
@@ -1117,7 +1118,7 @@ msgstr "Aby włączyć wtyczkę rozmiaru tekstu:"
 #: C/text-size.page:42
 msgid "Select <gui style=\"menuitem\">Text Size</gui> to enable the plugin."
 msgstr ""
-"Wybierz <gui style=\"menuitem\">Rozmiar tekstu</gui>, aby włączyć wtyczkę."
+"Zaznacz <gui style=\"menuitem\">Rozmiar tekstu</gui>, aby włączyć wtyczkę."
 
 #. (itstool) path: section/title
 #: C/text-size.page:50
@@ -1158,6 +1159,88 @@ msgstr ""
 "Nacisnąć klawisze <keyseq><key>Ctrl</key><key>0</key></keyseq>, aby "
 "<em>przywrócić</em> domyślny rozmiar tekstu."
 
+#. (itstool) path: credit/name
+#: C/translate.page:11
+msgid "Jordi Mas i Hernàndez"
+msgstr "Jordi Mas i Hernàndez"
+
+#. (itstool) path: info/desc
+#: C/translate.page:17
+msgid "Translate text into different languages"
+msgstr "Tłumaczenie tekstu na różne języki"
+
+#. (itstool) path: page/title
+#: C/translate.page:20
+msgid "Translate"
+msgstr "Tłumaczenie"
+
+#. (itstool) path: page/p
+#: C/translate.page:22
+msgid ""
+"The <app>Translate</app> plugin allows you to translate text from "
+"<app>gedit</app> using Apertium and Yandex engines."
+msgstr ""
+"Wtyczka <app>Tłumaczenie</app> umożliwia tłumaczenie tekstu z programu "
+"<app>gedit</app> za pomocą serwisów Apertium i Yandex."
+
+#. (itstool) path: section/title
+#: C/translate.page:25
+msgid "Enabling and configuring the Translate plugin"
+msgstr "Włączanie i konfigurowanie wtyczki tłumaczenia"
+
+#. (itstool) path: steps/title
+#: C/translate.page:28
+msgid "To enable the <app>Translate</app> plugin:"
+msgstr "Aby włączyć wtyczkę <app>Tłumaczenie</app>:"
+
+#. (itstool) path: item/p
+#: C/translate.page:35
+msgid "Select <gui style=\"menuitem\">Translate</gui> to enable the plugin."
+msgstr ""
+"Zaznacz <gui style=\"menuitem\">Tłumaczenie</gui>, aby włączyć wtyczkę."
+
+#. (itstool) path: item/p
+#: C/translate.page:40
+msgid ""
+"Select <gui style=\"button\">Preferences</gui> to configure the translation "
+"engine to use and a language pair."
+msgstr ""
+"Kliknij przycisk <gui style=\"button\">Preferencje</gui>, aby skonfigurować "
+"używany serwis tłumaczenia i parę języków."
+
+#. (itstool) path: section/title
+#: C/translate.page:47
+msgid "Using the Translate plugin"
+msgstr "Używanie wtyczki tłumaczenia"
+
+#. (itstool) path: steps/title
+#: C/translate.page:50
+msgid "To translate a text:"
+msgstr "Aby przetłumaczyć tekst:"
+
+#. (itstool) path: item/p
+#: C/translate.page:52
+msgid "Select the part of text that you would like to translate."
+msgstr "Zaznacz część tekstu do przetłumaczenia."
+
+#. (itstool) path: item/p
+#: C/translate.page:55
+msgid ""
+"Press <keyseq><key>Ctrl</key><key>M</key></keyseq> or use the context menu "
+"to translate it."
+msgstr ""
+"Naciśnij klawisze <keyseq><key>Ctrl</key><key>M</key></keyseq> lub użyj menu "
+"kontekstowego, aby go przetłumaczyć."
+
+#. (itstool) path: item/p
+#: C/translate.page:56
+msgid ""
+"The translation appears in the document or in the bottom panel, depending on "
+"your configuration."
+msgstr ""
+"Tłumaczenie pojawi się w dokumencie lub w dolnym panelu, w zależności od "
+"konfiguracji."
+
 #. (itstool) path: info/desc
 #: C/word-completion.page:25
 msgid "Autocomplete words or portions of code as you type."
@@ -1191,7 +1274,7 @@ msgstr ""
 msgid ""
 "Select <gui style=\"menuitem\">Word Completion</gui> to enable the plugin."
 msgstr ""
-"Wybierz <gui style=\"menuitem\">Uzupełnianie wyrazów</gui>, aby włączyć "
+"Zaznacz <gui style=\"menuitem\">Uzupełnianie wyrazów</gui>, aby włączyć "
 "wtyczkę."
 
 #. (itstool) path: page/p
@@ -1259,4 +1342,4 @@ msgstr "Włączanie dostawcy danych usługi Zeitgeist"
 #: C/zeitgeist-dataprovider.page:33
 msgid "Select <gui style=\"menuitem\">Zeitgeist Dataprovider</gui>."
 msgstr ""
-"Wybierz <gui style=\"menuitem\">Dostawca danych usługi Zeitgeist</gui>."
+"Zaznacz <gui style=\"menuitem\">Dostawca danych usługi Zeitgeist</gui>."
