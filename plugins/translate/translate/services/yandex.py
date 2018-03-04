@@ -32,7 +32,7 @@ class Yandex(Service):
             "Catalan -> English",
             "English -> Catalan"]
 
-    DEFAULT_LANGUAGE_CODES = ["es-en",
+    DEFAULT_LANGUAGE_CODES = ["es|en",
             "en|es",
             "ca|en",
             "en|ca",
@@ -48,6 +48,9 @@ class Yandex(Service):
         Yandex.g_language_codes = []
         Yandex.g_language_names = []
         Yandex.g_locales_names = {}
+
+    def get_default_language_codes(self):
+        return 'en|es'
 
     def has_api_key(self):
         return True
@@ -83,25 +86,29 @@ class Yandex(Service):
 
     def _get_remote_language_names(self):
 
-        url = "{0}/getLangs?ui=en&key={1}".format(self.SERVER, self._key)
-        response = urllib.request.urlopen(url)
-        payload = json.loads(response.read().decode("utf-8"))
+        try:
+            url = "{0}/getLangs?ui=en&key={1}".format(self.SERVER, self._key)
+            response = urllib.request.urlopen(url)
+            payload = json.loads(response.read().decode("utf-8"))
 
-        language_codes = payload['dirs']
-        language_codes = [x.replace('-', '|') for x in language_codes]
-        locales_names = payload['langs']
+            language_codes = payload['dirs']
+            language_codes = [x.replace('-', '|') for x in language_codes]
+            locales_names = payload['langs']
 
-        language_names = []
-        for lang_pair in language_codes:
-            langs = lang_pair.split('|')
-            source = langs[0]
-            target = langs[1]
-            name = self.get_language_pair_name(source, target, locales_names)
-            language_names.append(name)
+            language_names = []
+            for lang_pair in language_codes:
+                langs = lang_pair.split('|')
+                source = langs[0]
+                target = langs[1]
+                name = self.get_language_pair_name(source, target, locales_names)
+                language_names.append(name)
 
-        Yandex.g_locales_names = locales_names
-        Yandex.g_language_names = language_names
-        Yandex.g_language_codes = language_codes
+            Yandex.g_locales_names = locales_names
+            Yandex.g_language_names = language_names
+            Yandex.g_language_codes = language_codes
+
+        except Exception as e:
+            print("_get_remote_language_names exception {0}".format(e))
 
 
     def translate_text(self, text, language_pair):

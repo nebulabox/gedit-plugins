@@ -38,6 +38,10 @@ class Service(metaclass=ABCMeta):
         pass
 
     @abstractmethod
+    def get_default_language_codes(self):
+        pass
+
+    @abstractmethod
     def has_api_key(self):
         pass
     

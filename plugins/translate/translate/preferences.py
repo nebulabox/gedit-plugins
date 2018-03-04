@@ -47,12 +47,21 @@ class Preferences(object):
         self._ui.set_translation_domain(GETTEXT_PACKAGE)
         self._ui.add_from_file(self._ui_path)
 
+    def _get_default_language(self):
+        service = Services.get(self._service_id)
+        selected = service.get_default_language_codes()
+        return self._get_index(selected)
+
     def _populate_languages(self):
+        self._languages.set_wrap_width(3)
         self._language_names, self._language_codes = self._get_languages_names_codes(self._service_id)
         self._model = self._get_languages_stored_model()
         self._languages.set_model(self._model)
         selected = self._settings.get_language_pair()
         index = self._get_index(selected)
+        if index == -1:
+            index = self._get_default_language()
+
         self._languages.set_active(index)
 
     def _init_api_entry(self):
@@ -153,11 +162,12 @@ class Preferences(object):
 
         item = model[index]
         self._service_id = item[1]
-        self._settings.set_service(self._service_id)
         service = Services.get(self._service_id)
         if service.has_api_key() is True:
             key = self._settings.get_apikey()
             service.set_api_key(key)
+        else:
+            self._settings.set_service(self._service_id)
 
         service.init()
         self._update_api_key_ui(service.has_api_key())
@@ -166,6 +176,11 @@ class Preferences(object):
     def _changed_apikey(self, text_entry):
         text = text_entry.get_text()
         self._settings.set_apikey(text)
+        if len(text) > 0:
+            self._settings.set_service(self._service_id)
+        else:
+            self._settings.set_service(Services.APERTIUM_ID)
+
 
     def _radio_samedoc_callback(self, widget, data=None):
         self._settings.set_output_document(widget.get_active())

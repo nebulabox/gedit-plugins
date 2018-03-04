@@ -45,7 +45,10 @@ class Apertium(Service):
     def _clean_for_ut():
         Apertium.g_language_codes = []
         Apertium.g_language_names = []
-        Apertium.g_locales_names = {}       
+        Apertium.g_locales_names = {}
+
+    def get_default_language_codes(self):
+        return 'eng|spa'
 
     def has_api_key(self):
         return False
