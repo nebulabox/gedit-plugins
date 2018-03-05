@@ -56,6 +56,9 @@ class Apertium(Service):
     def set_api_key(self, key):
         pass
 
+    def get_api_hint(self):
+        pass
+
     def init(self):
         self._get_remote_language_names_and_pairs()
 

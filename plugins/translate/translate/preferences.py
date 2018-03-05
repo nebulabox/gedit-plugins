@@ -70,24 +70,31 @@ class Preferences(object):
             self._update_api_key_ui(True)
 
     def _update_api_key_ui(self, show):
+        apibox_container = self._ui.get_object('api_box_container')
         apibox = self._ui.get_object('api_box')
 
         if show is True:
+            service = Services.get(self._service_id)
             self._apilabel = Gtk.Label("API Key")
             self._apikey = Gtk.Entry(expand=True)
-
             self._apikey.connect('changed', self._changed_apikey)
             key = self._settings.get_apikey()
             self._apikey.set_text(key)
 
             apibox.add(self._apilabel)
             apibox.add(self._apikey)
-            apibox.show_all()
+
+            self._hint = Gtk.Label()
+            self._hint.set_markup(service.get_api_hint())
+            apibox_container.add(self._hint)
+            apibox_container.show_all()
         else:
             apibox.remove(self._apilabel)
             apibox.remove(self._apikey)
+            apibox_container.remove(self._hint)
             self._apilabel = None
             self._apikey = None
+            self._hint = None
 
     def _init_radiobuttons(self):
         self._radio_samedoc = self._ui.get_object('same_document')

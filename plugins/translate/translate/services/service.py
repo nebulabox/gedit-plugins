@@ -19,6 +19,14 @@
 
 from abc import ABCMeta, abstractmethod
 
+try:
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
+except:
+    _ = lambda s: s
+
 class Service(metaclass=ABCMeta):
 
     @abstractmethod
@@ -43,6 +51,10 @@ class Service(metaclass=ABCMeta):
 
     @abstractmethod
     def has_api_key(self):
+        pass
+
+    @abstractmethod
+    def get_api_hint(self):
         pass
     
     @abstractmethod    

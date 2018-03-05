@@ -52,6 +52,9 @@ class Yandex(Service):
     def get_default_language_codes(self):
         return 'en|es'
 
+    def get_api_hint(self):
+        return _("You need to obtain a free API key at <a href='https://tech.yandex.com/translate/'>https://tech.yandex.com/translate/</a>")
+
     def has_api_key(self):
         return True
 
