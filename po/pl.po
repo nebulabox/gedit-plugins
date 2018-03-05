@@ -1,5 +1,5 @@
 # Polish translation for gedit-plugins.
-# Copyright © 1999-2017 the gedit-plugins authors.
+# Copyright © 1999-2018 the gedit-plugins authors.
 # This file is distributed under the same license as the gedit-plugins package.
 # Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1999-2003.
 # Artur Flinta <aflinta@at.kernel.pl>, 2003-2005.
@@ -7,15 +7,15 @@
 # Wadim Dziedzic <wdziedzic@aviary.pl>, 2007.
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008-2009.
 # Piotr Zaryk <pzaryk@aviary.pl>, 2008.
-# Piotr Drąg <piotrdrag@gmail.com>, 2009-2017.
-# Aviary.pl <community-poland@mozilla.org>, 2006-2017.
+# Piotr Drąg <piotrdrag@gmail.com>, 2009-2018.
+# Aviary.pl <community-poland@mozilla.org>, 2006-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-28 19:24+0100\n"
-"PO-Revision-Date: 2017-09-28 19:45+0200\n"
+"POT-Creation-Date: 2018-03-05 22:06+0100\n"
+"PO-Revision-Date: 2018-03-05 22:05+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -25,6 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
+#. ex:ts=8:noet:
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
 #: ../plugins/bookmarks/gedit-bookmarks.metainfo.xml.in.h:1
 msgid "Bookmarks"
@@ -61,7 +62,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "Automatycznie dodaje nawias zamykający po wstawieniu nawiasu"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:56
+#: ../plugins/charmap/charmap/__init__.py:57
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Tablica znaków"
@@ -88,11 +89,11 @@ msgstr "Komentarze w kodzie"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Pozwala komentować lub odkomentować zaznaczony blok kodu."
 
-#: ../plugins/codecomment/codecomment.py:114
+#: ../plugins/codecomment/codecomment.py:119
 msgid "Co_mment Code"
 msgstr "Sko_mentuj kod"
 
-#: ../plugins/codecomment/codecomment.py:120
+#: ../plugins/codecomment/codecomment.py:125
 msgid "U_ncomment Code"
 msgstr "Odkome_ntuj kod"
 
@@ -109,6 +110,15 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Wybiera kolor z okna dialogowego i wstawia jego szesnastkowy odpowiednik."
 
+#: ../plugins/colorpicker/colorpicker.py:133
+msgid "Pick _Color…"
+msgstr "Wybierz _kolor…"
+
+#: ../plugins/colorpicker/colorpicker.py:173
+msgid "Pick Color"
+msgstr "Wybór koloru"
+
+#. ex:ts=4:et:
 #: ../plugins/colorpicker/gedit-colorpicker.metainfo.xml.in.h:1
 msgid "Color picker"
 msgstr "Wybór koloru"
@@ -119,18 +129,9 @@ msgstr ""
 "Umożliwia wybieranie i wstawianie koloru z okna dialogowego (dla języków "
 "HTML, CSS i PHP)"
 
-#: ../plugins/colorpicker/colorpicker.py:132
-msgid "Pick _Color…"
-msgstr "Wybierz _kolor…"
-
-#: ../plugins/colorpicker/colorpicker.py:172
-msgid "Pick Color"
-msgstr "Wybór koloru"
-
-#. ex:ts=4:et:
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:42
+#: ../plugins/colorschemer/schemer/__init__.py:50
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Edytor schematów kolorów"
@@ -201,7 +202,7 @@ msgstr "Autor"
 msgid "Sample"
 msgstr "Przykład"
 
-#: ../plugins/commander/commander/appactivatable.py:48
+#: ../plugins/commander/commander/appactivatable.py:56
 msgid "Commander Mode"
 msgstr "Tryb poleceń"
 
@@ -216,11 +217,11 @@ msgstr "Commander"
 msgid "Command line interface for advanced editing"
 msgstr "Interfejs wiersza poleceń do zaawansowanej redakcji tekstu"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:117
+#: ../plugins/dashboard/dashboard/dashboard.py:125
 msgid "Empty Document"
 msgstr "Pusty dokument"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:158
+#: ../plugins/dashboard/dashboard/dashboard.py:166
 msgid "Type here to search…"
 msgstr "Wyszukiwanie…"
 
@@ -249,20 +250,16 @@ msgstr "Wyświetlanie spacji"
 msgid "Draw spaces and tabs"
 msgstr "Wyświetla spacje i tabulacje"
 
-#. ex:set ts=8 noet:
-#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
-#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
-msgid "Draw spaces"
-msgstr "Wyświetlanie spacji"
-
-#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
-msgid "Draw Spaces and Tabs"
-msgstr "Wyświetla spacje i tabulacje"
-
 #: ../plugins/drawspaces/gedit-drawspaces-app-activatable.c:160
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:1
 msgid "Show _White Space"
 msgstr "Wyświetlanie _białych spacji"
+
+#. ex:set ts=8 noet:
+#: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:1
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:1
+msgid "Draw spaces"
+msgstr "Wyświetlanie spacji"
 
 #: ../plugins/drawspaces/gedit-drawspaces-configurable.ui.h:2
 msgid "Draw tabs"
@@ -288,6 +285,10 @@ msgstr "Wyświetlanie spacji w tekście"
 msgid "Draw trailing spaces"
 msgstr "Wyświetlanie spacji na końcach wierszy"
 
+#: ../plugins/drawspaces/gedit-drawspaces.metainfo.xml.in.h:2
+msgid "Draw Spaces and Tabs"
+msgstr "Wyświetla spacje i tabulacje"
+
 #: ../plugins/drawspaces/org.gnome.gedit.plugins.drawspaces.gschema.xml.h:2
 msgid "If TRUE drawing will be enabled."
 msgstr "Jeśli wynosi „true”, to rysowanie zostanie wyłączone."
@@ -298,39 +299,16 @@ msgstr "Typy spacji do rysowania."
 
 #. namespace FindInFilesPlugin
 #. namespace Gedit
-#: ../plugins/findinfiles/dialog.vala:53
+#: ../plugins/findinfiles/dialog.ui.h:1 ../plugins/findinfiles/dialog.vala:53
 #: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:1
 #: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:1
-#: ../plugins/findinfiles/dialog.ui.h:1
 msgid "Find in Files"
 msgstr "Wyszukiwanie w plikach"
 
-#: ../plugins/findinfiles/dialog.vala:58
+#: ../plugins/findinfiles/dialog.ui.h:2 ../plugins/findinfiles/dialog.vala:58
 #: ../plugins/findinfiles/result-panel.vala:63
-#: ../plugins/findinfiles/dialog.ui.h:2
 msgid "_Close"
 msgstr "Za_mknij"
-
-#: ../plugins/findinfiles/plugin.vala:159
-msgid "Find in Files…"
-msgstr "Znajdź w plikach…"
-
-#: ../plugins/findinfiles/result-panel.vala:195
-msgid "No results found"
-msgstr "Brak wyników"
-
-#. The stop button is showed in the bottom-left corner of the TreeView
-#: ../plugins/findinfiles/result-panel.vala:217
-msgid "Stop the search"
-msgstr "Zatrzymuje wyszukiwanie"
-
-#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
-msgid "Find text in all files of a folder."
-msgstr "Wyszukiwanie tekstu we wszystkich plikach w katalogu."
-
-#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
-msgid "Find text in all files of a folder"
-msgstr "Wyszukiwanie tekstu we wszystkich plikach w katalogu"
 
 #: ../plugins/findinfiles/dialog.ui.h:3
 msgctxt "label of the find button"
@@ -362,14 +340,33 @@ msgstr "Tylko _całe wyrazy"
 msgid "Re_gular expression"
 msgstr "Wyrażenie reg_ularne"
 
-#: ../plugins/git/git.plugin.desktop.in.in.h:1
+#: ../plugins/findinfiles/findinfiles.plugin.desktop.in.in.h:2
+msgid "Find text in all files of a folder."
+msgstr "Wyszukiwanie tekstu we wszystkich plikach w katalogu."
+
+#: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
+msgid "Find text in all files of a folder"
+msgstr "Wyszukiwanie tekstu we wszystkich plikach w katalogu"
+
+#: ../plugins/findinfiles/plugin.vala:159
+msgid "Find in Files…"
+msgstr "Znajdź w plikach…"
+
+#: ../plugins/findinfiles/result-panel.vala:195
+msgid "No results found"
+msgstr "Brak wyników"
+
+#. The stop button is showed in the bottom-left corner of the TreeView
+#: ../plugins/findinfiles/result-panel.vala:217
+msgid "Stop the search"
+msgstr "Zatrzymuje wyszukiwanie"
+
+#. namespace FindInFilesPlugin
+#. namespace Gedit
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:1
+#: ../plugins/git/git.plugin.desktop.in.in.h:1
 msgid "Git"
 msgstr "Git"
-
-#: ../plugins/git/git.plugin.desktop.in.in.h:2
-msgid "Highlight lines that have been changed since the last commit"
-msgstr "Wyróżnia wiersze, które zostały zmienione od ostatniego zatwierdzenia"
 
 #: ../plugins/git/gedit-git.metainfo.xml.in.h:2
 msgid ""
@@ -379,13 +376,9 @@ msgstr ""
 "Używa informacji programu Git do wyświetlania wierszy i plików zmienionych "
 "od ostatniego zatwierdzenia"
 
-#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
-msgid "Join/Split Lines"
-msgstr "Łączenie/dzielenie wierszy"
-
-#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:2
-msgid "Join several lines or split long ones"
-msgstr "Łączy wiele wierszy lub dzieli dłuższe"
+#: ../plugins/git/git.plugin.desktop.in.in.h:2
+msgid "Highlight lines that have been changed since the last commit"
+msgstr "Wyróżnia wiersze, które zostały zmienione od ostatniego zatwierdzenia"
 
 #: ../plugins/joinlines/gedit-joinlines.metainfo.xml.in.h:1
 msgid "Join lines/ Split lines"
@@ -397,16 +390,34 @@ msgstr ""
 "Umożliwia łączenie lub dzielenie wielu wierszy za pomocą klawiszy Ctrl+J "
 "i Ctrl+Shift+J"
 
-#: ../plugins/joinlines/joinlines.py:107
+#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:1
+msgid "Join/Split Lines"
+msgstr "Łączenie/dzielenie wierszy"
+
+#: ../plugins/joinlines/joinlines.plugin.desktop.in.in.h:2
+msgid "Join several lines or split long ones"
+msgstr "Łączy wiele wierszy lub dzieli dłuższe"
+
+#: ../plugins/joinlines/joinlines.py:112
 msgid "_Join Lines"
 msgstr "_Połącz wiersze"
 
-#: ../plugins/joinlines/joinlines.py:113
+#: ../plugins/joinlines/joinlines.py:118
 msgid "_Split Lines"
 msgstr "P_odziel wiersze"
 
-#: ../plugins/multiedit/multiedit/appactivatable.py:36
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1349
+#. ex:ts=4:et:
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
+msgid "Multi edit"
+msgstr "Edycja w wielu miejscach"
+
+#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
+#: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
+msgid "Edit document in multiple places at once"
+msgstr "Modyfikowanie dokumentu w wielu miejscach naraz"
+
+#: ../plugins/multiedit/multiedit/appactivatable.py:44
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1351
 msgid "Multi Edit Mode"
 msgstr "Tryb edycji w wieli miejscach"
 
@@ -415,104 +426,104 @@ msgstr "Tryb edycji w wieli miejscach"
 msgid "Multi Edit"
 msgstr "Edycja w wielu miejscach"
 
-#: ../plugins/multiedit/multiedit.plugin.desktop.in.in.h:2
-#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:2
-msgid "Edit document in multiple places at once"
-msgstr "Modyfikowanie dokumentu w wielu miejscach naraz"
-
-#: ../plugins/multiedit/gedit-multiedit.metainfo.xml.in.h:1
-msgid "Multi edit"
-msgstr "Edycja w wielu miejscach"
-
-#: ../plugins/multiedit/multiedit/viewactivatable.py:315
+#: ../plugins/multiedit/multiedit/viewactivatable.py:317
 msgid "Added edit point…"
 msgstr "Dodano punkt modyfikowania…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:657
+#: ../plugins/multiedit/multiedit/viewactivatable.py:659
 msgid "Column Mode…"
 msgstr "Tryb kolumny…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:775
+#: ../plugins/multiedit/multiedit/viewactivatable.py:777
 msgid "Removed edit point…"
 msgstr "Usunięto punkt modyfikowania…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:941
+#: ../plugins/multiedit/multiedit/viewactivatable.py:943
 msgid "Cancelled column mode…"
 msgstr "Anulowano tryb kolumny…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1304
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "Enter column edit mode using selection"
 msgstr "Proszę podać tryb edycji kolumny za pomocą zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr ""
 "Proszę podać <b>inteligentny</b> tryb edycji kolumny za pomocą zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1308
 msgid "<b>Smart</b> column align mode using selection"
 msgstr "<b>Inteligentny</b> tryb dopasowania kolumny za pomocą zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr ""
 "<b>Inteligentny</b> tryb dopasowania kolumny za pomocą dodatkowego miejsca "
 "za pomocą zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
 msgid "Toggle edit point"
 msgstr "Przełącz punkt modyfikowania"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1310
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
 msgid "Add edit point at beginning of line/selection"
 msgstr "Dodaj punkt modyfikowania na początku wiersza/zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
 msgid "Add edit point at end of line/selection"
 msgstr "Dodaj punkt modyfikowania na końcu wiersza/zaznaczenia"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1314
 msgid "Align edit points"
 msgstr "Dopasuj punkt modyfikowania"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1315
 msgid "Align edit points with additional space"
 msgstr "Dopasuj punkty modyfikowania za pomocą dodatkowego miejsca"
 
 #. ex:ts=4:et:
-#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:1
+#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:1
 msgid "Smart Spaces"
 msgstr "Inteligentne spacje"
-
-#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:2
-msgid "Forget you’re not using tabulations."
-msgstr "Tabulacja nie jest już potrzebna."
 
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
 msgid "Allow to unindent like if you were using tabs while you’re using spaces"
 msgstr "Pozwala na używanie spacji tak, jakby używane były tabulacje"
 
-#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
+#: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:2
+msgid "Forget you’re not using tabulations."
+msgstr "Tabulacja nie jest już potrzebna."
+
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:1
+#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:1
 msgid "SyncTeX"
 msgstr "SyncTeX"
-
-#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:2
-msgid "Synchronize between LaTeX and PDF with gedit and evince."
-msgstr ""
-"Synchronizuje między plikami LaTeX i PDF za pomocą programów gedit i Evince."
 
 #: ../plugins/synctex/gedit-synctex.metainfo.xml.in.h:2
 msgid "Synchronize between LaTeX and PDF with gedit and evince"
 msgstr ""
 "Synchronizuje między plikami LaTeX i PDF za pomocą programów gedit i Evince"
 
-#: ../plugins/synctex/synctex/synctex.py:342
+#: ../plugins/synctex/synctex.plugin.desktop.in.in.h:2
+msgid "Synchronize between LaTeX and PDF with gedit and evince."
+msgstr ""
+"Synchronizuje między plikami LaTeX i PDF za pomocą programów gedit i Evince."
+
+#: ../plugins/synctex/synctex/synctex.py:343
 msgid "Forward Search"
 msgstr "Wyszukiwanie w przód"
 
 #. ex:ts=4:et:
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
+#: ../plugins/terminal/terminal.py:316
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
+msgid "A simple terminal widget accessible from the bottom panel"
+msgstr "Prosty widżet terminala dostępny w dolnym panelu"
+
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:1
 msgid "Whether to silence terminal bell"
 msgstr "Określa, czy wyciszyć dzwonek terminala"
@@ -692,28 +703,30 @@ msgstr "Osadzony terminal"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Osadza terminal w dolnym panelu."
 
-#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:315
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:2
-msgid "A simple terminal widget accessible from the bottom panel"
-msgstr "Prosty widżet terminala dostępny w dolnym panelu"
-
-#: ../plugins/terminal/terminal.py:336
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "Zmień _katalog"
 
-#: ../plugins/textsize/textsize/__init__.py:53
+#. Let's conform to PEP8
+#. ex:ts=4:et:
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
+msgid "Text size"
+msgstr "Rozmiar tekstu"
+
+#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
+#: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
+msgid "Easily increase and decrease the text size"
+msgstr "Łatwe powiększanie i pomniejszanie rozmiaru tekstu"
+
+#: ../plugins/textsize/textsize/__init__.py:54
 msgid "_Normal size"
 msgstr "_Zwykły rozmiar"
 
-#: ../plugins/textsize/textsize/__init__.py:55
+#: ../plugins/textsize/textsize/__init__.py:56
 msgid "S_maller Text"
 msgstr "_Mniejszy tekst"
 
-#: ../plugins/textsize/textsize/__init__.py:57
+#: ../plugins/textsize/textsize/__init__.py:58
 msgid "_Larger Text"
 msgstr "_Większy tekst"
 
@@ -722,56 +735,13 @@ msgstr "_Większy tekst"
 msgid "Text Size"
 msgstr "Rozmiar tekstu"
 
-#: ../plugins/textsize/textsize.plugin.desktop.in.in.h:2
-#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:2
-msgid "Easily increase and decrease the text size"
-msgstr "Łatwe powiększanie i pomniejszanie rozmiaru tekstu"
-
-#: ../plugins/textsize/gedit-textsize.metainfo.xml.in.h:1
-msgid "Text size"
-msgstr "Rozmiar tekstu"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:1
-msgid "Translation languages"
-msgstr "Języki tłumaczenia"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:2
-msgid "Where to output translation:"
-msgstr "Wynik tłumaczenia:"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:3
-msgid "Same document window"
-msgstr "To samo okno dokumentu"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:4
-msgid "Translate console (bottom panel)"
-msgstr "Konsola tłumaczenia (dolny panel)"
-
-#: ../plugins/translate/translate/ui/preferences.ui.h:5
-msgid "Translation service:"
-msgstr "Usługa tłumaczeń:"
-
-#: ../plugins/translate/translate/__init__.py:72
-#, python-brace-format
-msgid "Translations powered by {0}"
-msgstr "Tłumaczenia dostarcza: {0}"
-
-#: ../plugins/translate/translate/__init__.py:75
-msgid "Translate Console"
-msgstr "Konsola tłumaczenia"
-
-#: ../plugins/translate/translate/__init__.py:152
-#, python-brace-format
-msgid "Translate selected text [{0}]"
-msgstr "Przetłumacz zaznaczony tekst ({0})"
-
-#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
 #: ../plugins/translate/gedit-translate.metainfo.xml.in.h:1
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:1
 msgid "Translate"
 msgstr "Tłumaczenie"
 
-#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
 #: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
+#: ../plugins/translate/translate.plugin.desktop.in.in.h:2
 msgid "Translates text into different languages"
 msgstr "Tłumaczy tekst na różne języki"
 
@@ -803,6 +773,48 @@ msgstr "Klucz API dla zdalnego serwera"
 msgid "Remote web service to use"
 msgstr "Używany zdalny serwis"
 
+#: ../plugins/translate/translate/__init__.py:73
+#, python-brace-format
+msgid "Translations powered by {0}"
+msgstr "Tłumaczenia dostarcza: {0}"
+
+#: ../plugins/translate/translate/__init__.py:76
+msgid "Translate Console"
+msgstr "Konsola tłumaczenia"
+
+#: ../plugins/translate/translate/__init__.py:153
+#, python-brace-format
+msgid "Translate selected text [{0}]"
+msgstr "Przetłumacz zaznaczony tekst ({0})"
+
+#: ../plugins/translate/translate/services/yandex.py:56
+msgid ""
+"You need to obtain a free API key at <a href='https://tech.yandex.com/"
+"translate/'>https://tech.yandex.com/translate/</a>"
+msgstr ""
+"Należy uzyskać bezpłatny klucz API na stronie <a href='https://tech.yandex."
+"com/translate/'>https://tech.yandex.com/translate/</a>"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:1
+msgid "Translation languages"
+msgstr "Języki tłumaczenia"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:2
+msgid "Where to output translation:"
+msgstr "Wynik tłumaczenia:"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:3
+msgid "Same document window"
+msgstr "To samo okno dokumentu"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:4
+msgid "Translate console (bottom panel)"
+msgstr "Konsola tłumaczenia (dolny panel)"
+
+#: ../plugins/translate/translate/ui/preferences.ui.h:5
+msgid "Translation service:"
+msgstr "Usługa tłumaczeń:"
+
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:1
 msgid "Interactive completion"
 msgstr "Uzupełnianie interaktywne"
@@ -810,6 +822,17 @@ msgstr "Uzupełnianie interaktywne"
 #: ../plugins/wordcompletion/gedit-word-completion-configure.ui.h:2
 msgid "Minimum word size:"
 msgstr "Minimalna długość wyrazu:"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
+msgid "Word completion"
+msgstr "Uzupełnianie wyrazów"
+
+#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
+msgid ""
+"Propose automatic completion using words already present in the document"
+msgstr ""
+"Sugeruje automatyczne uzupełnianie za pomocą wyrazów już obecnych "
+"w dokumencie"
 
 #: ../plugins/wordcompletion/gedit-word-completion-plugin.c:185
 msgid "Document Words"
@@ -839,27 +862,6 @@ msgstr "Uzupełnianie wyrazów"
 msgid "Word completion using the completion framework"
 msgstr "Uzupełnia wyrazy za pomocą struktury uzupełniania"
 
-#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:1
-msgid "Word completion"
-msgstr "Uzupełnianie wyrazów"
-
-#: ../plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in.h:2
-msgid ""
-"Propose automatic completion using words already present in the document"
-msgstr ""
-"Sugeruje automatyczne uzupełnianie za pomocą wyrazów już obecnych "
-"w dokumencie"
-
-#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
-msgid "Zeitgeist dataprovider"
-msgstr "Dostawca danych usługi Zeitgeist"
-
-#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
-msgid "Logs access and leave event for documents used with gedit"
-msgstr ""
-"Zapisuje zdarzenia dostępu i opuszczenia dla dokumentów modyfikowanych "
-"w programie gedit"
-
 #: ../plugins/zeitgeist/gedit-zeitgeist.metainfo.xml.in.h:1
 msgid "Zeitgeist Data provider"
 msgstr "Dostawca danych usługi Zeitgeist"
@@ -871,3 +873,13 @@ msgid ""
 msgstr ""
 "Nagrywa aktywność użytkownika, dostarczając łatwy dostęp do ostatnio "
 "używanych i najczęściej używanych plików"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:1
+msgid "Zeitgeist dataprovider"
+msgstr "Dostawca danych usługi Zeitgeist"
+
+#: ../plugins/zeitgeist/zeitgeist.plugin.desktop.in.h:2
+msgid "Logs access and leave event for documents used with gedit"
+msgstr ""
+"Zapisuje zdarzenia dostępu i opuszczenia dla dokumentów modyfikowanych "
+"w programie gedit"
