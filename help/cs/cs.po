@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the gedit help.
 #
 # Lucas Lommer <llommer@svn.gnome.org>, 2009.
-# Marek Černocký <marek@manet.cz>, 2009, 2010, 2013, 2014.
+# Marek Černocký <marek@manet.cz>, 2009, 2010, 2013, 2014, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
-"POT-Creation-Date: 2015-05-11 05:23+0000\n"
-"PO-Revision-Date: 2015-05-11 17:05+0200\n"
+"POT-Creation-Date: 2018-03-04 16:13+0000\n"
+"PO-Revision-Date: 2018-03-06 22:13+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -29,10 +29,10 @@ msgstr "Marek Černocký <marek@manet.cz>, 2013."
 
 #. (itstool) path: credit/name
 #: C/bookmarks.page:12 C/bracket-comp.page:11 C/character-map.page:11
-#: C/code-assistance.page:11 C/code-comment.page:11 C/color-picker.page:11
-#: C/commander.page:11 C/dashboard.page:11 C/draw-spaces.page:11
-#: C/join-split-lines.page:11 C/multi-edit.page:11 C/session-saver.page:11
-#: C/terminal.page:12 C/text-size.page:12 C/word-completion.page:11
+#: C/code-comment.page:11 C/color-picker.page:11 C/commander.page:11
+#: C/dashboard.page:11 C/draw-spaces.page:11 C/join-split-lines.page:11
+#: C/multi-edit.page:11 C/terminal.page:12 C/text-size.page:12
+#: C/word-completion.page:11
 msgid "Jim Campbell"
 msgstr "Jim Campbell"
 
@@ -263,59 +263,6 @@ msgid ""
 msgstr ""
 "Pro normální pokračování v úpravách musíte kliknout do zobrazení "
 "upravovaného dokumentu."
-
-#. (itstool) path: info/desc
-#: C/code-assistance.page:15
-msgid "Real-time error highlighting for supported languages."
-msgstr "Průběžně zvýrazňovat chyby pro podporované jazyky."
-
-#. (itstool) path: page/title
-#: C/code-assistance.page:18
-msgid "Code Assistance"
-msgstr "Pomocník s kódem"
-
-#. (itstool) path: page/p
-#: C/code-assistance.page:23
-msgid ""
-"The <app>gedit-code-assistance</app> plugin provides real-time error "
-"highlighting for C, C++ and Objective-C. To enable this plugin, select "
-"<guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem\">Preferences</"
-"gui> <gui>Plugins</gui><gui>Code Assistance</gui></guiseq>."
-msgstr ""
-"Zásuvný modul <app>Pomocník s kódem</app> poskytuje v reálném čase "
-"zvýrazňování chyb pro C, C++ a Objective-C. Pokud chcete zásuvný modul "
-"povolit, vyberte <guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem"
-"\">Předvolby</gui><gui>Zásuvné moduly</gui><gui>Pomocník s kódem</gui></"
-"guiseq>."
-
-#. (itstool) path: section/title
-#: C/code-assistance.page:41
-msgid "How the code assistance plugin works"
-msgstr "Jak zásuvný modul Pomocník s kódem funguje"
-
-#. (itstool) path: section/p
-#: C/code-assistance.page:43
-msgid ""
-"The plugin currently relies on information in the makefile to deduce the "
-"Clang error-highlighting rules. It examines the <_:code-1/> rules and "
-"determines which targets depend on the the file that is being parsed. The "
-"plugin then extracts the compiler flags by simulating an execution of those "
-"targets."
-msgstr ""
-"Zásuvný modul v současnosti spoléhá na informace v souboru makefile, aby "
-"zjistil pravidla pro zvýrazňování chyb překladače Clang. Zkoumá pravidla <_:"
-"code-1/> a určuje, které cíle závisí na souboru, který je analyzován. "
-"Nakonec zásuvný modul získá přepínače kompilátoru pomocí simulace spuštění "
-"těchto cílů."
-
-#. (itstool) path: section/p
-#: C/code-assistance.page:49
-msgid ""
-"This is not completely fool proof, of course. In the future, the plugin will "
-"allow you to manually specify the compile flags."
-msgstr ""
-"To není tak bláznivé, jak se může zdát. V budoucnu bude zásuvný modul "
-"umožňovat ručně určit přepínače kompilátoru."
 
 #. (itstool) path: info/desc
 #: C/code-comment.page:15
@@ -1073,107 +1020,6 @@ msgstr ""
 "všechna místa úprav. Opětovným zmáčknutím klávesy <key>Esc</key> se vypne "
 "režim vícenásobných úprav a editor se vrátí do běžného stavu."
 
-#. (itstool) path: info/desc
-#: C/session-saver.page:15
-msgid "Save and restore your working sessions."
-msgstr "Ukládat a obnovovat svá pracovní sezení."
-
-#. (itstool) path: page/title
-#: C/session-saver.page:18
-msgid "Session Saver"
-msgstr "Ukládání sezení"
-
-#. (itstool) path: page/p
-#: C/session-saver.page:20
-msgid ""
-"The <app>Session Saver</app> plugin saves groups of files together so that "
-"you can open them together at a later time. To enable the plugin, select "
-"<guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem\">Preferences</"
-"gui> <gui>Plugins</gui><gui>Session Saver</gui></guiseq>."
-msgstr ""
-"Zásuvný modul <app>Ukládání sezení</app> ukládá skupiny souborů dohromady "
-"tak, abyste je mohli později zase dohromady otevřít. Pokud chcete zásuvný "
-"modul povolit, vyberte <guiseq><gui style=\"menu\">gedit</gui><gui style="
-"\"menuitem\">Předvolby</gui><gui>Zásuvné moduly</gui><gui>Ukládání sezení</"
-"gui></guiseq>."
-
-#. (itstool) path: steps/title
-#: C/session-saver.page:26
-msgid "To save a new session:"
-msgstr "Když chcete uložit nové sezení:"
-
-#. (itstool) path: item/p
-#: C/session-saver.page:28
-msgid ""
-"Select <guiseq><gui>File</gui><gui>Saved Sessions</gui><gui>Save current "
-"session</gui></guiseq>."
-msgstr ""
-"Zvolte <guiseq><gui>Soubor</gui><gui>Uložená sezení</gui><gui>Uložit "
-"současné sezení</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/session-saver.page:32
-msgid "Type a session name in the <gui>Save session</gui> dialog box."
-msgstr "V dialogovém okně <gui>Uložit sezení</gui> napište název sezení."
-
-#. (itstool) path: item/p
-#: C/session-saver.page:35
-msgid "Click <gui>Save</gui>."
-msgstr "Klikněte na <gui>Uložit</gui>."
-
-#. (itstool) path: steps/title
-#: C/session-saver.page:40
-msgid "To open an existing session:"
-msgstr "Když chcete otevřít existující sezení:"
-
-#. (itstool) path: item/p
-#: C/session-saver.page:42
-msgid "Select <guiseq><gui>File</gui><gui>Saved Sessions</gui></guiseq>."
-msgstr "Zvolte <guiseq><gui>Soubor</gui><gui>Uložená sezení</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/session-saver.page:45
-msgid "Click the name of your desired session."
-msgstr "Klikněte na název požadovaného sezení."
-
-#. (itstool) path: steps/title
-#: C/session-saver.page:50
-msgid "To delete an existing session:"
-msgstr "Když chcete vymazat existující sezení:"
-
-#. (itstool) path: item/p
-#: C/session-saver.page:52
-msgid ""
-"Select <guiseq><gui>File</gui><gui>Saved Sessions</gui><gui>Manage saved "
-"sessions</gui></guiseq>."
-msgstr ""
-"Zvolte <guiseq><gui>Soubor</gui><gui>Uložená sezení</gui><gui>Spravovat "
-"uložená sezení</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/session-saver.page:56
-msgid "Select the name of the session that you want to delete."
-msgstr "Vyberte název sezení, které chcete smazat."
-
-#. (itstool) path: item/p
-#: C/session-saver.page:59
-msgid "Click <gui>Delete</gui>."
-msgstr "Klikněte na <gui>Smazat</gui>."
-
-#. (itstool) path: item/p
-#: C/session-saver.page:62
-msgid "Click <gui>Close</gui>."
-msgstr "Klikněte na <gui>Otevřít</gui>."
-
-#. (itstool) path: item/p
-#: C/session-saver.page:63
-msgid ""
-"The session name will still be listed in your list of sessions until you "
-"close <app>gedit</app>."
-msgstr ""
-"Název sezení bude stále uveden v seznamu sezení, dokud <app>gedit</app> "
-"neukončíte."
-
 #. (itstool) path: credit/name
 #: C/terminal.page:16 C/text-size.page:16 C/word-completion.page:19
 msgid "Sindhu S"
@@ -1213,7 +1059,8 @@ msgid "To enable the <app>Embedded Terminal</app> plugin:"
 msgstr "Pokud chcete zásuvný modul <app>Vestavěný terminál</app> povolit:"
 
 #. (itstool) path: item/p
-#: C/terminal.page:38 C/text-size.page:37 C/zeitgeist-dataprovider.page:28
+#: C/terminal.page:38 C/text-size.page:37 C/translate.page:30
+#: C/zeitgeist-dataprovider.page:28
 msgid ""
 "Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
 "\">Preferences</gui> <gui style=\"tab\">Plugins</gui></guiseq>."
@@ -1226,8 +1073,8 @@ msgstr ""
 msgid ""
 "Select <gui style=\"menuitem\">Embedded Terminal</gui> to enable the plugin."
 msgstr ""
-"Zásuvný modul povolíte vybráním <gui style=\"menuitem\">Vestavěný terminál</"
-"gui>."
+"Zásuvný modul povolíte zaškrtnutím políčka u <gui style=\"menuitem"
+"\">Vestavěný terminál</gui>."
 
 #. (itstool) path: section/title
 #: C/terminal.page:51
@@ -1285,7 +1132,8 @@ msgstr "Pokud chcete zásuvný modul Velikost textu povolit:"
 #: C/text-size.page:42
 msgid "Select <gui style=\"menuitem\">Text Size</gui> to enable the plugin."
 msgstr ""
-"Zásuvný modul povolíte vybráním <gui style=\"menuitem\">Velikost textu</gui>."
+"Zásuvný modul povolíte zaškrtnutím políčka u <gui style=\"menuitem"
+"\">Velikost textu</gui>."
 
 #. (itstool) path: section/title
 #: C/text-size.page:50
@@ -1328,10 +1176,99 @@ msgstr ""
 "Pro <em>vrácení</em> velikosti textu na výchozí velikost zmáčkněte "
 "<keyseq><key>Ctrl</key><key>0</key></keyseq>."
 
+#. (itstool) path: credit/name
+#: C/translate.page:11
+msgid "Jordi Mas i Hernàndez"
+msgstr "Jordi Mas i Hernàndez"
+
+#. (itstool) path: info/desc
+#: C/translate.page:17
+msgid "Translate text into different languages"
+msgstr "Překládá texty do různých národních jazyků"
+
+#. (itstool) path: page/title
+#: C/translate.page:20
+msgid "Translate"
+msgstr "Překlady"
+
+#. (itstool) path: page/p
+#: C/translate.page:22
+msgid ""
+"The <app>Translate</app> plugin allows you to translate text from "
+"<app>gedit</app> using Apertium and Yandex engines."
+msgstr ""
+"Zásuvný modul <app>Překlady</app> umožňuje překládat texty z editoru "
+"<app>gedit</app> pomocí strojů Apertium a Yandex."
+
+#. (itstool) path: section/title
+#: C/translate.page:25
+msgid "Enabling and configuring the Translate plugin"
+msgstr "Povolení a nastavení zásuvného modulu Překlady"
+
+#. (itstool) path: steps/title
+#: C/translate.page:28
+#| msgid "To enable the <app>Embedded Terminal</app> plugin:"
+msgid "To enable the <app>Translate</app> plugin:"
+msgstr "Pokud chcete zásuvný modul <app>Překlady</app> povolit:"
+
+#. (itstool) path: item/p
+#: C/translate.page:35
+#| msgid "Select <gui style=\"menuitem\">Text Size</gui> to enable the plugin."
+msgid "Select <gui style=\"menuitem\">Translate</gui> to enable the plugin."
+msgstr ""
+"Zásuvný modul povolíte zaškrtnutím políčka u <gui style=\"menuitem"
+"\">Překlady</gui>."
+
+#. (itstool) path: item/p
+#: C/translate.page:40
+msgid ""
+"Select <gui style=\"button\">Preferences</gui> to configure the translation "
+"engine to use and a language pair."
+msgstr ""
+"Pro nastavení, který překladový stroj se má používat a páru jazyků, vyberte "
+"<gui style=\"button\">Předvolby</gui>."
+
+#. (itstool) path: section/title
+#: C/translate.page:47
+msgid "Using the Translate plugin"
+msgstr "Používání zásuvného modulu Překlady"
+
+#. (itstool) path: steps/title
+#: C/translate.page:50
+msgid "To translate a text:"
+msgstr "Když chcete přeložit text:"
+
+#. (itstool) path: item/p
+#: C/translate.page:52
+#| msgid "Select the name of the session that you want to delete."
+msgid "Select the part of text that you would like to translate."
+msgstr "Vyberte část textu, kterou si přejete přeložit."
+
+#. (itstool) path: item/p
+#: C/translate.page:55
+#| msgid ""
+#| "Press <keyseq><key>Ctrl</key><key>B</key></keyseq> to move to the next "
+#| "bookmark."
+msgid ""
+"Press <keyseq><key>Ctrl</key><key>M</key></keyseq> or use the context menu "
+"to translate it."
+msgstr ""
+"Zmáčknutím <keyseq><key>Ctrl</key><key>M</key></keyseq> nebo pomocí "
+"kontextové nabídky je přeložíte."
+
+#. (itstool) path: item/p
+#: C/translate.page:56
+msgid ""
+"The translation appears in the document or in the bottom panel, depending on "
+"your configuration."
+msgstr ""
+"Překlad se objeví v dokumentu nebo ve spodním panelu, záleží na vašem "
+"nastavení."
+
 #. (itstool) path: info/desc
 #: C/word-completion.page:25
 msgid "Autocomplete words or portions of code as you type."
-msgstr "Během psaní automaticky dokončovat slova nebo části kódu."
+msgstr "Během psaní automaticky dokončuje slova nebo části kódu."
 
 #. (itstool) path: page/title
 #: C/word-completion.page:28
@@ -1361,8 +1298,8 @@ msgstr ""
 msgid ""
 "Select <gui style=\"menuitem\">Word Completion</gui> to enable the plugin."
 msgstr ""
-"Zásuvný modul povolíte vybráním <gui style=\"menuitem\">Dokončování slov</"
-"gui>."
+"Zásuvný modul povolíte zaškrtnutím políčka u <gui style=\"menuitem"
+"\">Dokončování slov</gui>."
 
 #. (itstool) path: page/p
 #: C/word-completion.page:45
@@ -1430,3 +1367,111 @@ msgstr "Povolení poskytovatele dat Zeitgeist"
 #: C/zeitgeist-dataprovider.page:33
 msgid "Select <gui style=\"menuitem\">Zeitgeist Dataprovider</gui>."
 msgstr "Vyberte <gui style=\"menuitem\">Poskytovatel dat Zeitgeist</gui>."
+
+#~ msgid "Real-time error highlighting for supported languages."
+#~ msgstr "Průběžně zvýrazňovat chyby pro podporované jazyky."
+
+#~ msgid "Code Assistance"
+#~ msgstr "Pomocník s kódem"
+
+#~ msgid ""
+#~ "The <app>gedit-code-assistance</app> plugin provides real-time error "
+#~ "highlighting for C, C++ and Objective-C. To enable this plugin, select "
+#~ "<guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui>Plugins</gui><gui>Code Assistance</gui></"
+#~ "guiseq>."
+#~ msgstr ""
+#~ "Zásuvný modul <app>Pomocník s kódem</app> poskytuje v reálném čase "
+#~ "zvýrazňování chyb pro C, C++ a Objective-C. Pokud chcete zásuvný modul "
+#~ "povolit, vyberte <guiseq><gui style=\"menu\">gedit</gui><gui style="
+#~ "\"menuitem\">Předvolby</gui><gui>Zásuvné moduly</gui><gui>Pomocník s "
+#~ "kódem</gui></guiseq>."
+
+#~ msgid "How the code assistance plugin works"
+#~ msgstr "Jak zásuvný modul Pomocník s kódem funguje"
+
+#~ msgid ""
+#~ "The plugin currently relies on information in the makefile to deduce the "
+#~ "Clang error-highlighting rules. It examines the <_:code-1/> rules and "
+#~ "determines which targets depend on the the file that is being parsed. The "
+#~ "plugin then extracts the compiler flags by simulating an execution of "
+#~ "those targets."
+#~ msgstr ""
+#~ "Zásuvný modul v současnosti spoléhá na informace v souboru makefile, aby "
+#~ "zjistil pravidla pro zvýrazňování chyb překladače Clang. Zkoumá pravidla "
+#~ "<_:code-1/> a určuje, které cíle závisí na souboru, který je analyzován. "
+#~ "Nakonec zásuvný modul získá přepínače kompilátoru pomocí simulace "
+#~ "spuštění těchto cílů."
+
+#~ msgid ""
+#~ "This is not completely fool proof, of course. In the future, the plugin "
+#~ "will allow you to manually specify the compile flags."
+#~ msgstr ""
+#~ "To není tak bláznivé, jak se může zdát. V budoucnu bude zásuvný modul "
+#~ "umožňovat ručně určit přepínače kompilátoru."
+
+#~ msgid "Save and restore your working sessions."
+#~ msgstr "Ukládat a obnovovat svá pracovní sezení."
+
+#~ msgid "Session Saver"
+#~ msgstr "Ukládání sezení"
+
+#~ msgid ""
+#~ "The <app>Session Saver</app> plugin saves groups of files together so "
+#~ "that you can open them together at a later time. To enable the plugin, "
+#~ "select <guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui>Plugins</gui><gui>Session Saver</gui></guiseq>."
+#~ msgstr ""
+#~ "Zásuvný modul <app>Ukládání sezení</app> ukládá skupiny souborů dohromady "
+#~ "tak, abyste je mohli později zase dohromady otevřít. Pokud chcete zásuvný "
+#~ "modul povolit, vyberte <guiseq><gui style=\"menu\">gedit</gui><gui style="
+#~ "\"menuitem\">Předvolby</gui><gui>Zásuvné moduly</gui><gui>Ukládání "
+#~ "sezení</gui></guiseq>."
+
+#~ msgid "To save a new session:"
+#~ msgstr "Když chcete uložit nové sezení:"
+
+#~ msgid ""
+#~ "Select <guiseq><gui>File</gui><gui>Saved Sessions</gui><gui>Save current "
+#~ "session</gui></guiseq>."
+#~ msgstr ""
+#~ "Zvolte <guiseq><gui>Soubor</gui><gui>Uložená sezení</gui><gui>Uložit "
+#~ "současné sezení</gui></guiseq>."
+
+#~ msgid "Type a session name in the <gui>Save session</gui> dialog box."
+#~ msgstr "V dialogovém okně <gui>Uložit sezení</gui> napište název sezení."
+
+#~ msgid "Click <gui>Save</gui>."
+#~ msgstr "Klikněte na <gui>Uložit</gui>."
+
+#~ msgid "To open an existing session:"
+#~ msgstr "Když chcete otevřít existující sezení:"
+
+#~ msgid "Select <guiseq><gui>File</gui><gui>Saved Sessions</gui></guiseq>."
+#~ msgstr "Zvolte <guiseq><gui>Soubor</gui><gui>Uložená sezení</gui></guiseq>."
+
+#~ msgid "Click the name of your desired session."
+#~ msgstr "Klikněte na název požadovaného sezení."
+
+#~ msgid "To delete an existing session:"
+#~ msgstr "Když chcete vymazat existující sezení:"
+
+#~ msgid ""
+#~ "Select <guiseq><gui>File</gui><gui>Saved Sessions</gui><gui>Manage saved "
+#~ "sessions</gui></guiseq>."
+#~ msgstr ""
+#~ "Zvolte <guiseq><gui>Soubor</gui><gui>Uložená sezení</gui><gui>Spravovat "
+#~ "uložená sezení</gui></guiseq>."
+
+#~ msgid "Click <gui>Delete</gui>."
+#~ msgstr "Klikněte na <gui>Smazat</gui>."
+
+#~ msgid "Click <gui>Close</gui>."
+#~ msgstr "Klikněte na <gui>Otevřít</gui>."
+
+#~ msgid ""
+#~ "The session name will still be listed in your list of sessions until you "
+#~ "close <app>gedit</app>."
+#~ msgstr ""
+#~ "Název sezení bude stále uveden v seznamu sezení, dokud <app>gedit</app> "
+#~ "neukončíte."

@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2018-01-28 22:32+0000\n"
-"PO-Revision-Date: 2018-01-29 10:15+0100\n"
+"POT-Creation-Date: 2018-03-05 20:52+0000\n"
+"PO-Revision-Date: 2018-03-06 22:07+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -69,7 +69,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "Automaticky přidává zavírací závorku, když nějakou závorku vložíte."
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:56
+#: ../plugins/charmap/charmap/__init__.py:57
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Mapa znaků"
@@ -96,11 +96,11 @@ msgstr "Komentování kódu"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Zakomentovat nebo odkomentovat vybraný blok kódu."
 
-#: ../plugins/codecomment/codecomment.py:118
+#: ../plugins/codecomment/codecomment.py:119
 msgid "Co_mment Code"
 msgstr "Zako_mentovat kód"
 
-#: ../plugins/codecomment/codecomment.py:124
+#: ../plugins/codecomment/codecomment.py:125
 msgid "U_ncomment Code"
 msgstr "_Odkomentovat kód"
 
@@ -117,11 +117,11 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Vyběr barvy v dialogovém okně a vložení jejího šestnáctkového vyjádření."
 
-#: ../plugins/colorpicker/colorpicker.py:132
+#: ../plugins/colorpicker/colorpicker.py:133
 msgid "Pick _Color…"
 msgstr "Vybrat barvu…"
 
-#: ../plugins/colorpicker/colorpicker.py:172
+#: ../plugins/colorpicker/colorpicker.py:173
 msgid "Pick Color"
 msgstr "Výběr barvy"
 
@@ -136,7 +136,7 @@ msgstr "Výběr a vkládání barev z dialogového okna (pro HTML, CSS, PHP)"
 
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:42
+#: ../plugins/colorschemer/schemer/__init__.py:50
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Editor barevného schématu"
@@ -206,7 +206,7 @@ msgstr "Autor"
 msgid "Sample"
 msgstr "Ukázka"
 
-#: ../plugins/commander/commander/appactivatable.py:48
+#: ../plugins/commander/commander/appactivatable.py:56
 msgid "Commander Mode"
 msgstr "Příkazový režim"
 
@@ -221,11 +221,11 @@ msgstr "Příkazový režim"
 msgid "Command line interface for advanced editing"
 msgstr "Rozhraní příkazového řádku k pokročilým úpravám"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:117
+#: ../plugins/dashboard/dashboard/dashboard.py:125
 msgid "Empty Document"
 msgstr "Prázdný dokument"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:158
+#: ../plugins/dashboard/dashboard/dashboard.py:166
 msgid "Type here to search…"
 msgstr "Vyhledávejte psaním…"
 
@@ -399,11 +399,11 @@ msgstr "Spojit/rozdělit řádky"
 msgid "Join several lines or split long ones"
 msgstr "Spojí několik řádků nebo rozdělí dlouhé řádky"
 
-#: ../plugins/joinlines/joinlines.py:111
+#: ../plugins/joinlines/joinlines.py:112
 msgid "_Join Lines"
 msgstr "Spo_jit řádky"
 
-#: ../plugins/joinlines/joinlines.py:117
+#: ../plugins/joinlines/joinlines.py:118
 msgid "_Split Lines"
 msgstr "_Rozdělit řádky"
 
@@ -417,8 +417,8 @@ msgstr "Vícenásobná úprava"
 msgid "Edit document in multiple places at once"
 msgstr "Úprava dokumentu na více místech současně"
 
-#: ../plugins/multiedit/multiedit/appactivatable.py:36
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1349
+#: ../plugins/multiedit/multiedit/appactivatable.py:44
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1351
 msgid "Multi Edit Mode"
 msgstr "Režim vícenásobné úpravy"
 
@@ -427,56 +427,56 @@ msgstr "Režim vícenásobné úpravy"
 msgid "Multi Edit"
 msgstr "Vícenásobná úprava"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:315
+#: ../plugins/multiedit/multiedit/viewactivatable.py:317
 msgid "Added edit point…"
 msgstr "Přidat editační bod…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:657
+#: ../plugins/multiedit/multiedit/viewactivatable.py:659
 msgid "Column Mode…"
 msgstr "Sloupcový režim…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:775
+#: ../plugins/multiedit/multiedit/viewactivatable.py:777
 msgid "Removed edit point…"
 msgstr "Odebrat editační bod…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:941
+#: ../plugins/multiedit/multiedit/viewactivatable.py:943
 msgid "Cancelled column mode…"
 msgstr "Sloupcový režim zrušen…"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1304
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "Enter column edit mode using selection"
 msgstr "Vstoupit do režimu úpravy sloupců pomocí výběru"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr "Vstoupit do <b>chytrého</b> režimu úpravy sloupců pomocí výběru"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1308
 msgid "<b>Smart</b> column align mode using selection"
 msgstr "<b>Chytrý</b> režim zarovnání sloupců pomocí výběru"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr ""
 "<b>Chytrý</b> režim zarovnání sloupců s doplňujícím místem pomocí výběru"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
 msgid "Toggle edit point"
 msgstr "Přepnout editační bod"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1310
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
 msgid "Add edit point at beginning of line/selection"
 msgstr "Přidat editační bod na začátek řádku/výběru"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
 msgid "Add edit point at end of line/selection"
 msgstr "Přidat editační bod na konec řádku/výběru"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1314
 msgid "Align edit points"
 msgstr "Editační body zarovnání"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1315
 msgid "Align edit points with additional space"
 msgstr "Editační body zarovnání s doplňujícím místem"
 
@@ -489,8 +489,8 @@ msgstr "Inteligentní mezery"
 #: ../plugins/smartspaces/gedit-smartspaces.metainfo.xml.in.h:2
 msgid "Allow to unindent like if you were using tabs while you’re using spaces"
 msgstr ""
-"Umožňuje rušit odsazení při používání mezer stejně snadno, jako při používání "
-"tabulátorů"
+"Umožňuje rušit odsazení při používání mezer stejně snadno, jako při "
+"používání tabulátorů"
 
 #: ../plugins/smartspaces/smartspaces.plugin.desktop.in.in.h:2
 msgid "Forget you’re not using tabulations."
@@ -509,13 +509,13 @@ msgstr "Synchronizuje mezi formáty LaTeX a PDF v aplikacích gedit a evince"
 msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Synchronizuje mezi formáty LaTeX a PDF v aplikacích gedit a evince."
 
-#: ../plugins/synctex/synctex/synctex.py:342
+#: ../plugins/synctex/synctex/synctex.py:343
 msgid "Forward Search"
 msgstr "Hledat vpřed"
 
 #. ex:ts=4:et:
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:315
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminál"
 
@@ -678,8 +678,8 @@ msgid ""
 "monospace (and the most similar font it can come up with otherwise)."
 msgstr ""
 "Pokud je zapnuto, bude terminál používat standardní písmo globálně nastavené "
-"pro uživatelské prostředí, za předpokladu, že jde o písmo s pevnou šířkou ("
-"monospace nebo nějaké podobné)."
+"pro uživatelské prostředí, za předpokladu, že jde o písmo s pevnou šířkou "
+"(monospace nebo nějaké podobné)."
 
 #: ../plugins/terminal/org.gnome.gedit.plugins.terminal.gschema.xml.h:27
 msgid "Font"
@@ -698,7 +698,7 @@ msgstr "Vestavěný terminál"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Vložení terminálu do dolního panelu."
 
-#: ../plugins/terminal/terminal.py:336
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "Z_měnit složku"
 
@@ -713,15 +713,15 @@ msgstr "Velikost textu"
 msgid "Easily increase and decrease the text size"
 msgstr "Snadné zvětšování a zmenšování velikosti textu"
 
-#: ../plugins/textsize/textsize/__init__.py:53
+#: ../plugins/textsize/textsize/__init__.py:54
 msgid "_Normal size"
 msgstr "_Normální velikost"
 
-#: ../plugins/textsize/textsize/__init__.py:55
+#: ../plugins/textsize/textsize/__init__.py:56
 msgid "S_maller Text"
 msgstr "_Menší text"
 
-#: ../plugins/textsize/textsize/__init__.py:57
+#: ../plugins/textsize/textsize/__init__.py:58
 msgid "_Larger Text"
 msgstr "_Větší text"
 
@@ -738,7 +738,7 @@ msgstr "Překlady"
 #: ../plugins/translate/gedit-translate.metainfo.xml.in.h:2
 #: ../plugins/translate/translate.plugin.desktop.in.in.h:2
 msgid "Translates text into different languages"
-msgstr "Překládá texty do různých jazyků"
+msgstr "Překládá texty do různých národních jazyků"
 
 #: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:1
 msgid "Where translation output is shown"
@@ -768,19 +768,27 @@ msgstr "Klíč API pro vzdálenou webovou službu"
 msgid "Remote web service to use"
 msgstr "Vzdálená webová služba, která se má použít"
 
-#: ../plugins/translate/translate/__init__.py:72
+#: ../plugins/translate/translate/__init__.py:73
 #, python-brace-format
 msgid "Translations powered by {0}"
 msgstr "Překlady provádí {0}"
 
-#: ../plugins/translate/translate/__init__.py:75
+#: ../plugins/translate/translate/__init__.py:76
 msgid "Translate Console"
 msgstr "Překladová konzola"
 
-#: ../plugins/translate/translate/__init__.py:152
+#: ../plugins/translate/translate/__init__.py:153
 #, python-brace-format
 msgid "Translate selected text [{0}]"
 msgstr "Přeložit vybraný text [{0}]"
+
+#: ../plugins/translate/translate/services/yandex.py:56
+msgid ""
+"You need to obtain a free API key at <a href='https://tech.yandex.com/"
+"translate/'>https://tech.yandex.com/translate/</a>"
+msgstr ""
+"Potřebujete na <a href='https://tech.yandex.com/translate/'>https://tech."
+"yandex.com/translate/</a> získat zdarma klíč k API"
 
 #: ../plugins/translate/translate/ui/preferences.ui.h:1
 msgid "Translation languages"
