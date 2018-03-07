@@ -21,6 +21,15 @@ import urllib.request, urllib.parse, urllib.error
 import json
 from .service import Service
 
+try:
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
+except:
+    _ = lambda s: s
+
+
 class Yandex(Service):
 
     g_language_codes = []

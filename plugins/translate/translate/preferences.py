@@ -24,6 +24,13 @@ from gpdefs import *
 from .services.services import Services
 from .settings import Settings
 
+try:
+    import gettext
+    gettext.bindtextdomain('gedit-plugins')
+    gettext.textdomain('gedit-plugins')
+    _ = gettext.gettext
+except:
+    _ = lambda s: s
 
 class Preferences(object):
 
@@ -75,7 +82,7 @@ class Preferences(object):
 
         if show is True:
             service = Services.get(self._service_id)
-            self._apilabel = Gtk.Label("API Key")
+            self._apilabel = Gtk.Label(_("API Key"))
             self._apikey = Gtk.Entry(expand=True)
             self._apikey.connect('changed', self._changed_apikey)
             key = self._settings.get_apikey()

@@ -59,8 +59,9 @@ plugins/textsize/textsize.plugin.desktop.in.in
 plugins/translate/gedit-translate.metainfo.xml.in
 plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml
 plugins/translate/translate/__init__.py
-plugins/translate/translate/services/yandex.py
 plugins/translate/translate.plugin.desktop.in.in
+plugins/translate/translate/preferences.py
+plugins/translate/translate/services/yandex.py
 [type: gettext/glade]plugins/translate/translate/ui/preferences.ui
 [type: gettext/glade]plugins/wordcompletion/gedit-word-completion-configure.ui
 plugins/wordcompletion/gedit-wordcompletion.metainfo.xml.in

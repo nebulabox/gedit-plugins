@@ -19,14 +19,6 @@
 
 from abc import ABCMeta, abstractmethod
 
-try:
-    import gettext
-    gettext.bindtextdomain('gedit-plugins')
-    gettext.textdomain('gedit-plugins')
-    _ = gettext.gettext
-except:
-    _ = lambda s: s
-
 class Service(metaclass=ABCMeta):
 
     @abstractmethod
