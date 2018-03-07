@@ -10,9 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catalan translation of gedit plugins\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2018-03-05 20:52+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-07 18:26+0100\n"
 "PO-Revision-Date: 2017-07-18 21:30+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -789,7 +788,11 @@ msgstr "Consola de traducció"
 msgid "Translate selected text [{0}]"
 msgstr "Tradueix el text seleccionat [{0}]"
 
-#: ../plugins/translate/translate/services/yandex.py:56
+#: ../plugins/translate/translate/preferences.py:85
+msgid "API Key"
+msgstr "Clau API"
+
+#: ../plugins/translate/translate/services/yandex.py:65
 msgid ""
 "You need to obtain a free API key at <a href='https://tech.yandex.com/"
 "translate/'>https://tech.yandex.com/translate/</a>"
