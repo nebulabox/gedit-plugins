@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2018-03-05 20:52+0000\n"
-"PO-Revision-Date: 2018-03-06 22:07+0100\n"
+"POT-Creation-Date: 2018-03-07 17:29+0000\n"
+"PO-Revision-Date: 2018-03-09 14:32+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -782,7 +782,11 @@ msgstr "Překladová konzola"
 msgid "Translate selected text [{0}]"
 msgstr "Přeložit vybraný text [{0}]"
 
-#: ../plugins/translate/translate/services/yandex.py:56
+#: ../plugins/translate/translate/preferences.py:85
+msgid "API Key"
+msgstr "Klíč API"
+
+#: ../plugins/translate/translate/services/yandex.py:65
 msgid ""
 "You need to obtain a free API key at <a href='https://tech.yandex.com/"
 "translate/'>https://tech.yandex.com/translate/</a>"
