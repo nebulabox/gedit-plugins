@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catalan translation of gedit plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-07 18:26+0100\n"
+"POT-Creation-Date: 2018-03-10 15:59+0100\n"
 "PO-Revision-Date: 2017-07-18 21:30+0200\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -783,7 +783,7 @@ msgstr "Traduccions proporcionades per [{0}]"
 msgid "Translate Console"
 msgstr "Consola de traducció"
 
-#: ../plugins/translate/translate/__init__.py:153
+#: ../plugins/translate/translate/__init__.py:152
 #, python-brace-format
 msgid "Translate selected text [{0}]"
 msgstr "Tradueix el text seleccionat [{0}]"
@@ -801,8 +801,8 @@ msgstr ""
 "translate/'>https://tech.yandex.com/translate/</a>"
 
 #: ../plugins/translate/translate/ui/preferences.ui.h:1
-msgid "Translation languages"
-msgstr "Llengües de traducció"
+msgid "Translation languages:"
+msgstr "Llengües de traducció:"
 
 #: ../plugins/translate/translate/ui/preferences.ui.h:2
 msgid "Where to output translation:"
