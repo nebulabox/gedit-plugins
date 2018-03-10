@@ -764,7 +764,7 @@ msgstr "Parell d'idiomes utilitzat"
 
 #: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:4
 msgid "Language pair used to translate from one language to another"
-msgstr "Parell d'idiomes utilitzat per traduir d'una idioma a un altre"
+msgstr "Parell d'idiomes utilitzat per traduir d'un idioma a un altre"
 
 #: ../plugins/translate/org.gnome.gedit.plugins.translate.gschema.xml.h:5
 msgid "API key for remote web service"
@@ -777,7 +777,7 @@ msgstr "Servei web remot a utilitzar"
 #: ../plugins/translate/translate/__init__.py:73
 #, python-brace-format
 msgid "Translations powered by {0}"
-msgstr "Traduccions proporcionades per [{0}]"
+msgstr "Traduccions proporcionades per {0}"
 
 #: ../plugins/translate/translate/__init__.py:76
 msgid "Translate Console"
