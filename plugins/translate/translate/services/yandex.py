@@ -71,7 +71,7 @@ class Yandex(Service):
         self._key = key
 
     def init(self):
-        self._get_remote_language_names()
+        self._fetch_remote_language_names()
 
     def get_language_names(self):
         if len(Yandex.g_language_codes) > 0 and len(Yandex.g_language_names) > 0:
@@ -96,7 +96,7 @@ class Yandex(Service):
     def _get_language_name(self, langcode, locales_names):
         return locales_names[langcode]
 
-    def _get_remote_language_names(self):
+    def _fetch_remote_language_names(self):
 
         try:
             url = "{0}/getLangs?ui=en&key={1}".format(self.SERVER, self._key)
@@ -120,7 +120,7 @@ class Yandex(Service):
             Yandex.g_language_codes = language_codes
 
         except Exception as e:
-            print("_get_remote_language_names exception {0}".format(e))
+            print("_fetch_remote_language_names exception {0}".format(e))
 
 
     def translate_text(self, text, language_pair):
