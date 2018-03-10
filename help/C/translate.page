@@ -52,7 +52,7 @@
       <p>Select the part of text that you would like to translate.</p>
     </item>
     <item>
-      <p>Press <keyseq><key>Ctrl</key><key>M</key></keyseq> or use the context menu to translate it.</p>
+      <p>Press <keyseq><key>Ctrl</key><key>K</key></keyseq> or use the context menu to translate it.</p>
       <p>The translation appears in the document or in the bottom panel, depending on your configuration.</p>
     </item>
   </steps>

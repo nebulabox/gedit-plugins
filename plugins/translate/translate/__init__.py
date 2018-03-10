@@ -46,7 +46,7 @@ class TranslateAppActivatable(GObject.Object, Gedit.AppActivatable):
         GObject.Object.__init__(self)
 
     def do_activate(self):
-        self.app.add_accelerator("<Primary>M", "win.translate", None)
+        self.app.add_accelerator("<Primary>K", "win.translate", None)
        
     def do_deactivate(self):
         self.app.remove_accelerator("win.translate", None)
