@@ -99,6 +99,10 @@ class Yandex(Service):
     def _fetch_remote_language_names(self):
 
         try:
+
+            if len(self._key) == 0:
+                return
+
             url = "{0}/getLangs?ui=en&key={1}".format(self.SERVER, self._key)
             response = urllib.request.urlopen(url)
             payload = json.loads(response.read().decode("utf-8"))
