@@ -60,7 +60,7 @@ class Apertium(Service):
         pass
 
     def init(self):
-        self._get_remote_language_names_and_pairs()
+        self._fetch_remote_language_names_and_pairs()
 
     def get_language_names(self):
         if len(Apertium.g_language_codes) > 0 and len(Apertium.g_language_names) > 0:
@@ -124,7 +124,7 @@ class Apertium(Service):
         return locales_names
 
 
-    def _get_remote_language_names_and_pairs(self):
+    def _fetch_remote_language_names_and_pairs(self):
         if len(Apertium.g_language_names) > 0:
             return
 
@@ -154,7 +154,7 @@ class Apertium(Service):
             Apertium.g_language_codes = language_codes
 
         except Exception as e:
-            print("_get_remote_language_names_and_pairs exception {0}".format(e))
+            print("_fetch_remote_language_names_and_pairs exception {0}".format(e))
 
 
     def _get_remote_language_pairs(self):
