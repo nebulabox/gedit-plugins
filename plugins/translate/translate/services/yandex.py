@@ -126,7 +126,6 @@ class Yandex(Service):
         except Exception as e:
             print("_fetch_remote_language_names exception {0}".format(e))
 
-
     def translate_text(self, text, language_pair):
         language_pair = language_pair.replace('|', '-')
         url = "{0}/translate?lang={1}&format=plain&key={2}".format(self.SERVER, language_pair, self._key)
