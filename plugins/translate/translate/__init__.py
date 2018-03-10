@@ -91,9 +91,8 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
         service_id = settings.get_service()
         return Services.get_name(service_id)
      
-    def _get_translation_service(self):
+    def _get_translation_service(self, service_id):
         settings = Settings()
-        service_id = settings.get_service()
         service = Services.get(service_id)
         if service.has_api_key() is True:
             key = settings.get_apikey()
@@ -103,7 +102,7 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
         return service
  
     def get_languages_names_codes(self, service_id):
-        service = self._get_translation_service()
+        service = self._get_translation_service(service_id)
         return service.get_language_names(), service.get_language_codes()
 
     def do_create_configure_widget(self):
