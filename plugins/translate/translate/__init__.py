@@ -70,7 +70,7 @@ class TranslateWindowActivatable(GObject.Object, Gedit.WindowActivatable, PeasGt
                                                    'window' : self.window})
 
         name = self._get_translation_service_name()
-        g_console.write(_('Translations powered by {0}'.format(name)))
+        g_console.write(_('Translations powered by {0}').format(name))
         bottom = self.window.get_bottom_panel()
         g_console.show_all()
         bottom.add_titled(g_console, "GeditTranslateConsolePanel", _('Translate Console'))
