@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-plugins-help\n"
-"POT-Creation-Date: 2018-03-04 16:13+0000\n"
-"PO-Revision-Date: 2018-03-04 17:18+0100\n"
+"POT-Creation-Date: 2018-03-10 14:53+0000\n"
+"PO-Revision-Date: 2018-03-10 17:42+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -1226,10 +1226,10 @@ msgstr "Zaznacz część tekstu do przetłumaczenia."
 #. (itstool) path: item/p
 #: C/translate.page:55
 msgid ""
-"Press <keyseq><key>Ctrl</key><key>M</key></keyseq> or use the context menu "
+"Press <keyseq><key>Ctrl</key><key>K</key></keyseq> or use the context menu "
 "to translate it."
 msgstr ""
-"Naciśnij klawisze <keyseq><key>Ctrl</key><key>M</key></keyseq> lub użyj menu "
+"Naciśnij klawisze <keyseq><key>Ctrl</key><key>K</key></keyseq> lub użyj menu "
 "kontekstowego, aby go przetłumaczyć."
 
 #. (itstool) path: item/p
