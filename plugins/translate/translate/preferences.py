@@ -93,6 +93,7 @@ class Preferences(object):
 
             self._hint = Gtk.Label()
             self._hint.set_markup(service.get_api_hint())
+            self._apilabel.set_margin_right(12)
             apibox_container.add(self._hint)
             apibox_container.show_all()
         else:

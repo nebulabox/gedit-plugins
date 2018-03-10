@@ -5,23 +5,26 @@
   <object class="GtkGrid" id="grid">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="margin_left">18</property>
+    <property name="margin_right">18</property>
+    <property name="margin_top">18</property>
+    <property name="margin_bottom">18</property>
     <property name="row_spacing">6</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="halign">start</property>
-            <property name="margin_right">3</property>
-            <property name="label" translatable="yes">Translation languages</property>
+            <property name="margin_right">12</property>
+            <property name="label" translatable="yes">Translation languages:</property>
             <property name="justify">right</property>
           </object>
           <packing>
-            <property name="expand">True</property>
+            <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
@@ -34,7 +37,7 @@
             <property name="id_column">0</property>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">1</property>
           </packing>
@@ -53,6 +56,7 @@
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="margin_right">12</property>
             <property name="label" translatable="yes">Where to output translation:</property>
           </object>
           <packing>
@@ -149,6 +153,7 @@
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="margin_right">12</property>
             <property name="label" translatable="yes">Translation service:</property>
           </object>
           <packing>
