@@ -16,23 +16,23 @@
 # Kenneth Venken <kenneth.venken@gmail.com>, 2010.
 # Hannie Dumoleyn <lafeber-dumoleyn2@zonnet.nl>, 2010.
 # Justin van Steijn <jvs@fsfe.org>, 2016, 2018.
-# Nathan Follens <nthn@unseen.is>, 2017.
+# Nathan Follens <nthn@unseen.is>, 2017-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2018-02-01 02:49+0000\n"
-"PO-Revision-Date: 2018-02-23 21:18+0100\n"
-"Last-Translator: Justin van Steijn <jvs@fsfe.org>\n"
+"POT-Creation-Date: 2018-03-11 08:53+0000\n"
+"PO-Revision-Date: 2018-03-13 21:10+0100\n"
+"Last-Translator: Nathan Follens <nthn@unseen.is>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #. ex:ts=8:noet:
 #: ../plugins/bookmarks/bookmarks.plugin.desktop.in.in.h:1
@@ -353,7 +353,7 @@ msgstr "Tekst zoeken in alle bestanden in een map."
 
 #: ../plugins/findinfiles/gedit-findinfiles.metainfo.xml.in.h:2
 msgid "Find text in all files of a folder"
-msgstr "Tekst zoeken in alle bestanden in een map."
+msgstr "Tekst zoeken in alle bestanden in een map"
 
 #: ../plugins/findinfiles/plugin.vala:159
 msgid "Find in Files…"
@@ -790,14 +790,26 @@ msgstr "Vertalingen aangeboden door {0}"
 msgid "Translate Console"
 msgstr "Vertalingsconsole"
 
-#: ../plugins/translate/translate/__init__.py:153
+#: ../plugins/translate/translate/__init__.py:152
 #, python-brace-format
 msgid "Translate selected text [{0}]"
 msgstr "Geselecteerde tekst vertalen [{0}]"
 
+#: ../plugins/translate/translate/preferences.py:85
+msgid "API Key"
+msgstr "API-sleutel"
+
+#: ../plugins/translate/translate/services/yandex.py:65
+msgid ""
+"You need to obtain a free API key at <a href='https://tech.yandex.com/"
+"translate/'>https://tech.yandex.com/translate/</a>"
+msgstr ""
+"U dient een gratis API-sleutel te verkrijgen op <a href='https://tech.yandex."
+"com/translate/'>https://tech.yandex.com/translate/</a>"
+
 #: ../plugins/translate/translate/ui/preferences.ui.h:1
-msgid "Translation languages"
-msgstr "Talen voor vertaling"
+msgid "Translation languages:"
+msgstr "Talen voor vertaling:"
 
 #: ../plugins/translate/translate/ui/preferences.ui.h:2
 msgid "Where to output translation:"
