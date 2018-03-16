@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gedit-plugins gnome-3-20\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=gedit&keywords=I18N+L10N&component=Plugins\n"
-"POT-Creation-Date: 2018-01-28 22:32+0000\n"
-"PO-Revision-Date: 2018-01-31 11:36+0700\n"
+"POT-Creation-Date: 2018-03-11 08:53+0000\n"
+"PO-Revision-Date: 2018-03-11 20:47+0700\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -61,7 +61,7 @@ msgid "Automatically add a closing bracket when you insert one"
 msgstr "Otomatis menambah kurung tutup ketika Anda menyisipkan pembukanya"
 
 #. ex:et:ts=4:
-#: ../plugins/charmap/charmap/__init__.py:56
+#: ../plugins/charmap/charmap/__init__.py:57
 #: ../plugins/charmap/charmap.plugin.desktop.in.in.h:1
 msgid "Character Map"
 msgstr "Tabel Karakter"
@@ -88,11 +88,11 @@ msgstr "Komentar Kode"
 msgid "Comment out or uncomment a selected block of code."
 msgstr "Jadikan komentar atau jangan jadikan komentar blok kode yang dipilih."
 
-#: ../plugins/codecomment/codecomment.py:118
+#: ../plugins/codecomment/codecomment.py:119
 msgid "Co_mment Code"
 msgstr "Ko_mentarkan Kode"
 
-#: ../plugins/codecomment/codecomment.py:124
+#: ../plugins/codecomment/codecomment.py:125
 msgid "U_ncomment Code"
 msgstr "Kode Jangan_beri Komentar"
 
@@ -109,11 +109,11 @@ msgid "Pick a color from a dialog and insert its hexadecimal representation."
 msgstr ""
 "Memilih warna dari dialog dan menyisipkan representasi heksadesimalnya."
 
-#: ../plugins/colorpicker/colorpicker.py:132
+#: ../plugins/colorpicker/colorpicker.py:133
 msgid "Pick _Color…"
 msgstr "Pilih _Warna..."
 
-#: ../plugins/colorpicker/colorpicker.py:172
+#: ../plugins/colorpicker/colorpicker.py:173
 msgid "Pick Color"
 msgstr "Pilih Warna"
 
@@ -129,7 +129,7 @@ msgstr ""
 
 #: ../plugins/colorschemer/colorschemer.plugin.desktop.in.in.h:1
 #: ../plugins/colorschemer/gedit-colorschemer.metainfo.xml.in.h:1
-#: ../plugins/colorschemer/schemer/__init__.py:42
+#: ../plugins/colorschemer/schemer/__init__.py:50
 #: ../plugins/colorschemer/schemer.ui.h:1
 msgid "Color Scheme Editor"
 msgstr "Penyunting Skema Warna"
@@ -198,7 +198,7 @@ msgstr "Penulis"
 msgid "Sample"
 msgstr "Contoh"
 
-#: ../plugins/commander/commander/appactivatable.py:48
+#: ../plugins/commander/commander/appactivatable.py:56
 msgid "Commander Mode"
 msgstr "Moda Komandan"
 
@@ -213,11 +213,11 @@ msgstr "Komandan"
 msgid "Command line interface for advanced editing"
 msgstr "Antar muka baris perintah bagi penyuntingan tingkat lanjut"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:117
+#: ../plugins/dashboard/dashboard/dashboard.py:125
 msgid "Empty Document"
 msgstr "Dokumen Kosong"
 
-#: ../plugins/dashboard/dashboard/dashboard.py:158
+#: ../plugins/dashboard/dashboard/dashboard.py:166
 msgid "Type here to search…"
 msgstr "Ketik di sini untuk mencari..."
 
@@ -392,11 +392,11 @@ msgstr "Gabungkan/Putuskan Garis"
 msgid "Join several lines or split long ones"
 msgstr "Menggabungkan beberapa garis atau memutuskan garis yang panjang"
 
-#: ../plugins/joinlines/joinlines.py:111
+#: ../plugins/joinlines/joinlines.py:112
 msgid "_Join Lines"
 msgstr "_Gabungkan Baris"
 
-#: ../plugins/joinlines/joinlines.py:117
+#: ../plugins/joinlines/joinlines.py:118
 msgid "_Split Lines"
 msgstr "_Putuskan Garis"
 
@@ -410,8 +410,8 @@ msgstr "Sunting ganda"
 msgid "Edit document in multiple places at once"
 msgstr "Sunting dokumen di beberapa tempat sekaligus"
 
-#: ../plugins/multiedit/multiedit/appactivatable.py:36
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1349
+#: ../plugins/multiedit/multiedit/appactivatable.py:44
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1351
 msgid "Multi Edit Mode"
 msgstr "Moda Sunting Ganda"
 
@@ -420,56 +420,56 @@ msgstr "Moda Sunting Ganda"
 msgid "Multi Edit"
 msgstr "Sunting Ganda"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:315
+#: ../plugins/multiedit/multiedit/viewactivatable.py:317
 msgid "Added edit point…"
 msgstr "Tambah titik sunting..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:657
+#: ../plugins/multiedit/multiedit/viewactivatable.py:659
 msgid "Column Mode…"
 msgstr "Mode Kolom..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:775
+#: ../plugins/multiedit/multiedit/viewactivatable.py:777
 msgid "Removed edit point…"
 msgstr "Hapus titik sunting..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:941
+#: ../plugins/multiedit/multiedit/viewactivatable.py:943
 msgid "Cancelled column mode…"
 msgstr "Membatalkan mode kolom..."
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1304
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
 msgid "Enter column edit mode using selection"
 msgstr "Masuk moda sunting kolom memakai piliah"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1305
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
 msgid "Enter <b>smart</b> column edit mode using selection"
 msgstr "Masuk moda sunting kolom <b>cerdas</b> memakai pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1306
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1308
 msgid "<b>Smart</b> column align mode using selection"
 msgstr "Mode perataan kolom <b>cerdas</b> memakai pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1307
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
 msgid "<b>Smart</b> column align mode with additional space using selection"
 msgstr ""
 "Mode perataan kolom <b>cerdas</b> dengan spasi tambahan memakai pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1309
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
 msgid "Toggle edit point"
 msgstr "Jungkit titik sunting"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1310
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
 msgid "Add edit point at beginning of line/selection"
 msgstr "Tambah titik sunting di awal baris/pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1311
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
 msgid "Add edit point at end of line/selection"
 msgstr "Tambah titik sunting di akhir baris/pilihan"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1312
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1314
 msgid "Align edit points"
 msgstr "Ratakan titik sunting"
 
-#: ../plugins/multiedit/multiedit/viewactivatable.py:1313
+#: ../plugins/multiedit/multiedit/viewactivatable.py:1315
 msgid "Align edit points with additional space"
 msgstr "Ratakan titik sunting dengan spasi tambahan"
 
@@ -501,13 +501,13 @@ msgstr "Selaraskan antara LaTeX dan PDF dengan gedit dan evince"
 msgid "Synchronize between LaTeX and PDF with gedit and evince."
 msgstr "Selaraskan antara LaTeX dan PDF dengan gedit dan evince."
 
-#: ../plugins/synctex/synctex/synctex.py:342
+#: ../plugins/synctex/synctex/synctex.py:343
 msgid "Forward Search"
 msgstr "Cari Maju"
 
 #. ex:ts=4:et:
 #: ../plugins/terminal/gedit-terminal.metainfo.xml.in.h:1
-#: ../plugins/terminal/terminal.py:315
+#: ../plugins/terminal/terminal.py:316
 msgid "Terminal"
 msgstr "Terminal"
 
@@ -693,7 +693,7 @@ msgstr "Terminal Tertanam"
 msgid "Embed a terminal in the bottom pane."
 msgstr "Tanamkan terminal dalam panel bawah."
 
-#: ../plugins/terminal/terminal.py:336
+#: ../plugins/terminal/terminal.py:337
 msgid "C_hange Directory"
 msgstr "Uba_h Direktori"
 
@@ -708,15 +708,15 @@ msgstr "Ukuran teks"
 msgid "Easily increase and decrease the text size"
 msgstr "Memperbesar dan memperkecil ukuran teks secara mudah"
 
-#: ../plugins/textsize/textsize/__init__.py:53
+#: ../plugins/textsize/textsize/__init__.py:54
 msgid "_Normal size"
 msgstr "Ukuran _normal"
 
-#: ../plugins/textsize/textsize/__init__.py:55
+#: ../plugins/textsize/textsize/__init__.py:56
 msgid "S_maller Text"
 msgstr "Teks Lebih _Kecil"
 
-#: ../plugins/textsize/textsize/__init__.py:57
+#: ../plugins/textsize/textsize/__init__.py:58
 msgid "_Larger Text"
 msgstr "Teks _Lebih Besar"
 
@@ -765,12 +765,12 @@ msgstr "Kunci API untuk layanan web jarak jauh"
 msgid "Remote web service to use"
 msgstr "Layanan web jarak jauh untuk digunakan"
 
-#: ../plugins/translate/translate/__init__.py:72
+#: ../plugins/translate/translate/__init__.py:73
 #, python-brace-format
 msgid "Translations powered by {0}"
 msgstr "Terjemahkan ditenagai oleh {0}"
 
-#: ../plugins/translate/translate/__init__.py:75
+#: ../plugins/translate/translate/__init__.py:76
 msgid "Translate Console"
 msgstr "Konsol Terjemahan"
 
@@ -779,9 +779,21 @@ msgstr "Konsol Terjemahan"
 msgid "Translate selected text [{0}]"
 msgstr "Terjemahkan teks terpilih [{0}]"
 
+#: ../plugins/translate/translate/preferences.py:85
+msgid "API Key"
+msgstr "Kunci API"
+
+#: ../plugins/translate/translate/services/yandex.py:65
+msgid ""
+"You need to obtain a free API key at <a href='https://tech.yandex.com/"
+"translate/'>https://tech.yandex.com/translate/</a>"
+msgstr ""
+"Anda perlu mendapatkan kunci API bebas di<a href='https://tech.yandex.com/"
+"translate/'>https://tech.yandex.com/translate/</a>"
+
 #: ../plugins/translate/translate/ui/preferences.ui.h:1
-msgid "Translation languages"
-msgstr "Bahasa terjemahan"
+msgid "Translation languages:"
+msgstr "Bahasa terjemahan:"
 
 #: ../plugins/translate/translate/ui/preferences.ui.h:2
 msgid "Where to output translation:"
